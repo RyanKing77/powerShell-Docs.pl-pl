@@ -1,0 +1,72 @@
+---
+ms.date: 2017-06-05
+keywords: polecenia cmdlet programu PowerShell
+title: Obiekt ISEFileCollection
+ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
+ms.openlocfilehash: 60bf4dae33f3a71c31e7fdbed0f4fd6ab27a8bd1
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 09/08/2017
+---
+# <a name="the-isefilecollection-object"></a>Obiekt ISEFileCollection
+  **ISEFileCollection** obiektu jest kolekcją **ISEFile** obiektów. Przykładem jest $psISE.CurrentPowerShellTab.Files kolekcji.
+
+## <a name="methods"></a>Metody
+
+### <a name="add-fullpath-"></a>Dodaj\( \[fullPath\]\)
+  Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy. 
+
+ Tworzy i zwraca nowy plik bez tytułu i dodaje go do kolekcji. **IsUntitled** właściwość nowo utworzonego pliku jest **$true**.
+
+ **\[fullPath\]**  — opcjonalny ciąg pełni określona ścieżka pliku. Wyjątek jest generowany, Jeśli dołączysz **fullPath** parametr i ścieżką względną lub jeśli używasz nazwę pliku zamiast pełnej ścieżki.
+
+```
+# Adds a new untitled file to the collection of files in the current PowerShell tab.
+$newFile = $psISE.CurrentPowerShellTab.Files.Add()
+
+# Adds a file specified by its full path to the collection of files in the current PowerShell tab.
+$psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
+
+```
+
+### <a name="remove-file-force-"></a>Usuń\( pliku \[życie\]\)
+  Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy. 
+
+ Usuwa określony plik z bieżącej karty środowiska PowerShell.
+
+ **Plik** -plik ISEFile ciąg, który ma zostać usunięty z kolekcji. Jeśli plik nie został zapisany, ta metoda zgłasza wyjątek. Użyj **wymusić** przełącznika parametr, aby wymusić usunięcie niezapisanym pliku.
+
+ **\[Wymuś\]**  -opcjonalna wartość logiczna Jeśli równa **$true**, udziela uprawnień, aby usunąć plik, nawet jeśli nie zostały zapisane po ostatnim zastosowaniu. Wartość domyślna to **$false**.
+
+```
+# Removes the first opened file from the file collection associated with the current PowerShell tab.
+# If the file has not yet been saved, then an exception is generated.
+$firstfile = $psISE.CurrentPowerShellTab.Files[0]
+$psISE.CurrentPowerShellTab.Files.Remove($firstfile)
+
+# Removes the first opened file from the file collection associated with the current PowerShell tab, even if it has not been saved.
+$firstfile = $psISE.CurrentPowerShellTab.Files[0]
+$psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
+```
+
+### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile\( selectedFile\)
+  Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy. 
+
+ Wybiera pliku, określonej przez **selectedFile** parametru.
+
+ **selectedFile** -ISEFile Microsoft.PowerShell.Host.ISE.ISEFile pliku, który chcesz wybrać.
+
+```
+
+# Selects the specified file.
+$firstfile = $psISE.CurrentPowerShellTab.Files[0]
+$psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
+
+```
+
+## <a name="see-also"></a>Zobacz też
+- [Obiekt ISEFile](The-ISEFile-Object.md) 
+- [Windows PowerShell ISE skryptów modelu obiektów](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Dotyczące modelu obiektów programu Windows PowerShell ISE](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Hierarchia modelu obiektów ISE](The-ISE-Object-Model-Hierarchy.md)

@@ -1,0 +1,60 @@
+---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
+title: "Zasób PackageManagementSource DSC"
+ms.openlocfilehash: 80d157aff5bf7685a797baaf6a26215f02473096
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 06/12/2017
+---
+# <a name="dsc-packagemanagementsource-resource"></a>Zasób PackageManagementSource DSC
+
+> Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
+
+**PackageManagementSource** zasób w Windows PowerShell Desired stan konfiguracji (DSC) zapewnia mechanizm do zarejestrowania lub wyrejestrowania źródła zarządzania pakietami w docelowym węźle. **Pakiet zarządzania źródeł zarejestrowanych w ten sposób są rejestrowane w kontekście systemu, można używać z konta System lub przez aparat DSC.** Ten zasób wymaga **PackageManagement** modułu, dostępne z http://PowerShellGallery.com.
+
+## <a name="syntax"></a>Składnia
+
+```
+PSModule [string] #ResourceName
+{
+    Name = [string]
+    [ Ensure = [string] { Absent | Present }  ]
+    [ InstallationPolicy = [string] ]
+    [ ProviderName = [string] ]
+    [ SourceUri = [string] ]
+    [ SourceCredential = [PSCredential] ]
+}
+```
+
+## <a name="properties"></a>Właściwości
+|  Właściwość  |  Opis   | 
+|---|---| 
+| Nazwa| Określa nazwę źródła pakietu jest zarejestrowany lub wyrejestrowany w systemie.| 
+| Upewnij się| Określa, czy źródło pakietu ma zostać zarejestrowany lub wyrejestrowany.| 
+| InstallationPolicy| Określa, czy masz zaufanie źródła pakietu. Jeden z: "Niezaufanych", "Zaufanym".| 
+| ProviderName| Określa nazwę dostawcy OneGet za pośrednictwem której można współdziałanie ze źródłem pakietu.| 
+| SourceUri| Określa identyfikator URI źródła pakietu.| 
+| SourceCredential| Umożliwia dostęp do pakietu zdalnego źródła.| 
+
+## <a name="example"></a>Przykład
+
+W tym przykładzie rejestruje http://nuget.org pakiet źródłowy używa **PackageManagementSource** zasobów usługi Konfiguracja DSC.
+
+```powershell
+Configuration PackageManagementSourceTest
+{    
+    PackageManagementSource SourceRepository
+    {
+        Ensure      = "Present" 
+        Name        = "MyNuget" 
+        ProviderName= "Nuget" 
+        SourceUri   = "http://nuget.org/api/v2/"   
+        InstallationPolicy ="Trusted" 
+    }
+}
+```
+
