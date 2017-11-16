@@ -1,0 +1,99 @@
+---
+ms.date: 2017-08-09
+keywords: "środowiska PowerShell, polecenia cmdlet, pobierania, instalacji, ustawienia, systemu windows 10, windows 8.1, windows 8.0, windows 7"
+title: Instalowanie programu Windows PowerShell
+ms.openlocfilehash: 781bf50b6ac649e72bcdbb708555275fb7422d94
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 09/29/2017
+---
+# <a name="installing-windows-powershell"></a><span data-ttu-id="9af19-103">Instalowanie programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-103">Installing Windows PowerShell</span></span>
+
+<span data-ttu-id="9af19-104">Środowisko PowerShell jest zainstalowane domyślnie w każdym systemie Windows począwszy od systemu Windows 7 z dodatkiem SP1 i Windows Server 2008 R2 z dodatkiem SP1.</span><span class="sxs-lookup"><span data-stu-id="9af19-104">PowerShell comes installed by default in every Windows, starting with Windows 7 SP1 and Windows Server 2008 R2 SP1.</span></span>
+
+<span data-ttu-id="9af19-105">Użytkownicy systemów Linux, macOS i systemu Windows, które chcesz zainstalować **PowerShell 6** (beta) na ich maszynach konieczne:</span><span class="sxs-lookup"><span data-stu-id="9af19-105">Linux, macOS, and Windows users that would like to install **PowerShell 6** (beta), in their machines, need to:</span></span>
+
+1. <span data-ttu-id="9af19-106">Pobierz programu PowerShell dla określonego systemu operacyjnego i wersji, z [GitHub](https://github.com/powershell/powershell#get-powershell)</span><span class="sxs-lookup"><span data-stu-id="9af19-106">Get PowerShell for the specific OS and version, from [GitHub](https://github.com/powershell/powershell#get-powershell)</span></span>
+1. <span data-ttu-id="9af19-107">Postępuj zgodnie z instrukcjami instalacji</span><span class="sxs-lookup"><span data-stu-id="9af19-107">Follow the installation instructions</span></span>
+  - [<span data-ttu-id="9af19-108">Linux</span><span class="sxs-lookup"><span data-stu-id="9af19-108">Linux</span></span>](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
+  - [<span data-ttu-id="9af19-109">System macOS</span><span class="sxs-lookup"><span data-stu-id="9af19-109">macOS</span></span>](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
+  - [<span data-ttu-id="9af19-110">Systemu Windows</span><span class="sxs-lookup"><span data-stu-id="9af19-110">Windows</span></span>](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
+
+<span data-ttu-id="9af19-111">6 programu PowerShell jest również dostępny do Docker; zobacz [instalacji Docker](https://github.com/PowerShell/PowerShell/tree/master/docker) instrukcje.</span><span class="sxs-lookup"><span data-stu-id="9af19-111">PowerShell 6 is also available for Docker; see [Docker installation](https://github.com/PowerShell/PowerShell/tree/master/docker) instructions.</span></span>
+
+## <a name="finding-powershell-in-windows-10-81-80-and-7"></a><span data-ttu-id="9af19-112">Znajdowanie programu PowerShell w systemie Windows 10, 8.1, 8.0 i 7</span><span class="sxs-lookup"><span data-stu-id="9af19-112">Finding PowerShell in Windows 10, 8.1, 8.0, and 7</span></span>
+
+<span data-ttu-id="9af19-113">Czasami lokalizowanie programu PowerShell ISE (zintegrowane środowisko obsługi skryptów) w systemie Windows lub konsoli może być trudne, zgodnie z jego lokalizacji są przenoszone z jednej wersji systemu Windows do następnego.</span><span class="sxs-lookup"><span data-stu-id="9af19-113">Sometimes locating PowerShell console or ISE (Integrated Scripting Environment) in Windows can be difficult, as it's location moves from one version of Windows to the next.</span></span>
+
+<span data-ttu-id="9af19-114">Poniższe tabele powinny pomóc w znalezieniu programu PowerShell w wersji systemu Windows.</span><span class="sxs-lookup"><span data-stu-id="9af19-114">The following tables should help you find PowerShell in your Windows version.</span></span>
+<span data-ttu-id="9af19-115">Wszystkie wersje wymienione w tym miejscu są oryginalnej wersji zwolnione z żadnych aktualizacji.</span><span class="sxs-lookup"><span data-stu-id="9af19-115">All versions listed here are the original version, as released, with no updates.</span></span>
+
+### <a name="for-console"></a><span data-ttu-id="9af19-116">Dla konsoli</span><span class="sxs-lookup"><span data-stu-id="9af19-116">For Console</span></span>
+
+<span data-ttu-id="9af19-117">Wersja</span><span class="sxs-lookup"><span data-stu-id="9af19-117">Version</span></span> | <span data-ttu-id="9af19-118">Lokalizacja</span><span class="sxs-lookup"><span data-stu-id="9af19-118">Location</span></span>
+-- | --
+<span data-ttu-id="9af19-119">10 systemu Windows</span><span class="sxs-lookup"><span data-stu-id="9af19-119">Windows 10</span></span> | <span data-ttu-id="9af19-120">Kliknij ikonę Windows rogu niższe po lewej stronie, zacznij pisać programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-120">Click left lower corner Windows icon, start typing PowerShell</span></span>
+<span data-ttu-id="9af19-121">Windows 8.1, 8.0</span><span class="sxs-lookup"><span data-stu-id="9af19-121">Windows 8.1, 8.0</span></span> | <span data-ttu-id="9af19-122">Na ekranie startowym zacznij pisać programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9af19-122">On the start screen, start typing PowerShell.</span></span><br/><span data-ttu-id="9af19-123">Jeśli na pulpicie ikonę po lewej stronie dolnym rogu systemu Windows, zacznij pisać programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-123">If on desktop, click left lower corner Windows icon, start typing PowerShell</span></span>
+<span data-ttu-id="9af19-124">Windows 7 z dodatkiem SP1</span><span class="sxs-lookup"><span data-stu-id="9af19-124">Windows 7 SP1</span></span> | <span data-ttu-id="9af19-125">Lewym dolnym rogu systemu Windows na kliknij ikonę, start pole wyszukiwania, wpisując polecenie programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-125">Click left lower corner Windows icon, on the search box start typing PowerShell</span></span>
+
+### <a name="for-ise"></a><span data-ttu-id="9af19-126">Dla środowiska ISE</span><span class="sxs-lookup"><span data-stu-id="9af19-126">For ISE</span></span>
+
+<span data-ttu-id="9af19-127">Wersja</span><span class="sxs-lookup"><span data-stu-id="9af19-127">Version</span></span> | <span data-ttu-id="9af19-128">Lokalizacja</span><span class="sxs-lookup"><span data-stu-id="9af19-128">Location</span></span>
+-- | --
+<span data-ttu-id="9af19-129">10 systemu Windows</span><span class="sxs-lookup"><span data-stu-id="9af19-129">Windows 10</span></span> | <span data-ttu-id="9af19-130">Kliknij ikonę Windows rogu niższe po lewej stronie, zacznij pisać ISE</span><span class="sxs-lookup"><span data-stu-id="9af19-130">Click left lower corner Windows icon, start typing ISE</span></span>
+<span data-ttu-id="9af19-131">Windows 8.1, 8.0</span><span class="sxs-lookup"><span data-stu-id="9af19-131">Windows 8.1, 8.0</span></span> | <span data-ttu-id="9af19-132">Na ekranie startowym wpisz **PowerShell ISE**.</span><span class="sxs-lookup"><span data-stu-id="9af19-132">On the start screen, type **PowerShell ISE**.</span></span><br/><span data-ttu-id="9af19-133">Jeśli na pulpicie kliknij dolnym rogu Windows ikony, wpisz **PowerShell ISE**</span><span class="sxs-lookup"><span data-stu-id="9af19-133">If on desktop, click left lower corner Windows icon, type **PowerShell ISE**</span></span>
+<span data-ttu-id="9af19-134">Windows 7 z dodatkiem SP1</span><span class="sxs-lookup"><span data-stu-id="9af19-134">Windows 7 SP1</span></span> | <span data-ttu-id="9af19-135">Lewym dolnym rogu systemu Windows na kliknij ikonę, start pole wyszukiwania, wpisując polecenie programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-135">Click left lower corner Windows icon, on the search box start typing PowerShell</span></span>
+
+## <a name="finding-powershell-in-windows-server-versions"></a><span data-ttu-id="9af19-136">Znajdowanie programu PowerShell w wersji systemu Windows Server</span><span class="sxs-lookup"><span data-stu-id="9af19-136">Finding PowerShell in Windows Server versions</span></span>
+
+<span data-ttu-id="9af19-137">Począwszy od systemu Windows Server 2008 R2, systemu operacyjnego można zainstalować bez graficzny interfejs użytkownika (GUI).</span><span class="sxs-lookup"><span data-stu-id="9af19-137">Starting with Windows Server 2008 R2, Windows operating system can be installed without the graphical user interface (GUI).</span></span>
+<span data-ttu-id="9af19-138">Wersje systemu Windows Server bez graficznego interfejsu użytkownika są nazywane **Core** oraz wersje z graficznym interfejsem użytkownika o nazwie **pulpitu**.</span><span class="sxs-lookup"><span data-stu-id="9af19-138">Editions of Windows Server without GUI are named **Core** editions, and editions with the GUI are named **Desktop**.</span></span>
+
+### <a name="windows-server-core-editions"></a><span data-ttu-id="9af19-139">Wersje systemu Windows Server Core</span><span class="sxs-lookup"><span data-stu-id="9af19-139">Windows Server Core editions</span></span>
+
+<span data-ttu-id="9af19-140">We wszystkich wersjach Core podczas logowania do serwera można uzyskać okno wiersza polecenia systemu Windows.</span><span class="sxs-lookup"><span data-stu-id="9af19-140">In all Core editions, when you log to the server you get a Windows command prompt window.</span></span>
+
+<span data-ttu-id="9af19-141">Typ `powershell` i naciśnij klawisz **ENTER** można uruchomić w sesji wiersza polecenia programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9af19-141">Type `powershell` and press **ENTER** to start PowerShell inside the command prompt session.</span></span> <span data-ttu-id="9af19-142">Typ `exit` zakończyć sesję programu PowerShell, a następnie wróć do wiersza polecenia.</span><span class="sxs-lookup"><span data-stu-id="9af19-142">Type `exit` to terminate the PowerShell session and return to command prompt.</span></span>
+
+### <a name="windows-server-desktop-editions"></a><span data-ttu-id="9af19-143">Wersje pulpitu systemu Windows Server</span><span class="sxs-lookup"><span data-stu-id="9af19-143">Windows Server Desktop editions</span></span>
+
+<span data-ttu-id="9af19-144">We wszystkich wersjach pulpitu kliknij ikonę po lewej stronie Windows rogu niższe, zacznij pisać programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9af19-144">In all desktop editions, click the left lower corner Windows icon, start typing PowerShell.</span></span>
+<span data-ttu-id="9af19-145">Otrzymasz zarówno konsoli i opcje ISE.</span><span class="sxs-lookup"><span data-stu-id="9af19-145">You get both console and ISE options.</span></span>
+
+<span data-ttu-id="9af19-146">Jedynym wyjątkiem od reguły powyżej jest ISE w systemie Windows Server 2008 R2 SP1 w takim przypadku kliknij po lewej stronie ikony systemu Windows dolnym rogu, wpisz PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="9af19-146">The only exception to the above rule is the ISE in Windows Server 2008 R2 SP1; in this case, click the left lower corner Windows icon, type PowerShell ISE.</span></span>
+
+## <a name="how-to-check-the-version-of-powershell"></a><span data-ttu-id="9af19-147">Jak sprawdzić wersję środowiska PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-147">How to check the version of PowerShell</span></span>
+
+<span data-ttu-id="9af19-148">Aby znaleźć zainstalowanych wersji programu PowerShell, uruchom konsolę programu PowerShell (lub ISE) i typ `$PSVersionTable` i naciśnij klawisz **ENTER**.</span><span class="sxs-lookup"><span data-stu-id="9af19-148">To find which version of PowerShell you have installed, start a PowerShell console (or the ISE) and type `$PSVersionTable` and press **ENTER**.</span></span>
+
+## <a name="upgrading-existing-windows-powershell"></a><span data-ttu-id="9af19-149">Uaktualnianie istniejącego środowiska Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-149">Upgrading existing Windows PowerShell</span></span>
+
+<span data-ttu-id="9af19-150">Pakiet instalacyjny dla programu PowerShell jest dostarczany w instalacji programu WMF.</span><span class="sxs-lookup"><span data-stu-id="9af19-150">The installation package for PowerShell comes inside a WMF installer.</span></span>
+<span data-ttu-id="9af19-151">Wersja Instalatora WMF zgodna wersja programu PowerShell; nie ma żadnych Autonomiczny Instalator dla środowiska Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9af19-151">The version of the WMF installer matches the version of PowerShell; there's no stand alone installer for Windows PowerShell.</span></span>
+
+<span data-ttu-id="9af19-152">Jeśli musisz zaktualizować istniejącej wersji programu PowerShell, w systemie Windows, skorzystaj z poniższej tabeli Instalator dla używanej wersji programu PowerShell, które chcesz zaktualizować, aby zlokalizować.</span><span class="sxs-lookup"><span data-stu-id="9af19-152">If you need to update your existing version of PowerShell, in Windows, use the following table to locate the installer for the version of PowerShell you want to update to.</span></span>
+
+<span data-ttu-id="9af19-153">Windows</span><span class="sxs-lookup"><span data-stu-id="9af19-153">Windows</span></span> | <span data-ttu-id="9af19-154">PS 3.0</span><span class="sxs-lookup"><span data-stu-id="9af19-154">PS 3.0</span></span> | <span data-ttu-id="9af19-155">PS 4.0</span><span class="sxs-lookup"><span data-stu-id="9af19-155">PS 4.0</span></span> | <span data-ttu-id="9af19-156">PS 5.0</span><span class="sxs-lookup"><span data-stu-id="9af19-156">PS 5.0</span></span> | <span data-ttu-id="9af19-157">PS 5.1</span><span class="sxs-lookup"><span data-stu-id="9af19-157">PS 5.1</span></span> |
+--|--|--|--|--|
+<span data-ttu-id="9af19-158">Windows 10 (zobacz Note1)</span><span class="sxs-lookup"><span data-stu-id="9af19-158">Windows 10 (see Note1)</span></span><br/><span data-ttu-id="9af19-159">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="9af19-159">Windows Server 2016</span></span> | - | - | - | <span data-ttu-id="9af19-160">zainstalowany</span><span class="sxs-lookup"><span data-stu-id="9af19-160">installed</span></span>
+<span data-ttu-id="9af19-161">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="9af19-161">Windows 8.1</span></span><br/><span data-ttu-id="9af19-162">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="9af19-162">Windows Server 2012 R2</span></span> | - | <span data-ttu-id="9af19-163">zainstalowany</span><span class="sxs-lookup"><span data-stu-id="9af19-163">installed</span></span> | [<span data-ttu-id="9af19-164">WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="9af19-164">WMF 5.0</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [<span data-ttu-id="9af19-165">WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="9af19-165">WMF 5.1</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+<span data-ttu-id="9af19-166">Windows 8</span><span class="sxs-lookup"><span data-stu-id="9af19-166">Windows 8</span></span><br/><span data-ttu-id="9af19-167">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="9af19-167">Windows Server 2012</span></span> | <span data-ttu-id="9af19-168">zainstalowany</span><span class="sxs-lookup"><span data-stu-id="9af19-168">installed</span></span> | [<span data-ttu-id="9af19-169">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="9af19-169">WMF 4.0</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [<span data-ttu-id="9af19-170">WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="9af19-170">WMF 5.0</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [<span data-ttu-id="9af19-171">WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="9af19-171">WMF 5.1</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+<span data-ttu-id="9af19-172">Windows 7 z dodatkiem SP1</span><span class="sxs-lookup"><span data-stu-id="9af19-172">Windows 7 SP1</span></span><br/><span data-ttu-id="9af19-173">Windows Server 2008 R2 z dodatkiem SP1</span><span class="sxs-lookup"><span data-stu-id="9af19-173">Windows Server 2008 R2 SP1</span></span> | [<span data-ttu-id="9af19-174">WMF 3.0</span><span class="sxs-lookup"><span data-stu-id="9af19-174">WMF 3.0</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [<span data-ttu-id="9af19-175">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="9af19-175">WMF 4.0</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [<span data-ttu-id="9af19-176">WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="9af19-176">WMF 5.0</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [<span data-ttu-id="9af19-177">WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="9af19-177">WMF 5.1</span></span>](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+
+> <span data-ttu-id="9af19-178">**Należy pamiętać, 1**:</span><span class="sxs-lookup"><span data-stu-id="9af19-178">**Note 1**:</span></span>
+  >>
+  >> <span data-ttu-id="9af19-179">Na początkowej wersji systemu Windows 10 w usłudze Aktualizacje automatyczne są włączone programu PowerShell zostanie zaktualizowany w wersji 5.0 lub 5.1.</span><span class="sxs-lookup"><span data-stu-id="9af19-179">On the initial release of Windows 10, with automatic updates enabled, PowerShell gets updated from version 5.0 to 5.1.</span></span>
+  >>
+  >> <span data-ttu-id="9af19-180">Jeśli oryginalna wersja systemu Windows 10 nie jest aktualizowany za pomocą aktualizacji systemu Windows, wersja programu PowerShell jest 5.0.</span><span class="sxs-lookup"><span data-stu-id="9af19-180">If the original version of Windows 10 is not updated through Windows Updates, the version of PowerShell is 5.0.</span></span>
+
+## <a name="need-azure-powershell"></a><span data-ttu-id="9af19-181">Wymagają programu Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-181">Need Azure PowerShell</span></span>
+
+<span data-ttu-id="9af19-182">Jeśli szukasz **programu Azure PowerShell**, można uruchomić z [Omówienie programu Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure).</span><span class="sxs-lookup"><span data-stu-id="9af19-182">If you're looking for **Azure PowerShell**, you could start with [Overview of Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure).</span></span>
+
+<span data-ttu-id="9af19-183">W przeciwnym razie może być konieczne jest [Instalowanie i konfigurowanie programu Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)</span><span class="sxs-lookup"><span data-stu-id="9af19-183">Otherwise, what you might need is [Install and configure Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps)</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="9af19-184">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="9af19-184">See Also</span></span>
+
+- [<span data-ttu-id="9af19-185">Wymagania systemowe programu PowerShell systemu Windows</span><span class="sxs-lookup"><span data-stu-id="9af19-185">Windows PowerShell System Requirements</span></span>](Windows-PowerShell-System-Requirements.md)
+- [<span data-ttu-id="9af19-186">Uruchamianie środowiska Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="9af19-186">Starting Windows PowerShell</span></span>](Starting-Windows-PowerShell.md)

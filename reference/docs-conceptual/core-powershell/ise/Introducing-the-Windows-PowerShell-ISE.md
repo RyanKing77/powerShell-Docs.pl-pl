@@ -1,0 +1,36 @@
+---
+ms.date: 2017-06-05
+keywords: polecenia cmdlet programu PowerShell
+title: Wprowadzenie do programu Windows PowerShell ISE
+ms.openlocfilehash: 75242c20548e2e83397867214417a48806c897ec
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 09/08/2017
+---
+# <a name="introducing-the-windows-powershell-ise"></a><span data-ttu-id="f0ddd-103">Wprowadzenie do programu Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="f0ddd-103">Introducing the Windows PowerShell ISE</span></span>
+<span data-ttu-id="f0ddd-104">Windows PowerShell Integrated Scripting Environment (ISE) jest aplikacją hosta dla środowiska Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-104">The Windows PowerShell Integrated Scripting Environment (ISE) is a host application for Windows PowerShell.</span></span> <span data-ttu-id="f0ddd-105">W środowisku Windows PowerShell ISE można uruchomić polecenia i zapisu, testowanie i debugowanie skryptów w pojedynczy opartych na systemie Windows graficzny interfejs użytkownika z edytowanie wielu wierszy, uzupełniania po naciśnięciu tabulatora, kolorowanie składni, selektywnego wykonywania, kontekstowa pomoc i obsługę języki od prawej do lewej.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-105">In Windows PowerShell ISE, you can run commands and write, test, and debug scripts in a single Windows-based graphic user interface with multiline editing, tab completion, syntax coloring, selective execution, context-sensitive help, and support for right-to-left languages.</span></span>
+<span data-ttu-id="f0ddd-106">Elementy menu i skrótów klawiaturowych służy do wykonywania wielu zadań, które można zastosować w konsoli środowiska Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-106">You can use menu items and keyboard shortcuts to perform many of the same tasks that you would perform in the Windows PowerShell console.</span></span>  <span data-ttu-id="f0ddd-107">Na przykład podczas debugowania skryptu w środowisku Windows PowerShell ISE, aby ustawić punkt przerwania wiersza w skrypcie, kliknij prawym przyciskiem myszy wiersz kodu, a następnie kliknij **Przełącz punkt przerwania**.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-107">For example, when you debug a script in the Windows PowerShell ISE, to set a line breakpoint in a script, right-click the line of code, and then click **Toggle Breakpoint**.</span></span>
+
+<span data-ttu-id="f0ddd-108">Spróbuj te funkcje w środowisku Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-108">Try these features in Windows PowerShell ISE.</span></span>
+
+- <span data-ttu-id="f0ddd-109">Edytowanie wielu wierszy: Wstaw pusty wiersz poniżej bieżącego wiersza w okienku polecenia, naciśnij klawisze SHIFT + ENTER.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-109">Multiline editing: To insert a blank line under the current line in the Command pane, press SHIFT+ENTER.</span></span>
+
+- <span data-ttu-id="f0ddd-110">Wykonanie selektywne: Aby uruchomić część skryptu, zaznacz tekst, który ma uruchomić, a następnie kliknij przycisk **Uruchom skrypt** przycisku.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-110">Selective execution: To run part of a script, select the text you want to run, and then click the **Run Script** button.</span></span> <span data-ttu-id="f0ddd-111">Lub naciśnij klawisz F5.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-111">Or, press F5.</span></span>
+
+- <span data-ttu-id="f0ddd-112">Pomoc kontekstowa: typ **elementu Invoke**, a następnie naciśnij klawisz F1.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-112">Context-sensitive help: Type **Invoke-Item**, and then press F1.</span></span> <span data-ttu-id="f0ddd-113">Otwiera plik pomocy do tematu Pomocy dotyczącego **elementu Invoke** polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-113">The Help file opens to the Help topic for the **Invoke-Item** cmdlet.</span></span>
+
+<span data-ttu-id="f0ddd-114">Windows PowerShell ISE umożliwia dostosowanie niektórych aspektów jego wyglądu.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-114">The Windows PowerShell ISE lets you customize some aspects of its appearance.</span></span> <span data-ttu-id="f0ddd-115">Również ma własny profil programu Windows PowerShell, gdzie można przechowywać funkcje, aliasy, zmienne i poleceń, których można używać w środowisku Windows PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-115">It also has its own Windows PowerShell profile, where you can store functions, aliases, variables, and commands you use in the Windows PowerShell ISE.</span></span>
+
+### <a name="to-start-the-windows-powershell-ise"></a><span data-ttu-id="f0ddd-116">Aby uruchomić program Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="f0ddd-116">To start the Windows PowerShell ISE</span></span>
+
+1. <span data-ttu-id="f0ddd-117">Wykonaj jedną z następujących czynności:</span><span class="sxs-lookup"><span data-stu-id="f0ddd-117">Do one of the following:</span></span>
+
+    -   <span data-ttu-id="f0ddd-118">Kliknij przycisk **Start**, wskaż pozycję **wszystkie programy**, wskaż pozycję **Windows PowerShell V2**, a następnie kliknij przycisk **programu Windows PowerShell ISE**.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-118">Click **Start**, point to **All Programs**, point to **Windows PowerShell V2**, and then click **Windows PowerShell ISE**.</span></span>
+
+    -   <span data-ttu-id="f0ddd-119">W konsoli środowiska Windows PowerShell Cmd.exe lub w polu Uruchom typu **powershell_ise.exe**.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-119">In the Windows PowerShell console Cmd.exe, or in the Run box, type, **powershell_ise.exe**.</span></span>
+
+### <a name="to-get-help-in-the-windows-powershell-ise"></a><span data-ttu-id="f0ddd-120">Aby uzyskać pomoc w środowisku Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="f0ddd-120">To get Help in the Windows PowerShell ISE</span></span>
+
+- <span data-ttu-id="f0ddd-121">Na **pomocy** menu, kliknij przycisk **pomocy programu Windows PowerShell**.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-121">On the **Help** menu, click **Windows PowerShell Help**.</span></span> <span data-ttu-id="f0ddd-122">Lub naciśnij klawisz F1.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-122">Or, press F1.</span></span> <span data-ttu-id="f0ddd-123">Plik, którego kliknięcie spowoduje otwarcie zawiera opis programu Windows PowerShell ISE i środowiska Windows PowerShell, w tym wszystkie dostępne z polecenie cmdlet Get-Help pomocy.</span><span class="sxs-lookup"><span data-stu-id="f0ddd-123">The file that opens describes Windows PowerShell ISE and Windows PowerShell, including all of the help available from the Get-Help cmdlet.</span></span>
+
