@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób WindowsFeature DSC"
-ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dsc-windowsfeature-resource"></a>Zasób WindowsFeature DSC
 
@@ -35,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |  Właściwość  |  Opis   | 
 |---|---| 
-| Nazwa| Wskazuje nazwę roli lub funkcji, które chcesz zapewnić zostanie dodany lub usunięty. Jest taka sama jak __nazwa__ właściwość z [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) polecenia cmdlet, a nie nazwę wyświetlaną roli lub funkcji.| 
+| Nazwa| Wskazuje nazwę roli lub funkcji, które chcesz zapewnić zostanie dodany lub usunięty. Jest taka sama jak __nazwa__ właściwość z [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) polecenia cmdlet, a nie nazwę wyświetlaną roli lub funkcji.| 
 | Poświadczenie| Określa poświadczenia używane do dodawania lub usuwania roli lub funkcji.| 
 | Upewnij się| Wskazuje, jeśli jest dodawany roli lub funkcji. Aby upewnić się, że roli lub funkcji jest dodany, ustaw tę właściwość na "Brak", aby upewnić się, że zostanie usunięty rolę lub funkcję, ustaw właściwość na "Brak".| 
 | IncludeAllSubFeature| Ta właściwość jest ustawiana __$true__ do zapewnienia stan wszystkich wymaganych podfunkcje ze stanem funkcji z __nazwa__ właściwości.| 
