@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Konfigurowanie maszyn wirtualnych na początkowego rozruchu w górę przy użyciu usługi Konfiguracja DSC"
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >Dotyczy: Środowiska Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ Aby uzyskać informacje na temat konfigurowania nowych maszyn wirtualnych w pocz
 
 Aby uruchomić te przykłady, będą potrzebne:
 
-- Rozruchowy dysk VHD do pracy z. Możesz pobrać plik ISO z wersję ewaluacyjną programu Windows Server 2016 na   [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Instrukcje można znaleźć na temat tworzenia dysku VHD z obrazu ISO w [tworzenie rozruchowych wirtualnych dysków twardych](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- Rozruchowy dysk VHD do pracy z. Możesz pobrać plik ISO z wersję ewaluacyjną programu Windows Server 2016 na [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Instrukcje można znaleźć na temat tworzenia dysku VHD z obrazu ISO w [tworzenie rozruchowych wirtualnych dysków twardych](https://technet.microsoft.com/en-us/library/gg318049.aspx).
 - Komputer hosta, który ma włączoną funkcją Hyper-V. Aby uzyskać informacje, zobacz [omówienie funkcji Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 Przy użyciu usługi Konfiguracja DSC, można zautomatyzować instalację oprogramowania i konfiguracji na komputerze w początkowej rozruchu w górę.
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 Zmień nazwę i przenieść ten plik do właściwego położenia na wirtualny dysk twardy jako `Pending.mof` za pomocą [Przenieś element](https://technet.microsoft.comlibrary/hh849852.aspx) polecenia cmdlet. Przykład:
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. Odinstalować dysku VHD, wywołując [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) polecenia cmdlet. Przykład:
 
@@ -202,6 +202,6 @@ Domyślnie wartość **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVers
 
 - [Konfiguracji DSC](configurations.md)
 - [Klucz rejestru DSCAutomationHostEnabled](DSCAutomationHostEnabled.md)
-- [Konfigurowanie lokalnego programu Configuration Manager (LCM)](metaConfig.md)
+- [Konfigurowanie programu Local Configuration Manager (LCM)](metaConfig.md)
 - [Konfigurowanie serwera ściągania usługi Konfiguracja DSC sieci web](pullServer.md)
 
