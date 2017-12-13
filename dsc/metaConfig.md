@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: Konfigurowanie lokalny program Configuration Manager
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurowanie lokalny program Configuration Manager
 
@@ -73,7 +73,7 @@ Następujące właściwości są dostępne w **ustawienia** bloku.
 
 |  Właściwość  |  Typ  |  Opis   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| ciąg| Określa, co się stanie po ponownym uruchomieniu podczas stosowania konfiguracji. Możliwe wartości to __"ContinueConfiguration"__ i __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: kontynuować stosowanie bieżącej konfiguracji po ponownym uruchomieniu komputera. Jest to domyślny falue</li><li>__StopConfiguration__: Zatrzymaj bieżącą konfigurację po ponownym uruchomieniu komputera.</li></ul>|
+| ActionAfterReboot| ciąg| Określa, co się stanie po ponownym uruchomieniu podczas stosowania konfiguracji. Możliwe wartości to __"ContinueConfiguration"__ i __"StopConfiguration"__. <ul><li> __ContinueConfiguration__: kontynuować stosowanie bieżącej konfiguracji po ponownym uruchomieniu komputera. Jest to wartość domyślna</li><li>__StopConfiguration__: Zatrzymaj bieżącą konfigurację po ponownym uruchomieniu komputera.</li></ul>|
 | AllowModuleOverwrite| wartość logiczna| __$TRUE__ czy nowe konfiguracje pobrane z usługi replikacji ściąganej mogą nadpisać stare w docelowym węźle. W przeciwnym razie $FALSE.|
 | CertificateID| ciąg| Odcisk palca certyfikatu używany do zabezpieczania poświadczeń przekazanych w konfiguracji. Aby uzyskać więcej informacji, zobacz [chcesz zabezpieczyć poświadczenia w konfiguracji żądanego stanu programu Windows PowerShell](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)?. <br> __Uwaga:__ to odbywa się automatycznie, jeśli przy użyciu usługi ściągania usługi Konfiguracja DSC automatyzacji Azure.|
 | ConfigurationDownloadManagers| [CimInstance]| Nieaktualne. Użyj __ConfigurationRepositoryWeb__ i __ConfigurationRepositoryShare__ punkty końcowe usługi bloków, aby zdefiniować ściągania konfiguracji.|
