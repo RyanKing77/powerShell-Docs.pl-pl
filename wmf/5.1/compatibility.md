@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
+keywords: wmf,powershell,setup
 title: "Zgodność programu WMF 5.1 systemu operacyjnego"
-ms.openlocfilehash: b8724538a03ab67529682b9efb29e3ab947339b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
+ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>Zgodność programu WMF 5.1 systemu operacyjnego #
 
@@ -33,4 +33,6 @@ ms.lasthandoff: 06/12/2017
 Temat "jest dostarczany w — pole *": funkcje WMF 5.0 zostały uwzględnione w oryginalnej wersji systemu Windows 10 RTM.
 Funkcje programu WMF 5.1 zostały uwzględnione w systemie Windows Server 2016 i Windows 10 Anniversary Edition. WMF 5.1 nie ma zastosowania do tych wersji systemu operacyjnego, jak te aktualizacje są dostarczane za pośrednictwem usługi Windows Update.
 
+
+Należy pamiętać, jest to, że WMF nie jest dostarczany w systemie Windows. WMF jest pakiet uaktualnienia, który udostępnia zestaw funkcji systemu Windows do wcześniejszych wersji systemu Windows. Możliwość istotną różnicą przy pomocy dla każdego z tych funkcji, jako wersja tych składników nie będzie odpowiadała co dostarczoną w oryginalnym systemie operacyjnym.
 
