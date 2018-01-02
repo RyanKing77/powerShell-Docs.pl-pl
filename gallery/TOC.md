@@ -39,6 +39,7 @@
 ### [Publikowanie](psget/module/psget_publish-module.md)
 ### [Moduły z elementami PSEdition](psget/module/modulewithpseditionsupport.md)
 ### [Moduły wymagające akceptacji licencji](psget/module/RequireLicenseAcceptance.md)
+### [Wersje wstępne](psget/module/PreReleaseModule.md)
 ### [Rozwiązywanie problemów](psget/psget_cmdlets_troubleshooting.md)
 
 ## Skrypt
@@ -54,7 +55,7 @@
 ### [Publikowanie](psget/script/psget_publish-script.md)
 ### [Skrypty z elementami PSEdition](psget/script/scriptwithpseditionsupport.md)
 ### [Wymaganie akceptacji licencji na potrzeby skryptów](psget/script/script_RequireLicenseAcceptance.md)
-
+### [Wersje wstępne](psget/script/PreReleaseScript.md)
 ## Zarządzanie repozytorium
 ### [Uruchamianie dostawcy NuGet i pliku NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [Rejestrowanie repozytorium](psget/repository/psget_register-psrepository.md)
