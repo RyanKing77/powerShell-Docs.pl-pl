@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: Co drugi przeskok w komunikacji zdalnej programu PowerShell
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Co drugi przeskok w komunikacji zdalnej programu PowerShell
 
@@ -256,12 +256,12 @@ Można przekazać poświadczenia wewnątrz **ScriptBlock** parametru wywołania 
 - Nie wymaga specjalnego serwera konfiguracji.
 - Działa na każdym serwerze z programem WMF 2.0 lub nowszej.
 
-## <a name="cons"></a>Wady
+### <a name="cons"></a>Wady
 
 - Wymaga technikę nieodpowiednich kodu.
 - Jeśli uruchomiona WMF 2.0, wymaga innej składni przekazywanie argumentów do sesji zdalnej.
 
-## <a name="example"></a>Przykład
+### <a name="example"></a>Przykład
 
 Poniższy przykład przedstawia sposób przekazywania poświadczeń w **Invoke-Command** bloku skryptu:
 
@@ -277,7 +277,7 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 
 ## <a name="see-also"></a>Zobacz też
 
-[Zagadnienia dotyczące zabezpieczeń usługi zdalne środowiska PowerShell](WinRMSecurity.md)
+[Zagadnienia dotyczące zabezpieczeń komunikacji zdalnej programu PowerShell](WinRMSecurity.md)
 
 
 
