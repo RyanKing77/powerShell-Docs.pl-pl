@@ -4,46 +4,56 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
 title: psgallery_items_tab
-ms.openlocfilehash: 8424c4729436a78fec3fdbb405591fcd3c6bc6a6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8704091542de5c19817ab0b4f77fd98987084b5d
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/21/2017
 ---
-<a name="items-tab"></a><span data-ttu-id="2a07a-103">Karta elementy</span><span class="sxs-lookup"><span data-stu-id="2a07a-103">Items Tab</span></span>
-==========
+# <a name="items-tab"></a><span data-ttu-id="dba7c-103">Karta elementy</span><span class="sxs-lookup"><span data-stu-id="dba7c-103">Items Tab</span></span>
 
-<span data-ttu-id="2a07a-104">Na karcie elementy wyświetlane są wszystkie dostępne elementy w galerii programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="2a07a-104">The Items Tab displays all available items in the PowerShell Gallery.</span></span>
+<span data-ttu-id="dba7c-104">[Karta elementy](https://www.powershellgallery.com/items) Wyświetla wszystkie dostępne elementy w galerii programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="dba7c-104">The [Items tab](https://www.powershellgallery.com/items) displays all available items in the PowerShell Gallery.</span></span>
 
-<span data-ttu-id="2a07a-105">Aby wyświetlić tylko moduły w galerii programu PowerShell, kliknij przycisk modułów na liście elementów kartę w dół.</span><span class="sxs-lookup"><span data-stu-id="2a07a-105">To see only Modules in the PowerShell Gallery, click Modules in the Items Tab drop down.</span></span>  <span data-ttu-id="2a07a-106">Podobnie Aby wyświetlić tylko skrypty w galerii programu PowerShell, kliknij przycisk skrypty w karcie elementów rozwijanych.</span><span class="sxs-lookup"><span data-stu-id="2a07a-106">Similarly, to see only Scripts in the PowerShell Gallery, click Scripts in the Items Tab drop down.</span></span>  
+<span data-ttu-id="dba7c-105">Istnieje kilka sposobów, aby filtrowanie, sortowanie i wyszukiwanie elementów.</span><span class="sxs-lookup"><span data-stu-id="dba7c-105">There are several ways to filter, sort, and search the items.</span></span>
+<span data-ttu-id="dba7c-106">Aby uzyskać szczegółowe informacje dotyczące określonego elementu, kliknij element.</span><span class="sxs-lookup"><span data-stu-id="dba7c-106">To see more details about a particular item, click the item.</span></span>
 
-<span data-ttu-id="2a07a-107">Aby uzyskać szczegółowe informacje dotyczące określonego elementu, kliknij element.</span><span class="sxs-lookup"><span data-stu-id="2a07a-107">To see more details about a particular item, click the item.</span></span>
+## <a name="filter-by"></a><span data-ttu-id="dba7c-107">Filtruj według</span><span class="sxs-lookup"><span data-stu-id="dba7c-107">Filter By</span></span>
 
-<span data-ttu-id="2a07a-108">Istnieje kilka sposobów, aby posortować elementy:</span><span class="sxs-lookup"><span data-stu-id="2a07a-108">There are several ways to sort the items:</span></span>
+<span data-ttu-id="dba7c-108">Na liście rozwijanej w obszarze "Filtruj wg" umożliwia użytkownikom filtrować wyniki według:</span><span class="sxs-lookup"><span data-stu-id="dba7c-108">The drop-down under "Filter By" allows users to filter the results by:</span></span>
+* <span data-ttu-id="dba7c-109">Uwzględnij wersję wstępną</span><span class="sxs-lookup"><span data-stu-id="dba7c-109">Include Prerelease</span></span>
+* <span data-ttu-id="dba7c-110">Tylko stabilne</span><span class="sxs-lookup"><span data-stu-id="dba7c-110">Stable Only</span></span>
 
-##<a name="filter-by"></a><span data-ttu-id="2a07a-109">Filtruj według ##</span><span class="sxs-lookup"><span data-stu-id="2a07a-109">Filter By##</span></span>
-<span data-ttu-id="2a07a-110">Sekcji filtr zezwala użytkownikom na filtrować wyniki według:</span><span class="sxs-lookup"><span data-stu-id="2a07a-110">The Filter By section allows users to filter the results by:</span></span>
-* <span data-ttu-id="2a07a-111">Typ elementu:</span><span class="sxs-lookup"><span data-stu-id="2a07a-111">Item Type:</span></span>
-    * <span data-ttu-id="2a07a-112">Moduły</span><span class="sxs-lookup"><span data-stu-id="2a07a-112">Modules</span></span>
-    * <span data-ttu-id="2a07a-113">Skrypty</span><span class="sxs-lookup"><span data-stu-id="2a07a-113">Scripts</span></span>
-* <span data-ttu-id="2a07a-114">Kategoria:</span><span class="sxs-lookup"><span data-stu-id="2a07a-114">Category:</span></span>
-    * <span data-ttu-id="2a07a-115">Polecenie cmdlet</span><span class="sxs-lookup"><span data-stu-id="2a07a-115">Cmdlet</span></span>
-    * <span data-ttu-id="2a07a-116">Zasób DSC</span><span class="sxs-lookup"><span data-stu-id="2a07a-116">DSC Resource</span></span>
-    * <span data-ttu-id="2a07a-117">Funkcja</span><span class="sxs-lookup"><span data-stu-id="2a07a-117">Function</span></span>
-    * <span data-ttu-id="2a07a-118">Przepływ pracy</span><span class="sxs-lookup"><span data-stu-id="2a07a-118">Workflow</span></span>
+<span data-ttu-id="dba7c-111">Uzyskać informacji o "Wydanie wstępne" i "Stabilna", zobacz [wstępnej wersji dodane PowerShellGet i galerii programu PowerShell](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) w blogu zespołu programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="dba7c-111">For information about "Prerelease" and "Stable", see [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) in the PowerShell Team Blog.</span></span>
 
-<span data-ttu-id="2a07a-119">Uwaga: Filtry są włącznie.</span><span class="sxs-lookup"><span data-stu-id="2a07a-119">Note: Filters are inclusive.</span></span>  
-<span data-ttu-id="2a07a-120">Przykład: Element zawierająca poleceń cmdlet i funkcje pojawi się zaznaczenie albo polecenia Cmdlet funkcji (i/lub).</span><span class="sxs-lookup"><span data-stu-id="2a07a-120">Example: An item containing both Cmdlets and Functions will appear if either Cmdlet or Function (or both) are checked.</span></span>  <span data-ttu-id="2a07a-121">Jeśli nie wybrano żadnego z tych celów, element nie pojawi się.</span><span class="sxs-lookup"><span data-stu-id="2a07a-121">If neither are selected, the item will not appear.</span></span>  
-<span data-ttu-id="2a07a-122">Podobnie w przypadku wszystkich kategorii będą wyświetlane tylko elementy zawierające jeden z tych kategorii.</span><span class="sxs-lookup"><span data-stu-id="2a07a-122">Similarly, if all categories are selected, only items containing one of those categories will appear.</span></span> <span data-ttu-id="2a07a-123">**Elementy, które nie należą do żadnej z tych kategorii nie będą wyświetlane.**</span><span class="sxs-lookup"><span data-stu-id="2a07a-123">**Items that do not belong to any of those categories will not appear.**</span></span>
+<span data-ttu-id="dba7c-112">W obszarze listy rozwijanej pola wyboru Zezwalaj użytkownikom na filtrować wyniki według:</span><span class="sxs-lookup"><span data-stu-id="dba7c-112">The checkboxes under the drop-down allow users to filter the results by:</span></span>
+* <span data-ttu-id="dba7c-113">Typy elementów</span><span class="sxs-lookup"><span data-stu-id="dba7c-113">Item Types</span></span>
+  - <span data-ttu-id="dba7c-114">Moduł</span><span class="sxs-lookup"><span data-stu-id="dba7c-114">Module</span></span>
+  - <span data-ttu-id="dba7c-115">Skrypt</span><span class="sxs-lookup"><span data-stu-id="dba7c-115">Script</span></span>
+* <span data-ttu-id="dba7c-116">Kategorie</span><span class="sxs-lookup"><span data-stu-id="dba7c-116">Categories</span></span>
+  - <span data-ttu-id="dba7c-117">Polecenie cmdlet</span><span class="sxs-lookup"><span data-stu-id="dba7c-117">Cmdlet</span></span>
+  - <span data-ttu-id="dba7c-118">Zasób DSC</span><span class="sxs-lookup"><span data-stu-id="dba7c-118">DSC Resource</span></span>
+  - <span data-ttu-id="dba7c-119">Funkcja</span><span class="sxs-lookup"><span data-stu-id="dba7c-119">Function</span></span>
+  - <span data-ttu-id="dba7c-120">Możliwość roli</span><span class="sxs-lookup"><span data-stu-id="dba7c-120">Role Capability</span></span>
+  - <span data-ttu-id="dba7c-121">Przepływ pracy</span><span class="sxs-lookup"><span data-stu-id="dba7c-121">Workflow</span></span>
 
-##<a name="sort-by"></a><span data-ttu-id="2a07a-124">Sortuj według ##</span><span class="sxs-lookup"><span data-stu-id="2a07a-124">Sort By##</span></span> 
-<span data-ttu-id="2a07a-125">Sortuj według rozwijanej umożliwia użytkownikom Sortuj wyniki według:</span><span class="sxs-lookup"><span data-stu-id="2a07a-125">The Sort By drop down allows users to sort the results by:</span></span>
-* <span data-ttu-id="2a07a-126">Popularne - popularne jest określana przez pobieranie liczby.</span><span class="sxs-lookup"><span data-stu-id="2a07a-126">Popularity - Popularity is determined by Download Count.</span></span>
-* <span data-ttu-id="2a07a-127">A-Z — alfabetycznie według nazwy elementu.</span><span class="sxs-lookup"><span data-stu-id="2a07a-127">A-Z - Alphabetically by item name.</span></span>
-* <span data-ttu-id="2a07a-128">Ostatnie — elementy są wyświetlane w kolejności daty opublikowania.</span><span class="sxs-lookup"><span data-stu-id="2a07a-128">Recent - Items appear in order of publish date.</span></span>
+<span data-ttu-id="dba7c-122">Aby wyświetlić tylko moduły w galerii programu PowerShell, Sprawdź moduł w typów elementów.</span><span class="sxs-lookup"><span data-stu-id="dba7c-122">To see only modules in the PowerShell Gallery, check Module in the Item Types.</span></span>
+<span data-ttu-id="dba7c-123">Podobnie Aby wyświetlić tylko skrypty w galerii programu PowerShell, należy sprawdzić skryptu w typów elementów.</span><span class="sxs-lookup"><span data-stu-id="dba7c-123">Similarly, to see only scripts in the PowerShell Gallery, check Script in the Item Types.</span></span>
 
+> [!NOTE]
+> <span data-ttu-id="dba7c-124">Filtry są włącznie.</span><span class="sxs-lookup"><span data-stu-id="dba7c-124">Filters are inclusive.</span></span>
+> <span data-ttu-id="dba7c-125">Przykład: Element zawierająca poleceń cmdlet i funkcje pojawi się zaznaczenie albo polecenia Cmdlet funkcji (i/lub).</span><span class="sxs-lookup"><span data-stu-id="dba7c-125">Example: An item containing both cmdlets and functions will appear if either Cmdlet or Function (or both) are checked.</span></span>
+> <span data-ttu-id="dba7c-126">Jeśli nie wybrano żadnego z tych celów, element nie pojawi się.</span><span class="sxs-lookup"><span data-stu-id="dba7c-126">If neither are selected, the item will not appear.</span></span>
+> <span data-ttu-id="dba7c-127">Podobnie w przypadku wszystkich kategorii będą wyświetlane tylko elementy zawierające jeden z tych kategorii.</span><span class="sxs-lookup"><span data-stu-id="dba7c-127">Similarly, if all categories are selected, only items containing one of those categories will appear.</span></span>
+> <span data-ttu-id="dba7c-128">**Elementy, które nie należą do żadnej z tych kategorii nie będą wyświetlane.**</span><span class="sxs-lookup"><span data-stu-id="dba7c-128">**Items that do not belong to any of those categories will not appear.**</span></span>
 
-##<a name="search-box"></a><span data-ttu-id="2a07a-129">Pole wyszukiwania ##</span><span class="sxs-lookup"><span data-stu-id="2a07a-129">Search Box##</span></span>
-<span data-ttu-id="2a07a-130">Pole wyszukiwania umożliwia użytkownikom wyszukiwanie elementy słów kluczowych.</span><span class="sxs-lookup"><span data-stu-id="2a07a-130">The Search Box allows users to search the items on keywords.</span></span>  
-<span data-ttu-id="2a07a-131">Zobacz [składni wyszukiwania](./psgallery_search_syntax.md) więcej szczegółów.</span><span class="sxs-lookup"><span data-stu-id="2a07a-131">See [Search Syntax](./psgallery_search_syntax.md) for more details.</span></span>
+## <a name="sort-by"></a><span data-ttu-id="dba7c-129">Sortuj według</span><span class="sxs-lookup"><span data-stu-id="dba7c-129">Sort By</span></span>
 
+<span data-ttu-id="dba7c-130">Sortuj według listy rozwijanej umożliwia użytkownikom Sortuj wyniki według:</span><span class="sxs-lookup"><span data-stu-id="dba7c-130">The Sort By drop-down allows users to sort the results by:</span></span>
+* <span data-ttu-id="dba7c-131">Popularne - popularne jest określany przez pobieranie liczby</span><span class="sxs-lookup"><span data-stu-id="dba7c-131">Popularity - Popularity is determined by Download Count</span></span>
+* <span data-ttu-id="dba7c-132">A-Z — alfabetycznie według nazw</span><span class="sxs-lookup"><span data-stu-id="dba7c-132">A-Z - Alphabetically by item name</span></span>
+* <span data-ttu-id="dba7c-133">Ostatnie — elementy są wyświetlane w kolejności daty opublikowania</span><span class="sxs-lookup"><span data-stu-id="dba7c-133">Recent - Items appear in order of publish date</span></span>
+
+## <a name="search-box"></a><span data-ttu-id="dba7c-134">Pole wyszukiwania</span><span class="sxs-lookup"><span data-stu-id="dba7c-134">Search Box</span></span>
+
+<span data-ttu-id="dba7c-135">Pole wyszukiwania umożliwia użytkownikom wyszukiwanie elementy słów kluczowych.</span><span class="sxs-lookup"><span data-stu-id="dba7c-135">The Search Box allows users to search the items on keywords.</span></span>
+<span data-ttu-id="dba7c-136">Aby uzyskać więcej informacji, zobacz [składni wyszukiwania galerii](psgallery_search_syntax.md).</span><span class="sxs-lookup"><span data-stu-id="dba7c-136">For more information, see [Gallery Search Syntax](psgallery_search_syntax.md).</span></span>
