@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Przy użyciu danych konfiguracji"
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Przy użyciu danych konfiguracji w konfiguracji DSC
 
@@ -153,7 +153,7 @@ Na przykład można utworzyć pliku o nazwie `MyData.psd1` z następującą zawa
 
 ## <a name="compiling-a-configuration-with-configuration-data"></a>Kompilowanie konfiguracji z danymi konfiguracji
 
-Aby skompilować konfiguracji, dla którego zdefiniowano dane konfiguracji, dane są przekazywane cofiguration jako wartość **ConfigurationData** parametru.
+Aby skompilować konfiguracji, dla którego zdefiniowano dane konfiguracji, przekazać dane konfiguracji jako wartość **ConfigurationData** parametru.
 
 Spowoduje to utworzenie pliku MOF dla każdej pozycji w **AllNodes** tablicy.
 Każdy plik MOF będą miały nazwę nadaną przez `NodeName` właściwości odpowiadający mu wpis w tablicy.
@@ -187,7 +187,7 @@ DSC udostępnia trzy zmienne specjalne, których można użyć w skrypcie konfig
 ## <a name="using-non-node-data"></a>Przy użyciu danych z systemem innym niż węzeł
 
 Jak przedstawiono w poprzednich przykładach, możemy **ConfigurationData** hashtable może mieć co najmniej jeden klucz oprócz wymaganych **AllNodes** klucza.
-W przykładach w niniejszym temacie, firma Microsoft ma używać tylko jednego addiontal węzeł o nazwie go `NonNodeData`. Można jednak określić dowolną liczbę kluczy addiontal i nazwy dowolnych znaków.
+W przykładach w niniejszym temacie, firma Microsoft ma używany tylko jeden dodatkowy węzeł o nazwie go `NonNodeData`. Można jednak określić dowolną liczbę dodatkowych kluczy i nazwy dowolnych znaków.
 
 Na przykład przy użyciu danych z systemem innym niż węzeł, zobacz [oddzielanie danych konfiguracji i środowiska](separatingEnvData.md).
 

@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Żądany przegląd stanu konfiguracji dla inne osoby podejmujące decyzje"
-ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 1800acfa9edae4f65e34db380ff719ad4c034921
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Żądany przegląd stanu konfiguracji dla inne osoby podejmujące decyzje
 
@@ -34,7 +34,7 @@ Konfiguracje są również współużytkowane przez [galerii programu PowerShell
 
 ## <a name="desired-state-configuration-and-devops"></a>Konfiguracji żądanego stanu i opracowywania oprogramowania
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) jest kombinacją osób, technologii i kultura, która umożliwia szybkie wdrażanie i iteracji. DSC została zaprojektowana z DevOps pamiętać. O pojedynczą konfiguracją zdefiniuj środowisku oznacza, że deweloperzy mogą kodowanie ich wymagań na konfigurację, sprawdź tej konfiguracji do kontroli źródła i zespołów operacyjnych z łatwością wdrożyć kodu bez konieczności przechodzenia przez podatne na błędy procesów ręcznych. 
+[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) jest kombinacją osoby, procesów i narzędzi, które umożliwiają szybkie wdrażanie i iteracji koncentruje się na dostarczaniu wartość użytkownikom końcowym czy wewnętrzne lub zewnętrzne. DSC została zaprojektowana z DevOps pamiętać. O pojedynczą konfiguracją zdefiniuj środowisku oznacza, że deweloperzy mogą kodowanie ich wymagań na konfigurację, sprawdź tej konfiguracji do kontroli źródła i zespołów operacyjnych z łatwością wdrożyć kodu bez konieczności przechodzenia przez podatne na błędy procesów ręcznych. 
 
 Konfiguracje są również [opartych na danych](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), które ułatwia tworzenie zespołów ops do identyfikowania i zmienić środowiskach bez interwencji developer. 
 
