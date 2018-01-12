@@ -35,13 +35,14 @@ Install-PowerShellRemoting.ps1
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>Wykonywane przez inne wystąpienie programu PowerShell w imieniu wystąpienie, które zarejestruje
 
 ``` powershell
-<path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>" -PowerShellVersion "<the powershell version tag>"
+<path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 Na przykład:
 
 ``` powershell
-C:\Program Files\PowerShell\6.0.0.9\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0.9\" -PowerShellVersion "6.0.0-alpha.9"
+Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
+.\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
 **Uwaga:** skryptu rejestracji komunikacji zdalnej uruchomi WinRM, więc wszystkie istniejące sesje PSRP zostanie zakończona natychmiast po uruchomieniu skryptu. Jeśli uruchomiony podczas sesji zdalnej, to spowoduje przerwanie połączenia.
@@ -51,8 +52,8 @@ C:\Program Files\PowerShell\6.0.0.9\Install-PowerShellRemoting.ps1 -PowerShellHo
 Utwórz sesję programu PowerShell do nowego punktu końcowego programu PowerShell, określając `-ConfigurationName "some endpoint name"`. Aby połączyć się z wystąpieniem programu PowerShell w powyższym przykładzie, użyj jednej:
 
 ``` powershell
-New-PSSession ... -ConfigurationName "powershell.6.0.0-alpha.9"
-Enter-PSSession ... -ConfigurationName "powershell.6.0.0-alpha.9"
+New-PSSession ... -ConfigurationName "powershell.6.0.0"
+Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
 Należy pamiętać, że `New-PSSession` i `Enter-PSSession` wywołań, które nie określają `-ConfigurationName` będzie obowiązywać domyślny punkt końcowy programu PowerShell, `microsoft.powershell`.

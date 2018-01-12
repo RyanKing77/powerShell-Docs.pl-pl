@@ -224,7 +224,7 @@ Aby uzyskać więcej informacji o zadaniach programu PowerShell, zobacz [about_J
   - `PSEdition`: Ta wartość jest równa `Core` Core środowiska PowerShell i `Desktop` na programie Windows PowerShell
   - `GitCommitId`: To jest identyfikator zatwierdzania Git gałęzi Git lub tagu, w którym został utworzony programu PowerShell.
     W wydanej kompilacji, prawdopodobnie będzie taka sama jak `PSVersion`.
-  - `OS`: To jest zwrócony przez ciąg wersji systemu operacyjnego`[System.Environment]::OSVersion.VersionString`
+  - `OS`: To jest zwrócony przez ciąg wersji systemu operacyjnego`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Ten błąd jest zwracany przez `[System.Environment]::OSVersion.Platform` ma ustawioną wartość `Win32NT` w systemie Windows, `MacOSX` na macOS, i `Unix` w systemie Linux.
 - Usunięte `BuildVersion` właściwość z `$PSVersionTable`.
   Ta właściwość została silnie powiązany numer kompilacji systemu Windows.
