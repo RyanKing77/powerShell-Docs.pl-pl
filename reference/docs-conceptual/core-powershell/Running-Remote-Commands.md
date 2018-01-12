@@ -3,25 +3,37 @@ ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: "Uruchamianie poleceń zdalnych"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
-ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
+ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="running-remote-commands"></a>Uruchamianie poleceń zdalnych
+
 Polecenia można wykonać na co najmniej setek komputerów za pomocą jednego polecenia programu Windows PowerShell. Program Windows PowerShell obsługuje przetwarzania zdalnego przy użyciu różnych technologii, w tym usługi WMI, RPC i WS-Management.
+
+## <a name="remoting-in-powershell-core"></a>Usługi zdalne środowiska PowerShell główną
+
+Jądro programu PowerShell, nowszej wersji programu PowerShell w systemach Windows, system macOS i Linux, obsługuje usługi WMI, WS-Management i usług zdalnych SSH.
+(RPC nie jest już obsługiwany.)
+
+Aby uzyskać więcej informacji na temat konfigurowania to zobacz:
+
+* [SSH komunikację zdalną środowiska PowerShell główną] [ssh-Komunikacja zdalna]
+* [WinRM komunikacji zdalnej programu PowerShell główną] [Komunikacja zdalna usługa winrm]
 
 ## <a name="remoting-without-configuration"></a>Komunikację zdalną bez konfiguracji
 Wiele poleceń cmdlet programu Windows PowerShell ma parametr ComputerName, który umożliwia zbieranie danych i zmienić ustawienia, na co najmniej jeden komputer zdalny. We wszystkich systemach operacyjnych Windows, które środowiska Windows PowerShell obsługuje bez żadnej specjalnej konfiguracji korzystają z różnych technologii komunikacji i wiele pracy.
 
 Te polecenia cmdlet obejmują:
+
 * [Uruchom ponownie komputer](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Połączenie testowe](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Wyczyść EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-dziennika zdarzeń](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get poprawki](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
 * [Ustawianie usługi](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
@@ -135,3 +147,6 @@ Aby uzyskać pomoc dotyczącą usług zdalnych błędy, zobacz [about_Remote_Tro
 - [Nowe PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Dostawca o WSMan](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
