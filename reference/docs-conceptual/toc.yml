@@ -72,8 +72,17 @@
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
         - name: Przewodnik dotyczący środowiska ISE
           href: core-powershell/ise-guide.md
+        - name: Visual Studio Code
+          items:
+            - name: Korzystanie z narzędzia Visual Studio Code
+              href: core-powershell/vscode/using-vscode.md
         - name: Uruchamianie poleceń zdalnych
           href: core-powershell/running-remote-commands.md
+          items:
+            - name: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
+              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
+            - name: Obsługa zdalna usługi WS-Management (WSMan) w programie PowerShell Core
+              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
         - name: Dostęp w sieci Web
           href: core-powershell/web-access.md
           items:
@@ -186,7 +195,7 @@
               href: getting-started/fundamental/using-familiar-command-names.md
             - name: Używanie zmiennych na potrzeby przechowywania obiektów
               href: getting-started/fundamental/using-variables-to-store-objects.md
-            - name: Używanie programu Windows PowerShell
+            - name: Za pomocą środowiska Windows PowerShell
               href: getting-started/fundamental/using-windows-powershell.md
             - name: Używanie programu Windows PowerShell na potrzeby administracji
               href: getting-started/fundamental/using-windows-powershell-for-administration.md
@@ -204,9 +213,13 @@
           href: getting-started/more-powershell-learning.md
         - name: Opis pojęć — dokumentacja
           href: getting-started/understanding-concepts-reference.md
-    - name: Instalacja
+    - name: Instalator
       href: ''
       items:
+        - name: Instalowanie programu PowerShell Core w systemie Windows
+          href: setup/Installing-PowerShell-Core-on-Windows.md
+        - name: Instalowanie programu PowerShell Core w systemach macOS i Linux
+          href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
         - name: Ułatwienia dostępu w środowisku Windows PowerShell ISE
           href: setup/accessibility-in-windows-powershell-ise.md
         - name: Instalowanie aparatu programu Windows PowerShell 2.0
@@ -234,11 +247,15 @@
     - name: Co nowego
       href: ''
       items:
-        - name: Co nowego w środowisku PowerShell 5.0 ISE
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-        - name: Co nowego w programie Windows PowerShell 5.0
-          href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: Co nowego w programie PowerShell
           href: whats-new/what-s-new-with-powershell.md
+        - name: Co nowego w programie Windows PowerShell 5.0
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Co nowego w środowisku PowerShell 5.0 ISE
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: Co nowego w programie PowerShell Core 6.0
+          href: whats-new/what-s-new-in-powershell-core-60.md
+    - name: Cykl życia pomocy technicznej programu PowerShell Core
+      href: PowerShell-Core-Support.md
     - name: Słownik
       href: windows-powershell-glossary.md
