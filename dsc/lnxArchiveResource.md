@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "DSC dla systemu Linux nxArchive zasobów"
-ms.openlocfilehash: da647432e14d2a4a3ceb2a36c7dee2dbfd350116
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e91ef5bcf4bdf413844c23d1d3bd823a535b536f
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC dla systemu Linux nxArchive zasobów
 
@@ -32,7 +31,7 @@ nxArchive <string> #ResourceName
 
 |  Właściwość |  Opis | 
 |---|---|
-| Ścieżka_źródłowa| Określa ścieżkę źródłową pliku archiwum. To pole powinno być tar zip, lub. plik tar.gz. | 
+| SourcePath| Określa ścieżkę źródłową pliku archiwum. To pole powinno być tar zip, lub. plik tar.gz. | 
 | Ścieżka_docelowa| Określa lokalizację, w której chcesz upewnij się, że są wyodrębniane zawartość archiwum.| 
 | Suma kontrolna| Definiuje typ używany do określenia, czy archiwum źródła został zaktualizowany. Wartości to: "ctime —", "mtime" lub "md5". Wartość domyślna to "md5".| 
 | Force| Niektóre operacje na plikach (takie jak zastąpienie pliku lub usuwanie katalogu, który nie jest pusty) spowoduje błąd. Przy użyciu **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.| 

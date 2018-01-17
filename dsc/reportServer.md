@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Za pomocą serwera raportów konfiguracji DSC"
-ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 31b0df7d9baf30d93154d6a28b21f32fc052bc06
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-a-dsc-report-server"></a>Za pomocą serwera raportów konfiguracji DSC
 
@@ -222,5 +221,5 @@ Należy pamiętać, że te przykłady są przeznaczone do zapewniają informacje
 ## <a name="see-also"></a>Zobacz też
 - [Konfigurowanie lokalny program Configuration Manager](metaConfig.md)
 - [Konfigurowanie serwera ściągania usługi Konfiguracja DSC sieci web](pullServer.md)
-- [Konfigurowanie klienta ściągania przy użyciu nazwy konfiguracji](pullClientConfigNames.md)
+- [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](pullClientConfigNames.md)
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: "Środowisko Windows PowerShell Integrated skryptów środowiska ISE"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6bddb953a7f17e220f92d357eb59dfedc5496272
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 Windows PowerShell Integrated Scripting Environment (ISE) jest jednym z dwóch hostów dla aparatu programu Windows PowerShell i języka. Z tym można zapisać, uruchamiania i przetestować skrypty w sposób, w którym nie są dostępne w konsoli programu Windows PowerShell. ISE dodaje kolorowanie składni, uzupełniania po naciśnięciu tabulatora, IntelliSense, debugowania visual i Pomoc kontekstowa.
@@ -63,5 +63,5 @@ Warto zauważyć, że wszystkie wpisy etykietę "Podgląd" to wersja wstępna ko
 > Windows PowerShell ISE wymaga graficznego interfejsu użytkownika, dlatego nie można uruchomić go w opcji Server Core systemu Windows Server.
 
 ## <a name="see-also"></a>Zobacz też
-- [Przy użyciu systemu Windows PowerShell zintegrowane środowisko obsługi skryptów](Using-the-Windows-PowerShell-ISE.md)
+- [Przy użyciu systemu Windows PowerShell zintegrowane środowisko obsługi skryptów](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

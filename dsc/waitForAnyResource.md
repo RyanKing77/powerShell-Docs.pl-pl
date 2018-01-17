@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób WaitForAny DSC"
-ms.openlocfilehash: ba1873cc0ecfc4596cbad5b61b4a52b61ea4778a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 795c005c67c196ef9afb08af790fe2a1695392ec
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-waitforany-resource"></a>Zasób WaitForAny DSC
 
@@ -37,10 +36,10 @@ WaitForAny [string] #ResourceName
 
 |  Właściwość  |  Opis   | 
 |---|---| 
-| resourceName| Nazwa zasobu zależne.| 
+| ResourceName| Nazwa zasobu zależne.| 
 | nodeName| Węzły docelowe są zależne od zasobu.| 
 | RetryIntervalSec| Liczba sekund przed ponowną próbą. Minimalną jest 1.| 
-| retryCount| Maksymalna liczba ponownych prób.| 
+| RetryCount| Maksymalna liczba ponownych prób.| 
 | ThrottleLimit| Liczba maszyn nawiązać jednocześnie. Domyślna to nowy cimsession domyślne.| 
 | dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 

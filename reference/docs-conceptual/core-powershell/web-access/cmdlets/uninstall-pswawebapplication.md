@@ -1,26 +1,24 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 2016-12-12
 title: Odinstaluj pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: 5fe608b3bfbb90f842f16c1f5a8c51879589cf6d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="uninstall-pswawebapplication"></a>Odinstaluj PswaWebApplication
+# <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
-## <a name="synopsis"></a>STRESZCZENIE
+## <a name="synopsis"></a>SYNOPSIS
 
 Odinstalowuje Windows PowerShell® aplikacji sieci web.
 
-## <a name="syntax"></a>SKŁADNIA
+## <a name="syntax"></a>SYNTAX
 
 ### <a name="default"></a>Wartość domyślna
 ```
@@ -43,7 +41,7 @@ Tylko certyfikatu testowego z taką samą nazwę jak utworzony przez **Install-P
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
 | Pozycja?                            | o nazwie                                |
-| Wartość domyślna                        | Wartość true                                 |
+| Wartość domyślna                        | true                                 |
 | Akceptowanie danych wejściowych potoku?               | false                                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
@@ -142,8 +140,8 @@ Uninstall-PswaWebApplication -WebApplicationName TestApplication -WebsiteName My
 
 ## <a name="related-topics"></a>Tematy pokrewne
 
-- [Polecenia Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
 - [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
-- [Polecenia cmdlet Install-PswaWebApplication](install-pswawebapplication.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
 - [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
 - [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

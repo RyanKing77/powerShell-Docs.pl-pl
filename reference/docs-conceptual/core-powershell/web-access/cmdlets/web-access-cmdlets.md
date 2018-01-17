@@ -1,24 +1,22 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 2016-12-12
 title: "polecenia cmdlet dostępu do sieci Web"
 ms.technology: powershell
-ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Polecenia cmdlet programu Windows PowerShell Web Access
 
 Ten zawiera opisy polecenia cmdlet i składnia dla wszystkich poleceń cmdlet specyficznych dostępu do sieci Web programu Windows PowerShell®. Wyświetla listę poleceń cmdlet w kolejności alfabetycznej na podstawie zleceń na początku polecenia cmdlet.
 
-## <a name="add-pswaauthorizationruleadd-pswaauthorizationrulemd"></a>[Polecenia Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+## <a name="add-pswaauthorizationruleadd-pswaauthorizationrulemd"></a>[Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
 
 Dodaje nową regułę autoryzacji do zestawu reguł autoryzacji programu Windows PowerShell® Web Access.
 
@@ -26,7 +24,7 @@ Dodaje nową regułę autoryzacji do zestawu reguł autoryzacji programu Windows
 
 Zwraca zestaw reguł autoryzacji programu Windows PowerShell Web Access.
 
-## <a name="install-pswawebapplicationinstall-pswawebapplicationmd"></a>[Polecenia cmdlet Install-PswaWebApplication](install-pswawebapplication.md)
+## <a name="install-pswawebapplicationinstall-pswawebapplicationmd"></a>[Install-PswaWebApplication](install-pswawebapplication.md)
 
 Konfiguruje aplikację sieci web programu Windows PowerShell Web Access w usługach IIS.
 
@@ -38,7 +36,7 @@ Usuwa wskazaną regułę autoryzacji z programu Windows PowerShell Web Access.
 
 Sprawdza reguły autoryzacji, aby sprawdzić, czy określonego użytkownika, komputer, żądania dostępu do punktu końcowego jest autoryzowany.
 
-## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Odinstaluj PswaWebApplication](uninstall-pswawebapplication.md)
+## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Uninstall-PswaWebApplication](uninstall-pswawebapplication.md)
 
 Odinstalowuje aplikację sieci web programu Windows PowerShell za pomocą programu IIS.
 

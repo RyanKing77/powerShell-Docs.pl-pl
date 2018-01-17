@@ -1,23 +1,21 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 2016-12-12
 title: Dodaj pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 18422f71b2a5f9af07af94e4324d3c7774f1d5ea
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
-## <a name="synopsis"></a>STRESZCZENIE
+## <a name="synopsis"></a>SYNOPSIS
 
 Dodaje nową regułę autoryzacji do zestawu reguł autoryzacji programu Windows PowerShell® Web Access.
 
@@ -60,27 +58,27 @@ Reguły autoryzacji ocenić głównej poświadczenia logowania użytkowników pr
 
 ## <a name="parameters"></a>Parametry
 
-### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;ciągu&gt;
+### <a name="-computergroupnameltstringgt"></a>-ComputerGroupName&lt;String&gt;
 
 Określa nazwę grupy komputerów usług domenowych w usłudze Active Directory (AD DS) lub grupy lokalne, na które ta reguła zezwala na dostęp.
 
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | o nazwie                                |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByPropertyName)                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-computernameltstringgt"></a>-ComputerName&lt;ciągu&gt;
+### <a name="-computernameltstringgt"></a>-ComputerName&lt;String&gt;
 
 Określa nazwę komputera, do którego ta reguła zezwala na dostęp.
 
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | o nazwie                                |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByPropertyName)                |
@@ -93,7 +91,7 @@ Określa nazwę konfiguracji sesji programu Windows PowerShell, nazywane równie
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | o nazwie                                |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByPropertyName)                |
@@ -126,7 +124,7 @@ Ponadto on również monituje o potwierdzenie po wprowadzeniu nazwy prostej lub 
 | Akceptowanie danych wejściowych potoku?               | false                                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;ciągu&gt;
+### <a name="-rulenameltstringgt"></a>-RuleName&lt;String&gt;
 
 Określa przyjazną nazwę dla tej reguły.
 
@@ -139,20 +137,20 @@ Określa przyjazną nazwę dla tej reguły.
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByPropertyName)                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;ciągu\[\]&gt;
+### <a name="-usergroupnameltstringgt"></a>-UserGroupName&lt;String\[\]&gt;
 
 Określa nazwę jednego lub więcej grup użytkowników w usługach AD DS i grupy lokalne, na które ta reguła zezwala na dostęp.
 
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | o nazwie                                |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByPropertyName)                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-usernameltstringgt"></a>-UserName&lt;ciągu\[\]&gt;
+### <a name="-usernameltstringgt"></a>-UserName&lt;String\[\]&gt;
 
 Określa co najmniej jednego użytkownika, do których ta reguła zezwala na dostęp. Nazwa użytkownika może być kontem użytkownika lokalnego na komputerze z bramą lub użytkownika w usługach AD DS.
 Format jest `domain\user` lub `computer\user`.
@@ -160,7 +158,7 @@ Format jest `domain\user` lub `computer\user`.
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | 1                                    |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByValue, ByPropertyName)       |
@@ -252,7 +250,7 @@ Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
 - [Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
 - [Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
 - [Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
-- [Polecenia cmdlet Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
+- [Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
 - [Dodawanie elementu członkowskiego](http://go.microsoft.com/fwlink/p/?LinkId=113280)
-- [Nowy obiekt](http://go.microsoft.com/fwlink/p/?LinkId=113355)
+- [New-Object](http://go.microsoft.com/fwlink/p/?LinkId=113355)
 - [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936)

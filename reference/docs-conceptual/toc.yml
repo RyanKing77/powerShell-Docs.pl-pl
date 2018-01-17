@@ -11,8 +11,6 @@
               href: core-powershell/console/powershell.exe-command-line-help.md
             - name: Używanie rozszerzenia karty
               href: core-powershell/console/using-tab-expansion.md
-        - name: Przewodnik dotyczący konsoli
-          href: core-powershell/console-guide.md
         - name: Środowisko ISE
           href: core-powershell/ise/introducing-the-windows-powershell-ise.md
           items:
@@ -70,8 +68,6 @@
               href: core-powershell/ise/using-the-windows-powershell-ise.md
             - name: Dokumentacja dotycząca modelu obiektów środowiska Windows PowerShell ISE
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
-        - name: Przewodnik dotyczący środowiska ISE
-          href: core-powershell/ise-guide.md
         - name: Visual Studio Code
           items:
             - name: Korzystanie z narzędzia Visual Studio Code
@@ -211,8 +207,6 @@
           href: getting-started/getting-started-with-windows-powershell.md
         - name: Dalsze zasoby szkoleniowe dotyczące programu PowerShell
           href: getting-started/more-powershell-learning.md
-        - name: Opis pojęć — dokumentacja
-          href: getting-started/understanding-concepts-reference.md
     - name: Instalator
       href: ''
       items:

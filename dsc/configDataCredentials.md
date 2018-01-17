@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Opcje poświadczeń w danych konfiguracji"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opcje poświadczeń w danych konfiguracji
 >Dotyczy: Środowiska Windows PowerShell 5.0
@@ -21,7 +20,10 @@ Aby pominąć tych błędów i ostrzeżeń, użyj słowa kluczowe dane konfigura
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Uwagi:** <p>Przechowywanie/przesyła niezaszyfrowane hasła w postaci zwykłego tekstu zwykle nie jest bezpieczne. Zaleca się zabezpieczenie poświadczeń przy użyciu techniki omówione w dalszej części tego tematu.</p> <p>Usługi Konfiguracja DSC automatyzacji Azure umożliwia centralne zarządzanie poświadczenia, aby być skompilowany w konfiguracji i bezpiecznie przechowywane.  Aby uzyskać informacje, zobacz: [kompilowania konfiguracji DSC / zasoby poświadczeń](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> Przechowywanie/przesyła niezaszyfrowane hasła w postaci zwykłego tekstu zwykle nie jest bezpieczne. Zaleca się zabezpieczenie poświadczeń przy użyciu techniki omówione w dalszej części tego tematu.
+> Usługi Konfiguracja DSC automatyzacji Azure umożliwia centralne zarządzanie poświadczenia, aby być skompilowany w konfiguracji i bezpiecznie przechowywane.
+> Aby uzyskać informacje, zobacz: [kompilowania konfiguracji DSC / zasoby poświadczeń](/azure/automation/automation-dsc-compile#credential-assets)
 
 Poniżej przedstawiono przykład przekazywania poświadczeń w postaci zwykłego tekstu:
 
@@ -133,7 +135,8 @@ Automatyczne dodany WMF 5.0 `PsDscRunAsCredential` właściwości dla wszystkich
 Aby uzyskać informacje o korzystaniu z `PsDscRunAsCredential`, zobacz [DSC uruchomiony przy użyciu poświadczeń użytkownika](runAsUser.md).
 Nowsze zasobów i zasobów niestandardowych można użyć tej właściwości automatyczne zamiast tworzenia własnych właściwości dla poświadczenia.
 
->**Uwaga:** projektu niektórych zasobów są używają wielu poświadczeń z określonego powodu i mają własne właściwości poświadczeń.
+> [!NOTE]
+> Projekt niektórych zasobów są używają wielu poświadczeń z określonego powodu i mają one właściwości własne poświadczenia.
 
 Aby odnaleźć dostępne poświadczeń właściwości w zasobie użyj jednej `Get-DscResource -Name ResourceName -Syntax` i technologii Intellisense w ISE (`CTRL+SPACE`).
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 W tym przykładzie występują dwa problemy:
-1.  Wystąpił błąd wyjaśniono, że haseł w postaci zwykłego tekstu nie są zalecane
-2.  Ostrzeżenia z informacją o tym przed przy użyciu poświadczeń domeny
+1. Wystąpił błąd wyjaśniono, że haseł w postaci zwykłego tekstu nie są zalecane
+2. Ostrzeżenia z informacją o tym przed przy użyciu poświadczeń domeny
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,12 +269,14 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Uwaga:** `NodeName` nie może być równa gwiazdka nazwę określonego węzła jest wymagana.
+> [!NOTE]
+> `NodeName`nie może być równa gwiazdka nazwę określonego węzła jest wymagana.
 
 **Microsoft informacją o tym, aby uniknąć hasła w formacie tekstowym z powodu znaczące zagrożenie bezpieczeństwa.**
+
 Wystąpił wyjątek może być podczas korzystania z usługi Konfiguracja DSC automatyzacji Azure tylko dane zawsze jest przechowywany jako zaszyfrowany (podczas przesyłania, przechowywane w usłudze i magazynowane w węźle).
 
-## <a name="domain-credentials"></a>Poświadczenia domeny
+## <a name="domain-credentials"></a>Domain Credentials
 
 Nadal uruchomiona ponownie skryptu konfiguracji przykład (z lub bez szyfrowania), generuje ostrzeżenie, że, przy użyciu domeny konto dla poświadczeń nie jest zalecane.
 Za pomocą konta lokalnego eliminuje ryzyko poświadczeń domeny, które mogłyby zostać użyte na innych serwerach.

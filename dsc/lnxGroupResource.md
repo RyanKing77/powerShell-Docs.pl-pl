@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "DSC dla systemu Linux nxGroup zasobów"
-ms.openlocfilehash: fcd1dfd3110b1358ed7ef9ca8d57154186b271f6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: bc01f6ae5ed61aff63958fe55f30d82f9b81b2b9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC dla systemu Linux nxGroup zasobów
 
@@ -33,7 +32,7 @@ nxGroup <string> #ResourceName
 
 |  Właściwość |  Opis | 
 |---|---|
-| Nazwa grupy| Określa nazwę grupy, dla którego chcesz zapewnić z określonym stanem.| 
+| GroupName| Określa nazwę grupy, dla którego chcesz zapewnić z określonym stanem.| 
 | Upewnij się| Określa, czy należy sprawdzić, czy dana grupa istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że grupa istnieje. Ustaw ją na "Brak", aby upewnić się, że grupa nie istnieje. Wartość domyślna to "Brak".| 
 | Elementy członkowskie| Określa elementy członkowskie, które tworzą grupę.| 
 | MembersToInclude| Określa, że użytkownicy, którzy chcą zapewnić są elementami członkowskimi grupy.| 

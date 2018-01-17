@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: Klasa MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 35f732698fcc58f7bd43945edd10c143ffb79af9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b2d2ce000988f2c10ab04c4ba5a4650bd3c75ec7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>Klasa MSFT_DSCLocalConfigurationManager
 
@@ -39,7 +38,7 @@ class MSFT_DSCLocalConfigurationManager
 
 |Metoda |Opis |
 |:--- |:---|
-| [Metoda ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Używa agenta konfiguracji umożliwiają zastosowanie konfiguracji, który jest w stanie oczekiwania.| 
+| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Używa agenta konfiguracji umożliwiają zastosowanie konfiguracji, który jest w stanie oczekiwania.| 
 | [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Wyłącza debugowanie zasobów usługi Konfiguracja DSC.| 
 | [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Włącza debugowanie zasobów usługi Konfiguracja DSC.| 
 | [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Wysyła dokument konfiguracji do węzła zarządzanego i używa **uzyskać** metody Agent konfiguracji, aby zastosować konfigurację.| 
@@ -49,9 +48,9 @@ class MSFT_DSCLocalConfigurationManager
 | [PerformRequiredConfigurationChecks](msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)| Uruchamia kontrolę spójności.| 
 | [RemoveConfiguration](msft-dsclocalconfigurationmanager-removeconfiguration.md)| Usuwa pliki konfiguracji.| 
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Bezpośrednio wywołuje **uzyskać** metody zasobu usługi Konfiguracja DSC.| 
-| [Elementu ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Bezpośrednio wywołuje **ustawić** metody zasobu usługi Konfiguracja DSC.| 
+| [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Bezpośrednio wywołuje **ustawić** metody zasobu usługi Konfiguracja DSC.| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Bezpośrednio wywołuje **testu** metody zasobu usługi Konfiguracja DSC.| 
-| [Wycofywanie](msft-dsclocalconfigurationmanager-rollback.md)| Przedstawia powrót do poprzedniej konfiguracji.| 
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Przedstawia powrót do poprzedniej konfiguracji.| 
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Wysyła dokument konfiguracji do węzła zarządzanego i zapisuje go jako oczekujące zmiany.| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Wysyła dokument konfiguracji do węzła zarządzanego i używa konfiguracji agenta, aby zastosować konfigurację.| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Wysłany do węzła zarządzanego konfiguracji i uruchomić przy użyciu agenta konfiguracji, aby zastosować konfigurację. Użyj GetConfigurationResultOutput, aby pobrać dane wyjściowe wynik.| 

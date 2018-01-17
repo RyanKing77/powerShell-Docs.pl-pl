@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Rozpoczynanie pracy z konfiguracji żądanego stanu (DSC) dla systemu Linux"
-ms.openlocfilehash: fd4820d27de5958a325032ca3fc202a521c131b4
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Rozpoczynanie pracy z konfiguracji żądanego stanu (DSC) dla systemu Linux
 
@@ -28,8 +27,8 @@ W poniższej tabeli opisano zależności wymagany pakiet dla konfiguracji DSC dl
 
 |  Wymagany pakiet |  Opis |  Minimalna wersja | 
 |---|---|---|
-| Glibc| Biblioteka GNU| 2…4 – 31.30| 
-| Python| Python| 2.4 – 3.4| 
+| glibc| Biblioteka GNU| 2…4 – 31.30| 
+| python| Python| 2.4 – 3.4| 
 | omiserver| Infrastruktura zarządzania otwartego| 1.0.8.1| 
 | Biblioteki Openssl| Biblioteki OpenSSL| 0.9.8 lub 1.0| 
 | ctypes| Biblioteka języka Python CTypes| Musi odpowiadać wersji języka Python| 
@@ -182,5 +181,5 @@ Następujące pliki dziennika są generowane dla DSC komunikatów systemu Linux.
 |Plik dziennika|Katalog|Opis|
 |---|---|---|
 |omiserver.log|/var/OPT/OMI/log|Komunikaty dotyczące operacji serwera modelu wspólnych informacji OMI.|
-|DSC.log|/var/OPT/OMI/log|Komunikaty dotyczące operacji operacji zasobu lokalnego Configuration Manager (LCM) i usługi Konfiguracja DSC.|
+|dsc.log|/var/OPT/OMI/log|Komunikaty dotyczące operacji operacji zasobu lokalnego Configuration Manager (LCM) i usługi Konfiguracja DSC.|
 

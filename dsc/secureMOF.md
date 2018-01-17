@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-31
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: Zabezpieczanie pliku MOF
-ms.openlocfilehash: ed9d259e2cd963560ad6f5b60702c54e2fa36900
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="securing-the-mof-file"></a>Zabezpieczanie pliku MOF
 
@@ -81,7 +80,7 @@ Poniższy przykład:
  3. Importuje certyfikatu klucza publicznego do **Moje** magazynu certyfikatów na **Tworzenie węzła**.
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>W docelowym węźle: tworzenie i eksportowanie certyfikatu
->Tworzenia węzła: Windows Server 2016 i Windows 10
+>Węzeł docelowy: Windows Server 2016 i Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -91,7 +90,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 Wyeksportowane raz, ```DscPublicKey.cer``` potrzebny do skopiowania na **tworzenia węzła**.
 
->Węzeł autorstwa: Windows Server 2012 R2/Windows 8.1 i starszych wersji
+>Węzeł docelowy: Windows Server 2012 R2/Windows 8.1 i starszych wersji
 
 Ponieważ nie obsługują polecenia cmdlet New-SelfSignedCertificate w systemach operacyjnych Windows starszych niż Windows 10 i Windows Server 2016 **typu** parametr, to alternatywna metoda tworzenia ten certyfikat jest wymagany na te systemy operacyjne.
 W takim przypadku można użyć ```makecert.exe``` lub ```certutil.exe``` można utworzyć certyfikatu.
@@ -109,7 +108,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `

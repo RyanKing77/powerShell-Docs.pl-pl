@@ -1,26 +1,24 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 2016-12-12
 title: Test-pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 900547301c815ba6fe3a9507f975503fec864e4e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
-## <a name="synopsis"></a>STRESZCZENIE
+## <a name="synopsis"></a>SYNOPSIS
 
 Sprawdza, czy reguła istnieje dla określonego użytkownika, komputera lub punktu końcowego.
 
-## <a name="syntax"></a>SKŁADNIA
+## <a name="syntax"></a>SYNTAX
 
 ### <a name="computername"></a>ComputerName
 ```
@@ -52,7 +50,7 @@ Określa nazwę komputera, aby przetestować.
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | 2                                    |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | false                                |
@@ -78,7 +76,7 @@ Określa identyfikator URI, aby przetestować połączenie.
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | 2                                    |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | false                                |
@@ -117,7 +115,7 @@ Określa nazwę użytkownika do testowania.
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | 1                                    |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | false                                |
@@ -160,7 +158,7 @@ Test-PswaAuthorizationRule -UserName contoso\mhanson -ComputerName *
 
 ## <a name="related-topics"></a>Tematy pokrewne
 
-- [Polecenia Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
 - [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
-- [Polecenia cmdlet Install-PswaWebApplication](install-pswawebapplication.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
 - [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)

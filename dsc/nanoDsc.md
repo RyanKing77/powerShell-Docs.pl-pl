@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Na serwerze Nano przy użyciu usługi Konfiguracja DSC"
-ms.openlocfilehash: 2233106bfd07144132f95ea7957ebfa3248ca219
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 7427d6bb7644f513b9b523f284109f5ae0f8ef27
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>Na serwerze Nano przy użyciu usługi Konfiguracja DSC
 
@@ -34,22 +33,22 @@ Aby uzyskać informacje o instalowaniu i używaniu Nano Server, a także sposobu
 
 * Wszystkie polecenia cmdlet DSC, które istnieją w pełnej wersji systemu Windows Server, w tym następujące: 
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx)
-  * [Zestaw DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)   
-  * [Włącz DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-  * [Wyłącz DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
-  * [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)   
+  * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
+  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
+  * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
-  * [DscConfiguration testu](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
-  * [Publikowanie DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
-  * [DscConfiguration aktualizacji](https://technet.microsoft.com/en-us/library/mt143541.aspx)
-  * [Przywracanie DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
-  * [Usuń DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
+  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
+  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
+  * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
+  * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
+  * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
   * [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx)
-  * [Wywołanie DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
-  * [Znajdź DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+  * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
+  * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
-  * [Nowe DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
+  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
 
 * Konfiguracje kompilacji (zobacz [konfiguracji DSC](configurations.md))
 
@@ -65,7 +64,7 @@ Aby uzyskać informacje o instalowaniu i używaniu Nano Server, a także sposobu
   
   **Problem:** nie działa, jeśli zasób jest za pomocą PsDscRunAsCredential (zobacz [DSC uruchomiony przy użyciu poświadczeń użytkownika](runAsUser.md))
 
-* [Określenie zależności między węzłami](crossNodeDependencies.md) 
+* [Określanie zależności między węzłami](crossNodeDependencies.md) 
 
 * [Wersjonowanie zasobów](sxsResource.md)
 
@@ -87,7 +86,7 @@ Aby uzyskać informacje o instalowaniu i używaniu Nano Server, a także sposobu
   * [Plik](fileResource.md)
   * [Dziennik](logResource.md)
   * ProcessSet
-  * [Rejestru](registryResource.md)
+  * [Registry](registryResource.md)
   * [Skrypt](scriptResource.md)
   * WindowsPackageCab
   * [WindowsProcess](windowsProcessResource.md)

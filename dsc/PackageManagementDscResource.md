@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób PackageManagement DSC"
-ms.openlocfilehash: a984fbf5db561a696d89b60dde8b92096c6e4924
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 4cd7625af7ed0bb3fe971c826ac2075841cdfdc5
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-packagemanagement-resource"></a>Zasób PackageManagement DSC
 
@@ -51,7 +50,7 @@ W poniższej tabeli wymieniono opcje dla właściwości AdditionalParameters.
 |  Parametr  | Opis   | 
 |---|---|
 | Ścieżka_docelowa| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa lokalizację plików miejscu pakietu do zainstalowania.|
-| InstallationPolicy| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa, czy ufasz źródłu tego pakietu. Jeden z: "Niezaufanych", "Zaufanym".|
+| InstallationPolicy| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa, czy ufasz źródłu tego pakietu. One of: "Untrusted", "Trusted".|
 
 ## <a name="example"></a>Przykład
 

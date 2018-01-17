@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Tworzenie niestandardowych Windows PowerShell Desired konfiguracji stanu zasobów"
-ms.openlocfilehash: 75b494db4ee6e381491decb11d35b60105217a0f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 4751bcaab1996ee3164bd2a2f430c3b188712860
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>Tworzenie niestandardowych Windows PowerShell Desired konfiguracji stanu zasobów
 
@@ -20,9 +19,9 @@ Windows PowerShell Desired stan konfiguracji (DSC) ma wbudowane zasobów, które
 
 Zasób DSC jest moduł programu Windows PowerShell. Moduł zawiera zarówno schematu (definicja konfigurowalne właściwości), jak i implementację (kod, który wykonuje faktyczną pracę określony w konfiguracji) dla zasobu. Schemat zasobów DSC można zdefiniować w pliku MOF i implementacji jest wykonywany przez moduł skryptu. Począwszy od pomocy technicznej dla klas programu PowerShell w wersji 5 schematu i wdrażania zarówno można zdefiniować w klasie. W następujących tematach opisano szczegółowo w sposób tworzenia zasobów usługi Konfiguracja DSC.
 
-* [Pisanie niestandardowych zasobów DSC z MOF](authoringResourceMOF.md) 
-* [Wdrażanie zasobów DSC w języku C#](authoringResourceMofCS.md) 
-* [Pisanie niestandardowych zasobów DSC z klasami programu PowerShell](authoringResourceClass.md) 
-* [Zasoby złożonego: jako zasób przy użyciu konfiguracji DSC](authoringResourceComposite.md) 
-* [Przy użyciu narzędzia Projektant zasobów](authoringResourceMofDesigner.md) 
+* [Pisanie niestandardowych zasobów DSC z MOF](authoringResourceMOF.md)
+* [Wdrażanie zasobów DSC w języku C#](authoringResourceMofCS.md)
+* [Pisanie niestandardowych zasobów DSC z klasami programu PowerShell](authoringResourceClass.md)
+* [Zasoby złożonego: jako zasób przy użyciu konfiguracji DSC](authoringResourceComposite.md)
+* [Przy użyciu narzędzia Projektant zasobów](authoringResourceMofDesigner.md)
 

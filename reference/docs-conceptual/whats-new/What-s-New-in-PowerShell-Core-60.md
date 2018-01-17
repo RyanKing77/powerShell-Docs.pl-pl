@@ -13,7 +13,7 @@ Oznacza to, że programu Windows PowerShell udostępnia zestawu interfejsów API
 
 Interfejsy API współużytkowane .NET Core i .NET Framework są definiowane jako część [.NET Standard][].
 
-Aby uzyskać więcej informacji na to wpływ na zgodność skryptu modułu podstawowego środowiska PowerShell i programu Windows PowerShell, zobacz [Backwards zgodności przy użyciu programu Windows PowerShell] [#backwards zgodności--windows-powershell]
+Aby uzyskać więcej informacji na to wpływ na zgodność skryptu modułu podstawowego środowiska PowerShell i programu Windows PowerShell, zobacz [Backwards zgodności przy użyciu programu Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>Obsługa macOS i Linux
 
@@ -28,12 +28,12 @@ PowerShell oficjalnie obsługuje teraz system macOS i Linux, w tym:
 - Red Hat Enterprise Linux 7
 - OpenSUSE 42.2
 - Fedora 25, 26
-- System macOS 10.12 +
+- macOS 10.12+
 
 Naszej społeczności przyczynił się również pakiety dla następujących platform, ale nie jest oficjalnie obsługiwana:
 
-- Arch systemu Linux
-- Kali systemu Linux
+- Arch Linux
+- Kali Linux
 - AppImage (działa na wielu platformach systemu Linux)
 
 Mamy także eksperymentalne wersjach (nieobsługiwany) dla następujących platform:
@@ -172,18 +172,18 @@ Podstawowe programu PowerShell zmienia domyślnym kodowaniem jest zgodny z ekosy
 To oznacza, że wszystkie polecenia cmdlet wbudowanych używające `-Encoding` Użyj parametru `UTF8NoBOM` wartości domyślne.
 Zmiana ta dotyczy następujących poleceń cmdlet:
 
-- Dodawanie zawartości
-- Clixml eksportu
+- Add-Content
+- Export-Clixml
 - Export-Csv
 - Export-PSSession
 - Format szesnastkowy
-- Get zawartości
+- Get-Content
 - Import-Csv
-- Nowe ModuleManifest
+- New-ModuleManifest
 - Pliku wyjściowego
 - Wybierz parametry
 - Wyślij MailMessage
-- Zawartość zestawu
+- Set-Content
 
 Te polecenia cmdlet również zostały zaktualizowane, aby `-Encoding` powszechnie akceptuje parametr `System.Text.Encoding`.
 

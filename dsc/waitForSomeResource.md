@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób WaitForSome DSC"
-ms.openlocfilehash: 3ea9dc51cbb00cf6158abf114fdb31fd91307df9
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: cbe16c543f0eeb62dbe1fb439af2f9147f1bc210
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-waitforsome-resource"></a>Zasób WaitForSome DSC
 
@@ -41,9 +40,9 @@ WaitForSome [String] #ResourceName
 |---|---| 
 | NodeCount| Minimalna liczba węzłów, które muszą być w żądanym stanie dla tego zasobu powiodło się.|
 | nodeName| Węzły docelowe są zależne od zasobu.| 
-| resourceName| Nazwa zasobu zależne.| 
+| ResourceName| Nazwa zasobu zależne.| 
 | RetryIntervalSec| Liczba sekund przed ponowną próbą. Minimalną jest 1.| 
-| retryCount| Maksymalna liczba ponownych prób.| 
+| RetryCount| Maksymalna liczba ponownych prób.| 
 | ThrottleLimit| Liczba maszyn nawiązać jednocześnie. Domyślna to nowy cimsession domyślne.| 
 | dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 | PsDscRunAsCredential | Zobacz [przy użyciu poświadczeń użytkownika przy użyciu usługi Konfiguracja DSC](https://docs.microsoft.com/en-us/powershell/dsc/runasuser) |

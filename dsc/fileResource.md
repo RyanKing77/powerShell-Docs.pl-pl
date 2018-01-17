@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób plików konfiguracji DSC"
-ms.openlocfilehash: f16bfbc31489ef7d1b0e5e4ec3a4f30069c24c79
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 54d01bf0769eeed0354606eb3543973b0f850a6f
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-file-resource"></a>Zasób plików konfiguracji DSC
 
@@ -51,7 +50,7 @@ File [string] #ResourceName
 | Force| Niektóre operacje na plikach (takie jak zastąpienie pliku lub usuwanie katalogu, który nie jest pusty) spowoduje błąd. Za pomocą właściwości Force zastępuje takie błędy. Wartość domyślna to __$false__.| 
 | Recurse| Wskazuje, czy podkatalogi są dołączone. Ta właściwość jest ustawiana __$true__ aby wskazać, że chcesz podkatalogów, które zostaną uwzględnione. Wartość domyślna to __$false__. **Uwaga**: Ta właściwość jest prawidłowy tylko, gdy właściwość Type ma ustawioną w katalogu.| 
 | dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.| 
-| Ścieżka_źródłowa| Określa ścieżkę do skopiowania zasobów pliku lub folderu.| 
+| SourcePath| Określa ścieżkę do skopiowania zasobów pliku lub folderu.| 
 | Typ| Wskazuje, czy zasób konfigurowany jest katalog lub plik. Ustaw tę właściwość na "Directory", aby wskazać, czy zasób jest katalogiem. Ustaw ją na "Plik", aby wskazać, czy zasób jest plik. Wartość domyślna to "Plik".| 
 | MatchSource| Jeśli ustawiono wartość domyślną __$false__, a następnie wszystkie pliki w źródle (, że pliki A, B i C) zostanie dodany do miejsca docelowego konfiguracja zostanie zastosowana po raz pierwszy. Jeśli nowy plik (D) jest dodawany do źródła, jego nie zostanie dodany do miejsca docelowego, nawet wtedy, gdy konfiguracja zostanie zastosowana ponownie później. Jeśli wartość jest __$true__, a następnie każdorazowo konfiguracja zostanie zastosowana, nowe pliki później znaleziono w źródle (na przykład plik D, w tym przykładzie) są dodawane do miejsca docelowego. Wartość domyślna to **$false**.| 
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób rejestru DSC"
-ms.openlocfilehash: 649cb60578c053c04a7fcc7446881fb76daee26a
-ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.openlocfilehash: 1e73e4275c0d9db5d8fac7641514ea8190f719ca
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-registry-resource"></a>Zasób rejestru DSC
 
@@ -41,9 +40,9 @@ Registry [string] #ResourceName
 | Force| Jeśli określony klucz rejestru jest obecny, __życie__ zastępuje go przy użyciu nowej wartości. Jeśli usuwanie klucza rejestru za pomocą podkluczy, musi to być __$true__| 
 | Hex| Wskazuje, czy dane są wyrażane w formacie szesnastkowym. Jeśli jest określony, dane wartości DWORD/QWORD jest podana w formacie szesnastkowym. Nie jest prawidłowy dla innych typów. Wartość domyślna to __$false__.| 
 | dependsOn| Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.| 
-| Dane_wartości| Dane wartości rejestru.| 
+| ValueData| Dane wartości rejestru.| 
 | ValueType| Wskazuje typ wartości. Obsługiwane typy to: 
-<ul><li>W ciągu (REG_SZ)</li>
+<ul><li>String (REG_SZ)</li>
 
 
 <li>Dane binarne (REG BINARY)</li>
@@ -55,7 +54,7 @@ Registry [string] #ResourceName
 <li>Qword 64-bitowych (REG_QWORD)</li>
 
 
-<li>Ciągu wielokrotnego (REG_MULTI_SZ)</li>
+<li>Multi-string (REG_MULTI_SZ)</li>
 
 
 <li>Ciąg rozwijania (REG_EXPAND_SZ)</li></ul>

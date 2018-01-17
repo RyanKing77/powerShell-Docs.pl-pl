@@ -1,22 +1,20 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 2016-12-12
 title: Pobierz pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: eb9f42ab4d9cec111e03a096b2f00740e97ee1b7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 003195457660a18b9bbed065181b6d8c23835348
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
-## <a name="synopsis"></a>STRESZCZENIE
+## <a name="synopsis"></a>SYNOPSIS
 
 Zwraca zestaw reguł autoryzacji programu Windows PowerShell® Web Access.
 
@@ -52,14 +50,14 @@ Określa identyfikatory (ID) reguł, które należy uzyskać tego polecenia cmdl
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByValue, ByPropertyName)       |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;ciągu\[\]&gt;
+### <a name="-rulenameltstringgt"></a>-RuleName&lt;String\[\]&gt;
 
 Określa nazwy reguł autoryzacji do pobrania. Ten parametr zwraca wszystkie reguły odpowiadające dokładnie nazwy reguł w tej tablicy ciągów.
 
 |||  
 |-|-|
 | Aliasy                              | brak                                 |
-| Wymagane?                            | Wartość true                                 |
+| Wymagane?                            | true                                 |
 | Pozycja?                            | 2                                    |
 | Wartość domyślna                        | brak                                 |
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByValue, ByPropertyName)       |
@@ -116,7 +114,7 @@ Identyfikator reguły i nazwę reguły są przekazywane w tym poleceniu cmdlet.
 
 ## <a name="related-topics"></a>Tematy pokrewne
 
-- [Polecenia Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
 - [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
 - [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
-- [Polecenia cmdlet Install-PswaWebApplication](install-pswawebapplication.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)

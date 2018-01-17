@@ -1,26 +1,24 @@
 ---
 description: 
-manager: carmonm
 ms.topic: article
-author: jpjofre
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 2016-12-12
 title: Zainstaluj pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: a608a6272d3eae56ccf808b9d94525ca39df50cb
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
-## <a name="synopsis"></a>STRESZCZENIE
+## <a name="synopsis"></a>SYNOPSIS
 
 Konfiguruje aplikację sieci web programu Windows PowerShell® Web Access w usługach IIS.
 
-## <a name="syntax"></a>SKŁADNIA
+## <a name="syntax"></a>SYNTAX
 
 ### <a name="default"></a>Wartość domyślna
 ```
@@ -42,11 +40,11 @@ Określa, czy certyfikat testowy został utworzony. Jeśli ten parametr ma ustaw
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
 | Pozycja?                            | o nazwie                                |
-| Wartość domyślna                        | Wartość true                                 |
+| Wartość domyślna                        | true                                 |
 | Akceptowanie danych wejściowych potoku?               | false                                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;ciągu&gt;
+### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
 
 Określa nazwę aplikacji sieci web. Jest on wyświetlany jako ostatnia część adres URL programu Windows PowerShell Web Access.
 
@@ -59,7 +57,7 @@ Określa nazwę aplikacji sieci web. Jest on wyświetlany jako ostatnia część
 | Akceptowanie danych wejściowych potoku?               | false                                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-websitenameltstringgt"></a>-Podaną&lt;ciągu&gt;
+### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
 
 Określa nazwę witryny sieci Web serwer sieci Web (IIS), na których chcesz zainstalować tę aplikację sieci web programu Windows PowerShell Web Access.
 
@@ -130,7 +128,7 @@ Install-PswaWebApplication -UseTestCertificate
 
 ## <a name="related-topics"></a>Tematy pokrewne
 
-- [Polecenia Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
 - [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
 - [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
 - [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

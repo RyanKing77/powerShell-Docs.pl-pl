@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Rozwiązywanie problemów z usługi Konfiguracja DSC"
-ms.openlocfilehash: 9b1266b9c8923474005760ef78b05d570efdde37
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="troubleshooting-dsc"></a>Rozwiązywanie problemów z usługi Konfiguracja DSC
 
@@ -20,14 +19,14 @@ W tym temacie opisano sposoby rozwiązywania DSC w przypadku wystąpienia proble
 
 Windows PowerShell Desired stan konfiguracji (DSC) zależy od usługi WinRM. Usługa WinRM nie jest włączona domyślnie w systemie Windows Server 2008 R2 i Windows 7. Uruchom ```Set-WSManQuickConfig```, w programie Windows PowerShell z podwyższonym poziomem uprawnień sesji, aby włączyć usługę WinRM.
 
-## <a name="using-get-dscconfigurationstatus"></a>Przy użyciu Get DscConfigurationStatus
+## <a name="using-get-dscconfigurationstatus"></a>Using Get-DscConfigurationStatus
 
 [Get DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) polecenie cmdlet pobiera informacje o stanie konfiguracji z węzła docelowego. Sformatowanego obiekt jest zwracany, który zawiera ogólne informacje dotyczące czy Uruchom Konfiguracja zakończyła się powodzeniem. Może odnajdywać się do obiektu, aby odnaleźć szczegółowe informacje o konfiguracji, takie jak uruchamianie:
 
 * Wszystkie zasoby, których nie powiodła się
 * Każdy zasób, którego zażądano ponownego rozruchu
 * Ustawienia konfiguracji meta w momencie uruchomienia konfiguracji
-* itp.
+* Etc.
 
 Następujący zestaw parametrów zwraca informacje o stanie dla ostatniej konfiguracji uruchamiania:
 

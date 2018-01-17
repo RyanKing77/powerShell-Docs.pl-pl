@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "DSC dla systemu Linux nxFile zasobów"
-ms.openlocfilehash: 14f1ae31a8409b8874d76a91b8b29595e30fbb46
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e4916414e4de29ab15d9c82c492671ebc16d5412
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC dla systemu Linux nxFile zasobów
 
@@ -41,7 +40,7 @@ nxFile <string> #ResourceName
 |  Właściwość |  Opis | 
 |---|---|
 | Ścieżka_docelowa| Określa lokalizację, w której chcesz zapewnić stan pliku lub katalogu.| 
-| Ścieżka_źródłowa| Określa ścieżkę, z którego można skopiować pliku lub folderu zasobów. Ta ścieżka może być ścieżką lokalną lub `http/https/ftp` adresu URL. Zdalne `http/https/ftp` adresy URL są tylko obsługiwane, gdy wartość **typu** właściwość jest plik.| 
+| SourcePath| Określa ścieżkę, z którego można skopiować pliku lub folderu zasobów. Ta ścieżka może być ścieżką lokalną lub `http/https/ftp` adresu URL. Zdalne `http/https/ftp` adresy URL są tylko obsługiwane, gdy wartość **typu** właściwość jest plik.| 
 | Upewnij się| Określa, czy należy sprawdzić, czy plik istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że plik istnieje. Ustaw ją na "Brak", aby upewnić się, że plik nie istnieje. Wartość domyślna to "Brak".| 
 | Typ| Określa, czy zasób konfigurowany jest katalog lub plik. Ustaw tę właściwość na "directory", aby wskazać, czy zasób jest katalogiem. Ustaw go na "plik", aby wskazać, czy zasób jest plik. Wartość domyślna to "plik"| 
 | Zawartość| Określa zawartość pliku, takie jak określony ciąg.| 
