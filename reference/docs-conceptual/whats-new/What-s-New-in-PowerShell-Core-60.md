@@ -234,7 +234,7 @@ Aby uzyskać więcej informacji o zadaniach programu PowerShell, zobacz [about_J
 - Dodaje trzy nowe automatycznych zmiennych, aby określić, czy środowisko PowerShell jest uruchomiony w danej wersji systemu operacyjnego: `$IsWindows`, `$IsMacOs`, i `$IsLinux`.
 - Dodaj `GitCommitId` do transparent Core programu PowerShell.
   Teraz nie trzeba uruchomić `$PSVersionTable` zaraz po uruchomieniu programu PowerShell, aby pobrać wersję! (#3916) (Podziękowania dla @iSazonov!)
-- Dodawanie pliku konfiguracji JSON o nazwie `PowerShellProperties.json` w `$PSHome` do przechowywania niektórych ustawień wymagany czas uruchamiania (np. `ExecutionPolicy`).
+- Dodawanie pliku konfiguracji JSON o nazwie `powershell.config.json` w `$PSHome` do przechowywania niektórych ustawień wymagany czas uruchamiania (np. `ExecutionPolicy`).
 - Nie należy blokować potoku podczas uruchamiania systemu Windows EXE
 - Włączone wyliczenie COM kolekcji. (#4553)
 
