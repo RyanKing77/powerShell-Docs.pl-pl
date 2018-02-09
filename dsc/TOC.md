@@ -108,7 +108,7 @@
 
 # Model ściągania platformy DSC
 
-## [Konfigurowanie internetowego serwera ściągania](pullServer.md)
+## [Usługa ściągania platformy DSC](pullServer.md)
 
 ## [Konfigurowanie serwera ściągania SMB platformy DSC](pullServerSMB.md)
 
