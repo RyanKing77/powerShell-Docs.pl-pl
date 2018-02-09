@@ -2,54 +2,60 @@
 ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: Skrypty programu PowerShell
-ms.openlocfilehash: 8d2386dc49c59a106ecdddf0feabe3344834a86d
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9214b9e40ff6c181f921f89ef78406af20c30e5f
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="powershell"></a>PowerShell
 
-Oparte na programie .NET Framework środowisko Windows PowerShell jest powłoką wiersza polecenia opartego na zadaniach oraz językiem skryptowym; zaprojektowany specjalnie z myślą Administratorzy systemu i użytkownicy zaawansowani szybko zautomatyzować wiele systemów operacyjnych (Linux, macOS Unix i z systemem Windows) oraz procesów związanych z aplikacjami, które są uruchamiane w tych systemach operacyjnych.
+Oparte na programie .NET Framework programu PowerShell jest powłoką wiersza polecenia opartego na zadaniach oraz językiem skryptowym; zaprojektowany specjalnie z myślą Administratorzy systemu i użytkownicy zaawansowani szybko zautomatyzować wiele systemów operacyjnych (Linux, macOS Unix i z systemem Windows) oraz procesów związanych z aplikacjami, które są uruchamiane w tych systemach operacyjnych.
 
-### <a name="powershell-is-now-open-source"></a>Środowisko PowerShell jest teraz typu open source
+## <a name="powershell-is-open-source"></a>Środowisko PowerShell jest typu open source
 
-Kod źródłowy podstawowej programu PowerShell są dostępne w usłudze GitHub i otwarty, aby społeczność, zobacz [PowerShell](https://github.com/powershell/powershell).
+Kod źródłowy podstawowej programu PowerShell są dostępne w usłudze GitHub i otwarty przez społeczność. Zobacz [źródła programu PowerShell w witrynie GitHub](https://github.com/powershell/powershell).
 
 Można uruchomić z usługi bits, należy w [uzyskać PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).
 Lub, być może, krótki przewodnik po [wprowadzenie](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)
 
-> **Uwaga:**  
-> Wszystkie linki dotyczące programu PowerShell w usłudze GitHub spowoduje przejście do usługi GitHub.
+## <a name="powershell-design-goals"></a>Cele projektowania programu PowerShell
+Środowisko Windows PowerShell zaprojektowano w celu poprawy środowiska wiersza polecenia i skryptów, eliminując problemy, długotrwałe i dodać nowe funkcje.
 
-# <a name="documentation"></a>Dokumentacja
+### <a name="discoverability"></a>Odnajdowanie
+Programu Windows PowerShell ułatwia odnajdywanie jego funkcje. Na przykład aby uzyskać listę poleceń cmdlet, które umożliwia wyświetlanie i modyfikowanie usług systemu Windows, wpisz:
 
-Kolekcja dokumentacji skupiono 4 głównych sekcji:
+```
+Get-Command *-Service
+```
 
-## <a name="whats-new-with-powershellwhats-newwhat-s-new-with-powershellmd"></a>[Nowości w programie PowerShell](whats-new/What-s-New-With-PowerShell.md)
-W tej sekcji znajdują się wszystkie komunikaty o produktu (wersji według wersji i wydania przez wersji).
+Po odnalezieniu, które polecenia cmdlet wykonuje zadanie, możesz dowiedzieć się więcej polecenia cmdlet za pomocą polecenia cmdlet Get-Help. Na przykład aby wyświetlić Pomoc dotyczącą polecenia cmdlet Get-Service, wpisz:
 
-## <a name="powershell-setupsetupsetup-referencemd"></a>[Instalator programu PowerShell](setup/setup-reference.md)
-W tej sekcji, które można znaleźć wszystko, co należy wiedzieć, aby zainstalować wszystkie wersje programu PowerShell, we wszystkich obsługiwane środowisk.  
+```
+Get-Help Get-Service
+```
+Większość poleceń cmdlet Emituj obiektów, które można wykonywać na nich operacji i następnie renderowane w tekst do wyświetlenia. Aby w pełni zrozumieć dane wyjściowe tego polecenia cmdlet, należy przekazać dane wyjściowe do polecenia cmdlet Get-elementu członkowskiego. Na przykład następujące polecenie wyświetla informacje o członkami dane wyjściowe obiektu przez polecenie cmdlet Get-Service.
 
-Można również znaleźć konfigurowania: zabezpieczeń, ułatwień dostępu zdalnego dostępu i zarządzania, przepływy pracy i dostęp w sieci web.
+```
+Get-Service | Get-Member
+```
 
-## <a name="getting-started-with-powershellgetting-startedgetting-started-with-windows-powershellmd"></a>[Wprowadzenie do programu PowerShell](getting-started/Getting-Started-with-Windows-PowerShell.md)
-Ta sekcja dotyczy użytkowników jesteś nowym użytkownikiem programu PowerShell, aby uzyskać wszystkie informacje wymagane, aby rozpocząć korzystanie z produktu.  
-W tej sekcji:
-- [Pierwsze gotowe do środowiska Windows PowerShell użyj](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md) objaśniający czynności niezbędnych do instalacji programu PowerShell do wykonywania i spróbuj wszystkie fragmenty kodu i polecenia przedstawionych w sekcji "Wprowadzenie do korzystania z programu PowerShell".
-- [Podstawowe pojęcia](getting-started/fundamental-concepts.md) przewodnik, który objaśnia, co to jest środowiska PowerShell i podstawowe pojęcia potrzebne rozpocząć korzystanie z niej.
-- Szereg "[opis &lt;koncepcji&gt;](getting-started/understanding-concepts-reference.md)" Tematy, które obejmują podstawy programu PowerShell.
-- Szereg "[cookbook podstawowe dla &lt;użycia&gt;](getting-started/cookbooks/basic-cookbooks-reference.md)" Tematy dotyczące przepisami do wykonywania zadań standardowych wokół pliki, system plików rejestru, procesów, usług i podobne codziennych tematy.
-- Wyselekcjonowanych przewodnik dotyczący innych źródeł na [uczenia PowerShell](getting-started/more-powershell-learning.md).
+### <a name="consistency"></a>Consistency
+Systemy zarządzania mogą być złożonych pozwala i narzędzi, które mają spójny interfejs pomoc do kontrolowania dostępu do właściwych złożoności. Niestety narzędzia wiersza polecenia ani obiektów COM skryptowych być znane w celu zachowania ich spójności.
 
-## <a name="common-powershellcore-powershellcore-powershellmd"></a>[Typowe programu PowerShell](core-powershell/core-powershell.md)
-Ta sekcja zawiera wszystkich materiałów referencyjnych programu PowerShell.  
-Znajdź w tej sekcji:
-- [PowerShell zintegrowane środowisko obsługi skryptów \(ISE\)](core-powershell/ise-guide.md)
-- [Okna konsoli programu PowerShell](core-powershell/console-guide.md)
-- [Zdalnego zarządzania programu PowerShell](core-powershell/Running-Remote-Commands.md)
-- [Przepływów pracy programu PowerShell](core-powershell/workflows-guide.md)
-- [PowerShell Web Access](core-powershell/web-access.md)
-- [Słownik środowiska PowerShell](Windows-PowerShell-Glossary.md)
+Spójność programu Windows PowerShell jest jednym z jego głównej zasobów. Na przykład jeśli zostanie przedstawiony sposób należy użyć polecenia cmdlet obiektu sortowania, umożliwia wiedzy posortować dane wyjściowe każdego polecenia cmdlet. Nie masz Dowiedz się różne procedury sortowania każde polecenie cmdlet.
 
+Ponadto polecenia cmdlet programiści nie muszą projektowanie funkcji sortowania dla ich polecenia cmdlet. Środowisko Windows PowerShell daje im platforma, która udostępnia podstawowe funkcje i wymusza, aby były spójne wiele aspektów interfejsu. Platformę eliminuje niektórych opcji, które zwykle pozostało do projektanta, ale w zamian ułatwia programowanie szybki i łatwy w użyciu poleceń cmdlet znacznie prostsze.
+
+### <a name="interactive-and-scripting-environments"></a>Interakcyjne i skryptów środowiska
+Program Windows PowerShell jest połączonym środowiskiem interakcyjne i skryptów, która umożliwia dostęp do obiektów COM i narzędzia wiersza polecenia, a także pozwala na użycie zasilania programu .NET Framework klasy biblioteki (FCL).
+
+To środowisko poprawia po wierszu polecenia systemu Windows, interaktywne środowisko z wielu narzędzi wiersza polecenia. Zapewnia on również ulepszenia skryptów Windows Script Host (WSH), które pozwalają używać wielu narzędzi wiersza polecenia i obiekty automatyzacji COM, ale nie zapewniają interaktywnym środowisku.
+
+Dzięki połączeniu dostęp do wszystkich tych funkcji, programu Windows PowerShell rozszerza możliwości użytkownika interaktywnego i zapisywania skryptu i umożliwia łatwiejsze w zarządzaniu Administracja systemu.
+
+### <a name="object-orientation"></a>Orientacja obiektu
+Chociaż interakcję z programu Windows PowerShell, wpisując tekst polecenia środowiska Windows PowerShell jest oparta na obiektów, nie tekstu. Dane wyjściowe polecenia jest obiektem. Obiekt danych wyjściowych do innego polecenia można wysłać jako dane wejściowe. W związku z tym środowiska Windows PowerShell udostępnia interfejs znanych osób wystąpił z innych powłok podczas wprowadzania nowych i zaawansowanego modelu wiersza polecenia. Go, będąca pojęciem szerszym przesyłania danych między polecenia umożliwiając wysyłanie obiektów zamiast tekstu.
+
+### <a name="easy-transition-to-scripting"></a>Łatwe przejście do wykonywania skryptów
+Ułatwia środowiska Windows PowerShell ułatwiają przejścia z wpisanie polecenia interaktywnie do tworzenia i uruchamiania skryptów. Możesz wpisać poleceń w wierszu polecenia programu Windows PowerShell do odnajdywania poleceń, które wykonania zadania. Następnie można zapisać tych poleceń, zapisu lub historię przed skopiowaniem ich do pliku do użycia jako skrypt.

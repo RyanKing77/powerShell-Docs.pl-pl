@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: Konfigurowanie lokalny program Configuration Manager
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurowanie lokalny program Configuration Manager
 
@@ -25,8 +25,8 @@ Również jest odpowiedzialny za wiele innych aspektów DSC, m.in.
 Specjalny typ konfiguracji umożliwia konfigurowanie LCM do określ każdy z tych zachowań.
 W poniższych sekcjach opisano sposób konfigurowania LCM.
 
-> **Uwaga**: w tym temacie dotyczą LCM wprowadzone w programie Windows PowerShell 5.0.
-Aby uzyskać informacje o konfigurowaniu LCM w programie Windows PowerShell 4.0, zobacz [Windows PowerShell 4.0 żądanego stanu konfiguracji lokalny program Configuration Manager](metaconfig4.md).
+Windows PowerShell 5.0 wprowadzono nowe ustawienia zarządzania lokalny program Configuration Manager.
+Aby uzyskać informacje o konfigurowaniu LCM w programie Windows PowerShell 4.0, zobacz [Konfigurowanie lokalny program Configuration Manager w poprzedniej wersji systemu Windows PowerShell](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Zapisywanie i wprowadzania konfiguracji LCM
 
@@ -90,38 +90,13 @@ Następujące właściwości są dostępne w **ustawienia** bloku.
 
 ## <a name="pull-service"></a>Usługa replikacji ściąganej
 
-Ustawienia konfiguracji DSC umożliwiają węzła ma być zarządzany przez ściąganie konfiguracji i moduły i publikowania danych raportowania dla lokalizacji zdalnej.
-Dla aktualnych opcji ściągania usługi obejmują:
-
-- Usługa konfiguracji stanu pożądanej usługi Automatyzacja Azure
-- Wystąpienie usługi ściągnięcia w systemie Windows Server
-- Udział SMB (nie obsługuje publikowania danych raportowania)
-
 Konfiguracja LCM obsługuje definiowanie następujące ściągające punkty końcowe usługi:
 
 - **Serwer konfiguracji**: repozytorium konfiguracji DSC. Definiowanie konfiguracji serwerów przy użyciu **ConfigurationRepositoryWeb** (dla serwerów opartych na sieci web) i **ConfigurationRepositoryShare** (w przypadku serwerów na bazie protokołu SMB) bloków.
 - **Serwer zasobów**: repozytorium dla zasobów usługi Konfiguracja DSC, dostarczana w moduły programu PowerShell. Zdefiniuj serwery zasobów za pomocą **ResourceRepositoryWeb** (dla serwerów opartych na sieci web) i **ResourceRepositoryShare** (w przypadku serwerów na bazie protokołu SMB) bloków.
 - **Serwer raportów**: usługa, która DSC wysyła dane raportu do. Zdefiniuj serwerów raportów za pomocą **ReportServerWeb** bloków. Serwer raportów należy usługi sieci web.
 
-**Zalecane rozwiązanie**, a opcja z najbardziej funkcje dostępne, jest [Konfiguracja DSC automatyzacji Azure](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-Usługa Azure mogą zarządzać węzłów lokalnie w centrach danych prywatnych lub chmur publicznych, takich jak Azure i usług AWS.
-W środowiskach prywatne, gdzie serwery bezpośrednio nie może połączyć się z Internetem, należy wziąć pod uwagę Ograniczanie ruchu wychodzącego tylko opublikowane zakres IP platformy Azure (zobacz [zakresów IP centrum danych Azure](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
-
-Funkcje usługi online, które nie są obecnie dostępne w usłudze replikacji ściąganej w systemie Windows Server:
-- Wszystkie dane są szyfrowane podczas przesyłania i magazynowane
-- Certyfikaty klienta są tworzone i zarządzane automatycznie
-- Przechowywanie kluczy tajnych centralnego zarządzania [haseł lub poświadczeń](https://docs.microsoft.com/en-us/azure/automation/automation-credentials), lub [zmienne](https://docs.microsoft.com/en-us/azure/automation/automation-variables) takich jak nazwy serwera lub parametry połączenia
-- Centralne zarządzanie węzła [LCM konfiguracji](metaConfig.md#basic-settings)
-- Centralnie Przypisz konfiguracje do węzłów klienta
-- Zmiany konfiguracji wersji do "grup mozgi" do testowania przed dotarciem do produkcji
-- Raportowania graficznego
-  - Szczegóły stanu na poziomie szczegółowości zasobów DSC
-  - Pełne komunikaty z komputerów klienckich do rozwiązywania problemów
-- [Integracja z usługą Analiza dzienników Azure](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) alertów, automatycznych zadań Android/aplikacji systemu iOS dla raportowania i alerty
-
-Można również uzyskać informacji o konfigurowaniu i przy użyciu usługi replikacji ściąganej HTTP w systemie Windows Server, zobacz [ustawienie serwera ściągania usługi Konfiguracja DSC](pullServer.md).
-Informujemy, jest ograniczona implementacja tylko podstawowe możliwości przechowywania konfiguracje moduły i przechwytywanie danych raportów w lokalnej bazie.
+Więcej informacji na temat usługi ściągania można znaleźć, [żądanego stanu konfiguracji ściągania usługi](pullServer.md).
 
 ## <a name="configuration-server-blocks"></a>Bloki serwera konfiguracji
 

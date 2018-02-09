@@ -1,15 +1,15 @@
 ---
 ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
-title: "Przy użyciu programu Windows PowerShell ISE"
+title: "Używanie środowiska Windows PowerShell ISE"
 ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 ms.openlocfilehash: 5da609363dc0498a5a62157b49cf3de5683a8510
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 02/08/2018
 ---
-# <a name="using-the-windows-powershell-ise"></a>Przy użyciu programu Windows PowerShell ISE
+# <a name="using-the-windows-powershell-ise"></a>Używanie środowiska Windows PowerShell ISE
 Ta tematy w tym dokumencie opisano wykorzystania funkcji programu Windows PowerShell® Integrated Scripting Environment (ISE) są bardziej wydajni.
 
 [Sposób użycia karty uzupełniania w okienku skryptów i okienku konsoli](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md) zawiera kroki do wykonania uzupełniania po naciśnięciu tabulatora zarówno w okienku skryptów, jak i w okienku konsoli.
@@ -25,7 +25,7 @@ Ta tematy w tym dokumencie opisano wykorzystania funkcji programu Windows PowerS
 [Sposób użycia profili w środowisku Windows PowerShell ISE](How-to-Use-Profiles-in-Windows-PowerShell-ISE.md) zawiera informacje na temat i kroki dotyczące tworzenia i używania profilów w programie Windows PowerShell ISE.
 
 ## <a name="see-also"></a>Zobacz też
-- [Poznawanie programu Windows PowerShell ISE](../../getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
+- [Eksplorowanie środowiska Windows PowerShell ISE](../../getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
 - [Ułatwienia dostępu w środowisku Windows PowerShell ISE](../../setup/Accessibility-in-Windows-PowerShell-ISE.md)
 - [Windows PowerShell ISE skryptów modelu obiektów](https://technet.microsoft.com/en-us/library/69b047d0-da79-413e-b948-8e45d05d1f85)
 

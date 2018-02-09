@@ -4,10 +4,10 @@ keywords: polecenia cmdlet programu PowerShell
 title: Uruchamianie 32-bitowej wersji programu Windows PowerShell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 ms.openlocfilehash: d682ce45ebc92cda3a9008ab608bacf9ef8eba57
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="starting-the-32-bit-version-of-windows-powershell"></a>Uruchamianie 32-bitowej wersji programu Windows PowerShell
 Podczas instalowania programu Windows PowerShell na komputerze 64-bitowym **programu Windows PowerShell (x86)**, jest zainstalowany 32-bitowej wersji programu Windows PowerShell, oprócz wersji 64-bitowej. Po uruchomieniu programu Windows PowerShell domyślnie uruchamia wersję 64-bitowych.
@@ -16,7 +16,7 @@ Jednak czasami konieczne może być uruchomienie **programu Windows PowerShell (
 
 Aby uruchomić 32-bitowej wersji programu Windows PowerShell, użyj dowolnej z następujących procedur.
 
-#### <a name="in-windows-server-2012-r2"></a>W systemie Windows Server® 2012 R2
+#### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
 - Na **Start** ekranu, wpisz **programu Windows PowerShell (x86)**. Kliknij przycisk **programu Windows PowerShell x86** kafelka.
 
@@ -26,7 +26,7 @@ Aby uruchomić 32-bitowej wersji programu Windows PowerShell, użyj dowolnej z n
 
 - Za pomocą wiersza polecenia wpisz polecenie:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-server-2012"></a>W systemie Windows Server® 2012
+#### <a name="in-windows-server-2012"></a>In Windows Server® 2012
 
 - Na **Start** ekranu, wpisz **PowerShell** , a następnie kliknij przycisk **programu Windows PowerShell (x86)**.
 
@@ -36,7 +36,7 @@ Aby uruchomić 32-bitowej wersji programu Windows PowerShell, użyj dowolnej z n
 
 - Za pomocą wiersza polecenia wpisz polecenie:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-81"></a>W Windows® 8.1
+#### <a name="in-windows-81"></a>In Windows® 8.1
 
 - Na **Start** ekranu, wpisz **programu Windows PowerShell (x86)**. Kliknij przycisk **programu Windows PowerShell x86** kafelka.
 
@@ -46,7 +46,7 @@ Aby uruchomić 32-bitowej wersji programu Windows PowerShell, użyj dowolnej z n
    
 - Za pomocą wiersza polecenia wpisz polecenie:`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### <a name="in-windows-8"></a>W Windows® 8
+#### <a name="in-windows-8"></a>In Windows® 8
 
 - Na **Start** ekranu, ustaw kursor w prawym górnym rogu kliknij pozycję **ustawienia**, kliknij przycisk **Kafelki**, a następnie przenieść **Pokaż narzędzia administracyjne** suwaka Yes (tak). Następnie wpisz **PowerShell** i kliknij przycisk **programu Windows PowerShell (x86)**.
 
