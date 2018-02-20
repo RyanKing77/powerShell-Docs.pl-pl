@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: "Słownik programu Windows PowerShell"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>Słownik programu Windows PowerShell
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |Host|Interfejs, który korzysta z aparatu programu Windows PowerShell do komunikowania się z użytkownikiem. Na przykład host Określa obsługi monity między środowiska Windows PowerShell i użytkownikiem.|
 |Host aplikacji|Program, który ładuje aparat programu Windows PowerShell do procesu i używa go do wykonania operacji.|
 |dane wejściowe przetwarzania — metoda|Metoda, która polecenia cmdlet można użyć do przetwarzania rekordów, które otrzymuje jako dane wejściowe. Metody wejściowe przetwarzania to metoda BeginProcessing, metoda ProcessRecord metody EndProcessing i metody StopProcessing.|
-|Moduł manifestu|Moduł programu Windows PowerShell z manifestu, którego klucz ModulesToProcess jest puste.|
+|Moduł manifestu|Moduł programu Windows PowerShell z manifestu, którego klucz RootModule jest puste.|
 |manifestu modułu|Środowisko Windows PowerShell plik danych (psd1), który opisuje zawartość modułu i który określa sposób przetwarzania modułu.|
 |Moduł stanu sesji|Stan sesji, który zawiera dane publiczne i prywatne modułu programu Windows PowerShell. Dane prywatne, w tym stanie sesji nie jest dostępne dla użytkownika z sesji środowiska Windows PowerShell.|
 |Błąd niepowodujący|Błąd, który nie zatrzymuje przed kontynuowaniem do przetworzenia polecenia programu Windows PowerShell.|
@@ -33,8 +33,8 @@ ms.lasthandoff: 08/08/2017
 |potoku|W programie Windows PowerShell, aby wysłać wyniki poprzednie polecenie jako dane wejściowe następne polecenie w potoku.|
 |Potoku|Serii poleceń połączone przez operatorów potoku (&#124;) (ASCII 124). Każdy operatora potoku wysyła wyniki poprzednie polecenie jako dane wejściowe do następnego polecenia.|
 |PSSession|Typ sesji środowiska Windows PowerShell, który jest tworzony, zarządzane i zamknięte przez użytkownika.|
-|Moduł główny|Moduł określona w kluczu ModuleToProcess w manifeście modułu.|
-|Obszarze działania|W programie Windows PowerShell, czyli środowisku operacyjnym, w którym wykonywane jest każde polecenie w potoku.|
+|Moduł główny|Moduł określona w kluczu RootModule w manifeście modułu.|
+|runspace|W programie Windows PowerShell, czyli środowisku operacyjnym, w którym wykonywane jest każde polecenie w potoku.|
 |Blok skryptu|W programie Windows PowerShell programowania języka, to zbiór instrukcji lub wyrażeń, które mogą być używane jako pojedyncza jednostka. Blok skryptu mogą akceptować argumenty i zwracać wartości.|
 |Moduł skryptu|Moduł programu Windows PowerShell, których główny moduł jest plik modułu skryptu (.psm1). Moduł skryptu może lub nie może zawierać manifestu modułu.|
 |plik skryptu modułu|Plik zawierający skrypt programu Windows PowerShell. Skrypt definiuje elementów członkowskich, które eksportuje moduł skryptu. Skrypt modułu pliki mają rozszerzenie nazwy pliku .psm1.|
