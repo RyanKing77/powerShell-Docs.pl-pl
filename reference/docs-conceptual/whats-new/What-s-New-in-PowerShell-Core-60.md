@@ -52,7 +52,7 @@ Inne są tylko występuje lub jest stosowane w urządzeniach z systemem innym ni
 - Ignoruj `-ExecutionPolicy` przełącznika podczas uruchamiania programu PowerShell na platformach z systemem innym niż Windows, ponieważ skrypt podpisywania nie jest obecnie obsługiwany. (#3481)
 - Stałe ConsoleHost uwzględnić `NoEcho` na platformach systemu Unix. (#3801)
 - Stałe `Get-Help` do obsługi dopasowanie wzorca bez uwzględniania wielkości liter na platformach systemu Unix. (#3852)
-- `powershell`strony Man dodawane do pakietu
+- `powershell` strony Man dodawane do pakietu
 
 ### <a name="logging"></a>Rejestrowanie
 
@@ -65,14 +65,14 @@ Liczba zmian wprowadzono w macOS i Linux obsługują znaków filename tradycyjni
 
 - Ścieżki do polecenia cmdlet są teraz pochodzącego od dowolnego ukośnika (zarówno / i \ pracy jako separator katalogu)
 - Specyfikacja katalogu Base XDG jest teraz wzięty pod uwagę i używany domyślnie:
-  - Ścieżka profilu systemu Linux/macOS znajduje się pod adresem`~/.config/powershell/profile.ps1`
-  - Historia ścieżkę zapisu znajduje się pod adresem`~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
-  - Ścieżka modułu użytkownika znajduje się w`~/.local/share/powershell/Modules`
+  - Ścieżka profilu systemu Linux/macOS znajduje się pod adresem `~/.config/powershell/profile.ps1`
+  - Historia ścieżkę zapisu znajduje się pod adresem `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - Ścieżka modułu użytkownika znajduje się w `~/.local/share/powershell/Modules`
 - Obsługa nazwy plików i folderów zawierających znakiem dwukropka w systemach Unix. (#4959)
 - Obsługa skryptów nazwy lub pełnych ścieżek, które mają przecinkami. (#4136) (Podziękowania dla @TimCurwick!)
 - Wykryj, kiedy `-LiteralPath` służy do pomijania rozwijanie symbolu wieloznacznego dla poleceń cmdlet nawigacji. (#5038)
 - Zaktualizowano `Get-ChildItem` do pracy typu więcej * nix `ls -R` i systemu Windows `DIR /S` natywnych poleceń.
-  `Get-ChildItem`teraz zwraca linki symboliczne podczas cyklicznego wyszukiwania, a nie Szukaj katalogi który tych docelowym łącza. (#3780)
+  `Get-ChildItem` teraz zwraca linki symboliczne podczas cyklicznego wyszukiwania, a nie Szukaj katalogi który tych docelowym łącza. (#3780)
 
 ### <a name="case-sensitivity"></a>Uwzględniana wielkość liter
 
@@ -93,11 +93,11 @@ Side-by-side umożliwia również zapewnienia zgodności jako skrypty można prz
 > Domyślnie Instalator MSI na podstawie w systemie Windows powoduje instalację aktualizacji w miejscu.
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>Zmieniona `powershell(.exe)` do`pwsh(.exe)`
+## <a name="renamed-powershellexe-to-pwshexe"></a>Zmieniona `powershell(.exe)` do `pwsh(.exe)`
 
 Nazwa binarna podstawowych programu PowerShell została zmieniona z `powershell(.exe)` do `pwsh(.exe)`.
 Ta zmiana umożliwia deterministyczne użytkownikom na uruchamianie programu PowerShell Core na maszynach do obsługi środowiska Windows PowerShell side-by-side i instalacji podstawowej programu PowerShell.
-`pwsh`jest również znacznie krótsze i łatwiejsze do typu.
+`pwsh` jest również znacznie krótsze i łatwiejsze do typu.
 
 Dodatkowych zmian `pwsh(.exe)` z `powershell.exe`:
 
@@ -210,7 +210,7 @@ Aby uzyskać więcej informacji o zadaniach programu PowerShell, zobacz [about_J
 ## <a name="language-updates"></a>Języki aktualizacji
 
 - Implementuje specjalne Unicode podczas analizowania, dzięki czemu użytkownicy mogą używać znaków Unicode jako argumenty, ciągi lub nazwy zmiennej. (#3958) (Podziękowania dla @rkeithhill!)
-- Dodano nowe znak ucieczki dla ESC:`` `e``
+- Dodano nowe znak ucieczki dla ESC: `` `e``
 - Dodano obsługę konwertowanie wyliczenia do ciągów (#4318) (Dziękujemy @KirkMunro)
 - Rzutowanie stałym pojedynczy element tablicy do kolekcji uniwersalnej. (#3170)
 - Przeciążenie zakresu znaków dodany do `..` operatora, więc `'a'..'z'` zwraca znaki "a" do "z". (#5026) (Dziękujemy @IISResetMe!)
@@ -220,11 +220,11 @@ Aby uzyskać więcej informacji o zadaniach programu PowerShell, zobacz [about_J
 
 ## <a name="engine-updates"></a>Aktualizacje aparatu
 
-- `$PSVersionTable`ma cztery nowe właściwości:
+- `$PSVersionTable` ma cztery nowe właściwości:
   - `PSEdition`: Ta wartość jest równa `Core` Core środowiska PowerShell i `Desktop` na programie Windows PowerShell
   - `GitCommitId`: To jest identyfikator zatwierdzania Git gałęzi Git lub tagu, w którym został utworzony programu PowerShell.
     W wydanej kompilacji, prawdopodobnie będzie taka sama jak `PSVersion`.
-  - `OS`: To jest zwrócony przez ciąg wersji systemu operacyjnego`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: To jest zwrócony przez ciąg wersji systemu operacyjnego `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Ten błąd jest zwracany przez `[System.Environment]::OSVersion.Platform` ma ustawioną wartość `Win32NT` w systemie Windows, `MacOSX` na macOS, i `Unix` w systemie Linux.
 - Usunięte `BuildVersion` właściwość z `$PSVersionTable`.
   Ta właściwość została silnie powiązany numer kompilacji systemu Windows.
@@ -302,18 +302,18 @@ Aby uzyskać więcej informacji o zadaniach programu PowerShell, zobacz [about_J
 - Dodaj `-Extension` i `-LeafBase` zmienia na `Split-Path` , dzięki czemu można podzielić ścieżek między rozszerzenie nazwy pliku i pozostałej części pliku. (#2721) (Podziękowania dla @powercode!)
 - Dodaj parametry `-Top` i `-Bottom` do `Sort-Object` sortować górne i dolne N
 - Udostępnianie procesu nadrzędnego procesu przez dodanie `CodeProperty "Parent"` do `System.Diagnostics.Process`. (#2850) (Podziękowania dla @powercode!)
-- Użyj MB zamiast KB pamięci kolumn`Get-Process`
+- Użyj MB zamiast KB pamięci kolumn `Get-Process`
 - Dodaj `-NoNewLine` przełączać `Out-String`. (#5056) (Dziękujemy @raghav710)
-- `Move-Item`polecenie cmdlet będzie honorować `-Include`, `-Exclude`, i `-Filter` parametrów. (#3878)
+- `Move-Item` polecenie cmdlet będzie honorować `-Include`, `-Exclude`, i `-Filter` parametrów. (#3878)
 - Zezwalaj na `*` do użycia w ścieżce rejestru dla `Remove-Item`. (#4866)
 - Dodaj `-Title` do `Get-Credential` i ujednolicenie środowisko monitu o platformach.
 - Dodaj `-TimeOut` parametr `Test-Connection`. (#2492)
-- `Get-AuthenticodeSignature`polecenia cmdlet można teraz uzyskać sygnatury czasowej pliku podpisu. (#4061)
+- `Get-AuthenticodeSignature` polecenia cmdlet można teraz uzyskać sygnatury czasowej pliku podpisu. (#4061)
 - Usuń nieobsługiwane `-ShowWindow` przejść z `Get-Help`. (#4903)
 - Napraw `Get-Content -Delimiter` do zawiera ogranicznik w elementach tablicy zwracane (#3706) (Dziękujemy @mklement0)
 - Dodaj `Meta`, `Charset`, i `Transitional` parametry `ConvertTo-HTML` (#4184) (Dziękujemy @ergo3114)
 - Dodaj `WindowsUBR` i `WindowsVersion` właściwości `Get-ComputerInfo` wyników
-- Dodaj `-Group` parametru`Get-Verb`
+- Dodaj `-Group` parametru `Get-Verb`
 - Dodaj `ShouldProcess` obsługiwać `New-FileCatalog` i `Test-FileCatalog` (poprawki `-WhatIf` i `-Confirm`). (#3074) (Podziękowania dla @iSazonov!)
 - Dodaj `-WhatIf` przełączyć się do `Start-Process` polecenia cmdlet (#4735) (Dziękujemy @sarithsutha)
 - Dodaj `ValidateNotNullOrEmpty` zbyt wiele istniejących parametrów.
@@ -344,8 +344,8 @@ Aby uzyskać więcej informacji na temat ich szczegóły, zobacz [fundamentalne 
 ## <a name="filesystem-updates"></a>Aktualizacje systemu plików
 
 - Włącz użycie dostawcy Filesystem ze ścieżki UNC. ($4998)
-- `Split-Path`teraz współpracuje z katalogów głównych UNC
-- `cd`bez argumentów działa teraz jako`cd ~`
+- `Split-Path` teraz współpracuje z katalogów głównych UNC
+- `cd` bez argumentów działa teraz jako `cd ~`
 - Stałe środowiska PowerShell Core zezwalając na używanie ścieżek, które długie są więcej niż 260 znaków. (#3960)
 
 ## <a name="bug-fixes-and-performance-improvements"></a>Poprawki błędów i wydajności
@@ -361,8 +361,8 @@ Aby uzyskać pełną listę poprawek i zmian, zapoznaj się z naszym [wykaz zmia
   - Platforma systemu operacyjnego (`$PSVersionTable.OSDescription`)
   - dokładnej wersji środowiska PowerShell (`$PSVersionTable.GitCommitId`)
 
-Jeśli chcesz zrezygnować z tego telemetrii, po prostu usuń `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`.
-Usunięcie tego pliku pomija wszystkie dane telemetryczne nawet przed pierwszym uruchomieniu programu PowerShell.
+Jeśli chcesz zrezygnować z tego telemetrii, po prostu usuń `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` lub Utwórz `POWERSHELL_TELEMETRY_OPTOUT` zmienną środowiskową o jedną z następujących wartości: `true`, `1` lub `yes`.
+Usunięcie tego pliku lub tworzenia zmiennej pomija wszystkie dane telemetryczne nawet przed pierwszym uruchomieniu programu PowerShell.
 Możemy również zaplanować na udostępnianie tych danych telemetrycznych i szczegółowych informacji, firma Microsoft zgromadzonych telemetrii w [pulpitu nawigacyjnego społeczności][community-dashboard].
 Można znaleźć więcej informacji na temat sposobu wykorzystania przez nas w tym [wpis w blogu][telemetry-blog].
 
@@ -382,6 +382,6 @@ Można znaleźć więcej informacji na temat sposobu wykorzystania przez nas w t
 [— często zadawane pytania]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/en-us/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
-[docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview

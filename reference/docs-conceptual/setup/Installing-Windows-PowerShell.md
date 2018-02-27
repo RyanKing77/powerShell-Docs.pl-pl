@@ -2,25 +2,16 @@
 ms.date: 2017-08-09
 keywords: "środowiska PowerShell, polecenia cmdlet, pobierania, instalacji, ustawienia, systemu windows 10, windows 8.1, windows 8.0, windows 7"
 title: Instalowanie programu Windows PowerShell
-ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="installing-windows-powershell"></a>Instalowanie programu Windows PowerShell
+Środowisko Windows PowerShell jest zainstalowane domyślnie w każdym systemie Windows począwszy od systemu Windows 7 z dodatkiem SP1 i Windows Server 2008 R2 z dodatkiem SP1.
 
-Środowisko PowerShell jest zainstalowane domyślnie w każdym systemie Windows począwszy od systemu Windows 7 z dodatkiem SP1 i Windows Server 2008 R2 z dodatkiem SP1.
-
-Użytkownicy systemów Linux, macOS i systemu Windows, które chcesz zainstalować **PowerShell 6** (beta) na ich maszynach konieczne:
-
-1. Pobierz programu PowerShell dla określonego systemu operacyjnego i wersji, z [GitHub](https://github.com/powershell/powershell#get-powershell)
-1. Postępuj zgodnie z instrukcjami instalacji
-  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
-  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
-
-6 programu PowerShell jest również dostępny do Docker; zobacz [instalacji Docker](https://github.com/PowerShell/PowerShell/tree/master/docker) instrukcje.
+Jeśli interesuje Cię w programie PowerShell 6 i nowsze, należy zainstalować podstawowy PowerShell zamiast programu Windows PowerShell. W tym temacie [instalacji podstawowej programu PowerShell w systemie Windows](Installing-PowerShell-Core-on-Windows.md).
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Znajdowanie programu PowerShell w systemie Windows 10, 8.1, 8.0 i 7
 
@@ -65,7 +56,7 @@ Jedynym wyjątkiem od reguły powyżej jest ISE w systemie Windows Server 2008 R
 
 ## <a name="how-to-check-the-version-of-powershell"></a>Jak sprawdzić wersję środowiska PowerShell
 
-Aby znaleźć zainstalowanych wersji programu PowerShell, uruchom konsolę programu PowerShell (lub ISE) i typ `$PSVersionTable` i naciśnij klawisz **ENTER**.
+Aby znaleźć zainstalowanych wersji programu PowerShell, uruchom konsolę programu PowerShell (lub ISE) i typ `$PSVersionTable` i naciśnij klawisz **ENTER**. Wyszukaj `PSVersion` wartość.
 
 ## <a name="upgrading-existing-windows-powershell"></a>Uaktualnianie istniejącego środowiska Windows PowerShell
 
