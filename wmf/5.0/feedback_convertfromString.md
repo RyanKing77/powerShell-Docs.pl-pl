@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
+keywords: wmf,powershell,setup
 ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Wyodrębnij i analizować Structured obiektów poza ciągu
 Wprowadza to również kilka dodatkowych funkcji ConvertFrom parametry polecenia cmdlet:
@@ -30,7 +30,7 @@ Rozdzielany analizy, domyślnie dzieli dane wejściowe na biały znak i przypisu
 
 > 1 \[C:\\temp\] &gt; &gt; "Hello World" | Ciąg ConvertFrom | Format-Table-Auto
 
-P1 P2
+P1    P2
 --    --
 
 Polecenie cmdlet obsługuje również automatycznie generowanej oparte na przykład analizy na podstawie [FlashExtract](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html) badania pracy w [Microsoft Research](http://research.microsoft.com).
@@ -83,11 +83,11 @@ Z tego zestawu przykłady **ConvertFrom ciąg** może teraz automatycznie wyodr�
 
 > 2 \[C:\\temp\]
 >
-> &gt;&gt;Get zawartość. \\addresses.output.txt | Ciąg ConvertFrom - TemplateFile. \\addresses.template.txt | &gt; &gt; &gt; Format-Table-Auto
+> &gt;&gt; Get-Content .\\addresses.output.txt | ConvertFrom-String -TemplateFile .\\addresses.template.txt | &gt;&gt;&gt; Format-Table -Auto
 >
 > ExtentText nazwę miejscowości stanu
 > ----------                     ----               ----     -----
 > Ana Trujillo...                Ana Trujillo Redmond, WA Antonio Moreno...              Antonio Moreno Renton WA blogu Thomasa Hardy...                Kowalski Aneta Seattle WA Hardy blogu Thomasa...          Hanna WA Redmond Kowalski Krystyna Moos...                  Hanna Moos Puyallup WA
 
-Do manipulowania dodatkowe dane na wyodrębnionego tekstu, **ExtentText** właściwości przechwytuje nieprzetworzony tekst, z którego został wyodrębniony rekordu. Aby wyrazić swoją opinię na temat tej funkcji lub udostępnić zawartość, dla którego masz problemy zapisywania przykłady, Wyślij wiadomość e-mail < psdmfb@microsoft.com >.
+Do manipulowania dodatkowe dane na wyodrębnionego tekstu, **ExtentText** właściwości przechwytuje nieprzetworzony tekst, z którego został wyodrębniony rekordu. Aby wyrazić swoją opinię na temat tej funkcji lub udostępnić zawartość, dla którego masz problemy zapisywania przykłady, Wyślij wiadomość e-mail <psdmfb@microsoft.com>.
 

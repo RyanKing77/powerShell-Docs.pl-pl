@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Pisanie niestandardowych zasobów DSC z klasami programu PowerShell"
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Pisanie niestandardowych zasobów DSC z klasami programu PowerShell
 
@@ -69,7 +69,7 @@ Należy zauważyć, że właściwości są modyfikowane przez atrybuty. Znaczeni
 - **DscProperty(NotConfigurable)**: właściwość jest tylko do odczytu. Oznaczone atrybutem tej właściwości nie można ustawić konfiguracji, ale są wypełnione przez **Get()** metody, jeśli jest obecny.
 - **DscProperty()**: właściwość jest konfigurowalne, ale nie jest wymagana.
 
-**$Path** i **$SourcePath** właściwości są oba parametry. **$CreationTime** jest [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) właściwości. **$Ensure** właściwość jest typu wyliczeniowego, zdefiniowane w następujący sposób.
+**$Path** i **$SourcePath** właściwości są oba parametry. **$CreationTime** jest [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) właściwości. **$Ensure** właściwość jest typu wyliczeniowego, zdefiniowane w następujący sposób.
 
 ```powershell
 enum Ensure 
@@ -484,10 +484,10 @@ Aby uzyskać więcej informacji, zobacz [DSC uruchomiony przy użyciu poświadcz
 **DscResource()** atrybut przyjmuje opcjonalny parametr **RunAsCredential**.
 Ten parametr przyjmuje jeden z trzech wartości:
 
-- `Optional`**PsDscRunAsCredential** jest opcjonalny w przypadku konfiguracji, które wywołują tego zasobu. Jest to wartość domyślna.
-- `Mandatory`**PsDscRunAsCredential** muszą być używane do żadnej konfiguracji, który wywołuje tego zasobu.
-- `NotSupported`Konfiguracje, które wywołują tego zasobu nie można użyć **PsDscRunAsCredential**.
-- `Default`Taki sam jak `Optional`.
+- `Optional` **PsDscRunAsCredential** jest opcjonalny w przypadku konfiguracji, które wywołują tego zasobu. Jest to wartość domyślna.
+- `Mandatory` **PsDscRunAsCredential** muszą być używane do żadnej konfiguracji, który wywołuje tego zasobu.
+- `NotSupported` Konfiguracje, które wywołują tego zasobu nie można użyć **PsDscRunAsCredential**.
+- `Default` Taki sam jak `Optional`.
 
 Na przykład użyć następującego atrybutu, aby określić, że zasób niestandardowy nie obsługuje używania **PsDscRunAsCredential**:
 

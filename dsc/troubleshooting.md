@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Rozwiązywanie problemów z usługi Konfiguracja DSC"
-ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-dsc"></a>Rozwiązywanie problemów z usługi Konfiguracja DSC
 
@@ -21,7 +21,7 @@ Windows PowerShell Desired stan konfiguracji (DSC) zależy od usługi WinRM. Us�
 
 ## <a name="using-get-dscconfigurationstatus"></a>Using Get-DscConfigurationStatus
 
-[Get DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) polecenie cmdlet pobiera informacje o stanie konfiguracji z węzła docelowego. Sformatowanego obiekt jest zwracany, który zawiera ogólne informacje dotyczące czy Uruchom Konfiguracja zakończyła się powodzeniem. Może odnajdywać się do obiektu, aby odnaleźć szczegółowe informacje o konfiguracji, takie jak uruchamianie:
+[Get DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) polecenie cmdlet pobiera informacje o stanie konfiguracji z węzła docelowego. Sformatowanego obiekt jest zwracany, który zawiera ogólne informacje dotyczące czy Uruchom Konfiguracja zakończyła się powodzeniem. Może odnajdywać się do obiektu, aby odnaleźć szczegółowe informacje o konfiguracji, takie jak uruchamianie:
 
 * Wszystkie zasoby, których nie powiodła się
 * Każdy zasób, którego zażądano ponownego rozruchu
@@ -117,7 +117,7 @@ Consistency engine was run successfully.
 
 DSC zdarzenia są rejestrowane w szczególności struktury, który umożliwia użytkownikowi w celu agregowania zdarzeń z jednego zadania konfiguracji DSC. Struktura jest następujący:
 
-**Identyfikator zadania:<Guid>**
+**Identyfikator zadania: <Guid>**
 **<Event Message>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Zbieranie zdarzeń z jednej operacji DSC
@@ -232,7 +232,7 @@ Displaying messages from built-in DSC resources:
 
 ### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4: komunikaty o błędach zarejestrowane dla ostatnich operacji nie powiodło się
 
-`$SeparateDscOperations[0].Group`zawiera zestaw zdarzeń najnowsze operacji. Uruchom `Where-Object` polecenia cmdlet, aby filtrować zdarzenia na podstawie ich poziomu wyświetlanej nazwy. Wyniki są przechowywane w `$myFailedEvent` zmiennej, którego można dodatkowo rozcięta można uzyskać komunikaty o zdarzeniach:
+`$SeparateDscOperations[0].Group` zawiera zestaw zdarzeń najnowsze operacji. Uruchom `Where-Object` polecenia cmdlet, aby filtrować zdarzenia na podstawie ich poziomu wyświetlanej nazwy. Wyniki są przechowywane w `$myFailedEvent` zmiennej, którego można dodatkowo rozcięta można uzyskać komunikaty o zdarzeniach:
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -247,7 +247,7 @@ Error Code : 1
 
 ### <a name="5-all-events-generated-for-a-particular-job-id"></a>5: wszystkie zdarzenia wygenerowane identyfikatora określonego zadania.
 
-`$SeparateDscOperations`jest tablicą grup, z których każdy ma nazwę jako identyfikator unikatowy zadania. Uruchamiając `Where-Object` polecenia cmdlet, można wyodrębnić te grupy zdarzeń o identyfikatorze określonego zadania:
+`$SeparateDscOperations` jest tablicą grup, z których każdy ma nazwę jako identyfikator unikatowy zadania. Uruchamiając `Where-Object` polecenia cmdlet, można wyodrębnić te grupy zdarzeń o identyfikatorze określonego zadania:
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -621,5 +621,5 @@ onlyProperty                            PSComputerName
 * [Tworzenie niestandardowych Windows PowerShell Desired konfiguracji stanu zasobów](authoringResource.md)
 
 ### <a name="other-resources"></a>Inne zasoby
-* [Polecenia cmdlet stanu konfiguracji żądanego programu Windows PowerShell](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [Polecenia cmdlet stanu konfiguracji żądanego programu Windows PowerShell](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

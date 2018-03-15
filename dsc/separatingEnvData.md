@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Oddzielanie danych konfiguracji i środowiska"
-ms.openlocfilehash: cf0d4a12efe4998176d3c80841740c5f9d9a103b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Oddzielanie danych konfiguracji i środowiska
 
@@ -81,7 +81,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof  
 ```
  
-`$MyData`Określa dwóch różnych węzłach, każdego z jego własnej `NodeName` i `Role`. Konfiguracja dynamicznie tworzy **węzła** bloków, wykonując kolekcja węzłów otrzymuje od `$MyData` (w szczególności `$AllNodes`) i filtry kolekcji przed `Role` właściwości...
+`$MyData` Określa dwóch różnych węzłach, każdego z jego własnej `NodeName` i `Role`. Konfiguracja dynamicznie tworzy **węzła** bloków, wykonując kolekcja węzłów otrzymuje od `$MyData` (w szczególności `$AllNodes`) i filtry kolekcji przed `Role` właściwości...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Przy użyciu danych konfiguracji do definiowania środowisk projektowania i produkcji
 
@@ -143,7 +143,7 @@ Configuration MyWebApp
     Import-DscResource -Module xSqlPs
     Import-DscResource -Module xWebAdministration
 
-    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
+    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.NodeName
    {
         # Install prerequisites
         WindowsFeature installdotNet35
@@ -246,7 +246,7 @@ Następująca konfiguracja zapewnia obecności dwie witryny sieci Web.
 Dane dla każdej witryny sieci Web są zdefiniowane w **AllNodes** tablicy.
 Plik `Config.xml` jest używane w obu witryn sieci Web, więc definiujemy w dodatkowych klucz o nazwie `NonNodeData`.
 Należy pamiętać, że może mieć dowolną liczbę dodatkowych kluczy mają i można określić nazwę je dowolnych znaków.
-`NonNodeData`nie jest ona słowem zastrzeżonym, jest tylko co zdecydowaliśmy się nazwę dodatkowe klucza.
+`NonNodeData` nie jest ona słowem zastrzeżonym, jest tylko co zdecydowaliśmy się nazwę dodatkowe klucza.
 
 Dostęp do dodatkowych kluczy przy użyciu specjalna zmienna **$ConfigurationData**.
 W tym przykładzie `ConfigFileContents` jest dostępny z poziomu wiersza:

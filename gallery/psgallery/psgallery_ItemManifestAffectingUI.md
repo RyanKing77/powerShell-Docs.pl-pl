@@ -2,8 +2,8 @@
 
 Ten temat zawiera wydawców z podsumowanie informacji na temat sposobu zmodyfikuj manifest ich publikacji galerii programu PowerShell, tak aby będzie mieć wpływ na funkcje PowerShellGet poleceń cmdlet i interfejsu użytkownika z galerii programu PowerShell. Ta zawartość jest zorganizowana według której zmiana pojawi się w górnej części, a następnie w obszarze nawigacyjnym po lewej stronie, począwszy. Brak sekcji szczegółów tagi obejmujący określający ważne tagi, jak również niektórych najczęściej używanych tagów. Istnieją dwa tematy, które zawierają przykłady manifestu: 
 
-* Dla modułów, zobacz [manifestu modułu aktualizacji](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* Skryptów, zobacz [Tworzenie pliku skryptu za pomocą metadanych](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* Dla modułów, zobacz [manifestu modułu aktualizacji](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* Skryptów, zobacz [Tworzenie pliku skryptu za pomocą metadanych](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Kontrolowane przez Manifest elementy funkcji galerii programu PowerShell
 
@@ -81,7 +81,7 @@ Jest najlepszym rozwiązaniem do użycia jako Tag preferowane powoduje mniej szu
 | **Opracowywania oprogramowania** |  |
 | **Windows** |  |
 | **Kompilacji** |  |
-| **Wdrożenia** | Wdrażanie jest nieco rzadziej używane |
+| **wdrożenia** | Wdrażanie jest nieco rzadziej używane |
 | **Chmury** |  |
 | **GIT** |  |
 | **Test** | Testowanie jest mniej pożądana |

@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: Zabezpieczanie pliku MOF
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>Zabezpieczanie pliku MOF
 
@@ -19,7 +19,7 @@ W tym temacie opisano sposób zapewnienia węzeł docelowy jest zaszyfrowany pli
 
 Począwszy od programu PowerShell w wersji 5.0, cały plik MOF jest domyślnie szyfrowane po zastosowaniu do węzła przy użyciu **Start DSCConfiguration** polecenia cmdlet.
 Proces opisany w tym artykule jest wymagany tylko w przypadku wdrażania rozwiązania przy użyciu protokołu usługi ściągania, jeśli certyfikaty nie są zarządzane, aby upewnić się, można odszyfrować i odczytywane przez system, przed ich zastosowaniem konfiguracje pobrane przez węzeł docelowy (na przykład replikacji ściąganej usługi dostępne w systemie Windows Server).
-Węzły w zarejestrowany [Konfiguracja DSC automatyzacji Azure](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) zostanie automatycznie certyfikaty zainstalowaniu i zarządzane przez usługę z nie koszty administracyjne wymagane.
+Węzły w zarejestrowany [Konfiguracja DSC automatyzacji Azure](https://docs.microsoft.com/azure/automation/automation-dsc-overview) zostanie automatycznie certyfikaty zainstalowaniu i zarządzane przez usługę z nie koszty administracyjne wymagane.
 
 >**Uwaga:** w tym temacie omówiono certyfikaty używane do szyfrowania.
 >Dla celów szyfrowania certyfikatu z podpisem własnym jest wystarczająca, ponieważ klucz prywatny jest zawsze mieć klucz tajny i szyfrowania nie oznacza zaufania dokumentu.
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>Konfigurowanie odszyfrowywania
 
-Przed [ `Start-DscConfiguration` ](https://technet.microsoft.com/en-us/library/dn521623.aspx) można pracować, trzeba sprawdzić lokalny program Configuration Manager na każdym węźle docelowym o certyfikacie używanym do odszyfrowywania poświadczeń, Sprawdź odcisk palca certyfikatu przy użyciu zasobów CertificateID. Ta funkcja przykład znajdziesz odpowiedni certyfikat lokalny (trzeba będzie dostosować go tak znajdzie dokładnie certyfikat, którego chcesz użyć):
+Przed [ `Start-DscConfiguration` ](https://technet.microsoft.com/library/dn521623.aspx) można pracować, trzeba sprawdzić lokalny program Configuration Manager na każdym węźle docelowym o certyfikacie używanym do odszyfrowywania poświadczeń, Sprawdź odcisk palca certyfikatu przy użyciu zasobów CertificateID. Ta funkcja przykład znajdziesz odpowiedni certyfikat lokalny (trzeba będzie dostosować go tak znajdzie dokładnie certyfikat, którego chcesz użyć):
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 W tym momencie możesz uruchomić konfiguracja, w którym dane wyjściowe obejmują dwa pliki:
 
- * A *. meta.mof pliku, który konfiguruje lokalny program Configuration Manager można odszyfrować poświadczeń przy użyciu certyfikatu, który jest przechowywany w magazynie komputera lokalnego i identyfikowana na podstawie jego odcisk palca. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx)stosuje *. meta.mof pliku.
+ * A *. meta.mof pliku, który konfiguruje lokalny program Configuration Manager można odszyfrować poświadczeń przy użyciu certyfikatu, który jest przechowywany w magazynie komputera lokalnego i identyfikowana na podstawie jego odcisk palca. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) stosuje *. meta.mof pliku.
  * Plik MOF, który faktycznie ma zastosowanie do konfiguracji. Początek DscConfiguration ma zastosowanie do konfiguracji.
 
 Te polecenia będzie wykonywać te kroki:

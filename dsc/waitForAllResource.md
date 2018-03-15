@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób WaitForAll DSC"
-ms.openlocfilehash: 2054d2af7cd7dd839c62e77c1d4b6eee5cff34ab
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2b6d9e11acd429eecb30926316d1033331524edc
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforall-resource"></a>Zasób WaitForAll DSC
 
@@ -36,7 +36,7 @@ WaitForAll [string] #ResourceName
 
 |  Właściwość  |  Opis   | 
 |---|---| 
-| ResourceName| Nazwa zasobu zależne.| 
+| ResourceName| Nazwa zasobu zależne. Jeśli ten zasób należy do innej konfiguracji, format nazwy jako "[__ResourceType__]__ResourceName__:: [__ConfigurationName__]:: [ __ConfigurationName__] "| 
 | nodeName| Węzły docelowe są zależne od zasobu.| 
 | RetryIntervalSec| Liczba sekund przed ponowną próbą. Minimalną jest 1.| 
 | RetryCount| Maksymalna liczba ponownych prób.| 

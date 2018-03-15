@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: "Ułatwienia dostępu w środowisku Windows PowerShell ISE"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Ułatwienia dostępu w środowisku Windows PowerShell ISE
 W tym temacie opisano funkcje ułatwień dostępu z systemu Windows PowerShell Integrated Scripting Environment (ISE), które mogą być przydatne.
@@ -22,7 +22,7 @@ W tym temacie opisano funkcje ułatwień dostępu z systemu Windows PowerShell I
 
 Firma Microsoft dokłada wszelkich starań, aby jej produkty i usługi były coraz łatwiejsze w użytkowaniu. Poniższe tematy zawierają informacje dotyczące funkcji, produktów i usług, które ułatwiają dostęp do programu Windows PowerShell ISE dla osób niepełnosprawnych.
 
-Windows PowerShell ISE obsługuje tryb dużego kontrastu. Dla niedowidzących punkt przerwania informacje są dostępne za pomocą poleceń cmdlet do zarządzania punktów przerwania, takich jak [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) i [PSBreakpoint zestawu](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Aby uzyskać więcej informacji skontaktuj się w temacie jak zarządzać punktów przerwania w [jak debugowanie skryptów w środowisku Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Oprócz funkcji ułatwień dostępu i narzędzi w systemie Microsoft Windows następujące funkcje ułatwiają programu Windows PowerShell ISE dostęp dla osób niepełnosprawnych:
+Windows PowerShell ISE obsługuje tryb dużego kontrastu. Dla niedowidzących punkt przerwania informacje są dostępne za pomocą poleceń cmdlet do zarządzania punktów przerwania, takich jak [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) i [PSBreakpoint zestawu](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Aby uzyskać więcej informacji skontaktuj się w temacie jak zarządzać punktów przerwania w [jak debugowanie skryptów w środowisku Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Oprócz funkcji ułatwień dostępu i narzędzi w systemie Microsoft Windows następujące funkcje ułatwiają programu Windows PowerShell ISE dostęp dla osób niepełnosprawnych:
 
 - Skróty klawiaturowe
 
@@ -58,27 +58,27 @@ Podczas edytowania tekstu, można użyć następujących skrótów klawiaturowyc
 |Akcja|Skróty klawiaturowe|Użyj w|
 |----------|----------------------|----------|
 |**Kopiuj**|CTRL+C|Skrypt, okienko konsoli|
-|**Wytnij**|CTRL + X|Skrypt, okienko konsoli|
+|**Cut**|CTRL+X|Skrypt, okienko konsoli|
 |**Znajdź w skrypcie**|CTRL+F|Okienko skryptu|
 |**Znajdź następny w skrypcie**|F3|Okienko skryptu|
-|**Znajdź poprzedni w skrypcie**|SHIFT + F3|Okienko skryptu|
+|**Znajdź poprzedni w skrypcie**|SHIFT+F3|Okienko skryptu|
 |**Wklej**|CTRL + V|Skrypt, okienko konsoli|
-|**Wykonaj ponownie**|CTRL + Y|Skrypt, okienko konsoli|
-|**Zastąp w skrypcie**|CTRL + H|Okienko skryptu|
-|**Zapisz**|CTRL+S|Okienko skryptu|
+|**Wykonaj ponownie**|CTRL+Y|Skrypt, okienko konsoli|
+|**Zastąp w skrypcie**|CTRL+H|Okienko skryptu|
+|**Zapisywanie**|CTRL+S|Okienko skryptu|
 |**Zaznacz wszystko**|CTRL + A|Skrypt, okienko konsoli|
-|**Cofnij**|CTRL + Z|Skrypt, okienko konsoli|
+|**Cofnij**|CTRL+Z|Skrypt, okienko konsoli|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Skróty klawiaturowe do uruchamiania skryptów
 Podczas uruchamiania skryptów w okienku skryptów, można użyć następujących skrótów klawiaturowych.
 
 |Akcja|Skróty klawiaturowe|
 |----------|---------------------|
-|**Nowy**|CTRL + N|
-|**Otwórz**|CTRL + O|
-|**Uruchom**|F5|
+|**Nowy**|CTRL+N|
+|**Otwórz**|CTRL+O|
+|**Run**|F5|
 |**Uruchom zaznaczenia**|F8|
-|**Zatrzymuje wykonywanie**|CTRL + BREAK. CTRL + C można można użyć, gdy kontekst jest jednoznaczne (Jeśli nie podano tekstu wybrane).|
+|**Zatrzymuje wykonywanie**|CTRL+BREAK. CTRL + C można można użyć, gdy kontekst jest jednoznaczne (Jeśli nie podano tekstu wybrane).|
 |**Karta** (do następnego skryptu)|CTRL + TAB **Uwaga:** Tab do następnego skryptu działa tylko wtedy, gdy masz pojedynczej karcie programu PowerShell, Otwórz, lub gdy ma więcej niż jedną kartę programu PowerShell, Otwórz, ale skupiono się w okienku skryptów.|
 |**Karta** (do poprzedniego skryptu)|CTRL + SHIFT + TAB **Uwaga:** kartę do poprzedniego skryptu działa, jeśli masz tylko jedną Otwórz kartę programu PowerShell lub jeśli masz więcej niż jedną kartę programu PowerShell, Otwórz, a skupiono się w okienku skryptów.|
 
@@ -87,16 +87,16 @@ Następujące skróty klawiaturowe służy do dostosowywania widoku w środowisk
 
 |Akcja|Skróty klawiaturowe|
 |----------|---------------------|
-|**Przejdź do okienka konsoli**|CTRL + D|
-|**Przejdź do okienka skryptu**|CTRL + I|
-|**Pokaż okienko skryptu**|CTRL + R|
-|**Ukrywanie okienka skryptu**|CTRL + R|
+|**Przejdź do okienka konsoli**|CTRL+D|
+|**Przejdź do okienka skryptu**|CTRL+I|
+|**Pokaż okienko skryptu**|CTRL+R|
+|**Ukrywanie okienka skryptu**|CTRL+R|
 ||
-|**Przenieś w górę okienko skryptu**|CTRL + 1|
-|**Okienko skryptu w prawo**|CTRL + 2|
-|**Maksymalizuj okienko skryptu**|CTRL + 3|
-|**Powiększenie**|CTRL + ZNAK PLUS|
-|**Pomniejszenie**|CTRL + ZNAK MINUS|
+|**Przenieś w górę okienko skryptu**|CTRL+1|
+|**Okienko skryptu w prawo**|CTRL+2|
+|**Maksymalizuj okienko skryptu**|CTRL+3|
+|**Powiększenie**|CTRL+PLUS SIGN|
+|**Pomniejszenie**|CTRL+MINUS SIGN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Skróty klawiaturowe do debugowania skryptów
 Podczas debugowania skryptów, można użyć następujących skrótów klawiaturowych.
@@ -106,12 +106,12 @@ Podczas debugowania skryptów, można użyć następujących skrótów klawiatur
 |**Uruchom/Kontynuuj**|F5|W okienku skryptów, podczas debugowania skryptu|
 |**Wkrocz**|F11|W okienku skryptów, podczas debugowania skryptu|
 |**Przekrocz**|F10|W okienku skryptów, podczas debugowania skryptu|
-|**Wyjdź**|SHIFT + F11|W okienku skryptów, podczas debugowania skryptu|
-|**Stos wywołań wyświetlania**|CTRL + SHIFT + D|W okienku skryptów, podczas debugowania skryptu|
-|**Lista punktów przerwania**|CTRL + SHIFT + L|W okienku skryptów, podczas debugowania skryptu|
+|**Wyjdź**|SHIFT+F11|W okienku skryptów, podczas debugowania skryptu|
+|**Stos wywołań wyświetlania**|CTRL+SHIFT+D|W okienku skryptów, podczas debugowania skryptu|
+|**Lista punktów przerwania**|CTRL+SHIFT+L|W okienku skryptów, podczas debugowania skryptu|
 |**Przełącz punkt przerwania**|F9|W okienku skryptów, podczas debugowania skryptu|
-|**Usuń wszystkie punkty przerwania**|CTRL + SHIFT + F9|W okienku skryptów, podczas debugowania skryptu|
-|**Zatrzymaj debugera**|SHIFT + F5|W okienku skryptów, podczas debugowania skryptu|
+|**Usuń wszystkie punkty przerwania**|CTRL+SHIFT+F9|W okienku skryptów, podczas debugowania skryptu|
+|**Zatrzymaj debugera**|SHIFT+F5|W okienku skryptów, podczas debugowania skryptu|
 
 > ![Uwaga](../core-powershell/web-access/images/Note.jpeg)**Uwaga**
 >
@@ -134,19 +134,19 @@ Można użyć następujących skrótów klawiaturowych, korzystając z kart śro
 
 |Akcja|Skróty klawiaturowe|
 |----------|---------------------|
-|**Zamknij kartę programu PowerShell**|CTRL + W|
-|**Nowa karta programu PowerShell**|CTRL + T|
-|**Poprzedniej karty środowiska PowerShell**|CTRL + SHIFT + TAB. Ten skrót działa tylko wtedy, gdy żadne pliki nie są otwarte na każdej z kart środowiska PowerShell.|
-|**Następna karta środowiska Windows PowerShell**|CTRL + TAB. Ten skrót działa tylko wtedy, gdy żadne pliki nie są otwarte na każdej z kart środowiska PowerShell.|
+|**Zamknij kartę programu PowerShell**|CTRL+W|
+|**Nowa karta programu PowerShell**|CTRL+T|
+|**Poprzedniej karty środowiska PowerShell**|CTRL+SHIFT+TAB. Ten skrót działa tylko wtedy, gdy żadne pliki nie są otwarte na każdej z kart środowiska PowerShell.|
+|**Następna karta środowiska Windows PowerShell**|CTRL+TAB. Ten skrót działa tylko wtedy, gdy żadne pliki nie są otwarte na każdej z kart środowiska PowerShell.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Skróty klawiaturowe, uruchamianie i kończenie
 Można użyć następujących skrótów klawiaturowych, aby uruchomić konsolę programu Windows PowerShell (PowerShell.exe) lub aby zakończyć działanie programu Windows PowerShell ISE.
 
 |Akcja|Skróty klawiaturowe|
 |----------|---------------------|
-|**Zakończ**|ALT+F4|
-|**Uruchom PowerShell.exe** (konsoli środowiska Windows PowerShell)|CTRL + SHIFT + P|
+|**Exit**|ALT+F4|
+|**Uruchom PowerShell.exe** (konsoli środowiska Windows PowerShell)|CTRL+SHIFT+P|
 
 ## <a name="see-also"></a>Zobacz też
-- [Przy użyciu programu Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Używanie środowiska Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

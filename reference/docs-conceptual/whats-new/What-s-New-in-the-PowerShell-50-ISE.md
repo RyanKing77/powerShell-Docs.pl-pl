@@ -3,19 +3,19 @@ ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: "Jakie s nowego w środowisku PowerShell 50 ISE"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Jaki &#39; s nowego w środowisku Windows PowerShell ISE
+# <a name="what39s-new-in-the-windows-powershell-ise"></a>Co&#39;s nowego w środowisku Windows PowerShell ISE
 W tym temacie opisano nowe i zaktualizowane funkcje, które zostały wprowadzone w wersjach programu Windows PowerShell Integrated Scripting Environment (ISE).
 
 ## <a name="feature-description"></a>Opis funkcji
 Windows PowerShell ISE to aplikacja hosta, która umożliwia zapis, uruchamianie i testowanie skryptów i modułów w środowisku graficznym i intuicyjne. Najważniejsze funkcje takie jak kolorowanie składni, karcie ukończenia, debugowania visual zgodności Unicode i Pomoc kontekstowa zapewniają bogate środowisko obsługi skryptów.
 
-Omówienie programu Windows PowerShell ISE, zobacz [omówienie Windows PowerShell zintegrowane skryptów środowiska](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+Omówienie programu Windows PowerShell ISE, zobacz [omówienie Windows PowerShell zintegrowane skryptów środowiska](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Nowe i zmienione funkcje w środowisku Windows PowerShell ISE
 W poniższej tabeli przedstawiono nowe i zmienione funkcje w tej wersji programu Windows PowerShell ISE w programie Windows PowerShell.
@@ -167,7 +167,7 @@ Inne funkcje edycji programu Windows PowerShell ISE:
 
 - **Kolorowanie składni XML**programu Windows PowerShell ISE teraz kolory składni XML w taki sam sposób jak kolory jego składnię Windows PowerShell.
 
-- **Dopasowywanie nawiasu klamrowego** programu Windows PowerShell ISE zawiera nawias klamrowy dopasowywania i wyróżnianie i mogą być używane w następujący sposób: (na przykład za pomocą **przejdź do dopasowania** polecenia lub **Ctrl +]** lokalizuje nawias zamykający, jeśli masz nawiasu otwierającego zaznaczona).
+- **Dopasowywanie nawiasu klamrowego** programu Windows PowerShell ISE zawiera nawias klamrowy dopasowywania i wyróżnianie i mogą być używane w następujący sposób: (na przykład za pomocą **przejdź do dopasowania** polecenia lub **Ctrl +]** lokalizuje zamykający nawias klamrowy, jeśli masz nawiasu otwierającego zaznaczona).
 
 - **Wyświetlanie konspektu** okienko skryptu obsługuje tworzenie konspektu, co pozwala zwijanie lub rozwijanie fragmentów kodu, klikając przycisk plus lub minus zaloguje się na lewym marginesie. Można użyć nawiasów klamrowych lub **#region** i **#endregion** znaczniki, aby oznaczyć początek lub koniec zwijanej sekcji. Aby rozwinąć lub zwinąć wszystkich regionów, naciśnij klawisz **Ctrl + M**.
 
@@ -222,7 +222,7 @@ Pokaż polecenia jest nowy Windows PowerShell ISE 3.0.
 ## <a name="see-also"></a>Zobacz też
 Aby uzyskać więcej informacji o korzystaniu z programu Windows PowerShell ISE w programie Windows PowerShell zobacz następujące łącza.
 
-- [Przy użyciu systemu Windows PowerShell zintegrowane środowisko obsługi skryptów](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Eksploracja Windows PowerShell zintegrowane środowisko obsługi skryptów](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE w witrynie TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Centrum skryptów](http://technet.microsoft.com/scriptcenter/default)
 

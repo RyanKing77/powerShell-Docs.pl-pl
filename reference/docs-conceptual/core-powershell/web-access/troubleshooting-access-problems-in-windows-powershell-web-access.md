@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: polecenia cmdlet programu PowerShell
 title: "Rozwiązywanie problemów z dostępem w programie windows powershell web access"
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Rozwiązywanie problemów z programem Windows PowerShell Web Access
 
@@ -34,7 +34,7 @@ Błąd logowania może wystąpić z następujących powodów.
 
   Sprawdź, czy zdalne zarządzanie jest włączone na komputerze, z którym użytkownik próbuje się połączyć.
 
-  Aby uzyskać więcej informacji, zobacz [jak skonfigurować komputer dla niego komunikację zdalną](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Aby uzyskać więcej informacji, zobacz [jak skonfigurować komputer dla niego komunikację zdalną](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Wewnętrzny błąd serwera
 
@@ -61,7 +61,7 @@ Taka sytuacja może wystąpić w przypadku użytkowników, którzy zalogowali si
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>Nie można nawiązać połączenia ze zdalnym komputerem grupy roboczej
 
-Jeśli komputer docelowy jest członkiem grupy roboczej, aby podać nazwę użytkownika i zaloguj się do komputera należy użyć następującej składni:`<workgroup_name>\<user_name>`
+Jeśli komputer docelowy jest członkiem grupy roboczej, aby podać nazwę użytkownika i zaloguj się do komputera należy użyć następującej składni: `<workgroup_name>\<user_name>`
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Nie można odnaleźć narzędzi do zarządzania serwerem sieci Web (IIS), nawet jeśli rola została zainstalowana
 
@@ -94,7 +94,7 @@ Parametr | Wartość
 -- | --
 UserName | Serwer\_nazwa\\użytkownika\_nazwy<br/>Localhost\\użytkownika\_nazwy<br/>. \\użytkownika\_nazwy
 Grupa_użytkowników | Serwer\_nazwa\\użytkownika\_grupy<br/>Localhost\\użytkownika\_grupy<br/>. \\użytkownika\_grupy
-Grupa_komputerów | Serwer\_nazwa\\komputera\_grupy<br/>Localhost\\komputera\_grupy<br/>. \\komputera\_grupy
+ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\komputera\_grupy<br/>. \\komputera\_grupy
 
 #### <a name="gateway-server-is-in-a-domain"></a>Serwer bramy znajduje się w domenie
 
@@ -132,7 +132,7 @@ Reguły autoryzacji nie obsługują adresów IPv6 w formie nazwy domeny.
 Aby określić komputer docelowy przy użyciu adresu IPv6, należy użyć oryginalnego adresu IPv6 (zawierającego dwukropki) w regule autoryzacji.
 Zarówno domeny, jak i numeryczne adresy IPv6 (zawierające dwukropki) są obsługiwane jako nazwy komputera docelowego na stronie logowania programu Windows PowerShell Web Access, ale nie w ramach reguł autoryzacji. 
 
-Aby uzyskać więcej informacji na temat adresów IPv6, zobacz [jak działa protokół IPv6](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx).
+Aby uzyskać więcej informacji na temat adresów IPv6, zobacz [jak działa protokół IPv6](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## <a name="see-also"></a>Zobacz też
 

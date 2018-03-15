@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: "Zarządzanie usługami"
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: 9fd6c8bcfecc99756188409629ddf94b880aab91
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1e83566b1cb3c0c9c3c78a5877e52552ee51b0e9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="managing-services"></a>Zarządzanie usługami
 Ma osiem rdzeni usługi poleceń cmdlet, przeznaczone dla wielu zadań usługi. Zajmiemy tylko wyświetlanie i zmiana w stanie uruchomionym dla usługi, ale można uzyskać listę poleceń cmdlet usługi za pomocą **Get-Help \&#42;-usługi**, oraz informacje dotyczące poszczególnych poleceń cmdlet usługi można znaleźć przy użyciu **Get-Help < nazwa polecenia Cmdlet >**, takich jak **Get-Help nową usługę**.
@@ -138,11 +138,11 @@ Polecenia cmdlet Set-Service zmiany właściwości usługi na komputerze lokalny
 
 Aby używać zestawu usługi systemu Windows Vista i nowszych wersjach systemu Windows, Otwórz program Windows PowerShell przy użyciu opcji "Uruchom jako administrator".
 
-Aby uzyskać więcej informacji, zobacz [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+Aby uzyskać więcej informacji, zobacz [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 
 ## <a name="see-also"></a>Zobacz też
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 - [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
 - [Wstrzymanie usługi [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 

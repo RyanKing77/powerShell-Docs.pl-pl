@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, programu powershell, zabezpieczeń"
 title: Rejestrowanie JEA konfiguracji
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>Rejestrowanie JEA konfiguracji
 
@@ -19,7 +19,7 @@ Ten proces dotyczy informacje o konfiguracji sesji systemu i udostępnia punkt k
 
 ## <a name="single-machine-configuration"></a>Konfiguracja pojedynczego komputera
 
-W przypadku małych środowisk można wdrożyć JEA przez zarejestrowanie sesji konfiguracji plików przy użyciu [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) polecenia cmdlet.
+W przypadku małych środowisk można wdrożyć JEA przez zarejestrowanie sesji konfiguracji plików przy użyciu [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) polecenia cmdlet.
 
 Przed rozpoczęciem upewnij się, że zostały spełnione następujące wymagania wstępne:
 - Co najmniej jedną rolę został utworzony i umieszczane w folderze "RoleCapabilities" nieprawidłowy modułu programu PowerShell.
@@ -28,7 +28,7 @@ Przed rozpoczęciem upewnij się, że zostały spełnione następujące wymagani
 
 Należy również wybrać nazwę punktu końcowego JEA.
 Nazwa punktu końcowego JEA będzie wymagane, kiedy użytkownik chce nawiązać połączenie przy użyciu JEA systemu.
-Można użyć [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) polecenia cmdlet, aby sprawdzić nazwy istniejące punkty końcowe w systemie.
+Można użyć [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) polecenia cmdlet, aby sprawdzić nazwy istniejące punkty końcowe w systemie.
 Punkty końcowe rozpoczynających się od 'microsoft' zwykle są dostarczane z systemem Windows.
 Punkt końcowy "microsoft.powershell" jest używany podczas nawiązywania połączenia zdalnego punktu końcowego programu PowerShell domyślny punkt końcowy.
 

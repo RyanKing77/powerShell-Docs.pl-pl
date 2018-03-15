@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: polecenia cmdlet programu PowerShell
 title: "za pomocą konsoli programu powershell systemu windows oparte na sieci web"
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Korzystanie z konsoli internetowej programu Windows PowerShell
 
@@ -58,7 +58,7 @@ Domyślnie ten adres witryny sieci Web jest *https://\<nazwa_serwera\>/pswa*.
 
 Zanim zalogujesz się do programu Windows PowerShell Web Access można się, że nazwa lub adres IP komputera zdalnego, którym chcesz zarządzać.
 Musisz być autoryzowanym użytkownikiem na komputerze zdalnym. Ponadto komputer musi być skonfigurowany pod kątem zarządzania zdalnego.
-Aby uzyskać więcej informacji o konfigurowaniu komputera w celu umożliwienia zarządzania zdalnego, zobacz [Włączanie i używanie poleceń zdalnych w programie Windows PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting).
+Aby uzyskać więcej informacji o konfigurowaniu komputera w celu umożliwienia zarządzania zdalnego, zobacz [Włączanie i używanie poleceń zdalnych w programie Windows PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 Najprostszą metodą konfiguracji komputera w celu umożliwienia zarządzania zdalnego jest uruchomienie **Enable-PSRemoting - force** polecenia cmdlet na komputerze, w sesji środowiska Windows PowerShell, która została otwarta z podwyższonym poziomem uprawnień użytkownika (**Uruchom jako Administrator**).
 
@@ -70,11 +70,11 @@ Najprostszą metodą konfiguracji komputera w celu umożliwienia zarządzania zd
 
     > ![Uwaga](images/Note.jpeg) **Uwaga**:
     >
-    > - Jeśli komputer docelowy do grupy roboczej, aby podać nazwę użytkownika i zaloguj się do komputera należy użyć następującej składni:`<workgroup_name>\<user_name>`
+    > - Jeśli komputer docelowy do grupy roboczej, aby podać nazwę użytkownika i zaloguj się do komputera należy użyć następującej składni: `<workgroup_name>\<user_name>`
     > - Jeśli komputer docelowy jest serwerem bramy, można określić `localhost` w polu Nazwa komputera
     > - Jeśli komputer docelowy jest serwerem bramy, a serwer bramy znajduje się w grupie roboczej, należy użyć `<workgroup name>\<user_name>` w nazwie użytkownika usterki. Można użyć `localhost` w polu nazwy komputera.
 
-1. **Opcjonalne ustawienia połączenia** sekcji dotyczy wymagań autoryzacji komputera zdalnego, którym chcesz zarządzać. Aby uzyskać więcej informacji na temat parametrów, które są równoważne opcjonalnym ustawieniom połączenia, zobacz [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) pomocy polecenia cmdlet.
+1. **Opcjonalne ustawienia połączenia** sekcji dotyczy wymagań autoryzacji komputera zdalnego, którym chcesz zarządzać. Aby uzyskać więcej informacji na temat parametrów, które są równoważne opcjonalnym ustawieniom połączenia, zobacz [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) pomocy polecenia cmdlet.
 
     Zwykle poświadczenia przekazywane za pośrednictwem bramy systemu Windows PowerShell Web Access są takie same, które są rozpoznawane przez komputer zdalny, które mają być zarządzane. Jeśli chcesz użyć innych poświadczeń do zarządzania komputerem zdalnym określoną w kroku 2, rozwiń węzeł **opcjonalne ustawienia połączenia** sekcji i udostępnienie alternatywnych poświadczeń. W przeciwnym razie przejdź do kroku 6.
 

@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
+keywords: wmf,powershell,setup
 title: Nowe scenariusze i funkcje w wersji 5.1 WMF
-ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nowe scenariusze i funkcje w wersji 5.1 WMF #
 
@@ -28,9 +28,9 @@ Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które cha
 
 ## <a name="catalog-cmdlets"></a>Polecenia cmdlet katalogu  
 
-Dodano dwa nowe polecenia cmdlet w [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) modułu; te Generowanie i zweryfikować pliki w katalogu systemu Windows.  
+Dodano dwa nowe polecenia cmdlet w [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modułu; te Generowanie i zweryfikować pliki w katalogu systemu Windows.  
 
-###<a name="new-filecatalog"></a>Nowe FileCatalog 
+###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
 
 Nowe FileCatalog tworzy plik katalogu systemu Windows dla zestawu plików i folderów. Ten plik katalogu zawiera wartości skrótu dla wszystkich plików w określonych ścieżek. Użytkownicy można rozpowszechniać zestaw folderów wraz z odpowiedniego pliku wykazu reprezentujący te foldery. Informacje te są przydatne w celu zweryfikowania, czy zmiany zostały wprowadzone do folderów od czasu utworzenia katalogu.    
@@ -51,7 +51,7 @@ Spowoduje to utworzenie pliku wykazu.
 Aby sprawdzić integralność pliku katalogu (Pester.cat w powyżej przykładzie), podpisz go za pomocą [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) polecenia cmdlet.   
 
 
-###<a name="test-filecatalog"></a>FileCatalog testu 
+###<a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 Test FileCatalog weryfikuje katalogu, reprezentujący zestaw folderów. 
@@ -62,7 +62,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-To polecenie cmdlet porównuje wszystkie wartości skrótów plików i ich ścieżek względnych znalezione w *katalogu* z tych na *dysku*. W przypadku wykrycia niezgodność wartości skrótu pliku i ścieżki zwraca stan jako *ValidationFailed*. Użytkownicy mogą pobierać te informacje przy użyciu *— szczegółowe* parametru. Wyświetla również podpisywania stan katalogu w *podpisu* właściwości, który jest odpowiednikiem wywołania [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) polecenia cmdlet na plik wykazu. Użytkownicy mogą też pominąć każdego pliku, podczas sprawdzania poprawności przy użyciu *- FilesToSkip* parametru. 
+To polecenie cmdlet porównuje wszystkie wartości skrótów plików i ich ścieżek względnych znalezione w *katalogu* z tych na *dysku*. W przypadku wykrycia niezgodność wartości skrótu pliku i ścieżki zwraca stan jako *ValidationFailed*. Użytkownicy mogą pobierać te informacje przy użyciu *— szczegółowe* parametru. Wyświetla również podpisywania stan katalogu w *podpisu* właściwości, który jest odpowiednikiem wywołania [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) polecenia cmdlet na plik wykazu. Użytkownicy mogą też pominąć każdego pliku, podczas sprawdzania poprawności przy użyciu *- FilesToSkip* parametru. 
 
 
 ## <a name="module-analysis-cache"></a>Moduł analizy w pamięci podręcznej ##
@@ -101,13 +101,13 @@ W WMF 5.1:
 
 * Można użyć [ModuleSpecification — Konstruktor (Hashtable)](https://msdn.microsoft.com/library/jj136290). Ta tabela skrótów ma tego samego formatu co `Get-Module -FullyQualifiedName`.
 
-**Przykład:**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+**Przykład:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * W przypadku wielu wersji modułu PowerShell korzysta z **samej logiki rozpoznawania** jako `Import-Module` i nie zwraca błąd — jak `Import-Module` i `Import-DscResource`.
 
 
 ##<a name="improvements-to-pester"></a>Ulepszenia Pester
-W wersji 5.1 WMF wersja Pester jest dostarczany z programem PowerShell zaktualizowano z 3.3.5 3.4.0, z uwzględnieniem https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e zatwierdzania, która umożliwia lepsze zachowanie dla Pester na serwerze Nano. 
+W wersji 5.1 WMF, wersja Pester jest dostarczany z programem PowerShell zaktualizowano z 3.3.5 3.4.0, z uwzględnieniem zatwierdzania https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, która umożliwia lepsze zachowanie dla Pester na serwerze Nano. 
 
-Zmiany w wersji 3.3.5 i 3.4.0 można przejrzeć, sprawdzając plik ChangeLog.md w: https://github.com/pester/Pester/blob/master/CHANGELOG.md
+Możesz przejrzeć zmiany w wersji 3.3.5 i 3.4.0 przez sprawdzanie pliku ChangeLog.md na: https://github.com/pester/Pester/blob/master/CHANGELOG.md
 

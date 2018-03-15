@@ -1,14 +1,14 @@
 ---
 ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
-title: "Debugowanie skryptów w środowisku Windows PowerShell ISE"
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: "Jak debugować skrypty w środowisku Windows PowerShell ISE"
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Debugowanie skryptów w środowisku Windows PowerShell ISE
+# <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Jak debugować skrypty w środowisku Windows PowerShell ISE
 
 W tym temacie opisano, jak do debugowania skryptów na komputerze lokalnym przy użyciu funkcji debugowania visual Windows PowerShell Integrated Scripting Environment (ISE).
 
@@ -42,7 +42,7 @@ Wyświetla wszystkie punkty przerwania w bieżącej sesji programu Windows Power
 Na **debugowania** menu, kliknij przycisk **listy punktów przerwania**. Poniższy skrypt to przykład sposobu można wyświetlić listę wszystkich punktów przerwania w okienku konsoli przy użyciu [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) polecenia cmdlet.
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -82,7 +82,7 @@ Disable-PSBreakpoint -Id 0
 Wyłączenie punktu przerwania nie powoduje jego usunięcia; wyłącza ona go dopóki nie jest włączona.  Aby wyłączyć wszystkie punkty przerwania w bieżącej sesji, na **debugowania** menu, kliknij przycisk **Wyłącz wszystkie punkty przerwania**. Poniższy skrypt to przykład jak wyłączyć wszystkie punkty przerwania w okienku konsoli przy użyciu [PSBreakpoint Wyłącz](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) polecenia cmdlet.
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 Aby włączyć wszystkie punkty przerwania zdefiniowana w bieżącej sesji, na **debugowania** menu, kliknij przycisk **Włącz wszystkie punkty przerwania**. Poniższy skrypt to przykład sposobu wszystkie punkty przerwania w okienku konsoli można włączyć za pomocą [PSBreakpoint Włącz](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) polecenia cmdlet.
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>Jak zarządzać sesji debugowania
-Przed rozpoczęciem debugowania, należy ustawić co najmniej jednego punktu przerwania. Nie można ustawić punktu przerwania, chyba że zostanie zapisany skrypt, który chcesz debugować. Dla kierunków na jak ustawić punkt przerwania, zobacz [jak zarządzać punktów przerwania](#how-to-manage-breakpoints) lub [PSBreakpoint zestawu](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Po rozpoczęciu debugowania, nie można edytować skryptu, aż do zatrzymania debugowania. Skrypt, który zawiera jeden lub więcej punktów przerwania ustawionych są automatycznie zapisywane przed uruchomieniem.
+Przed rozpoczęciem debugowania, należy ustawić co najmniej jednego punktu przerwania. Nie można ustawić punktu przerwania, chyba że zostanie zapisany skrypt, który chcesz debugować. Dla kierunków na jak ustawić punkt przerwania, zobacz [jak zarządzać punktów przerwania](#how-to-manage-breakpoints) lub [PSBreakpoint zestawu](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint). Po rozpoczęciu debugowania, nie można edytować skryptu, aż do zatrzymania debugowania. Skrypt, który zawiera jeden lub więcej punktów przerwania ustawionych są automatycznie zapisywane przed uruchomieniem.
 
 ### <a name="to-start-debugging"></a>Aby rozpocząć debugowanie
 Naciśnij klawisz **F5** lub na pasku narzędzi kliknij **Uruchom skrypt** ikony, lub na **debugowania** kliknij menu **Uruchom/Kontynuuj**. Skrypt jest uruchamiany, aż do napotkania pierwszego punktu przerwania. Wstrzymuje działanie istnieje, a wyróżnia wiersza, w którym wstrzymana.
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>Zobacz też
-- [Przy użyciu programu Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [Eksplorowanie środowiska Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

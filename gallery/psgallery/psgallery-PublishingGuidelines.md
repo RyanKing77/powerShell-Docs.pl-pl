@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
 description: "Wytyczne dotyczące wydawcy"
 title: "Galerii programu PowerShell publikowania wskazówki i najlepsze rozwiązania"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShellGallery publikowania wskazówki i najlepsze rozwiązania
 
@@ -19,7 +19,7 @@ Elementy, które są publikowane następujące wskazówki zostanie bardziej praw
 Przedstawionym poniżej przedstawiono wskazówki dotyczące co sprawia, że dobrej elementu galerii programu PowerShell, które opcjonalne ustawienia manifestu są najważniejsze, poprawy kodu za pomocą opinii recenzentów początkowej i [analizator skrypt programu Powershell](https://aka.ms/psscriptanalyzer), przechowywanie wersji z modułu, dokumentacji, testy i przykłady dotyczące używania zostały udostępnione.
 Większość tej dokumentacji następuje wytyczne dotyczące publikowania [wysokiej jakości DSC zasobów modułów](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Aby mechanika publikowania elementu w galerii programu PowerShell, zobacz [tworzenie i publikowanie elementu](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
+Aby mechanika publikowania elementu w galerii programu PowerShell, zobacz [tworzenie i publikowanie elementu](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
 Jest przyjęła opinię na poniższych wskazówek. Jeśli masz opinię, otwórz problemy w naszym [repozytorium Github dokumentacji](https://github.com/powershell/powershell-docs/).
 
@@ -71,7 +71,7 @@ Kilka artykułów są dostępne w witrynie MSDN dotyczące dokumentację z eleme
 * Wytyczne dotyczące zapewnianie pomocy znajdują się w [jak zapisać pomoc dotyczącą polecenia Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415)
 * Tworzenie pomocy polecenia cmdlet, które jest najlepszym rozwiązaniem dla dowolnego skryptu programu PowerShell, funkcji lub polecenia cmdlet.
   Informacje o sposobie tworzenia pomocy polecenia cmdlet, rozpoczynać się od [jak zapisać pomoc dotyczącą polecenia Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) w bibliotece MSDN.
-  Aby dodać pomocy w skrypcie, zobacz [o komentarz na podstawie pomocy](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  Aby dodać pomocy w skrypcie, zobacz [o komentarz na podstawie pomocy](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Wiele modułów również uwzględnić w dokumentacji w formacie tekstowym, takich jak pliki MarkDown.
   Może to być szczególnie przydatne w przypadku braku witryny projektu w witrynie Github, gdzie Markdown jest mocno format.
   Najlepszym rozwiązaniem jest użycie [Github języka znaczników Markdown](https://help.github.com/categories/writing-on-github/)

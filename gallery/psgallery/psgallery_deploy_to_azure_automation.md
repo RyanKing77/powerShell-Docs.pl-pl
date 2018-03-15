@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
 title: psgallery_deploy_to_azure_automation
-ms.openlocfilehash: 91f48fb43d7fb099e34ce5d3b3b632e3cb119d64
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 223acbcc2f6cd4f15e1ee55d3f2f68df851cd902
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="deploy-to-azure-automation"></a>Wdrażanie na usługi Automatyzacja Azure
 ===========================
@@ -26,5 +26,5 @@ Jeśli podczas wdrażania modułu, pojawi się w sekcji modułów w automatyzacj
 
 Wdrażanie na przycisku automatyzacji Azure można wyłączyć, dodając AzureAutomationNotSupported tag do metadanych elementu.
 
-Aby dowiedzieć się więcej na temat usługi Automatyzacja Azure, zobacz witrynę sieci Web usługi Automatyzacja Azure [witryny sieci Web usługi Automatyzacja Azure](http://azure.microsoft.com/en-us/services/automation/).
+Aby dowiedzieć się więcej na temat usługi Automatyzacja Azure, zobacz witrynę sieci Web usługi Automatyzacja Azure [witryny sieci Web usługi Automatyzacja Azure](http://azure.microsoft.com/services/automation/).
 

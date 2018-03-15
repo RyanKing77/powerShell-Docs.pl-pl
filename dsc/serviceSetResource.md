@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób ServiceSet DSC"
-ms.openlocfilehash: 9556a1d513c3819a36c1161e3b35388ca1eb66f9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-serviceset-resource"></a>Zasób ServiceSet DSC
 
@@ -38,7 +38,7 @@ Service [string] #ResourceName
 
 |  Właściwość  |  Opis   | 
 |---|---| 
-| Nazwa| Wskazuje nazwy usługi. Należy pamiętać, że czasami to różni się od nazwy wyświetlane. Można uzyskać listę usług i ich bieżącego stanu z [Get-Service](https://technet.microsoft.com/en-us/library/hh849804.aspx) polecenia cmdlet.|
+| Nazwa| Wskazuje nazwy usługi. Należy pamiętać, że czasami to różni się od nazwy wyświetlane. Można uzyskać listę usług i ich bieżącego stanu z [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) polecenia cmdlet.|
 | StartupType| Wskazuje typ uruchomienia usługi. Wartości, które są dozwolone dla tej właściwości to: **automatyczne**, **wyłączone**, i **ręczne**|  
 | BuiltInAccount| Wskazuje, że konto logowania dla usługi. Wartości, które są dozwolone dla tej właściwości to: **Usługa lokalna**, **LocalSystem**, i **NetworkService**.| 
 | Stan| Wskazuje stan chcesz zapewnić usługę: **zatrzymane** lub **systemem**.| 

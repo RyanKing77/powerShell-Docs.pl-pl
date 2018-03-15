@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Uruchomiony przy użyciu poświadczeń użytkownika usługi Konfiguracja DSC"
-ms.openlocfilehash: 7b57732679e4fb29112a3ca7fe64cba2bda67207
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 11c13d852b506be3e202b798d135eba73d84cfe0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-dsc-with-user-credentials"></a>Uruchomiony przy użyciu poświadczeń użytkownika usługi Konfiguracja DSC 
 
@@ -16,8 +16,8 @@ ms.lasthandoff: 01/17/2018
 Zasób DSC pod określony zestaw poświadczeń, można uruchomić przy użyciu automatycznego **PsDscRunAsCredential** właściwości w konfiguracji. Domyślnie DSC uruchamiane każdego zasobu jako konta systemowego.
 Brak razy podczas udostępniania działający jako użytkownik jest to konieczne, takich jak instalowanie pakiety MSI w kontekście użytkownika, ustawienie kluczy rejestru użytkownika, uzyskiwanie dostępu do określonego katalogu lokalnego użytkownika lub uzyskiwania dostępu do sieci.
 
-Każdy zasób DSC ma **PsDscRunAsCredential** właściwość, która może być ustawiony na wszystkie poświadczenia użytkownika ( [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) obiektu).
-Poświadczenia mogą być ustalony jako wartość właściwości w konfiguracji lub możesz ustawić wartość [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx), który zostanie monit o podanie poświadczeń podczas kompilowania (Aby uzyskać informacje o konfiguracji Trwa kompilowanie konfiguracji, zobacz [konfiguracje](configurations.md).
+Każdy zasób DSC ma **PsDscRunAsCredential** właściwość, która może być ustawiony na wszystkie poświadczenia użytkownika ( [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) obiektu).
+Poświadczenia mogą być ustalony jako wartość właściwości w konfiguracji lub możesz ustawić wartość [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), który zostanie monit o podanie poświadczeń podczas kompilowania (Aby uzyskać informacje o konfiguracji Trwa kompilowanie konfiguracji, zobacz [konfiguracje](configurations.md).
 
 >**Uwaga:** w programie PowerShell 5.0, za pomocą **PsDscRunAsCredential** właściwości w konfiguracjach wywoływania złożonego zasobów nie jest obsługiwana. 
 >W programie PowerShell 5.1 **PsDscRunAsCredential** właściwość jest obsługiwana w konfiguracjach wywoływania złożonego zasobów.
