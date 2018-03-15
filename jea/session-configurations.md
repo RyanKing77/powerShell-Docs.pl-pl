@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, programu powershell, zabezpieczeń"
 title: Konfiguracje sesji JEA
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>Konfiguracje sesji JEA
 
@@ -38,12 +38,12 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 Plik konfiguracji sesji można otworzyć w dowolnym edytorze tekstów.
 `-SessionType RestrictedRemoteServer` Pole wskazuje używany przez JEA bezpiecznego zarządzania z konfiguracji sesji.
-Sesje skonfigurowane w ten sposób będzie działać w [tryb NoLanguage](https://technet.microsoft.com/en-us/library/dn433292.aspx) i może zawierać tylko następujące polecenia 8 domyślne (i aliasy) dostępne:
+Sesje skonfigurowane w ten sposób będzie działać w [tryb NoLanguage](https://technet.microsoft.com/library/dn433292.aspx) i może zawierać tylko następujące polecenia 8 domyślne (i aliasy) dostępne:
 
 - Wyczyść-Host (ze specyfikacją cls, wyczyść)
 - Zakończ-PSSession (exsn, zakończenia)
 - Get-Command (gcm)
-- Klasy FormatData Get
+- Get-FormatData
 - Get-Help
 - Miara — obiekt (miary)
 - Domyślna wyjściowego
@@ -128,7 +128,7 @@ Użytkownicy standardowi powinien nie masz dostępu do folderu, a ograniczony ze
 ### <a name="user-drive"></a>Stacji użytkownika
 
 Łączącego użytkownicy muszą do kopiowania plików z punktu końcowego JEA, aby można było uruchomić polecenie, po włączeniu dysku użytkownika w pliku konfiguracji sesji.
-Dysk użytkownika jest [elementu PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) który jest mapowany do unikatowego folderu dla każdego użytkownika łączącego.
+Dysk użytkownika jest [elementu PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) który jest mapowany do unikatowego folderu dla każdego użytkownika łączącego.
 Ten folder pełni miejsca, aby skopiować pliki z systemu, bez udzielania dostępu do systemu plików pełnego lub udostępnianie dostawcy FileSystem.
 Zawartość dysku użytkownika są trwałe między sesjami, aby zmieścił się w sytuacjach, w którym można przerwać połączenie sieciowe.
 

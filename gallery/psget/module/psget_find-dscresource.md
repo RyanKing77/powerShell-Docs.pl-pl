@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
 title: "Znajdź DscResource"
-ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6c5713f122d48e9c9d5e0aa45dc14047afc56102
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="find-dscresource"></a>Znajdź DscResource
 
@@ -16,7 +16,7 @@ Umożliwia znalezienie zasobów DSC w modułach.
 
 ## <a name="description"></a>Opis
 
-Polecenia cmdlet Find DscResource znajduje [konfiguracji żądanego stanu (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) zasoby zawarte w modułach, spełniających określone kryteria z zarejestrowanych repozytoriów.
+Polecenia cmdlet Find DscResource znajduje [konfiguracji żądanego stanu (DSC)](https://msdn.microsoft.com/PowerShell/dsc/overview) zasoby zawarte w modułach, spełniających określone kryteria z zarejestrowanych repozytoriów.
 Dla każdego modułu znajdzie tego polecenia cmdlet Znajdź DscResource zwraca obiekt PSGetDscResourceInfo za pomocą którego można przekazać do instalacji — modułu, aby zainstalować moduły zawierający zasoby, które to polecenie cmdlet zwraca.
 
 DSC jest nowa platforma zarządzania w programie Windows PowerShell, która umożliwia wdrażanie i zarządzanie dane konfiguracyjne usługi oprogramowania i zarządzanie środowisko, w którym są uruchomione następujące usługi.
@@ -41,7 +41,7 @@ Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Dokumentacja poleceń cmdlet pomocy online
 
-[Znajdź DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
+[Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
 ## <a name="example-commands"></a>Przykładowe polecenia
 ```powershell

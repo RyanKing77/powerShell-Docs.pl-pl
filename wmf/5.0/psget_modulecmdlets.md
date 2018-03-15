@@ -2,38 +2,38 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: 91b60a22580dcb8eae245f45e202710812522a64
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 10f20967465a1911628552f0d468c63e4e88dcd7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Polecenia cmdlet PowerShellGet dla modułu zarządzania
 
-- [Znajdź DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
-- [Znajdź moduł](https://technet.microsoft.com/en-us/library/dn807167.aspx)
-- [Znajdź skryptu](https://technet.microsoft.com/en-us/library/mt654001.aspx)
+- [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
+- [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
+- [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
 - [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
 - [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
 - [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [Zainstaluj moduł](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Skrypt instalacji](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [Nowe ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [Publikowanie modułu](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publikowanie skryptu](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [Rejestr PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [Moduł zapisywania](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Zapisz skrypt](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Zestaw PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [ScriptFileInfo testu](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Odinstaluj moduł](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [Odinstaluj skryptu](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [Moduł aktualizacji](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [ModuleManifest aktualizacji](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Skrypt aktualizacji](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [ScriptFileInfo aktualizacji](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Wyrejestruj PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx)
+- [Install-Script](https://technet.microsoft.com/en-us/library/mt653998.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
+- [Publish-Module](https://technet.microsoft.com/en-us/library/dn807163.aspx)
+- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
+- [Register-PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
+- [Save-Module](https://technet.microsoft.com/en-us/library/mt653992.aspx)
+- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
+- [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
+- [Uninstall-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
+- [Uninstall-Script](https://technet.microsoft.com/en-us/library/mt653989.aspx)
+- [Update-Module](https://technet.microsoft.com/en-us/library/dn807166.aspx)
+- [Update-ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
+- [Update-Script](https://technet.microsoft.com/en-us/library/mt653997.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
+- [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Obsługa instalacji modułu zależności, Get-InstalledModule i polecenia cmdlet Uninstall-modułu
 - W dodanym module populacji zależności w poleceniu cmdlet Publish-Module. Listy RequiredModules i NestedModules PSModuleInfo są używane w celu przygotowania na liście zależności modułu do opublikowania.
@@ -233,7 +233,7 @@ AliasesToExport = '*'
 }
 ```
 
-Po ModuleManifest aktualizacji:
+After Update-ModuleManifest:
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"

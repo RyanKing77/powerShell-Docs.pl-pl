@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, programu powershell, zabezpieczeń"
 title: "Możliwości roli JEA"
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>Możliwości roli JEA
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> [Typowe parametry programu PowerShell](https://technet.microsoft.com/en-us/library/hh847884.aspx) są zawsze dozwolone, nawet jeśli ograniczysz dostępnych parametrów.
+> [Typowe parametry programu PowerShell](https://technet.microsoft.com/library/hh847884.aspx) są zawsze dozwolone, nawet jeśli ograniczysz dostępnych parametrów.
 > Użytkownik nie powinny jawnie zawierać je w polu Parametry.
 
 W poniższej tabeli opisano różne sposoby, które można dostosować widoczne polecenia cmdlet lub funkcji.
@@ -111,7 +111,7 @@ Zarówno ValidatePattern i ValidateSet nie można zastosować do tego samego pol
 
 Jeśli to zrobisz, ValidatePattern przesłoni ValidateSet.
 
-Aby uzyskać więcej informacji na temat ValidatePattern, zapoznaj się z [to *Witaj, Twórco skryptów!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) i [wyrażeń regularnych programu PowerShell](https://technet.microsoft.com/en-us/library/hh847880.aspx) odwołania zawartości.
+Aby uzyskać więcej informacji na temat ValidatePattern, zapoznaj się z [to *Witaj, Twórco skryptów!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) i [wyrażeń regularnych programu PowerShell](https://technet.microsoft.com/library/hh847880.aspx) odwołania zawartości.
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Stosowanie zewnętrznych poleceń i skryptów programu PowerShell
 
@@ -128,7 +128,7 @@ Wiele plików wykonywalnych umożliwiają zarówno odczytać bieżący stan, a n
 Rozważmy na przykład rolę Administrator serwera plików, który chce, aby sprawdzić, które udziały sieciowe są obsługiwane przez komputer lokalny.
 Jednym ze sposobów sprawdzenia, jest użycie `net share`.
 Jednakże, dzięki czemu net.exe jest bardzo niebezpieczne, ponieważ administrator może równie łatwo używać polecenia w celu uzyskania uprawnień administratora z `net group Administrators unprivilegedjeauser /add`.
-Lepszym rozwiązaniem jest umożliwienie [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) które osiąga ten sam rezultat, ale ma znacznie bardziej ograniczony zakres.
+Lepszym rozwiązaniem jest umożliwienie [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) które osiąga ten sam rezultat, ale ma znacznie bardziej ograniczony zakres.
 
 Podczas wprowadzania poleceń zewnętrznych dostępne dla użytkowników w sesji JEA, należy zawsze podać pełną ścieżkę do pliku wykonywalnego, aby upewnić się o podobnej nazwie (i potencjalnie malicous) program umieszczone w innym miejscu w systemie nie są wykonywane zamiast tego.
 

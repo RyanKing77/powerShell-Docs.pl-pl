@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń usługi zdalne środowiska PowerShell
 
@@ -14,7 +14,7 @@ Usługi zdalne środowiska PowerShell jest zalecanym sposobem zarządzania kompu
 
 ## <a name="what-is-powershell-remoting"></a>Co to jest obsługę zdalną środowiska PowerShell?
 
-Korzysta z komunikacji zdalnej programu PowerShell [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), który jest przez firmę Microsoft implementacją [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokołu, aby zezwolić użytkownikom na uruchamianie programu PowerShell poleceń na komputerach zdalnych. Można znaleźć więcej informacji o korzystaniu z usługi zdalne środowiska PowerShell w [uruchamiania poleceń zdalnych](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+Korzysta z komunikacji zdalnej programu PowerShell [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), który jest przez firmę Microsoft implementacją [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokołu, aby zezwolić użytkownikom na uruchamianie programu PowerShell poleceń na komputerach zdalnych. Można znaleźć więcej informacji o korzystaniu z usługi zdalne środowiska PowerShell w [uruchamiania poleceń zdalnych](https://technet.microsoft.com/library/dd819505.aspx).
 
 Usługi zdalne środowiska PowerShell nie jest taka sama, jak za pomocą **ComputerName** parametru polecenia cmdlet, aby uruchomić go na komputerze zdalnym, który używa zdalnego wywoływania procedur (RPC), jako jego podstawowy protokół.
 
@@ -33,7 +33,7 @@ W sieciach prywatnych domyślne reguły zapory systemu Windows dla niego komunik
 
 ## <a name="process-isolation"></a>Izolacja procesu
 
-Korzysta z komunikacji zdalnej programu PowerShell [Windows Remote Management (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) do komunikacji między komputerami. Usługa WinRM działa jako usługa na koncie Usługa sieciowa, a spowoduje utworzenie procesach izolowanych uruchomione jako konta użytkowników do hosta programu PowerShell wystąpień. Wystąpienie programu PowerShell uruchomione jako jeden użytkownik nie ma dostępu do procesu uruchomionego wystąpienia programu PowerShell jako inny użytkownik.
+Korzysta z komunikacji zdalnej programu PowerShell [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) do komunikacji między komputerami. Usługa WinRM działa jako usługa na koncie Usługa sieciowa, a spowoduje utworzenie procesach izolowanych uruchomione jako konta użytkowników do hosta programu PowerShell wystąpień. Wystąpienie programu PowerShell uruchomione jako jeden użytkownik nie ma dostępu do procesu uruchomionego wystąpienia programu PowerShell jako inny użytkownik.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>Dzienniki zdarzeń generowanych przez usługi zdalne środowiska PowerShell
 
@@ -50,10 +50,10 @@ Niezależnie od protokołu transportu używanego (HTTP lub HTTPS) usługi zdalne
 
 Uwierzytelnianie potwierdza tożsamość klienta do serwera — oraz w idealnym przypadku - serwera do klienta.
     
-Gdy klient nawiąże połączenie z serwerem domeny przy użyciu nazwy komputera (np.: serwer01, lub server01.contoso.com), jest domyślnym protokołem uwierzytelniania [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx).
+Gdy klient nawiąże połączenie z serwerem domeny przy użyciu nazwy komputera (np.: serwer01, lub server01.contoso.com), jest domyślnym protokołem uwierzytelniania [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos gwarantuje tożsamość serwera i tożsamości użytkowników bez wysyłania dowolny rodzaj wielokrotnego poświadczenie.
 
-Gdy klient łączy się z serwerem domeny przy użyciu jego adresu IP lub łączy się z serwerem grupy roboczej, uwierzytelnianie Kerberos nie jest możliwe. W takim przypadku obsługę zdalną środowiska PowerShell zależy od [protokół uwierzytelniania NTLM](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx). Protokół uwierzytelniania NTLM gwarantuje tożsamość użytkownika bez wysyłania dowolny rodzaj możliwe poświadczeń. Do potwierdzenia tożsamości użytkownika, protokół NTLM wymaga, że klient i serwer obliczeniowe klucza sesji z hasła bez kiedykolwiek wymiana samego hasła. Serwer zwykle nie zna hasło użytkownika, więc komunikuje się z kontrolerem domeny, które znać hasło użytkownika, a następnie oblicza klucza sesji dla serwera. 
+Gdy klient łączy się z serwerem domeny przy użyciu jego adresu IP lub łączy się z serwerem grupy roboczej, uwierzytelnianie Kerberos nie jest możliwe. W takim przypadku obsługę zdalną środowiska PowerShell zależy od [protokół uwierzytelniania NTLM](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). Protokół uwierzytelniania NTLM gwarantuje tożsamość użytkownika bez wysyłania dowolny rodzaj możliwe poświadczeń. Do potwierdzenia tożsamości użytkownika, protokół NTLM wymaga, że klient i serwer obliczeniowe klucza sesji z hasła bez kiedykolwiek wymiana samego hasła. Serwer zwykle nie zna hasło użytkownika, więc komunikuje się z kontrolerem domeny, które znać hasło użytkownika, a następnie oblicza klucza sesji dla serwera. 
       
 Protokół NTLM, jednak gwarantuje tożsamość serwera. Podobnie jak w przypadku wszystkich protokołów, który jest używany do uwierzytelniania NTLM, osoba atakująca z dostępem do konta komputera komputer przyłączony do domeny może wywołać kontrolera domeny w celu obliczania klucza sesji uwierzytelniania NTLM i tym samym podszyć się pod serwer.
 

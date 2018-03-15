@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Opcje poświadczeń w danych konfiguracji"
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opcje poświadczeń w danych konfiguracji
 >Dotyczy: Środowiska Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-W tym przykładzie użyto [grupy](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) zasób z `PSDesiredStateConfiguration` wbudowany moduł zasobów usługi Konfiguracja DSC.
+W tym przykładzie użyto [grupy](https://msdn.microsoft.com/powershell/dsc/groupresource) zasób z `PSDesiredStateConfiguration` wbudowany moduł zasobów usługi Konfiguracja DSC.
 Możesz tworzyć grupy lokalne i dodać lub usunąć członków.
 Akceptuje zarówno `Credential` właściwości i automatyczne `PsDscRunAsCredential` właściwości.
 Jednak używa tylko zasób `Credential` właściwości.
@@ -231,7 +231,7 @@ W tym przykładzie występują dwa problemy:
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 Pierwszy komunikat o błędzie zawiera adres URL z dokumentacją.
-To łącze wyjaśniono, jak do szyfrowania haseł przy użyciu [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) struktury i certyfikatu.
+To łącze wyjaśniono, jak do szyfrowania haseł przy użyciu [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) struktury i certyfikatu.
 Aby uzyskać więcej informacji o certyfikatach i DSC [odczytać ten wpis](http://aka.ms/certs4dsc).
 
 Aby wymusić hasła w postaci zwykłego tekstu, wymaga zasób `PsDscAllowPlainTextPassword` — słowo kluczowe w danych konfiguracji sekcji w następujący sposób:
@@ -270,7 +270,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName`nie może być równa gwiazdka nazwę określonego węzła jest wymagana.
+> `NodeName` nie może być równa gwiazdka nazwę określonego węzła jest wymagana.
 
 **Microsoft informacją o tym, aby uniknąć hasła w formacie tekstowym z powodu znaczące zagrożenie bezpieczeństwa.**
 

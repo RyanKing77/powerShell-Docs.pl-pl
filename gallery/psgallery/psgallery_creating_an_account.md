@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
 title: Tworzenie konta galerii programu PowerShell
-ms.openlocfilehash: e21575320f220c1ba7ecd9bd464a814b3ebf49d9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 5af38884d819cb9c600a061109233614bd33666f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 ## <a name="creating-a-powershell-gallery-account"></a>Tworzenie konta galerii programu PowerShell
 
@@ -23,7 +23,7 @@ Na następnej stronie do korzystania z konta usługi Azure Active Directory, wyb
 Po zalogowaniu, zostanie wyświetlony monit o utworzenie nazwę użytkownika dla galerii programu PowerShell. Przejrzyj warunki użytkowania i zasady zachowania poufności informacji, które są połączone w, wprowadź nazwę użytkownika i kliknij przycisk Zarejestruj.
 
 Uwaga: Nie można zmienić nazwy tego konta, po jego utworzeniu.  
-Zobacz [Zarządzanie właścicieli elementu](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) Aby uzyskać więcej informacji związanych z tym.
+Zobacz [Zarządzanie właścicieli elementu](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) Aby uzyskać więcej informacji związanych z tym.
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Zalecane rozwiązania dla kont w galerii programu PowerShell
 
@@ -35,5 +35,5 @@ Organizacje, które publikują w galerii programu PowerShell często tworzyć un
 W wielu przypadkach to konto nie jest regularnie monitorowane. W takim przypadku najlepszym rozwiązaniem jest Wyślij wiadomość e-mail na inne konto, zazwyczaj w jednej organizacji, który ma być monitorowany przez jego właściciela elementu za pomocą programu Outlook przekazywania.
 
 W przypadku wielu właścicieli skojarzony z elementem korespondencji, które pochodzą z galerii programu PowerShell przejdzie do wszystkich właścicieli.
-Zobacz [Zarządzanie właścicieli elementu](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners) Aby uzyskać więcej informacji na temat dodawania właścicieli do elementu. 
+Zobacz [Zarządzanie właścicieli elementu](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) Aby uzyskać więcej informacji na temat dodawania właścicieli do elementu. 
 

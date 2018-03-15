@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Rozpoczynanie pracy z galerii programu PowerShell
 
@@ -103,7 +103,7 @@ Domyślnie [instalacji modułu](https://go.microsoft.com/fwlink/?LinkId=821663) 
 
 Aby wdrożyć element z galerii programu PowerShell do automatyzacji Azure, kliknij przycisk **Wdróż automatyzacji Azure** na stronie szczegółów. Nastąpi przekierowanie do portalu zarządzania Azure, której użytkownik loguje się przy użyciu poświadczeń konta platformy Azure. Należy pamiętać, że wdrażanie elementy z zależnościami wdroży wszystkie zależności w automatyzacji Azure. Przycisk "Wdrażanie na automatyzacji Azure" można wyłączyć, dodając **AzureAutomationNotSupported** tag do metadanych elementu.
 
-Aby dowiedzieć się więcej na temat usługi Automatyzacja Azure, zobacz [witryny sieci Web usługi Automatyzacja Azure](http://azure.microsoft.com/en-us/services/automation/).
+Aby dowiedzieć się więcej na temat usługi Automatyzacja Azure, zobacz [witryny sieci Web usługi Automatyzacja Azure](http://azure.microsoft.com/services/automation/).
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>Aktualizowanie elementów z galerii programu PowerShell
 

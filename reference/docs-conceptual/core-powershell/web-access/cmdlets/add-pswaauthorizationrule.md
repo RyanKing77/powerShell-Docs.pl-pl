@@ -7,11 +7,11 @@ ms.date: 2016-12-12
 title: Dodaj pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -167,7 +167,7 @@ Format jest `domain\user` lub `computer\user`.
 ### <a name="ltcommonparametersgt"></a>&lt;Parametry&gt;
 
 To polecenie cmdlet obsługuje typowe parametry:-Verbose,-Debug, - ErrorAction, - ErrorVariable,-OutBuffer i - OutVariable.
-Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
+Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## <a name="inputs"></a>DANE WEJŚCIOWE
 
@@ -190,7 +190,7 @@ To polecenie cmdlet zwraca obiekt reguły autoryzacji.
 ### <a name="example-1"></a>PRZYKŁAD 1
 
 W tym przykładzie nieograniczony dostęp do konfiguracji sesji *Punktkoncowypswa*, ograniczonym obszarem działania, na *srv2* dla użytkowników w *SMAdmins* grupy. \
-**Uwaga**: Nazwa komputera musi być w pełni kwalifikowaną nazwą domeny (FQDN). Administratorzy zdefiniować konfigurację sesji ograniczony lub obszaru działania, która jest ograniczonym zakresem poleceń cmdlet i zadań, które użytkownicy końcowi mogą uruchamiać. Zdefiniowanie ograniczonego obszaru działania może uniemożliwić użytkownikom dostęp do innych komputerów, które są nie w obszarze działania Windows PowerShell® dozwolone, a tym samym zapewnia bardziej bezpiecznego połączenia. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) lub [instalacji i użyj Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
+**Uwaga**: Nazwa komputera musi być w pełni kwalifikowaną nazwą domeny (FQDN). Administratorzy zdefiniować konfigurację sesji ograniczony lub obszaru działania, która jest ograniczonym zakresem poleceń cmdlet i zadań, które użytkownicy końcowi mogą uruchamiać. Zdefiniowanie ograniczonego obszaru działania może uniemożliwić użytkownikom dostęp do innych komputerów, które są nie w obszarze działania Windows PowerShell® dozwolone, a tym samym zapewnia bardziej bezpiecznego połączenia. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) lub [instalacji i użyj Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint

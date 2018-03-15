@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Debugowanie zasobów DSC"
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>Debugowanie zasobów DSC
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 W programie PowerShell 5.0 nowa funkcja została wprowadzona w żądany stan konfiguracji (DSC), która umożliwia debugowanie zasobów DSC, ponieważ konfiguracja jest stosowany.
 
 ## <a name="enabling-dsc-debugging"></a>Włączanie debugowania DSC
-Przed debugowaniem zasobu, należy włączyć debugowanie wywołując [DscDebug Włącz](https://technet.microsoft.com/en-us/library/mt517870.aspx) polecenia cmdlet. To polecenie cmdlet przyjmuje to parametr obowiązkowy, **BreakAll**. 
+Przed debugowaniem zasobu, należy włączyć debugowanie wywołując [DscDebug Włącz](https://technet.microsoft.com/library/mt517870.aspx) polecenia cmdlet. To polecenie cmdlet przyjmuje to parametr obowiązkowy, **BreakAll**. 
 
-Możesz sprawdzić, czy sprawdzając wynik wywołania włączono debugowanie [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+Możesz sprawdzić, czy sprawdzając wynik wywołania włączono debugowanie [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
 Następujące dane wyjściowe programu PowerShell pokazuje wynik włączenie debugowania:
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-Po kompilacji konfiguracji, aby uruchomić przez wywołanie metody [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). Konfiguracja zostanie zatrzymana, gdy lokalnego Menedżera konfiguracji (LCM) wywołuje pierwszy zasób w konfiguracji. Jeśli używasz `-Verbose` i `-Wait` parametrów, dane wyjściowe wyświetla wiersze, musisz wprowadzić można rozpocząć debugowania.
+Po kompilacji konfiguracji, aby uruchomić przez wywołanie metody [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx). Konfiguracja zostanie zatrzymana, gdy lokalnego Menedżera konfiguracji (LCM) wywołuje pierwszy zasób w konfiguracji. Jeśli używasz `-Verbose` i `-Wait` parametrów, dane wyjściowe wyświetla wiersze, musisz wprowadzić można rozpocząć debugowania.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Teraz można używać w ISE polecenia debugowania do wykonania kroków opisanych
 
 ## <a name="disabling-dsc-debugging"></a>Wyłączanie debugowania DSC
 
-Po wywołaniu [DscDebug Włącz](https://technet.microsoft.com/en-us/library/mt517870.aspx), wszystkie wywołania [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) spowoduje przerwanie w debugerze konfiguracji. Aby umożliwić konfiguracji, aby działać normalnie, należy wyłączyć debugowanie przez wywołanie metody [DscDebug Wyłącz](https://technet.microsoft.com/en-us/library/mt517872.aspx) polecenia cmdlet.
+Po wywołaniu [DscDebug Włącz](https://technet.microsoft.com/library/mt517870.aspx), wszystkie wywołania [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) spowoduje przerwanie w debugerze konfiguracji. Aby umożliwić konfiguracji, aby działać normalnie, należy wyłączyć debugowanie przez wywołanie metody [DscDebug Wyłącz](https://technet.microsoft.com/en-us/library/mt517872.aspx) polecenia cmdlet.
 
 >**Uwaga:** ponowne uruchomienie nie zmienia stanu debugowania LCM. Jeśli włączone jest debugowanie, uruchamianie konfiguracji będą nadal przerwanie w debugerze po ponownym rozruchu.
 

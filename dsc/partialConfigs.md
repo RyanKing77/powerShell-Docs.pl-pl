@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Konfiguracje częściowe konfiguracji żądanego stanu programu PowerShell"
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Konfiguracje częściowe konfiguracji żądanego stanu programu PowerShell
 
@@ -18,10 +18,10 @@ W programie PowerShell 5.0 konfiguracji żądanego stanu (DSC) umożliwia konfig
 Możesz użyć częściowe konfiguracje w trybie wypychania, tryb ściągania lub kombinację obu.
 
 ## <a name="partial-configurations-in-push-mode"></a>Częściowe konfiguracje w trybie push
-Aby używać częściowej konfiguracje w trybie wypychania, należy skonfigurować LCM w docelowym węźle do odbierania z częściowa konfiguracje. Każdej z częściowa konfiguracji musi zostać przeniesiony do docelowego za pomocą polecenia cmdlet Publish-DSCConfiguration. Węzeł docelowy następnie łączy częściowe konfiguracji w pojedynczą konfiguracją i można zastosować konfiguracji przez wywołanie metody [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) polecenia cmdlet.
+Aby używać częściowej konfiguracje w trybie wypychania, należy skonfigurować LCM w docelowym węźle do odbierania z częściowa konfiguracje. Każdej z częściowa konfiguracji musi zostać przeniesiony do docelowego za pomocą polecenia cmdlet Publish-DSCConfiguration. Węzeł docelowy następnie łączy częściowe konfiguracji w pojedynczą konfiguracją i można zastosować konfiguracji przez wywołanie metody [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) polecenia cmdlet.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Konfigurowanie LCM częściowe konfiguracji trybu wypychania
-Aby skonfigurować LCM w przypadku konfiguracji z częściowa w trybie wypychania, należy utworzyć **DSCLocalConfigurationManager** konfiguracji z jednego **PartialConfiguration** blok dla każdej z częściowa konfiguracji. Aby uzyskać więcej informacji o konfigurowaniu LCM, zobacz [Konfigurowanie lokalny program Configuration Manager systemu Windows](https://technet.microsoft.com/en-us/library/mt421188.aspx). W poniższym przykładzie przedstawiono konfigurację LCM, która oczekuje dwóch konfiguracji z częściowa — jedną, która wdraża system operacyjny i wdraża i konfiguruje programu SharePoint.
+Aby skonfigurować LCM w przypadku konfiguracji z częściowa w trybie wypychania, należy utworzyć **DSCLocalConfigurationManager** konfiguracji z jednego **PartialConfiguration** blok dla każdej z częściowa konfiguracji. Aby uzyskać więcej informacji o konfigurowaniu LCM, zobacz [Konfigurowanie lokalny program Configuration Manager systemu Windows](https://technet.microsoft.com/library/mt421188.aspx). W poniższym przykładzie przedstawiono konfigurację LCM, która oczekuje dwóch konfiguracji z częściowa — jedną, która wdraża system operacyjny i wdraża i konfiguruje programu SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Publikowanie i tryb wysyłania częściowej Konfiguracja początkowa
 
-Następnie wywołaj [DSCConfiguration publikowania](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) dla każdej konfiguracji przekazywanie folderów, który zawiera dokumenty konfiguracji jako **ścieżki** parametrów. `Publish-DSCConfiguration`umieszcza pliki MOF konfiguracji, aby węzły docelowe. Po opublikowaniu obu konfiguracji, należy wywołać `Start-DSCConfiguration –UseExisting` w docelowym węźle.
+Następnie wywołaj [DSCConfiguration publikowania](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) dla każdej konfiguracji przekazywanie folderów, który zawiera dokumenty konfiguracji jako **ścieżki** parametrów. `Publish-DSCConfiguration`umieszcza pliki MOF konfiguracji, aby węzły docelowe. Po opublikowaniu obu konfiguracji, należy wywołać `Start-DSCConfiguration –UseExisting` w docelowym węźle.
 
 Na przykład, jeśli została wykonana w następujących dokumentach MOF konfiguracji w węźle tworzenia pakietów administracyjnych:
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Uwaga:** użytkownik uruchamiający [DSCConfiguration publikowania](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) polecenia cmdlet, musisz mieć uprawnienia administratora w docelowym węźle.
+>**Uwaga:** użytkownik uruchamiający [DSCConfiguration publikowania](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) polecenia cmdlet, musisz mieć uprawnienia administratora w docelowym węźle.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Częściowe konfiguracje w trybie ściągania
 
@@ -211,7 +211,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Nazewnictwo i wprowadzania dokumenty konfiguracji na serwerze ściągania (ConfigurationID)
 
-Dokumenty configuration częściowe muszą znajdować się w folderze określonym jako **ConfigurationPath** w `web.config` pliku na serwerze ściągania (zazwyczaj `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Dokumenty konfiguracji musi mieć nazwę w następujący sposób: _ConfigurationName_. _ConfigurationID_`.mof`, gdzie _ConfigurationName_ jest nazwa konfiguracji częściowe i _ConfigurationID_ identyfikator konfiguracji zdefiniowano w LCM na węzeł docelowy. W naszym przykładzie konfiguracji dokumenty powinny mieć nazwę w następujący sposób:
+Dokumenty configuration częściowe muszą znajdować się w folderze określonym jako **ConfigurationPath** w `web.config` pliku na serwerze ściągania (zazwyczaj `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Dokumenty konfiguracji musi mieć nazwę w następujący sposób: _ConfigurationName_. _ConfigurationID_`.mof`, gdzie _ConfigurationName_ jest nazwa konfiguracji częściowe i _ConfigurationID_ zdefiniowano identyfikator konfiguracji w LCM w systemie docelowym węzeł. W naszym przykładzie konfiguracji dokumenty powinny mieć nazwę w następujący sposób:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -377,5 +377,5 @@ SharePointConfig
 **Pojęcia dotyczące**
 [serwery ściągania stanu konfiguracji żądanego programu Windows PowerShell](pullServer.md) 
 
-[Konfigurowanie lokalny program Configuration Manager systemu Windows](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Konfigurowanie lokalny program Configuration Manager systemu Windows](https://technet.microsoft.com/library/mt421188.aspx) 
 

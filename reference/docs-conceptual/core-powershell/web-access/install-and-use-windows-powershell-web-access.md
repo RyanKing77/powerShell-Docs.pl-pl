@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: polecenia cmdlet programu PowerShell
 title: "zainstalować i używać programu windows powershell web access"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalowanie programu Windows PowerShell Web Access i korzystanie z niego
 
@@ -29,7 +29,7 @@ Windows PowerShell Web Access i konfiguracja jest procesem trzech etapów:
 1. [Konfigurowanie restrykcyjnej reguły autoryzacji](#configure-a-restrictive-authorization-rule)
 
 Przed zainstalowaniem i skonfigurowaniem programu Windows PowerShell Web Access, firma Microsoft zaleca, aby odczytać całości tego przewodnika, który zawiera instrukcje dotyczące instalowania, zabezpieczania i odinstalowywania programu Windows PowerShell Web Access.
-[Za pomocą konsoli programu PowerShell systemu Windows oparte na sieci Web](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx) temacie opisano sposób logowania się do konsoli internetowej, a także jej ograniczenia i różnice między konsoli internetowej programu Windows PowerShell i  **PowerShell.exe** konsoli. Użytkownicy końcowi konsoli sieci web należy przeczytać [konsoli programu PowerShell systemu Windows na podstawie użycia sieci Web](use-the-web-based-windows-powershell-console.md), ale nie muszą czytać dalszej części tego przewodnika.
+[Za pomocą konsoli programu PowerShell systemu Windows oparte na sieci Web](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx) temacie opisano sposób logowania się do konsoli internetowej, a także jej ograniczenia i różnice między konsoli internetowej programu Windows PowerShell i  **PowerShell.exe** konsoli. Użytkownicy końcowi konsoli sieci web należy przeczytać [konsoli programu PowerShell systemu Windows na podstawie użycia sieci Web](use-the-web-based-windows-powershell-console.md), ale nie muszą czytać dalszej części tego przewodnika.
 
 Ten temat nie zawiera szczegółowych wskazówek operacji serwera sieci Web usług IIS; w tym temacie opisano tylko kroki wymagane do skonfigurowania bramy programu Windows PowerShell Web Access. Aby uzyskać więcej informacji na temat konfigurowania i zabezpieczania witryn internetowych w usługach IIS, zobacz zasoby dokumentacji usług IIS w sekcji Zobacz też.
 
@@ -126,7 +126,7 @@ Możesz ukończyć konfigurację aplikacji sieci web programu Windows PowerShell
 
 2. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
 
-    **Polecenia cmdlet Install-PswaWebApplication - UseTestCertificate**
+    **Install-PswaWebApplication -UseTestCertificate**
 
   >**![Uwaga dotycząca zabezpieczeń](images/securitynote.jpeg) Uwaga dotycząca zabezpieczeń**
   >
@@ -141,7 +141,7 @@ Następujące ustawienia są konfigurowane przez uruchomienie tego polecenia cmd
 - EnabledProtocols: http
 - PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
-**Przykład**:`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
+**Przykład**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
 W tym przykładzie wynikowa witryna internetowa dla programu Windows PowerShell Web Access jest https://\<*nazwa_serwera*\>/myWebApp.
 
@@ -159,7 +159,7 @@ W tym przykładzie wynikowa witryna internetowa dla programu Windows PowerShell 
 
 2. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
 
-    **Polecenia cmdlet Install-PswaWebApplication**
+    **Install-PswaWebApplication**
 
     Następujące ustawienia bramy są konfigurowane przez uruchomienie tego polecenia cmdlet.
     W razie potrzeby można je zmienić ręcznie w konsoli Menedżera usług IIS.
@@ -212,7 +212,7 @@ Aby uzyskać więcej szczegółów na temat reguł autoryzacji programu Windows 
 
     - W systemie Windows **Start** ekranu, kliknij prawym przyciskiem myszy **programu Windows PowerShell**, a następnie kliknij przycisk **Uruchom jako Administrator**.
 
-2. Krok opcjonalny umożliwiający ograniczenie dostępu użytkowników za pomocą konfiguracji sesji: Sprawdź, czy konfiguracje sesji, których chcesz użyć w regułach już istnieją. Jeśli ich nie jeszcze utworzono, skorzystaj z instrukcji tworzenia konfiguracji sesji w [informacje o plikach](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Krok opcjonalny umożliwiający ograniczenie dostępu użytkowników za pomocą konfiguracji sesji: Sprawdź, czy konfiguracje sesji, których chcesz użyć w regułach już istnieją. Jeśli ich nie jeszcze utworzono, skorzystaj z instrukcji tworzenia konfiguracji sesji w [informacje o plikach](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
 
@@ -224,7 +224,7 @@ Aby uzyskać więcej szczegółów na temat reguł autoryzacji programu Windows 
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
-4. Sprawdź, czy reguła została utworzona za pomocą `Get-PswaAuthorizationRule` polecenia cmdlet, lub`Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
+4. Sprawdź, czy reguła została utworzona za pomocą `Get-PswaAuthorizationRule` polecenia cmdlet, lub `Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`
 
 5. Na przykład `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -290,13 +290,13 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
 9. Wykonaj kroki procedury, aby skonfigurować certyfikat SSL w usługach IIS manager](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie.
 
-10. ![](images/SecurityNote.jpeg)Opcjonalny krok dotyczący zabezpieczeń:
+10. ![](images/SecurityNote.jpeg) Opcjonalny krok dotyczący zabezpieczeń:
 
     Z witryny sieci Web, dla wybranego w okienku drzewa, kliknij dwukrotnie **ustawienia protokołu SSL** w okienku zawartości. Wybierz **Wymagaj protokołu SSL**, a następnie w **akcje** okienku, kliknij przycisk **Zastosuj**. Opcjonalnie w **ustawienia protokołu SSL** okienku można wymagać posiadania certyfikatów klienta użytkowników łączących się z witryny sieci Web Windows PowerShell Web Access. Certyfikaty klienta pomagają zweryfikować tożsamość użytkownika urządzenia klienckiego. Aby uzyskać więcej informacji na temat jak wymóg posiadania certyfikatów klienta może zwiększyć bezpieczeństwo programu Windows PowerShell Web Access, zobacz [reguł autoryzacji i zabezpieczeń funkcje programu Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) w tym przewodniku.
 
 11. Otwórz sesję przeglądarki na urządzeniu klienckim. Aby uzyskać więcej informacji o obsługiwanych przeglądarkach i urządzeniach, zobacz [przeglądarki i urządzenia klienta obsługuje](#browser-and-client-device-support) w tym temacie.
 
-12. Otwórz nową witrynę sieci Web Windows PowerShell Web Access  **https://\<*nazwa serwera bramy*\>/pswa**.
+12. Otwórz nową witrynę sieci Web Windows PowerShell Web Access **https://\<*nazwa serwera bramy*\>/pswa**.
 
     Przeglądarki powinien być wyświetlany Windows PowerShell Web Access konsoli strony logowania.
 
@@ -361,7 +361,7 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
 15. Otwórz nową witrynę sieci Web Windows PowerShell Web Access.
 
-    Ponieważ główna witryna internetowa wskazuje folder programu Windows PowerShell Web Access, przeglądarce powinna zostać wyświetlona strona logowania programu Windows PowerShell Web Access po otwarciu  **https://\<*nazwa_serwera_bramy* \>**. Należy nie trzeba dodawać **/pswa** do adresu URL.
+    Ponieważ główna witryna internetowa wskazuje folder programu Windows PowerShell Web Access, przeglądarce powinna zostać wyświetlona strona logowania programu Windows PowerShell Web Access po otwarciu **https://\<*nazwa_serwera_bramy* \>**. Należy nie trzeba dodawać **/pswa** do adresu URL.
 
     >**![Uwaga](images/note.jpeg) Uwaga** 
     > 
@@ -384,7 +384,7 @@ Aby uzyskać więcej szczegółów na temat reguł autoryzacji programu Windows 
 
 2. ![Uwaga dotycząca zabezpieczeń](images/SecurityNote.jpeg) Krok opcjonalny, umożliwiający ograniczenie dostępu użytkowników za pomocą konfiguracji sesji:
 
-    Sprawdź, czy konfiguracje sesji, których chcesz użyć w regułach, już istnieją. Jeśli ich nie jeszcze utworzono, skorzystaj z instrukcji tworzenia konfiguracji sesji w [informacje o plikach](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+    Sprawdź, czy konfiguracje sesji, których chcesz użyć w regułach, już istnieją. Jeśli ich nie jeszcze utworzono, skorzystaj z instrukcji tworzenia konfiguracji sesji w [informacje o plikach](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
 
@@ -418,7 +418,7 @@ W bezpiecznym środowisku produkcyjnym zawsze używaj prawidłowego certyfikatu 
 
     - Kliknij przycisk **Utwórz żądanie certyfikatu** Aby zażądać certyfikatu od urzędu certyfikacji, takich jak [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), lub [GeoTrust](https://www.geotrust.com/). Nazwa pospolita certyfikatu musi być zgodna z nagłówkiem hosta w żądaniu.
 
-      Na przykład jeśli przeglądarka klienta żąda adresu http://www.contoso.com/, nazwą pospolitą również musi być http://www.contoso.com/. Jest to najbardziej bezpieczna i zalecana opcja używania bramy systemu Windows PowerShell Web Access przy użyciu certyfikatu.
+      Na przykład, jeśli przeglądarka klienta żąda http://www.contoso.com/, a następnie nazwę pospolitą również musi być http://www.contoso.com/. Jest to najbardziej bezpieczna i zalecana opcja używania bramy systemu Windows PowerShell Web Access przy użyciu certyfikatu.
 
     - Kliknij przycisk **Utwórz certyfikat z podpisem własnym** można utworzyć certyfikatu można użyć od razu i podpisać później przez urząd certyfikacji w razie potrzeby. Określ przyjazną nazwę certyfikatu z podpisem własnym, takich jak **programu Windows PowerShell Web Access**. Ta opcja jest uważana za niebezpieczną i jest zalecana tylko na potrzeby prywatnego środowiska testowego.
 

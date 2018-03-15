@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Korzystanie z zasobów z wieloma wersjami"
-ms.openlocfilehash: 8bd8b1dab9418c6d8cf64cd682c527a7f039cdb4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 5ca4eadfe23a4675e1b81b86d4274d7f113228fe
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-resources-with-multiple-versions"></a>Korzystanie z zasobów z wieloma wersjami
 
@@ -17,7 +17,7 @@ W programie PowerShell 5.0 DSC zasobów może mieć wiele wersji, a wersji możn
 
 ## <a name="installing-multiple-resource-versions-side-by-side"></a>Instalowanie wielu zasobów wersji side-by-side
 
-Można użyć **MinimumVersion**, **MaximumVersion**, i **RequiredVersion** parametry [instalacji modułu](https://technet.microsoft.com/en-us/library/dn807162.aspx) polecenia cmdlet, aby określić która wersja modułu do zainstalowania. Wywoływanie **instalacji modułu** bez określania wersji instaluje najnowszą wersję.
+Można użyć **MinimumVersion**, **MaximumVersion**, i **RequiredVersion** parametry [instalacji modułu](https://technet.microsoft.com/library/dn807162.aspx) polecenia cmdlet, aby określić która wersja modułu do zainstalowania. Wywoływanie **instalacji modułu** bez określania wersji instaluje najnowszą wersję.
 
 Na przykład istnieje wiele wersji **xFailOverCluster** modułu, z których każdy zawiera **xCluster** zasobów. Wyniku wywołania metody **instalacji modułu** bez określania wersji numer wygląda następująco:
 

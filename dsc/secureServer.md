@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Ściąganie server najlepsze rozwiązania"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>Ściąganie server najlepsze rozwiązania
 
@@ -24,7 +24,7 @@ Opublikowane | Kwietnia 2015 r.
 ## <a name="abstract"></a>Abstrakcyjny
 
 Celem niniejszego dokumentu jest oficjalnego wytyczne dla każdego Planowanie wdrożenia serwera ściągania konfiguracji żądanego stanu programu Windows PowerShell. Serwerem ściągania jest proste usługi, które powinien wykonać tylko minut do wdrożenia. Mimo że ten dokument zostanie oferują techniczne porad wskazówki, które mogą być używane w ramach wdrożenia, wartość tego dokumentu jest jako punkt odniesienia dla najlepszych rozwiązań i co można traktować przed wdrożeniem.
-Czytniki powinny mieć podstawowe znajomość DSC i terminów używanych do opisywania składników, które są zawarte w wdrożenia usługi Konfiguracja DSC. Aby uzyskać więcej informacji, zobacz [żądany stan konfiguracji Omówienie środowiska Windows PowerShell](https://technet.microsoft.com/en-us/library/dn249912.aspx) tematu.
+Czytniki powinny mieć podstawowe znajomość DSC i terminów używanych do opisywania składników, które są zawarte w wdrożenia usługi Konfiguracja DSC. Aby uzyskać więcej informacji, zobacz [żądany stan konfiguracji Omówienie środowiska Windows PowerShell](https://technet.microsoft.com/library/dn249912.aspx) tematu.
 Oczekiwaniami DSC podlegać ewolucji w chmurze okresach podstawową technologią, łącznie z serwera ściągania również oczekuje rozwijać i wprowadzenie nowych funkcji. Ten dokument zawiera tabelę wersji w dodatku, który zawiera odwołania do poprzednich wersji i odwołania do przyszłych wyglądającej rozwiązania zachęca nowoczesne projektów.
 
 Dwóch głównych sekcji tego dokumentu:
@@ -43,7 +43,7 @@ Programu Windows PowerShell udostępnia zestaw rozszerzeń języka żądany stan
 ### <a name="pull-server-role"></a>Rola serwera ściągania  
 Serwer ściągania zapewnia scentralizowane usługi do przechowywania konfiguracji, które będą dostępne dla węzły docelowe.
  
-Rola serwera ściągania może być wdrożony jako wystąpienie serwera sieci Web lub udziału plików SMB. Funkcja serwer sieci web zawiera interfejs OData i opcjonalnie możliwości węzły docelowe wysyłać raporty potwierdzenie powodzenie lub niepowodzenie zgodnie z konfiguracji są stosowane. Ta funkcja jest przydatna w środowiskach, w których istnieje wiele węzłów docelowych. Po skonfigurowaniu węzła docelowego (zwaną także klienta), aby wskazywały serwer ściągnięcia z najnowszą konfiguracją danych i wszystkie wymagane skrypty, zostały pobrane i zastosowane. Może to nastąpić jako jednorazowego wdrażania lub ponownie występującą zadania, które powoduje z serwerem ściągania istotny element zarządzania zmiany na dużą skalę. Aby uzyskać więcej informacji, zobacz [Windows PowerShell żądanego stanu ściągnięcia serwery konfiguracji](https://technet.microsoft.com/en-us/library/dn249913.aspx) i [wypychania i ściągania trybów konfiguracji](https://technet.microsoft.com/en-us/library/dn249913.aspx).
+Rola serwera ściągania może być wdrożony jako wystąpienie serwera sieci Web lub udziału plików SMB. Funkcja serwer sieci web zawiera interfejs OData i opcjonalnie możliwości węzły docelowe wysyłać raporty potwierdzenie powodzenie lub niepowodzenie zgodnie z konfiguracji są stosowane. Ta funkcja jest przydatna w środowiskach, w których istnieje wiele węzłów docelowych. Po skonfigurowaniu węzła docelowego (zwaną także klienta), aby wskazywały serwer ściągnięcia z najnowszą konfiguracją danych i wszystkie wymagane skrypty, zostały pobrane i zastosowane. Może to nastąpić jako jednorazowego wdrażania lub ponownie występującą zadania, które powoduje z serwerem ściągania istotny element zarządzania zmiany na dużą skalę. Aby uzyskać więcej informacji, zobacz [Windows PowerShell żądanego stanu ściągnięcia serwery konfiguracji](https://technet.microsoft.com/library/dn249913.aspx) i [wypychania i ściągania trybów konfiguracji](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Planowanie konfiguracji
 

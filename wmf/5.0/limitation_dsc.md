@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Konfiguracji żądanego stanu (DSC) — znane problemy i ograniczenia
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 W wersjach WMF 4.0 i WMF 5.0 w wersji zapoznawczej usługi Konfiguracja DSC nie pozwala haseł w konfiguracji, aby mieć długość 121 więcej niż znaków. DSC został wymuszanie używanie haseł krótkie, nawet jeśli została potrzeby długich i silne hasło. Ta zmiana podziału umożliwia hasła, które mają być o dowolnej długości w konfiguracji DSC.
 
-**Rozwiązanie:** ponownie utworzyć certyfikat z użycia szyfrowanie danych lub klucz szyfrowanie klucza i użycia klucza rozszerzonego szyfrowania dokumentu (1.3.6.1.4.1.311.80.1). Artykuł w witrynie TechNet <https://technet.microsoft.com/en-us/library/dn807171.aspx> zawiera więcej informacji.
+**Rozwiązanie:** ponownie utworzyć certyfikat z użycia szyfrowanie danych lub klucz szyfrowanie klucza i użycia klucza rozszerzonego szyfrowania dokumentu (1.3.6.1.4.1.311.80.1). Artykuł w witrynie TechNet <https://technet.microsoft.com/library/dn807171.aspx> zawiera więcej informacji.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>Polecenia cmdlet DSC może zakończyć się niepowodzeniem po zainstalowaniu pakietu WMF 5.0 RTM
@@ -89,7 +89,7 @@ Polecenie cmdlet Invoke-DscResource nie może zwracać pełne, ostrzeżenie, i k
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Zasoby DSC nie można debugować łatwo, gdy jest używany z Invoke DscResource
 -----------------------------------------------------------------------
 Gdy LCM jest uruchomiony w trybie debugowania (zobacz [zasobów debugowania DSC](https://msdn.microsoft.com/powershell/dsc/debugresource) więcej szczegółów), polecenia cmdlet Invoke-DscResource nie zapewnia informacje o obszarze działania, aby nawiązać połączenie do debugowania.
-**Rozwiązanie:** odnajdowania i dołączyć do działania za pomocą poleceń cmdlet **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **obszaru działania Get** i  **Obszarze działania debugowania** debugowania zasobów usługi Konfiguracja DSC.
+**Rozwiązanie:** odnajdowania i dołączyć do działania za pomocą poleceń cmdlet **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **obszaru działania Get** i **Obszaru działania debugowania** debugowania zasobów usługi Konfiguracja DSC.
 
 ```powershell
 # Find all the processes hosting PowerShell

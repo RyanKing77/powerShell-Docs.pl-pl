@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: polecenia cmdlet programu PowerShell
 title: "Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
 
@@ -24,7 +24,7 @@ Kontrola dostępu "Windows PowerShell Web Access" odbywa się przy użyciu zesta
 Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi.
 Zobacz [poleceń cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md).
 
-Administratorzy mogą zdefiniować od 0 do *n*  reguł uwierzytelniania dla programu Windows PowerShell Web Access.
+Administratorzy mogą zdefiniować od 0 do*n* reguł uwierzytelniania dla programu Windows PowerShell Web Access.
 Domyślne zabezpieczenia mają charakter ograniczenia, a nie zezwolenia; zero reguł uwierzytelniania oznacza, że żaden użytkownik nie ma dostępu do żadnej funkcji.
 
 [Polecenia Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) i [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) w systemie Windows Server 2012 R2 zawierają parametr Credential, umożliwiający dodawanie i testowanie reguł autoryzacji programu Windows PowerShell Web Access z zdalnej komputer, lub w ramach aktywnej sesji programu Windows PowerShell Web Access.
@@ -32,7 +32,7 @@ Jako z innymi poleceniami cmdlet programu Windows PowerShell, który ma parametr
 Aby utworzyć obiekt PSCredential zawierający poświadczenia, które mają zostać przekazane z komputerem zdalnym, uruchom [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) polecenia cmdlet.
 
 Reguły uwierzytelniania programu Windows PowerShell Web Access to reguły określające elementy dozwolone.
-Każda reguła stanowi definicję dozwolonego połączenia między użytkownikami, komputerami docelowymi i określonego PowerShellÂ Windows [konfiguracje sesji](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (nazywane również punktami końcowymi lub _obszarach działania_) na wskazanych komputerach docelowych.
+Każda reguła stanowi definicję dozwolonego połączenia między użytkownikami, komputerami docelowymi i określonego PowerShellÂ Windows [konfiguracje sesji](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (nazywane również punktami końcowymi lub _obszarach działania_) na wskazanych komputerach docelowych.
 Aby uzyskać informacje na **obszarach działania** zobacz [początku użyj programu PowerShell z obszarami działania](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > **Uwaga dotycząca zabezpieczeń**
@@ -103,7 +103,7 @@ Reguły są sprawdzane dopiero po uwierzytelnieniu użytkownika przez bramę, al
 Ostatnią warstwą zabezpieczeń programu Windows PowerShell Web Access jest konfiguracja zabezpieczeń na komputerze docelowym.
 Użytkownicy muszą mieć odpowiednie uprawnienia dostępu skonfigurowane na komputerze docelowym, a także w ramach reguł autoryzacji programu Windows PowerShell Web Access, do uruchamiania konsoli sieci web programu Windows PowerShell, która wpływa na komputerze docelowym za pomocą programu Windows PowerShell Web Access.
 
-Ta warstwa oferuje te same mechanizmy zabezpieczeń, które mogłyby oceny próby połączenia, gdy użytkownicy próbują utworzyć sesję zdalną programu Windows PowerShell do komputera docelowego z wewnątrz środowiska Windows PowerShell, uruchamiając [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) lub [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) polecenia cmdlet.
+Ta warstwa oferuje te same mechanizmy zabezpieczeń, które mogłyby oceny próby połączenia, gdy użytkownicy próbują utworzyć sesję zdalną programu Windows PowerShell do komputera docelowego z wewnątrz środowiska Windows PowerShell, uruchamiając [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) lub [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) polecenia cmdlet.
 
 Domyślnie program Windows PowerShell Web Access używa podstawowa nazwa użytkownika i hasło do uwierzytelniania na komputerze docelowym i bramy.
 Oparte na sieci web strony logowania, w sekcji **opcjonalne ustawienia połączenia**, udostępniana opcja podania innych poświadczeń dla komputera docelowego, jeśli są wymagane.
@@ -254,5 +254,5 @@ Jeśli serwer bramy działa system Windows Server 2012 R2, Windows PowerShell We
 ## <a name="see-also"></a>Zobacz też
 
 - [Zainstalować i używać programu Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-- [informacje o konfiguracjach sesji](https://technet.microsoft.com/library/dd819508.aspx)
+- [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md)

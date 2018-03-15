@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: Konfiguracji DSC
-ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-configurations"></a>Konfiguracji DSC
 
@@ -62,7 +62,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -141,11 +141,11 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>Przy użyciu nowych zasobów w konfiguracji
 
 W przypadku uruchomienia poprzednich przykładach, można zauważyć, że zostały ostrzeżenie, że zostały przy użyciu zasobu nie jest jawnie importowany.
-Obecnie DSC jest dostarczany z 12 zasobów w ramach modułu PSDesiredStateConfiguration. Inne zasoby w modułach zewnętrznych muszą znajdować się w `$env:PSModulePath` uznawane za LCM. Nowe polecenie cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), może służyć do określenia, jakie zasoby są zainstalowane w systemie i dostępne do użycia przez LCM. Gdy te moduły zostały umieszczone w `$env:PSModulePath` i są prawidłowo rozpoznawane przez [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), nadal muszą być ładowane w ramach konfiguracji. 
+Obecnie DSC jest dostarczany z 12 zasobów w ramach modułu PSDesiredStateConfiguration. Inne zasoby w modułach zewnętrznych muszą znajdować się w `$env:PSModulePath` uznawane za LCM. Nowe polecenie cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), może służyć do określenia, jakie zasoby są zainstalowane w systemie i dostępne do użycia przez LCM. Gdy te moduły zostały umieszczone w `$env:PSModulePath` i są prawidłowo rozpoznawane przez [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), nadal muszą być ładowane w ramach konfiguracji. 
 **Import-DscResource** jest dynamiczne słowo kluczowe rozpoznawany tylko w ramach **konfiguracji** bloku (tj. go nie jest poleceniem cmdlet). 
 **Import-DscResource** obsługuje dwa parametry:
 - **Nazwa modułu** jest zalecanym sposobem przy użyciu **DscResource importu**. Przyjmuje nazwę modułu, który zawiera zasoby do zaimportowania (a także tablicy ciągów nazw modułu). 
-- **Nazwa** jest nazwa zasobu do zaimportowania. Nie jest to przyjazna nazwa zwracane w postaci "Name" przez [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx), ale nazwa klasy używane podczas definiowania schematu zasobów (zwracane jako **ResourceType** przez [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)). 
+- **Nazwa** jest nazwa zasobu do zaimportowania. Nie jest to przyjazna nazwa zwracane w postaci "Name" przez [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), ale nazwa klasy używane podczas definiowania schematu zasobów (zwracane jako **ResourceType** przez [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)). 
 
 ## <a name="see-also"></a>Zobacz też
 * [Omówienie stanu konfiguracji żądanego programu Windows PowerShell](overview.md)

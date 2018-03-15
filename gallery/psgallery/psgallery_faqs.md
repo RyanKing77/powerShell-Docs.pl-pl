@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>Często zadawane pytania
 
@@ -18,7 +18,7 @@ Moduł programu PowerShell jest wielokrotnego użytku pakiet zawierający niekt�
 
 ## <a name="what-is-a-powershell-script"></a>Co to jest skrypt programu PowerShell?
 
-Skrypt programu PowerShell jest serii poleceń, które są przechowywane w pliku .ps1, aby umożliwić udostępnianie i ponowne użycie. Przepływy pracy programu PowerShell są również skrypty programu PowerShell, które przedstawiają zestaw zadań i podaj sekwencji zadań. Aby uzyskać więcej informacji, odwiedź stronę [wprowadzenie do przepływu pracy programu PowerShell](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+Skrypt programu PowerShell jest serii poleceń, które są przechowywane w pliku .ps1, aby umożliwić udostępnianie i ponowne użycie. Przepływy pracy programu PowerShell są również skrypty programu PowerShell, które przedstawiają zestaw zadań i podaj sekwencji zadań. Aby uzyskać więcej informacji, odwiedź stronę [wprowadzenie do przepływu pracy programu PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Jak skrypty programu PowerShell są inne niż moduły programu PowerShell
 
@@ -48,7 +48,7 @@ Ten błąd może wystąpić z następujących powodów:
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Dlaczego nie można zalogować się przy użyciu konta osobiste, ale można zarejestrować się w wczoraj?
 
-Należy pamiętać, Twoje konto galerii nie obsługuje zmiany zmian aliasu podstawowego poczty e-mail. Aby uzyskać więcej informacji, zobacz [aliasów E-mail Microsoft](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Należy pamiętać, Twoje konto galerii nie obsługuje zmiany zmian aliasu podstawowego poczty e-mail. Aby uzyskać więcej informacji, zobacz [aliasów E-mail Microsoft](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Dlaczego nie widzisz wszystkich elementów galerii, po wybraniu wszystkich kategorii odpowiednie pola wyboru na karcie elementy?
 
@@ -156,7 +156,7 @@ W związku z tym **PowerShellGet** wymaga jednego z następujących systemów op
 - Windows Server 2012 R2
 - Windows Server 2008 R2 z dodatkiem SP1
 
-**PowerShellGet** również wymaga programu .NET Framework 4.5 lub nowszej. Możesz zainstalować program .NET Framework 4.5 lub nowszy z [tutaj](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx).
+**PowerShellGet** również wymaga programu .NET Framework 4.5 lub nowszej. Możesz zainstalować program .NET Framework 4.5 lub nowszy z [tutaj](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Czy jest możliwe do zarezerwowania nazwy elementów, które zostaną opublikowane w przyszłości?
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Wprowadzenie do programu PowerShell Konfiguracja żądanego stanu"
-ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Wprowadzenie do programu PowerShell Konfiguracja żądanego stanu #
 
@@ -16,7 +16,7 @@ W tym przewodniku opisano, jak rozpocząć tworzenie dokumentów konfiguracji ż
 
 ## <a name="create-a-configuration"></a>Tworzenie konfiguracji ##
 
-[**Konfiguracje** ](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) dokumentów, które opisują środowiska. Środowiskach składają się z "**węzłów**", które są często maszyn wirtualnych lub fizycznych. 
+[**Konfiguracje** ](https://msdn.microsoft.com/powershell/dsc/configurations) dokumentów, które opisują środowiska. Środowiskach składają się z "**węzłów**", które są często maszyn wirtualnych lub fizycznych. 
 
 Konfiguracje mogą mieć różne formy. Najprostszym sposobem tworzenia nowej konfiguracji jest tworzenie pliku .ps1 (skrypt programu PowerShell). Aby to zrobić, Otwórz Edytor wybór. PowerShell ISE jest dobrym rozwiązaniem, ponieważ rozumie DSC natywnie. Zapisz poniższy jako PS1:
 
@@ -44,9 +44,9 @@ Następnego wiersza jest instrukcję import, podobnie jak importowanie modułu. 
 
 "Węzeł" definiuje nazwę komputera, które będą działać tej konfiguracji. Chociaż ta konfiguracja jest edytowany lokalnie, konfiguracje mogą dotrzeć do zdalnego węzłów i skonfigurować je. 
 
-Węzły mogą być nazwy komputerów lub adresy IP. Może mieć wiele węzłów w dokumencie pojedynczą konfiguracją. Przy użyciu [dane konfiguracji](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), może także zawierać taką samą konfigurację dotyczą wiele węzłów. W takim przypadku ten węzeł jest "localhost" — co oznacza komputera lokalnego. 
+Węzły mogą być nazwy komputerów lub adresy IP. Może mieć wiele węzłów w dokumencie pojedynczą konfiguracją. Przy użyciu [dane konfiguracji](https://msdn.microsoft.com/powershell/dsc/configdata), może także zawierać taką samą konfigurację dotyczą wiele węzłów. W takim przypadku ten węzeł jest "localhost" — co oznacza komputera lokalnego. 
 
-Następny element jest [ **zasobów**](https://msdn.microsoft.com/en-us/powershell/dsc/resources). Zasoby są blokami konstrukcyjnymi konfiguracji. Każdy zasób jest moduł, który definiuje implementację logiki jeden aspekt maszyny. Na tym komputerze można wyświetlić wszystkich zasobów, uruchamiając **Get-DscResource** w programie PowerShell. Zasoby musi znajdować się na komputerze lokalnym i zaimportować przed ich użyciem w elemencie configuration z **DscResource importu** czyli w drugim wierszu tej konfiguracji. 
+Następny element jest [ **zasobów**](https://msdn.microsoft.com/powershell/dsc/resources). Zasoby są blokami konstrukcyjnymi konfiguracji. Każdy zasób jest moduł, który definiuje implementację logiki jeden aspekt maszyny. Na tym komputerze można wyświetlić wszystkich zasobów, uruchamiając **Get-DscResource** w programie PowerShell. Zasoby musi znajdować się na komputerze lokalnym i zaimportować przed ich użyciem w elemencie configuration z **DscResource importu** czyli w drugim wierszu tej konfiguracji. 
 
 **Wprowadzania konfiguracji**
 

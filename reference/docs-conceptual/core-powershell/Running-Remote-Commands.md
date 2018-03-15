@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
 title: "Uruchamianie poleceń zdalnych"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
-ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
+ms.openlocfilehash: 24648e8f35fbc28c9ba9f9b7176ac23e72ffbe78
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-remote-commands"></a>Uruchamianie poleceń zdalnych
 
@@ -28,14 +28,14 @@ Wiele poleceń cmdlet programu Windows PowerShell ma parametr ComputerName, któ
 
 Te polecenia cmdlet obejmują:
 
-* [Uruchom ponownie komputer](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [Połączenie testowe](https://go.microsoft.com/fwlink/?LinkId=821646)
+* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
+* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Wyczyść EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-dziennika zdarzeń](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get poprawki](https://go.microsoft.com/fwlink/?LinkId=821586)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
 * [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Ustawianie usługi](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
 * [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
 
@@ -48,9 +48,9 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## <a name="windows-powershell-remoting"></a>Komunikacji zdalnej programu Windows PowerShell
 Komunikacji zdalnej programu Windows PowerShell, która używa protokołu WS-Management, można uruchomić wszystkie polecenia programu Windows PowerShell na jednym lub wielu komputerach zdalnych. Umożliwia ustanowienie połączenia trwałe, sesje interakcyjne 1:1 i uruchamiać skrypty na wielu komputerach.
 
-Aby użyć komunikacji zdalnej programu Windows PowerShell, komputer zdalny musi być skonfigurowany do zdalnego zarządzania. Aby uzyskać więcej informacji, w tym instrukcje, zobacz [o wymagania dotyczące zdalnego](https://technet.microsoft.com/en-us/library/dd315349.aspx).
+Aby użyć komunikacji zdalnej programu Windows PowerShell, komputer zdalny musi być skonfigurowany do zdalnego zarządzania. Aby uzyskać więcej informacji, w tym instrukcje, zobacz [o wymagania dotyczące zdalnego](https://technet.microsoft.com/library/dd315349.aspx).
 
-Po skonfigurowaniu komunikacji zdalnej programu Windows PowerShell, wiele strategii komunikacji zdalnej są dostępne. W pozostałej części tego dokumentu zawiera tylko niektóre z nich. Aby uzyskać więcej informacji, zobacz [o zdalnego](https://technet.microsoft.com/en-us/library/dd347744.aspx) i [o zdalnego — często zadawane pytania](https://technet.microsoft.com/en-us/library/dd347744.aspx).
+Po skonfigurowaniu komunikacji zdalnej programu Windows PowerShell, wiele strategii komunikacji zdalnej są dostępne. W pozostałej części tego dokumentu zawiera tylko niektóre z nich. Aby uzyskać więcej informacji, zobacz [o zdalnego](https://technet.microsoft.com/library/dd347744.aspx) i [o zdalnego — często zadawane pytania](https://technet.microsoft.com/library/dd347744.aspx).
 
 ### <a name="start-an-interactive-session"></a>Uruchomić sesji interaktywnej
 Aby uruchomić sesji interaktywnej z jednym komputerem zdalnym, należy użyć [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) polecenia cmdlet.
@@ -141,10 +141,10 @@ Aby uzyskać pomoc dotyczącą usług zdalnych błędy, zobacz [about_Remote_Tro
 - [about_Remote_Requirements](https://technet.microsoft.com/en-us/library/da213949-134c-4741-b307-81f4492ba1bd)
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
-- [about_WS Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+- [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 - [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
-- [Nowe PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Dostawca o WSMan](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 

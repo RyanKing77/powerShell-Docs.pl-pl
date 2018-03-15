@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: "Zasób skryptu konfiguracji DSC"
-ms.openlocfilehash: 22213b74986b45b3a8205f1584b3b0d89a92f211
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: d65a89ceba0b641ccb0ac3dfcc6d5ec1a48dc92a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-script-resource"></a>Zasób skryptu konfiguracji DSC
 
@@ -42,9 +42,9 @@ Script [string] #ResourceName
 
 |  Właściwość  |  Opis   | 
 |---|---| 
-| GetScript| Zawiera blok skryptu programu Windows PowerShell, który uruchamia po wywołaniu [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) polecenia cmdlet. Ten blok musi zwracać obiektu hashtable. Hashtable musi zawierać tylko jeden klucz **wynik** i wartość musi być typu **ciąg**.| 
-| SetScript| Zawiera blok skryptu programu Windows PowerShell. Gdy wywołanie [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) polecenia cmdlet, **TestScript** bloku jest uruchamiany pierwszy. Jeśli **TestScript** zablokować zwraca **$false**, **SetScript** bloku zostanie uruchomiony. Jeśli **TestScript** zablokować zwraca **$true**, **SetScript** bloku nie zostaną uruchomione.| 
-| TestScript| Zawiera blok skryptu programu Windows PowerShell. Podczas wywołania [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) działa ten blok polecenia cmdlet. Jeśli zmienna zwraca **$false**, blok SetScript zostanie uruchomiony. Jeśli zmienna zwraca **$true**, SetScript będzie blok, nie działać. **TestScript** bloku również uruchamiane przy wywołaniu [DscConfiguration testu](https://technet.microsoft.com/en-us/library/dn407382.aspx) polecenia cmdlet. Jednak w tym przypadku **SetScript** nie Uruchom, niezależnie od tego, jaka wartość TestScript zablokować zwraca bloku. **TestScript** bloku musi zwracać wartość True, jeśli rzeczywista konfiguracja zgodny z bieżącej konfiguracji żądanego stanu i wartość False, jeśli nie jest zgodny. (W bieżącej konfiguracji żądanego stanu jest ostatniej konfiguracji wdrożonymi na węźle, który używa DSC).| 
+| GetScript| Zawiera blok skryptu programu Windows PowerShell, który uruchamia po wywołaniu [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) polecenia cmdlet. Ten blok musi zwracać obiektu hashtable. Hashtable musi zawierać tylko jeden klucz **wynik** i wartość musi być typu **ciąg**.| 
+| SetScript| Zawiera blok skryptu programu Windows PowerShell. Gdy wywołanie [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) polecenia cmdlet, **TestScript** bloku jest uruchamiany pierwszy. Jeśli **TestScript** zablokować zwraca **$false**, **SetScript** bloku zostanie uruchomiony. Jeśli **TestScript** zablokować zwraca **$true**, **SetScript** bloku nie zostaną uruchomione.| 
+| TestScript| Zawiera blok skryptu programu Windows PowerShell. Podczas wywołania [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) działa ten blok polecenia cmdlet. Jeśli zmienna zwraca **$false**, blok SetScript zostanie uruchomiony. Jeśli zmienna zwraca **$true**, SetScript będzie blok, nie działać. **TestScript** bloku również uruchamiane przy wywołaniu [DscConfiguration testu](https://technet.microsoft.com/en-us/library/dn407382.aspx) polecenia cmdlet. Jednak w tym przypadku **SetScript** nie Uruchom, niezależnie od tego, jaka wartość TestScript zablokować zwraca bloku. **TestScript** bloku musi zwracać wartość True, jeśli rzeczywista konfiguracja zgodny z bieżącej konfiguracji żądanego stanu i wartość False, jeśli nie jest zgodny. (W bieżącej konfiguracji żądanego stanu jest ostatniej konfiguracji wdrożonymi na węźle, który używa DSC).| 
 | Poświadczenie| Określa poświadczenia na potrzeby uruchomienie tego skryptu, jeśli są wymagane poświadczenia.| 
 | dependsOn| Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest **ResourceName** i jej typ jest **ResourceType**, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.
 

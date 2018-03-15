@@ -1,22 +1,22 @@
 ---
 ms.date: 2017-06-05
 keywords: polecenia cmdlet programu PowerShell
-title: "Jak napisać i uruchamianie skryptów w środowisku Windows PowerShell ISE"
+title: "Jak pisać i uruchamiać skrypty w środowisku Windows PowerShell ISE"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: dd3055df8c84195f0145b1a058f1d17c9c382f33
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Jak napisać i uruchamianie skryptów w środowisku Windows PowerShell ISE
+# <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Jak pisać i uruchamiać skrypty w środowisku Windows PowerShell ISE
 W tym temacie opisano sposób tworzenia, edytowania, uruchamianie i zapisywanie skryptów w okienku skryptów.
 
 ## <a name="how-to-create-and-run-scripts"></a>Jak utworzyć i uruchomić skrypty
 Można otwierać i edytować pliki środowiska Windows PowerShell w okienku skryptów. Typy plików określonych zainteresowań w programie Windows PowerShell są plików skryptu (ps1), pliki danych skryptu (psd1) i pliki modułu skryptu (.psm1). Następujące typy plików są składni pokolorowane w edytorze okienku skryptów. Innych popularnych typów plików, który może zostać otwarty w okienku skryptów są pliki konfiguracji (.ps1xml), plików XML i plików tekstowych.
 
 > [!NOTE]
-> Zasady wykonywania programu Windows PowerShell Określa, czy można uruchamiać skrypty i załadować profilów programu Windows PowerShell i plików konfiguracji. Domyślne zasady wykonywania Restricted, uniemożliwiają uruchamianie wszystkich skryptów i uniemożliwia profile ładowania. Aby zmienić zasady wykonywania umożliwia profile ładować i być używany, zobacz [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) i [about_Signing [4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> Zasady wykonywania programu Windows PowerShell Określa, czy można uruchamiać skrypty i załadować profilów programu Windows PowerShell i plików konfiguracji. Domyślne zasady wykonywania Restricted, uniemożliwiają uruchamianie wszystkich skryptów i uniemożliwia profile ładowania. Aby zmienić zasady wykonywania umożliwia profile ładować i być używany, zobacz [Set-ExecutionPolicy [PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) i [about_Signing [4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### <a name="to-create-a-new-script-file"></a>Aby utworzyć nowy plik skryptu
 Na pasku narzędzi kliknij **nowy** , lub na **pliku** menu, kliknij przycisk **nowy**. Utworzony plik pojawi się na nowej karcie pliku na karcie bieżącego środowiska PowerShell. Należy pamiętać, że na kartach programu PowerShell są widoczne tylko w przypadku istnieje więcej niż jeden. Domyślnie jest tworzony plik typ skryptu (ps1), ale można zapisać przy użyciu nowej nazwy i rozszerzenia. W tej samej karcie PowerShell można utworzyć wiele plików skryptów.
@@ -139,5 +139,4 @@ Windows PowerShell ISE obsługuje następujące opcje kodowania: ASCII, BigEndia
 Windows PowerShell ISE nie zmienia kodowanie skrypty, które zostały utworzone przez w innych edytorach, nawet jeśli używasz Zapisz lub Zapisz jako polecenia w środowisku Windows PowerShell ISE.
 
 ## <a name="see-also"></a>Zobacz też
-- [Przy użyciu programu Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [Eksplorowanie środowiska Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

@@ -3,11 +3,11 @@ ms.date: 2017-10-16
 ms.topic: conceptual
 keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
 title: Wprowadzania konfiguracji
-ms.openlocfilehash: 4285dbe04c9745ec2a859e479848da2881c18de0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 01294b85d33e147593299de8ecf46c027a69f7a3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enacting-configurations"></a>Wprowadzania konfiguracji
 
@@ -19,10 +19,10 @@ Istnieją dwa sposoby wprowadza konfiguracje konfiguracji żądanego stanu środ
 
 ![Tryb wypychania](images/pushModel.png "push jak działa tryb")
 
-Tryb wypychania odwołuje się do użytkownika aktywnie stosowania konfiguracji do węzła docelowego przez wywołanie metody [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) polecenia cmdlet.
+Tryb wypychania odwołuje się do użytkownika aktywnie stosowania konfiguracji do węzła docelowego przez wywołanie metody [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) polecenia cmdlet.
 
-Po utworzeniu i kompilowania konfiguracji, można go wprowadza w trybie wypychania — w tym wywołując [Start DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) polecenia cmdlet, ustawienie parametru - Path, polecenia cmdlet do ścieżki, w którym znajduje się konfiguracji MOF.
-Na przykład, jeśli konfiguracja MOF znajduje się pod adresem `C:\DSC\Configurations\localhost.mof`, czy zastosować je na komputerze lokalnym przy użyciu następującego polecenia:`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+Po utworzeniu i kompilowania konfiguracji, można go wprowadza w trybie wypychania — w tym wywołując [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) polecenia cmdlet, ustawienie parametru - Path, polecenia cmdlet do ścieżki, w którym znajduje się konfiguracji MOF.
+Na przykład, jeśli konfiguracja MOF znajduje się pod adresem `C:\DSC\Configurations\localhost.mof`, czy zastosować je na komputerze lokalnym przy użyciu następującego polecenia: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > __Uwaga__: domyślnie DSC uruchamia konfigurację jako zadanie w tle. Aby pracować w trybie interakcyjnym konfiguracji, należy wywołać [Start DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) z __— oczekiwania__ parametru.
 
@@ -40,7 +40,7 @@ LCM sprawdza, czy klient jest zgodność z konfiguracji w regularnych odstępach
 LCM wyszukuje zaktualizowanej konfiguracji w usłudze replikacji ściąganej w regularnych odstępach czasu określonego przez **RefreshModeFrequency** właściwości LCM.
 Aby uzyskać informacje o konfigurowaniu LCM, zobacz [Konfigurowanie lokalny program Configuration Manager](metaConfig.md).
 
-Zalecane rozwiązanie w celu hostowania usługi ściągnięcia jest DSC usługi w chmurze, [usługi Automatyzacja Azure](https://azure.microsoft.com/en-us/services/automation/).
+Zalecane rozwiązanie w celu hostowania usługi ściągnięcia jest DSC usługi w chmurze, [usługi Automatyzacja Azure](https://azure.microsoft.com/services/automation/).
 Znajduje to rozwiązanie zapewnia zarządzania w trybie graficznym, raportowanie i scentralizowane administrowanie.
 
 Aby uzyskać więcej informacji na temat konfigurowania usługi ściągnięcia w systemie Windows Server, zobacz [ustawienie serwera ściągania usługi Konfiguracja DSC sieci web](pullServer.md).

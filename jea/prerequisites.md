@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea, programu powershell, zabezpieczeń"
 title: "Wymagania wstępne JEA"
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>Wymagania wstępne
 
@@ -33,7 +33,7 @@ Można także użyć JEA na komputerze domowej lub firmowej:
 
 System operacyjny klienta   | Dostępność JEA
 --------------------------|-----------------------------------------------------
-Windows 10 1607 +          | Preinstalowane
+Windows 10 1607+          | Preinstalowane
 Windows 10 1603, 1511     | Preinstalowane, dzięki ograniczone funkcje<sup>2</sup>
 Windows 10 1507           | Niedostępne
 Windows 8, 8.1            | Pełnej funkcjonalności z WMF 5.1
@@ -72,7 +72,7 @@ Użytkownicy systemu Windows 10 należy zainstalować najnowsze aktualizacje fun
 ## <a name="enable-powershell-remoting"></a>Włącz obsługę zdalną środowiska PowerShell
 
 Obsługę zdalną środowiska PowerShell stanowi podstawę, na którym jest oparty JEA.
-W związku z tym jest to niezbędne do zapewnienia komunikacji zdalnej programu PowerShell jest włączona i [zabezpieczenie](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) w systemie, zanim będzie możliwe użycie JEA.
+W związku z tym jest to niezbędne do zapewnienia komunikacji zdalnej programu PowerShell jest włączona i [zabezpieczenie](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) w systemie, zanim będzie możliwe użycie JEA.
 
 Usługi zdalne środowiska PowerShell jest włączona domyślnie w systemie Windows Server 2012 i 2012 R2, 2016.
 Można włączyć obsługę zdalną środowiska PowerShell, uruchamiając następujące polecenie w oknie programu PowerShell z podwyższonym poziomem uprawnień.
@@ -109,6 +109,6 @@ Można również włączyć przekształcania PowerShell całego systemu za pomoc
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Dodatkowe informacje o zabezpieczeniach usługi zdalne środowiska PowerShell i usługi WinRM](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [Dodatkowe informacje o zabezpieczeniach usługi zdalne środowiska PowerShell i usługi WinRM](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ niebieski zespołu* wpis w blogu dotyczące zabezpieczeń](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 
