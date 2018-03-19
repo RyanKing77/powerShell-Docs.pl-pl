@@ -1,0 +1,221 @@
+- name: Przegląd
+  href: overview.md
+  items:
+    - name: Omówienie platformy Desired State Configuration dla osób podejmujących decyzje
+      href: decisionMaker.md
+    - name: Omówienie platformy Desired State Configuration dla inżynierów
+      href: DscForEngineers.md
+    - name: DSC — szybki start
+      href: quickStart.md
+- name: Konfiguracje
+  href: configurations.md
+  items:
+    - name: Realizacja konfiguracji
+      href: enactingConfigurations.md
+    - name: Oddzielanie danych konfiguracji i środowiska
+      href: separatingEnvData.md
+    - name: Korzystanie z zasobów z wieloma wersjami
+      href: sxsResource.md
+    - name: Uruchamianie platformy DSC przy użyciu poświadczeń użytkownika
+      href: runAsUser.md
+    - name: Określanie zależności między węzłami
+      href: crossNodeDependencies.md
+    - name: Dane konfiguracji
+      href: configData.md
+      items:
+        - name: Opcje poświadczeń w danych konfiguracji
+          href: configDataCredentials.md
+    - name: Zagnieżdżanie konfiguracji
+      href: compositeConfigs.md
+    - name: Zabezpieczanie pliku MOF konfiguracji
+      href: secureMOF.md
+    - name: Konfiguracje częściowe
+      href: partialConfigs.md
+    - name: Pisanie tematów pomocy dotyczących konfiguracji DSC
+      href: configHelp.md
+    - name: Konfigurowanie maszyny wirtualnej podczas początkowego rozruchu przy użyciu platformy DSC
+      href: bootstrapDsc.md
+      items:
+        - name: Klucz rejestru DSCAutomationHostEnabled
+          href: DSCAutomationHostEnabled.md
+- name: Zasoby
+  href: resources.md
+  items:
+    - name: Zasoby wbudowane
+      href: builtInResource.md
+      items:
+        - name: Zasób archiwum
+          href: archiveResource.md
+        - name: Zasób środowiska
+          href: environmentResource.md
+        - name: Zasób pliku
+          href: fileResource.md
+        - name: Zasób grupy
+          href: groupResource.md
+        - name: Zasób GroupSet
+          href: groupSetResource.md
+        - name: Zasób dziennika
+          href: logResource.md
+        - name: Zasób pakietu
+          href: packageResource.md
+        - name: Zasób ProcessSet
+          href: processSetResource.md
+        - name: Zasób rejestru
+          href: registryResource.md
+        - name: Zasób skryptu
+          href: scriptResource.md
+        - name: Zasób usługi
+          href: serviceResource.md
+        - name: Zasób ServiceSet
+          href: serviceSetResource.md
+        - name: Zasób użytkownika
+          href: userResource.md
+        - name: WaitForAllResource
+          href: waitForAllResource.md
+        - name: WaitForAnyResource
+          href: waitForAnyResource.md
+        - name: WaitForSomeResource
+          href: waitForSomeResource.md
+        - name: Zasób WindowsFeature
+          href: windowsfeatureResource.md
+        - name: Zasób WindowsFeatureSet
+          href: windowsFeatureSetResource.md
+        - name: Zasób WindowsOptionalFeature
+          href: windowsOptionalFeatureResource.md
+        - name: Zasób WindowsOptionalFeatureSet
+          href: windowsOptionalFeatureSetResource.md
+        - name: Zasób WindowsPackageCab
+          href: windowsPackageCabResource.md
+        - name: Zasób WindowsProcess
+          href: windowsProcessResource.md
+    - name: Tworzenie zasobów niestandardowych
+      href: authoringResource.md
+      items:
+        - name: Zasoby niestandardowe oparte na pliku MOF
+          href: authoringResourceMOF.md
+          items:
+            - name: 'Zasób oparty na pliku MOF w języku C#'
+              href: authoringResourceMofCS.md
+        - name: Zasoby niestandardowe oparte na klasie
+          href: authoringResourceClass.md
+        - name: Zasoby złożone
+          href: authoringResourceComposite.md
+        - name: Pisanie zasobu DSC jednego wystąpienia (najlepsze rozwiązanie)
+          href: singleInstance.md
+        - name: Lista kontrolna tworzenia zasobu
+          href: resourceAuthoringChecklist.md
+    - name: Debugowanie zasobów DSC
+      href: debugResource.md
+    - name: Bezpośrednie wywoływanie metod zasobów DSC
+      href: directCallResource.md
+- name: Local Configuration Manager
+  items:
+    - name: Konfigurowanie programu Local Configuration Manager (LCM)
+      href: metaConfig.md
+    - name: Konfigurowanie programu LCM w programie PowerShell 4.0
+      href: metaConfig4.md
+- name: Model ściągania platformy DSC
+  items:
+    - name: Usługa ściągania platformy DSC
+      href: pullServer.md
+    - name: Konfigurowanie serwera ściągania SMB platformy DSC
+      href: pullServerSMB.md
+    - name: Konfigurowanie klienta ściągania
+      href: pullClient.md
+      items:
+        - name: Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji
+          href: pullClientConfigNames.md
+        - name: Konfigurowanie klienta ściągania przy użyciu identyfikatora konfiguracji
+          href: pullClientConfigID.md
+    - name: Używanie serwera raportów platformy DSC
+      href: reportServer.md
+    - name: Najlepsze rozwiązania dotyczące serwera ściągania
+      href: secureServer.md
+- name: Przykłady konfiguracji DSC
+  href: dscExamples.md
+  items:
+    - name: Tworzenie potoku CI/CD przy użyciu platformy DSC oraz usług Pester i Visual Studio Team Services
+      href: dscCiCd.md
+    - name: Oddzielanie danych konfiguracji i środowiska
+      href: separatingEnvData.md
+- name: Rozwiązywanie problemów z platformą DSC
+  href: troubleshooting.md
+- name: Korzystanie z platformy DSC na serwerze Nano Server
+  href: nanoDsc.md
+- name: Platforma DSC w systemie Linux
+  items:
+    - name: Wprowadzenie do platformy DSC dla systemu Linux
+      href: lnxGettingStarted.md
+    - name: Wbudowane zasoby dla systemu Linux
+      href: lnxBuiltInResources.md
+      items:
+        - name: Zasób nxArchive
+          href: lnxArchiveResource.md
+        - name: Zasób nxEnvironment
+          href: lnxEnvironmentResource.md
+        - name: Zasób nxFile
+          href: lnxFileResource.md
+        - name: Zasób nxFileLine
+          href: lnxFileLineResource.md
+        - name: Zasób nxGroup
+          href: lnxGroupResource.md
+        - name: Zasób nxPackage
+          href: lnxPackageResource.md
+        - name: Zasób nxService
+          href: lnxServiceResource.md
+        - name: Zasób nxSshAuthorizedKeys
+          href: lnxSshAuthorizedKeysResource.md
+        - name: Zasób nxUser
+          href: lnxUserResource.md
+- name: Korzystanie z platformy DSC na platformie Microsoft Azure
+  href: azureDsc.md
+  items:
+    - name: Historia rozszerzenia platformy DSC
+      href: azureDscexthistory.md
+- name: Dokumentacja dotycząca plików MOF platformy DSC
+  items:
+    - name: Klasa MSFT_DSCLocalConfigurationManager
+      href: msft-dsclocalconfigurationmanager.md
+      items:
+        - name: Metoda ApplyConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-applyconfiguration.md
+        - name: Metoda DisableDebugConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+        - name: Metoda EnableDebugConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+        - name: Metoda GetConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-getconfiguration.md
+        - name: Metoda GetConfigurationResultOutput klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+        - name: Metoda GetConfigurationStatus klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+        - name: Metoda GetMetaConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+        - name: Metoda PerformRequiredConfigurationChecks klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+        - name: Metoda RemoveConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-removeconfiguration.md
+        - name: Metoda ResourceGet klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-resourceget.md
+        - name: Metoda ResourceSet klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-resourceset.md
+        - name: Metoda ResourceTest klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-resourcetest.md
+        - name: Metoda RollBack klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-rollback.md
+        - name: Metoda SendConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-sendconfiguration.md
+        - name: Metoda SendConfigurationApply klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+        - name: Metoda SendConfigurationApplyAsync klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+        - name: Metoda SendMetaConfigurationApply klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+        - name: Metoda StopConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-stopconfiguration.md
+        - name: Metoda TestConfiguration klasy MSFT_DSCLocalConfigurationManager
+          href: msft-dsclocalconfigurationmanager-testconfiguration.md
+- name: Dalsze zasoby
+  items:
+    - name: Oficjalne dokumenty
+      href: whitepapers.md

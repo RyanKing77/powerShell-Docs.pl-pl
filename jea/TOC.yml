@@ -1,0 +1,18 @@
+- name: Przegląd
+  href: overview.md
+- name: Wdrażanie usługi JEA
+  items:
+    - name: Wymagania wstępne
+      href: prerequisites.md
+    - name: Możliwości roli
+      href: role-capabilities.md
+    - name: Konfiguracje sesji
+      href: session-configurations.md
+    - name: Rejestrowanie usługi JEA
+      href: register-jea.md
+    - name: Korzystanie z usługi JEA
+      href: using-jea.md
+    - name: Zagadnienia dotyczące zabezpieczeń
+      href: security-considerations.md
+    - name: Inspekcja i raportowanie dla usługi JEA
+      href: audit-and-report.md
