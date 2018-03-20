@@ -2,14 +2,14 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
+keywords: wmf,powershell,setup
 ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/20/2018
 ---
-# <a name="unified-and-consistent-state-and-status-representation"></a>Ujednolicone i spójny stan i stan reprezentacja
+# <a name="unified-and-consistent-state-and-status-representation"></a>Ujednolicony i spójny stan oraz reprezentacja stanu
 
 Szereg ulepszeń zostały wprowadzone w tej wersji dla wbudowanych LCM stan i stan usługi Konfiguracja DSC automatyzacji. Obejmują one ujednoliconego i spójny stan i stan oświadczenia, właściwości datetime można zarządzać stan obiektów zwróconych przez polecenie cmdlet Get-DscConfigurationStatus i rozszerzone właściwości szczegółów stanu LCM zwrócony przez Get DscLocalConfigurationManager polecenia cmdlet.
 
@@ -36,7 +36,7 @@ W poniższej tabeli pokazano wynikowe stan i stan powiązane właściwości w ob
 | r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 | r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
-^ S<sub>i</sub>: szeregu zasobów, które zostały zastosowane F<sub>i</sub>: szeregu zasobów, które są stosowane niepomyślnie r: A zasobem, który wymaga ponownego uruchomienia\*
+^ S<sub>i</sub>: szeregu zasobów, które zostały zastosowane F<sub>i</sub>: szeregu zasobów, które są stosowane niepomyślnie r: A zasobem, który wymaga ponownego uruchomienia \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
