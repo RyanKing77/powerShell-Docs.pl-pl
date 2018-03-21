@@ -10,7 +10,7 @@ ms.contentlocale: pl-PL
 ms.lasthandoff: 03/20/2018
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Obsługa modułów deklarowania zakresu (1.* itp.)
-Połączone z **- MinimumVersion**, **- MaximumVersion** teraz zezwala użytkownikowi na module get/import określonego zakresu. Obsługiwane jest również parametr **. ***. W poniższym przykładzie pokazano, jak to działa:
+Połączone z **- MinimumVersion**, **- MaximumVersion** teraz zezwala użytkownikowi na module get/import określonego zakresu. Obsługiwane jest również parametr **.**\*. W poniższym przykładzie pokazano, jak to działa:
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
