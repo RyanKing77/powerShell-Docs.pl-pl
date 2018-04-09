@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: fa972b68015d9b6e14508ccda562cfa5ebd632ac
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 12c47d3583274e58edbd2171fef50c779aac9fce
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="28d60-102">Obsługa modułów deklarowania zakresu (1.\* itp.)</span><span class="sxs-lookup"><span data-stu-id="28d60-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
-<span data-ttu-id="28d60-103">Połączone z **- MinimumVersion**, **- MaximumVersion** teraz zezwala użytkownikowi na module get/import określonego zakresu.</span><span class="sxs-lookup"><span data-stu-id="28d60-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="28d60-104">Obsługiwane jest również parametr **.**\*.</span><span class="sxs-lookup"><span data-stu-id="28d60-104">The parameter also support \*\*.\*\*\*.</span></span> <span data-ttu-id="28d60-105">W poniższym przykładzie pokazano, jak to działa:</span><span class="sxs-lookup"><span data-stu-id="28d60-105">The following example shows how it works:</span></span>
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="064a3-102">Obsługa modułów deklarowania zakresu (1.\* itp.)</span><span class="sxs-lookup"><span data-stu-id="064a3-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
+<span data-ttu-id="064a3-103">Połączone z **- MinimumVersion**, **- MaximumVersion** teraz zezwala użytkownikowi na module get/import określonego zakresu.</span><span class="sxs-lookup"><span data-stu-id="064a3-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="064a3-104">Obsługiwane jest również parametr **.** \*.</span><span class="sxs-lookup"><span data-stu-id="064a3-104">The parameter also support **.**\*.</span></span> <span data-ttu-id="064a3-105">W poniższym przykładzie pokazano, jak to działa:</span><span class="sxs-lookup"><span data-stu-id="064a3-105">The following example shows how it works:</span></span>
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
@@ -25,4 +25,3 @@ VERBOSE: Importing cmdlet 'Set-PSReadlineKeyHandler'.
 VERBOSE: Importing cmdlet 'Set-PSReadlineOption'.
 VERBOSE: Importing function 'PSConsoleHostReadline'.
 ```
-
