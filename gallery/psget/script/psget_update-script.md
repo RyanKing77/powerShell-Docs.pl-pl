@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: Skrypt aktualizacji
-ms.openlocfilehash: 8067a502e4ecfa61c5a4347d4e9f74c7437f6502
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Update-Script
+ms.openlocfilehash: 23e558a063689d263f68d34ec3b154be1c77ae89
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="update-script"></a><span data-ttu-id="5fca2-103">Skrypt aktualizacji</span><span class="sxs-lookup"><span data-stu-id="5fca2-103">Update-Script</span></span>
+# <a name="update-script"></a><span data-ttu-id="70c95-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="70c95-103">Update-Script</span></span>
 
-<span data-ttu-id="5fca2-104">Polecenia cmdlet skryptu aktualizacji umożliwia w miejscu aktualizacji plików skryptów, które zostały zainstalowane przy użyciu polecenia cmdlet Install-skryptu.</span><span class="sxs-lookup"><span data-stu-id="5fca2-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+<span data-ttu-id="70c95-104">Polecenia cmdlet skryptu aktualizacji umożliwia w miejscu aktualizacji plików skryptów, które zostały zainstalowane przy użyciu polecenia cmdlet Install-skryptu.</span><span class="sxs-lookup"><span data-stu-id="70c95-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 
-## <a name="description"></a><span data-ttu-id="5fca2-105">Opis</span><span class="sxs-lookup"><span data-stu-id="5fca2-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="70c95-105">Opis</span><span class="sxs-lookup"><span data-stu-id="70c95-105">Description</span></span>
 
-<span data-ttu-id="5fca2-106">Polecenia cmdlet skryptu aktualizacji aktualizuje określony skrypt z repozytorium, z którego został wcześniej zainstalowany.</span><span class="sxs-lookup"><span data-stu-id="5fca2-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
+<span data-ttu-id="70c95-106">Polecenia cmdlet skryptu aktualizacji aktualizuje określony skrypt z repozytorium, z którego został wcześniej zainstalowany.</span><span class="sxs-lookup"><span data-stu-id="70c95-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="5fca2-107">Składnia polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="5fca2-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="70c95-107">Składnia polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="70c95-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="5fca2-108">Dokumentacja poleceń cmdlet pomocy online</span><span class="sxs-lookup"><span data-stu-id="5fca2-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="70c95-108">Dokumentacja poleceń cmdlet pomocy online</span><span class="sxs-lookup"><span data-stu-id="70c95-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="5fca2-109">Skrypt aktualizacji</span><span class="sxs-lookup"><span data-stu-id="5fca2-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
+[<span data-ttu-id="70c95-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="70c95-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-## <a name="example-commands"></a><span data-ttu-id="5fca2-110">Przykładowe polecenia</span><span class="sxs-lookup"><span data-stu-id="5fca2-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="70c95-110">Przykładowe polecenia</span><span class="sxs-lookup"><span data-stu-id="70c95-110">Example commands</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -74,4 +74,3 @@ Version Name Type Repository Description
 2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
-

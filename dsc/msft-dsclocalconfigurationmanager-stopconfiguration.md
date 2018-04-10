@@ -1,19 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Metoda StopConfiguration klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 66d00cb40750e91e4b369a2e8cebb449697406d9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: dadb6912af2e4450381958ed465799056da49946
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="dbd0b-103">Metoda StopConfiguration klasy MSFT_DSCLocalConfigurationManager</span><span class="sxs-lookup"><span data-stu-id="dbd0b-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="615e5-103">Metoda StopConfiguration klasy MSFT_DSCLocalConfigurationManager</span><span class="sxs-lookup"><span data-stu-id="615e5-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="dbd0b-104">Zatrzymuje zmian w konfiguracji jest w toku.</span><span class="sxs-lookup"><span data-stu-id="dbd0b-104">Stops the configuration change that is in progress.</span></span>
+<span data-ttu-id="615e5-104">Zatrzymuje zmian w konfiguracji jest w toku.</span><span class="sxs-lookup"><span data-stu-id="615e5-104">Stops the configuration change that is in progress.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="dbd0b-105">Składnia</span><span class="sxs-lookup"><span data-stu-id="dbd0b-105">Syntax</span></span>
+<a name="syntax"></a><span data-ttu-id="615e5-105">Składnia</span><span class="sxs-lookup"><span data-stu-id="615e5-105">Syntax</span></span>
 ------
 
 ```mof
@@ -22,37 +22,28 @@ uint32 StopConfiguration(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="dbd0b-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="dbd0b-106">Parameters</span></span>
+<a name="parameters"></a><span data-ttu-id="615e5-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="615e5-106">Parameters</span></span>
 ----------
 
-<span data-ttu-id="dbd0b-107">*Wymuś* \[w\]</span><span class="sxs-lookup"><span data-stu-id="dbd0b-107">*force* \[in\]</span></span>  
-<span data-ttu-id="dbd0b-108">**wartość true,** wymusić konfigurację, aby zatrzymać.</span><span class="sxs-lookup"><span data-stu-id="dbd0b-108">**true** to force the configuration to stop.</span></span>
+<span data-ttu-id="615e5-107">*Wymuś* \[w\] **true** wymusić konfigurację, aby zatrzymać.</span><span class="sxs-lookup"><span data-stu-id="615e5-107">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="dbd0b-109">Wartość zwracana</span><span class="sxs-lookup"><span data-stu-id="dbd0b-109">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="615e5-108">Wartość zwracana</span><span class="sxs-lookup"><span data-stu-id="615e5-108">Return value</span></span>
 ------------
 
-<span data-ttu-id="dbd0b-110">Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.</span><span class="sxs-lookup"><span data-stu-id="dbd0b-110">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="615e5-109">Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.</span><span class="sxs-lookup"><span data-stu-id="615e5-109">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="dbd0b-111">Uwagi</span><span class="sxs-lookup"><span data-stu-id="dbd0b-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="615e5-110">Uwagi</span><span class="sxs-lookup"><span data-stu-id="615e5-110">Remarks</span></span>
 
-<span data-ttu-id="dbd0b-112">To jest metodą statyczną.</span><span class="sxs-lookup"><span data-stu-id="dbd0b-112">This is a static method.</span></span>
+<span data-ttu-id="615e5-111">To jest metodą statyczną.</span><span class="sxs-lookup"><span data-stu-id="615e5-111">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="dbd0b-113">Wymagania</span><span class="sxs-lookup"><span data-stu-id="dbd0b-113">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="615e5-112">Wymagania</span><span class="sxs-lookup"><span data-stu-id="615e5-112">Requirements</span></span>
 ------------
-><span data-ttu-id="dbd0b-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="dbd0b-114">**MOF:** DscCore.mof</span></span>
+><span data-ttu-id="615e5-113">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="615e5-113">**MOF:** DscCore.mof</span></span>
 
-><span data-ttu-id="dbd0b-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="dbd0b-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
-
-
-## <a name="see-also"></a><span data-ttu-id="dbd0b-116">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="dbd0b-116">See also</span></span>
+><span data-ttu-id="615e5-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="615e5-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[<span data-ttu-id="dbd0b-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="dbd0b-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="615e5-115">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="615e5-115">See also</span></span>
 
 
- 
-
- 
-
-
-
+[<span data-ttu-id="615e5-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="615e5-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

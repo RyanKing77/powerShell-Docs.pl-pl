@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: d3a625d05eaf4e7448b4abf90499f6a94e2f7718
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: d5ba6a5c5ba8ff54a4f4d6ba07cf04124baf65ef
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a><span data-ttu-id="36db4-102">Zezwala na taki sam zduplikowane zasoby w konfiguracji</span><span class="sxs-lookup"><span data-stu-id="36db4-102">Allowing for Identical Duplicate Resources in a Configuration</span></span>
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a><span data-ttu-id="32383-102">Zezwala na taki sam zduplikowane zasoby w konfiguracji</span><span class="sxs-lookup"><span data-stu-id="32383-102">Allowing for Identical Duplicate Resources in a Configuration</span></span>
 
-<span data-ttu-id="36db4-103">DSC Zezwalaj lub nie obsługiwać definicje powodujące konflikt zasobów w ramach konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="36db4-103">DSC does not allow or handle conflicting resource definitions within a configuration.</span></span> <span data-ttu-id="36db4-104">Zamiast w trakcie Rozwiąż konflikt, po prostu niepowodzenia.</span><span class="sxs-lookup"><span data-stu-id="36db4-104">Instead of trying to resolve the conflict, it simply fails.</span></span> <span data-ttu-id="36db4-105">Jako ponownemu konfiguracji staje się bardziej wykorzystywany przy użyciu złożonego zasobów, konflikty itp. będzie przeprowadzana częściej.</span><span class="sxs-lookup"><span data-stu-id="36db4-105">As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often.</span></span> <span data-ttu-id="36db4-106">Gdy definicje powodujące konflikt zasobów są identyczne, DSC należy smart i umożliwia.</span><span class="sxs-lookup"><span data-stu-id="36db4-106">When conflicting resource definitions are identical, DSC should be smart and allow this.</span></span> <span data-ttu-id="36db4-107">W tej wersji firma Microsoft obsługuje posiadanie wielu wystąpień zasobów mających taki sam definicje:</span><span class="sxs-lookup"><span data-stu-id="36db4-107">With this release, we support having multiple resource instances that have identical definitions:</span></span>
+<span data-ttu-id="32383-103">DSC Zezwalaj lub nie obsługiwać definicje powodujące konflikt zasobów w ramach konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="32383-103">DSC does not allow or handle conflicting resource definitions within a configuration.</span></span> <span data-ttu-id="32383-104">Zamiast w trakcie Rozwiąż konflikt, po prostu niepowodzenia.</span><span class="sxs-lookup"><span data-stu-id="32383-104">Instead of trying to resolve the conflict, it simply fails.</span></span> <span data-ttu-id="32383-105">Jako ponownemu konfiguracji staje się bardziej wykorzystywany przy użyciu złożonego zasobów, konflikty itp. będzie przeprowadzana częściej.</span><span class="sxs-lookup"><span data-stu-id="32383-105">As configuration reuse becomes more utilized through composite resources, etc. conflicts will occur more often.</span></span> <span data-ttu-id="32383-106">Gdy definicje powodujące konflikt zasobów są identyczne, DSC należy smart i umożliwia.</span><span class="sxs-lookup"><span data-stu-id="32383-106">When conflicting resource definitions are identical, DSC should be smart and allow this.</span></span> <span data-ttu-id="32383-107">W tej wersji firma Microsoft obsługuje posiadanie wielu wystąpień zasobów mających taki sam definicje:</span><span class="sxs-lookup"><span data-stu-id="32383-107">With this release, we support having multiple resource instances that have identical definitions:</span></span>
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -52,9 +52,9 @@ Configuration WebApplication
 }
 ```
 
-<span data-ttu-id="36db4-108">W poprzednich wersjach wyniki mogą być zainstalowano kompilacji nie powiodło się z powodu konfliktu między WindowsFeature FE_IIS i wystąpień WindowsFeature Worker_IIS próby zapewnienia rolę "Serwera sieci Web".</span><span class="sxs-lookup"><span data-stu-id="36db4-108">In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed.</span></span> <span data-ttu-id="36db4-109">Zwróć uwagę, że *wszystkie* właściwości, które mają być skonfigurowane są jednakowe w tych dwóch konfiguracjach.</span><span class="sxs-lookup"><span data-stu-id="36db4-109">Notice that *all* of the properties that are being configured are identical in these two configurations.</span></span> <span data-ttu-id="36db4-110">Ponieważ *wszystkie* właściwości w tych dwóch zasobów są identyczne, spowoduje to teraz pomyślnie kompilacji.</span><span class="sxs-lookup"><span data-stu-id="36db4-110">Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.</span></span> 
+<span data-ttu-id="32383-108">W poprzednich wersjach wyniki mogą być zainstalowano kompilacji nie powiodło się z powodu konfliktu między WindowsFeature FE_IIS i wystąpień WindowsFeature Worker_IIS próby zapewnienia rolę "Serwera sieci Web".</span><span class="sxs-lookup"><span data-stu-id="32383-108">In previous releases, the result would be a failed compilation due to a conflict between the WindowsFeature FE_IIS and WindowsFeature Worker_IIS instances trying to ensure the 'Web-Server' role is installed.</span></span> <span data-ttu-id="32383-109">Zwróć uwagę, że *wszystkie* właściwości, które mają być skonfigurowane są jednakowe w tych dwóch konfiguracjach.</span><span class="sxs-lookup"><span data-stu-id="32383-109">Notice that *all* of the properties that are being configured are identical in these two configurations.</span></span> <span data-ttu-id="32383-110">Ponieważ *wszystkie* właściwości w tych dwóch zasobów są identyczne, spowoduje to teraz pomyślnie kompilacji.</span><span class="sxs-lookup"><span data-stu-id="32383-110">Since *all* of the properties in these two resources are identical, this will result in a successful compilation now.</span></span>
 
-<span data-ttu-id="36db4-111">Jeśli dowolne z właściwości różnią się między dwa zasoby, ich nie zostanie uwzględniony identyczne i kompilacja zakończy się niepowodzeniem:</span><span class="sxs-lookup"><span data-stu-id="36db4-111">If any of the properties are different between the two resources, they will not be considered identical and compilation will fail:</span></span>
+<span data-ttu-id="32383-111">Jeśli dowolne z właściwości różnią się między dwa zasoby, ich nie zostanie uwzględniony identyczne i kompilacja zakończy się niepowodzeniem:</span><span class="sxs-lookup"><span data-stu-id="32383-111">If any of the properties are different between the two resources, they will not be considered identical and compilation will fail:</span></span>
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -95,5 +95,4 @@ Configuration WebApplication
 }
 ```
 
-<span data-ttu-id="36db4-112">Ta konfiguracja bardzo podobne zakończy się niepowodzeniem, ponieważ WindowsFeature FE_IIS i zasoby WindowsFeature Worker_IIS nie są identyczne i w związku z tym w konflikcie.</span><span class="sxs-lookup"><span data-stu-id="36db4-112">This very similar configuration will fail because the WindowsFeature FE_IIS and the WindowsFeature Worker_IIS resources are no longer identical and therefore conflict.</span></span>
-
+<span data-ttu-id="32383-112">Ta konfiguracja bardzo podobne zakończy się niepowodzeniem, ponieważ WindowsFeature FE_IIS i zasoby WindowsFeature Worker_IIS nie są identyczne i w związku z tym w konflikcie.</span><span class="sxs-lookup"><span data-stu-id="32383-112">This very similar configuration will fail because the WindowsFeature FE_IIS and the WindowsFeature Worker_IIS resources are no longer identical and therefore conflict.</span></span>

@@ -1,34 +1,34 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: ScriptFileInfo testu
-ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Test-ScriptFileInfo
+ms.openlocfilehash: 56f75007be6e952572aaed7942a1e8714d4104b0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="test-scriptfileinfo"></a><span data-ttu-id="2cdf7-103">ScriptFileInfo testu</span><span class="sxs-lookup"><span data-stu-id="2cdf7-103">Test-ScriptFileInfo</span></span>
+# <a name="test-scriptfileinfo"></a><span data-ttu-id="4846d-103">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="4846d-103">Test-ScriptFileInfo</span></span>
 
-<span data-ttu-id="2cdf7-104">Weryfikuje blok komentarza metadanych pliku skryptu.</span><span class="sxs-lookup"><span data-stu-id="2cdf7-104">Validates the metadata comment block of a script file.</span></span>
+<span data-ttu-id="4846d-104">Weryfikuje blok komentarza metadanych pliku skryptu.</span><span class="sxs-lookup"><span data-stu-id="4846d-104">Validates the metadata comment block of a script file.</span></span>
 
-## <a name="description"></a><span data-ttu-id="2cdf7-105">Opis</span><span class="sxs-lookup"><span data-stu-id="2cdf7-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="4846d-105">Opis</span><span class="sxs-lookup"><span data-stu-id="4846d-105">Description</span></span>
 
-<span data-ttu-id="2cdf7-106">Polecenia cmdlet Test-ScriptFileInfo weryfikuje blok komentarza na początku skryptu, który będzie publikowany za pomocą polecenia cmdlet Publish-skryptu.</span><span class="sxs-lookup"><span data-stu-id="2cdf7-106">The Test-ScriptFileInfo cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.</span></span>
-<span data-ttu-id="2cdf7-107">Jeśli blok komentarza metadanych zawiera błąd, to polecenie cmdlet zwraca informacje o którym znajduje się kod błędu lub rozwiązania.</span><span class="sxs-lookup"><span data-stu-id="2cdf7-107">If the metadata comment block has an error, this cmdlet returns information about where the error is located or how to correct it.</span></span>
+<span data-ttu-id="4846d-106">Polecenia cmdlet Test-ScriptFileInfo weryfikuje blok komentarza na początku skryptu, który będzie publikowany za pomocą polecenia cmdlet Publish-skryptu.</span><span class="sxs-lookup"><span data-stu-id="4846d-106">The Test-ScriptFileInfo cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.</span></span>
+<span data-ttu-id="4846d-107">Jeśli blok komentarza metadanych zawiera błąd, to polecenie cmdlet zwraca informacje o którym znajduje się kod błędu lub rozwiązania.</span><span class="sxs-lookup"><span data-stu-id="4846d-107">If the metadata comment block has an error, this cmdlet returns information about where the error is located or how to correct it.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="2cdf7-108">Składnia polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="2cdf7-108">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="4846d-108">Składnia polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="4846d-108">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="2cdf7-109">Dokumentacja poleceń cmdlet pomocy online</span><span class="sxs-lookup"><span data-stu-id="2cdf7-109">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="4846d-109">Dokumentacja poleceń cmdlet pomocy online</span><span class="sxs-lookup"><span data-stu-id="4846d-109">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="2cdf7-110">ScriptFileInfo testu</span><span class="sxs-lookup"><span data-stu-id="2cdf7-110">Test-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619791)
+[<span data-ttu-id="4846d-110">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="4846d-110">Test-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## <a name="example-commands"></a><span data-ttu-id="2cdf7-111">Przykładowe polecenia</span><span class="sxs-lookup"><span data-stu-id="2cdf7-111">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="4846d-111">Przykładowe polecenia</span><span class="sxs-lookup"><span data-stu-id="4846d-111">Example commands</span></span>
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"
@@ -74,4 +74,3 @@ At line:1 char:1
     + FullyQualifiedErrorId : MissingPSScriptInfo,Test-ScriptFileInfo
 
 ```
-
