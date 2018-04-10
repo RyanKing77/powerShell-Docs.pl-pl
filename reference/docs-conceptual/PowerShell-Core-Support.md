@@ -62,7 +62,7 @@ Obsługuje dla podstawowych programu PowerShell nie obejmuje innych modułów pr
 Na przykład za pomocą `ActiveDirectory` moduł, który jest dostarczany jako część systemu Windows Server jest to nieobsługiwany scenariusz.
 
 Jednak może być zgodne w niektórych przypadkach modułów, które nie obsługują jawnie Core programu PowerShell.
-Instalując [ `WindowsPSModulePath` ][] moduł, możesz dołączyć programu Windows PowerShell `PSModulePath` do podstawowego środowiska PowerShell `PSModulePath`.
+Instalując [`WindowsPSModulePath`][] moduł, możesz dołączyć programu Windows PowerShell `PSModulePath` do podstawowego środowiska PowerShell `PSModulePath`.
 
 Najpierw zainstaluj `WindowsPSModulePath` modułu z galerii programu PowerShell:
 
