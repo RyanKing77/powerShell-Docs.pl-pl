@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "GetConfiguration — metoda klasy MSFT_DSCLocalConfigurationManager"
-ms.openlocfilehash: 60f4b49575dbb28ce74af0500e6982ec5d2e7a66
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Metoda GetConfiguration klasy MSFT_DSCLocalConfigurationManager
+ms.openlocfilehash: 07d7db9dcc4288e6b72d5df37d82e44eb6f72ad2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfiguration — metoda klasy MSFT_DSCLocalConfigurationManager
+# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda GetConfiguration klasy MSFT_DSCLocalConfigurationManager
 
 Wysyła dokument konfiguracji do węzła zarządzanego i używa **uzyskać** metody Agent konfiguracji, aby zastosować konfigurację.
 
@@ -26,11 +26,9 @@ uint32 GetConfiguration(
 <a name="parameters"></a>Parametry
 ----------
 
-*configurationData* \[w\]  
-Określa dane konfiguracji do wysłania.
+*configurationData* \[w\] Określa dane konfiguracji do wysłania.
 
-*konfiguracje* \[out\]  
-Przy powrocie zawiera osadzony wystąpienia konfiguracji.
+*konfiguracje* \[limit\] przy powrocie, zawiera osadzony wystąpienia konfiguracji.
 
 ## <a name="return-value"></a>Wartość zwracana
 ------------
@@ -52,9 +50,3 @@ To jest metodą statyczną.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
- 
-
- 
-
-
-

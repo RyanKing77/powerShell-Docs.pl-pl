@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "DSC dla systemu Linux nxFile zasobów"
-ms.openlocfilehash: 7ee8a37ee63a70b1c8c69dc79dfbc77c1f583234
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: DSC dla systemu Linux nxFile zasobów
+ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC dla systemu Linux nxFile zasobów
 
@@ -37,20 +37,20 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość |  Opis | 
+|  Właściwość |  Opis |
 |---|---|
-| Ścieżka_docelowa| Określa lokalizację, w której chcesz zapewnić stan pliku lub katalogu.| 
-| SourcePath| Określa ścieżkę, z którego można skopiować pliku lub folderu zasobów. Ta ścieżka może być ścieżką lokalną lub `http/https/ftp` adresu URL. Zdalne `http/https/ftp` adresy URL są tylko obsługiwane, gdy wartość **typu** właściwość jest plik.| 
-| Upewnij się| Określa, czy należy sprawdzić, czy plik istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że plik istnieje. Ustaw ją na "Brak", aby upewnić się, że plik nie istnieje. Wartość domyślna to "Brak".| 
-| Typ| Określa, czy zasób konfigurowany jest katalog lub plik. Ustaw tę właściwość na "directory", aby wskazać, czy zasób jest katalogiem. Ustaw go na "plik", aby wskazać, czy zasób jest plik. Wartość domyślna to "plik"| 
-| Zawartość| Określa zawartość pliku, takie jak określony ciąg.| 
-| Suma kontrolna| Definiuje typ używany do określenia, czy dwa pliki są takie same. Jeśli **sumy kontrolnej** nie zostanie określona, tylko nazwa pliku lub katalogu jest używana do porównania. Wartości to: "ctime —", "mtime" lub "md5".| 
-| Recurse| Wskazuje, czy podkatalogi są dołączone. Ta właściwość jest ustawiana **$true** aby wskazać, że chcesz podkatalogów, które zostaną uwzględnione. Wartość domyślna to **$false**. **Uwaga:** ta właściwość jest prawidłowa tylko gdy **typu** właściwość jest ustawiona na katalogu.| 
-| Force| Niektóre operacje na plikach (takie jak zastąpienie pliku lub usuwanie katalogu, który nie jest pusty) spowoduje błąd. Przy użyciu **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.| 
-| Łącza| Określa zachowanie dla łącza symbolicznego. Ustaw tę właściwość na "podążać" wykonaj łącza symbolicznego i działa w systemie docelowym łącza (np. Skopiuj plik zamiast łącza). Ustaw tę właściwość na "manage", które działają na link (np. Skopiuj link, sam). Ustaw tę właściwość na "Ignoruj", aby zignorować łącza symbolicznego.| 
-| Grupa| Nazwa **grupy** do pliku lub katalogu.| 
-| Tryb| Określa odpowiednie uprawnienia do zasobów, w notacji ósemkowe lub symbolicznych. (na przykład 777 lub rwxrwxrwx). Jeśli przy użyciu notacji symbolicznych, nie zapewniają pierwszego znaku, który wskazuje katalog lub plik.| 
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest pierwszy blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** i jej typ jest **ResourceType**, za pomocą tej składni Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.| 
+| Ścieżka_docelowa| Określa lokalizację, w której chcesz zapewnić stan pliku lub katalogu.|
+| SourcePath| Określa ścieżkę, z którego można skopiować pliku lub folderu zasobów. Ta ścieżka może być ścieżką lokalną lub `http/https/ftp` adresu URL. Zdalne `http/https/ftp` adresy URL są tylko obsługiwane, gdy wartość **typu** właściwość jest plik.|
+| Upewnij się| Określa, czy należy sprawdzić, czy plik istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że plik istnieje. Ustaw ją na "Brak", aby upewnić się, że plik nie istnieje. Wartość domyślna to "Brak".|
+| Typ| Określa, czy zasób konfigurowany jest katalog lub plik. Ustaw tę właściwość na "directory", aby wskazać, czy zasób jest katalogiem. Ustaw go na "plik", aby wskazać, czy zasób jest plik. Wartość domyślna to "plik"|
+| Zawartość| Określa zawartość pliku, takie jak określony ciąg.|
+| Suma kontrolna| Definiuje typ używany do określenia, czy dwa pliki są takie same. Jeśli **sumy kontrolnej** nie zostanie określona, tylko nazwa pliku lub katalogu jest używana do porównania. Wartości to: "ctime —", "mtime" lub "md5".|
+| Recurse| Wskazuje, czy podkatalogi są dołączone. Ta właściwość jest ustawiana **$true** aby wskazać, że chcesz podkatalogów, które zostaną uwzględnione. Wartość domyślna to **$false**. **Uwaga:** ta właściwość jest prawidłowa tylko gdy **typu** właściwość jest ustawiona na katalogu.|
+| Force| Niektóre operacje na plikach (takie jak zastąpienie pliku lub usuwanie katalogu, który nie jest pusty) spowoduje błąd. Przy użyciu **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.|
+| Łącza| Określa zachowanie dla łącza symbolicznego. Ustaw tę właściwość na "podążać" wykonaj łącza symbolicznego i działa w systemie docelowym łącza (np. Skopiuj plik zamiast łącza). Ustaw tę właściwość na "manage", które działają na link (np. Skopiuj link, sam). Ustaw tę właściwość na "Ignoruj", aby zignorować łącza symbolicznego.|
+| Grupa| Nazwa **grupy** do pliku lub katalogu.|
+| Tryb| Określa odpowiednie uprawnienia do zasobów, w notacji ósemkowe lub symbolicznych. (na przykład 777 lub rwxrwxrwx). Jeśli przy użyciu notacji symbolicznych, nie zapewniają pierwszego znaku, który wskazuje katalog lub plik.|
+| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest pierwszy blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** i jej typ jest **ResourceType**, za pomocą tej składni Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Dodatkowe informacje
 
@@ -67,11 +67,11 @@ nxFile resolvConf
 {
     SourcePath = "http://10.185.85.11/conf/resolv.conf"
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
-    
+
 }
-        
+
 }
 ```
 
@@ -89,7 +89,7 @@ $Contents = Get-Content C:\temp\resolv.conf
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = "$Contents"
 }
@@ -122,10 +122,10 @@ $Contents = LinuxString $Contents
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = $Contents
-    
+
 }
 }
 ```
@@ -135,7 +135,7 @@ nxFile resolvConf
 Poniższy przykład zapewnia, że katalog `/opt/mydir` istnieje, i istnieje plik z określoną zawartość tego katalogu.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxFile DirectoryExample
@@ -151,10 +151,9 @@ nxFile FileExample
     Destinationpath = "/opt/mydir/myfile"
     Contents=@"
 #!/bin/bash`necho "hello world"`n
-"@ 
+"@
     Mode = “755”
     DependsOn = "[nxFile]DirectoryExample"
-} 
+}
 }
 ```
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Przy użyciu klasy statyczne i metody"
+title: Używanie metod i klas statycznych
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-static-classes-and-methods"></a>Przy użyciu klasy statyczne i metody
+# <a name="using-static-classes-and-methods"></a>Używanie metod i klas statycznych
 Nie wszystkie klasy .NET Framework, można utworzyć za pomocą **New-Object**. Na przykład, jeśli próbujesz utworzyć **System.Environment** lub **System.Math** obiekt z **New-Object**, otrzymasz następujące komunikaty o błędach:
 
 ```
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 Firma Microsoft można teraz wybrać właściwości z System.Environment.
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>Wyświetlanie właściwości statycznej System.Environment
+
 Właściwości System.Environment również są statyczne i musi zostać określona w inny sposób niż normalne właściwości. Używamy **::** wskazująca na program Windows PowerShell, która ma być współpracować z statycznej metody lub właściwości. Aby wyświetlić polecenia, który został użyty do uruchomienia programu Windows PowerShell, sprawdzamy **CommandLine** właściwości, wpisując:
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>Wykonanie matematyczne z System.Math
+
 Klasa statyczna System.Math jest przydatne w przypadku wykonywania pewnych operacji matematycznych. Ważne elementy członkowskie **System.Math** przede wszystkim metody, których można wyświetlić przy użyciu **elementu członkowskiego Get**.
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

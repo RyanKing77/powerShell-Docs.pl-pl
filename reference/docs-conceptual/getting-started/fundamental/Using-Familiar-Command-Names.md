@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Przy użyciu nazw znanych poleceń"
+title: Używanie znanych nazw poleceń
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 5e72e721bdb9d48684092344a0169907e7e25d40
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-familiar-command-names"></a>Przy użyciu nazw znanych poleceń
+# <a name="using-familiar-command-names"></a>Używanie znanych nazw poleceń
 Wywołuje się przy użyciu mechanizmu *aliasów*, programu Windows PowerShell umożliwia odwoływanie się do polecenia przez alternatywne nazwy. Aliasy umożliwiają użytkownicy mający doświadczenie w innych powłok ponowne użycie wspólnej nazwy poleceń, które znają podobnych operacji w programie Windows PowerShell. Mimo że nie omówimy aliasy programu Windows PowerShell szczegółowo, nadal można je jako Rozpoczynanie pracy z programu Windows PowerShell.
 
 Wygładzanie kojarzy nazwę polecenia wpisany z innego polecenia. Na przykład programu Windows PowerShell ma funkcji o nazwie wewnętrznej **hosta wyczyść** który czyści okno danych wyjściowych. Po wpisaniu jednego **ze specyfikacją cls** lub **wyczyść** polecenie w wierszu polecenia programu Windows PowerShell interpretuje, że jest to alias **hosta wyczyść** funkcji i uruchamia  **Wyczyść hosta** funkcji.
@@ -20,10 +20,10 @@ Poniżej znajduje się krótki lista typowych poleceń Cmd.exe i UNIX, które mo
 
 |||||
 |-|-|-|-|
-|CAT|Dir|instalacji|Menedżer zasobów|
-|dysku CD|Echo|Przenieś|rmdir|
+|CAT|Dir|instalacji|rm|
+|cd|echo|Przenieś|rmdir|
 |chdir|wymazywanie|popd|uśpienia|
-|Wyczyść|H|PS|Sortowanie|
+|Wyczyść|h|PS|Sortowanie|
 |ze specyfikacją CLS|Historia|pushd|TEE|
 |Kopiuj|kasowanie|pwd|typ|
 |del|LP|r|zapisu|
@@ -67,4 +67,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

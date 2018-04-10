@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Słownik programu Windows PowerShell"
+title: Słownik programu Windows PowerShell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-glossary"></a>Słownik programu Windows PowerShell
 
@@ -55,4 +55,3 @@ ms.lasthandoff: 02/19/2018
 |Plik skryptu programu Windows PowerShell|Plik, który ma rozszerzenie ps1 i zawierający skrypt, który jest napisany w języku środowiska Windows PowerShell.|
 |Przystawka programu Windows PowerShell|Zasób, który definiuje zestaw poleceń cmdlet, dostawców i typy programu Microsoft .NET Framework, które mogą zostać dodane do środowiska Windows PowerShell.|
 |Przepływ pracy programu Windows PowerShell|Przepływ pracy to sekwencja zaprogramowanych, połączonych ze sobą czynności służących do wykonywania długotrwałych zadań lub do zapewnienia koordynacji wielu czynności na wielu różnych urządzeniach albo w wielu węzłach zarządzanych. Przepływ pracy programu Windows PowerShell umożliwia informatykom i deweloperom tworzenie sekwencji zadań związanych z zarządzaniem wieloma urządzeniami lub jednego zadania w przepływie pracy, jak przepływów pracy. Przepływ pracy programu Windows PowerShell umożliwia dostosowanie i uruchomić skrypty programu Windows PowerShell i plików XAML jako przepływów pracy.|
-

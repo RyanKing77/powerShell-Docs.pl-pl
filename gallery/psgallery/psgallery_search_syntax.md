@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>Składnia poleceń wyszukiwania galerii
 
@@ -49,7 +49,7 @@ jest inny sposób, aby znaleźć elementy z "AzureRM.Profile" w polu Identyfikat
 Filtr 'Id' jest podciągu są zgodne, to w przypadku następujących czynności:
 
     Id:"azure"
-    
+
 Można uzyskać wyników, takich jak "AzureRM.Profile" i "Azure.Storage".
 
 Możesz również wyszukać wiele słów kluczowych w jednym polu. Lub mieszać i dopasować pola.
@@ -71,7 +71,7 @@ Aby wyszukać wszystkie elementy o określonej funkcji.
     Functions:"Update-AzureRM"
 
 Aby wyszukać wszystkie elementy z określone polecenie cmdlet.
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 Aby wyszukać wszystkie elementy o określonej nazwie zasobu usługi Konfiguracja DSC.
@@ -88,8 +88,7 @@ Aby wyszukać wszystkie elementy z określonej PowerShellVersion
 Ponadto użycie pola, które nie są obsługiwane, takie jak "polecenia", firma Microsoft będzie tylko ją zignorować i wyszukiwanie wszystkich pól. Dlatego po zapytania
 
     commands:blobs storage
-    
+
 Jest interpretowany tak samo jak to zapytanie:
 
     blobs storage
-

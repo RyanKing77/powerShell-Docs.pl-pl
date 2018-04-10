@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Dodaj pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Reguły autoryzacji ocenić głównej poświadczenia logowania użytkowników pr
 
 Określa nazwę grupy komputerów usług domenowych w usłudze Active Directory (AD DS) lub grupy lokalne, na które ta reguła zezwala na dostęp.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |
@@ -75,7 +75,7 @@ Określa nazwę grupy komputerów usług domenowych w usłudze Active Directory 
 
 Określa nazwę komputera, do którego ta reguła zezwala na dostęp.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |
@@ -88,7 +88,7 @@ Określa nazwę komputera, do którego ta reguła zezwala na dostęp.
 
 Określa nazwę konfiguracji sesji programu Windows PowerShell, nazywane również obszaru działania, do którego ta reguła zezwala na dostęp.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |
@@ -101,7 +101,7 @@ Określa nazwę konfiguracji sesji programu Windows PowerShell, nazywane równie
 
 Określa **PSCredential** obiektu dla konta użytkownika, którego chcesz użyć, aby zmienić reguł autoryzacji programu Windows PowerShell Web Access. Jeśli ten parametr nie zostanie użyty, polecenie cmdlet używa konta aktualnie zalogowanego użytkownika. Aby uzyskać **PSCredential** obiektu, który jest wymagany, aby dodać reguły autoryzacji zdalnie, uruchom [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) polecenia cmdlet.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -115,7 +115,7 @@ Określa **PSCredential** obiektu dla konta użytkownika, którego chcesz użyć
 Wymusza wykonanie polecenia bez monitowania o potwierdzenie przez użytkownika. \
 Ponadto on również monituje o potwierdzenie po wprowadzeniu nazwy prostej lub krótkiej komputera (takie jak nazwa, która nie jest nazwą domeny lub nie jest w pełni kwalifikowana). Potwierdzenie żądania ze względów bezpieczeństwa, aby mogli używać prostą nazwą, aby dodać komputer tylko wtedy, gdy komputer znajduje się w grupie roboczej.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -128,7 +128,7 @@ Ponadto on również monituje o potwierdzenie po wprowadzeniu nazwy prostej lub 
 
 Określa przyjazną nazwę dla tej reguły.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -141,7 +141,7 @@ Określa przyjazną nazwę dla tej reguły.
 
 Określa nazwę jednego lub więcej grup użytkowników w usługach AD DS i grupy lokalne, na które ta reguła zezwala na dostęp.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |
@@ -155,7 +155,7 @@ Określa nazwę jednego lub więcej grup użytkowników w usługach AD DS i grup
 Określa co najmniej jednego użytkownika, do których ta reguła zezwala na dostęp. Nazwa użytkownika może być kontem użytkownika lokalnego na komputerze z bramą lub użytkownika w usługach AD DS.
 Format jest `domain\user` lub `computer\user`.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |
@@ -217,9 +217,9 @@ W tym przykładzie przedstawiono sposób wprowadzania wartości nazwy użytkowni
 W tym przykładzie przedstawiono sposób wszystkie parametry przyjmować wartości z potoku według nazwy właściwości.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Opis pojęć związanych z ważne Windows PowerShell"
+title: Opis ważnych pojęć związanych z programem Windows PowerShell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 07ceaa2f3e6a192c6281cb4c99aed4c3f66afc7e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="understanding-important-windows-powershell-concepts"></a>Opis pojęć związanych z ważne Windows PowerShell
+# <a name="understanding-important-windows-powershell-concepts"></a>Opis ważnych pojęć związanych z programem Windows PowerShell
 Projekt programu Windows PowerShell integruje pojęcia z wielu różnych środowiskach. Niektóre z nich są znane osoby z doświadczeniem w środowiskach programowania i powłoki określonego, ale tylko kilka osób będzie wiedzieć o wszystkich z nich. Niektóre z tych pojęć patrzeć Przegląd przydatne powłoki.
 
 ### <a name="commands-are-not-text-based"></a>Polecenia nie są oparte na tekst
@@ -30,7 +30,7 @@ Ze względu na specyfikę wewnętrzny poleceń programu Windows PowerShell, odno
 ### <a name="windows-powershell-handles-console-input-and-display"></a>Windows PowerShell uchwytów — dane wejściowe konsoli i wyświetlanie
 Po wpisaniu polecenia programu Windows PowerShell zawsze przetwarzania danych wejściowych wiersza polecenia bezpośrednio. Środowisko Windows PowerShell również formatuje dane wyjściowe, wyświetlany na ekranie. Jest to istotne, ponieważ zmniejsza pracy wymaganej każde polecenie cmdlet i zapewnia, że zawsze należy rzeczy taki sam sposób, niezależnie od tego, które polecenia cmdlet używane są. Przykład sposobu upraszcza życia dla narzędzia deweloperzy i użytkownicy jest pomoc wiersza polecenia.
 
-Tradycyjne narzędzia wiersza polecenia mają własne systemy dla żądania i wyświetlanie pomocy. Niektóre narzędzia wiersza polecenia użyj **/?** Aby wyzwolić Wyświetlanie pomocy; Użyj innych **-?**, **/H**, a nawet  **//** . Niektóre wyświetli pomocy w oknie graficznego interfejsu użytkownika, a nie w oknie konsoli. Niektóre narzędzia złożonych, takie jak metod aktualizowania aplikacji, Rozpakuj pliki wewnętrzne przed wyświetleniem ich pomocy. Jeśli używasz zły parametr, narzędzie może zignorować co wpisany i Rozpocznij wykonywanie zadań automatycznie.
+Tradycyjne narzędzia wiersza polecenia mają własne systemy dla żądania i wyświetlanie pomocy. Niektóre narzędzia wiersza polecenia użyj **/?** Aby wyzwolić Wyświetlanie pomocy; Użyj innych **-?**, **/H**, a nawet **//**. Niektóre wyświetli pomocy w oknie graficznego interfejsu użytkownika, a nie w oknie konsoli. Niektóre narzędzia złożonych, takie jak metod aktualizowania aplikacji, Rozpakuj pliki wewnętrzne przed wyświetleniem ich pomocy. Jeśli używasz zły parametr, narzędzie może zignorować co wpisany i Rozpocznij wykonywanie zadań automatycznie.
 
 Po wprowadzeniu polecenia programu Windows PowerShell, wszystko, czego możesz wprowadzić jest automatycznie przeanalizować i wstępnie przetworzonych przez program Windows PowerShell. Jeśli używasz **-?** Parametr za pomocą polecenia cmdlet programu Windows PowerShell, zawsze oznacza "Pokaż Pomoc dla tego polecenia". Polecenia cmdlet programiści nie muszą przeanalizować polecenie. potrzebna jest tylko podać tekst pomocy.
 
@@ -43,4 +43,3 @@ Należy zrozumieć funkcje pomocy programu Windows PowerShell są dostępne, naw
 Środowisko Windows PowerShell jest składnia funkcji i słów kluczowych, które są bardzo podobne do tych używanych w języku C# język programowania, ponieważ środowisko Windows PowerShell jest oparta na programie .NET Framework. Poznawanie środowiska Windows PowerShell ułatwi łatwiej Naucz się C#, jeśli interesuje Cię w języku.
 
 Jeśli nie masz programisty C#, to podobieństwa nie jest ważna. Jednak jeśli znasz już C#, podobieństwa wprowadzić Poznawanie środowiska Windows PowerShell znacznie łatwiejsze.
-

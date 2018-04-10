@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: "Moduł aktualizacji"
-ms.openlocfilehash: 66535cd5b1f44e108c2bc47fa343c77c86bb21dc
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Update-Module
+ms.openlocfilehash: 89b0111eda4421606843f108dca90519b2c9379e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="update-module"></a>Moduł aktualizacji
+# <a name="update-module"></a>Update-Module
 
 Pobiera i instaluje najnowszą wersję określone moduły z galerii online na komputerze lokalnym.
 
@@ -37,7 +37,7 @@ Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Dokumentacja poleceń cmdlet pomocy online
 
-[Moduł aktualizacji](http://go.microsoft.com/fwlink/?LinkID=398576)
+[Update-Module](http://go.microsoft.com/fwlink/?LinkID=398576)
 
 
 ## <a name="example-commands"></a>Przykładowe polecenia
@@ -140,4 +140,3 @@ Version    Name                                Repository  Description
 
 
 ```
-

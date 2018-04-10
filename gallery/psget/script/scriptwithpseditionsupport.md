@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
 title: scriptwithpseditionsupport
-ms.openlocfilehash: e6994b994cb15903560f3dd89c21383fb2cd367d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 18ce2d729199e0587ef92993db7fec44ef744ec7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skrypt z niezgodne wersje programu PowerShell
 Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które charakteryzują się różnymi zestawami funkcji i zgodnością z różnymi platformami.
@@ -63,6 +63,5 @@ Find-Script -Tag PSEditon_Core
 ```
 
 ## <a name="more-details"></a>więcej informacji
-### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[Modułów z PSEditions](../module/modulewithpseditionsupport.md)
+### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[Moduły z elementami PSEdition](../module/modulewithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Obsługa PSEditions na PowerShellGallery](../../psgallery/psgallery_pseditions.md)
-

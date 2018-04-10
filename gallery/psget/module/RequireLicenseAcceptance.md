@@ -1,23 +1,23 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
-keywords: "Środowiska PowerShell"
+keywords: Środowiska PowerShell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="modules-requiring-license-acceptance"></a>Moduły wymagająca akceptacji licencji
+# <a name="modules-requiring-license-acceptance"></a>Moduły wymagające akceptacji licencji
 
-## <a name="synopsis"></a>STRESZCZENIE
+## <a name="synopsis"></a>SYNOPSIS
 Działy prawne dla Niektórzy wydawcy modułu wymagają, że klienci muszą jawnie akceptuje przed zainstalowaniem ich modułu z galerii programu PowerShell. Jeśli użytkownik instaluje aktualizacji i zapisuje moduł za pomocą PowerShellGet, bezpośrednio lub jako zależność do innego elementu, a ten moduł wymaga od użytkownika zaakceptowania licencji, użytkownik musi wskazywać akceptacji licencji lub kończy się niepowodzeniem.
 
 ## <a name="publish-requirements-for-modules"></a>Publikowanie wymagania dotyczące modułów
 
 Moduły, które chcesz wymagać od użytkowników zaakceptować licencji powinny spełniać następujące wymagania:
-    
+
 - Sekcja PSData manifestu modułu powinna zawierać RequireLicenseAcceptance = $True.
 - Moduł zawiera pliku license.txt w katalogu głównym.
 - Moduł manifestu powinien zawierać identyfikatora Uri licencji.
@@ -28,16 +28,16 @@ Moduły, które chcesz wymagać od użytkowników zaakceptować licencji powinny
 - Polecenia cmdlet Install/Save/aktualizacji będzie obsługiwać nowy parametr — AcceptLicense, które będą zachowywać się tak, jakby użytkownik był wyświetlany licencji.
 - Jeśli nie określono AcceptLicense — RequiredLicenseAcceptance ma wartość PRAWDA, użytkownik będzie wyświetlany license.txt i zostanie wyświetlony monit o: &quot;czy akceptujesz postanowienia licencyjne (Yes/No/YesToAll/NoToAll)&quot;.
   - Jeśli licencja została zaakceptowana.
-    - **Moduł zapisywania:** modułu zostaną skopiowane do użytkownika &#39; s systemu
-    - **Moduł instalacji:** modułu zostaną skopiowane do użytkownika &#39; s systemu do prawidłowego folderu (oparte na zakresie)
+    - **Moduł zapisywania:** modułu zostaną skopiowane do użytkownika&#39;systemu s
+    - **Moduł instalacji:** modułu zostaną skopiowane do użytkownika&#39;s systemu do prawidłowego folderu (oparte na zakresie)
     - **Moduł aktualizacji:** moduł zostanie zaktualizowany.
-  - Jeśli licencja została odrzucona. 
+  - Jeśli licencja została odrzucona.
     - Operacja zostanie anulowana.
 - Wszystkie polecenia cmdlet będzie sprawdzać dostępność metadanych (requireLicenseAcceptance i wersji formatu) z informacją, że wymagana jest akceptacja licencji
   - Jeśli format wersja klienta jest starsza niż 2.0, operacja będzie i monitowanie użytkownika o aktualizacji klienta.
   - Jeśli moduł został opublikowany w formacie wersji starszych niż 2.0, Flaga requireLicenseAcceptance zostanie zignorowany.
 
-    
+
  ## <a name="module-dependencies"></a>Moduł zależności
 - Podczas instalacji/Save/aktualizacji będzie wymagane działania, jeśli moduł zależne (czegoś innego zależy od modułu) wymaga akceptacji licencji, a następnie zachowanie akceptacji licencji (powyżej).
 - Jeśli wersja modułu znajduje się już w katalogu lokalnego jako zainstalowane na komputerze, możemy ominięcie sprawdzanie licencji.
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 To polecenie aktualizuje plik manifestu i ustawia flagę RequireLicenseAcceptance na wartość true.
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 To polecenie przedstawia licencji z pliku license.txt i monituje użytkownika o akceptuje.
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Przykład 6: Instalacja modułu z zależnościami wymaganie akceptacji licencji i - AcceptLicense
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 To polecenie przedstawia licencji z pliku license.txt i monituje użytkownika o akceptuje.
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 To polecenie przedstawia licencji z pliku license.txt i monituje użytkownika o akceptuje.
 
@@ -183,8 +183,8 @@ PS C:\> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 Moduł jest aktualizowana bez żadnych wiersza, aby zaakceptować licencji.
 
 ## <a name="more-details"></a>więcej informacji
-### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Wymagaj akceptacji licencji dla skryptów](../script/script_RequireLicenseAcceptance.md)
+### <a name="require-license-acceptance-for-scriptsscriptscriptrequirelicenseacceptancemd"></a>[Wymaganie akceptacji licencji na potrzeby skryptów](../script/script_RequireLicenseAcceptance.md)
 
 ### <a name="require-license-acceptance-support-on-powershellgallerypsgallerypsgalleryrequireslicenseacceptancemd"></a>[Wymagana obsługa akceptacji licencji na PowerShellGallery](../../psgallery/psgallery_requires_license_acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Wymagaj akceptacji licencji na wdrażanie w automatyzacji Azure](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
+### <a name="require-license-acceptance-on-deploy-to-azure-automationpsgallerypsgallerydeploytoazureautomationrequirelicenseacceptancemd"></a>[Wymaganie akceptacji licencji na potrzeby wdrażania w usłudze Azure Automation](../../psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)

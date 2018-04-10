@@ -58,7 +58,7 @@ Jeśli chcesz używać określonego instalacji programu PowerShell z kodem Visua
 
 1. Kliknij przycisk **Plik -> Preferencje -> Ustawienia**
 1. Pojawi się dwie części edytora.
-   W okienku prawej krawędzi (`settings.json`), włóż do poniższych ustawień odpowiedni dla Twojego systemu operacyjnego między dwoma nawiasów klamrowych (`{` i `}`) i Zastąp  *<version>*  z zainstalowana Wersja programu PowerShell:
+   W okienku prawej krawędzi (`settings.json`), włóż do poniższych ustawień odpowiedni dla Twojego systemu operacyjnego między dwoma nawiasów klamrowych (`{` i `}`) i Zastąp *<version>* z zainstalowana Wersja programu PowerShell:
 
   ```json
     // On Windows:

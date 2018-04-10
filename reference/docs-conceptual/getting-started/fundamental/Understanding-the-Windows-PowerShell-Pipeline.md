@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Opis potoku programu PowerShell systemu Windows
+title: Opis potoku programu Windows PowerShell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 6d152e52d2fcfb9dd592eb9ac40500615f2186cb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c3f1d17432cf3a77c0f5ecae137a4233a28a19d7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="understanding-the-windows-powershell-pipeline"></a>Opis potoku programu PowerShell systemu Windows
+# <a name="understanding-the-windows-powershell-pipeline"></a>Opis potoku programu Windows PowerShell
 Przesyłanie potokowe działa praktycznie wszędzie w programie Windows PowerShell. Mimo że na ekranie zostanie wyświetlony tekst, programu Windows PowerShell nie potoku tekstu polecenia. Zamiast tego należy go powoduje przekazanie w potoku obiektów.
 
 Przypomina notacji używane dla potoków używaną w innych powłoki, dlatego na pierwszy rzut oka może nie być oczywista, programu Windows PowerShell wprowadzono inną. Na przykład, jeśli używasz **wyjściowego hosta** wymusić wyświetlenie strony strona dane wyjściowe z innego polecenia, wygląda danych wyjściowych tylko zwykły tekst wyświetlany na ekranie, podzielić strony, takich jak:
@@ -61,4 +61,3 @@ W rzeczywistości informacji nagłówka danych wyjściowych przez **lokalizacji 
 Biorąc pod uwagę, że może być więcej informacji na dane wyjściowe programu Windows PowerShell polecenia nie możemy wyświetlić wyświetlane w oknie konsoli, jak można pobrać są niewidoczne elementy? Jak wyświetlić dodatkowe dane? I co zrobić, jeśli chcesz wyświetlić dane w innym formacie niż jednego środowiska Windows PowerShell zwykle używa?
 
 Pozostałej części w tym rozdziale opisano, jak można odnajdywać struktury obiektów programu Windows PowerShell, wybierając określone elementy i formatowanie je do wyświetlenia łatwiejsze i jak wysyłać tych informacji do lokalizacji alternatywnej danych wyjściowych, takich jak pliki i drukarki.
-

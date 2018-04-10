@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: 2c7e718bc518b332cb4303ef73b1bf5c924ca471
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 82b8046d5cbb47300f090ce2ffbf3c279ed19458
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>Odnajdywanie modułu programu PowerShell, zainstalować i spisu z PowerShellGet
- 
+
 PowerShellGet znajduje się w tej wersji platformy WMF:
 -   Znajdź moduł można filtrować według metadanych z parametrem - Tag
 -   Znajdź moduł można filtrować według języka wyszukiwania specyficznego dla repozytorium z parametrem - filtru
@@ -58,6 +58,5 @@ Find-Module -Filter RBAC -Repository PSGallery
 -   Obsługa instalacji modułu zależności
 -   Trzy nowe polecenia cmdlet
     -   Get-InstalledModule
-    -   Odinstaluj moduł
-    -   Moduł zapisywania
-    
+    -   Uninstall-Module
+    -   Save-Module

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: "Znajdź moduł"
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Znajdź moduł
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-module"></a>Znajdź moduł
 Umożliwia znalezienie moduły z galerii online, spełniających określone kryteria.
@@ -21,7 +21,7 @@ Dla każdego modułu znaleziono Znajdź moduł zwraca obiekt PSRepositoryItemInf
 - Znajdź moduł można filtrować z parametrami wersji: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Te parametry są wykluczają się wzajemnie, z wyjątkiem MinmimumVersion i MaximumVersion.
   - Te parametry wersji są dozwolone tylko w przypadku nazwę jednego modułu bez żadnych symboli wieloznacznych.
-  - Jeśli nie określono parametru RequiredVersion, Znajdź moduł zwraca najnowszej wersji modułu, która jest równa lub większa niż określona wersja minimalna lub najnowszej wersji modułu, jeśli wersja minimalna nie jest określona. 
+  - Jeśli nie określono parametru RequiredVersion, Znajdź moduł zwraca najnowszej wersji modułu, która jest równa lub większa niż określona wersja minimalna lub najnowszej wersji modułu, jeśli wersja minimalna nie jest określona.
   - Jeśli określono parametr RequiredVersion, Znajdź moduł zwraca tylko wersji modułu, która dokładnie odpowiada określonej wersji.
 - Znajdź moduł można filtrować według metadanych z parametrem - Tag
 - Znajdź moduł można filtrować według języka wyszukiwania specyficznego dla repozytorium z parametrem - filtru.
@@ -34,7 +34,7 @@ Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Dokumentacja poleceń cmdlet pomocy online
 
-[Znajdź moduł](http://go.microsoft.com/fwlink/?LinkID=398574)
+[Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
 ## <a name="example-commands"></a>Przykładowe polecenia
 ```powershell
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

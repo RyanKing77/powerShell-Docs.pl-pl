@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Metoda RemoveConfiguration klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda RemoveConfiguration klasy MSFT_DSCLocalConfigurationManager
 
@@ -26,8 +26,7 @@ uint32 RemoveConfiguration(
 <a name="parameters"></a>Parametry
 ----------
 
-*Etap* \[w\]  
-Określa, który dokument konfiguracji do usunięcia. Prawidłowe są następujące wartości:
+*Etap* \[w\] Określa, który dokument konfiguracji do usunięcia. Prawidłowe są następujące wartości:
 
 |Wartość |Opis |
 |:--- |:---|
@@ -35,8 +34,7 @@ Określa, który dokument konfiguracji do usunięcia. Prawidłowe są następuj�
 |**2** | **Oczekujące** dokumentu konfiguracji (pending.mof).  |
 |**4** | **Wstecz** dokumentu konfiguracji (previous.mof). |
 
-*Wymuś* \[w\]  
-**wartość true,** wymuszenie usunięcia konfiguracji.
+*Wymuś* \[w\] **true** wymuszenie usunięcia konfiguracji.
 
 ## <a name="return-value"></a>Wartość zwracana
 ------------
@@ -58,11 +56,3 @@ To jest metodą statyczną.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

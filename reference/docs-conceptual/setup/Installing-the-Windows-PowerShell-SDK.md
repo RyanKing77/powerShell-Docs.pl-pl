@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Instalowanie zestawu SDK programu PowerShell systemu Windows
+title: Instalowanie zestawu SDK programu Windows PowerShell
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-ms.openlocfilehash: c6acba828e469e716c80603ec2432176652a7280
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 830b054c2cf2b49d935d3d96b79effa7131f6db2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="installing-the-windows-powershell-sdk"></a>Instalowanie zestawu SDK programu PowerShell systemu Windows
+# <a name="installing-the-windows-powershell-sdk"></a>Instalowanie zestawu SDK programu Windows PowerShell
 
 Poniższy temat zawiera opis sposobu instalowania zestawu SDK programu PowerShell w różnych wersjach systemu Windows.
 
@@ -266,4 +266,3 @@ Klasa dostawcy, w tym przykładzie pochodzi z [NavigationCmdletProvider](https:/
 Pokazuje, jak zastąpić metody zawartości do obsługi wywołania z zawartością wyczyść pobrania zawartości i polecenia cmdlet Set-zawartości.
 Te metody powinny zostać wdrożone, gdy użytkownik chce zarządzać zawartością elementów w magazynie danych.
 Klasa dostawcy, w tym przykładzie pochodzi z [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) klasy która implementuje [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) interfejsu.
-

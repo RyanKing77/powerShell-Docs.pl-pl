@@ -1,4 +1,4 @@
-# <a name="ws-management-wsman-remoting-in-powershell-core"></a>Komunikacji zdalnej usługi WS-Management (WSMan) w podstawowej programu PowerShell 
+# <a name="ws-management-wsman-remoting-in-powershell-core"></a>Obsługa zdalna usługi WS-Management (WSMan) w programie PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Instrukcje dotyczące tworzenia punktu końcowego usługi zdalne
 
@@ -28,19 +28,19 @@ Skrypt musi zostać wykonana w sesji programu PowerShell poziomie administratora
 
 #### <a name="executed-by-the-instance-of-powershell-that-it-will-register"></a>Wykonane przez to wystąpienie programu PowerShell, który zarejestruje
 
-``` powershell
+```powershell
 Install-PowerShellRemoting.ps1
 ```
 
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>Wykonywane przez inne wystąpienie programu PowerShell w imieniu wystąpienie, które zarejestruje
 
-``` powershell
+```powershell
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 Na przykład:
 
-``` powershell
+```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
@@ -51,7 +51,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 Utwórz sesję programu PowerShell do nowego punktu końcowego programu PowerShell, określając `-ConfigurationName "some endpoint name"`. Aby połączyć się z wystąpieniem programu PowerShell w powyższym przykładzie, użyj jednej:
 
-``` powershell
+```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```

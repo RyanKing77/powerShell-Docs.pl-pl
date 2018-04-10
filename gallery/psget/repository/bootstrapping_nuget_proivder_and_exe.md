@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
 title: Inicjowanie dostawcy NuGet i EXE
-ms.openlocfilehash: 0036972eb9a0c20469da1aadafe223e6ec80f16a
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 1c8d99491aec6d2a598facb909c1f36f4bb979e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bootstrap-both-nuget-provider-and-nugetexe-or-bootstrap-only-nuget-provider"></a>Bootstrap zarówno dostawcy NuGet i NuGet.exe lub bootstrap tylko NuGet dostawcy
 
@@ -19,7 +19,7 @@ PowerShellGet zawiera logikę do obsługi albo Scalonej bootstrap dostawcy NuGet
 W obu przypadkach powinien wystąpić tylko monitu o pojedynczym komunikacie.
 Jeśli komputer nie jest połączony z Internetem, użytkownik lub administrator musi skopiować zaufanych wystąpienie dostawcy programu NuGet i/lub pliku NuGet.exe do odłączonego maszyny.
 
->**Uwaga**: począwszy od wersji 6, dostawca NuGet jest dostępny w instalacji programu PowerShell. [http://github.com/PowerShell/PowerShell](http://github.com/powershell/powershell)
+>**Uwaga**: począwszy od wersji 6, dostawca NuGet jest dostępny w instalacji programu PowerShell. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>Rozpoznawanie błąd, gdy dostawca NuGet nie został zainstalowany na komputerze, na którym jest Internet połączone
 
@@ -83,7 +83,7 @@ PS C:\> Publish-Module -Name Contoso -Repository PSGallery -Verbose
 NuGet.exe and NuGet provider are required to continue
 PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Do you want PowerShellGet to install both NuGet.exe and NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): N
-Publish-Module : PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed and NuGet.exe is available under 
+Publish-Module : PowerShellGet requires NuGet.exe and NuGet provider version '2.8.5.201' or newer to interact with the NuGet-based repositories. Please ensure that '2.8.5.201' or newer version of NuGet provider is installed and NuGet.exe is available under
 one of the paths specified in PATH environment variable value.
 At line:1 char:1
 + Publish-Module -Name Contoso -Repository PSGallery -Verbose
@@ -116,7 +116,7 @@ Struktura folderów i plików dostawcy NuGet będzie (prawdopodobnie z numerem w
 
 NuGet<br>
 --2.8.5.208<br>
----Microsoft.PackageManagement.NuGetProvider.dll
+----Microsoft.PackageManagement.NuGetProvider.dll
 
 Skopiuj te foldery i plik przy użyciu zaufanego procesu na komputerach w trybie offline.
 
@@ -155,4 +155,3 @@ Aby udostępnić plik wykonywalny dla określonego użytkownika, skopiuj do loka
 ```
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
-

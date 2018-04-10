@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Korzystanie z zasobów z wieloma wersjami"
-ms.openlocfilehash: 5ca4eadfe23a4675e1b81b86d4274d7f113228fe
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Korzystanie z zasobów z wieloma wersjami
+ms.openlocfilehash: 9e5b989be3f33fb9151f76cecb6d5f700b1e36c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-resources-with-multiple-versions"></a>Korzystanie z zasobów z wieloma wersjami
 
@@ -62,7 +62,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 >Uwaga: Parametr ModuleVersion DscResource importu nie jest dostępny w programie PowerShell 4.0. W programie PowerShell 4.0 można określić wersji modułu przez przekazanie obiektu specyfikacji modułu do parametru ModuleName DscResource importu. Obiekt specyfikacji modułu jest tablicy skrótów, która zawiera klucze ModuleName i RequiredVersion. Przykład:
@@ -81,7 +81,7 @@ configuration VersionTest
             DomainAdministratorCredential = Get-Credential
         }
      }
-}     
+}
 ```
 
 To również będą działać w programie PowerShell 5.0, ale zaleca się, że używasz **ModuleVersion** parametru.
@@ -89,4 +89,3 @@ To również będą działać w programie PowerShell 5.0, ale zaleca się, że u
 ## <a name="see-also"></a>Zobacz też
 * [Konfiguracji DSC](configurations.md)
 * [Zasoby usługi Konfiguracja DSC](resources.md)
-

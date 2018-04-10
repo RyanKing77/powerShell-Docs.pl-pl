@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Zainstaluj pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 Określa, czy certyfikat testowy został utworzony. Jeśli ten parametr ma ustawioną wartość PRAWDA, to polecenie cmdlet tworzy certyfikat testowy i konfiguruje aplikację sieci web programu Windows PowerShell Web Access do używania certyfikatu dla żądania HTTPS. Jeśli ten parametr ma wartość false, następnie nie certyfikatu powiązania jest utworzone lub. Wartość tę należy ustawić na wartość false, jeśli inny certyfikat jest używany dla programu Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -48,7 +48,7 @@ Określa, czy certyfikat testowy został utworzony. Jeśli ten parametr ma ustaw
 
 Określa nazwę aplikacji sieci web. Jest on wyświetlany jako ostatnia część adres URL programu Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -61,7 +61,7 @@ Określa nazwę aplikacji sieci web. Jest on wyświetlany jako ostatnia część
 
 Określa nazwę witryny sieci Web serwer sieci Web (IIS), na których chcesz zainstalować tę aplikację sieci web programu Windows PowerShell Web Access.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -74,7 +74,7 @@ Określa nazwę witryny sieci Web serwer sieci Web (IIS), na których chcesz zai
 
 Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
 
-|||  
+|||
 |-|-|
 | Wymagane?                            | false                                |
 | Pozycja?                            | o nazwie                                |
@@ -87,7 +87,7 @@ Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
 Pokazuje, co się stanie po uruchomieniu polecenia cmdlet.
 Polecenie cmdlet nie zostało uruchomione.
 
-|||  
+|||
 |-|-|
 | Wymagane?                            | false                                |
 | Pozycja?                            | o nazwie                                |

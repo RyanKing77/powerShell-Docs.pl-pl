@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>Nowe funkcje językowe w programie PowerShell 5.0 
+# <a name="new-language-features-in-powershell-50"></a>Nowe funkcje językowe w programie PowerShell 5.0
 
 PowerShell 5.0 wprowadzono następujące nowe elementy języka w programie Windows PowerShell:
 
 ## <a name="class-keyword"></a>Class — słowo kluczowe
 
-**Klasy** — słowo kluczowe definiuje nową klasę. Jest to PRAWDA typu .NET Framework. Elementy członkowskie klasy są publiczne, ale tylko publicznej w zakresie modułu.
+**Klasy** — słowo kluczowe definiuje nową klasę. Jest to PRAWDA typu .NET Framework.
+Elementy członkowskie klasy są publiczne, ale tylko publicznej w zakresie modułu.
 Nie można znaleźć nazwy typu jako ciąg (na przykład `New-Object` nie działa), a w tej wersji, nie można użyć literału typu (na przykład `[MyClass]`) poza plikiem skryptu/modułu, w którym klasa jest zdefiniowana.
 
 ```powershell
@@ -57,18 +58,18 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>DscResource importu
+## <a name="import-dscresource"></a>Import-DscResource
 
 **Import-DscResource** jest teraz true — słowo kluczowe dynamicznych.
 PowerShell analizuje określony moduł główny moduł, wyszukiwanie dla klas, które zawierają **DscResource** atrybutu.
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Nowe pole **ImplementingAssembly**, został dodany do ModuleInfo. Zestaw dynamiczny utworzony dla modułu skryptu, jeśli skrypt definiuje klasy lub załadować zestawu dla moduły binarne jest ustawiona. Nie jest ustawiona podczas ModuleType = manifestu. 
+Nowe pole **ImplementingAssembly**, został dodany do ModuleInfo. Zestaw dynamiczny utworzony dla modułu skryptu, jeśli skrypt definiuje klasy lub załadować zestawu dla moduły binarne jest ustawiona. Nie jest ustawiona podczas ModuleType = manifestu.
 
 Odbicie na **ImplementingAssembly** pola umożliwia odnalezienie zasobów w module. Oznacza to, że można odnajdywać zasoby napisane w programie PowerShell lub inne języki zarządzane.
 
-Pola z inicjatorami:      
+Pola z inicjatorami:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ Typem jest opcjonalna.
 $s = "hello"
 ```
 
-Wszystkie elementy członkowskie są publiczne. 
+Wszystkie elementy członkowskie są publiczne.
 
 ## <a name="constructors-and-instantiation"></a>Konstruktory i tworzenie wystąpień
 
-Klasy środowiska Windows PowerShell można mieć konstruktorów; mają one taką samą nazwę jak ich klasy. Konstruktory mogą być przeciążone. Konstruktory statyczne są obsługiwane. Właściwości, za pomocą wyrażeń inicjowania są inicjowane przed uruchomieniem kodu w konstruktorze. Właściwości statyczne są inicjowane przed treści Konstruktor statyczny, a właściwości obiektu są zainicjowane przed treść konstruktora niestatycznego. Obecnie, nie istnieje żadna składnia wywoływania konstruktora od innego konstruktora (takich jak C\# składni ": this()"). Obejście polega na zdefiniować typowe metody Init. 
+Klasy środowiska Windows PowerShell można mieć konstruktorów; mają one taką samą nazwę jak ich klasy. Konstruktory mogą być przeciążone. Konstruktory statyczne są obsługiwane. Właściwości, za pomocą wyrażeń inicjowania są inicjowane przed uruchomieniem kodu w konstruktorze. Właściwości statyczne są inicjowane przed treści Konstruktor statyczny, a właściwości obiektu są zainicjowane przed treść konstruktora niestatycznego. Obecnie, nie istnieje żadna składnia wywoływania konstruktora od innego konstruktora (takich jak C\# składni ": this()"). Obejście polega na zdefiniować typowe metody Init.
 
 Poniżej przedstawiono sposób tworzenia wystąpienia klasy w tej wersji.
 
@@ -113,7 +114,7 @@ $c = [MyClass]::new(@(42,43,44), "Hello")
 
 W tej wersji New-Object nie działa z klas zdefiniowanych w programie Windows PowerShell. Również w tej wersji, nazwa typu jest tylko widoczne lexically, co oznacza, że nie jest widoczne na zewnątrz modułu lub skrypt, który definiuje klasę. Funkcje może zwrócić wystąpienia klasy zdefiniowanej w programie Windows PowerShell i wystąpień działa dobrze poza modułu lub skryptu.
 
-`Get-Member -Static`Wyświetla listę konstruktorów, dzięki czemu można zobaczyć przeciążenia, takich jak każdą inną metodę. Wydajność tej składni jest również znacznie krócej niż New-Object.
+`Get-Member -Static` Wyświetla listę konstruktorów, dzięki czemu można zobaczyć przeciążenia, takich jak każdą inną metodę. Wydajność tej składni jest również znacznie krócej niż New-Object.
 
 Artykule statyczną metodę o nazwie **nowe** współpracuje z typów .NET, jak pokazano w poniższym przykładzie.
 
@@ -151,12 +152,12 @@ Wywołanie metody:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 Przeciążone metody — czyli tych, które są o nazwie takiej jak istniejącą metodę, ale zróżnicowane według określonej wartości — także są obsługiwane.
 
-## <a name="properties"></a>Właściwości 
+## <a name="properties"></a>Właściwości
 
 Wszystkie właściwości są publiczne. Właściwości wymagają znaków nowego wiersza ani średnika. Jeśli jest określony żaden typ obiektu, typ właściwości jest obiektem.
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>Przykład end-to-End
 
-Poniższy przykład tworzy kilka nowych, niestandardowych klasy do zaimplementowania języka arkusza dynamiczne stylu HTML (DSL). Następnie w przykładzie dodano funkcje pomocnicze do tworzenia typów konkretny element w ramach klasy elementów, takich jak style nagłówków i tabele, ponieważ nie można używać typów poza zakresem modułu.
+Poniższy przykład tworzy kilka nowych, niestandardowych klasy do zaimplementowania języka arkusza dynamiczne stylu HTML (DSL).
+Następnie w przykładzie dodano funkcje pomocnicze do tworzenia typów konkretny element w ramach klasy elementów, takich jak style nagłówków i tabele, ponieważ nie można używać typów poza zakresem modułu.
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

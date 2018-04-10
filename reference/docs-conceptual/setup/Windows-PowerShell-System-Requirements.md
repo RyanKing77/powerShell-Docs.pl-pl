@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Wymagania systemowe programu PowerShell systemu Windows
+title: Wymagania systemowe programu Windows PowerShell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="windows-powershell-system-requirements"></a>Wymagania systemowe programu PowerShell systemu Windows
+# <a name="windows-powershell-system-requirements"></a>Wymagania systemowe programu Windows PowerShell
 Ten temat zawiera wymagania systemowe programu Windows PowerShell 3.0, programu Windows PowerShell 4.0 i programu Windows PowerShell 5.0 oraz funkcje specjalne, takie jak Windows PowerShell Integrated Scripting Environment (ISE), poleceń CIM i przepływów pracy.
 
 Windows® 8.1 i Windows Server® 2012 R2 zawierają wszystkich wymaganych programów. W tym temacie jest przeznaczona dla użytkowników wcześniejszych wersjach systemu Windows.
@@ -83,11 +83,11 @@ Jednak niektóre elementy, takie jak, wymagają graficznego interfejsu użytkown
 
 - Polecenia cmdlet
 
-    1.  [Element GridView poza](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Pokaż polecenia](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
+    2.  [Show-Command](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Pokaż ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
     4.  [Pokaż EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
@@ -111,13 +111,13 @@ Program Windows PowerShell 2.0, Windows PowerShell 3.0 i Windows PowerShell 4.0 
 
 - [Polecenia cmdlet usługi (BITS) inteligentnego transferu w tle](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-dziennika zdarzeń](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
 - [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Zapisz pomocy](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Aktualizacja Pomocy](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 Ponadto **WinRM** usługi nie jest dostępny w środowisku Windows PE.
 
@@ -125,4 +125,3 @@ Ponadto **WinRM** usługi nie jest dostępny w środowisku Windows PE.
 - [Wprowadzenie do korzystania z programu Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Instalowanie programu Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Uruchamianie środowiska Windows PowerShell](Starting-Windows-PowerShell.md)
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Test-pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -47,7 +47,7 @@ Parametrami tego polecenia cmdlet odpowiadają polom na stronie logowania progra
 
 Określa nazwę komputera, aby przetestować.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |
@@ -60,7 +60,7 @@ Określa nazwę komputera, aby przetestować.
 
 Określa nazwę konfiguracji sesji programu Windows PowerShell, znana także jako punktu końcowego lub obszaru działania, aby przetestować.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -73,7 +73,7 @@ Określa nazwę konfiguracji sesji programu Windows PowerShell, znana także jak
 
 Określa identyfikator URI, aby przetestować połączenie.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |
@@ -86,7 +86,7 @@ Określa identyfikator URI, aby przetestować połączenie.
 
 Określa **PSCredential** obiektu dla konta użytkownika, którego chcesz używać do testowania reguł autoryzacji programu Windows PowerShell Web Access. Jeśli ten parametr nie zostanie użyty, polecenie cmdlet używa konta aktualnie zalogowanego użytkownika. Aby uzyskać **PSCredential** obiektu, który jest wymagany, aby zdalnie testowanie reguł autoryzacji, uruchom [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) polecenia cmdlet.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -99,7 +99,7 @@ Określa **PSCredential** obiektu dla konta użytkownika, którego chcesz używa
 
 Określa podzbiór reguł do przetestowania. Jeśli ten parametr nie jest określony, to polecenie cmdlet testy względem wszystkich reguł autoryzacji.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -112,7 +112,7 @@ Określa podzbiór reguł do przetestowania. Jeśli ten parametr nie jest okreś
 
 Określa nazwę użytkownika do testowania.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | true                                 |

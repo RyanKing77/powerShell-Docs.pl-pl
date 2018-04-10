@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
+keywords: wmf,powershell,setup
 contributor: jianyunt, quoctruong
-title: "Ulepszenia zarządzania pakietami w WMF 5.1"
-ms.openlocfilehash: b55a1742530b7cd48d60d79b7d4866ebee80a3b6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Ulepszenia zarządzania pakietami w WMF 5.1
+ms.openlocfilehash: d8b66cc101a6d963b484bba26a1bcd7f71437536
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>Ulepszenia zarządzania pakietami w WMF 5.1#
 
 ## <a name="improvements-in-packagemanagement"></a>Ulepszenia w PackageManagement ##
-Poprawki w wersji 5.1 WMF są następujące: 
+Poprawki w wersji 5.1 WMF są następujące:
 
 ### <a name="version-alias"></a>Alias wersji
 
-**Scenariusz**: Jeśli masz wersji 1.0 lub 2.0 pakietu P1, zainstalowanych w systemie i chcesz odinstalować w wersji 1.0, należy uruchomić `Uninstall-Package -Name P1 -Version 1.0` i w wersji 1.0 ma zostać odinstalowany po uruchomieniu polecenia cmdlet. Jednak odinstalować pobiera wynik jest tym w wersji 2.0.  
-    
+**Scenariusz**: Jeśli masz wersji 1.0 lub 2.0 pakietu P1, zainstalowanych w systemie i chcesz odinstalować w wersji 1.0, należy uruchomić `Uninstall-Package -Name P1 -Version 1.0` i w wersji 1.0 ma zostać odinstalowany po uruchomieniu polecenia cmdlet. Jednak odinstalować pobiera wynik jest tym w wersji 2.0.
+
 Dzieje się tak dlatego `-Version` parametru jest aliasem `-MinimumVersion` parametru. Gdy PackageManagement szuka pakietu kwalifikowaną o minimalnej wersji 1.0, zwraca najnowszej wersji. To zachowanie jest oczekiwane w warunkach normalnych, ponieważ wyszukiwanie najnowszej wersji zwykle jest pożądany wynik. Jednak nie ma zastosowania do `Uninstall-Package` case.
-    
-**Rozwiązanie**: usunięte `-Version` aliasu w całości PackageManagement () OneGet) i PowerShellGet. 
+
+**Rozwiązanie**: usunięte `-Version` aliasu w całości PackageManagement () OneGet) i PowerShellGet.
 
 ### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>Wiele monity do inicjalizacji dostawcy NuGet
 
-**Scenariusz**: po uruchomieniu `Find-Module` lub `Install-Module` lub innych poleceń cmdlet PackageManagement na komputerze po raz pierwszy, PackageManagement próbuje bootstrap dostawcy NuGet. Dzieje się tak, ponieważ dostawca PowerShellGet również używa dostawcy NuGet do pobrania moduły programu PowerShell. PackageManagement następnie monituje użytkownika o zgodę do zainstalowania dostawcy programu NuGet. Po wybraniu przez użytkownika opcji "tak" dla inicjowanie, zostanie zainstalowana najnowsza wersja dostawcy NuGet. 
-    
+**Scenariusz**: po uruchomieniu `Find-Module` lub `Install-Module` lub innych poleceń cmdlet PackageManagement na komputerze po raz pierwszy, PackageManagement próbuje bootstrap dostawcy NuGet. Dzieje się tak, ponieważ dostawca PowerShellGet również używa dostawcy NuGet do pobrania moduły programu PowerShell. PackageManagement następnie monituje użytkownika o zgodę do zainstalowania dostawcy programu NuGet. Po wybraniu przez użytkownika opcji "tak" dla inicjowanie, zostanie zainstalowana najnowsza wersja dostawcy NuGet.
+
 Jednak w niektórych przypadkach, gdy masz starsza wersja programu NuGet dostawca jest zainstalowany na komputerze, starszą wersję programu NuGet czasami pobiera wcześniej załadowany do sesji programu PowerShell (która jest sytuacja wyścigu w PackageManagement). Jednak PowerShellGet wymaga nowszej wersji dostawcy NuGet do pracy, dlatego PowerShellGet zapyta PackageManagement, aby ponownie zainicjować dostawcy NuGet. Powoduje to wiele monity do inicjalizacji dostawcy NuGet.
 
 **Rozwiązanie**: W WMF5.1, PackageManagement ładuje najnowszą wersję dostawcy NuGet, aby wiele monity do inicjalizacji dostawcy NuGet.
@@ -68,4 +68,3 @@ W wersji 5.1 WMF, PackageManagement ma teraz nowe parametry serwera proxy `-Prox
 ``` PowerShell
 Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```
-

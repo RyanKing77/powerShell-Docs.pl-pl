@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Podstawy programu Windows PowerShell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b21c6cd84ea29d5e8085ccf8df2a5a9199e1d859
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-basics"></a>Podstawy programu Windows PowerShell
 Graficzne interfejsy użytkownika użyj niektóre podstawowe założenia, które są powszechnie znane do większości użytkowników. Użytkownicy korzystają z znajomości tych interfejsów w celu wykonania określonych zadań. Systemy operacyjne zaprezentować użytkownikom graficzną reprezentację elementów, które można przeglądać, zazwyczaj z menu rozwijanego do uzyskiwania dostępu do określonych funkcji oraz kontekst menu do uzyskiwania dostępu do funkcji tego kontekstu.

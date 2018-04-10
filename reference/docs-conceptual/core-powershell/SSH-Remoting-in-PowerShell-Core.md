@@ -1,4 +1,4 @@
-# <a name="powershell-remoting-over-ssh"></a>Usługi zdalne środowiska PowerShell za pomocą protokołu SSH
+# <a name="powershell-remoting-over-ssh"></a>Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 
 ## <a name="overview"></a>Przegląd
 
@@ -59,7 +59,7 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
     Restart-Service sshd
     ```
 1. Dodaj ścieżkę zainstalowanym OpenSSH do Twojej zmiennej Env ścieżki
-    - To pole powinno być wzdłuż linii`C:\Program Files\OpenSSH\`
+    - To pole powinno być wzdłuż linii `C:\Program Files\OpenSSH\`
     - Dzięki temu ssh.exe do znalezienia
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Ustawienia na komputerze z systemem Linux (Ubuntu 14.04)
@@ -92,11 +92,11 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 1. Zainstaluj najnowszą [programu PowerShell dla MacOS] kompilacji
     - Upewnij się, że usługi zdalne SSH jest włączone, wykonaj następujące czynności:
-      - Otwórz`System Preferences`
-      - Kliknij pozycję`Sharing`
-      - Sprawdź `Remote Login` — zostanie wyświetlony komunikat`Remote Login: On`
+      - Otwórz `System Preferences`
+      - Kliknij pozycję `Sharing`
+      - Sprawdź `Remote Login` — zostanie wyświetlony komunikat `Remote Login: On`
       - Zezwalaj na dostęp do odpowiednich użytkowników
-1. Edytuj `sshd_config` pliku w lokalizacji`/private/etc/ssh/sshd_config`
+1. Edytuj `sshd_config` pliku w lokalizacji `/private/etc/ssh/sshd_config`
     - Edytor ulubionych lub
     ```bash
     sudo nano /private/etc/ssh/sshd_config

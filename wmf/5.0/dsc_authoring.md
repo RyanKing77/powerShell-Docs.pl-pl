@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: 555e01e88647b40717417360fb74bb6554a9c122
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 3b2c268cd10d7c421b3d1fc73a7bbeaa4714f5fc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="authoring-improvements-using-powershell-ise"></a>Ulepszenia tworzenia pakietów administracyjnych przy użyciu programu PowerShell ISE
+# <a name="authoring-improvements-using-powershell-ise"></a>Ulepszenia tworzenia przy użyciu środowiska PowerShell ISE
 
 Tworzenie konfiguracji DSC w środowisku Windows PowerShell ISE jest znacznie prostsze, Dziękujemy do następujące udoskonalenia:
 
@@ -19,4 +19,3 @@ Tworzenie konfiguracji DSC w środowisku Windows PowerShell ISE jest znacznie pr
 - Lepsze uzupełniania po naciśnięciu tabulatora wartości właściwości zasobów.
 
 **Uwaga:** musi mieć ciągu pustego wartości właściwości zasobu zanim użyjesz Ctrl + spacja, aby wyświetlić opcje. Naciśnięcie przycisku **kartę** cykle za pomocą opcji.
-

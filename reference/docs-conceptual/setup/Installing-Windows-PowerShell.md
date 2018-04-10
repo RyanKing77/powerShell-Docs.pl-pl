@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
-keywords: "środowiska PowerShell, polecenia cmdlet, pobierania, instalacji, ustawienia, systemu windows 10, windows 8.1, windows 8.0, windows 7"
+ms.date: 08/09/2017
+keywords: środowiska PowerShell, polecenia cmdlet, pobierania, instalacji, ustawienia, systemu windows 10, windows 8.1, windows 8.0, windows 7
 title: Instalowanie programu Windows PowerShell
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>Instalowanie programu Windows PowerShell
 Środowisko Windows PowerShell jest zainstalowane domyślnie w każdym systemie Windows począwszy od systemu Windows 7 z dodatkiem SP1 i Windows Server 2008 R2 z dodatkiem SP1.
@@ -45,7 +45,8 @@ Wersje systemu Windows Server bez graficznego interfejsu użytkownika są nazywa
 
 We wszystkich wersjach Core podczas logowania do serwera można uzyskać okno wiersza polecenia systemu Windows.
 
-Typ `powershell` i naciśnij klawisz **ENTER** można uruchomić w sesji wiersza polecenia programu PowerShell. Typ `exit` zakończyć sesję programu PowerShell, a następnie wróć do wiersza polecenia.
+Typ `powershell` i naciśnij klawisz **ENTER** można uruchomić w sesji wiersza polecenia programu PowerShell.
+Typ `exit` zakończyć sesję programu PowerShell, a następnie wróć do wiersza polecenia.
 
 ### <a name="windows-server-desktop-editions"></a>Wersje pulpitu systemu Windows Server
 

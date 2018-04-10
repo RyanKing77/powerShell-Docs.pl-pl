@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Program Windows PowerShell nazwy
+title: Poznawanie nazw programu Windows PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="learning-windows-powershell-names"></a>Program Windows PowerShell nazwy
+# <a name="learning-windows-powershell-names"></a>Poznawanie nazw programu Windows PowerShell
 Learning nazwy poleceń i parametrów polecenia jest inwestycji długiego czasu, większość interfejsów wiersza polecenia. Problem polega na tym, czy bardzo mało wzorców, więc jedynym sposobem, aby dowiedzieć się, jest tylko każdego polecenia i każdego parametru, który musi być na bieżąco.
 
 Podczas pracy z nowego polecenia lub parametr, zwykle można co znasz już; należy znaleźć i Dowiedz się nową nazwę. Jeśli przyjrzymy się jak Zwiększ interfejsy z niewielki zestaw narzędzi z dodatkami przyrostowe do funkcji, jest łatwo sprawdzić, dlaczego struktury jest niestandardowy. Z nazw poleceń w szczególności, to może dźwiękowej logicznej ponieważ każde polecenie jest narzędziem do oddzielnych, ale lepiej obsługiwać nazw poleceń.
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ Po określeniu **-?** parametr do każdego polecenia cmdlet, polecenie cmdlet ni
 Podstawowych poleceń cmdlet programu Windows PowerShell Użyj standardowych nazw dla podobnych parametrów. Mimo że użycia nazwy parametrów nie jest wymuszana, nie istnieje jawne wskazówki dotyczące użycia wspieranie normalizacji.
 
 Na przykład wskazówki zaleca parametr nazewnictwa, która odnosi się do komputera o nazwie, co **ComputerName**, a nie serwera hosta, System, węzła albo innych popularnych wyrazów alternatywnych. Wśród ważne parametru sugerowane nazwy są **życie**, **wykluczyć**, **Include**, **PassThru**, **ścieżka**, i **CaseSensitive**.
-

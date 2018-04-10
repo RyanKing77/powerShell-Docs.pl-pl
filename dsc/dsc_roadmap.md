@@ -5,4 +5,4 @@
 | Pakiet do pobrania | TBD | TBD | TBD | TBD |
 | TBD | TBD | TBD | TBD | TBD |
 
-*Uwaga: Ta tabela jest obecnie tylko symbol zastępczy. Firma Microsoft będzie aktualizować go w najbliższych miesiącach i będzie przechowywać aktualność możemy postępu z plany.* 
+*Uwaga: Ta tabela jest obecnie tylko symbol zastępczy. Firma Microsoft będzie aktualizować go w najbliższych miesiącach i będzie przechowywać aktualność możemy postępu z plany.*

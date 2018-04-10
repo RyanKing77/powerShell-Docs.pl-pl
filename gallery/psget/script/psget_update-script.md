@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: Skrypt aktualizacji
-ms.openlocfilehash: 8067a502e4ecfa61c5a4347d4e9f74c7437f6502
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Update-Script
+ms.openlocfilehash: 23e558a063689d263f68d34ec3b154be1c77ae89
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="update-script"></a>Skrypt aktualizacji
+# <a name="update-script"></a>Update-Script
 
 Polecenia cmdlet skryptu aktualizacji umożliwia w miejscu aktualizacji plików skryptów, które zostały zainstalowane przy użyciu polecenia cmdlet Install-skryptu.
 
@@ -25,7 +25,7 @@ Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
 ## <a name="cmdlet-online-help-reference"></a>Dokumentacja poleceń cmdlet pomocy online
 
-[Skrypt aktualizacji](http://go.microsoft.com/fwlink/?LinkId=619787)
+[Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
 
 ## <a name="example-commands"></a>Przykładowe polecenia
 ```powershell
@@ -74,4 +74,3 @@ Version Name Type Repository Description
 2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
-

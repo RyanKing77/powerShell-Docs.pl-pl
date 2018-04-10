@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-title: "Poprawki błędów w WMF 5.1"
-ms.openlocfilehash: 137095f50f9f926d3488ff9c1ce8270ddbda63eb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+title: Poprawki błędów w WMF 5.1
+ms.openlocfilehash: dfd9ead447edfe9b7bdae23be14785df4b182bbc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Poprawki błędów w WMF 5.1#
 
@@ -16,13 +16,15 @@ ms.lasthandoff: 06/12/2017
 
 Następujące godne usterki usunięto w wersji WMF 5.1:
 
-### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Autowykrywanie modułu pełni honoruje`$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>Autowykrywanie modułu pełni honoruje `$env:PSModulePath` ###
 
-Moduł Autowykrywanie (ładowania modułów automatycznie bez jawnego Import-Module podczas wywoływania polecenia) została wprowadzona w WMF 3. Jeśli wprowadzone, programu PowerShell sprawdzenie poleceń w `$PSHome\Modules` przed użyciem `$env:PSModulePath`.
+Moduł Autowykrywanie (ładowania modułów automatycznie bez jawnego Import-Module podczas wywoływania polecenia) została wprowadzona w WMF 3.
+Jeśli wprowadzone, programu PowerShell sprawdzenie poleceń w `$PSHome\Modules` przed użyciem `$env:PSModulePath`.
 
-To zachowanie, aby uwzględnić zmiany WMF 5.1 `$env:PSModulePath` całkowicie. Dzięki temu moduł utworzonymi przez użytkownika, który definiuje poleceń programu PowerShell (np. `Get-ChildItem`) mają być automatycznie załadowane i poprawnie zastępowaniem wbudowanego polecenia.
+To zachowanie, aby uwzględnić zmiany WMF 5.1 `$env:PSModulePath` całkowicie.
+Dzięki temu moduł utworzonymi przez użytkownika, który definiuje poleceń programu PowerShell (np. `Get-ChildItem`) mają być automatycznie załadowane i poprawnie zastępowaniem wbudowanego polecenia.
 
-### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Przekierowywanie plików nie dłużej stałe umieszczana w kodzie`-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Przekierowywanie plików nie dłużej stałe umieszczana w kodzie `-Encoding Unicode` ###
 
 We wszystkich wcześniejszych wersjach programu PowerShell, nie było możliwe do kontrolowania kodowanie pliku używana przez operator przekierowania pliku, np. `Get-ChildItem > out.txt` ponieważ PowerShell dodane `-Encoding Unicode`.
 
@@ -32,7 +34,7 @@ Począwszy od wersji 5.1 WMF, można teraz zmienić kodowanie pliku przekierowan
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Stałe regresji podczas uzyskiwania dostępu do elementów członkowskich`System.Reflection.TypeInfo` ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Stałe regresji podczas uzyskiwania dostępu do elementów członkowskich `System.Reflection.TypeInfo` ###
 
 Regresja wprowadzone w programie WMF 5.0 spowodowało przerwanie podczas uzyskiwania dostępu do elementów członkowskich `System.Reflection.RuntimeType`, np. `[int].ImplementedInterfaces`.
 Ten problem został rozwiązany w wersji 5.1 WMF.
@@ -40,7 +42,8 @@ Ten problem został rozwiązany w wersji 5.1 WMF.
 
 ### <a name="fixed-some-issues-with-com-objects"></a>Stałe problemy z obiektami COM ###
 
-WMF 5.0 wprowadzono nowe integratora modelu COM dla wywoływanie metod obiektów COM i uzyskiwaniem dostępu do właściwości obiektów COM. Ten nowy obiekt tworzący powiązanie znacznie wyższą wydajność, ale również wprowadzić pewne usterki, które zostały ustalone w wersji 5.1 WMF.
+WMF 5.0 wprowadzono nowe integratora modelu COM dla wywoływanie metod obiektów COM i uzyskiwaniem dostępu do właściwości obiektów COM.
+Ten nowy obiekt tworzący powiązanie znacznie wyższą wydajność, ale również wprowadzić pewne usterki, które zostały ustalone w wersji 5.1 WMF.
 
 #### <a name="argument-conversions-were-not-always-performed-correctly"></a>Konwersje argumentów nie zawsze wykonano poprawnie ####
 
@@ -73,10 +76,11 @@ W powyższym przykładzie WMF 5.0 nieprawidłowo napisane Scripting.Dictionary d
 
 Zmiana adresów [wystawiać 1752224 w Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
-### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]`niedozwolone wewnątrz klasy ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` niedozwolone wewnątrz klasy ###
 
-WMF 5.0 wprowadzono klasy z weryfikacją literałów typu używany w klasach.  
-`[ordered]`wygląda jak literału typu, ale nie jest typem .NET wartość true. WMF 5.0 niepoprawnie zgłosił błąd na `[ordered]` wewnątrz klasy:
+WMF 5.0 wprowadzono klasy z weryfikacją literałów typu używany w klasach.
+`[ordered]` wygląda jak literału typu, ale nie jest typem .NET wartość true.
+WMF 5.0 niepoprawnie zgłosił błąd na `[ordered]` wewnątrz klasy:
 
 ```
 class CThing
@@ -95,13 +99,14 @@ Przed WMF 5.1, jeśli ma wiele wersji modułów zainstalowanych i wszystkie udos
 
 WMF 5.1 rozwiązuje to zwracając pomocy dla najnowszej wersji tego tematu.
 
-`Get-Help`nie zapewnia możliwość określenia, która wersja ma dotyczyć pomoc dla. Aby obejść ten problem, przejdź do katalogu, moduły i wyświetlić Pomoc bezpośrednio z narzędzia, takiego jak edytor ulubionych. 
+`Get-Help` nie zapewnia możliwość określenia, która wersja ma dotyczyć pomoc dla.
+Aby obejść ten problem, przejdź do katalogu, moduły i wyświetlić Pomoc bezpośrednio z narzędzia, takiego jak edytor ulubionych.
 
 ### <a name="powershellexe-reading-from-stdin-stopped-working"></a>Odczytywanie z STDIN PowerShell.exe przestał działać
 
 Użyj klientów `powershell -command -` z natywne aplikacje do wykonania programu PowerShell przekazywanie w skrypcie za pośrednictwem STDIN Niestety to został uszkodzony z powodu inne zmiany jej host konsoli.
 
-https://WindowsServer.uservoice.com/forums/301869-PowerShell/Suggestions/15854689-PowerShell-exe-Command-is-broken-on-Windows-10
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
 
 ### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>PowerShell.exe tworzy kolekcji wykorzystania Procesora przy uruchamianiu
 
@@ -109,4 +114,3 @@ Sprawdź, czy została uruchomiona przy użyciu zasad grupy, aby uniknąć opó�
 Kwerenda WMI kończy się wstrzykiwania tzres.mui.dll do każdego procesu w systemie, ponieważ klasa WMI Win32_Process próbuje pobrać informacje dotyczące lokalnej strefy czasowej.
 Powoduje to duży kolekcji procesora CPU w wmiprvse (host dostawcy WMI).
 Poprawka jest Użyj interfejsu API Win32, aby pobrać te same informacje, a nie za pomocą usługi WMI.
-

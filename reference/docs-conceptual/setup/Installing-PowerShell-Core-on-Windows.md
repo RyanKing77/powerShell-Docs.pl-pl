@@ -4,15 +4,15 @@
 
 Do zainstalowania programu PowerShell na klientach z systemem Windows lub Windows Server (działa w systemie Windows 7 z dodatkiem SP1, Server 2008 R2 lub nowszy), Pobierz pakiet MSI z naszej usługi GitHub [zwalnia][] strony.
 
-Plik MSI wygląda tak-`PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+Plik MSI wygląda tak- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Po pobraniu, kliknij dwukrotnie Instalatora, a następnie postępuj zgodnie z monitami.
 
 Brak skrót umieszczone w Menu Start, podczas instalacji.
 
-* Domyślnie pakiet jest zainstalowany na`$env:ProgramFiles\PowerShell\`
-* Można uruchomić programu PowerShell za pomocą Start Menu lub`$env:ProgramFiles\PowerShell\pwsh.exe`
+* Domyślnie pakiet jest zainstalowany na `$env:ProgramFiles\PowerShell\`
+* Można uruchomić programu PowerShell za pomocą Start Menu lub `$env:ProgramFiles\PowerShell\pwsh.exe`
 
 ### <a name="prerequisites"></a>Wymagania wstępne
 

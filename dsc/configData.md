@@ -1,106 +1,112 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Przy użyciu danych konfiguracji"
-ms.openlocfilehash: b56a3f970b0b5121585dc4ed2f32da3243b980bd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Przy użyciu danych konfiguracji
+ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Przy użyciu danych konfiguracji w konfiguracji DSC
 
 >Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
 
-Za pomocą wbudowanych DSC **ConfigurationData** parametru, można zdefiniować dane, które mogą być używane w konfiguracji. Dzięki temu można utworzyć pojedynczą konfiguracją, która może służyć do wielu węzłów lub dla różnych środowisk. Na przykład jeśli tworzysz aplikację, można korzystać z jednej konfiguracji dla środowisk zarówno projektowania i produkcji i korzystać z danych konfiguracji do określania danych dla każdego środowiska.
+Za pomocą wbudowanych DSC **ConfigurationData** parametru, można zdefiniować dane, które mogą być używane w konfiguracji.
+Dzięki temu można utworzyć pojedynczą konfiguracją, która może służyć do wielu węzłów lub dla różnych środowisk.
+Na przykład jeśli tworzysz aplikację, można korzystać z jednej konfiguracji dla środowisk zarówno projektowania i produkcji i korzystać z danych konfiguracji do określania danych dla każdego środowiska.
 
-W tym temacie opisano strukturę **ConfigurationData** hashtable. Przykłady sposobu używania danych konfiguracji, zobacz [oddzielanie danych konfiguracji i środowiska](separatingEnvData.md).
+W tym temacie opisano strukturę **ConfigurationData** hashtable.
+Przykłady sposobu używania danych konfiguracji, zobacz [oddzielanie danych konfiguracji i środowiska](separatingEnvData.md).
 
 ## <a name="the-configurationdata-common-parameter"></a>Typowy parametr ConfigurationData
 
-Typowy Parametr przyjmuje konfiguracji DSC **ConfigurationData**, określ, kiedy kompilacja konfiguracji. Informacje o konfiguracjach kompilacji, zobacz [konfiguracji DSC](configurations.md).
+Typowy Parametr przyjmuje konfiguracji DSC **ConfigurationData**, określ, kiedy kompilacja konfiguracji.
+Informacje o konfiguracjach kompilacji, zobacz [konfiguracji DSC](configurations.md).
 
-**ConfigurationData** parametr jest hasthtable, który musi mieć co najmniej jeden klucz o nazwie **AllNodes**. Może również mieć co najmniej jeden klucz.
+**ConfigurationData** parametr jest hasthtable, który musi mieć co najmniej jeden klucz o nazwie **AllNodes**.
+Może również mieć co najmniej jeden klucz.
 
 >**Uwaga:** przykłady w tym temacie, użyj jednego klucza dodatkowe (innych niż nazwany **AllNodes** klucza) o nazwie `NonNodeData`, jednak zawierać dowolną liczbę dodatkowych kluczy i nazwy dowolne.
 
 ```powershell
-$MyData = 
+$MyData =
 @{
     AllNodes = @()
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 Wartość **AllNodes** klucza jest tablicą. Każdy element tej tablicy jest również tablicy skrótów, który musi mieć co najmniej jeden klucz o nazwie **NodeName**:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
         },
 
- 
+
         @{
             NodeName = "VM-2"
         },
 
- 
+
         @{
             NodeName = "VM-3"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 Kluczy można dodać do każdej tabeli skrótów:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
             Role     = "WebServer"
         },
 
- 
+
         @{
             NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
- 
+
         @{
             NodeName = "VM-3"
             Role     = "WebServer"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
-Aby zastosować właściwości dla wszystkich węzłów, można utworzyć członkiem **AllNodes** tablica, która ma **NodeName** z `*`. Na przykład, w celu każdego węzła `LogPath` właściwości, można to zrobić:
+Aby zastosować właściwości dla wszystkich węzłów, można utworzyć członkiem **AllNodes** tablica, która ma **NodeName** z `*`.
+Na przykład, w celu każdego węzła `LogPath` właściwości, można to zrobić:
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName     = "*"
             LogPath      = "C:\Logs"
         },
 
- 
+
         @{
             NodeName     = "VM-1"
             Role         = "WebServer"
@@ -108,13 +114,13 @@ $MyData =
             SiteName     = "Website1"
         },
 
- 
+
         @{
             NodeName     = "VM-2"
             Role         = "SQLServer"
         },
 
- 
+
         @{
             NodeName     = "VM-3"
             Role         = "WebServer"
@@ -129,7 +135,8 @@ Jest to równoważne dodawania właściwości o nazwie `LogPath` o wartości `"C
 
 ## <a name="defining-the-configurationdata-hashtable"></a>Definiowanie ConfigurationData hashtable
 
-Można zdefiniować **ConfigurationData** jako zmiennej w ramach tego samego pliku skryptu jako konfiguracji (jak w naszych przykładach poprzedniej) lub w oddzielnej `.psd1` pliku. Aby zdefiniować **ConfigurationData** w `.psd1` pliku, Utwórz plik, który zawiera tylko hashtable, który reprezentuje dane konfiguracji.
+Można zdefiniować **ConfigurationData** jako zmiennej w ramach tego samego pliku skryptu jako konfiguracji (jak w naszych przykładach poprzedniej) lub w oddzielnej `.psd1` pliku.
+Aby zdefiniować **ConfigurationData** w `.psd1` pliku, Utwórz plik, który zawiera tylko hashtable, który reprezentuje dane konfiguracji.
 
 Na przykład można utworzyć pliku o nazwie `MyData.psd1` z następującą zawartość:
 
@@ -186,11 +193,11 @@ DSC udostępnia trzy zmienne specjalne, których można użyć w skrypcie konfig
 ## <a name="using-non-node-data"></a>Przy użyciu danych z systemem innym niż węzeł
 
 Jak przedstawiono w poprzednich przykładach, możemy **ConfigurationData** hashtable może mieć co najmniej jeden klucz oprócz wymaganych **AllNodes** klucza.
-W przykładach w niniejszym temacie, firma Microsoft ma używany tylko jeden dodatkowy węzeł o nazwie go `NonNodeData`. Można jednak określić dowolną liczbę dodatkowych kluczy i nazwy dowolnych znaków.
+W przykładach w niniejszym temacie, firma Microsoft ma używany tylko jeden dodatkowy węzeł o nazwie go `NonNodeData`.
+Można jednak określić dowolną liczbę dodatkowych kluczy i nazwy dowolnych znaków.
 
 Na przykład przy użyciu danych z systemem innym niż węzeł, zobacz [oddzielanie danych konfiguracji i środowiska](separatingEnvData.md).
 
 ## <a name="see-also"></a>Zobacz też
 - [Opcje poświadczeń w danych konfiguracji](configDataCredentials.md)
 - [Konfiguracji DSC](configurations.md)
-

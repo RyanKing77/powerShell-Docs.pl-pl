@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "więcej learning programu powershell"
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: więcej learning programu powershell
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>Więcej Learning programu PowerShell
 
-Inne źródła informacji programu PowerShell  
+Inne źródła informacji programu PowerShell
 
 ## <a name="resources-for-windows-powershell-users"></a>Zasoby dla użytkowników programu Windows PowerShell
 
@@ -32,11 +32,11 @@ Oprócz dostępnej w wierszu polecenia następujące zasoby zawierają więcej i
 
 ### <a name="script-center-learn"></a>Dowiedz się, Centrum skryptów
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials zajęty serii administratora
-- [PowerShell "SmowerShell", dlatego należy dowiedzieć się, programu Windows PowerShell &#40; Część 1 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Niektórzy go za pośrednictwem potoku — jak złożone poleceń programu Windows PowerShell dla zabawy i zysku &#40; Część 2 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Jedyny dostawca? Nie trudno — przyjrzeć się dostawcy programu PowerShell Windows &#40; Część 3 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Zdarzenie głównego — środowisko Windows PowerShell jest dzienniki zdarzeń &#40; Część 4 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Więcej niż jest możliwe zdalnie — za pomocą środowiska Windows PowerShell do zarządzania pulpitu zdalnego &#40; Część 5 &#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell "SmowerShell" — Dlaczego należy dowiedzieć się środowiska Windows PowerShell &#40;część 1&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Niektórzy go za pośrednictwem potoku — jak złożone poleceń programu Windows PowerShell dla zabawy i zysku &#40;część 2&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Jedyny dostawca? Nie trudno — przyjrzeć się programu Windows PowerShell dostawców &#40;część 3&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [Zdarzenie głównego — środowisko Windows PowerShell jest dzienniki zdarzeń &#40;część 4&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Więcej niż jest możliwe zdalnie — za pomocą środowiska Windows PowerShell do zarządzania pulpitu zdalnego &#40;część 5&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Dowiedz się go teraz przed awaryjnego
 - [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
@@ -51,4 +51,3 @@ Zasoby, aby pomóc deweloperom tworzenie własnych środowiska Windows PowerShel
 
 - [Zestaw SDK programu Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89595). Zawiera informacje.
 - [Przewodnik programisty programu PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89596). Udostępnia samouczki. Zawiera także informacje o podstawowych pojęciach środowiska Windows PowerShell.
-

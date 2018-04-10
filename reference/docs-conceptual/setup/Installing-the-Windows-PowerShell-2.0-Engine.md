@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Instalowanie aparat Windows PowerShell 2.0
+title: Instalowanie aparatu programu Windows PowerShell 2.0
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: ff6c2b52b8948472ace3ee35cd4c6aa2dbf46c25
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="installing-the-windows-powershell-20-engine"></a>Instalowanie aparat Windows PowerShell 2.0
+# <a name="installing-the-windows-powershell-20-engine"></a>Instalowanie aparatu programu Windows PowerShell 2.0
 W tym temacie wyjaśniono, jak zainstalować aparat Windows PowerShell 2.0.
 
 Program Windows PowerShell 3.0 została zaprojektowana jako wstecznie zgodne z programu Windows PowerShell 2.0. Polecenia cmdlet, dostawców przystawki, moduły i skrypty napisane dla systemu Windows PowerShell 2.0 uruchom bez zmian w środowisku Windows PowerShell 3.0 i Windows PowerShell 4.0. Jednak ze względu na zmiany w zasadach aktywacji środowiska wykonawczego Microsoft .NET Framework 4, programy hosta programu Windows PowerShell, które zostały napisane dla systemu Windows PowerShell 2.0 i skompilować z Common Language Runtime (CLR) 2.0 nie można uruchomić bez żadnych modyfikacji w później wersje programu Windows PowerShell, który jest skompilowana przy użyciu CLR 4.0.
@@ -77,5 +77,4 @@ Pakiet Windows Management Framework 3.0, który instaluje program Windows PowerS
 - [Wymagania systemowe programu PowerShell systemu Windows](Windows-PowerShell-System-Requirements.md)
 - [Instalowanie programu Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Uruchamianie środowiska Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-- [Uruchamianie aparat Windows PowerShell 2.0](Starting-the-Windows-PowerShell-2.0-Engine.md)
-
+- [Uruchamianie aparatu programu Windows PowerShell 2.0](Starting-the-Windows-PowerShell-2.0-Engine.md)

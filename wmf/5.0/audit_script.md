@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="script-tracing-and-logging"></a>Skrypt śledzenie i rejestrowanie
+# <a name="script-tracing-and-logging"></a>Śledzenie i rejestrowanie skryptów
 
 Gdy ma już środowiska Windows PowerShell **LogPipelineExecutionDetails** zasad grupy ustawień dziennika wywołanie polecenia cmdlet, język skryptów dla środowiska PowerShell ma wystarczająco dużo funkcje, które możesz chcieć logowania i/lub inspekcji. Nowa funkcja śledzenia szczegółowy skrypt umożliwia szczegółowe śledzenie i analizy użycia skryptów środowiska Windows PowerShell w systemie. Po włączeniu śledzenia szczegółowy skrypt programu Windows PowerShell dzienników wszystkich blokach skryptu w dzienniku zdarzeń ETW **Microsoft-Windows-PowerShell/Operational**. Jeśli blok skryptu tworzy innego bloku skryptu (na przykład skrypt, który wywołuje polecenie cmdlet Invoke-Expression w ciągu), tym wynikowy bloku skryptu jest również rejestrowane.
 
@@ -23,7 +23,7 @@ Dostępne są następujące zdarzenia:
 | Kod operacji  | Utworzenie                                      |
 | Zadanie    | CommandStart                                |
 | Słowo kluczowe | Obszarze działania                                    |
-| Identyfikator zdarzenia | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Wiadomość | Tworzenie tekstu Scriptblock (%1 z %2): </br> %3 </br> Blok skryptu ID: %4 |
 
 
@@ -37,7 +37,7 @@ Po włączeniu pełnego rejestrowania zapisy funkcji rozpoczęcia i zakończenia
 | Kod operacji  | Otwórz (/ zamknięcie)                                         |
 | Zadanie    | CommandStart (/ CommandStop)                           |
 | Słowo kluczowe | Obszarze działania                                               |
-| Identyfikator zdarzenia | Blok skryptu\_wywołania\_Start\_szczegółów (0x1009 = 4105) / </br> Blok skryptu\_wywołania\_pełną\_szczegółów (0x100A = 4106) |
+| EventId | Blok skryptu\_wywołania\_Start\_szczegółów (0x1009 = 4105) / </br> Blok skryptu\_wywołania\_pełną\_szczegółów (0x100A = 4106) |
 | Wiadomość | Wprowadzenie (/ ukończone) wywołanie ScriptBlock identyfikator: %1 </br> Identyfikator działania: %2 |
 
 Identyfikator to identyfikator GUID reprezentujący bloku skryptu (która może zostać skorelowane zdarzenia o identyfikatorze 0x1008) i identyfikator obszaru działania reprezentuje obszaru działania, w którym uruchomiono ten blok skryptu.
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -107,4 +107,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Podobnie jak w przypadku wszystkich systemów rejestrowania mające buforu przechowywania ograniczone (tj. dzienniki zdarzeń systemu Windows), jest jeden atak tej infrastruktury do wypełniania dziennika fałszywe zdarzenia, aby ukryć dowód wcześniej. Aby zabezpieczyć się na ataki, upewnij się, że masz jakiegoś zbierania dzienników zdarzeń — konfiguracja (np. Windows funkcji przekazywania zdarzeń, [analizie atakujący dokonuje monitorowania dziennika zdarzeń systemu Windows z](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) można przenieść dzienniki zdarzeń wylogowuje na komputerze jako najszybciej, jak to możliwe.
-

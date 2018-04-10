@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Oddzielanie danych konfiguracji i środowiska"
-ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Oddzielanie danych konfiguracji i środowiska
+ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Oddzielanie danych konfiguracji i środowiska
 
@@ -26,18 +26,19 @@ Aby uzyskać szczegółowy opis **ConfigurationData** hashtable, zobacz [przy u�
 
 ## <a name="a-simple-example"></a>Prosty przykład
 
-Przyjrzyjmy się jest bardzo prosty przykład, aby zobaczyć, jak to działa. Utworzymy jednej konfiguracji, który zapewnia, że **IIS** na niektóre węzły, a ma **funkcji Hyper-V** znajduje się na inne: 
+Przyjrzyjmy się jest bardzo prosty przykład, aby zobaczyć, jak to działa.
+Utworzymy jednej konfiguracji, który zapewnia, że **IIS** na niektóre węzły, a ma **funkcji Hyper-V** znajduje się na inne:
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
     Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
         WindowsFeature IISInstall {
             Ensure = 'Present'
             Name   = 'Web-Server'
         }
-        
+
     }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -48,7 +49,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -75,12 +76,12 @@ Wynik jest, że są tworzone dwa pliki MOF:
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
+
 `$MyData` Określa dwóch różnych węzłach, każdego z jego własnej `NodeName` i `Role`. Konfiguracja dynamicznie tworzy **węzła** bloków, wykonując kolekcja węzłów otrzymuje od `$MyData` (w szczególności `$AllNodes`) i filtry kolekcji przed `Role` właściwości...
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>Przy użyciu danych konfiguracji do definiowania środowisk projektowania i produkcji
@@ -128,7 +129,9 @@ Zdefiniujemy danych środowiska projektowania i produkcji w namd pliku `DevProdE
 
 ### <a name="configuration-script-file"></a>Plik skryptu konfiguracji
 
-Teraz, w konfiguracji, który jest zdefiniowany w `.ps1` pliku, możemy filtrować węzłów zdefiniowanego w `DevProdEnvData.psd1` przez ich rolę (`MSSQL`, `Dev`, lub obie) i odpowiednio je skonfigurować. Środowisko projektowe ma serwer SQL i IIS na jednym węźle, podczas gdy środowiska produkcyjnego ma ich w dwóch różnych węzłach. Zawartość witryny różni się również, określony przez `SiteContents` właściwości.
+Teraz, w konfiguracji, który jest zdefiniowany w `.ps1` pliku, możemy filtrować węzłów zdefiniowanego w `DevProdEnvData.psd1` przez ich rolę (`MSSQL`, `Dev`, lub obie) i odpowiednio je skonfigurować.
+Środowisko projektowe ma serwer SQL i IIS na jednym węźle, podczas gdy środowiska produkcyjnego ma ich w dwóch różnych węzłach.
+Zawartość witryny różni się również, określony przez `SiteContents` właściwości.
 
 Na końcu skryptu konfiguracji nazywamy konfiguracji (Skompiluj go do dokumentu MOF), przekazywanie `DevProdEnvData.psd1` jako `$ConfigurationData` parametru.
 
@@ -147,7 +150,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -182,7 +185,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -203,7 +206,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -232,10 +235,10 @@ Po uruchomieniu tej konfiguracji są tworzone trzy pliki MOF (po jednej dla każ
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
@@ -257,39 +260,39 @@ W tym przykładzie `ConfigFileContents` jest dostępny z poziomu wiersza:
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -298,14 +301,14 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
@@ -313,4 +316,3 @@ configuration WebsiteConfig
 - [Przy użyciu danych konfiguracji](configData.md)
 - [Opcje poświadczeń w danych konfiguracji](configDataCredentials.md)
 - [Konfiguracji DSC](configurations.md)
-

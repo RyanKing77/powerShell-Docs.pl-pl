@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
+keywords: wmf,powershell,setup
 title: Oprogramowanie Windows Management Framework (WMF)
-ms.openlocfilehash: 9a9281c5eeb771c472623bff6fa6bd6d6aa7814a
-ms.sourcegitcommit: fee03bb9802222078c8d5f6c8efb0698024406ed
+ms.openlocfilehash: 715ac6fe5df47066415a65d91a0982fd7070a426
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="windows-management-framework"></a>Oprogramowanie Windows Management Framework
+# <a name="windows-management-framework"></a>Windows Management Framework
 
 Windows Management Framework (WMF) jest mechanizm dostarczania, zapewniająca interfejsu zarządzania zgodny w różnych odmian systemu Windows i Windows Server.
 Instalację programu WMF klienci uzyskują swobodne współdziałanie między kombinacje systemów operacyjnych w ich środowisku.
@@ -24,7 +24,7 @@ Instalacja WMF dodaje i/lub aktualizuje następujące funkcje:
 - Zdalne zarządzanie systemem Windows (WinRM)
 - Instrumentacja zarządzania Windows (WMI)
 - Usługi sieci Web programu PowerShell systemu Windows (rozszerzenie OData IIS zarządzania)
-- Spis oprogramowania Logging (SIL)
+- Rejestrowanie spisu oprogramowania (SIL)
 - Menedżer serwera modelu wspólnych informacji dostawcy
 
 ## <a name="wmf-release-notes"></a>Informacje o wersji platformy WMF
@@ -41,7 +41,7 @@ Aby poznać różne udoskonalenia środowiska PowerShell i inne składniki danej
 | Wersja systemu operacyjnego | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Jest dostarczany w polu |  |  |  |  |
-| 10 systemu Windows | Jest dostarczany w polu | Jest dostarczany w polu  | | | |  
+| 10 systemu Windows | Jest dostarczany w polu | Jest dostarczany w polu  | | | |
 | Windows Server 2012 R2| Tak | Tak | Jest dostarczany w polu |  |  |
 | Windows 8.1 | Tak | Tak |  Jest dostarczany w polu |  |  |
 | Windows Server 2012 | Tak | Tak | Tak |  Jest dostarczany w polu | |
@@ -55,4 +55,3 @@ Aby poznać różne udoskonalenia środowiska PowerShell i inne składniki danej
 
 **"Jest dostarczany w polu"**: funkcje `specified WMF` zostały wysłane w wskazanych wersji systemu Windows i Windows Server.
 W związku z tym `specified WMF` nie muszą być zainstalowane w wersjach systemu operacyjnego wskazane.
-

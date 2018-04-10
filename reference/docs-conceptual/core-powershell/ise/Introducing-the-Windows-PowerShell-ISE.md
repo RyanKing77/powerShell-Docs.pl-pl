@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Wprowadzenie do środowiska Windows PowerShell ISE"
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: Wprowadzenie do środowiska Windows PowerShell ISE
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Wprowadzenie do środowiska Windows PowerShell ISE
 
@@ -20,13 +20,13 @@ Spróbuj te funkcje w środowisku Windows PowerShell ISE.
 
 Windows PowerShell ISE umożliwia dostosowanie niektórych aspektów jego wyglądu. Również ma własny profil programu Windows PowerShell, gdzie można przechowywać funkcje, aliasy, zmienne i poleceń, których można używać w środowisku Windows PowerShell ISE.
 
-### <a name="to-start-the-windows-powershell-ise"></a>Aby uruchomić program Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>Aby uruchomić program Windows PowerShell ISE
 
 Wykonaj jedną z następujących czynności:
 
 - Kliknij przycisk **Start**, wskaż pozycję **wszystkie programy**, wskaż pozycję **Windows PowerShell V2**, a następnie kliknij przycisk **programu Windows PowerShell ISE**.
 - W konsoli środowiska Windows PowerShell Cmd.exe lub w polu Uruchom typu **powershell_ise.exe**.
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>Aby uzyskać pomoc w środowisku Windows PowerShell ISE
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>Aby uzyskać pomoc w środowisku Windows PowerShell ISE
 
 Na **pomocy** menu, kliknij przycisk **pomocy programu Windows PowerShell**. Lub naciśnij klawisz F1. Plik, którego kliknięcie spowoduje otwarcie zawiera opis programu Windows PowerShell ISE i środowiska Windows PowerShell, w tym wszystkie dostępne z polecenie cmdlet Get-Help pomocy.

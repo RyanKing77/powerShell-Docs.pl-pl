@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Ułatwienia dostępu w środowisku Windows PowerShell ISE"
+title: Ułatwienia dostępu w środowisku Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Ułatwienia dostępu w środowisku Windows PowerShell ISE
+
 W tym temacie opisano funkcje ułatwień dostępu z systemu Windows PowerShell Integrated Scripting Environment (ISE), które mogą być przydatne.
 
 * [Jak zmienić rozmiar i położenie konsoli i okienka skryptu](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -31,6 +32,7 @@ Windows PowerShell ISE obsługuje tryb dużego kontrastu. Dla niedowidzących pu
 - Zmień rozmiar tekstu
 
 ## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>Jak zmienić rozmiar i położenie konsoli i okienka skryptu
+
 Poniższe kroki umożliwia zmieniać rozmiar i położenie w okienku konsoli i w okienku skryptów. Po ponownym otwarciu programu Windows PowerShell ISE, rozmiar i położenie wprowadzone zmiany zostaną zachowane.
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>Aby zmienić rozmiar okienka Skrypt i okienku konsoli
@@ -40,6 +42,7 @@ Poniższe kroki umożliwia zmieniać rozmiar i położenie w okienku konsoli i w
 2. Gdy wskaźnik myszy zmieni się podwójna strzałka, przeciągnij obramowanie, aby zmienić rozmiar okienka.
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>Aby przenieść okienko skryptu i w okienku konsoli
+
 Wykonaj jedną z następujących czynności:
 
 - Aby przenieść okienko skryptu powyżej w okienku konsoli, naciśnij klawisz **CTRL + 1** lub na pasku narzędzi kliknij **Pokaż pierwsze okienko skryptu** ikony, lub w **widoku** menu, kliknij przycisk **Pokaż Skrypt w górnym okienku**.
@@ -53,6 +56,7 @@ Wykonaj jedną z następujących czynności:
 - Wyświetlany w okienku skryptów, gdy w okienku konsoli jest zmaksymalizowane na prawej krawędzi wiersz kart, kliknij przycisk **Pokaż okienko skryptu** ikony, lub w **widoku** menu, kliknij, aby wybrać **Pokaż skryptu Okienko** opcji menu.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Skróty klawiaturowe do edycji tekstu
+
 Podczas edytowania tekstu, można użyć następujących skrótów klawiaturowych.
 
 |Akcja|Skróty klawiaturowe|Użyj w|
@@ -70,6 +74,7 @@ Podczas edytowania tekstu, można użyć następujących skrótów klawiaturowyc
 |**Cofnij**|CTRL+Z|Skrypt, okienko konsoli|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Skróty klawiaturowe do uruchamiania skryptów
+
 Podczas uruchamiania skryptów w okienku skryptów, można użyć następujących skrótów klawiaturowych.
 
 |Akcja|Skróty klawiaturowe|
@@ -83,6 +88,7 @@ Podczas uruchamiania skryptów w okienku skryptów, można użyć następującyc
 |**Karta** (do poprzedniego skryptu)|CTRL + SHIFT + TAB **Uwaga:** kartę do poprzedniego skryptu działa, jeśli masz tylko jedną Otwórz kartę programu PowerShell lub jeśli masz więcej niż jedną kartę programu PowerShell, Otwórz, a skupiono się w okienku skryptów.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Skróty klawiaturowe dostosowywania widoku
+
 Następujące skróty klawiaturowe służy do dostosowywania widoku w środowisku Windows PowerShell ISE. Są one dostępne z wszystkich okienka w aplikacji.
 
 |Akcja|Skróty klawiaturowe|
@@ -99,6 +105,7 @@ Następujące skróty klawiaturowe służy do dostosowywania widoku w środowisk
 |**Pomniejszenie**|CTRL+MINUS SIGN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Skróty klawiaturowe do debugowania skryptów
+
 Podczas debugowania skryptów, można użyć następujących skrótów klawiaturowych.
 
 |Akcja|Skróty klawiaturowe|Użyj w|
@@ -130,6 +137,7 @@ Podczas debugowania skryptów, można użyć następujących skrótów klawiatur
 |**Wyświetlenie konsoli debugowania poleceń**|H lub?|W okienku konsoli, podczas debugowania skryptu|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Skróty klawiaturowe dla kart środowiska Windows PowerShell
+
 Można użyć następujących skrótów klawiaturowych, korzystając z kart środowiska Windows PowerShell.
 
 |Akcja|Skróty klawiaturowe|
@@ -140,6 +148,7 @@ Można użyć następujących skrótów klawiaturowych, korzystając z kart śro
 |**Następna karta środowiska Windows PowerShell**|CTRL+TAB. Ten skrót działa tylko wtedy, gdy żadne pliki nie są otwarte na każdej z kart środowiska PowerShell.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Skróty klawiaturowe, uruchamianie i kończenie
+
 Można użyć następujących skrótów klawiaturowych, aby uruchomić konsolę programu Windows PowerShell (PowerShell.exe) lub aby zakończyć działanie programu Windows PowerShell ISE.
 
 |Akcja|Skróty klawiaturowe|
@@ -148,5 +157,5 @@ Można użyć następujących skrótów klawiaturowych, aby uruchomić konsolę 
 |**Uruchom PowerShell.exe** (konsoli środowiska Windows PowerShell)|CTRL+SHIFT+P|
 
 ## <a name="see-also"></a>Zobacz też
-- [Używanie środowiska Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Wprowadzenie do programu Windows PowerShell ISE](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

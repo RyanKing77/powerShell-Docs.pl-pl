@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
-ms.date: 2016-12-12
-title: "polecenia cmdlet dostępu do sieci Web"
+ms.date: 12/12/2016
+title: polecenia cmdlet dostępu do sieci Web
 ms.technology: powershell
-ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Polecenia cmdlet programu Windows PowerShell Web Access
 
@@ -44,11 +44,9 @@ Odinstalowuje aplikację sieci web programu Windows PowerShell za pomocą progra
 >
 >Aby wyświetlić listę wszystkich poleceń cmdlet, które są dostępne, należy użyć:
 >
-> `Get-Command –Module PowerShellWebAccess`polecenia cmdlet.
+> `Get-Command –Module PowerShellWebAccess` polecenia cmdlet.
 
-Aby uzyskać więcej informacji na temat lub składni dowolnych poleceń cmdlet należy użyć:  
-`Get-Help `*&lt;Nazwa polecenia cmdlet&gt;*  
-gdzie  *&lt;nazwa polecenia cmdlet&gt;*  to nazwa polecenia cmdlet, który chcesz wyszukać.
+Aby uzyskać więcej informacji na temat lub składni dowolnych poleceń cmdlet, należy użyć: `Get-Help ` *&lt;nazwa polecenia cmdlet&gt;* gdzie *&lt;nazwa polecenia cmdlet&gt;* to nazwa polecenia cmdlet, który chcesz wyszukać.
 
 Aby uzyskać szczegółowe informacje, możesz uruchomić dowolne z następujących poleceń cmdlet:
 
@@ -61,4 +59,3 @@ Aby uzyskać szczegółowe informacje, możesz uruchomić dowolne z następując
 Aby uzyskać więcej informacji na temat środowiska PowerShell Web Access zobacz następujące tematy:
 
 - [Zainstalować i używać programu Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md)
-

@@ -1,4 +1,4 @@
-# <a name="powershell-core-support-lifecycle"></a>Cykl życia pomocy technicznej Core programu PowerShell
+# <a name="powershell-core-support-lifecycle"></a>Cykl życia pomocy technicznej programu PowerShell Core
 
 Podstawowe środowisko PowerShell jest różne zestaw narzędzi i składników, które zostały wydane, zainstalowane i skonfigurowane oddzielnie od środowiska Windows PowerShell.
 W związku z tym Core programu PowerShell nie jest uwzględniony w umowach licencjonowania systemu Windows 7/8.1/10 lub Windows Server.
@@ -42,12 +42,12 @@ Podstawowe programu PowerShell oficjalnie jest obsługiwane na następujących p
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
 * Fedora 25, 26
-* System macOS 10.12 +
+* macOS 10.12+
 
 Naszej społeczności przyczynił się również pakiety dla następujących platform, ale nie są one oficjalnie suppported:
 
-* Arch systemu Linux
-* Kali systemu Linux
+* Arch Linux
+* Kali Linux
 * AppImage (działa na wielu platformach systemu Linux)
 
 ## <a name="notes-on-licensing"></a>Uwagi dotyczące licencjonowania
@@ -62,12 +62,12 @@ Obsługuje dla podstawowych programu PowerShell nie obejmuje innych modułów pr
 Na przykład za pomocą `ActiveDirectory` moduł, który jest dostarczany jako część systemu Windows Server jest to nieobsługiwany scenariusz.
 
 Jednak może być zgodne w niektórych przypadkach modułów, które nie obsługują jawnie Core programu PowerShell.
-Instalując [`WindowsPSModulePath`][] moduł, możesz dołączyć programu Windows PowerShell `PSModulePath` do podstawowego środowiska PowerShell `PSModulePath`.
+Instalując [ `WindowsPSModulePath` ][] moduł, możesz dołączyć programu Windows PowerShell `PSModulePath` do podstawowego środowiska PowerShell `PSModulePath`.
 
 Najpierw zainstaluj `WindowsPSModulePath` modułu z galerii programu PowerShell:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -89,4 +89,4 @@ Add-WindowsPSModulePath
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [licencji MIT]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-["WindowsPSModulePath"]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

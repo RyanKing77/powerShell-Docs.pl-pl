@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Ściąganie server najlepsze rozwiązania"
-ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Najlepsze rozwiązania dotyczące serwera ściągania
+ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="pull-server-best-practices"></a>Ściąganie server najlepsze rozwiązania
+# <a name="pull-server-best-practices"></a>Najlepsze rozwiązania dotyczące serwera ściągania
 
 >Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
 
@@ -17,8 +17,8 @@ Podsumowanie: Ten dokument jest przeznaczony do uwzględnienia procesu i rozszer
 
 | |Informacje o dokumencie|
 |:---|:---|
-Autor | Jan Greene  
-Recenzenci | Ben Gelens, Ravikanth Chaganti Aleksandar Nikolic  
+Autor | Jan Greene
+Recenzenci | Ben Gelens, Ravikanth Chaganti Aleksandar Nikolic
 Opublikowane | Kwietnia 2015 r.
 
 ## <a name="abstract"></a>Abstrakcyjny
@@ -31,8 +31,8 @@ Dwóch głównych sekcji tego dokumentu:
 
  - Planowanie konfiguracji
  - Przewodnik instalacji
- 
-### <a name="versions-of-the-windows-management-framework"></a>Wersje systemu Windows Management Framework 
+
+### <a name="versions-of-the-windows-management-framework"></a>Wersje systemu Windows Management Framework
 Informacje w tym dokumencie mają na celu dotyczą Windows Management Framework 5.0. WMF 5.0 nie jest wymagany do wdrażania i obsługi serwera ściągania, w wersji 5.0 jest celem tego dokumentu.
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Środowisko Windows PowerShell Konfiguracja żądanego stanu
@@ -40,10 +40,11 @@ Informacje w tym dokumencie mają na celu dotyczą Windows Management Framework 
 
 Programu Windows PowerShell udostępnia zestaw rozszerzeń języka żądany stan konfiguracji, który służy do tworzenia i zarządzania nimi deklaratywne konfiguracjach.
 
-### <a name="pull-server-role"></a>Rola serwera ściągania  
+### <a name="pull-server-role"></a>Rola serwera ściągania
 Serwer ściągania zapewnia scentralizowane usługi do przechowywania konfiguracji, które będą dostępne dla węzły docelowe.
- 
-Rola serwera ściągania może być wdrożony jako wystąpienie serwera sieci Web lub udziału plików SMB. Funkcja serwer sieci web zawiera interfejs OData i opcjonalnie możliwości węzły docelowe wysyłać raporty potwierdzenie powodzenie lub niepowodzenie zgodnie z konfiguracji są stosowane. Ta funkcja jest przydatna w środowiskach, w których istnieje wiele węzłów docelowych. Po skonfigurowaniu węzła docelowego (zwaną także klienta), aby wskazywały serwer ściągnięcia z najnowszą konfiguracją danych i wszystkie wymagane skrypty, zostały pobrane i zastosowane. Może to nastąpić jako jednorazowego wdrażania lub ponownie występującą zadania, które powoduje z serwerem ściągania istotny element zarządzania zmiany na dużą skalę. Aby uzyskać więcej informacji, zobacz [Windows PowerShell żądanego stanu ściągnięcia serwery konfiguracji](https://technet.microsoft.com/library/dn249913.aspx) i [wypychania i ściągania trybów konfiguracji](https://technet.microsoft.com/library/dn249913.aspx).
+
+Rola serwera ściągania może być wdrożony jako wystąpienie serwera sieci Web lub udziału plików SMB. Funkcja serwer sieci web zawiera interfejs OData i opcjonalnie możliwości węzły docelowe wysyłać raporty potwierdzenie powodzenie lub niepowodzenie zgodnie z konfiguracji są stosowane. Ta funkcja jest przydatna w środowiskach, w których istnieje wiele węzłów docelowych.
+Po skonfigurowaniu węzła docelowego (zwaną także klienta), aby wskazywały serwer ściągnięcia z najnowszą konfiguracją danych i wszystkie wymagane skrypty, zostały pobrane i zastosowane. Może to nastąpić jako jednorazowego wdrażania lub ponownie występującą zadania, które powoduje z serwerem ściągania istotny element zarządzania zmiany na dużą skalę. Aby uzyskać więcej informacji, zobacz [Windows PowerShell żądanego stanu ściągnięcia serwery konfiguracji](https://technet.microsoft.com/library/dn249913.aspx) i [wypychania i ściągania trybów konfiguracji](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Planowanie konfiguracji
 
@@ -59,7 +60,9 @@ Oprócz instalowania najnowszej zawartości z usługi Windows Update, istnieją 
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 zawiera funkcję o nazwie usługi Konfiguracja DSC. Funkcja usługi Konfiguracja DSC zapewnia funkcje serwera ściągania, w tym pliki binarne, które obsługują punktu końcowego OData. WMF znajduje się w systemie Windows Server i jest aktualizowane na elastyczne okresach między wersjami systemu Windows Server. [Nowe wersje WMF 5.0](http://aka.ms/wmf5latest) mogą obejmować aktualizacje do funkcji usługi Konfiguracja DSC. Z tego powodu najlepszym rozwiązaniem jest Pobierz najnowszą wersję platformy WMF oraz do kontroli wersji, aby określić, czy wersja zawiera aktualizację do funkcji usługi Konfiguracja DSC. Należy także przejrzeć sekcję w informacjach o wersji wskazuje, czy stan projektowania dla aktualizacji lub scenariusza jest wymienione jako trwała lub eksperymentalne. Aby umożliwić cyklu zlecenia zwinnego poszczególne funkcje mogą być deklarowane stabilny, co oznacza funkcję jest gotowa do użycia w środowisku produkcyjnym, nawet wtedy, gdy WMF wprowadzone w wersji zapoznawczej.
+Windows Server 2012 R2 zawiera funkcję o nazwie usługi Konfiguracja DSC. Funkcja usługi Konfiguracja DSC zapewnia funkcje serwera ściągania, w tym pliki binarne, które obsługują punktu końcowego OData.
+WMF znajduje się w systemie Windows Server i jest aktualizowane na elastyczne okresach między wersjami systemu Windows Server. [Nowe wersje WMF 5.0](http://aka.ms/wmf5latest) mogą obejmować aktualizacje do funkcji usługi Konfiguracja DSC. Z tego powodu najlepszym rozwiązaniem jest Pobierz najnowszą wersję platformy WMF oraz do kontroli wersji, aby określić, czy wersja zawiera aktualizację do funkcji usługi Konfiguracja DSC. Należy także przejrzeć sekcję w informacjach o wersji wskazuje, czy stan projektowania dla aktualizacji lub scenariusza jest wymienione jako trwała lub eksperymentalne.
+Aby umożliwić cyklu zlecenia zwinnego poszczególne funkcje mogą być deklarowane stabilny, co oznacza funkcję jest gotowa do użycia w środowisku produkcyjnym, nawet wtedy, gdy WMF wprowadzone w wersji zapoznawczej.
 Inne funkcje, które wcześniej zostały zaktualizowane przez wersje WMF (zobacz dalsze szczegółowe informacje o wersji platformy WMF):
 
  - Windows PowerShell, Windows PowerShell zintegrowane skryptów
@@ -77,7 +80,7 @@ Użyj **instalacji modułu** polecenia cmdlet z **PowerShellGet** modułu.
 Install-Module xPSDesiredStateConfiguration
 ```
 
-**PowerShellGet** moduł pobierze modułu do: 
+**PowerShellGet** moduł pobierze modułu do:
 
 `C:\Program Files\Windows PowerShell\Modules`
 
@@ -93,10 +96,7 @@ Czy masz dostęp do plików instalacji systemu Windows Server, które już zawie
 
 Wdrożeń na serwerze ściągania są obsługiwane na serwerach fizycznych i wirtualnych. Dostosowanie rozmiaru wymagania dotyczące serwera ściągania wymagania dotyczące systemu Windows Server 2012 R2.
 
-Procesor: 1,4 GHz 64-bitowy procesor  
-Pamięci: 512 MB  
-Miejsca na dysku: 32 GB  
-Sieci: Kartę Ethernet Gigabit  
+Procesor: 1,4 GHz 64-bitowy procesor pamięci: 512 MB miejsca na dysku: 32 GB sieci: kartę Ethernet Gigabit Ethernet
 
 Planowanie zadań|
 ---|
@@ -107,15 +107,22 @@ Jakie serwera rozmiar będzie żądać?|
 
 ### <a name="accounts"></a>Konta
 
-Nie istnieją wymagania konta usługi do wdrożenia wystąpienie serwera ściągania. Istnieją jednak scenariuszy, w którym można uruchomić witryny sieci Web w kontekście konta użytkownika lokalnego. Na przykład jeśli istnieje potrzeba do dostępu do udziału magazynu dla zawartości witryny sieci Web i serwera systemu Windows lub urządzenia obsługującego udziału magazynu nie są przyłączone do domeny.
+Nie istnieją wymagania konta usługi do wdrożenia wystąpienie serwera ściągania.
+Istnieją jednak scenariuszy, w którym można uruchomić witryny sieci Web w kontekście konta użytkownika lokalnego.
+Na przykład jeśli istnieje potrzeba do dostępu do udziału magazynu dla zawartości witryny sieci Web i serwera systemu Windows lub urządzenia obsługującego udziału magazynu nie są przyłączone do domeny.
 
 ### <a name="dns-records"></a>Rekordy DNS
 
-Konieczne będzie nazwę serwera do użycia podczas konfigurowania klientów do pracy z środowisku serwera ściągania. W środowisku testowym zazwyczaj jest używana nazwa hosta serwera lub adres IP serwera mogą być używane, gdy rozpoznawania nazw DNS jest niedostępna. W środowisku produkcyjnym lub w środowisku laboratoryjnym, który reprezentuje wdrożenia produkcyjnego najlepszym rozwiązaniem jest utworzenie rekordu CNAME systemu DNS.
+Konieczne będzie nazwę serwera do użycia podczas konfigurowania klientów do pracy z środowisku serwera ściągania.
+W środowisku testowym zazwyczaj jest używana nazwa hosta serwera lub adres IP serwera mogą być używane, gdy rozpoznawania nazw DNS jest niedostępna.
+W środowisku produkcyjnym lub w środowisku laboratoryjnym, który reprezentuje wdrożenia produkcyjnego najlepszym rozwiązaniem jest utworzenie rekordu CNAME systemu DNS.
 
-Rekordu CNAME systemu DNS umożliwia tworzenie aliasów do odwoływania się do hosta () rekordu. Celem rekordu dodatkowe nazwy jest większą elastyczność zmiany należy wymagać w przyszłości. Rekord CNAME może pomóc izolowania konfiguracji klienta, tak aby zmian w środowisku serwera, takie jak zastępowania serwera ściągania lub dodawanie ściągania dodatkowych serwerów, nie będzie wymagać odpowiednie zmiany w konfiguracji klienta.
+Rekordu CNAME systemu DNS umożliwia tworzenie aliasów do odwoływania się do hosta () rekordu.
+Celem rekordu dodatkowe nazwy jest większą elastyczność zmiany należy wymagać w przyszłości.
+Rekord CNAME może pomóc izolowania konfiguracji klienta, tak aby zmian w środowisku serwera, takie jak zastępowania serwera ściągania lub dodawanie ściągania dodatkowych serwerów, nie będzie wymagać odpowiednie zmiany w konfiguracji klienta.
 
-Przy wyborze nazwy rekordu DNS należy pamiętać o architektury rozwiązania. Jeśli przy użyciu równoważenia obciążenia, certyfikat używany do zabezpieczania ruchu za pośrednictwem protokołu HTTPS należy do tej samej nazwie jako rekord DNS. 
+Przy wyborze nazwy rekordu DNS należy pamiętać o architektury rozwiązania.
+Jeśli przy użyciu równoważenia obciążenia, certyfikat używany do zabezpieczania ruchu za pośrednictwem protokołu HTTPS należy do tej samej nazwie jako rekord DNS.
 
 Scenariusz |Najlepsze praktyki
 :---|:---
@@ -134,7 +141,8 @@ Jeśli to konieczne, jakiego typu rozwiązania do równoważenia obciążenia mo
 
 ### <a name="public-key-infrastructure"></a>Infrastruktura kluczy publicznych
 
-Większość organizacji dzisiaj wymagają czy ruch sieciowy, szczególnie w przypadku ruchu, który obejmuje takie dane poufne, jak serwery są skonfigurowane, musi być weryfikowane i/lub szyfrowane podczas przesyłania. Mimo że jest możliwa do wdrożenia serwera ściągania przy użyciu protokołu HTTP, która ułatwia żądań klientów w zwykły tekst, jest najlepszym rozwiązaniem jest bezpieczny ruch przy użyciu protokołu HTTPS. Usługę można skonfigurować do używania protokołu HTTPS przy użyciu zestawu parametrów w zasobie DSC **xPSDesiredStateConfiguration**.
+Większość organizacji dzisiaj wymagają czy ruch sieciowy, szczególnie w przypadku ruchu, który obejmuje takie dane poufne, jak serwery są skonfigurowane, musi być weryfikowane i/lub szyfrowane podczas przesyłania.
+Mimo że jest możliwa do wdrożenia serwera ściągania przy użyciu protokołu HTTP, która ułatwia żądań klientów w zwykły tekst, jest najlepszym rozwiązaniem jest bezpieczny ruch przy użyciu protokołu HTTPS. Usługę można skonfigurować do używania protokołu HTTPS przy użyciu zestawu parametrów w zasobie DSC **xPSDesiredStateConfiguration**.
 
 Wymagania dotyczące certyfikatów w celu zabezpieczania ruchu HTTPS na serwerze ściągania nie są inne niż zabezpieczenia inne witryny sieci web HTTPS. **Serwera sieci Web** możliwości wymagane spełniający szablon usług certyfikatów serwera systemu Windows.
 
@@ -149,9 +157,11 @@ Ma rozliczane na nazwę DNS w środowisku serwera ściągania, używanego progra
 
 ### <a name="choosing-an-architecture"></a>Wybieranie architektury
 
-Serwer ściągania można wdrożyć przy użyciu jednej usługi sieci web na usług IIS lub udziału plików SMB. W większości przypadków opcji usługi sieci web zapewni większą elastyczność. Nie jest nietypowe dla ruchu HTTPS przechodzenia przez granice sieci, często filtrowane lub zablokowane między sieciami ruchu SMB. Usługa sieci web oferuje również możliwość dołączenia serwera zgodność lub sieci Web Reporting Manager (zarówno tematy mogą być adresowane w przyszłych wersjach tego dokumentu), które udostępniają mechanizm dla klientów w celu zgłoszenia stanu wstecz do serwera w celu scentralizowanego widoczności. Protokół SMB zapewnia opcję dla środowisk, w którym zasady wymuszają serwera sieci web nie powinien zostać użyte, a pozostałe wymagania środowiska, wchodzące w roli serwera sieci web niepożądane. W obu przypadkach należy pamiętać oszacować wymagania dotyczące podpisywania i szyfrowania ruchu sieciowego. HTTPS, podpisywania SMB i zasady IPSEC są wszystkie opcje warto uwzględnieniu.
+Serwer ściągania można wdrożyć przy użyciu jednej usługi sieci web na usług IIS lub udziału plików SMB. W większości przypadków opcji usługi sieci web zapewni większą elastyczność. Nie jest nietypowe dla ruchu HTTPS przechodzenia przez granice sieci, często filtrowane lub zablokowane między sieciami ruchu SMB. Usługa sieci web oferuje również możliwość dołączenia serwera zgodność lub sieci Web Reporting Manager (zarówno tematy mogą być adresowane w przyszłych wersjach tego dokumentu), które udostępniają mechanizm dla klientów w celu zgłoszenia stanu wstecz do serwera w celu scentralizowanego widoczności.
+Protokół SMB zapewnia opcję dla środowisk, w którym zasady wymuszają serwera sieci web nie powinien zostać użyte, a pozostałe wymagania środowiska, wchodzące w roli serwera sieci web niepożądane.
+W obu przypadkach należy pamiętać oszacować wymagania dotyczące podpisywania i szyfrowania ruchu sieciowego. HTTPS, podpisywania SMB i zasady IPSEC są wszystkie opcje warto uwzględnieniu.
 
-#### <a name="load-balancing"></a>Równoważenie obciążenia  
+#### <a name="load-balancing"></a>Równoważenie obciążenia
 Klienci interakcji z usługą sieci web należy żądanie informacji, która jest zwracana w jednej odpowiedzi. Żadne kolejne żądania są wymagane, więc nie jest niezbędna dla platformy, aby upewnić się, że sesje są zachowywane na jednym serwerze w dowolnym momencie w czasie równoważenia obciążenia.
 
 Planowanie zadań|
@@ -166,11 +176,11 @@ Rozwiązanie równoważenia obciążenia wymaga obsługi infrastruktury kluczy p
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Konfiguracje przemieszczania i modułów na serwerze ściągania
 
-W ramach planowania konfiguracji konieczne będzie traktować, o których DSC moduły i konfiguracje będzie obsługiwana przez z serwerem ściągania. Na potrzeby planowania konfiguracji, należy mieć podstawową wiedzę na temat sposobu przygotowania i wdrożenia zawartości na serwerze ściągania. 
+W ramach planowania konfiguracji konieczne będzie traktować, o których DSC moduły i konfiguracje będzie obsługiwana przez z serwerem ściągania. Na potrzeby planowania konfiguracji, należy mieć podstawową wiedzę na temat sposobu przygotowania i wdrożenia zawartości na serwerze ściągania.
 
-W przyszłości w tej sekcji zostanie rozwinięty i zawarte w przewodniku obsługi dla serwera ściągania usługi Konfiguracja DSC.  Przewodnika przedstawimy codziennie proces zarządzania moduły i konfiguracje w czasie automatyzacji. 
+W przyszłości w tej sekcji zostanie rozwinięty i zawarte w przewodniku obsługi dla serwera ściągania usługi Konfiguracja DSC.  Przewodnika przedstawimy codziennie proces zarządzania moduły i konfiguracje w czasie automatyzacji.
 
-#### <a name="dsc-modules"></a>Moduły DSC  
+#### <a name="dsc-modules"></a>Moduły DSC
 Żądania konfiguracji klientów należy wymagane moduły DSC. Funkcje serwera ściągania jest zautomatyzować dystrybucji na żądanie DSC modułów do klientów. Wdrażając serwera ściągania po raz pierwszy, prawdopodobnie jako laboratorium lub Weryfikacja koncepcji, prawdopodobnie zamierzasz są zależne od konfiguracji DSC modułów, które są dostępne z repozytoria publicznej, takich jak galerii programu PowerShell lub repozytoriów PowerShell.org GitHub dla modułów DSC .
 
 Należy pamiętać, że nawet w przypadku zaufanej online źródeł, takich jak galerii programu PowerShell, każdy moduł, który jest pobierany z publicznej repozytorium należy ją sprawdzić przez innego środowiska PowerShell i wiedzy środowisko, w której będzie modułów używane przed ich użyciem w środowisku produkcyjnym. Podczas wykonywania tego zadania jest odpowiedni moment, aby sprawdzić wszelkie dodatkowe ładunku w module, który może być usunięty, takie jak dokumentacja i przykładowe skrypty. Zmniejsza to przepustowość sieci dla klienta w ich pierwsze żądanie po moduły będą pobierane przez sieć z serwera do klienta.
@@ -194,7 +204,8 @@ Zespół będzie odpowiedzialny za zarządzanie z platformy automatyzacji?|
 
 #### <a name="dsc-configurations"></a>Konfiguracji DSC
 
-Cel serwera ściągania jest zapewnienie scentralizowane mechanizm dystrybuowania konfiguracji DSC dla węzłów klienta. Konfiguracje są przechowywane na serwerze jako dokumenty MOF. Każdy dokument będą miały nazwę nadaną przez unikatowy identyfikator GUID. Jeśli klientów skonfigurowano nawiązać połączenia z serwerem ściągania, otrzymuje także identyfikatora GUID dla konfiguracji, należy zażądać ich. Ten system odwołujące się do konfiguracji przez identyfikator GUID gwarantuje unikatowości globalne i jest elastyczny tak, aby konfiguracji mogą być stosowane z szczegółowości na węzeł lub Konfiguracja roli obejmującej wiele serwerów, które powinny mieć identyczne konfiguracje.
+Cel serwera ściągania jest zapewnienie scentralizowane mechanizm dystrybuowania konfiguracji DSC dla węzłów klienta. Konfiguracje są przechowywane na serwerze jako dokumenty MOF.
+Każdy dokument będą miały nazwę nadaną przez unikatowy identyfikator GUID. Jeśli klientów skonfigurowano nawiązać połączenia z serwerem ściągania, otrzymuje także identyfikatora GUID dla konfiguracji, należy zażądać ich. Ten system odwołujące się do konfiguracji przez identyfikator GUID gwarantuje unikatowości globalne i jest elastyczny tak, aby konfiguracji mogą być stosowane z szczegółowości na węzeł lub Konfiguracja roli obejmującej wiele serwerów, które powinny mieć identyczne konfiguracje.
 
 #### <a name="guids"></a>Identyfikatory GUID
 
@@ -289,26 +300,26 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 #      * Automatically load certificate from Certificate Authority
 #      * Locate Modules and Configuration data on remote SMB share
 #      * Manage state of default websites in IIS
-    
+
 param (
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [System.String] $ServerName,
         [System.String] $DomainName,
         [System.String] $CARootName,
         [System.String] $CAServerFQDN,
         [System.String] $CertSubject,
         [System.String] $SMBShare,
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [PsCredential] $Credential
     )
-    
+
 Configuration PullServer {
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, xWebAdministration, xCertificate, xComputerManagement
     Node localhost
     {
-            
+
         # Configure the server to automatically corret configuration drift including reboots if needed.
         LocalConfigurationManager
         {
@@ -316,14 +327,14 @@ Configuration PullServer {
             RebootNodeifNeeded = $node.RebootNodeifNeeded
             CertificateId = $node.Thumbprint
         }
-    
+
         # Remove all GUI interfaces so the server has minimum running footprint.
         WindowsFeature ServerCore
         {
             Ensure = 'Absent'
             Name = 'User-Interfaces-Infra'
         }
-    
+
         # Set the server name and if needed, join a domain. If not joining a domain, remove the DomainName parameter.
         xComputer DomainJoin
         {
@@ -331,7 +342,7 @@ Configuration PullServer {
             DomainName = $Node.DomainName
             Credential = $Node.Credential
         }
-    
+
         # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
@@ -373,14 +384,14 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
-    
+
         # Install the Windows Server DSC Service feature
         WindowsFeature DSCServiceFeature
         {
             Ensure = 'Present'
             Name = 'DSC-Service'
         }
-    
+
         # If using a certificate from a local Active Directory Enterprise Root Certificate Authority, complete a request and install the certificate
         xCertReq SSLCert
         {
@@ -390,7 +401,7 @@ Configuration PullServer {
             AutoRenew = $Node.AutoRenew
             Credential = $Node.Credential
         }
-    
+
         # Use the DSC resource to simplify deployment of the web service.  You might also consider modifying the default port, possibly leveraging port 443 in environments where that is enforced as a standard.
         xDSCWebService PSDSCPullServer
         {
@@ -405,10 +416,10 @@ Configuration PullServer {
             State = 'Started'
             DependsOn = '[WindowsFeature]DSCServiceFeature'
         }
-    
+
         # Validate web config file contains current DB settings
         xWebConfigKeyValue CorrectDBProvider
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbprovider'
             Value = 'System.Data.OleDb'
@@ -416,17 +427,17 @@ Configuration PullServer {
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
         xWebConfigKeyValue CorrectDBConnectionStr
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbconnectionstr'
             Value = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\WindowsPowerShell\DscService\Devices.mdb;'
             WebsitePath = 'IIS:\sites\PSDSCPullServer'
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
-    
+
         # Stop the default website
-        xWebsite StopDefaultSite  
-        { 
+        xWebsite StopDefaultSite
+        {
             Ensure = 'Present'
             Name = 'Default Web Site'
             State = 'Stopped'
@@ -456,8 +467,8 @@ $configData = @{
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
-    
-# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share' 
+
+# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
 
@@ -468,7 +479,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 function Verify-DSCPullServer ($fqdn) {
     ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN' 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
 
 Expected Result:
 Action
@@ -485,14 +496,14 @@ Configuration PullClient {
     $ID,
     $Server
     )
-        LocalConfigurationManager 
-                { 
+        LocalConfigurationManager
+                {
                     ConfigurationID = $ID;
                     RefreshMode = 'PULL';
                     DownloadManagerName = 'WebDownloadManager';
                     RebootNodeIfNeeded = $true;
                     RefreshFrequencyMins = 30;
-                    ConfigurationModeFrequencyMins = 15; 
+                    ConfigurationModeFrequencyMins = 15;
                     ConfigurationMode = 'ApplyAndAutoCorrect';
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
@@ -504,13 +515,13 @@ Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\'
 
 ## <a name="additional-references-snippets-and-examples"></a>Dodatkowe informacje, wstawki i przykłady
 
-Ten przykład przedstawia sposób ręcznie zainicjować połączenie klienta (wymaga WMF5) do testowania. 
+Ten przykład przedstawia sposób ręcznie zainicjować połączenie klienta (wymaga WMF5) do testowania.
 
 ```powershell
 Update-DSCConfiguration –Wait -Verbose
 ```
 
-[DnsServerResourceRecordName Dodaj](http://bit.ly/1G1H31L) polecenie cmdlet umożliwia dodanie typu rekordu CNAME do strefy DNS. 
+[DnsServerResourceRecordName Dodaj](http://bit.ly/1G1H31L) polecenie cmdlet umożliwia dodanie typu rekordu CNAME do strefy DNS.
 
 Funkcja programu PowerShell do [utworzyć sumy kontrolnej i opublikować MOF DSC serwerem ściągania SMB](http://bit.ly/1E46BhI) automatycznie generuje wymagane sumy kontrolnej, a następnie kopiuje pliki sumy kontrolnej i MOF konfiguracji na serwerze ściągania SMB.
 
@@ -518,10 +529,7 @@ Funkcja programu PowerShell do [utworzyć sumy kontrolnej i opublikować MOF DSC
 
 Plik danych są przechowywane do utworzenia informacji podczas wdrażania serwera ściągania, która obejmuje usługę sieci web OData. Typ pliku zależy od systemu operacyjnego, zgodnie z poniższym opisem.
 
- - **Windows Server 2012**  
-Typ pliku będzie zawsze równa .mdb
- - **Windows Server 2012 R2**  
-Typ pliku zostaną domyślnie .edb, chyba że .mdb jest określona w konfiguracji
+ - **Windows Server 2012** zawsze będzie typ .mdb
+ - **Windows Server 2012 R2** typ pliku zostaną domyślnie .edb, chyba że .mdb jest określona w konfiguracji
 
 W [zaawansowane przykładowy skrypt](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) instalacji serwera ściągania, będzie również znaleźć przykład automatycznie kontrolować ustawienia pliku web.config w celu zapobieżenia wszelkie ryzyko błąd spowodowany przez typ pliku.
-

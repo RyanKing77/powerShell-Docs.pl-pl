@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Metoda SendConfigurationApplyAsync klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: e680d510aaac097f4f0de80660274230e028ed45
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 7ff821a277a548869862741551ee9897e417ea45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda SendConfigurationApplyAsync klasy MSFT_DSCLocalConfigurationManager
 
@@ -27,14 +27,11 @@ uint32 SendConfigurationApplyAsync(
 <a name="parameters"></a>Parametry
 ----------
 
-*ConfigurationData* \[w\]  
-Dane konfiguracji środowiska.
+*ConfigurationData* \[w\] danych środowiska w konfiguracji.
 
-*Wymuś* \[w\]  
-**wartość true,** wymusić konfigurację, aby zatrzymać.
+*Wymuś* \[w\] **true** wymusić konfigurację, aby zatrzymać.
 
-*jobId* \[in\]  
-Identyfikator zadania, dla którego ma zostać wysłany w konfiguracji.
+*Identyfikator zadania* \[w\] identyfikator zadania, dla którego ma zostać wysłany w konfiguracji.
 
 ## <a name="return-value"></a>Wartość zwracana
 ------------
@@ -56,11 +53,3 @@ To jest metodą statyczną.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

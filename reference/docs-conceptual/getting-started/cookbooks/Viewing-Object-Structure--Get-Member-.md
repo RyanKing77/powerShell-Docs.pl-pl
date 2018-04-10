@@ -1,28 +1,29 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Wyświetlanie obiektu struktury Get członka"
+title: Wyświetlanie obiektu struktury Get członka
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: cc93e45e4306b3d623c1d3d1096dd20c1afc59c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="viewing-object-structure-get-member"></a>Wyświetlanie struktury obiektu (Get Członkowskiego)
+
 Ponieważ obiekty odtworzyć główną rolę w programie Windows PowerShell, istnieje kilka poleceń natywnego zaprojektowane do pracy z dowolnego obiektu typu. Jest jednym z najważniejszych **elementu członkowskiego Get** polecenia.
 
 Najprostsza metoda do analizowania obiektów zwracanych przez polecenie ma przekazać dane wyjściowe tego polecenia, aby **elementu członkowskiego Get** polecenia cmdlet. **Elementu członkowskiego Get** polecenia cmdlet wyświetla posiadanie nazwy typu obiektu i pełną listę jej elementów członkowskich. Liczba elementów, które są zwracane czasami może być utrudnione. Na przykład obiekt procesu mogą mieć członków ponad 100.
 
 Aby wyświetlić wszystkie elementy członkowskie obiektu procesu i strony danych wyjściowych, aby wyświetlić wszystkie, wpisz:
 
-```
-PS> Get-Process | Get-Member | Out-Host -Paging
+```powershell
+Get-Process | Get-Member | Out-Host -Paging
 ```
 
 Dane wyjściowe tego polecenia będą wyglądać mniej więcej tak:
 
-```
+```output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -68,4 +69,3 @@ Istnieje ponad 60 właściwości dla procesu. Przyczyny, dla której środowiska
 > Określa sposób wyświetlania typu obiektu przy użyciu informacji zapisanych w plikach XML, których nazwy kończą się w, środowiska Windows PowerShell. format.ps1xml. Formatowanie danych dla procesu obiektów, które są obiektami .NET System.Diagnostics.Process, znajduje się w DotNetTypes.format.ps1xml.
 
 Jeśli potrzebujesz przyjrzeć się właściwości innych niż te, które są domyślnie wyświetlane środowiska Windows PowerShell, należy samodzielnie format danych wyjściowych. Można to zrobić za pomocą poleceń cmdlet formatu.
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: polecenia cmdlet programu PowerShell
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Odinstaluj pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 Wskazuje, że certyfikaty testowe utworzone przez **zainstalować\_PswaWebApplication** polecenia cmdlet (z **UseTestCertificate** parametru) zostaną usunięte.
 Tylko certyfikatu testowego z taką samą nazwę jak utworzony przez **Install-PswaWebApplication** polecenia cmdlet zostanie usunięta.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -49,7 +49,7 @@ Tylko certyfikatu testowego z taką samą nazwę jak utworzony przez **Install-P
 
 Określa nazwę aplikacji sieci web do odinstalowania.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -62,7 +62,7 @@ Określa nazwę aplikacji sieci web do odinstalowania.
 
 Określa nazwę witryny sieci web, w którym zainstalowano aplikację sieci web.
 
-|||  
+|||
 |-|-|
 | Aliasy                              | brak                                 |
 | Wymagane?                            | false                                |
@@ -75,7 +75,7 @@ Określa nazwę witryny sieci web, w którym zainstalowano aplikację sieci web.
 
 Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
 
-|||  
+|||
 |-|-|
 | Wymagane?                            | false                                |
 | Pozycja?                            | o nazwie                                |
@@ -88,7 +88,7 @@ Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
 Pokazuje, co się stanie po uruchomieniu polecenia cmdlet.
 Polecenie cmdlet nie zostało uruchomione.
 
-|||  
+|||
 |-|-|
 | Wymagane?                            | false                                |
 | Pozycja?                            | o nazwie                                |

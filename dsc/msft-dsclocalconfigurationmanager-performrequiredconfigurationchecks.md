@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Metoda PerformRequiredConfigurationChecks klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 687c92f2dac5e8855731713e81390ac67615231e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 9cc4384088fcc39b09979b8ae4d023fc46307b13
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda PerformRequiredConfigurationChecks klasy MSFT_DSCLocalConfigurationManager
 
@@ -25,8 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 <a name="parameters"></a>Parametry
 ----------
 
-*Flagi* \[w\]  
-Maska bitowa określający typ uruchamianie sprawdzania spójności. Następujące wartości są prawidłowe i mogą być łączone przy użyciu bitowej **lub** operacji:
+*Flagi* \[w\] maski, która określa typ Sprawdzanie spójności, aby uruchomić. Następujące wartości są prawidłowe i mogą być łączone przy użyciu bitowej **lub** operacji:
 
 |Wartość |Opis |
 |:--- |:---|
@@ -55,11 +54,3 @@ To jest metodą statyczną.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-
