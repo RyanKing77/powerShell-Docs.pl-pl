@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Przy użyciu karta rozszerzenia"
+title: Używanie rozszerzenia karty
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-tab-expansion"></a>Przy użyciu karta rozszerzenia
+# <a name="using-tab-expansion"></a>Używanie rozszerzenia karty
+
 Wiersza polecenia powłoki często umożliwiają przeprowadzenie automatycznie, nazwy plików długa lub polecenia przyspieszenia polecenie wpisu i dostarczanie. Windows PowerShell umożliwia podanie nazw plików i polecenia cmdlet przez naciśnięcie przycisku **kartę** klucza.
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > Jednym z ograniczeń procesu rozszerzenia karta jest czy karty są zawsze interpretowane jako próby wykonania programu word. Jeśli skopiuj i Wklej przykładach poleceń w konsoli programu PowerShell, upewnij się, próbki nie zawiera karty; Jeśli tak, wyniki będą nieprzewidywalne i prawie na pewno nie będzie zgodny z zamierzonym.
-

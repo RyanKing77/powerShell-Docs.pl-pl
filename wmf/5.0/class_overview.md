@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: 8b414331bbfb7dc71d960241a6bc83b0b22641db
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 7eaa4dfb68bc299ad31bce81af96b6a760c4fcc5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="creating-custom-types-using-powershell-classes"></a>Tworzenie niestandardowych typów przy użyciu programu PowerShell klas
+# <a name="creating-custom-types-using-powershell-classes"></a>Tworzenie typów niestandardowych przy użyciu klas programu PowerShell
 
 Ulepszono Definiowanie klas i inne typy danych zdefiniowane przez użytkownika przy użyciu składni formalnego i semantyki są podobne do innych języków programowania zorientowany obiektowo język programu PowerShell. Celem jest umożliwienie deweloperom i informatykom obsługę programu PowerShell dla większej liczby przypadków użycia, upraszcza programowanie artefaktów środowiska PowerShell (takich jak zasoby DSC) i przyspieszyć pokrycia powierzchni zarządzania.
 
@@ -20,4 +20,3 @@ Ulepszono Definiowanie klas i inne typy danych zdefiniowane przez użytkownika p
 -   Obsługa dziedziczenia z klasy podstawowej zasobów DSC środowiska PowerShell i klasa w programie
 -   Debugowanie typów przy użyciu języka programu PowerShell
 -   Generowanie i obsługa wyjątków za pomocą mechanizmów formalnego i na odpowiedni poziom
-

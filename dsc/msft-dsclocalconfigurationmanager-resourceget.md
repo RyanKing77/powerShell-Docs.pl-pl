@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Metoda ResourceGet klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 2c055b3fab468f85c9e2f91cf1eaf1a4353b4660
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 3fd7ae54eb3ae782156dc4619ee0b6905dfb1212
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda ResourceGet klasy MSFT_DSCLocalConfigurationManager
 
@@ -28,17 +28,13 @@ uint32 ResourceGet(
 <a name="parameters"></a>Parametry
 ----------
 
-*Typ zasobu* \[w\]  
-Nazwa zasobu do wywołania.
+*Typ zasobu* \[w\] nazwę zasobu do wywołania.
 
-*Nazwa modułu* \[w\]  
-Nazwa modułu, który zawiera zasób do wywołania.
+*Nazwa modułu* \[w\] nazwę modułu, który zawiera zasób do wywołania.
 
-*Właściwość resourceProperty* \[w\]  
-Określa nazwę właściwości zasobów i jego wartość w tablicy skrótów klucz i wartość, odpowiednio. Użyj [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) polecenia cmdlet, aby wykryć właściwości zasobów i ich typów.
+*Właściwość resourceProperty* \[w\] Określa nazwę właściwości zasobów i jego wartość w tablicy skrótów jako klucz i wartość, odpowiednio. Użyj [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) polecenia cmdlet, aby wykryć właściwości zasobów i ich typów.
 
-*konfiguracje* \[out\]  
-Przy powrocie zawiera osadzony wystąpienia konfiguracji.
+*konfiguracje* \[limit\] przy powrocie, zawiera osadzony wystąpienia konfiguracji.
 
 ## <a name="return-value"></a>Wartość zwracana
 ------------
@@ -60,11 +56,3 @@ To jest metodą statyczną.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Tworzenie potoku ciągłej integracji i ciągłe wdrażanie w usłudze Konfiguracja DSC"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Tworzenie potoku ciągłej integracji i ciągłe wdrażanie w usłudze Konfiguracja DSC
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Tworzenie potoku ciągłej integracji i ciągłe wdrażanie w usłudze Konfiguracja DSC
 
 W tym przykładzie pokazano, jak utworzyć potok ciągłe wdrażanie ciągłe/integracji (CI/CD) przy użyciu programu PowerShell, DSC Pester i Visual Studio Team Foundation Server (TFS).
 
-Po potoku jest utworzony i skonfigurowany, można użyć pełni wdrożenia, skonfigurowania i przetestowania serwera DNS i skojarzonych rekordów hosta. Ten proces symuluje pierwsza część potok, który będzie używany w środowisku projektowym.
+Po potoku jest utworzony i skonfigurowany, można użyć pełni wdrożenia, skonfigurowania i przetestowania serwera DNS i skojarzonych rekordów hosta.
+Ten proces symuluje pierwsza część potok, który będzie używany w środowisku projektowym.
 
 Automatyczne potoku CI/CD pomaga w aktualizacji oprogramowania szybciej i bardziej niezawodnie zapewnienie, że cały kod jest przetestowany i czy bieżąca kompilacja kodu jest dostępna przez cały czas.
 
@@ -36,7 +37,7 @@ Jest to komputer, na którym będzie wykonywać wszystkie pracy konfigurowania i
 
 Komputer kliencki musi być komputerem z systemem Windows z zainstalowane następujące elementy:
 - [Git](https://git-scm.com/)
-- sklonowany z https://github.com/PowerShell/Demo_CI repozytorium git lokalnego
+- sklonowany z repozytorium git lokalnego https://github.com/PowerShell/Demo_CI
 - Edytor tekstu, takich jak [Visual Studio Code](https://code.visualstudio.com/)
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -60,7 +61,7 @@ Na komputerze musi być uruchomiona [systemu Windows Server 2016](https://www.mi
 ### <a name="testagent2"></a>TestAgent2
 
 Jest to komputer, który obsługuje ten przykład konfiguruje witryny sieci Web.
-Na komputerze musi być uruchomiona [systemu Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). 
+Na komputerze musi być uruchomiona [systemu Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
 
 ## <a name="add-the-code-to-tfs"></a>Dodaj kod do TFS
 
@@ -156,7 +157,8 @@ Znajduje to węzły, które zostały zdefiniowane jako mający rolę `DNSServer`
 
 Ważne jest określenie węzłów przy użyciu danych konfiguracji, podczas wykonywania elementu konfiguracji, ponieważ węzeł informacji prawdopodobnie spowoduje zmianę między środowiskami i przy użyciu danych konfiguracji umożliwia łatwe wprowadzić zmiany w informacjach węzła bez konieczności zmieniania kodu konfiguracji.
 
-W pierwszym bloku zasobów, wywołuje konfiguracji [WindowsFeature](windowsFeatureResource.md) aby upewnić się, że jest włączona funkcja DNS. Bloki zasobów, które należy wykonać wywołanie zasobów z [xDnsServer](https://github.com/PowerShell/xDnsServer) modułu, aby skonfigurować strefa podstawowa i rekordów DNS.
+W pierwszym bloku zasobów, wywołuje konfiguracji [WindowsFeature](windowsFeatureResource.md) aby upewnić się, że jest włączona funkcja DNS.
+Bloki zasobów, które należy wykonać wywołanie zasobów z [xDnsServer](https://github.com/PowerShell/xDnsServer) modułu, aby skonfigurować strefa podstawowa i rekordów DNS.
 
 Zwróć uwagę, że dwa `xDnsRecord` bloki są ujęte w `foreach` pętli, które iterację tablic w danych konfiguracji.
 Ponownie, dane konfiguracji są tworzone przez `DevEnv.ps1` skryptu, który przyjrzymy dalej.
@@ -199,7 +201,8 @@ W tym przypadku tylko `RawEnvData` parametr jest używany.
 ### <a name="the-psake-build-script"></a>Psake skryptu kompilacji
 
 [Psake](https://github.com/psake/psake) kompilacji skryptu zdefiniowane w `Build.ps1` (z katalogu głównego repozytorium Demo_CI `./InfraDNS/Build.ps1`) definiuje zadania, które są częścią kompilacji.
-Definiuje również inne zadania zależy od każdego zadania. Po wywołaniu, skrypt psake upewnia się, że określonego zadania (lub zadania o nazwie `Default` Jeśli nie zostanie określona) działa i że wszystkie zależności również uruchomić (tak, aby uruchomić zależności zależności, jest rekursywny, i tak dalej).
+Definiuje również inne zadania zależy od każdego zadania.
+Po wywołaniu, skrypt psake upewnia się, że określonego zadania (lub zadania o nazwie `Default` Jeśli nie zostanie określona) działa i że wszystkie zależności również uruchomić (tak, aby uruchomić zależności zależności, jest rekursywny, i tak dalej).
 
 W tym przykładzie `Default` zadań jest zdefiniowany jako:
 
@@ -263,7 +266,7 @@ Tworzy foldery używane dla przykładu i usuwa wszystkie wyniki testów, pliki d
 
 [Psake](https://github.com/psake/psake) skrypt wdrożenia zdefiniowane w `Deploy.ps1` (z katalogu głównego repozytorium Demo_CI `./InfraDNS/Deploy.ps1`) definiuje zadań, które wdrażanie i uruchamianie konfiguracji.
 
-`Deploy.ps1`definiuje następujące zadania:
+`Deploy.ps1` definiuje następujące zadania:
 
 #### <a name="deploymodules"></a>DeployModules
 
@@ -334,8 +337,8 @@ Ten krok kompilacji działa `initiate.ps1` pliku, który wywołuje psake skryptu
 
 ### <a name="publish-test-results"></a>Publikowanie wyników testu
 
-1. Ustaw **Format wyniku testu** do`NUnit`
-1. Ustaw **plików z wynikami testów** do`InfraDNS/Tests/Results/*.xml`
+1. Ustaw **Format wyniku testu** do `NUnit`
+1. Ustaw **plików z wynikami testów** do `InfraDNS/Tests/Results/*.xml`
 1. Ustaw **tytułu uruchomienia testu** do `Unit`.
 1. Upewnij się, że **opcje sterowania** **włączone** i **są zawsze uruchamiane** są wybrane.
 
@@ -352,15 +355,15 @@ Ten krok kompilacji uruchamia testy jednostkowe w skrypcie Pester analizujemy wc
     **\Integration\**
     ```
 
-1. Ustaw **TargetFolder** do`$(Build.ArtifactStagingDirectory)\`
+1. Ustaw **TargetFolder** do `$(Build.ArtifactStagingDirectory)\`
 
 Ten krok umożliwia skopiowanie kompilacji i test skryptów w katalogu przemieszczania więc zostać opublikowane zgodnie z kompilacji artefakty przez następnego kroku.
 
 ### <a name="publish-artifact"></a>Publikowanie artefaktów
 
-1. Ustaw **ścieżka do publikowania** do`$(Build.ArtifactStagingDirectory)\`
-1. Ustaw **nazwa artefaktu** do`Deploy`
-1. Ustaw **typu artefaktu** do`Server`
+1. Ustaw **ścieżka do publikowania** do `$(Build.ArtifactStagingDirectory)\`
+1. Ustaw **nazwa artefaktu** do `Deploy`
+1. Ustaw **typu artefaktu** do `Server`
 1. Wybierz `Enabled` w **opcje sterowania**
 
 ## <a name="enable-continuous-integration"></a>Włącz ciągłej integracji
@@ -393,21 +396,21 @@ Edytuj kroki w następujący sposób:
 
 ### <a name="powershell-script"></a>Skrypt programu PowerShell
 
-1. Ustaw **ścieżka skryptu** do`$(Build.DefinitionName)\Deploy\initiate.ps1"`
-1. Ustaw **argumenty** do`-fileName Deploy`
+1. Ustaw **ścieżka skryptu** do `$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. Ustaw **argumenty** do `-fileName Deploy`
 
 ### <a name="first-publish-test-results"></a>Najpierw opublikować wyniki testu
 
 1. Wybierz `NUnit` dla **Format wyniku testu** pola
-1. Ustaw **plików wyników testu** do`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. Ustaw **tytułu uruchomienia testu** do`Integration`
+1. Ustaw **plików wyników testu** do `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. Ustaw **tytułu uruchomienia testu** do `Integration`
 1. W obszarze **opcje sterowania**, sprawdź **są zawsze uruchamiane**
 
 ### <a name="second-publish-test-results"></a>Drugi opublikować wyniki testu
 
 1. Wybierz `NUnit` dla **Format wyniku testu** pola
-1. Ustaw **plików wyników testu** do`$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. Ustaw **tytułu uruchomienia testu** do`Acceptance`
+1. Ustaw **plików wyników testu** do `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. Ustaw **tytułu uruchomienia testu** do `Acceptance`
 1. W obszarze **opcje sterowania**, sprawdź **są zawsze uruchamiane**
 
 ## <a name="verify-your-results"></a>Sprawdź wyniki
@@ -422,10 +425,3 @@ Wynik wdrożenia można sprawdzić, otwierając przeglądarki na komputerze klie
 Ten przykład konfiguruje serwer DNS `TestAgent1` , aby adres URL `www.contoso.com` jest rozpoznawana jako `TestAgent2`, ale nie faktycznie wdrażać witryny sieci Web.
 Szkielet dokonaniem znajduje się w repozytorium w obszarze `WebApp` folderu.
 Zastępcze dostarczony do tworzenia skryptów psake, Pester testów i konfiguracji DSC umożliwia wdrażanie własnych witryny sieci Web.
-
-
-
-
-
-
-

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Konfigurowanie klienta ściągania przy użyciu nazwy konfiguracji"
-ms.openlocfilehash: 11de53fc349ce0ebacf0d4855d82fa8a22d55c99
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji
+ms.openlocfilehash: dd0526b118b404854b1e9b445ca50bdaafdd01c7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="setting-up-a-pull-client-using-configuration-names"></a>Konfigurowanie klienta ściągania przy użyciu nazwy konfiguracji
+# <a name="setting-up-a-pull-client-using-configuration-names"></a>Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji
 
 > Dotyczy: Środowiska Windows PowerShell 5.0
 
@@ -150,4 +150,3 @@ PullClientConfigNames
 
 * [Konfigurowanie klienta ściągnięcia z identyfikator konfiguracji](PullClientConfigNames.md)
 * [Konfigurowanie serwera ściągania usługi Konfiguracja DSC sieci web](pullServer.md)
-

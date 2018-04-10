@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, programu powershell, zabezpieczeń"
-title: "Przy użyciu JEA"
-ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, programu powershell, zabezpieczeń
+title: Korzystanie z usługi JEA
+ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="using-jea"></a>Przy użyciu JEA
+# <a name="using-jea"></a>Korzystanie z usługi JEA
 
 > Dotyczy: środowiska Windows PowerShell 5.0
 
@@ -103,7 +103,7 @@ $jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatD
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
 # Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands 
+Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 Można również utrwalić proxy poleceń cmdlet z niejawnych zdalnych przy użyciu [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
@@ -189,4 +189,3 @@ Zdecydowanie zaleca się utworzenie dedykowanego użytkownika lokalnego z nie in
 Należy pamiętać, że nawet nieuprawnionego użytkownika nadal zalogować się do komputera z systemem Windows domyślnie, w tym przy użyciu nieograniczonego programu PowerShell.
 Które umożliwią jej Przeglądaj (niektóre) system plików i Dowiedz się więcej na temat środowiska systemu operacyjnego.
 Zablokowanie administratora funkcji Hyper-V, aby uzyskiwać dostęp tylko do maszyny Wirtualnej przy użyciu programu PowerShell bezpośrednio z JEA, konieczne będzie Odmowa logowania lokalnego uprawnień do konta JEA administratora funkcji Hyper-V.
-

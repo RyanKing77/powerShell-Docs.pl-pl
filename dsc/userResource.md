@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Zasób użytkownika DSC"
-ms.openlocfilehash: c1b8487d9adc899950d185036ada3a2fa3747417
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Zasób użytkownika DSC
+ms.openlocfilehash: 1c3efa8e3bf945c45834cbea7ddb0a6c3ffc5f45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 #<a name="dsc-user-resource"></a>Zasób użytkownika DSC #
 
- 
+
 >Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
 
 
@@ -37,18 +37,18 @@ User [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Właściwości
-|  Właściwość  |  Opis   | 
-|---|---| 
-| UserName| Wskazuje nazwę konta, dla którego chcesz zapewnić z określonym stanem.| 
-| Opis| Określa opis, który ma być używany dla konta użytkownika.| 
-| Wyłączone| Wskazuje, czy konto jest włączone. Ta właściwość jest ustawiana __$true__ aby upewnić się, że to konto jest wyłączone i ustaw ją na __$false__ aby upewnić się, że jest włączone.| 
-| Upewnij się| Wskazuje, czy konto istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że konto istnieje i ustaw ją na "Brak", aby upewnić się, że konto nie istnieje.| 
-| Imię i nazwisko| Określa ciąg z pełną nazwę, który ma być używany dla konta użytkownika.| 
-| Hasło| Wskazuje hasło, którego chcesz użyć dla tego konta. | 
-| PasswordChangeNotAllowed| Wskazuje, czy użytkownik może zmienić hasło. Ta właściwość jest ustawiana __$true__ aby upewnić się, że użytkownik nie można zmienić hasło i ustaw ją na __$false__ umożliwia użytkownikowi zmianę hasła. Wartość domyślna to __$false__.| 
-| PasswordChangeRequired| Wskazuje, czy użytkownik musi zmienić hasło przy następnym logowaniu. Ta właściwość jest ustawiana __$true__ Jeśli użytkownik musi zmienić hasło. Wartość domyślna to __$true__.| 
-| PasswordNeverExpires| Wskazuje, czy hasło wygaśnie. Aby upewnić się, że hasło dla tego konta nigdy nie wygasa, ustawić tę właściwość na __$true__i ustaw ją na __$false__ Jeśli hasło wygaśnie. Wartość domyślna to __$false__.| 
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Właściwość  |  Opis   |
+|---|---|
+| UserName| Wskazuje nazwę konta, dla którego chcesz zapewnić z określonym stanem.|
+| Opis| Określa opis, który ma być używany dla konta użytkownika.|
+| Wyłączone| Wskazuje, czy konto jest włączone. Ta właściwość jest ustawiana __$true__ aby upewnić się, że to konto jest wyłączone i ustaw ją na __$false__ aby upewnić się, że jest włączone.|
+| Upewnij się| Wskazuje, czy konto istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że konto istnieje i ustaw ją na "Brak", aby upewnić się, że konto nie istnieje.|
+| Imię i nazwisko| Określa ciąg z pełną nazwę, który ma być używany dla konta użytkownika.|
+| Hasło| Wskazuje hasło, którego chcesz użyć dla tego konta. |
+| PasswordChangeNotAllowed| Wskazuje, czy użytkownik może zmienić hasło. Ta właściwość jest ustawiana __$true__ aby upewnić się, że użytkownik nie można zmienić hasło i ustaw ją na __$false__ umożliwia użytkownikowi zmianę hasła. Wartość domyślna to __$false__.|
+| PasswordChangeRequired| Wskazuje, czy użytkownik musi zmienić hasło przy następnym logowaniu. Ta właściwość jest ustawiana __$true__ Jeśli użytkownik musi zmienić hasło. Wartość domyślna to __$true__.|
+| PasswordNeverExpires| Wskazuje, czy hasło wygaśnie. Aby upewnić się, że hasło dla tego konta nigdy nie wygasa, ustawić tę właściwość na __$true__i ustaw ją na __$false__ Jeśli hasło wygaśnie. Wartość domyślna to __$false__.|
+| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 
@@ -61,4 +61,3 @@ User UserExample
     DependsOn = "[Group]GroupExample" # Configures GroupExample first
 }
 ```
-

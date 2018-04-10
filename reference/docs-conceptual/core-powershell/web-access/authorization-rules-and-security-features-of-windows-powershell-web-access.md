@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-27
+ms.date: 06/27/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access"
-ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
+ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
 
@@ -186,7 +186,7 @@ Poniżej przedstawiono kilka przykładów tego scenariusza.
 - Niektórzy administratorzy przyznają określonym użytkownikom szerszy dostęp niż innym. Na przykład administrator tworzy dwie grupy użytkowników, **Administratorzy** i **Pomocpodstawowa**. Administrator tworzy również punkt końcowy z ograniczonym obszarem działania o nazwie **Punktkoncowypswa**i definiuje następujące dwie reguły: **Administratorzy\*,\***  i  **Pomocpodstawowa,\*, Punktkoncowypswa**. Pierwsza reguła zezwala wszystkim użytkownikom w **Admin** grupie dostępu do wszystkich komputerów, a druga zezwala wszystkim użytkownikom w **Pomocpodstawowa** dostęp tylko do komputerów z  **Punktkoncowypswa**.
 
 - Administrator skonfigurował prywatne środowisko testowe i chce zezwolić wszystkim autoryzowanym użytkownikom sieci na dostęp do wszystkich komputerów w sieci, do których zwykle mają oni dostęp, ze wszystkimi konfiguracjami sieci, do których zwykle mają dostęp. Ponieważ jest to prywatne środowisko testowe, administrator tworzy regułę autoryzacji, która nie jest bezpieczna.
-  - Administrator uruchamia polecenie cmdlet `Add-PswaAuthorizationRule * * *`, który używa wieloznacznego  **\***  do reprezentowania wszystkich użytkowników, wszystkie komputery i wszystkie konfiguracje.
+  - Administrator uruchamia polecenie cmdlet `Add-PswaAuthorizationRule * * *`, który używa wieloznacznego **\*** do reprezentowania wszystkich użytkowników, wszystkie komputery i wszystkie konfiguracje.
   - Ta reguła jest odpowiednikiem następującego polecenia: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
   >**Uwaga**:

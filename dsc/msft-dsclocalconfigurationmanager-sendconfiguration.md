@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Metoda SendConfiguration klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 72c59b5aad293fa561146e5ad6822f27f40f321f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 07ae48dd456e68be4ad0b09127ba9801359fd101
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda SendConfiguration klasy MSFT_DSCLocalConfigurationManager
 
@@ -26,11 +26,9 @@ uint32 SendConfiguration(
 <a name="parameters"></a>Parametry
 ----------
 
-*ConfigurationData* \[w\]  
-Dane konfiguracji środowiska.
+*ConfigurationData* \[w\] danych środowiska w konfiguracji.
 
-*Wymuś* \[w\]  
-**wartość true,** wymusić konfigurację, aby zatrzymać.
+*Wymuś* \[w\] **true** wymusić konfigurację, aby zatrzymać.
 
 ## <a name="return-value"></a>Wartość zwracana
 ------------
@@ -52,11 +50,3 @@ To jest metodą statyczną.
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

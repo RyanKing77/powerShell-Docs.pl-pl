@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "DSC dla systemu Linux nxUser zasobów"
-ms.openlocfilehash: 93e2b12af076fce687e045e3043c94fa82d61861
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: DSC dla systemu Linux nxUser zasobów
+ms.openlocfilehash: 222bd2191cf5c5f0a90ba947275ffde47d22ec86
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC dla systemu Linux nxUser zasobów
 
@@ -34,25 +34,25 @@ nxUser <string> #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość |  Wskazuje nazwę konta, dla którego chcesz zapewnić z określonym stanem. | 
+|  Właściwość |  Wskazuje nazwę konta, dla którego chcesz zapewnić z określonym stanem. |
 |---|---|
-| UserName| Określa lokalizację, w której chcesz zapewnić stan pliku lub katalogu.| 
-| Upewnij się| Określa, czy konto istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że konto istnieje i ustaw ją na "Brak", aby upewnić się, że konto nie istnieje.| 
-| Imię i nazwisko| Ciąg, który zawiera pełną nazwę dla konta użytkownika.| 
-| Opis| Opis konta użytkownika.| 
-| Hasło| Skrót hasła użytkownika w postaci odpowiednie dla tego komputera. Zazwyczaj jest to solone algorytmu SHA-256 lub wyznaczania wartości skrótu SHA-512. Debian i Ubuntu Linux tę wartość można wygenerować za pomocą polecenia mkpasswd. Dla innych dystrybucjach systemu Linux można wygenerować skrót metoda crypt biblioteki Crypt języka Python.| 
-| Wyłączone| Wskazuje, czy konto jest włączone. Ta właściwość jest ustawiana **$true** aby upewnić się, że to konto jest wyłączone i ustaw ją na **$false** aby upewnić się, że jest włączone.| 
-| PasswordChangeRequired| Wskazuje, czy użytkownik może zmienić hasło. Ta właściwość jest ustawiana **$true** aby upewnić się, że użytkownik nie można zmienić hasło i ustaw ją na **$false** umożliwia użytkownikowi zmianę hasła. Wartość domyślna to **$false**. Ta właściwość jest oceniana tylko wtedy, jeśli konto użytkownika nie istniał wcześniej i jest tworzona.| 
-| Parametr Katalog_macierzysty| Katalogu macierzystego użytkownika.| 
-| Identyfikator grupy| Identyfikator grupy podstawowej dla użytkownika.| 
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator bloku skryptu konfiguracji zasobu, który chcesz uruchomić jest najpierw "ResourceName", jego typ to "Typu zasobu" Składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.| 
+| UserName| Określa lokalizację, w której chcesz zapewnić stan pliku lub katalogu.|
+| Upewnij się| Określa, czy konto istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że konto istnieje i ustaw ją na "Brak", aby upewnić się, że konto nie istnieje.|
+| Imię i nazwisko| Ciąg, który zawiera pełną nazwę dla konta użytkownika.|
+| Opis| Opis konta użytkownika.|
+| Hasło| Skrót hasła użytkownika w postaci odpowiednie dla tego komputera. Zazwyczaj jest to solone algorytmu SHA-256 lub wyznaczania wartości skrótu SHA-512. Debian i Ubuntu Linux tę wartość można wygenerować za pomocą polecenia mkpasswd. Dla innych dystrybucjach systemu Linux można wygenerować skrót metoda crypt biblioteki Crypt języka Python.|
+| Wyłączone| Wskazuje, czy konto jest włączone. Ta właściwość jest ustawiana **$true** aby upewnić się, że to konto jest wyłączone i ustaw ją na **$false** aby upewnić się, że jest włączone.|
+| PasswordChangeRequired| Wskazuje, czy użytkownik może zmienić hasło. Ta właściwość jest ustawiana **$true** aby upewnić się, że użytkownik nie można zmienić hasło i ustaw ją na **$false** umożliwia użytkownikowi zmianę hasła. Wartość domyślna to **$false**. Ta właściwość jest oceniana tylko wtedy, jeśli konto użytkownika nie istniał wcześniej i jest tworzona.|
+| Parametr Katalog_macierzysty| Katalogu macierzystego użytkownika.|
+| Identyfikator grupy| Identyfikator grupy podstawowej dla użytkownika.|
+| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator bloku skryptu konfiguracji zasobu, który chcesz uruchomić jest najpierw "ResourceName", jego typ to "Typu zasobu" Składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 
 Poniższy przykład gwarantuje, że użytkownik "monuser" istnieje i jest członkiem grupy "DBusers".
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxUser UserExample{
@@ -62,13 +62,12 @@ nxUser UserExample{
    Ensure = "Present"
    HomeDirectory = "/home/monuser"
 }
- 
+
 nxGroup GroupExample{
    GroupName = "DBusers"
    Ensure = "Present"
    MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"            
+   DependsOn = "[nxUser]UserExample"
 }
 }
 ```
-

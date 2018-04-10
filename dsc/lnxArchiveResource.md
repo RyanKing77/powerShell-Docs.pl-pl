@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "DSC dla systemu Linux nxArchive zasobów"
-ms.openlocfilehash: e91ef5bcf4bdf413844c23d1d3bd823a535b536f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: DSC dla systemu Linux nxArchive zasobów
+ms.openlocfilehash: 142f0317914f1bd3a0523d706b19662f3f64c8b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC dla systemu Linux nxArchive zasobów
 
@@ -29,21 +29,21 @@ nxArchive <string> #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość |  Opis | 
+|  Właściwość |  Opis |
 |---|---|
-| SourcePath| Określa ścieżkę źródłową pliku archiwum. To pole powinno być tar zip, lub. plik tar.gz. | 
-| Ścieżka_docelowa| Określa lokalizację, w której chcesz upewnij się, że są wyodrębniane zawartość archiwum.| 
-| Suma kontrolna| Definiuje typ używany do określenia, czy archiwum źródła został zaktualizowany. Wartości to: "ctime —", "mtime" lub "md5". Wartość domyślna to "md5".| 
-| Force| Niektóre operacje na plikach (takie jak zastąpienie pliku lub usuwanie katalogu, który nie jest pusty) spowoduje błąd. Przy użyciu **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.| 
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest pierwszy blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** i jej typ jest **ResourceType**, za pomocą tej składni Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.| 
-| Upewnij się| Określa, czy należy sprawdzić, czy zawartość archiwum istnieje w **docelowego**. Ustaw tę właściwość na "Brak", aby upewnić się, że istnieje zawartość. Ustaw ją na "Brak", aby upewnić się, że nie istnieją. Wartość domyślna to "Brak".| 
+| SourcePath| Określa ścieżkę źródłową pliku archiwum. To pole powinno być tar zip, lub. plik tar.gz. |
+| Ścieżka_docelowa| Określa lokalizację, w której chcesz upewnij się, że są wyodrębniane zawartość archiwum.|
+| Suma kontrolna| Definiuje typ używany do określenia, czy archiwum źródła został zaktualizowany. Wartości to: "ctime —", "mtime" lub "md5". Wartość domyślna to "md5".|
+| Force| Niektóre operacje na plikach (takie jak zastąpienie pliku lub usuwanie katalogu, który nie jest pusty) spowoduje błąd. Przy użyciu **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.|
+| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest pierwszy blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** i jej typ jest **ResourceType**, za pomocą tej składni Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| Upewnij się| Określa, czy należy sprawdzić, czy zawartość archiwum istnieje w **docelowego**. Ustaw tę właściwość na "Brak", aby upewnić się, że istnieje zawartość. Ustaw ją na "Brak", aby upewnić się, że nie istnieją. Wartość domyślna to "Brak".|
 
 ## <a name="example"></a>Przykład
 
 Poniższy przykład przedstawia użycie **nxArchive** zasobów, aby upewnić się, że zawartość pliku archiwum o nazwie `website.tar` istnieją i są wyodrębniane w danej lokalizacji docelowej.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 nxFile SyncArchiveFromWeb
 {
@@ -60,6 +60,5 @@ nxArchive SyncWebDir
    DestinationPath = “/usr/local/apache2/htdocs/”
    Force = $false
    DependsOn = "[nxFile]SyncArchiveFromWeb"
-} 
+}
 ```
-

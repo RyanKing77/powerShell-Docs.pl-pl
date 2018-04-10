@@ -1,6 +1,8 @@
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Element manifestu wartości, które mają wpływ na Interfejsie galerii programu PowerShell
 
-Ten temat zawiera wydawców z podsumowanie informacji na temat sposobu zmodyfikuj manifest ich publikacji galerii programu PowerShell, tak aby będzie mieć wpływ na funkcje PowerShellGet poleceń cmdlet i interfejsu użytkownika z galerii programu PowerShell. Ta zawartość jest zorganizowana według której zmiana pojawi się w górnej części, a następnie w obszarze nawigacyjnym po lewej stronie, począwszy. Brak sekcji szczegółów tagi obejmujący określający ważne tagi, jak również niektórych najczęściej używanych tagów. Istnieją dwa tematy, które zawierają przykłady manifestu: 
+Ten temat zawiera wydawców z podsumowanie informacji na temat sposobu zmodyfikuj manifest ich publikacji galerii programu PowerShell, tak aby będzie mieć wpływ na funkcje PowerShellGet poleceń cmdlet i interfejsu użytkownika z galerii programu PowerShell.
+Ta zawartość jest zorganizowana według której zmiana pojawi się w górnej części, a następnie w obszarze nawigacyjnym po lewej stronie, począwszy. Brak sekcji szczegółów tagi obejmujący określający ważne tagi, jak również niektórych najczęściej używanych tagów.
+Istnieją dwa tematy, które zawierają przykłady manifestu:
 
 * Dla modułów, zobacz [manifestu modułu aktualizacji](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
 * Skryptów, zobacz [Tworzenie pliku skryptu za pomocą metadanych](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
@@ -10,7 +12,7 @@ Ten temat zawiera wydawców z podsumowanie informacji na temat sposobu zmodyfiku
 Poniższa tabela zawiera elementy interfejsu użytkownika strony elementu galerii programu PowerShell, które są kontrolowane przez wydawcę.
 Każdy element wskazuje, czy mogą być kontrolowane przez manifest modułu lub skryptu.
 
-| Element interfejsu użytkownika | Opis | Moduł | Skrypt | 
+| Element interfejsu użytkownika | Opis | Moduł | Skrypt |
 | --- | --- | --- | --- |
 | **Tytuł** | Jest to nazwa elementu, który jest opublikowany w galerii  | Nie | Nie |
 | **Wersja** | Wersja wyświetlana jest ciąg wersji w metadanych, a jeśli wstępnej określono. Część podstawowej wersji w manifeście modułu jest ModuleVersion. Aby uzyskać skrypt jest identyfikowane jako. Wersja. Jeśli zostanie określony ciąg wersji wstępnej, te będą być dołączany do ModuleVersion dla modułów lub określony jako część. Wersja skryptów. Brak dokumentacji służący do określania wersji wstępnej ciągów w [modułów](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule)i w [skryptów](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Tak | Tak |
@@ -49,18 +51,26 @@ Strona elementu edytować galerii programu PowerShell zezwala na wydawcy zmieni�
 * Informacje o wersji
 * Wymaga licencji
 
-Ta metoda nie jest zwykle zalecane, z wyjątkiem przypadków, gdy konieczne jest Popraw wyświetlanych dla starszej wersji modułu. Użytkownicy, którzy nabyli moduł będzie znaleźć metadanych jest niezgodny wyświetlanych w galerii programu PowerShell, który powoduje problemy dotyczące pozycji. Spowoduje to często zapytania, przechodząc do właścicieli element, aby potwierdzić zmianę. Zdecydowanie zaleca się, że zawsze, gdy ta metoda jest używana, nowa wersja elementu powinien zostać opublikowany, takie same zmiany. 
+Ta metoda nie jest zwykle zalecane, z wyjątkiem przypadków, gdy konieczne jest Popraw wyświetlanych dla starszej wersji modułu.
+Użytkownicy, którzy nabyli moduł będzie znaleźć metadanych jest niezgodny wyświetlanych w galerii programu PowerShell, który powoduje problemy dotyczące pozycji.
+Spowoduje to często zapytania, przechodząc do właścicieli element, aby potwierdzić zmianę.
+Zdecydowanie zaleca się, że zawsze, gdy ta metoda jest używana, nowa wersja elementu powinien zostać opublikowany, takie same zmiany.
 
 ## <a name="tag-details"></a>Szczegóły tagu
 
-Tagi to proste ciągi konsumentów użycia można znaleźć elementów. Tagi są najbardziej przydatna, gdy są one używane spójnie przez wiele elementów związanych z tym samym tematem. Wiele wersji tego samego word (na przykład bazy danych i baz danych, lub testowym i testowania) zwykle zapewnia korzyści mały. Znaczniki są jednowyrazowej ciągów bez uwzględniania wielkości liter i nie może zawierać spacji. Jeśli istnieje wyrażenie, które uważasz, że użytkownicy będą wyszukiwać, dodać go do opisu elementu i zostaną znalezione w wynikach wyszukiwania. Jeśli chcesz zwiększyć czytelność, należy użyć Pascal wielkości liter, łącznik, podkreślenie lub okres. Należy zachować ostrożność tworzenie tagi długich, złożonych i nietypowych, jak często są one błędna. 
+Tagi to proste ciągi konsumentów użycia można znaleźć elementów.
+Tagi są najbardziej przydatna, gdy są one używane spójnie przez wiele elementów związanych z tym samym tematem. Wiele wersji tego samego word (na przykład bazy danych i baz danych, lub testowym i testowania) zwykle zapewnia korzyści mały.
+Znaczniki są jednowyrazowej ciągów bez uwzględniania wielkości liter i nie może zawierać spacji. Jeśli istnieje wyrażenie, które uważasz, że użytkownicy będą wyszukiwać, dodać go do opisu elementu i zostaną znalezione w wynikach wyszukiwania. Jeśli chcesz zwiększyć czytelność, należy użyć Pascal wielkości liter, łącznik, podkreślenie lub okres. Należy zachować ostrożność tworzenie tagi długich, złożonych i nietypowych, jak często są one błędna.
 
-Tagi, które są należy pamiętać, w galerii programu PowerShell i PowerShellGet poleceń cmdlet je traktować unikatowo. PSEdition_Desktop PSEdition_Core są szczegółowe przykłady i opisanych powyżej. 
+Tagi, które są należy pamiętać, w galerii programu PowerShell i PowerShellGet poleceń cmdlet je traktować unikatowo. PSEdition_Desktop PSEdition_Core są szczegółowe przykłady i opisanych powyżej.
 
-Jak wspomniano powyżej, tagi Podaj wartość większość, jeśli są one określone i używany spójnie przez wiele elementów. Jako wydawca próby zlokalizowania najlepsze tagi do użycia Najprostszym sposobem jest wyszukiwanie galerii programu PowerShell tagów, które zamierzasz. W idealnym przypadku będzie wiele elementów zwróconych i opisy elementów są wyrównane z korzystania z tego słowa kluczowego. 
+Jak wspomniano powyżej, tagi Podaj wartość większość, jeśli są one określone i używany spójnie przez wiele elementów.
+Jako wydawca próby zlokalizowania najlepsze tagi do użycia Najprostszym sposobem jest wyszukiwanie galerii programu PowerShell tagów, które zamierzasz.
+W idealnym przypadku będzie wiele elementów zwróconych i opisy elementów są wyrównane z korzystania z tego słowa kluczowego.
 
-Odwołania poniżej przedstawiono niektóre tagi najczęściej używane na 12/14/2017 r. W niektórych przypadkach istnieją podobne, ale mniej idealne opcje wymienione obok tagu.
-Jest najlepszym rozwiązaniem do użycia jako Tag preferowane powoduje mniej szumu i lepsze wyniki wyszukiwania dla konsumentów. 
+Odwołania poniżej przedstawiono niektóre tagi najczęściej używane na 12/14/2017 r.
+W niektórych przypadkach istnieją podobne, ale mniej idealne opcje wymienione obok tagu.
+Jest najlepszym rozwiązaniem do użycia jako Tag preferowane powoduje mniej szumu i lepsze wyniki wyszukiwania dla konsumentów.
 
 
 | **Preferowany tag** | **Alternatywy i uwagi** |
@@ -125,5 +135,3 @@ Jest najlepszym rozwiązaniem do użycia jako Tag preferowane powoduje mniej szu
 | **MSI** |  |
 | **Mac** |  |
 | **PoshBot** |  |
-
-

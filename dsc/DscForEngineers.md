@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-10-13
+ms.date: 10/13/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Żądany przegląd stanu konfiguracji dla inne osoby podejmujące decyzje"
-ms.openlocfilehash: ae545ead0718def44d5a17708d254b872691e1d3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Omówienie platformy Desired State Configuration dla osób podejmujących decyzje
+ms.openlocfilehash: 3d2d4b7e09fb699751151d7af641410bae3b38a4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="desired-state-configuration-overview-for-engineers"></a>Żądany przegląd stanu konfiguracji dla inżynierów
+# <a name="desired-state-configuration-overview-for-engineers"></a>Omówienie platformy Desired State Configuration dla inżynierów
 
 Ten dokument jest przeznaczony dla zespołów deweloperów i operacji korzyści z programu PowerShell żądanego stanu konfiguracji (DSC).
 Dla zapewnia wyższy widok poziomu wartości DSC, można znaleźć pod adresem [żądany przegląd stanu konfiguracji dla inne osoby podejmujące decyzje](decisionMaker.md)

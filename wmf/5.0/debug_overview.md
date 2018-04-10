@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: aaf1809277f072c82e5a1a862ea64b75586e32d1
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: dee5e8206c61d79faadf8573a82c74d4ac0fb8e0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="improvements-in-powershell-script-debugging"></a>Ulepszenia debugowania skryptu PowerShell
+# <a name="improvements-in-powershell-script-debugging"></a>Ulepszenia debugowania skryptów programu PowerShell
 
 Wiele ulepszeń zostały wprowadzone w programie PowerShell 5.0 udoskonalenie debugowania:
 
@@ -41,16 +41,15 @@ Istnieją nowe, zaawansowane funkcje debugowania, które umożliwiają dołącza
 
 Nowe polecenia cmdlet dodano umożliwiające listę obszarach bieżącego działania w ramach procesu i dołączyć do tego obszaru działania do debugowania skryptów konsoli środowiska Windows PowerShell lub debugera ISE:
 
--   Get-obszaru działania
--   Obszarze działania debugowania
--   Włącz RunspaceDebug
--   Wyłącz RunspaceDebug
+-   Get-Runspace
+-   Debug-Runspace
+-   Enable-RunspaceDebug
+-   Disable-RunspaceDebug
 -   Get-RunspaceDebug
 
 ### <a name="attach-to-process-hosting-powershell"></a>Dołączanie do procesu hostingu środowiska PowerShell
 
 Teraz można dołączyć do procesu dowolnego komputera, który ma środowiska Windows PowerShell, załadować. W tym celu należy wprowadzić w sesji interaktywnej z procesem, podobnie jak wprowadzić w sesji interaktywnej zdalnego przy użyciu polecenia cmdlet Enter-PSSession:
 
--   Wprowadź PSHostProcess
--   PSHostProcess zakończenia
-
+-   Enter-PSHostProcess
+-   Exit-PSHostProcess

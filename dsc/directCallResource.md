@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Bezpośrednie wywoływanie metod zasobów DSC"
-ms.openlocfilehash: 68344d1be5c41e5ce4660e0a62019fa0a52c2541
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Bezpośrednie wywoływanie metod zasobów DSC
+ms.openlocfilehash: dbf0a4ada4c6cc2e7d65698b87a5a29a2ea84781
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Bezpośrednie wywoływanie metod zasobów DSC
 
 >Dotyczy: Środowiska Windows PowerShell 5.0
 
-Można użyć [Invoke DscResource](https://technet.microsoft.com/library/mt517869.aspx) polecenia cmdlet, aby bezpośrednio wywoływać funkcje i metody zasobu DSC ( **Get-TargetResource**, **TargetResource zestaw**i  **Test-TargetResource** funkcje zasobu na podstawie MOF lub **uzyskać**, **ustawić**, i **testu** metod klasy zasobu). To może służyć przez osoby trzecie, które chcą korzystać z zasobów DSC lub jako narzędzia pomocne podczas tworzenia zasobów. 
+Można użyć [Invoke DscResource](https://technet.microsoft.com/library/mt517869.aspx) polecenia cmdlet, aby bezpośrednio wywoływać funkcje i metody zasobu DSC ( **Get-TargetResource**, **TargetResource zestaw**i  **Test-TargetResource** funkcje zasobu na podstawie MOF lub **uzyskać**, **ustawić**, i **testu** metod klasy zasobu).
+To może służyć przez osoby trzecie, które chcą korzystać z zasobów DSC lub jako narzędzia pomocne podczas tworzenia zasobów.
 
 To polecenie cmdlet jest zwykle używana w połączeniu z właściwością metakonfigurację `refreshMode = 'Disabled'`, ale mogą być używane niezależnie od tego, co **refreshMode** ma ustawioną wartość.
 
@@ -51,7 +52,6 @@ $result.ItemValue | fl
 >**Uwaga:** bezpośrednie wywoływanie metod złożonego zasobu nie jest obsługiwane. Zamiast tego należy wywoływać metody zasobów wchodzące w skład złożonych zasobów.
 
 ## <a name="see-also"></a>Zobacz też
-- [Pisanie niestandardowych zasobów DSC z MOF](authoringResourceMOF.md) 
+- [Pisanie niestandardowych zasobów DSC z MOF](authoringResourceMOF.md)
 - [Pisanie niestandardowych zasobów DSC z klasami programu PowerShell](authoringResourceClass.md)
 - [Debugowanie zasobów DSC](debugResource.md)
-

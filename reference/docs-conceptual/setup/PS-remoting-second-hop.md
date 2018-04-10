@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co drugi przeskok w komunikacji zdalnej programu PowerShell
-ms.openlocfilehash: 726b4d1b7a41e9e344347543ecde26da6547bcf3
-ms.sourcegitcommit: fff6c0522508eeb408cb055ba4c9337a2759b392
+ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Co drugi przeskok w komunikacji zdalnej programu PowerShell
 
@@ -55,7 +55,7 @@ Delegowanie protokołu Kerberos nieograniczonego można również używać do ut
 
 ## <a name="kerberos-constrained-delegation"></a>Ograniczone delegowanie protokołu Kerberos
 
-Starsze ograniczonego delegowania (nie opartych na zasobach) umożliwia utworzyć drugi przeskok. 
+Starsze ograniczonego delegowania (nie opartych na zasobach) umożliwia utworzyć drugi przeskok.
 
 >**Uwaga:** kont usługi Active Directory, które mają **konto jest poufne i nie może być delegowane** zestaw właściwości nie może być delegowane. Aby uzyskać więcej informacji, zobacz [fokus zabezpieczeń: analizowanie "Konto jest poufne i nie może być delegowane" dla kont uprzywilejowanych](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) i [narzędzia uwierzytelniania Kerberos i ustawienia](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
@@ -89,7 +89,7 @@ W drugi przeskok opisane powyżej, należy skonfigurować _ServerC_ Aby określi
 
 - Wymaga systemu Windows Server 2012 lub nowszym.
 - Nie obsługuje drugi przeskok usługi WinRM.
-- Wymaga uprawnień do aktualizowania obiektów oraz główne nazwy usług (SPN). 
+- Wymaga uprawnień do aktualizowania obiektów oraz główne nazwy usług (SPN).
 
 ### <a name="example"></a>Przykład
 
@@ -108,8 +108,8 @@ Kilka poleceń cmdlet dostępnych już **PrincipalsAllowedToDelegateToAccount** 
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 
-CommandType Name                 ModuleName     
------------ ----                 ----------     
+CommandType Name                 ModuleName
+----------- ----                 ----------
 Cmdlet      New-ADComputer       ActiveDirectory
 Cmdlet      New-ADServiceAccount ActiveDirectory
 Cmdlet      New-ADUser           ActiveDirectory
@@ -123,10 +123,10 @@ Cmdlet      Set-ADUser           ActiveDirectory
 Teraz Skonfigurujmy zmienne będą używane do reprezentowania serwerów:
 
 ```powershell
-# Set up variables for reuse            
-$ServerA = $env:COMPUTERNAME            
-$ServerB = Get-ADComputer -Identity ServerB            
-$ServerC = Get-ADComputer -Identity ServerC            
+# Set up variables for reuse
+$ServerA = $env:COMPUTERNAME
+$ServerB = Get-ADComputer -Identity ServerB
+$ServerC = Get-ADComputer -Identity ServerC
 ```
 
 Usługa WinRM (i w związku z tym obsługę zdalną środowiska PowerShell) domyślnie działa jako konto komputera. Zobacz ten analizując **StartName** właściwość `winrm` usługi:
@@ -140,22 +140,22 @@ StartName : NT AUTHORITY\NetworkService
 Aby uzyskać _ServerC_ aby umożliwić delegowanie w sesji komunikacji zdalnej programu PowerShell na _ServerB_, firma Microsoft będzie zezwalał na dostęp przez ustawienie **PrincipalsAllowedToDelegateToAccount** Parametr _ServerC_ do obiektu komputera z _ServerB_:
 
 ```powershell
-# Grant resource-based Kerberos constrained delegation            
-Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB            
-            
-# Check the value of the attribute directly            
-$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity            
-$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access            
-            
-# Check the value of the attribute indirectly            
+# Grant resource-based Kerberos constrained delegation
+Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
+
+# Check the value of the attribute directly
+$x = Get-ADComputer -Identity $ServerC -Properties msDS-AllowedToActOnBehalfOfOtherIdentity
+$x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
+
+# Check the value of the attribute indirectly
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
 Kerberos [Centrum dystrybucji kluczy (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) pamięci podręcznych odmowa prób dostępu (negatywną pamięć podręczną) przez 15 minut. Jeśli _ServerB_ wcześniej próbowało uzyskać dostęp do _ServerC_, należy wyczyścić pamięć podręczną na _ServerB_ za pomocą następującego polecenia:
 
 ```powershell
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    klist purge -li 0x3e7            
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    klist purge -li 0x3e7
 }
 ```
 
@@ -164,14 +164,14 @@ Można także ponownie uruchom komputer lub zaczekaj co najmniej 15 minut, aby w
 Po wyczyszczeniu pamięci podręcznej, można pomyślnie uruchomić kod z _Serwer_a_ za pośrednictwem _ServerB_ do _ServerC_:
 
 ```powershell
-# Capture a credential            
-$cred = Get-Credential Contoso\Alice            
-            
-# Test kerberos double hop            
-Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {            
-    Test-Path \\$($using:ServerC.Name)\C$            
-    Get-Process lsass -ComputerName $($using:ServerC.Name)            
-    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)            
+# Capture a credential
+$cred = Get-Credential Contoso\Alice
+
+# Test kerberos double hop
+Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
+    Test-Path \\$($using:ServerC.Name)\C$
+    Get-Process lsass -ComputerName $($using:ServerC.Name)
+    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)
 }
 ```
 
@@ -180,13 +180,13 @@ W tym przykładzie `$using` zmiennej jest używane do obliczania `$ServerC` wido
 Aby umożliwić delegowanie poświadczeń w celu na wielu serwerach _ServerC_, ustaw wartość **PrincipalsAllowedToDelegateToAccount** parametru na _ServerC_ do tablicy:
 
 ```powershell
-# Set up variables for each server            
-$ServerB1 = Get-ADComputer -Identity ServerB1            
-$ServerB2 = Get-ADComputer -Identity ServerB2            
-$ServerB3 = Get-ADComputer -Identity ServerB3            
-$ServerC  = Get-ADComputer -Identity ServerC            
-            
-# Grant resource-based Kerberos constrained delegation            
+# Set up variables for each server
+$ServerB1 = Get-ADComputer -Identity ServerB1
+$ServerB2 = Get-ADComputer -Identity ServerB2
+$ServerB3 = Get-ADComputer -Identity ServerB3
+$ServerC  = Get-ADComputer -Identity ServerC
+
+# Grant resource-based Kerberos constrained delegation
 Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
@@ -194,9 +194,9 @@ Set-ADComputer -Identity $ServerC `
 Jeśli chcesz utworzyć drugi przeskok między domenami, Dodaj pełni kwalifikowaną nazwę domeny (FQDN) z kontrolerem domeny w domenie do której _ServerB_ należy:
 
 ```powershell
-# For ServerC in Contoso domain and ServerB in other domain            
-$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com            
-$ServerC = Get-ADComputer -Identity ServerC            
+# For ServerC in Contoso domain and ServerB in other domain
+$ServerB = Get-ADComputer -Identity ServerB -Server dc1.alpineskihouse.com
+$ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
@@ -232,7 +232,7 @@ Aby dowiedzieć się, jak za pomocą PSSessionConfiguration i RunAs rozwiązać 
 - Wymaga konfiguracji **PSSessionConfiguration** i **RunAs** na każdym serwerze pośredniego (_ServerB_).
 - Wymaga obsługi haseł, korzystając z domeny **RunAs** konta
 
-## <a name="just-enough-administration-jea"></a>Wystarczającego administracyjnej (JEA)
+## <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 
 JEA pozwala ograniczyć poleceń, jakie administrator można uruchomić sesji programu PowerShell. Można go rozwiązać drugi przeskok.
 
@@ -266,24 +266,15 @@ Można przekazać poświadczenia wewnątrz **ScriptBlock** parametru wywołania 
 Poniższy przykład przedstawia sposób przekazywania poświadczeń w **Invoke-Command** bloku skryptu:
 
 ```powershell
-# This works without delegation, passing fresh creds            
-# Note $Using:Cred in nested request            
-$cred = Get-Credential Contoso\Administrator            
-Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {            
-    hostname            
-    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}            
+# This works without delegation, passing fresh creds
+# Note $Using:Cred in nested request
+$cred = Get-Credential Contoso\Administrator
+Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
+    hostname
+    Invoke-Command -ComputerName ServerC -Credential $Using:cred -ScriptBlock {hostname}
 }
 ```
 
 ## <a name="see-also"></a>Zobacz też
 
 [Zagadnienia dotyczące zabezpieczeń komunikacji zdalnej programu PowerShell](WinRMSecurity.md)
-
-
-
-
-
-
-
-
- 

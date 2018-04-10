@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Konfigurowanie maszyn wirtualnych na początkowego rozruchu w górę przy użyciu usługi Konfiguracja DSC"
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Konfigurowanie maszyn wirtualnych na początkowego rozruchu w górę przy użyciu usługi Konfiguracja DSC
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >Dotyczy: Środowiska Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Zmień nazwę i przenieść ten plik do właściwego położenia na wirtualny dy
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. Utwórz maszynę Wirtualną przy użyciu dysku VHD, w którym zainstalowano pliku MOF usługi Konfiguracja DSC. Po początkowe up rozruchu i instalacji systemu operacyjnego zostaną zainstalowane usługi IIS.
+7. Utwórz maszynę Wirtualną przy użyciu dysku VHD, w którym zainstalowano pliku MOF usługi Konfiguracja DSC.
+Po początkowe up rozruchu i instalacji systemu operacyjnego zostaną zainstalowane usługi IIS.
 Można to sprawdzić, wywołując [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) polecenia cmdlet.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Wstaw metakonfigurację DSC do dysku VHD
@@ -203,4 +204,3 @@ Domyślnie wartość **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVers
 - [Klucz rejestru DSCAutomationHostEnabled](DSCAutomationHostEnabled.md)
 - [Konfigurowanie programu Local Configuration Manager (LCM)](metaConfig.md)
 - [Konfigurowanie serwera ściągania usługi Konfiguracja DSC sieci web](pullServer.md)
-

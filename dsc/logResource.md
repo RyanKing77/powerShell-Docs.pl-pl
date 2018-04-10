@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Zasób dziennika DSC"
-ms.openlocfilehash: 3bc4bf38b376cc62e42107eee1024eaabc93485a
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Zasób dziennika DSC
+ms.openlocfilehash: f1a528767508d4a0e7f0ea2e58fd27a6a4d7ec75
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="dsc-log-resource"></a>Zasób dziennika DSC 
+# <a name="dsc-log-resource"></a>Zasób dziennika DSC
 
 > Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
 
@@ -32,10 +32,10 @@ Zawiera następujący artykuł.
 [Gdzie są dzienniki zdarzeń usługi Konfiguracja DSC?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
 ## <a name="properties"></a>Właściwości
-|  Właściwość  |  Opis   | 
-|---|---| 
-| Wiadomość| Określa komunikat, które mają zostać zapisane w dzienniku zdarzeń Microsoft-Windows-Desired stan konfiguracji/analityczne.| 
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed zapisaniem pobiera ten komunikat dziennika. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Właściwość  |  Opis   |
+|---|---|
+| Wiadomość| Określa komunikat, które mają zostać zapisane w dzienniku zdarzeń Microsoft-Windows-Desired stan konfiguracji/analityczne.|
+| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed zapisaniem pobiera ten komunikat dziennika. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 
@@ -43,7 +43,7 @@ Poniższy przykład pokazuje, jak można uwzględnić komunikat w dzienniku zdar
 
 > **Uwaga**: po uruchomieniu [DscConfiguration testu](https://technet.microsoft.com/en-us/library/dn407382.aspx) z tym zasobem skonfigurowane, będzie ona zawsze zwrócić **$false**.
 
-```powershell 
+```powershell
 Configuration logResourceTest
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -58,4 +58,3 @@ Configuration logResourceTest
     }
 }
 ```
-

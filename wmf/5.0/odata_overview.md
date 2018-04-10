@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: WMF, programu powershell, ustawienia
-ms.openlocfilehash: 11891587f59dc8a38e4ce267018160f7f9a28178
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,setup
+ms.openlocfilehash: a8947844df0da167961c64e1e09d5075960c95de
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Generowanie polecenia cmdlet programu PowerShell oparta na punkcie końcowym OData
+# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Generowanie poleceń cmdlet programu PowerShell w oparciu o punkt końcowy OData
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Generowanie polecenia cmdlet programu Windows PowerShell, oparte na punkt końcowy OData
 --------------------------------------------------------------
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 06/12/2017
 
 Poniższy przykład przedstawia sposób użycia to nowe polecenie cmdlet:
 
-\#Przypadek użycia podstawowe z ODataEndpointProxy eksportu
+\# Przypadek użycia podstawowe z ODataEndpointProxy eksportu
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -109,4 +109,3 @@ Polecenie cmdlet Export-ODataEndpointProxy i polecenia cmdlet serwera proxy gene
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
-

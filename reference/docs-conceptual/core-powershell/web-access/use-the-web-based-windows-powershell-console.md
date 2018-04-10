@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
-title: "za pomocą konsoli programu powershell systemu windows oparte na sieci web"
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: za pomocą konsoli programu powershell systemu windows oparte na sieci web
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Korzystanie z konsoli internetowej programu Windows PowerShell
 
@@ -18,15 +18,18 @@ Windows PowerShell Web Access umożliwia użytkownikom zalogować się do witryn
 
 Ponieważ konsolę programu Windows PowerShell jest uruchamiana w przeglądarce sieci web, można je otworzyć z szerokiej gamy urządzeń klienckich; prawie wszystkie urządzenia z przeglądarką sieci web działa.
 
-Konsoli internetowej programu Windows PowerShell jest przeznaczona dla komputera zdalnego, który jest określony przez użytkowników w ramach procesu logowania. 
+Konsoli internetowej programu Windows PowerShell jest przeznaczona dla komputera zdalnego, który jest określony przez użytkowników w ramach procesu logowania.
 
 W tym temacie opisano, jak zarejestrować się w usłudze i rozpocząć korzystanie z konsoli internetowej programu Windows PowerShell Web Access.
 
-W tym temacie nie opisano sposobu używania programu Windows PowerShell i uruchamiania poleceń cmdlet i skryptów. Aby uzyskać informacje o sposobie używania programu Windows PowerShell i zasobów skryptów, zobacz [Zobacz też](#see-also) sekcji na końcu tego tematu.
+W tym temacie nie opisano sposobu używania programu Windows PowerShell i uruchamiania poleceń cmdlet i skryptów.
+Aby uzyskać informacje o sposobie używania programu Windows PowerShell i zasobów skryptów, zobacz [Zobacz też](#see-also) sekcji na końcu tego tematu.
 
 ## <a name="supported-browsers-and-client-devices"></a>Obsługiwane przeglądarki i urządzenia klienckie
 
-Windows PowerShell Web Access obsługuje następujące przeglądarki internetowe. Choć przeglądarki dla urządzeń przenośnych oficjalnie nie są obsługiwane, wiele można uruchomić konsoli internetowej programu Windows PowerShell. Konsola prawdopodobnie działa w innych przeglądarkach, które akceptują pliki cookie i obsługują skrypty języka JavaScript oraz witryny HTTPS, ale nie zostały one oficjalnie przetestowane.
+Windows PowerShell Web Access obsługuje następujące przeglądarki internetowe.
+Choć przeglądarki dla urządzeń przenośnych oficjalnie nie są obsługiwane, wiele można uruchomić konsoli internetowej programu Windows PowerShell.
+Konsola prawdopodobnie działa w innych przeglądarkach, które akceptują pliki cookie i obsługują skrypty języka JavaScript oraz witryny HTTPS, ale nie zostały one oficjalnie przetestowane.
 
 ### <a name="supported-desktop-computer-browsers"></a>Obsługiwane przeglądarki na komputery stacjonarne
 

@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>Wyodrębnij i analizować Structured obiektów poza ciągu
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>Wyodrębnianie i analizowanie obiektów ze strukturą poza ciągiem
 Wprowadza to również kilka dodatkowych funkcji ConvertFrom parametry polecenia cmdlet:
 
 -   Usuwa właściwość text zakresie domyślnie. Można dołączyć ją za pomocą parametru - IncludeExtent.
@@ -67,7 +67,7 @@ Do pliku, który będzie używany jako szablon, należy skopiować kilka przykł
 
     Renton, WA
 
-   
+
 
 Umieść nawiasy klamrowe wokół dane, które mają zostać wyodrębnione, nadanie mu nazwy, jak możesz to zrobić. Ponieważ **nazwa** właściwości (i jego skojarzony inne właściwości) może pojawić się wiele razy, należy użyć gwiazdki (\*) wskazująca, że spowoduje to wiele rekordów (zamiast wyodrębniania zbiór właściwości do jednego rekord):
 
@@ -90,4 +90,3 @@ Z tego zestawu przykłady **ConvertFrom ciąg** może teraz automatycznie wyodr�
 > Ana Trujillo...                Ana Trujillo Redmond, WA Antonio Moreno...              Antonio Moreno Renton WA blogu Thomasa Hardy...                Kowalski Aneta Seattle WA Hardy blogu Thomasa...          Hanna WA Redmond Kowalski Krystyna Moos...                  Hanna Moos Puyallup WA
 
 Do manipulowania dodatkowe dane na wyodrębnionego tekstu, **ExtentText** właściwości przechwytuje nieprzetworzony tekst, z którego został wyodrębniony rekordu. Aby wyrazić swoją opinię na temat tej funkcji lub udostępnić zawartość, dla którego masz problemy zapisywania przykłady, Wyślij wiadomość e-mail <psdmfb@microsoft.com>.
-

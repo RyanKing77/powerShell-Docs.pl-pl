@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Konfigurowanie klienta ściągania przy użyciu identyfikator konfiguracji w programie PowerShell 4.0"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Konfigurowanie klienta ściągania przy użyciu identyfikator konfiguracji w programie PowerShell 4.0
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Konfigurowanie klienta ściągania przy użyciu identyfikator konfiguracji w programie PowerShell 4.0
 
@@ -18,28 +18,28 @@ Każdy węzeł docelowy musi być informację do używania trybu ściągania i p
 Poniższy skrypt konfiguruje LCM ściągania konfiguracji z serwera o nazwie "PullServer":
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-W skrypcie **DownloadManagerCustomData** przekazuje niezabezpieczone połączenie umożliwia adres URL serwera ściągania i (w tym przykładzie). 
+W skrypcie **DownloadManagerCustomData** przekazuje niezabezpieczone połączenie umożliwia adres URL serwera ściągania i (w tym przykładzie).
 
 Po uruchomieniu tego skryptu, tworzy nowy folder wyjściowy o nazwie **SimpleMetaConfigurationForPull** i umieszcza metakonfigurację pliku MOF.
 
-Aby zastosować konfigurację, użyj **DscLocalConfigurationManager zestaw** wraz z parametrami **ComputerName** (Użyj "localhost") i **ścieżki** (ścieżka do lokalizacji cel pliku localhost.meta.mof węzła). Przykład: 
+Aby zastosować konfigurację, użyj **DscLocalConfigurationManager zestaw** wraz z parametrami **ComputerName** (Użyj "localhost") i **ścieżki** (ścieżka do lokalizacji cel pliku localhost.meta.mof węzła). Przykład:
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Jeśli serwer ściągania jest skonfigurowany jako udziału plików SMB, a nie u
 **DscFileDownloadManager** przyjmuje **Ścieżka_źródłowa** właściwości zamiast **ServerUrl**. Poniższy skrypt konfiguruje LCM ściągania konfiguracje z udziału SMB na serwerze o nazwie "CONTOSO-SERVER" o nazwie "SmbDscShare":
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [Konfigurowanie serwera ściągania usługi Konfiguracja DSC sieci web](pullServer.md)
 - [Konfigurowanie serwera ściągania SMB platformy DSC](pullServerSMB.md)
-

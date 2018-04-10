@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: Rejestr PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: Register-PSRepository
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="register-psrepository"></a>Rejestr PSRepository
+# <a name="register-psrepository"></a>Register-PSRepository
 
 Pobiera zarejestrowanych repozytoria na komputerze.
 
 ## <a name="description"></a>Opis
 
-Polecenia cmdlet Register-PSRepository rejestruje repozytorium online dla modułów programu PowerShell. Po zarejestrowaniu repozytorium można odwoływać się do niej z modułu Znajdź moduł instalacji i polecenia cmdlet Publish-modułu. Repozytorium zarejestrowanych staje się repozytorium domyślnego modułu Znajdź i zainstaluj moduł. 
+Polecenia cmdlet Register-PSRepository rejestruje repozytorium online dla modułów programu PowerShell. Po zarejestrowaniu repozytorium można odwoływać się do niej z modułu Znajdź moduł instalacji i polecenia cmdlet Publish-modułu. Repozytorium zarejestrowanych staje się repozytorium domyślnego modułu Znajdź i zainstaluj moduł.
 
 Repozytoria zarejestrowane są specyficzne dla użytkownika. Nie zostały zarejestrowane w kontekście całego systemu.
 
@@ -28,12 +28,13 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
 ## <a name="cmdlet-online-help-reference"></a>Dokumentacja poleceń cmdlet pomocy online
 
-[Rejestr PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
+[Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
 
 ## <a name="example-commands"></a>Przykładowe polecenia
 
-### <a name="register-a-powershell-repository"></a>Zarejestruj repozytorium programu PowerShell
-Można skonfigurować PowerShellGet można działać względem wewnętrznego repozytoriów. Po zarejestrowaniu repozytorium, można użyć modułu Znajdź i zainstaluj moduł do pracy z nim.
+### <a name="register-a-powershell-repository"></a>Rejestrowanie repozytorium programu PowerShell
+Można skonfigurować PowerShellGet można działać względem wewnętrznego repozytoriów.
+Po zarejestrowaniu repozytorium, można użyć modułu Znajdź i zainstaluj moduł do pracy z nim.
 
 ```powershell
 # Register a default repository
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
-title: "Element Zarządzanie właścicielami"
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Element Zarządzanie właścicielami
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>Element Zarządzanie właścicielami
 
 Własność elementu w galerii programu PowerShell jest zdefiniowana przez wydawca elementu w galerii.
 Czasami metadanych musi być zarządzany poza publikowanie początkowego elementu, co oznacza, że metadane właściciela musi być modyfikowalną podczas elementu nie jest.
 
-Wszystkich właścicieli elementu są elementami równorzędnymi. Oznacza to, że wszystkie właściciel elementu można opublikować nową wersję elementu. Oznacza to również usunąć inne właściciel elementu żadnych właściciel elementu. Właściciel nie ma urząd więcej niż inne właścicieli.  
+Wszystkich właścicieli elementu są elementami równorzędnymi.
+Oznacza to, że wszystkie właściciel elementu można opublikować nową wersję elementu. Oznacza to również usunąć inne właściciel elementu żadnych właściciel elementu.
+Właściciel nie ma urząd więcej niż inne właścicieli.
 
-## <a name="setting-an-items-initial-owner"></a>Ustawienie właściciel początkowy elementu 
+## <a name="setting-an-items-initial-owner"></a>Ustawienie właściciel początkowy elementu
 
 Po opublikowaniu nowego elementu galerii programu PowerShell pierwotny właściciel jest zdefiniowana przez użytkownika, która wydała elementu. Jest to określane przez interfejs API którego klucz był używany w poleceniu cmdlet Publish-Module.
 
@@ -78,4 +80,3 @@ Firma Microsoft będzie korzystać procesu zweryfikowanie prawa własności elem
 Czy możemy określić powinien być właścicielem elementu, możemy użyć łącza zarządzania właścicielami dla elementu, nad i wysłać zaproszenie do staje się właścicielem.
 Firma Microsoft będzie tylko w tym po zweryfikowaniu, że powinny być właścicielem, a dla tego procesu zależy od okoliczności.
 Często, aby znaleźć sposób, aby skontaktować się z właścicielem projektu używamy adres URL projektu do elementu, ale firma Microsoft może również używać Twitter, poczty E-mail lub w inny sposób kontaktu z działem właściciel projektu.
-

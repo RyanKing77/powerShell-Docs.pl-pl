@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Wprowadzenie do korzystania z programu Windows PowerShell
+title: Wprowadzenie do programu Windows PowerShell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: d8f1a416c1618040311ec0ea3b98b28aa432bcf1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="getting-started-with-windows-powershell"></a>Wprowadzenie do korzystania z programu Windows PowerShell
+# <a name="getting-started-with-windows-powershell"></a>Wprowadzenie do programu Windows PowerShell
 Program Windows PowerShell jest powłoką wiersza polecenia systemu Windows, przeznaczonym zwłaszcza do administratorów systemu. Program Windows PowerShell zawiera monitu interakcyjnego i środowisko obsługi skryptów, który może służyć niezależnie lub razem.
 
 W przeciwieństwie do większości powłoki, które akceptują i zwracają tekst, programu Windows PowerShell jest oparty na .NET Framework środowisko uruchomieniowe języka wspólnego (CLR) i .NET Framework, akceptuje i zwraca obiekty .NET Framework. Ta zmiana podstawowe w środowisku wprowadzono całkowicie nowe narzędzia i metod do zarządzania i konfiguracji systemu Windows.
@@ -29,4 +29,3 @@ W tym temacie:
 - [Uruchamianie środowiska Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
 - [Przygotowania do użycia środowiska Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
-

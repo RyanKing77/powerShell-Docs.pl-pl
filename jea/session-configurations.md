@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, programu powershell, zabezpieczeń"
+keywords: jea, programu powershell, zabezpieczeń
 title: Konfiguracje sesji JEA
-ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 317a549ed20b5800d5bafdabd266e93ba7cd321c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-session-configurations"></a>Konfiguracje sesji JEA
 
@@ -252,4 +252,3 @@ Gdy ponownie zarejestrować JEA konfiguracji sesji, użyj zaktualizowane zawiera
 
 - [Rejestruj konfigurację JEA](register-jea.md)
 - [Autor JEA ról](role-capabilities.md)
-

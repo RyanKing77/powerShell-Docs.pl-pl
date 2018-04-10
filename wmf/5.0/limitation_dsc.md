@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 66ceea383b78b2654caa4f1de16a30beea0e7fd3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Konfiguracji żądanego stanu (DSC) — znane problemy i ograniczenia
 
@@ -30,7 +30,7 @@ Start DscConfiguration i innych poleceń cmdlet DSC może zakończyć się niepo
 ```
 
 **Rozwiązanie:** Usuń DSCEngineCache.mof, uruchamiając następujące polecenie w sesji programu PowerShell z podwyższonym poziomem uprawnień (Uruchom jako Administrator):
-    
+
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
@@ -151,7 +151,7 @@ Debugowanie zasobów opartych na klasie DSC nie jest obsługiwane w tej wersji.
 **Rozwiązanie:** None.
 
 
-<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Zmienne & funkcje zdefiniowane w zakresie zasobów na podstawie klasy DSC $script nie są zachowywane między wiele wywołań do zasobu usługi Konfiguracja DSC 
+<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Zmienne & funkcje zdefiniowane w zakresie zasobów na podstawie klasy DSC $script nie są zachowywane między wiele wywołań do zasobu usługi Konfiguracja DSC
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Wiele kolejnych wywołań Start DSCConfiguration zakończy się niepowodzeniem, jeśli konfiguracja jest za pomocą dowolnego zasobu na podstawie klasy mającej zmiennych lub funkcje zdefiniowana w zakresie $script.
@@ -184,7 +184,7 @@ Get-DscResource-składni nie odzwierciedla PsDscRunAsCredential poprawnie zasob�
 
 Zasób WindowsOptionalFeature DSC nie jest dostępna w systemie Windows 7. Ten zasób wymaga modułu narzędzia DISM i poleceń cmdlet DISM, które są dostępne począwszy od systemu Windows 8 i nowszych wersjach systemu operacyjnego Windows.
 
-<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Dla zasobów na podstawie klasy DSC Import DscResource - ModuleVersion może nie działać zgodnie z oczekiwaniami   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Dla zasobów na podstawie klasy DSC Import DscResource - ModuleVersion może nie działać zgodnie z oczekiwaniami
 ------------------------------------------------------------------------------------------
 Jeśli węzeł kompilacji ma wiele wersji moduł klasy zasobu DSC `Import-DscResource -ModuleVersion` nie odbiera określonej wersji i powoduje następujący błąd kompilacji.
 
@@ -198,16 +198,16 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 ```
 
 **Rozwiązanie:** zaimportować wymaganą wersję, definiując *ModuleSpecification* do obiektu `-ModuleName` z `RequiredVersion` klucz określony w następujący sposób:
-``` PowerShell  
-Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
-```  
+``` PowerShell
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
+```
 
 <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Niektórych zasobów DSC, takich jak rejestru zasobu rozpoczęcie może zająć dużo czasu przetwarzania żądania.
 --------------------------------------------------------------------------------------------------------------------------------
 
 **Resolution1:** Tworzenie zadania harmonogramu czyści folderu Okresowo.
-``` PowerShell 
-$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis 
+``` PowerShell
+$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
 **Resolution2:** zmiany konfiguracji DSC, aby wyczyścić *CommandAnalysis* folder po zakończeniu konfiguracji.
@@ -226,7 +226,7 @@ Configuration $configName
         ValueData = $Node.RegisteredOwnerData
     }
     #
-    # Script to delete the config 
+    # Script to delete the config
     #
     script DeleteCommandAnalysisCache
     {
@@ -237,4 +237,3 @@ Configuration $configName
     }
 }
 ```
-

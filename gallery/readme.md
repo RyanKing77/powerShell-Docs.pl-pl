@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: galerii programu powershell, polecenia cmdlet, psgallery, psget
 title: Galerii programu PowerShell
-ms.openlocfilehash: 7389ce8286c515b0bfc25f32634a482b060cb74c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 9519b8bcca9f43419a33db380c3b852e9bb354ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-powershell-gallery"></a>Galerii programu PowerShell
 
@@ -56,4 +56,3 @@ W związku z tym **PowerShellGet** wymaga jednego z następujących systemów op
 ## <a name="got-a-question-have-feedback"></a>Masz pytania? Masz opinię?
 
 Więcej informacji o galerii programu PowerShell i PowerShellGet znajdują się w [wprowadzenie](psgallery/psgallery_gettingstarted.md) strony. Podaj opinii i raportu problemów przy użyciu [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
-

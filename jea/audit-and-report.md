@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, programu powershell, zabezpieczeń"
+keywords: jea, programu powershell, zabezpieczeń
 title: Inspekcja i raportowania JEA
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Inspekcja i raportowania JEA
 
@@ -144,11 +144,11 @@ Dla każdego polecenia przez użytkownika wiersza "CommandInvocation" będą zap
 ParameterBindings postępuj zgodnie z każdym CommandInvocation informujące o każdego parametru i wartość, która została dostarczona z poleceniem.
 W powyższym przykładzie widać, że parametr, który "Name" została podana wartość "Dns" dla polecenia cmdlet "Get-Service".
 
-Dane wyjściowe każdego polecenia również wyzwoli CommandInvocation, zwykle wyjściowego domyślne. InputObject Out-Default jest obiekt programu PowerShell zwrócił polecenia.
+Dane wyjściowe każdego polecenia również wyzwoli CommandInvocation, zwykle wyjściowego domyślne.
+InputObject Out-Default jest obiekt programu PowerShell zwrócił polecenia.
 Szczegóły tego obiektu są podane kilka wierszy poniżej, ściśle mimicking, co użytkownik może umieścić.
 
 ## <a name="see-also"></a>Zobacz też
 
 - [Akcje inspekcji użytkownika w sesji JEA](audit-and-report.md)
 - [*PowerShell ♥ niebieski zespołu* wpis w blogu dotyczące zabezpieczeń](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

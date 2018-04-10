@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea, programu powershell, zabezpieczeń"
-title: "Zagadnienia dotyczące zabezpieczeń JEA"
-ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea, programu powershell, zabezpieczeń
+title: Zagadnienia dotyczące zabezpieczeń JEA
+ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń JEA
 
@@ -153,4 +153,3 @@ W związku z tym należy ocenić użytkowników JEA uprawnienia rozszerzone aby 
 
 Popularną praktyką jest JEA dla codziennej konserwacji i mieć "tylko w czasie" uprzywilejowany dostęp do rozwiązania do zarządzania umożliwiają użytkownikom tymczasowo stają się Administratorzy lokalni sytuacji awaryjnych.
 Dzięki temu użytkownicy nie są trwałe Administratorzy na komputerze, ale można uzyskać te prawa, jeśli i tylko wtedy, gdy ich zakończeniu przepływu pracy, który dokumentów ich użycie tych uprawnień.
-

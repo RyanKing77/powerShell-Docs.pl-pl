@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: "Znajdź skryptu"
-ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+title: Znajdź skryptu
+ms.openlocfilehash: 1f5076d94015c0b1041591144f1f0fe36819204b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-script"></a>Znajdź skryptu
 
@@ -24,7 +24,7 @@ Polecenie cmdlet Znajdź skrypt umożliwia odnajdowanie plików skryptów z inny
 - Znajdź skryptu można filtrować z parametrami wersji: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
   - Te parametry są wykluczają się wzajemnie, z wyjątkiem MinmimumVersion i MaximumVersion.
   - Te parametry wersji są dozwolone tylko w przypadku nazwę jednego skryptu bez żadnych symboli wieloznacznych.
-  - Jeśli nie określono parametru RequiredVersion, Znajdź skrypt zwraca najnowszą wersję skrypt, który jest równa lub większa niż określona wersja minimalna lub najnowszą wersję skryptu, jeśli wersja minimalna nie jest określona. 
+  - Jeśli nie określono parametru RequiredVersion, Znajdź skrypt zwraca najnowszą wersję skrypt, który jest równa lub większa niż określona wersja minimalna lub najnowszą wersję skryptu, jeśli wersja minimalna nie jest określona.
   - Jeśli określono parametr RequiredVersion, Znajdź skrypt zwraca tylko wersji skryptu, która dokładnie odpowiada określonej wersji.
 - Znajdź skryptu można filtrować według metadanych skryptów z parametrem - Tag.
 - Znajdź skryptu można filtrować według języka wyszukiwania specyficznego dla repozytorium z parametrem - filtru.
@@ -40,7 +40,7 @@ Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 
 ## <a name="cmdlet-online-help-reference"></a>Dokumentacja poleceń cmdlet pomocy online
 
-[Znajdź skryptu](http://go.microsoft.com/fwlink/?LinkId=619785)
+[Find-Script](http://go.microsoft.com/fwlink/?LinkId=619785)
 
 ## <a name="example-commands"></a>Przykładowe polecenia
 
@@ -61,7 +61,7 @@ Find-Script -Name *Azure*
 # Find all versions of a script
 Find-Script -Name Connect-O365 -AllVersions
 
-# Find a script with -MinimumVersion. 
+# Find a script with -MinimumVersion.
 # With MinimumVersion we can find a script whose version is greate than or equal to the specified MinimumVersion value.
 Find-Script Connect-O365 -MinimumVersion 1.4
 
@@ -155,4 +155,3 @@ Cmdlet                         {}
 
 
 ```
-

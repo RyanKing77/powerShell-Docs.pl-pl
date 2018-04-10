@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co to jest nowe w programie Windows PowerShell 5.0
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Co to jest nowe w programie Windows PowerShell 5.0
 Windows PowerShell 5.0 zawiera znaczące nowe funkcje, które poszerzają, zwiększyć jego użyteczność i umożliwiają kontrolowanie i zarządzanie komputerami z systemem Windows, łatwiejsze i bardziej kompleksowe.
@@ -14,7 +14,7 @@ Windows PowerShell 5.0 zawiera znaczące nowe funkcje, które poszerzają, zwię
 Windows PowerShell 5.0 jest zgodny z poprzednimi wersjami. Polecenia cmdlet, dostawców modułów, przystawki, skrypty, funkcje i profilów, które zostały zaprojektowane dla programu Windows PowerShell 4.0, Windows PowerShell 3.0 i Windows PowerShell 2.0, zwykle działa w programie Windows PowerShell 5.0 bez zmian.
 
 # <a name="installing-windows-powershell"></a>Instalowanie programu Windows PowerShell
-Windows PowerShell 5.0 jest instalowany domyślnie w systemie Windows Server 2016 Technical Preview i Windows 10. 
+Windows PowerShell 5.0 jest instalowany domyślnie w systemie Windows Server 2016 Technical Preview i Windows 10.
 
 Aby zainstalować program Windows PowerShell 5.0 w systemie Windows Server 2012 R2, Windows 8.1 Enterprise lub Windows 8.1 Pro, Pobierz i zainstaluj [Windows Management Framework 5.0](http://aka.ms/wmf5download). Pamiętaj odczytać szczegółów pobierania i spełnia wszystkie wymagania systemowe, przed zainstalowaniem Windows Management Framework 5.0.
 
@@ -184,7 +184,7 @@ Wiele aktualizacji i ulepszeń do systemu Windows PowerShell Desired stan konfig
 
 - Polecenia cmdlet New-Guid wykorzystuje klasy identyfikatora Guid programu .NET Framework do generowania identyfikatora GUID, przydatne podczas pisania skryptów lub zasobów usługi Konfiguracja DSC.
 
-- Ponieważ informacje o wersji pliku mogą być mylące, szczególnie po pliku jest poprawkami, nowe właściwości skryptu FileVersionRaw i ProductVersionRaw są dostępne dla obiektów FileInfo. Na przykład można wykonać następujące polecenie, aby wyświetlić wartości tych właściwości powershell.exe, gdzie $pid zawiera identyfikator procesu uruchomionej sesji programu Windows PowerShell:```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Ponieważ informacje o wersji pliku mogą być mylące, szczególnie po pliku jest poprawkami, nowe właściwości skryptu FileVersionRaw i ProductVersionRaw są dostępne dla obiektów FileInfo. Na przykład można wykonać następujące polecenie, aby wyświetlić wartości tych właściwości powershell.exe, gdzie $pid zawiera identyfikator procesu uruchomionej sesji programu Windows PowerShell:  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
 - Nowe polecenia cmdlet Enter PSHostProcess i PSHostProcess zakończenia umożliwiają debugowania skryptów programu Windows PowerShell w procesach, które są oddzielne od bieżącego procesu uruchomionego w konsoli środowiska Windows PowerShell. Uruchom Enter-PSHostProcess do wprowadzania i dołączyć do Identyfikatora określonego procesu, a następnie uruchom obszaru działania Get do zwrócenia active obszarach działania w ramach procesu. Uruchom PSHostProcess zakończenia można odłączyć od procesu po zakończeniu debugowania skryptu w ramach procesu.
 
@@ -228,19 +228,19 @@ Wiele aktualizacji i ulepszeń do systemu Windows PowerShell Desired stan konfig
 
     -   Get-DscLocalConfigurationManager
 
-    -   Przywracanie DscConfiguration
+    -   Restore-DscConfiguration
 
-    -   DscConfiguration testu
+    -   Test-DscConfiguration
 
     -   Porównaj DscConfiguration
 
-    -   Publikowanie DscConfiguration
+    -   Publish-DscConfiguration
 
-    -   Zestaw DscLocalConfigurationManager
+    -   Set-DscLocalConfigurationManager
 
-    -   Start DscConfiguration
+    -   Start-DscConfiguration
 
-    -   DscConfiguration aktualizacji
+    -   Update-DscConfiguration
 
 - Z scentralizowane DSC raportowanie błędów, informacje o błędzie sformatowanego jest nie tylko rejestrowane w przypadku dziennika, ale mogą być wysyłane do centralnej lokalizacji w celu późniejszej analizy. Do przechowywania błędy konfiguracji DSC, które wystąpiły na każdym serwerze w środowisku, można użyć tej centralnej lokalizacji. Po serwera raportów jest zdefiniowany w konfiguracji meta, wszystkie błędy są wysyłane do serwera raportów i następnie przechowywane w bazie danych. Można skonfigurować tę funkcję, niezależnie od tego, czy węzeł docelowy jest skonfigurowany do ściągania konfiguracje z serwera ściągania.
 
@@ -352,7 +352,7 @@ Windows PowerShell 4.0 obejmuje następujące nowe funkcje.
 
 - Wartość **$PSVersionTable.PSVersion** została zaktualizowana w celu 4.0.
 
-- **WHERE()** zachowanie operator został zmieniony. `Collection.Where('property -match name')`akceptowanie wyrażenia ciągu w formacie `"Property -CompareOperator Value"` nie jest już obsługiwana. Jednak **Where()** operator akceptuje wyrażenie ciągu w formacie scriptblock; nadal jest to obsługiwane.
+- **WHERE()** zachowanie operator został zmieniony. `Collection.Where('property -match name')` akceptowanie wyrażenia ciągu w formacie `"Property -CompareOperator Value"` nie jest już obsługiwana. Jednak **Where()** operator akceptuje wyrażenie ciągu w formacie scriptblock; nadal jest to obsługiwane.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Nowe funkcje w Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -490,7 +490,7 @@ Poniżej przedstawiono zalety przepływu pracy środowiska Windows PowerShell
 
 - **Trwałość.** : przepływ pracy jest zapisany (lub odnosi się do wyboru) w określonych punktach zdefiniowanego przez jego autora, będzie możliwe wznowienie działania przepływu pracy od ostatniego utrwalonego zadania (lub punktu kontrolnego), zamiast ponownego uruchamiania przepływu pracy od początku.
 
-- **Niezawodność.** Automatyczne odzyskiwanie po awarii. Przepływy pracy poradzą sobie planowanych lub nieplanowanych ponownego uruchomienia. Można wstrzymać wykonywania przepływu pracy, a następnie wznowienie przepływu pracy od ostatniego punktu trwałości. Autorzy przepływu pracy można wyznaczyć konkretne działania, aby uruchomić ponownie w razie awarii na co najmniej jeden z węzłów zarządzanych.
+- **Robustness.** Automatyczne odzyskiwanie po awarii. Przepływy pracy poradzą sobie planowanych lub nieplanowanych ponownego uruchomienia. Można wstrzymać wykonywania przepływu pracy, a następnie wznowienie przepływu pracy od ostatniego punktu trwałości. Autorzy przepływu pracy można wyznaczyć konkretne działania, aby uruchomić ponownie w razie awarii na co najmniej jeden z węzłów zarządzanych.
 
 - **Możliwość odłączyć, połącz się ponownie i uruchomić w sesji rozłączonych.** Użytkownicy mogą połączyć i zakończyć połączenie z serwerem przepływu pracy, ale przepływ pracy działa w sposób ciągły. Możesz wylogować się z komputera klienckiego lub uruchom ponownie komputer i monitorować wykonywania przepływu pracy z innego komputera bez przerywania tego przepływu pracy.
 
@@ -604,34 +604,34 @@ Dodano nowe polecenia cmdlet w instalacji programu Windows PowerShell Core, łą
 
 |||
 |-|-|
-|Dodaj JobTrigger|Nowy JobTrigger|
-|Connect-PSSession|Nowe PSSessionConfigurationFile|
-|ConvertFrom Json|New-PSTransportOption|
-|ConvertTo-Json|Nowe PSWorkflowExecutionOption|
+|Add-JobTrigger|New-JobTrigger|
+|Connect-PSSession|New-PSSessionConfigurationFile|
+|ConvertFrom-Json|New-PSTransportOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
 |Disable-JobTrigger|New-PSWorkflowSession|
-|Disable-ScheduledJob|Nowe ScheduledJobOption|
-|Odłącz PSSession|Nowe WinEvent|
-|Włącz JobTrigger|Odbieranie PSSession|
-|Włącz ScheduledJob|Rejestr CimIndicationEvent|
+|Disable-ScheduledJob|New-ScheduledJobOption|
+|Odłącz PSSession|New-WinEvent|
+|Enable-JobTrigger|Receive-PSSession|
+|Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
-|Get-CimClass|Usuń CimInstance|
+|Get-CimClass|Remove-CimInstance|
 |Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Usuń TypeData|
-|Get-ControlPanelItem|Zmień nazwę komputera|
+|Get-CimSession|Remove-TypeData|
+|Get-ControlPanelItem|Rename-Computer|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Save-Help|
-|Get-ScheduledJob|Zestaw CimInstance|
+|Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|IseSnippet importu|Zestaw ScheduledJobOption|
+|Import-IseSnippet|Set-ScheduledJobOption|
 |Wywołanie AsWorkflow|Pokaż polecenia|
-|Wywołanie CimMethod|Pokaż ControlPanelItem|
-|Wywołanie RestMethod|Wstrzymaj zadanie|
-|Wywołanie WebRequest|PSSessionConfigurationFile testu|
-|Nowe CimInstance|Odblokować plik|
-|Nowy CimSession|Unregister-ScheduledJob|
-|Nowe CimSessionOption|Update-Help|
-|Nowe IseSnippet||
+|Invoke-CimMethod|Show-ControlPanelItem|
+|Wywołanie RestMethod|Suspend-Job|
+|Invoke-WebRequest|Test-PSSessionConfigurationFile|
+|New-CimInstance|Odblokować plik|
+|New-CimSession|Unregister-ScheduledJob|
+|New-CimSessionOption|Update-Help|
+|New-IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Ulepszenia istniejących podstawowych poleceń cmdlet i dostawców
 Windows PowerShell 3.0 obejmuje nowe funkcje istniejących poleceń cmdlet wraz ze składnią uproszczoną i nowe parametry dla następujących poleceń cmdlet: polecenia cmdlet Computer, CSV polecenia cmdlet Get-ChildItem Get-Command, Get-Content zabezpieczeń Get-Historia obiektu miary polecenia cmdlet Select-Object, wybierz ciąg, Podziel-Path, procesu uruchamiania Tee-Object, Test-Connection, Dodaj członków i polecenia cmdlet usługi WMI.
@@ -712,5 +712,4 @@ Aby zwiększyć możliwości programu Windows PowerShell 3.0 interpretowania i p
 
 ## <a name="see-also"></a>Zobacz też
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Środowisko Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-
+- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
