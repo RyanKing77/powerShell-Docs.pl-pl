@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-title: "Zasób WindowsProcess DSC"
-ms.openlocfilehash: ec77209637d574a0e530f4cce283e1ad98701cdb
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+title: Zasób WindowsProcess DSC
+ms.openlocfilehash: 236a48fd4449a96f2297c152bce65253dd2fd08d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>Zasób WindowsProcess DSC
 
@@ -33,15 +33,14 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Właściwości
-|  Właściwość  |  Opis   | 
-|---|---| 
-| Argumenty| Wskazuje ciąg argumenty do przekazania do procesu jako — jest. Aby przekazać argumenty kilka należy umieścić je w tym ciągu.| 
-| Ścieżka| Ścieżka do pliku wykonywalnego procesu. Jeśli nazwa pliku wykonywalnego (nie pełni kwalifikowana ścieżka), zasobu DSC przeszuka środowiska **ścieżki** zmiennej (`$env:Path`) można znaleźć pliku wykonywalnego. Jeśli wartość tej właściwości jest w pełni kwalifikowana, nie będzie używać DSC **ścieżki** zmiennej środowiskowej, aby znaleźć plik i zgłosi błąd, jeśli ścieżka nie istnieje. Ścieżki względne nie są dozwolone.| 
-| Poświadczenie| Wskazuje poświadczeń dla uruchamiania procesu.| 
-| Upewnij się| Wskazuje, czy Proces istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, czy Proces istnieje. W przeciwnym wypadku ustaw ją na "Brak". Wartość domyślna to "Brak".| 
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości to "DependsOn ="[ResourceName ResourceType]"".| 
-| StandardErrorPath| Określa ścieżkę katalogu do zapisania standardowy błąd. Wszystkie istniejące pliki zostaną zastąpione.| 
-| StandardInputPath| Określa lokalizację standardowe wejściowego.| 
-| StandardOutputPath| Wskazuje lokalizację do zapisania wyjścia standardowego. Wszystkie istniejące pliki zostaną zastąpione.| 
-| WorkingDirectory| Określa lokalizację, która będzie służyć jako bieżący katalog roboczy dla procesu.| 
-
+|  Właściwość  |  Opis   |
+|---|---|
+| Argumenty| Wskazuje ciąg argumenty do przekazania do procesu jako — jest. Aby przekazać argumenty kilka należy umieścić je w tym ciągu.|
+| Ścieżka| Ścieżka do pliku wykonywalnego procesu. Jeśli nazwa pliku wykonywalnego (nie pełni kwalifikowana ścieżka), zasobu DSC przeszuka środowiska **ścieżki** zmiennej (`$env:Path`) można znaleźć pliku wykonywalnego. Jeśli wartość tej właściwości jest w pełni kwalifikowana, nie będzie używać DSC **ścieżki** zmiennej środowiskowej, aby znaleźć plik i zgłosi błąd, jeśli ścieżka nie istnieje. Ścieżki względne nie są dozwolone.|
+| Poświadczenie| Wskazuje poświadczeń dla uruchamiania procesu.|
+| Upewnij się| Wskazuje, czy Proces istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, czy Proces istnieje. W przeciwnym wypadku ustaw ją na "Brak". Wartość domyślna to "Brak".|
+| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości to "DependsOn ="[ResourceName ResourceType]"".|
+| StandardErrorPath| Określa ścieżkę katalogu do zapisania standardowy błąd. Wszystkie istniejące pliki zostaną zastąpione.|
+| StandardInputPath| Określa lokalizację standardowe wejściowego.|
+| StandardOutputPath| Wskazuje lokalizację do zapisania wyjścia standardowego. Wszystkie istniejące pliki zostaną zastąpione.|
+| WorkingDirectory| Określa lokalizację, która będzie służyć jako bieżący katalog roboczy dla procesu.|

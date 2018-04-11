@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia"
-description: "Udostępnia mechanizm do zarządzania grupami lokalnymi w docelowym węźle."
-title: "Zasób GroupSet DSC"
-ms.openlocfilehash: 158cb28747c5fe1987eb62b2cc0f6d6f6fb14332
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+description: Udostępnia mechanizm do zarządzania grupami lokalnymi w docelowym węźle.
+title: Zasób GroupSet DSC
+ms.openlocfilehash: 4f8fc21806fdb4eb06e0d915d5b6ca229357a210
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-groupset-resource"></a>Zasób GroupSet DSC
 
@@ -33,19 +33,19 @@ Group [string] #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość  |  Opis   | 
-|---|---| 
-| GroupName| Nazwy grup, dla których chcesz zapewnić z określonym stanem.| 
-| MembersToExclude| Ta właściwość umożliwia usunięcie członków z istniejącego członkostwa w grupach. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj **członków** właściwości. W ten sposób spowoduje wystąpienie błędu.| 
+|  Właściwość  |  Opis   |
+|---|---|
+| GroupName| Nazwy grup, dla których chcesz zapewnić z określonym stanem.|
+| MembersToExclude| Ta właściwość umożliwia usunięcie członków z istniejącego członkostwa w grupach. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj **członków** właściwości. W ten sposób spowoduje wystąpienie błędu.|
 | Poświadczenie| Poświadczenia wymagane do dostępu do zasobów zdalnego. **Uwaga**: to konto musi mieć odpowiednich uprawnień usługi Active Directory, aby dodać wszystkie konta innego niż lokalne do grupy; w przeciwnym razie wystąpi błąd.
-| Upewnij się| Wskazuje, czy istnieją grupy. Ustaw tę właściwość na "Brak", aby upewnić się, że grupy nie istnieją. Ustawienie jej "Przedstawienie" (wartość domyślna) zapewnia, że istnieją grupy.| 
-| Elementy członkowskie| Ta właściwość służy do Zamień od bieżącego członkostwa grupy określone elementy członkowskie. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj albo **MembersToExclude** lub **MembersToInclude** właściwości. W ten sposób spowoduje wystąpienie błędu.| 
-| MembersToInclude| Ta właściwość służy do dodawania członków do istniejącego członkostwa grupy. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj **członków** właściwości. W ten sposób spowoduje wystąpienie błędu.| 
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości to "DependsOn ="[ResourceName ResourceType]"".| 
+| Upewnij się| Wskazuje, czy istnieją grupy. Ustaw tę właściwość na "Brak", aby upewnić się, że grupy nie istnieją. Ustawienie jej "Przedstawienie" (wartość domyślna) zapewnia, że istnieją grupy.|
+| Elementy członkowskie| Ta właściwość służy do Zamień od bieżącego członkostwa grupy określone elementy członkowskie. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj albo **MembersToExclude** lub **MembersToInclude** właściwości. W ten sposób spowoduje wystąpienie błędu.|
+| MembersToInclude| Ta właściwość służy do dodawania członków do istniejącego członkostwa grupy. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj **członków** właściwości. W ten sposób spowoduje wystąpienie błędu.|
+| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości to "DependsOn ="[ResourceName ResourceType]"".|
 
 ## <a name="example-1"></a>Przykład 1
 
-Poniższy przykład przedstawia sposób upewnić się, że istnieją dwie grupy o nazwie "mojaGrupa" i "myOtherGroup". 
+Poniższy przykład przedstawia sposób upewnić się, że istnieją dwie grupy o nazwie "mojaGrupa" i "myOtherGroup".
 
 ```powershell
 configuration GroupSetTest
@@ -78,5 +78,3 @@ GroupSetTest -ConfigurationData $cd
 ```
 
 >**Uwaga:** w tym przykładzie używane poświadczenia w postaci zwykłego tekstu, dla uproszczenia. Aby uzyskać informacje dotyczące do szyfrowania poświadczeń w pliku MOF konfiguracji, zobacz [Zabezpieczanie pliku MOF](secureMOF.md).
-
-
