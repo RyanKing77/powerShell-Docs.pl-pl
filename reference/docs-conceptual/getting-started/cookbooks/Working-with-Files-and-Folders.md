@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z plikami i folderami
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>Praca z plikami i folderami
 
-Nawigować przez dyski środowiska Windows PowerShell i operowanie nimi elementów na nich jest podobny do manipulowania plików i folderów na dyskach fizycznych systemu Windows. Omówimy sposób postępowania z określonych zadań manipulowania plików i folderów w tej sekcji.
+Nawigować przez dyski środowiska Windows PowerShell i operowanie nimi elementów na nich jest podobny do manipulowania plików i folderów na dyskach fizycznych systemu Windows. W tej sekcji omówiono sposób postępowania z określonych plików i folderów zadań manipulowania przy użyciu programu PowerShell.
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Wyświetlanie listy wszystkich plików i folderów w folderze
 
 Wszystkie elementy można uzyskać bezpośrednio w folderze, za pomocą **Get-ChildItem**. Dodaj opcjonalny **życie** parametru do wyświetlania ukryte lub elementów systemu. Na przykład to polecenie wyświetla zawartość bezpośredniego systemu Windows PowerShell dysk C (która jest taka sama jak dysk fizyczny w systemie Windows C):
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 Polecenie wyświetla tylko bezpośrednio zawartych w niej elementów, podobnie jak przy użyciu jego Cmd.exe **DIR** polecenia lub **ls** w powłoce systemu UNIX. Aby pokazać zawartych w niej elementów, należy określić **-Recurse** również parametr. (To może potrwać bardzo długo). Aby wyświetlić listę wszystkich elementów na dysku C:
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** można filtrować elementy z jego **ścieżki**, **filtru**, **Include**, i **wykluczyć** parametrów, ale te są zwykle tylko na podstawie nazwy. Można wykonać złożone filtrowanie na podstawie innych właściwości elementów za pomocą **Where-Object**.
@@ -40,33 +40,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 Kopiowanie wykonuje się za pomocą **Copy-Item**. Następujące polecenie tworzy kopię zapasową C:\\boot.ini do folderu C:\\boot.bak:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-Jeśli plik docelowy już istnieje, próba skopiowania zakończy się niepowodzeniem. Aby zastąpić istniejące docelowego, użyj parametru Force:
+Jeśli plik docelowy już istnieje, próba skopiowania zakończy się niepowodzeniem. Aby zastąpić istniejące docelowego, użyj **życie** parametru:
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 To polecenie działa nawet wtedy, gdy lokalizacją docelową jest tylko do odczytu.
 
-Kopiowanie folderu działa tak samo. To polecenie powoduje skopiowanie folderu C:\\temp\\test1 do dysku c: nowy folder\\temp\\rekursywnie DeleteMe:
+Kopiowanie folderu działa tak samo. To polecenie powoduje skopiowanie folderu C:\\temp\\test1 do nowego folderu C:\\temp\\rekursywnie DeleteMe:
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 Ponadto można kopiować zaznaczenia elementów. Polecenie kopiuje wszystkie pliki .txt zawarte w dowolnym miejscu w c:\\danych do folderu c:\\temp\\tekst:
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 Można nadal używać innych narzędzi do wykonywania kopii systemu plików. XCOPY ROBOCOPY i COM obiekty, takie jak **Scripting.FileSystemObject,** wszystkie pracy w programie Windows PowerShell. Na przykład można użyć Host skryptów systemu Windows **Scripting.FileSystem COM** klasa do tworzenia kopii zapasowych C:\\boot.ini do folderu C:\\boot.bak:
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>Tworzenie plików i folderów
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 Można usunąć zawartych w niej elementów przy użyciu **Usuń element**, ale pojawi się monit o potwierdzenie usunięcia, jeśli element zawiera coś innego. Na przykład, jeśli próba usunięcia folderu C:\\temp\\DeleteMe, który zawiera inne elementy programu Windows PowerShell monituje o potwierdzenie przed usunięciem folderu:
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 Jeśli nie zostanie wyświetlony monit o poszczególnych elementów zawartych w niej, określ **Recurse** parametru:
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mapowanie folderu lokalnego jako dostępny dysk systemu Windows

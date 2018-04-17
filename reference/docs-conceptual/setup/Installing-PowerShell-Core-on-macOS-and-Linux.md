@@ -588,10 +588,10 @@ Po udostępnieniu nowej wersji programu PowerShell, po prostu zaktualizuj wzory 
 
 ```sh
 brew update
-brew cask reinstall powershell
+brew cask upgrade powershell
 ```
 
-> Uwaga: z powodu [ten problem w pojemnika transportowego](https://github.com/caskroom/homebrew-cask/issues/29301), musisz obecnie wykonać reinstall do uaktualnienia.
+> Uwaga: Powyższe polecenia mogą być wywoływane w ramach hosta programu PowerShell (pwsh), ale następnie powłoki PowerShell, należy ponownie wprowadzenia w celu ukończenia uaktualniania i Odśwież wartości widoczne w $PSVersionTable.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
@@ -703,12 +703,12 @@ W poniższej tabeli przedstawiono zależności .NET Core 2.0 na różnych dystry
 
 | System operacyjny                 | Zależności |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Debian 8 (Joasia)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl-libs, libicu |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Debian 8 (Joasia)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, biblioteki openssl, libicu |
 | Fedora 26          | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 W celu wdrożenia plików binarnych programu PowerShell na dystrybucje systemu Linux, które nie są obsługiwane oficjalnie, musisz zainstalować zależności niezbędne dla docelowego systemu operacyjnego w oddzielne kroki. Na przykład naszych [plik dockerfile Amazon Linux] [ amazon-dockerfile] najpierw instaluje zależności, a następnie wyodrębnia systemu Linux `tar.gz` archiwum.

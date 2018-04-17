@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Najlepsze rozwiązania dotyczące serwera ściągania
-ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d8d8667e2fc608e0c5948a0b5046bf92801b49db
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pull-server-best-practices"></a>Najlepsze rozwiązania dotyczące serwera ściągania
 
 >Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> Ściągnięcia serwera (funkcja Windows *DSC usługi*) jest obsługiwanych składników systemu Windows Server jednak nie ma żadnych planów oferować nowe funkcje lub możliwości. Zaleca się rozpocząć przechodzenie zarządzanych klientów do [Konfiguracja DSC automatyzacji Azure](/azure/automation/automation-dsc-getting-started) (w tym funkcji poza ściągnięcia serwera w systemie Windows Server) lub jednego z rozwiązań społeczności wymienionych [tutaj](pullserver.md#community-solutions-for-pull-service).
 
 Podsumowanie: Ten dokument jest przeznaczony do uwzględnienia procesu i rozszerzalność ułatwiających engineers, którzy są przygotowywanie do rozwiązania. Szczegóły powinny udostępnienie najlepszych rozwiązań, określonych przez klientów i następnie zweryfikowany przez zespół pracujący nad produktem zalecenia są skierowane do przyszłych i uznawane za stabilną.
 

@@ -1,17 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 04/11/2018
 ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Konfigurowanie serwera ściągania SMB platformy DSC
-ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Konfigurowanie serwera ściągania SMB platformy DSC
 
 >Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> Ściągnięcia serwera (funkcja Windows *DSC usługi*) jest obsługiwanych składników systemu Windows Server jednak nie ma żadnych planów oferować nowe funkcje lub możliwości. Zaleca się rozpocząć przechodzenie zarządzanych klientów do [Konfiguracja DSC automatyzacji Azure](/azure/automation/automation-dsc-getting-started) (w tym funkcji poza ściągnięcia serwera w systemie Windows Server) lub jednego z rozwiązań społeczności wymienionych [tutaj](pullserver.md#community-solutions-for-pull-service).
 
 DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) serwera ściągania jest komputer obsługujący udziałów plików SMB, które udostępnia pliki konfiguracji DSC i zasoby DSC węzły docelowe podczas tych węzłów, poproś o ich.
 
