@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Konfiguracji DSC
-ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dsc-configurations"></a>Konfiguracji DSC
 
@@ -72,7 +72,7 @@ W tym przykładzie, określ nazwę węzła przekazując go jako **ComputerName**
 ## <a name="compiling-the-configuration"></a>Kompilowanie konfiguracji
 
 Zanim użytkownik wprowadza konfigurację, należy go skompilować do dokumentu MOF.
-W tym celu wywoływania konfiguracji, jak w przypadku funkcji programu PowerShell.
+W tym celu wywoływania konfiguracji, takich jak spowodowałoby wywołanie funkcji programu PowerShell.
 Ostatni wiersz przykład zawierający tylko nazwę konfiguracji, wywołuje konfiguracji.
 
 >**Uwaga:** do wywołania konfiguracji, funkcja musi być w zakresie globalnym (podobnie jak w przypadku innych funkcji programu PowerShell).

@@ -8,7 +8,8 @@ Możesz użyć programu Visual Studio Code w systemie Windows przy użyciu progr
 Przed uruchomieniem go, upewnij się, że programu PowerShell znajduje się w tym systemie.
 W przypadku nowoczesnych obciążeń w systemie Windows macOS i Linux, zobacz:
 
-- [Instalowanie programu PowerShell Core na macOS i Linux][install-pscore-linux]
+- [Instalowanie programu PowerShell Core w systemie Linux][install-pscore-linux]
+- [Instalowanie programu PowerShell Core na macOS][install-pscore-macos]
 - [Instalowanie programu PowerShell Core w systemie Windows][install-pscore-windows]
 
 Dla tradycyjnych obciążeń programu Windows PowerShell, zobacz [Instalowanie programu Windows PowerShell][install-winps].
@@ -171,7 +172,8 @@ Istnieje kilka blogów, które mogą być pomocne ułatwiających rozpoczęcie p
 - [Debugowanie skryptów programu PowerShell w programie Visual Studio Code — część 2][debugging-part2]
 
 [ise]: ../ise-guide.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/

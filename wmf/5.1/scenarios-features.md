@@ -4,33 +4,35 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 title: Nowe scenariusze i funkcje w wersji 5.1 WMF
-ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 8edea99731df44349c8bcff113a8163ba5401ccd
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>Nowe scenariusze i funkcje w wersji 5.1 WMF #
+# <a name="new-scenarios-and-features-in-wmf-51"></a>Nowe scenariusze i funkcje w wersji 5.1 WMF
 
 > Uwaga: Te informacje są wstępne i mogą ulec zmianie.
 
-## <a name="powershell-editions"></a>Wersje programu PowerShell ##
+## <a name="powershell-editions"></a>Wersje programu PowerShell
+
 Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które charakteryzują się różnymi zestawami funkcji i zgodnością z różnymi platformami.
 
 - **Wersja Desktop:** jest oparta na programie .NET Framework i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w pełnych wersjach systemu Windows, takich jak instalacja Podstawowe funkcje serwera i system Windows dla komputerów stacjonarnych.
 - **Wersja Core:** jest oparta na module .NET Core i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w ograniczonych wersjach systemu Windows, takich jak system Nano Server i Windows IoT.
 
 **Dowiedz się więcej o korzystaniu z wersji programu PowerShell**
-- [Określić uruchomiona wersja programu PowerShell]()
-- [Deklarowanie zgodności modułu do określonej wersji programu PowerShell]()
-- [Filtrowanie wyników Get-Module przez CompatiblePSEditions]()
-- [Uniemożliwić wykonywanie skryptu, chyba że Uruchom na zgodna wersja środowiska PowerShell]()
+
+- [Określić uruchomiona wersja programu PowerShell przy użyciu $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [Filtrowanie wyników Get-Module przez CompatiblePSEditions za pomocą parametru PSEdition](/powershell/module/microsoft.powershell.core/get-module)
+- [Uniemożliwić wykonywanie skryptu, chyba że Uruchom na zgodna wersja środowiska PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
+- [Deklarowanie zgodności modułu do określonej wersji programu PowerShell](/powershell/gallery/psget/module/modulewithpseditionsupport)
 
 ## <a name="catalog-cmdlets"></a>Polecenia cmdlet katalogu
 
-Dodano dwa nowe polecenia cmdlet w [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) modułu; te Generowanie i zweryfikować pliki w katalogu systemu Windows.
+Dodano dwa nowe polecenia cmdlet w [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) modułu; te Generowanie i zweryfikować pliki w katalogu systemu Windows.
 
-###<a name="new-filecatalog"></a>New-FileCatalog
+### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
 
 Nowe FileCatalog tworzy plik katalogu systemu Windows dla zestawu plików i folderów.
@@ -41,6 +43,7 @@ Informacje te są przydatne w celu zweryfikowania, czy zmiany zostały wprowadzo
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
 Katalog w wersji 1 i 2 są obsługiwane.
 W wersji 1 używa algorytmu wyznaczania wartości skrótu SHA1 do utworzenia skróty plików; w wersji 2 używa SHA256.
 2. Wersja katalogu nie jest obsługiwana w *systemu Windows Server 2008 R2* lub *Windows 7*.
@@ -56,8 +59,7 @@ Spowoduje to utworzenie pliku wykazu.
 
 Aby sprawdzić integralność pliku katalogu (Pester.cat w powyżej przykładzie), podpisz go za pomocą [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) polecenia cmdlet.
 
-
-###<a name="test-filecatalog"></a>Test-FileCatalog
+### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
 Test FileCatalog weryfikuje katalogu, reprezentujący zestaw folderów.
@@ -74,8 +76,8 @@ Użytkownicy mogą pobierać te informacje przy użyciu *— szczegółowe* para
 Wyświetla również podpisywania stan katalogu w *podpisu* właściwości, który jest odpowiednikiem wywołania [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) polecenia cmdlet na plik wykazu.
 Użytkownicy mogą też pominąć każdego pliku, podczas sprawdzania poprawności przy użyciu *- FilesToSkip* parametru.
 
+## <a name="module-analysis-cache"></a>Moduł analizy w pamięci podręcznej
 
-## <a name="module-analysis-cache"></a>Moduł analizy w pamięci podręcznej ##
 Począwszy od wersji 5.1 WMF, programu PowerShell zapewnia kontrolę nad pliku, który jest używany do pamięci podręcznej dane dotyczące modułu, na przykład poleceń, które eksportuje go.
 
 Domyślnie ta pamięć podręczna jest przechowywane w pliku `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
@@ -106,23 +108,22 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 Ustawienie tej zmiennej środowiskowej zacznie obowiązywać natychmiast w bieżącym procesie.
 
-##<a name="specifying-module-version"></a>Określanie wersji modułu
+## <a name="specifying-module-version"></a>Określanie wersji modułu
 
 W wersji 5.1 WMF `using module` działa tak samo jak inne konstrukcje związanych z modułu w programie PowerShell.
 Wcześniej trzeba było ma sposobu na określenie wersji danego modułu; Jeśli istnieje wiele wersji, to spowodowało wystąpienie błędu.
 
-
 W WMF 5.1:
 
-* Można użyć [ModuleSpecification — Konstruktor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+- Można użyć [ModuleSpecification — Konstruktor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
 Ta tabela skrótów ma tego samego formatu co `Get-Module -FullyQualifiedName`.
 
 **Przykład:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-* W przypadku wielu wersji modułu PowerShell korzysta z **samej logiki rozpoznawania** jako `Import-Module` i nie zwraca błąd — jak `Import-Module` i `Import-DscResource`.
+- W przypadku wielu wersji modułu PowerShell korzysta z **samej logiki rozpoznawania** jako `Import-Module` i nie zwraca błąd — jak `Import-Module` i `Import-DscResource`.
 
+## <a name="improvements-to-pester"></a>Ulepszenia Pester
 
-##<a name="improvements-to-pester"></a>Ulepszenia Pester
 W wersji 5.1 WMF, wersja Pester jest dostarczany z programem PowerShell zaktualizowano z 3.3.5 3.4.0, z uwzględnieniem zatwierdzania https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e, która umożliwia lepsze zachowanie dla Pester na serwerze Nano.
 
 Możesz przejrzeć zmiany w wersji 3.3.5 i 3.4.0 przez sprawdzanie pliku ChangeLog.md na: https://github.com/pester/Pester/blob/master/CHANGELOG.md
