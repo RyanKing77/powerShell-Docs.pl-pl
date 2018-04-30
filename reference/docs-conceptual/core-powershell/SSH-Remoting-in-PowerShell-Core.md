@@ -34,30 +34,40 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 ## <a name="setup-on-windows-machine"></a>Instalacja na komputerze z systemem Windows
 
-1. [Zainstaluj najnowszą wersję programu PowerShell Core dla systemu Windows] []
+1. Zainstaluj najnowszą wersję pakietu [Core programu PowerShell dla systemu Windows]
     - Można określić, czy obsługa komunikacji zdalnej SSH analizując parametr ustawia New-PSSession
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. Zainstaluj najnowszą [Win32 OpenSSH] kompilacji z witryny GitHub przy użyciu [instalacji] instrukcje
 1. Edytuj plik sshd_config w lokalizacji, w którym zainstalowano Win32 OpenSSH
     - Upewnij się, że jest włączone uwierzytelnianie hasła
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Dodaj wpis podsystemu programu PowerShell, Zastąp `c:/program files/powershell/6.0.0/pwsh.exe` z poprawną ścieżkę do wersji, którego chcesz użyć
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - Opcjonalnie włączyć uwierzytelnianie za pomocą klucza
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Uruchom ponownie usługę sshd
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. Dodaj ścieżkę zainstalowanym OpenSSH do Twojej zmiennej Env ścieżki
     - To pole powinno być wzdłuż linii `C:\Program Files\OpenSSH\`
     - Dzięki temu ssh.exe do znalezienia
@@ -66,24 +76,33 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 1. Zainstaluj najnowszą [programu PowerShell dla systemu Linux] kompilacji z witryny GitHub
 1. Zainstaluj [Ubuntu SSH] zgodnie z potrzebami
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. Edytuj plik sshd_config w lokalizacji /etc/ssh
     - Upewnij się, że jest włączone uwierzytelnianie hasła
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Dodaj wpis podsystemu środowiska PowerShell
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - Opcjonalnie włączyć uwierzytelnianie za pomocą klucza
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Uruchom ponownie usługę sshd
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
       - Zezwalaj na dostęp do odpowiednich użytkowników
 1. Edytuj `sshd_config` pliku w lokalizacji `/private/etc/ssh/sshd_config`
     - Edytor ulubionych lub
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - Upewnij się, że jest włączone uwierzytelnianie hasła
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - Dodaj wpis podsystemu środowiska PowerShell
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - Opcjonalnie włączyć uwierzytelnianie za pomocą klucza
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. Uruchom ponownie usługę sshd
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. polecenie sudo nie działa w sesji zdalnej dla systemu Linux maszyny.
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Core programu PowerShell dla systemu Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [instalacji]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [programu PowerShell dla systemu Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[programu PowerShell dla MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[programu PowerShell dla MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
