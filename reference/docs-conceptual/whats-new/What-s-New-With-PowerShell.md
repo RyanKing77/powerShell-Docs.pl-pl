@@ -1,14 +1,14 @@
 ---
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Jakie s nowych przy użyciu programu PowerShell
-ms.openlocfilehash: a4f931cfcda947181d6a12a509ca0cfe14279e8b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Nowości przy użyciu programu PowerShell w wersji 5.0
+ms.openlocfilehash: 0510e447f55cb7faedbfa3daa45b81ae4cb93de2
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="what39s-new-with-powershell"></a>Co&#39;s nowych przy użyciu programu PowerShell
+# <a name="whats-new-with-powershell-50"></a>Nowości przy użyciu programu PowerShell w wersji 5.0
 Program Windows PowerShell® 5.0 zawiera znaczące nowe funkcje, które poszerzają, zwiększyć jego użyteczność i umożliwiają kontrolowanie i zarządzanie komputerami z systemem Windows, łatwiejsze i bardziej kompleksowe.  Znacznej poprawy znajdują się w zakresie konfiguracji żądanego stanu, zabezpieczeń, wydajności, usług zdalnych i rozszerzenia języka.
 
 Windows PowerShell 5.0 jest zgodny z poprzednimi wersjami. Polecenia cmdlet, dostawców modułów, przystawki, skrypty, funkcje i profilów, które zostały zaprojektowane dla programu Windows PowerShell 4.0, Windows PowerShell 3.0 i Windows PowerShell 2.0, zwykle działa w programie Windows PowerShell 5.0 bez zmian.

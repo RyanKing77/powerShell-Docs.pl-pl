@@ -25,7 +25,7 @@ Dla tradycyjnych obciążeń programu Windows PowerShell, zobacz [Instalowanie p
 > [!IMPORTANT]
 > Na macOS należy zainstalować biblioteki OpenSSL rozszerzenia programu PowerShell, aby działać poprawnie.
 > Najprostszym sposobem, w tym celu jest zainstalowanie [Homebrew](http://brew.sh/) , a następnie uruchom `brew install openssl`.
-> Teraz będzie można pomyślnie załadować rozszerzenia programu PowerShell.
+> Kod VS można teraz załadować rozszerzenia programu PowerShell pomyślnie.
 
 - **Windows**: postępuj zgodnie z instrukcjami instalacji [uruchomić kod programu VS w systemie Windows](https://code.visualstudio.com/docs/setup/windows) strony
 
@@ -38,13 +38,13 @@ Dla tradycyjnych obciążeń programu Windows PowerShell, zobacz [Instalowanie p
 
 - Uruchom **szybkie Otwórz** naciskając **Ctrl + P** (**Cmd + P** dla komputerów Mac).
 - W polu Szybkie Otwórz wpisz `ext install powershell` i trafień **Enter**.
-- **Rozszerzenia** widok zostanie otwarty na pasku bocznym. Wybierz rozszerzenia programu PowerShell firmy Microsoft.
-  Powinny pojawić się dane, takich jak poniżej:
+- **Rozszerzenia** otwiera widok na pasku bocznym. Wybierz rozszerzenia programu PowerShell firmy Microsoft.
+  Powinny zostać wyświetlone informacje takie jak poniżej:
 
   ![VSCode](../../images/vscode.png)
 
 - Kliknij przycisk **zainstalować** przycisk rozszerzenia programu PowerShell firmy Microsoft.
-- Po zakończeniu instalacji, zobaczysz **zainstalować** przycisk przechodzi w **Załaduj ponownie**.
+- Po zakończeniu instalacji, zobacz **zainstalować** przycisk przechodzi w **Załaduj ponownie**.
   Polecenie **Załaduj ponownie**.
 - Visual Studio Code po Załaduj ponownie, możesz przystąpić do edycji.
 
@@ -58,7 +58,7 @@ Aby zakończyć działanie programu Visual Studio Code, **Plik -> Zakończ**.
 Jeśli chcesz używać określonego instalacji programu PowerShell z kodem Visual Studio, należy dodać nową zmienną do pliku ustawień użytkownika.
 
 1. Kliknij przycisk **Plik -> Preferencje -> Ustawienia**
-1. Pojawi się dwie części edytora.
+1. Są wyświetlane dwa okienka edytora.
    W okienku prawej krawędzi (`settings.json`), włóż do poniższych ustawień odpowiedni dla Twojego systemu operacyjnego między dwoma nawiasów klamrowych (`{` i `}`) i Zastąp *<version>* z zainstalowana Wersja programu PowerShell:
 
   ```json
@@ -96,7 +96,7 @@ Zaleca się następujące ustawienia konfiguracji dla programu Visual Studio Cod
 
 Począwszy od wersji programu Visual Studio Code 1.9 można debugować skryptów programu PowerShell bez konieczności otwierania folder zawierający skrypt programu PowerShell.
 Po prostu otwórz plik skryptu programu PowerShell z **Plik -> Otwórz plik...** , ustaw punkt przerwania w wierszu (naciśnij klawisz F9), a następnie naciśnij klawisz F5, aby rozpocząć debugowania.
-Zostanie wyświetlony w okienku Akcje debugowania są wyświetlane, co pozwala podzielić debugera, krok, wznowienie i zatrzymanie debugowania.
+Powinna zostać wyświetlona w okienku Akcje debugowania są wyświetlane, co pozwala podzielić debugera, krok, wznowienie i zatrzymanie debugowania.
 
 ### <a name="workspace-debugging"></a>Debugowanie obszaru roboczego
 
@@ -116,7 +116,7 @@ Wykonaj następujące kroki, aby utworzyć plik konfiguracji debugowania:
 
 1. Otwórz **debugowania** widoku naciskając **Ctrl + Shift + D** (**Cmd + Shift + D** dla komputerów Mac).
 1. Naciśnij klawisz **Konfiguruj** koło zębate ikonę na pasku narzędzi.
-1. Visual Studio Code spowoduje wyświetlenie monitu o **wybierz środowisko**.
+1. Kod Visual Studio monituje o **wybierz środowisko**.
    Wybierz **PowerShell**.
 
    Gdy to zrobisz, Visual Studio Code tworzy katalog i plik ".vscode\launch.json" w katalogu głównym folderu roboczego.
@@ -153,7 +153,7 @@ Wykonaj następujące kroki, aby utworzyć plik konfiguracji debugowania:
 ```
 
 Reprezentuje typowe scenariusze debugowania.
-Jednak po otwarciu tego pliku w edytorze, zobaczysz **Dodawanie konfiguracji...**  przycisku.
+Jednak po otwarciu tego pliku w edytorze, zostanie wyświetlony **Dodawanie konfiguracji...**  przycisku.
 Można nacisnąć przycisk, aby dodać więcej konfiguracji debugowania programu PowerShell. Jest jedną konfigurację przydatną, aby dodać **środowiska PowerShell: uruchamianie skryptu**.
 W tej konfiguracji można określić specjalny plik z argumentów opcjonalnych, które można uruchomić przy każdym naciśnięciu klawisza F5 niezależnie od tego, który plik jest aktualnie aktywne w edytorze.
 

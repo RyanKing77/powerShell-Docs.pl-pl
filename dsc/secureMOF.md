@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Zabezpieczanie pliku MOF
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>Zabezpieczanie pliku MOF
 
@@ -137,7 +137,7 @@ Poniższy przykład:
  1. tworzy certyfikat na **Tworzenie węzła**.
  2. Eksportuje certyfikatu w tym klucza prywatnego na **Tworzenie węzła**.
  3. Usuwa klucz prywatny z **węzła tworzenie**, ale zachowuje certyfikatu klucza publicznego **Moje** przechowywania.
- 4. Importuje prywatnego klucza certyfikatu do magazynu certyfikatów głównych na **węzeł docelowy**.
+ 4. Importuje prywatnego klucza certyfikatu do magazynu certyfikatów My(Personal) na **węzeł docelowy**.
    - należy dodać go do magazynu certyfikatów głównych, dzięki czemu będą zaufane przez **węzeł docelowy**.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>W węźle Autorstwo: tworzenie i eksportowanie certyfikatu
