@@ -1,16 +1,16 @@
 ---
 description: Więcej informacji na temat Historia wersji rozszerzenia konfiguracji żądanego stanu (DSC) na platformie Azure.
-ms.date: 03/14/2018
+ms.date: 05/09/2018
 ms.topic: conceptual
 keywords: dsc, powershell, azure, extension
 title: Historia wersji Azure rozszerzenia usługi Konfiguracja DSC
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 59c014b4b169a589561f57c1ee2a5e861137aee5
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Historia wersji rozszerzenia konfiguracji Azure żądany stan
 
@@ -20,10 +20,10 @@ W tym artykule będzie zawierał informacje o każdej wersji rozszerzenia maszyn
 
 ## <a name="latest-versions"></a>Najnowsze wersje
 
-### <a name="version-275"></a>Wersja 2,75
+### <a name="version-276"></a>Wersja 2.76
 
 - **Data wydania:**
-  - 5 marca 2018
+  - 9 maja 2018
 - **Obsługiwane systemy operacyjne:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -38,6 +38,42 @@ W tym artykule będzie zawierał informacje o każdej wersji rozszerzenia maszyn
   - WMF 4.0
 - **Środowisko:**
   - Azure
+- **Uwagi:** DSC korzysta z tej wersji w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework w wersji 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (instalowanie WMF wymaga ponownego uruchomienia). Nano Server DSC rola jest zainstalowana na maszynie Wirtualnej.
+- **Nowe funkcje:**
+  - Ulepszenia w metadanych rozszerzenia podstanu i innych niewielkie poprawki błędów.
+
+### <a name="version-219"></a>Wersja 2.19
+
+- **Data wydania:**
+  - 3 czerwca 2016 r.
+- **Obsługiwane systemy operacyjne:**
+  - Windows Server 2016 Technical Preview
+  - Windows Server 2012 R2
+  - Windows Server 2012
+  - Windows Server 2008 R2 z dodatkiem SP1
+- **Obsługa WMF:**
+  - WMF 5.0 RTM
+  - Zaktualizuj WMF 4.0
+  - WMF 4.0
+- **Środowisko:**
+  - Azure
+  - Azure China
+  - Azure dla instytucji rządowych
+- **Uwagi:** DSC korzysta z tej wersji w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (instalowanie WMF wymaga ponownego uruchomienia).
+- **Nowe funkcje:**
+  - Rozszerzenia DSC teraz jest na dodawanej do Chińskiej wersji platformy Azure. Ta wersja zawiera głównie poprawki dotyczące uruchamiania rozszerzenia w chińskiej wersji platformy Azure.
+
+## <a name="supported-versions"></a>Obsługiwane wersje
+
+> [!WARNING]
+> W wersji 2.4 za pośrednictwem 2.13 Użyj WMF 5.0 publicznej wersji zapoznawczej których certyfikaty podpisywania wygasła w sierpniu 2016.  Aby uzyskać więcej informacji na temat tego problemu, zobacz [wpis w blogu](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
+
+### <a name="version-275"></a>Wersja 2,75
+
+- **Data wydania:** 5 marca 2018
+- **Obsługiwane systemy operacyjne:** systemu Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Windows klienta 7/8.1/10, Nano Server
+- **Obsługa WMF:** WMF 5.1, WMF 5.0 RTM, aktualizacji programu WMF 4.0, WMF 4.0
+- **Środowisko:** Azure
 - **Uwagi:** DSC korzysta z tej wersji w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework w wersji 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (instalowanie WMF wymaga ponownego uruchomienia). Nano Server DSC rola jest zainstalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
   - Po przeniesieniu ostatnie GitHub do protokołu TLS 1.2 nie można dołączyć maszyny Wirtualnej, aby konfiguracja DSC automatyzacji Azure za pomocą szablonów DIY Resource Manager dostępne w witrynie Azure Marketplace, lub użyj rozszerzenia usługi Konfiguracja DSC, aby pobrać wszystkie konfiguracji w usłudze GitHub. Zostanie wyświetlony błąd podobny do następującego podczas wdrażania rozszerzenia:
@@ -68,32 +104,6 @@ W tym artykule będzie zawierał informacje o każdej wersji rozszerzenia maszyn
     ```
 
   - W nowej wersji rozszerzenia protokołu TLS 1.2, obecnie jest wymuszany. Podczas wdrażania rozszerzenia, jeśli użytkownik ma już AutoUpgradeMinorVersion = true w szablonie usługi Resource Manager, a następnie rozszerzenie zostanie autoupgraded do 2,75. Ręczne aktualizacje, można określić `TypeHandlerVersion = 2.75` w szablonie usługi Resource Manager.
-
-### <a name="version-219"></a>Wersja 2.19
-
-- **Data wydania:**
-  - 3 czerwca 2016 r.
-- **Obsługiwane systemy operacyjne:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 z dodatkiem SP1
-- **Obsługa WMF:**
-  - WMF 5.0 RTM
-  - Zaktualizuj WMF 4.0
-  - WMF 4.0
-- **Środowisko:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Uwagi:** DSC korzysta z tej wersji w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (instalowanie WMF wymaga ponownego uruchomienia).
-- **Nowe funkcje:**
-  - Rozszerzenia DSC teraz jest na dodawanej do Chińskiej wersji platformy Azure. Ta wersja zawiera głównie poprawki dotyczące uruchamiania rozszerzenia w chińskiej wersji platformy Azure.
-
-## <a name="supported-versions"></a>Obsługiwane wersje
-
-> [!WARNING]
-> W wersji 2.4 za pośrednictwem 2.13 Użyj WMF 5.0 publicznej wersji zapoznawczej których certyfikaty podpisywania wygasła w sierpniu 2016.  Aby uzyskać więcej informacji na temat tego problemu, zobacz [wpis w blogu](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/).
 
 ### <a name="version-270---272"></a>Wersja 2.70 2.72
 
