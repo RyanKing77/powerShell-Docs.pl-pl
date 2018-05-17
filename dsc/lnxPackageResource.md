@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: DSC dla systemu Linux nxPackage zasobów
-ms.openlocfilehash: 0a62bb01c2daa57bd5d6f1ef131ec8ae6d6f81ee
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC dla systemu Linux nxPackage zasobów
 
@@ -37,7 +36,7 @@ nxPackage <string> #ResourceName
 | Nazwa| Nazwa pakietu, dla którego chcesz zapewnić z określonym stanem.|
 | Upewnij się| Określa, czy sprawdzić, czy istnieje pakiet. Ustaw tę właściwość na "Brak", aby upewnić się, że pakiet istnieje. Ustaw ją na "Brak", aby upewnić się, że pakiet nie istnieje. Wartość domyślna to "Brak".|
 | PackageManager| Obsługiwane wartości to "yum", "stanie" i "zypper". Określa Menedżera pakietów do użycia podczas instalowania pakietów. Jeśli **FilePath** określono, że podana ścieżka będzie służyć do zainstalowania pakietu. W przeciwnym razie Menedżera pakietów będzie służyć do zainstalowania pakietu z wstępnie skonfigurowane repozytorium. Jeśli żadna **PackageManager** ani **FilePath** podano w nim domyślnego menedżera pakietów dla będzie używana przez system.|
-| FilePath| Ścieżka pliku, w którym znajduje się pakiet|
+| Ścieżka pliku| Ścieżka pliku, w którym znajduje się pakiet|
 | PackageGroup| Jeśli **$true**, **nazwa** powinien być nazwą grupy pakiet do użycia z **PackageManager**. **PacakgeGroup** jest nieprawidłowa, podczas dostarczania **FilePath**.|
 | Argumenty| Ciąg argumentów, które zostaną przekazane do pakietu, tak jak została podana.|
 | ReturnCode| Oczekiwany kod powrotu. Jeśli kod powrotu rzeczywiste nie odpowiada oczekiwanej wartości podane w tym miejscu konfiguracji spowoduje zwrócenie błędu.|

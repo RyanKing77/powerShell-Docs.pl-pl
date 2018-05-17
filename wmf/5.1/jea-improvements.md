@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: ryanpu
 title: Ulepszenia wystarczającego administracyjnej (JEA)
-ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Ulepszenia wystarczającego administracyjnej (JEA)
 
@@ -50,7 +49,7 @@ Następnie można zapisać funkcji niestandardowych do przetwarzania danych prze
 
 W niektórych przypadkach zadanie, które użytkownik musi wykonać w ramach sesji JEA może być konieczne uzyskiwać dostęp do zasobów poza komputera lokalnego.
 Podczas sesji JEA jest skonfigurowany do używania konta wirtualnego, wszelkie próby osiągnąć tych zasobów pojawi się pochodzą z tożsamości komputera lokalnego, nie konta wirtualnego lub podłączonego użytkownika.
-W TP5, możemy włączono obsługę działających JEA w kontekście [grupy konta usługi zarządzanego przez] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\)aspx), co znacznie ułatwia dostęp do zasobów sieciowych przy użyciu tożsamości domeny.
+W TP5, możemy włączono obsługę działających JEA w kontekście [grupy konta usługi zarządzanego przez] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), co znacznie ułatwia dostęp do zasobów sieciowych przy użyciu tożsamości domeny.
 
 Aby skonfigurować sesję JEA do uruchomienia w ramach konta gMSA, użyj następujących nowy klucz w pliku Współpracuje:
 

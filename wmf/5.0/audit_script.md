@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="script-tracing-and-logging"></a>Śledzenie i rejestrowanie skryptów
 
@@ -23,7 +21,7 @@ Dostępne są następujące zdarzenia:
 | Kod operacji  | Utworzenie                                      |
 | Zadanie    | CommandStart                                |
 | Słowo kluczowe | Obszarze działania                                    |
-| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| Identyfikator zdarzenia | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Wiadomość | Tworzenie tekstu Scriptblock (%1 z %2): </br> %3 </br> Blok skryptu ID: %4 |
 
 
@@ -37,7 +35,7 @@ Po włączeniu pełnego rejestrowania zapisy funkcji rozpoczęcia i zakończenia
 | Kod operacji  | Otwórz (/ zamknięcie)                                         |
 | Zadanie    | CommandStart (/ CommandStop)                           |
 | Słowo kluczowe | Obszarze działania                                               |
-| EventId | Blok skryptu\_wywołania\_Start\_szczegółów (0x1009 = 4105) / </br> Blok skryptu\_wywołania\_pełną\_szczegółów (0x100A = 4106) |
+| Identyfikator zdarzenia | Blok skryptu\_wywołania\_Start\_szczegółów (0x1009 = 4105) / </br> Blok skryptu\_wywołania\_pełną\_szczegółów (0x100A = 4106) |
 | Wiadomość | Wprowadzenie (/ ukończone) wywołanie ScriptBlock identyfikator: %1 </br> Identyfikator działania: %2 |
 
 Identyfikator to identyfikator GUID reprezentujący bloku skryptu (która może zostać skorelowane zdarzenia o identyfikatorze 0x1008) i identyfikator obszaru działania reprezentuje obszaru działania, w którym uruchomiono ten blok skryptu.

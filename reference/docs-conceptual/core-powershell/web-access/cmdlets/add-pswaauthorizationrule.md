@@ -1,17 +1,14 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 12/12/2016
-title: Dodaj pswaauthorizationrule
-ms.technology: powershell
+title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b8020f8b034ab24d79a96da3908e9b63bf017cd9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -71,7 +68,7 @@ Określa nazwę grupy komputerów usług domenowych w usłudze Active Directory 
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByPropertyName)                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-computernameltstringgt"></a>-ComputerName&lt;String&gt;
+### <a name="-computernameltstringgt"></a>-ComputerName&lt;ciągu&gt;
 
 Określa nazwę komputera, do którego ta reguła zezwala na dostęp.
 
@@ -150,7 +147,7 @@ Określa nazwę jednego lub więcej grup użytkowników w usługach AD DS i grup
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByPropertyName)                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-usernameltstringgt"></a>-UserName&lt;String\[\]&gt;
+### <a name="-usernameltstringgt"></a>-UserName&lt;ciągu\[\]&gt;
 
 Określa co najmniej jednego użytkownika, do których ta reguła zezwala na dostęp. Nazwa użytkownika może być kontem użytkownika lokalnego na komputerze z bramą lub użytkownika w usługach AD DS.
 Format jest `domain\user` lub `computer\user`.

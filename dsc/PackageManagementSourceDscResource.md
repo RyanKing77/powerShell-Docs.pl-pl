@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
-title: DSC PackageManagementSource Resource
-ms.openlocfilehash: 8c0cb5a3b0a019ddb5ed995406f499298103b07c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Zasób PackageManagementSource DSC
+ms.openlocfilehash: 3e67cec9058ecb0e43f882f98f5ec8b92e261a09
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource Resource
+# <a name="dsc-packagemanagementsource-resource"></a>Zasób PackageManagementSource DSC
 
 > Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
 
@@ -34,7 +33,7 @@ PSModule [string] #ResourceName
 |---|---|
 | Nazwa| Określa nazwę źródła pakietu jest zarejestrowany lub wyrejestrowany w systemie.|
 | Upewnij się| Określa, czy źródło pakietu ma zostać zarejestrowany lub wyrejestrowany.|
-| InstallationPolicy| Określa, czy masz zaufanie źródła pakietu. One of: "Untrusted", "Trusted".|
+| InstallationPolicy| Określa, czy masz zaufanie źródła pakietu. Jeden z: "Niezaufanych", "Zaufanym".|
 | ProviderName| Określa nazwę dostawcy OneGet za pośrednictwem której można współdziałanie ze źródłem pakietu.|
 | SourceUri| Określa identyfikator URI źródła pakietu.|
 | SourceCredential| Umożliwia dostęp do pakietu zdalnego źródła.|

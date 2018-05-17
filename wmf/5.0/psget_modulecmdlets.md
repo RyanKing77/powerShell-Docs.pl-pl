@@ -1,19 +1,17 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 89e996942cdc2609c670e8e5ba2c576ff6342a9c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Polecenia cmdlet PowerShellGet na potrzeby zarządzania modułami
 
 - [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
-- [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
-- [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
+- [Znajdź moduł](https://technet.microsoft.com/library/dn807167.aspx)
+- [Znajdź skryptu](https://technet.microsoft.com/library/mt654001.aspx)
 - [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
 - [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
 - [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
@@ -25,7 +23,7 @@ ms.lasthandoff: 04/09/2018
 - [Register-PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
 - [Save-Module](https://technet.microsoft.com/en-us/library/mt653992.aspx)
 - [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
+- [Zestaw PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
 - [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
 - [Uninstall-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
 - [Uninstall-Script](https://technet.microsoft.com/en-us/library/mt653989.aspx)
@@ -233,7 +231,7 @@ AliasesToExport = '*'
 }
 ```
 
-After Update-ModuleManifest:
+Po ModuleManifest aktualizacji:
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"

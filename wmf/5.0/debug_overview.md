@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: dee5e8206c61d79faadf8573a82c74d4ac0fb8e0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9ead27fd5d4f146e9062488c1c8cc22a073b922e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Ulepszenia debugowania skryptów programu PowerShell
 
@@ -41,15 +39,15 @@ Istnieją nowe, zaawansowane funkcje debugowania, które umożliwiają dołącza
 
 Nowe polecenia cmdlet dodano umożliwiające listę obszarach bieżącego działania w ramach procesu i dołączyć do tego obszaru działania do debugowania skryptów konsoli środowiska Windows PowerShell lub debugera ISE:
 
--   Get-Runspace
--   Debug-Runspace
--   Enable-RunspaceDebug
--   Disable-RunspaceDebug
+-   Get-obszaru działania
+-   Obszarze działania debugowania
+-   Włącz RunspaceDebug
+-   Wyłącz RunspaceDebug
 -   Get-RunspaceDebug
 
 ### <a name="attach-to-process-hosting-powershell"></a>Dołączanie do procesu hostingu środowiska PowerShell
 
 Teraz można dołączyć do procesu dowolnego komputera, który ma środowiska Windows PowerShell, załadować. W tym celu należy wprowadzić w sesji interaktywnej z procesem, podobnie jak wprowadzić w sesji interaktywnej zdalnego przy użyciu polecenia cmdlet Enter-PSSession:
 
--   Enter-PSHostProcess
--   Exit-PSHostProcess
+-   Wprowadź PSHostProcess
+-   PSHostProcess zakończenia

@@ -1,6 +1,13 @@
-
 ---
-MS.Date: współautora 2017-06/12: manikb ms.topic: odwołanie słów kluczowych: galerii, programu powershell, polecenia cmdlet, tytuł psget: uruchamianie NuGet
+ms.date: 06/12/2017
+contributor: manikb
+keywords: Galeria, programu powershell, polecenia cmdlet, psget
+title: Uruchamianie NuGet
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrap dostawcy NuGet i NuGet.exe
 

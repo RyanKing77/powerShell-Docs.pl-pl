@@ -1,26 +1,24 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: a282ba375c9ee796c1f3d7923f7478e200cd3b19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f545461fd325049d0de4c651d7aa7d50d475eaca
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>Polecenia cmdlet funkcji PackageManagement
 Jest to podstawowy PackageManagement do obsługi oprogramowania odnajdywania, instalacji i magazynu (SDII). Wypróbowanie poleceń cmdlet do tych operacji:
 -   Znajdź pakiet
--   Find-PackageProvider
--   Get-Package
+-   Znajdź PackageProvider
+-   Get pakietu
 -   Get-PackageProvider
 -   Get-PackageSource
 -   Import-PackageProvider
 -   Pakiet instalacyjny
 -   Install-PackageProvider
 -   Register-PackageSource
--   Save-Package
+-   Zapisz pakiet
 -   Set-PackageSource
 -   Uninstall-Package
 -   Unregister-PackageSource
@@ -66,7 +64,7 @@ Find-PackageProvider -Name "Nuget" -AllVersions
 Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
-## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Get-Package Cmdlet](https://technet.microsoft.com/library/dn890704.aspx)
+## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Polecenie Cmdlet Get pakietu](https://technet.microsoft.com/library/dn890704.aspx)
 To polecenie cmdlet zwraca listę wszystkich pakietów oprogramowania, które zostały zainstalowane przy użyciu PackageManagement.
 ```powershell
 # Get all the packages installed by Programs provider
@@ -176,7 +174,7 @@ To polecenie cmdlet zmienia informacje o istniejącym źródle pakietu.
 Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
-## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Uninstall-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
+## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Odinstaluj pakiet polecenia Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
 To polecenie cmdlet odinstalowuje pakietów zainstalowanych na komputerze lokalnym.
 ```powershell
 # Uninstall jquery using nuget

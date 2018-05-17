@@ -1,22 +1,19 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 12/12/2016
-title: polecenia cmdlet dostępu do sieci Web
-ms.technology: powershell
-ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Polecenia cmdlet programu PowerShell Web Access
+ms.openlocfilehash: 34a7a01f154b2e43416dfe8ea43d4d8e937816d9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Polecenia cmdlet programu Windows PowerShell Web Access
 
 Ten zawiera opisy polecenia cmdlet i składnia dla wszystkich poleceń cmdlet specyficznych dostępu do sieci Web programu Windows PowerShell®. Wyświetla listę poleceń cmdlet w kolejności alfabetycznej na podstawie zleceń na początku polecenia cmdlet.
 
-## <a name="add-pswaauthorizationruleadd-pswaauthorizationrulemd"></a>[Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+## <a name="add-pswaauthorizationruleadd-pswaauthorizationrulemd"></a>[Polecenia Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
 
 Dodaje nową regułę autoryzacji do zestawu reguł autoryzacji programu Windows PowerShell® Web Access.
 
@@ -36,7 +33,7 @@ Usuwa wskazaną regułę autoryzacji z programu Windows PowerShell Web Access.
 
 Sprawdza reguły autoryzacji, aby sprawdzić, czy określonego użytkownika, komputer, żądania dostępu do punktu końcowego jest autoryzowany.
 
-## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Uninstall-PswaWebApplication](uninstall-pswawebapplication.md)
+## <a name="uninstall-pswawebapplicationuninstall-pswawebapplicationmd"></a>[Odinstaluj PswaWebApplication](uninstall-pswawebapplication.md)
 
 Odinstalowuje aplikację sieci web programu Windows PowerShell za pomocą programu IIS.
 

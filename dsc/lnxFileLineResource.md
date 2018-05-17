@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: DSC dla systemu Linux nxFileLine zasobów
-ms.openlocfilehash: 798bfa4150996622c33c77d6a5aa3be4af342f1b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b927839c23478aa9916a5d23836b31fccc58484
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC dla systemu Linux nxFileLine zasobów
 
@@ -30,7 +29,7 @@ nxFileLine <string> #ResourceName
 
 |  Właściwość |  Opis |
 |---|---|
-| FilePath| Pełna ścieżka do pliku, aby zarządzać wierszy w docelowym węźle.|
+| Ścieżka pliku| Pełna ścieżka do pliku, aby zarządzać wierszy w docelowym węźle.|
 | ContainsLine| Wiersz, aby upewnić się, istnieje w pliku. Ten wiersz zostanie dołączona do pliku, jeśli nie istnieje w pliku. **ContainsLine** jest wymagane, ale może być ustawiony na ciąg pusty ("ContainsLine =" "), jeśli nie jest wymagana.|
 | DoesNotContainPattern| Wzorzec wyrażenia regularnego wierszy, które nie powinny istnieć w pliku. Dla wszystkich wierszy, które znajdują się w pliku pasuje do tego wyrażenia regularnego wiersz zostaną usunięte z pliku.|
 | dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest pierwszy blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** i jej typ jest **ResourceType**, za pomocą tej składni Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|

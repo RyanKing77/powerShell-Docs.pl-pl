@@ -1,16 +1,13 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 12/12/2016
-title: Pobierz pswaauthorizationrule
-ms.technology: powershell
-ms.openlocfilehash: 74c044c329d8b6a305b86c9056a7041fb5fd046b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Get-PswaAuthorizationRule
+ms.openlocfilehash: d61dce18e87311d7d815a689ba675db44aaec3cb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
@@ -50,7 +47,7 @@ Określa identyfikatory (ID) reguł, które należy uzyskać tego polecenia cmdl
 | Akceptowanie danych wejściowych potoku?               | Wartość true (ByValue, ByPropertyName)       |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-rulenameltstringgt"></a>-RuleName&lt;String\[\]&gt;
+### <a name="-rulenameltstringgt"></a>-RuleName&lt;ciągu\[\]&gt;
 
 Określa nazwy reguł autoryzacji do pobrania. Ten parametr zwraca wszystkie reguły odpowiadające dokładnie nazwy reguł w tej tablicy ciągów.
 
@@ -114,7 +111,7 @@ Identyfikator reguły i nazwę reguły są przekazywane w tym poleceniu cmdlet.
 
 ## <a name="related-topics"></a>Tematy pokrewne
 
-- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Polecenia Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
 - [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
 - [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
 - [Install-PswaWebApplication](install-pswawebapplication.md)

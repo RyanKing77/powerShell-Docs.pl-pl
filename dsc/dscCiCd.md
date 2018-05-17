@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Tworzenie potoku ciągłej integracji i ciągłe wdrażanie w usłudze Konfiguracja DSC
-ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Tworzenie potoku ciągłej integracji i ciągłe wdrażanie w usłudze Konfiguracja DSC
 
@@ -36,7 +35,7 @@ Aby skompilować i uruchomić ten przykład, należy w środowisku zawierającym
 Jest to komputer, na którym będzie wykonywać wszystkie pracy konfigurowania i uruchamiania przykładzie.
 
 Komputer kliencki musi być komputerem z systemem Windows z zainstalowane następujące elementy:
-- [Git](https://git-scm.com/)
+- [git](https://git-scm.com/)
 - sklonowany z repozytorium git lokalnego https://github.com/PowerShell/Demo_CI
 - Edytor tekstu, takich jak [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -373,7 +372,7 @@ Teraz wyzwalacz, który powoduje, że projekt do kompilacji w dowolnej chwili za
 1. W programie TFS, kliknij przycisk **kompilacji i wydania** kartę
 1. Wybierz `DNS Infra` definicji kompilacji, a następnie kliknij przycisk **edycji**
 1. Kliknij przycisk **wyzwalaczy** kartę
-1. Wybierz **ciągłej integracji (CI)**i wybierz `refs/heads/ci-cd-example` na liście rozwijanej gałęzi
+1. Wybierz **ciągłej integracji (CI)** i wybierz `refs/heads/ci-cd-example` na liście rozwijanej gałęzi
 1. Kliknij przycisk **zapisać** , a następnie **OK**
 
 Teraz wszelkie zmiany wyzwalaczy repozytorium git TFS automatyczne kompilacji.

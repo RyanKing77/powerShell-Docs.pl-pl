@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Skrypty programu PowerShell
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Lub, być może, krótki przewodnik po [wprowadzenie](https://github.com/PowerSh
 ### <a name="discoverability"></a>Odnajdowanie
 Programu Windows PowerShell ułatwia odnajdywanie jego funkcje. Na przykład aby uzyskać listę poleceń cmdlet, które umożliwia wyświetlanie i modyfikowanie usług systemu Windows, wpisz:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 Po odnalezieniu, które polecenia cmdlet wykonuje zadanie, możesz dowiedzieć się więcej polecenia cmdlet za pomocą polecenia cmdlet Get-Help. Na przykład aby wyświetlić Pomoc dotyczącą polecenia cmdlet Get-Service, wpisz:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 Większość poleceń cmdlet Emituj obiektów, które można wykonywać na nich operacji i następnie renderowane w tekst do wyświetlenia. Aby w pełni zrozumieć dane wyjściowe tego polecenia cmdlet, należy przekazać dane wyjściowe do polecenia cmdlet Get-elementu członkowskiego. Na przykład następujące polecenie wyświetla informacje o członkami dane wyjściowe obiektu przez polecenie cmdlet Get-Service.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 

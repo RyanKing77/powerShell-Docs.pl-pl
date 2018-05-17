@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 89f0deaece27e2d207dfb820d4df80e427c9cb94
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3679c13c2d28f28f3102b24f6369f1dc264d6884
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="installation-instructions"></a>Instrukcje dotyczące instalacji
 
@@ -19,7 +17,7 @@ Pobierz pakiet poprawne dla systemu operacyjnego i architektura:
 | Windows Server 2012    | x64      | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
 | Windows Server 2008 R2 | x64      | [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
 | Windows 8.1            | x64          | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
-| Windows 8.1            | x86          | [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963) |
+| Windows 8.1            | x86          | [Systemu Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963) |
 | Windows 7 z dodatkiem SP1          | x64          | [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
 | Windows 7 z dodatkiem SP1          | x86          | [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962) |
 
