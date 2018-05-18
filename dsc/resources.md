@@ -1,24 +1,23 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Zasoby usługi Konfiguracja DSC
-ms.openlocfilehash: e393c8fe2e1ba8d68ba9aa1b656d1e5ebfad30e8
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 27e16c39699bb96b2829744b5700f75f59f8802f
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="dsc-resources"></a><span data-ttu-id="4c042-103">Zasoby usługi Konfiguracja DSC</span><span class="sxs-lookup"><span data-stu-id="4c042-103">DSC Resources</span></span>
+# <a name="dsc-resources"></a><span data-ttu-id="b0a19-103">Zasoby usługi Konfiguracja DSC</span><span class="sxs-lookup"><span data-stu-id="b0a19-103">DSC Resources</span></span>
 
-><span data-ttu-id="4c042-104">Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="4c042-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+><span data-ttu-id="b0a19-104">Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="b0a19-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="4c042-105">Żądana Konfiguracja stanu (DSC) zasoby dostarczają bloków konstrukcyjnych dla konfiguracji DSC.</span><span class="sxs-lookup"><span data-stu-id="4c042-105">Desired State Configuration (DSC) Resources provide the building blocks for a DSC configuration.</span></span> <span data-ttu-id="4c042-106">Zasób udostępnia właściwości, które mogą być skonfigurowane (schemat) i zawiera funkcje skryptu programu PowerShell, które wywołuje lokalnego Menedżera konfiguracji (LCM) umożliwia "tak".</span><span class="sxs-lookup"><span data-stu-id="4c042-106">A resource exposes properties that can be configured (schema) and contains the PowerShell script functions that the Local Configuration Manager (LCM) calls to "make it so".</span></span>
+<span data-ttu-id="b0a19-105">Żądana Konfiguracja stanu (DSC) zasoby dostarczają bloków konstrukcyjnych dla konfiguracji DSC.</span><span class="sxs-lookup"><span data-stu-id="b0a19-105">Desired State Configuration (DSC) Resources provide the building blocks for a DSC configuration.</span></span> <span data-ttu-id="b0a19-106">Zasób udostępnia właściwości, które mogą być skonfigurowane (schemat) i zawiera funkcje skryptu programu PowerShell, które wywołuje lokalnego Menedżera konfiguracji (LCM) umożliwia "tak".</span><span class="sxs-lookup"><span data-stu-id="b0a19-106">A resource exposes properties that can be configured (schema) and contains the PowerShell script functions that the Local Configuration Manager (LCM) calls to "make it so".</span></span>
 
-<span data-ttu-id="4c042-107">Zasób może modelu coś jako ogólnego jako plik lub jako określone w ustawieniach serwera IIS.</span><span class="sxs-lookup"><span data-stu-id="4c042-107">A resource can model something as generic as a file or as specific as an IIS server setting.</span></span>  <span data-ttu-id="4c042-108">Grupy takich jak zasoby połączone w Module DSC organizuje wszystkie wymagane pliki w strukturze przenośnego i zawierający metadane, aby określić, jak zasoby są przeznaczone do użycia.</span><span class="sxs-lookup"><span data-stu-id="4c042-108">Groups of like resources are combined in to a DSC Module, which organizes all the required files in to a structure that is portable and includes metadata to identify how the resources are intended to be used.</span></span>
+<span data-ttu-id="b0a19-107">Zasób może modelu coś jako ogólnego jako plik lub jako określone w ustawieniach serwera IIS.</span><span class="sxs-lookup"><span data-stu-id="b0a19-107">A resource can model something as generic as a file or as specific as an IIS server setting.</span></span>  <span data-ttu-id="b0a19-108">Grupy takich jak zasoby połączone w Module DSC organizuje wszystkie wymagane pliki w strukturze przenośnego i zawierający metadane, aby określić, jak zasoby są przeznaczone do użycia.</span><span class="sxs-lookup"><span data-stu-id="b0a19-108">Groups of like resources are combined in to a DSC Module, which organizes all the required files in to a structure that is portable and includes metadata to identify how the resources are intended to be used.</span></span>
 
-<span data-ttu-id="4c042-109">DSC zasobów można znaleźć w następujących tematach:</span><span class="sxs-lookup"><span data-stu-id="4c042-109">The following topics describe DSC resources:</span></span>
+<span data-ttu-id="b0a19-109">DSC zasobów można znaleźć w następujących tematach:</span><span class="sxs-lookup"><span data-stu-id="b0a19-109">The following topics describe DSC resources:</span></span>
 
-- [<span data-ttu-id="4c042-110">Wbudowane zasobów DSC</span><span class="sxs-lookup"><span data-stu-id="4c042-110">Built-In DSC resources</span></span>](builtInResource.md)
-- [<span data-ttu-id="4c042-111">Tworzenie niestandardowych zasobów DSC</span><span class="sxs-lookup"><span data-stu-id="4c042-111">Build custom DSC resources</span></span>](authoringResource.md)
-- [<span data-ttu-id="4c042-112">Wbudowane DSC zasobów dla systemu Linux</span><span class="sxs-lookup"><span data-stu-id="4c042-112">Built-In DSC resources for Linux</span></span>](lnxBuiltInResources.md)
+- [<span data-ttu-id="b0a19-110">Wbudowane zasobów DSC</span><span class="sxs-lookup"><span data-stu-id="b0a19-110">Built-In DSC resources</span></span>](builtInResource.md)
+- [<span data-ttu-id="b0a19-111">Tworzenie niestandardowych zasobów DSC</span><span class="sxs-lookup"><span data-stu-id="b0a19-111">Build custom DSC resources</span></span>](authoringResource.md)
+- [<span data-ttu-id="b0a19-112">Wbudowane DSC zasobów dla systemu Linux</span><span class="sxs-lookup"><span data-stu-id="b0a19-112">Built-In DSC resources for Linux</span></span>](lnxBuiltInResources.md)

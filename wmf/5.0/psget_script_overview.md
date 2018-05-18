@@ -1,18 +1,16 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: a83c6a75080d7671bbddf265b68c8b3a8d089335
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7667aebb6545ae8dde5d94baee4a663f1d26c167
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="fa0d5-102">Odnajdywania skryptu PowerShell, instalacja i zarządzanie za pomocą PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="fa0d5-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="cb6ec-102">Odnajdywania skryptu PowerShell, instalacja i zarządzanie za pomocą PowerShellGet</span><span class="sxs-lookup"><span data-stu-id="cb6ec-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 
-<span data-ttu-id="fa0d5-103">Skrypt programu PowerShell udostępniania funkcji zostały dodane do PowerShellGet w wersji RTM programu WMF 5.0.</span><span class="sxs-lookup"><span data-stu-id="fa0d5-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
-<span data-ttu-id="fa0d5-104">Następujące nowe polecenia cmdlet są dodawane do modułu PowerShellGet do obsługi skryptów programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="fa0d5-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
+<span data-ttu-id="cb6ec-103">Skrypt programu PowerShell udostępniania funkcji zostały dodane do PowerShellGet w wersji RTM programu WMF 5.0.</span><span class="sxs-lookup"><span data-stu-id="cb6ec-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
+<span data-ttu-id="cb6ec-104">Następujące nowe polecenia cmdlet są dodawane do modułu PowerShellGet do obsługi skryptów programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cb6ec-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -39,7 +37,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-<span data-ttu-id="fa0d5-105">Składnia skryptu udostępnianie poleceń cmdlet:</span><span class="sxs-lookup"><span data-stu-id="fa0d5-105">Syntax of script sharing Cmdlets:</span></span>
+<span data-ttu-id="cb6ec-105">Składnia skryptu udostępnianie poleceń cmdlet:</span><span class="sxs-lookup"><span data-stu-id="cb6ec-105">Syntax of script sharing Cmdlets:</span></span>
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 
