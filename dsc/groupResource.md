@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Zasób grupy DSC
-ms.openlocfilehash: 6a4732439bb45e36fa9201975f12194442611002
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 68e0840eaeb116b92260ca697acd5796460a2909
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-group-resource"></a>Zasób grupy DSC
 
@@ -35,7 +34,7 @@ Group [string] #ResourceName
 
 |  Właściwość  |  Opis   |
 |---|---|
-| GroupName| Nazwa grupy, dla którego chcesz zapewnić z określonym stanem.|
+| Nazwa grupy| Nazwa grupy, dla którego chcesz zapewnić z określonym stanem.|
 | Poświadczenie| Poświadczenia wymagane do dostępu do zasobów zdalnego. **Uwaga**: to konto musi mieć odpowiednich uprawnień usługi Active Directory, aby dodać wszystkie konta innego niż lokalne do grupy; w przeciwnym razie wystąpi błąd, gdy konfiguracja jest wykonywana w docelowym węźle.
 | Opis| Opis grupy.|
 | Upewnij się| Wskazuje, czy dana grupa istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że grupa nie istnieje. Ustawienie jej "Przedstawienie" (wartość domyślna) zapewnia, że grupa istnieje.|
