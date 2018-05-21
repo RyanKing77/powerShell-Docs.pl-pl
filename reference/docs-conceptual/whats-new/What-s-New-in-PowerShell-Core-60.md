@@ -172,7 +172,7 @@ Podstawowe programu PowerShell zmienia domyślnym kodowaniem jest zgodny z ekosy
 To oznacza, że wszystkie polecenia cmdlet wbudowanych używające `-Encoding` Użyj parametru `UTF8NoBOM` wartości domyślne.
 Zmiana ta dotyczy następujących poleceń cmdlet:
 
-- Add-Content
+- Dodawanie zawartości
 - Export-Clixml
 - Export-Csv
 - Export-PSSession
@@ -182,7 +182,7 @@ Zmiana ta dotyczy następujących poleceń cmdlet:
 - Pliku wyjściowego
 - Wybierz parametry
 - Wyślij MailMessage
-- Set-Content
+- Zawartość zestawu
 
 Te polecenia cmdlet również zostały zaktualizowane, aby `-Encoding` powszechnie akceptuje parametr `System.Text.Encoding`.
 
@@ -373,7 +373,7 @@ Można znaleźć więcej informacji na temat sposobu wykorzystania przez nas w t
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[breaking-changes]: https://github.com/PowerShell/PowerShell/tree/master/docs/BREAKINGCHANGES.md
+[breaking-changes]: breaking-changes-ps6.md
 [wykaz zmian]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
