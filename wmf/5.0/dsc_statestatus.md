@@ -1,11 +1,11 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Ujednolicony i spójny stan oraz reprezentacja stanu
 
@@ -21,7 +21,7 @@ Reprezentacja LCM stan i stan operacji DSC są poprawione i ujednolicone zgodnie
 
 W poniższej tabeli pokazano wynikowe stan i stan powiązane właściwości w obszarze kilka typowych scenariuszy.
 
-| **Scenariusz**                    | **LCMState\***       | **Stan** | **Wymagane ponowne uruchomienie komputera**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| Scenariusz                    | LCMState       | Stan | Wymagane ponowne uruchomienie komputera  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | W stanie bezczynności                 | Success    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | Niepowodzenie    | $false        | $null                        | F                              |
@@ -46,11 +46,13 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
+
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Rozszerzenie w poleceniu cmdlet Get-DscConfigurationStatus
 
 Polecenie cmdlet Get-DscConfigurationStatus w tej wersji wprowadzono kilka ulepszeń. Wcześniej właściwość data_rozpoczęcia obiektów zwróconych przez polecenie cmdlet jest typu String. Teraz jest typu Data/Godzina, dzięki czemu złożonych, wybierając i filtrowanie łatwiej na podstawie wewnętrznych właściwości obiektu Datetime.
+
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl \*
+(Get-DscConfigurationStatus).StartDate | fl *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -68,14 +70,16 @@ Year : 2015
 ```
 
 Poniżej przedstawiono przykład zwraca wszystkie rekordy operacji DSC się stało z tego samego dnia, tygodnia, w obecnie.
+
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $\_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
 Rejestruje operacje, które nie należy wprowadzać zmian w konfiguracji węzła (tj. tylko operacje odczytu) są eliminowane. W związku z tym Test-DscConfiguration operacji Get-DscConfiguration są już zafałszowane za w zwróciło obiektów z polecenia cmdlet Get-DscConfigurationStatus.
 Rekordy operacji określania ustawień konfiguracji metadanych jest dodawana do powrotu polecenia cmdlet Get-DscConfigurationStatus.
 
 Poniżej przedstawiono przykładowy wynik zwracany z Get-DscConfigurationStatus — wszystkie polecenia cmdlet.
+
 ```powershell
 All configuration operations:
 
@@ -89,12 +93,15 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Rozszerzenie w poleceniu cmdlet Get-DscLocalConfigurationManager
+
 Nowe pole LCMStateDetail jest dodawany do obiektu zwróconego z polecenia cmdlet Get-DscLocalConfigurationManager. To pole jest wypełniane podczas LCMState jest "Zajęty". Mogą być pobierane przez następujące polecenie cmdlet:
+
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
 Poniżej przedstawiono przykładowe dane wyjściowe ciągłego monitorowania w konfiguracji, która wymaga ponownego uruchomienia w węźle zdalnym.
+
 ```powershell
 Start a configuration that requires two reboots
 
