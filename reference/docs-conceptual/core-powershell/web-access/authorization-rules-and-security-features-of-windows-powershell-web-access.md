@@ -2,11 +2,11 @@
 ms.date: 06/27/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
 
@@ -112,7 +112,7 @@ Jeśli użytkownik nie poda innych poświadczeń, podstawowa nazwa użytkownika 
 Przy użyciu reguł autoryzacji można zezwalać użytkownikom na dostęp do określonej konfiguracji sesji.
 Można utworzyć _ograniczonych obszarach działania_ lub konfiguracje sesji dla programu Windows PowerShell Web Access, i zezwolić określonym użytkownikom na połączenia tylko z określonymi konfiguracjami sesji po zalogowaniu się do programu Windows PowerShell Web Access.
 Użyj listy kontroli dostępu (ACL), aby określić, którzy użytkownicy mają dostęp do określonych punktów końcowych i bardziej ograniczyć dostęp do punktu końcowego dla określonych użytkowników przy użyciu reguł autoryzacji opisanych w tej sekcji.
-Aby uzyskać więcej informacji o ograniczonych obszarach działania, zobacz [tworzenie ograniczonego obszaru działania](https://msdn.microsoft.com/en-us/library/dn614668).
+Aby uzyskać więcej informacji o ograniczonych obszarach działania, zobacz [tworzenie ograniczonego obszaru działania](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Konfigurowanie reguł autoryzacji
 
@@ -122,7 +122,7 @@ W drugiej procedurze opisano sposób usuwania reguły autoryzacji, która nie je
 
 Jeśli planujesz używanie niestandardowych konfiguracji sesji, aby zezwolić określonym użytkownikom do pracy tylko w obrębie ograniczonych obszarach działania w programie Windows PowerShell Web Access, Utwórz te niestandardowe konfiguracje sesji przed dodaniem reguł autoryzacji, które odwołują się do nich.
 Nie można użyć poleceń cmdlet programu Windows PowerShell Web Access, aby utworzyć niestandardowe konfiguracje sesji.
-Aby uzyskać więcej informacji na temat tworzenia niestandardowych konfiguracji sesji, zobacz [informacje o plikach](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Aby uzyskać więcej informacji na temat tworzenia niestandardowych konfiguracji sesji, zobacz [informacje o plikach](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Polecenia cmdlet programu Windows PowerShell Web Access obsługuje jeden symbol wieloznaczny — gwiazdka ( \* ).
 Symbole wieloznaczne w ciągach nie są obsługiwane; możesz użyć jednej gwiazdki na każdą właściwość (użytkownicy, komputery, sesje konfiguracji).
@@ -142,7 +142,7 @@ Symbole wieloznaczne w ciągach nie są obsługiwane; możesz użyć jednej gwia
 2. **Krok opcjonalny** umożliwiający ograniczenie dostępu użytkowników za pomocą konfiguracji sesji:
 
     Sprawdź, czy konfiguracje sesji, których chcesz użyć, już istnieją w regułach.
-Jeśli ich nie jeszcze utworzono, skorzystaj z instrukcji tworzenia konfiguracji sesji w [informacje o plikach](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Jeśli ich nie jeszcze utworzono, skorzystaj z instrukcji tworzenia konfiguracji sesji w [informacje o plikach](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Ta reguła autoryzacji zezwala określonemu użytkownikowi na dostęp do jednego komputera w sieci, do których zwykle mają dostęp z dostępem do Konfiguracja określonej sesji, które są ograniczone do użytkownika "™ s typowe potrzeby skryptów i polecenia cmdlet. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
 
@@ -253,6 +253,6 @@ Jeśli serwer bramy działa system Windows Server 2012 R2, Windows PowerShell We
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Zainstalować i używać programu Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Zainstalować i używać programu Windows PowerShell Web Access](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md)

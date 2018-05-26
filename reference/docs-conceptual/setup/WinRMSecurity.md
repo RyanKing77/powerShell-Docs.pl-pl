@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: WinRMSecurity
-ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń usługi zdalne środowiska PowerShell
 
@@ -71,7 +71,7 @@ Zamiast tego należy rozważyć ustawienie TrustedHosts listy hostów, dla któr
 
 ### <a name="ongoing-communication"></a>Stałe komunikacji
 
-Po zakończeniu uwierzytelniania początkowego [protokołu komunikacji zdalnej programu PowerShell](https://msdn.microsoft.com/en-us/library/dd357801.aspx) szyfruje wszystkie stałą łączność z sesji klucza symetrycznego AES 256.
+Po zakończeniu uwierzytelniania początkowego [protokołu komunikacji zdalnej programu PowerShell](https://msdn.microsoft.com/library/dd357801.aspx) szyfruje wszystkie stałą łączność z sesji klucza symetrycznego AES 256.
 
 
 ## <a name="making-the-second-hop"></a>Co drugi przeskok

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4bfedd585958f84889954bd9ee022ea47ac191b2
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e7198999c17b5c0d77724a82b322e6485065225e
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="software-inventory-logging-sil"></a>Rejestrowanie spisu oprogramowania (SIL)
 
-** Ważne: ** *podczas instalowania WMF 5.0 na serwerem systemu Windows Server 2012 R2, który jest już uruchomiona SIL, jest trzeba uruchomić polecenie cmdlet Start-SilLogging raz po zainstalowaniu pakietu WMF, ponieważ proces instalacji błędnie przestanie oprogramowania Funkcja rejestrowania spisu.*
+**Ważne:** *podczas instalowania WMF 5.0 na serwerem systemu Windows Server 2012 R2, który jest już uruchomiona SIL, należy uruchomić polecenie cmdlet Start-SilLogging raz po zainstalowaniu pakietu WMF, jako błędnie zatrzyma proces instalacji Funkcja rejestrowania spisu oprogramowania.*
 
 Rejestrowanie spisu oprogramowania pozwala zmniejszyć koszty operacyjne uzyskiwania dokładnych informacji o oprogramowaniu firmy Microsoft zainstalowane lokalnie na serwerze, a zwłaszcza na wielu serwerach w środowisku INFORMATYCZNYM (zakładając, że oprogramowanie jest zainstalowane i uruchomione w środowisku INFORMATYCZNYM). Podany został on skonfigurowany, można przekazywanie tych danych na serwer agregujący i zbieranie danych dziennika w jednym miejscu przy użyciu procesu jednolite, automatyczne.
 

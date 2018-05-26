@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co drugi przeskok w komunikacji zdalnej programu PowerShell
-ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Co drugi przeskok w komunikacji zdalnej programu PowerShell
 
@@ -21,7 +21,7 @@ Istnieje kilka sposobów, aby rozwiązać ten problem. W tym temacie wyjaśniono
 
 ## <a name="credssp"></a>Protokół CredSSP
 
-Można użyć [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) do uwierzytelniania. CredSSP buforuje poświadczeń na serwerze zdalnym (_ServerB_), aby za jej pomocą otwiera do ataków kradzieży poświadczeń. W przypadku naruszenia zabezpieczeń komputera zdalnego atakujący ma dostęp do poświadczeń użytkownika. Domyślnie na komputerach klienta i serwera jest wyłączone uwierzytelnianie CredSSP. Tylko w środowiskach najbardziej zaufany, należy włączyć uwierzytelnianie CredSSP. Na przykład administrator domeny połączeniem z kontrolerem domeny, ponieważ kontroler domeny jest wysoce zaufanych.
+Można użyć [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) do uwierzytelniania. CredSSP buforuje poświadczeń na serwerze zdalnym (_ServerB_), aby za jej pomocą otwiera do ataków kradzieży poświadczeń. W przypadku naruszenia zabezpieczeń komputera zdalnego atakujący ma dostęp do poświadczeń użytkownika. Domyślnie na komputerach klienta i serwera jest wyłączone uwierzytelnianie CredSSP. Tylko w środowiskach najbardziej zaufany, należy włączyć uwierzytelnianie CredSSP. Na przykład administrator domeny połączeniem z kontrolerem domeny, ponieważ kontroler domeny jest wysoce zaufanych.
 
 Aby uzyskać więcej informacji na temat problemy z zabezpieczeniami w przypadku używania protokołu CredSSP dla komunikacji zdalnej programu PowerShell, zobacz [przypadkowemu sabotażu: należy wziąć pod CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
@@ -175,7 +175,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-W tym przykładzie `$using` zmiennej jest używane do obliczania `$ServerC` widoczne dla zmiennej _ServerB_. Aby uzyskać więcej informacji na temat `$using` zmiennych, zobacz [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx).
+W tym przykładzie `$using` zmiennej jest używane do obliczania `$ServerC` widoczne dla zmiennej _ServerB_. Aby uzyskać więcej informacji na temat `$using` zmiennych, zobacz [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
 Aby umożliwić delegowanie poświadczeń w celu na wielu serwerach _ServerC_, ustaw wartość **PrincipalsAllowedToDelegateToAccount** parametru na _ServerC_ do tablicy:
 
@@ -212,8 +212,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Jak Windows Server 2012 ułatwia słabe z protokołu Kerberos ograniczonego delegowania, część 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Jak Windows Server 2012 ułatwia słabe z protokołu Kerberos ograniczonego delegowania, część 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Opis protokołu Kerberos ograniczonego delegowania dla wdrożenia serwera Proxy aplikacji usługi Azure Active Directory przy użyciu zintegrowanego uwierzytelniania systemu Windows](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory schematu atrybutów M2.210 atrybutu msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx)
-- [[MS-SFU]: rozszerzenia protokołu Kerberos: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory schematu atrybutów M2.210 atrybutu msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]: rozszerzenia protokołu Kerberos: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Zasobów na podstawie protokołu Kerberos ograniczonego delegowania](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Administracja zdalna bez delegowania ograniczonego przy użyciu PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -236,7 +236,7 @@ Aby dowiedzieć się, jak za pomocą PSSessionConfiguration i RunAs rozwiązać 
 
 JEA pozwala ograniczyć poleceń, jakie administrator można uruchomić sesji programu PowerShell. Można go rozwiązać drugi przeskok.
 
-Aby uzyskać informacje o JEA, zobacz [tylko tyle administracji](https://docs.microsoft.com/en-us/powershell/jea/overview).
+Aby uzyskać informacje o JEA, zobacz [tylko tyle administracji](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Zalety
 
@@ -249,7 +249,7 @@ Aby uzyskać informacje o JEA, zobacz [tylko tyle administracji](https://docs.mi
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Przekazywanie poświadczeń wewnątrz bloku skryptu Invoke-Command
 
-Można przekazać poświadczenia wewnątrz **ScriptBlock** parametru wywołania [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) polecenia cmdlet.
+Można przekazać poświadczenia wewnątrz **ScriptBlock** parametru wywołania [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) polecenia cmdlet.
 
 ### <a name="pros"></a>Zalety
 

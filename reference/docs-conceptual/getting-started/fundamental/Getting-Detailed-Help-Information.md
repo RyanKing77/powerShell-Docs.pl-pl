@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Uzyskiwanie szczegółowych informacji pomocy
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: bb0fac4eb338354e411458fad575c726a5f0da35
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="getting-detailed-help-information"></a>Uzyskiwanie szczegółowych informacji pomocy
 Program Windows PowerShell zawiera szczegółowe tematy pomocy, które opisano pojęcia dotyczące środowiska Windows PowerShell i język środowiska Windows PowerShell. Istnieją także tematy pomocy dla każdego polecenia cmdlet i dostawcy i tematy pomocy dla wielu funkcji i skryptów.
@@ -128,7 +128,7 @@ get-help c:\ps-test\TestScript.ps1
 
 Pomoc parametrów, które zostały zaprojektowane do wyświetlania polecenia cmdlet, takich jak *szczegółowy*, *pełne*, *przykłady*, i *parametru*, nadają się do skrypt pomocy i funkcja Pomoc zbyt. Jednak po wyświetleniu wszystkich pomocy, wpisując "get-help \*" Pomoc dla funkcji i skryptów nie są wyświetlane.
 
-Informacje na temat pisania tematy pomocy dla funkcji i skryptów, zobacz [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af), i [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Informacje na temat pisania tematy pomocy dla funkcji i skryptów, zobacz [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), i [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
 ## <a name="getting-help-online"></a>Uzyskiwanie pomocy Online
 Po nawiązaniu połączenia z Internetem, jednym z najlepszych sposobów uzyskania pomocy jest aby wyświetlić tematy Pomocy online. Ponieważ tematy online są łatwe do aktualizacji, są one może zapewnić aktualna zawartość.
@@ -165,10 +165,10 @@ Pierwszy wiersz w sekcji łączy pokrewnych tego tematu przedstawiono poniżej.
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Aby uzyskać informacje dotyczące zapewnienie pomocy technicznej online tematy pomocy, zobacz [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)i zobacz [jak zapisać pomoc dotyczącą polecenia Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) w bibliotece MSDN.
+Aby uzyskać informacje dotyczące zapewnienie pomocy technicznej online tematy pomocy, zobacz [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)i zobacz [jak zapisać pomoc dotyczącą polecenia Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415) w bibliotece MSDN.
 
 ## <a name="see-also"></a>Zobacz też
-- [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
+- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
+- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)

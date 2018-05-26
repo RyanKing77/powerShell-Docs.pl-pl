@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Ułatwienia dostępu w środowisku Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 272dd502ff9d220e82236c93cbffaf4e12054cfe
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Ułatwienia dostępu w środowisku Windows PowerShell ISE
 
@@ -27,7 +27,7 @@ Windows PowerShell ISE obsługuje tryb dużego kontrastu. Dla niedowidzących pu
 
 - Skróty klawiaturowe
 
-- Tabela kolorowanie składni i uprawnienia do modyfikowania kilka innych ustawień kolorów przy użyciu [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) obiekt skryptów.
+- Tabela kolorowanie składni i uprawnienia do modyfikowania kilka innych ustawień kolorów przy użyciu [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) obiekt skryptów.
 
 - Zmień rozmiar tekstu
 
@@ -102,7 +102,7 @@ Następujące skróty klawiaturowe służy do dostosowywania widoku w środowisk
 |**Okienko skryptu w prawo**|CTRL+2|
 |**Maksymalizuj okienko skryptu**|CTRL+3|
 |**Powiększenie**|CTRL+PLUS SIGN|
-|**Pomniejszenie**|CTRL+MINUS SIGN|
+|**Pomniejszenie**|CTRL + ZNAK MINUS|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Skróty klawiaturowe do debugowania skryptów
 

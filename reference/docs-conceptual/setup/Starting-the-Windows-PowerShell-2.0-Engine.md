@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Uruchamianie aparatu programu Windows PowerShell 2.0
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 585e1003554362d11fe99414bd3e80c497799a88
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Uruchamianie aparatu programu Windows PowerShell 2.0
 
@@ -37,13 +37,13 @@ Aby uruchomić aparat Windows PowerShell 2.0 w sesji zdalnej, należy utworzyć 
 
 To jest zaawansowanym zadaniem, które jest zazwyczaj wykonywane przez administratora systemu.
 
-W poniższej procedurze użyto **PSVersion** parametr [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) polecenia cmdlet, aby utworzyć konfigurację sesji, która używa aparat Windows PowerShell 2.0. Można również użyć **PowerShellVersion** parametr [PSSessionConfigurationFile nowy](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) polecenia cmdlet, aby utworzyć plik konfiguracji sesji dla sesji, który ładuje aparat Windows PowerShell 2.0 i można użyć **PSVersion** parametr [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) parametr, aby zmienić konfigurację sesji, aby korzystać z aparatu Windows PowerShell 2.0.
+W poniższej procedurze użyto **PSVersion** parametr [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) polecenia cmdlet, aby utworzyć konfigurację sesji, która używa aparat Windows PowerShell 2.0. Można również użyć **PowerShellVersion** parametr [PSSessionConfigurationFile nowy](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) polecenia cmdlet, aby utworzyć plik konfiguracji sesji dla sesji, który ładuje aparat Windows PowerShell 2.0 i można użyć **PSVersion** parametr [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) parametr, aby zmienić konfigurację sesji, aby korzystać z aparatu Windows PowerShell 2.0.
 
-Aby uzyskać więcej informacji o plikach konfiguracji sesji, zobacz [informacje o plikach](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Informacje o konfiguracjach sesji, w tym konfiguracji i zabezpieczeń, zobacz [informacje o konfiguracjach sesji [4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
+Aby uzyskać więcej informacji o plikach konfiguracji sesji, zobacz [informacje o plikach](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8). Informacje o konfiguracjach sesji, w tym konfiguracji i zabezpieczeń, zobacz [informacje o konfiguracjach sesji [4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab).
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>Aby rozpocząć sesję zdalną programu Windows PowerShell 2.0
 
-1. Aby utworzyć konfigurację sesji, który wymaga aparatu Windows PowerShell 2.0, należy użyć **PSVersion** parametr [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) polecenia cmdlet o wartości "2.0". Uruchom to polecenie na komputerze, na "po stronie serwera" lub na końcu odbieranego połączenia.
+1. Aby utworzyć konfigurację sesji, który wymaga aparatu Windows PowerShell 2.0, należy użyć **PSVersion** parametr [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) polecenia cmdlet o wartości "2.0". Uruchom to polecenie na komputerze, na "po stronie serwera" lub na końcu odbieranego połączenia.
 
    Następujące przykładowe polecenie tworzy PS2 konfiguracji sesji na komputerze Serwer01. Do uruchamiania tego polecenia, uruchom program Windows PowerShell 4.0 lub programu Windows PowerShell 3.0 z **Uruchom jako administrator** opcji.
 
@@ -51,7 +51,7 @@ Aby uzyskać więcej informacji o plikach konfiguracji sesji, zobacz [informacje
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. Aby utworzyć sesję, na komputerze Serwer01, który korzysta z konfiguracji sesji PS2, użyj **ConfigurationName** parametru polecenia cmdlet, których tworzenie sesji zdalnej, takich jak [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) polecenia cmdlet.
+2. Aby utworzyć sesję, na komputerze Serwer01, który korzysta z konfiguracji sesji PS2, użyj **ConfigurationName** parametru polecenia cmdlet, których tworzenie sesji zdalnej, takich jak [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) polecenia cmdlet.
 
    Po uruchomieniu sesji, która korzysta z konfiguracji sesji, aparat Windows PowerShell 2.0 jest ładowane automatycznie do sesji.
 
@@ -63,7 +63,7 @@ Aby uzyskać więcej informacji o plikach konfiguracji sesji, zobacz [informacje
 
 ## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Jak uruchomić zadanie w tle z aparatem Windows PowerShell 2.0
 
-Aby rozpocząć wykonywanie zadania w tle aparat Windows PowerShell 2.0, należy użyć **PSVersion** parametr [zadania rozpoczęcia](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) polecenia cmdlet.
+Aby rozpocząć wykonywanie zadania w tle aparat Windows PowerShell 2.0, należy użyć **PSVersion** parametr [zadania rozpoczęcia](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) polecenia cmdlet.
 
 Następujące polecenie uruchamia zadanie w tle z aparatem Windows PowerShell 2.0
 

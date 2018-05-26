@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co to jest nowe w programie Windows PowerShell 5.0
-ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Co to jest nowe w programie Windows PowerShell 5.0
 Windows PowerShell 5.0 zawiera znaczące nowe funkcje, które poszerzają, zwiększyć jego użyteczność i umożliwiają kontrolowanie i zarządzanie komputerami z systemem Windows, łatwiejsze i bardziej kompleksowe.
@@ -228,19 +228,19 @@ Wiele aktualizacji i ulepszeń do systemu Windows PowerShell Desired stan konfig
 
     -   Get-DscLocalConfigurationManager
 
-    -   Restore-DscConfiguration
+    -   Przywracanie DscConfiguration
 
-    -   Test-DscConfiguration
+    -   DscConfiguration testu
 
     -   Porównaj DscConfiguration
 
-    -   Publish-DscConfiguration
+    -   Publikowanie DscConfiguration
 
-    -   Set-DscLocalConfigurationManager
+    -   Zestaw DscLocalConfigurationManager
 
-    -   Start-DscConfiguration
+    -   Start DscConfiguration
 
-    -   Update-DscConfiguration
+    -   DscConfiguration aktualizacji
 
 - Z scentralizowane DSC raportowanie błędów, informacje o błędzie sformatowanego jest nie tylko rejestrowane w przypadku dziennika, ale mogą być wysyłane do centralnej lokalizacji w celu późniejszej analizy. Do przechowywania błędy konfiguracji DSC, które wystąpiły na każdym serwerze w środowisku, można użyć tej centralnej lokalizacji. Po serwera raportów jest zdefiniowany w konfiguracji meta, wszystkie błędy są wysyłane do serwera raportów i następnie przechowywane w bazie danych. Można skonfigurować tę funkcję, niezależnie od tego, czy węzeł docelowy jest skonfigurowany do ściągania konfiguracje z serwera ściągania.
 
@@ -316,7 +316,7 @@ Windows PowerShell 4.0 obejmuje następujące nowe funkcje.
 
 ### <a name="new-features-in-windows-powershell"></a>Nowe funkcje w programie Windows PowerShell
 
-- **Konfiguracja żądanego stanu programu Windows PowerShell** (DSC) jest systemem zarządzania w programie Windows PowerShell 4.0, która umożliwia wdrażanie i zarządzanie danych konfiguracji usług oprogramowania i środowisko, w którym są uruchomione następujące usługi. Aby uzyskać więcej informacji o konfiguracji DSC, zobacz [wprowadzenie do konfiguracji żądanego stanu programu Windows PowerShell](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0).
+- **Konfiguracja żądanego stanu programu Windows PowerShell** (DSC) jest systemem zarządzania w programie Windows PowerShell 4.0, która umożliwia wdrażanie i zarządzanie danych konfiguracji usług oprogramowania i środowisko, w którym są uruchomione następujące usługi. Aby uzyskać więcej informacji o konfiguracji DSC, zobacz [wprowadzenie do konfiguracji żądanego stanu programu Windows PowerShell](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 
 - **Save-Help** teraz umożliwia zapisywanie pomocy dla modułów, które są zainstalowane na komputerach zdalnych. Save-Help służy do pobierania modułu pomocy z podłączonej do Internetu (na którym nie wszystkie moduły, dla których ma dotyczyć pomoc są zawsze zainstalowanego klienta), a następnie skopiuj zapisane ułatwiają zdalny folder udostępniony lub komputerze zdalnym, który nie ma Internet dostęp.
 
@@ -472,7 +472,7 @@ Program Windows PowerShell 3.0 obejmuje następujące nowe funkcje.
 - [Ulepszenia obsługi znaków specjalnych](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Przepływ pracy programu Windows PowerShell
-Przepływ pracy programu Windows PowerShell oferuje możliwości programu Windows Workflow Foundation programu Windows PowerShell. Możesz pisanie przepływów pracy w języku XAML, lub w języku środowiska Windows PowerShell i uruchom je tak samo, jak należy uruchomić polecenie cmdlet. [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenie cmdlet pobiera poleceń workflw i [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) polecenie cmdlet pobiera tematy Pomocy dotyczące przepływów pracy.
+Przepływ pracy programu Windows PowerShell oferuje możliwości programu Windows Workflow Foundation programu Windows PowerShell. Możesz pisanie przepływów pracy w języku XAML, lub w języku środowiska Windows PowerShell i uruchom je tak samo, jak należy uruchomić polecenie cmdlet. [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenie cmdlet pobiera poleceń workflw i [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) polecenie cmdlet pobiera tematy Pomocy dotyczące przepływów pracy.
 
 Przepływy pracy są sekwencje zadań związanych z zarządzaniem multicomputer, które są długotrwałe, powtarzalne częste, działania równoległego, przerywania, suspendable i uruchamiać ponownie. Przepływy pracy mogą zostać wznowiony od przerwaniu zamierzone lub przypadkowe, na przykład awaria sieci, ponowne uruchomienie systemu Windows lub awarii zasilania.
 
@@ -490,7 +490,7 @@ Poniżej przedstawiono zalety przepływu pracy środowiska Windows PowerShell
 
 - **Trwałość.** : przepływ pracy jest zapisany (lub odnosi się do wyboru) w określonych punktach zdefiniowanego przez jego autora, będzie możliwe wznowienie działania przepływu pracy od ostatniego utrwalonego zadania (lub punktu kontrolnego), zamiast ponownego uruchamiania przepływu pracy od początku.
 
-- **Robustness.** Automatyczne odzyskiwanie po awarii. Przepływy pracy poradzą sobie planowanych lub nieplanowanych ponownego uruchomienia. Można wstrzymać wykonywania przepływu pracy, a następnie wznowienie przepływu pracy od ostatniego punktu trwałości. Autorzy przepływu pracy można wyznaczyć konkretne działania, aby uruchomić ponownie w razie awarii na co najmniej jeden z węzłów zarządzanych.
+- **Niezawodność.** Automatyczne odzyskiwanie po awarii. Przepływy pracy poradzą sobie planowanych lub nieplanowanych ponownego uruchomienia. Można wstrzymać wykonywania przepływu pracy, a następnie wznowienie przepływu pracy od ostatniego punktu trwałości. Autorzy przepływu pracy można wyznaczyć konkretne działania, aby uruchomić ponownie w razie awarii na co najmniej jeden z węzłów zarządzanych.
 
 - **Możliwość odłączyć, połącz się ponownie i uruchomić w sesji rozłączonych.** Użytkownicy mogą połączyć i zakończyć połączenie z serwerem przepływu pracy, ale przepływ pracy działa w sposób ciągły. Możesz wylogować się z komputera klienckiego lub uruchom ponownie komputer i monitorować wykonywania przepływu pracy z innego komputera bez przerywania tego przepływu pracy.
 
@@ -504,7 +504,7 @@ Windows PowerShell Web Access to funkcja systemu Windows Server 2012, która poz
 Aby uzyskać więcej informacji, zobacz [wdrażanie programu Windows PowerShell Web Access](http://go.microsoft.com/fwlink/p/?LinkID=221050).
 
 ### <a name="new-windows-powershell-ise-features"></a>Nowe funkcje programu PowerShell ISE systemu Windows
-Dla programu Windows PowerShell 3.0, Windows PowerShell Integrated Scripting Environment (ISE) ma wiele nowych funkcji, w tym funkcji IntelliSense, okno polecenia Pokaż ujednoliconego okienku konsoli, fragmenty kodu, pasujących nawiasów klamrowych, rozwiń węzeł zwinięte sekcje, automatycznego zapisywania, ostatnio używanych elementów listy, rozbudowane kopii kopii bloku i pełną obsługę pisania przepływów pracy skryptu programu Windows PowerShell. Aby uzyskać więcej informacji, zobacz [about_Windows_PowerShell_ISE [3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
+Dla programu Windows PowerShell 3.0, Windows PowerShell Integrated Scripting Environment (ISE) ma wiele nowych funkcji, w tym funkcji IntelliSense, okno polecenia Pokaż ujednoliconego okienku konsoli, fragmenty kodu, pasujących nawiasów klamrowych, rozwiń węzeł zwinięte sekcje, automatycznego zapisywania, ostatnio używanych elementów listy, rozbudowane kopii kopii bloku i pełną obsługę pisania przepływów pracy skryptu programu Windows PowerShell. Aby uzyskać więcej informacji, zobacz [about_Windows_PowerShell_ISE [3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Obsługa programu Microsoft .NET Framework 4
 Utworzono środowiska Windows PowerShell przy użyciu wspólnej 4.0 środowiska uruchomieniowego języka. Polecenia cmdlet, skrypt i autorów przepływu pracy można użyć nowych klas Microsoft .NET Framework 4 w programie Windows PowerShell z funkcjami, które obejmują zgodność aplikacji i wdrażania, Managed Extensibility Framework, równoległe obliczeniowych, sieci, systemu Windows Communication Foundation i programu Windows Workflow Foundation.
@@ -517,9 +517,9 @@ W programie Windows PowerShell 3.0, trwałe zarządzana przez użytkownika sesji
 
 Teraz możesz odłączyć od sesji bez zakłócania pracy z poleceniami, które są uruchomione w sesji. Możesz zamknąć sesji i Wyłącz komputer. Później można ponownie połączyć się z sesją z innej sesji na tym samym lub na innym komputerze.
 
-**ComputerName** parametr [Get-PSSession](https://technet.microsoft.com/en-us/library/b2b10531-d0df-4746-b877-e75c09955cb6) polecenie cmdlet pobiera z wszystkie sesje użytkowników, które połączyć się z komputerem, teraz nawet, jeśli zostały one uruchomione w innej sesji na innym komputerze. Można nawiązać sesji, wyniki polecenia, Uruchom nowe polecenia, a następnie rozłączyć sesję.
+**ComputerName** parametr [Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) polecenie cmdlet pobiera z wszystkie sesje użytkowników, które połączyć się z komputerem, teraz nawet, jeśli zostały one uruchomione w innej sesji na innym komputerze. Można nawiązać sesji, wyniki polecenia, Uruchom nowe polecenia, a następnie rozłączyć sesję.
 
-Dodano nowe polecenia cmdlet do obsługi funkcji rozłączone sesje tym [Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060), i Receive-PSSession i nowe parametry zostały dodane do polecenia cmdlet, których zarządzanie PSSessions, takich jak **InDisconnectedSession** parametr [Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) polecenia cmdlet.
+Dodano nowe polecenia cmdlet do obsługi funkcji rozłączone sesje tym [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060), i Receive-PSSession i nowe parametry zostały dodane do polecenia cmdlet, których zarządzanie PSSessions, takich jak **InDisconnectedSession** parametr [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) polecenia cmdlet.
 
 Funkcja odłączony sesji jest obsługiwana tylko wtedy, gdy komputery zarówno na poziomie źródłowym ("client") i przerywa końców połączenia ("server") są uruchomione programu Windows PowerShell 3.0.
 
@@ -531,17 +531,17 @@ Jeśli rozłączona sesja została uruchomiona przy użyciu InvokeCommand, progr
 Te funkcje Obsługa komunikacji zdalnej bardziej niezawodne i możliwe do odzyskania oraz umożliwić użytkownikom do wykonywania długotrwałych zadań, które wymagają niezawodnych sesji, takie jak przepływów pracy.
 
 ### <a name="updatable-help-system"></a>System aktualizowalnej pomocy
-Można teraz pobrać pliki zaktualizowany pomocy dla poleceń cmdlet w modułach. [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) polecenia cmdlet identyfikuje najnowszych plików pomocy, pobiera je z Internetu, wypakowuje je, sprawdza je i instaluje je w poprawnym katalogu określonego języka dla modułu.
+Można teraz pobrać pliki zaktualizowany pomocy dla poleceń cmdlet w modułach. [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) polecenia cmdlet identyfikuje najnowszych plików pomocy, pobiera je z Internetu, wypakowuje je, sprawdza je i instaluje je w poprawnym katalogu określonego języka dla modułu.
 
 Aby używać plików pomocy zaktualizowany, po prostu wpisz `Get-Help`. Nie jest konieczne ponowne uruchomienie systemu Windows lub programu Windows PowerShell. Aby zaktualizować Pomoc dla modułów w katalogu $pshome, uruchom program Windows PowerShell przy użyciu opcji "Uruchom jako administrator".
 
-Do obsługi użytkowników, którzy nie mają dostępu do Internetu i użytkownicy za zaporą, nowe [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) polecenie cmdlet pobiera pliki pomocy do katalogu w systemie plików, na przykład do udziału plików. Użytkownicy mogą następnie skorzystać [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) polecenia cmdlet, aby pobrać pliki pomocy zaktualizowane z udziału plików.
+Do obsługi użytkowników, którzy nie mają dostępu do Internetu i użytkownicy za zaporą, nowe [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) polecenie cmdlet pobiera pliki pomocy do katalogu w systemie plików, na przykład do udziału plików. Użytkownicy mogą następnie skorzystać [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) polecenia cmdlet, aby pobrać pliki pomocy zaktualizowane z udziału plików.
 
-Można użyć [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) pliki polecenia cmdlet, aby zaktualizować Pomoc dla wszystkich lub moduły określonego we wszystkich obsługiwanych interfejsu użytkownika kultur. Można nawet zawiesić [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) w profilu programu Windows PowerShell. Domyślnie programu Windows PowerShell pobiera pliki pomocy dla modułu nie więcej niż jeden raz każdego dnia.
+Można użyć [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) pliki polecenia cmdlet, aby zaktualizować Pomoc dla wszystkich lub moduły określonego we wszystkich obsługiwanych interfejsu użytkownika kultur. Można nawet zawiesić [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) w profilu programu Windows PowerShell. Domyślnie programu Windows PowerShell pobiera pliki pomocy dla modułu nie więcej niż jeden raz każdego dnia.
 
-Moduły Windows 8 i Windows Server 2012 należy umieszczać pliki pomocy. Aby pobrać najnowsze pliki pomocy, wpisz `Update-Help`. Aby uzyskać więcej informacji, wpisz `Get-Help` (bez parametrów) lub zobacz [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
+Moduły Windows 8 i Windows Server 2012 należy umieszczać pliki pomocy. Aby pobrać najnowsze pliki pomocy, wpisz `Update-Help`. Aby uzyskać więcej informacji, wpisz `Get-Help` (bez parametrów) lub zobacz [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
 
-Gdy pliki pomocy dla polecenia cmdlet nie są zainstalowane na komputerze, [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) polecenia cmdlet są obecnie wyświetlane automatycznie generowanej pomocy. Automatycznie generowanej pomocy zawiera składnię polecenia i instrukcje dotyczące używania [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) polecenia cmdlet, aby pobrać pliki pomocy.
+Gdy pliki pomocy dla polecenia cmdlet nie są zainstalowane na komputerze, [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) polecenia cmdlet są obecnie wyświetlane automatycznie generowanej pomocy. Automatycznie generowanej pomocy zawiera składnię polecenia i instrukcje dotyczące używania [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) polecenia cmdlet, aby pobrać pliki pomocy.
 
 Dowolnego autora modułu może obsługiwać aktualizowalnej pomocy dla ich modułu. Możesz obejmują pliki pomocy w module i użyj aktualizowalnej pomocy, aby je aktualizować lub Pomiń pliki pomocy i użyj aktualizowalnej pomocy, aby je zainstalować. Aby uzyskać więcej informacji na temat obsługi aktualizowalnej pomocy, zobacz [Obsługa aktualizowalnej pomocy](http://go.microsoft.com/FWLink/?LinkID=242129) w witrynie MSDN.
 
@@ -579,22 +579,22 @@ Można zaprojektować sesji, w którym użytkownicy mogą uruchamiać tylko pole
 
 W poprzednich wersjach programu Windows PowerShell kontrolę na tym poziomie nie była dostępna tylko do tych osób, które można zapisać program C# lub skrypt uruchamiania złożonych. Teraz każdy członek grupy Administratorzy na komputerze można dostosować konfigurację sesji przy użyciu pliku konfiguracji.
 
-Aby utworzyć plik konfiguracji sesji, należy użyć [PSSessionConfigurationFile nowy](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) polecenia cmdlet. Aby zastosować plik konfiguracji sesji do konfiguracji sesji, należy użyć [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) lub [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) polecenia cmdlet.
+Aby utworzyć plik konfiguracji sesji, należy użyć [PSSessionConfigurationFile nowy](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) polecenia cmdlet. Aby zastosować plik konfiguracji sesji do konfiguracji sesji, należy użyć [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) lub [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) polecenia cmdlet.
 
-Aby uzyskać więcej informacji, zobacz [informacje o plikach](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) i [PSSessionConfigurationFile nowy](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
+Aby uzyskać więcej informacji, zobacz [informacje o plikach](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) i [PSSessionConfigurationFile nowy](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Zaplanowane zadania i integracja z harmonogramu zadań
 Można teraz planować zadań w tle programu Windows PowerShell i zarządzać nimi w programie Windows PowerShell i w harmonogramie zadań.
 
 Zadania zaplanowane środowiska Windows PowerShell są przydatne hybrydowego zadań w tle programu Windows PowerShell i zadań harmonogramu zadań.
 
-Podobnie jak zadań w tle programu Windows PowerShell zaplanowane zadania uruchamiane asynchronicznie w tle. Wystąpienia zaplanowanych zadań, które ukończyły można zarządzać za pomocą polecenia cmdlet zadania, takie jak [rozpoczęcia zadania](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) i [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
+Podobnie jak zadań w tle programu Windows PowerShell zaplanowane zadania uruchamiane asynchronicznie w tle. Wystąpienia zaplanowanych zadań, które ukończyły można zarządzać za pomocą polecenia cmdlet zadania, takie jak [rozpoczęcia zadania](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) i [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
 
 Podobnie jak zadania harmonogramu zadań można uruchomić zaplanowanych zadań zgodnie z harmonogramem jednokrotne lub cykliczne, lub w odpowiedzi na akcję lub zdarzeń. Można wyświetlić i zarządzać zadań zaplanowanych w harmonogramie zadań, włączyć i wyłączyć je w razie potrzeby, uruchom je lub użyj ich jako szablon, a określenie warunków, w których uruchomić zadania.
 
 Ponadto zaplanowane zadania mają dostosowane zestaw poleceń cmdlet do zarządzania nimi. Polecenia cmdlet umożliwiają tworzenia, edytowania, zarządzanie, wyłączyć i ponownie włączyć zaplanowanych zadań, Utwórz zaplanowane zadanie wyzwalaczy i ustaw opcje zaplanowanego zadania.
 
-Aby uzyskać więcej informacji na temat zaplanowanych zadań, zobacz [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92).
+Aby uzyskać więcej informacji na temat zaplanowanych zadań, zobacz [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92).
 
 ### <a name="windows-powershell-language-enhancements"></a>Funkcje języka programu PowerShell systemu Windows
 Windows PowerShell 3.0 zawiera wiele funkcji, które ułatwiają jego język prostsze, łatwiejsze do użycia oraz w celu uniknięcia typowych błędów. Ulepszenia obejmują właściwości wyliczenia, liczby i długości właściwości skalarne obiektów, nowych operatorów przekierowania, modyfikator zakresu $Using, formatowanie automatycznych zmiennych, elastyczne skryptu PSItem, atrybuty zmiennych, uproszczone atrybutu argumenty, nazw liczbowych poleceń, analizowania Stop operatora, splatting ulepszone tablicy, nowych operatorów bitowych, uporządkowanej słowników, rzutowanie PSCustomObject i rozszerzona Pomoc oparta na komentarzach.
@@ -604,34 +604,34 @@ Dodano nowe polecenia cmdlet w instalacji programu Windows PowerShell Core, łą
 
 |||
 |-|-|
-|Add-JobTrigger|New-JobTrigger|
-|Connect-PSSession|New-PSSessionConfigurationFile|
-|ConvertFrom-Json|New-PSTransportOption|
-|ConvertTo-Json|New-PSWorkflowExecutionOption|
+|Dodaj JobTrigger|Nowy JobTrigger|
+|Connect-PSSession|Nowe PSSessionConfigurationFile|
+|ConvertFrom Json|New-PSTransportOption|
+|ConvertTo-Json|Nowe PSWorkflowExecutionOption|
 |Disable-JobTrigger|New-PSWorkflowSession|
-|Disable-ScheduledJob|New-ScheduledJobOption|
-|Odłącz PSSession|New-WinEvent|
-|Enable-JobTrigger|Receive-PSSession|
-|Enable-ScheduledJob|Register-CimIndicationEvent|
+|Disable-ScheduledJob|Nowe ScheduledJobOption|
+|Odłącz PSSession|Nowe WinEvent|
+|Włącz JobTrigger|Odbieranie PSSession|
+|Włącz ScheduledJob|Rejestr CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
-|Get-CimClass|Remove-CimInstance|
+|Get-CimClass|Usuń CimInstance|
 |Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Remove-TypeData|
-|Get-ControlPanelItem|Rename-Computer|
+|Get-CimSession|Usuń TypeData|
+|Get-ControlPanelItem|Zmień nazwę komputera|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Save-Help|
-|Get-ScheduledJob|Set-CimInstance|
+|Get-ScheduledJob|Zestaw CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|Import-IseSnippet|Set-ScheduledJobOption|
+|IseSnippet importu|Zestaw ScheduledJobOption|
 |Wywołanie AsWorkflow|Pokaż polecenia|
-|Invoke-CimMethod|Show-ControlPanelItem|
-|Wywołanie RestMethod|Suspend-Job|
-|Invoke-WebRequest|Test-PSSessionConfigurationFile|
-|New-CimInstance|Odblokować plik|
-|New-CimSession|Unregister-ScheduledJob|
-|New-CimSessionOption|Update-Help|
-|New-IseSnippet||
+|Wywołanie CimMethod|Pokaż ControlPanelItem|
+|Wywołanie RestMethod|Wstrzymaj zadanie|
+|Wywołanie WebRequest|PSSessionConfigurationFile testu|
+|Nowe CimInstance|Odblokować plik|
+|Nowy CimSession|Unregister-ScheduledJob|
+|Nowe CimSessionOption|Update-Help|
+|Nowe IseSnippet||
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Ulepszenia istniejących podstawowych poleceń cmdlet i dostawców
 Windows PowerShell 3.0 obejmuje nowe funkcje istniejących poleceń cmdlet wraz ze składnią uproszczoną i nowe parametry dla następujących poleceń cmdlet: polecenia cmdlet Computer, CSV polecenia cmdlet Get-ChildItem Get-Command, Get-Content zabezpieczeń Get-Historia obiektu miary polecenia cmdlet Select-Object, wybierz ciąg, Podziel-Path, procesu uruchamiania Tee-Object, Test-Connection, Dodaj członków i polecenia cmdlet usługi WMI.
@@ -641,21 +641,21 @@ Dostawcy programu Windows PowerShell również udoskonalone znacznie, w tym obs�
 ### <a name="remote-module-import-and-discovery"></a>Importuj moduł zdalnego i odnajdywania
 Program Windows PowerShell 3.0 rozszerza odnajdywania modułu, importowanie i możliwości niejawne komunikacji zdalnej na komputerach zdalnych. Polecenia cmdlet modułu uzyskać modułów na komputerach zdalnych i zaimportuj moduły na komputerze lokalnym lub zdalnym przy użyciu komunikacji zdalnej programu Windows PowerShell. Obsługa nowej sesji CIM umożliwia przy użyciu modelu wspólnych informacji i usługi WMI do zarządzania komputerami z systemem innym niż Windows, importując poleceń na komputerze lokalnym, który niejawnie uruchomiony na komputerze zdalnym.
 
-Aby uzyskać więcej informacji, zobacz Tematy pomocy dla [Get-Module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) i [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) polecenia cmdlet.
+Aby uzyskać więcej informacji, zobacz Tematy pomocy dla [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) i [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) polecenia cmdlet.
 
 ### <a name="enhanced-tab-completion"></a>Uzupełnianie po naciśnięciu tabulatora rozszerzone
 Uzupełnianie po naciśnięciu tabulatora w konsoli środowiska Windows PowerShell teraz uzupełnia nazwy poleceń cmdlet, parametry, wartości parametrów, wyliczenia, platformy .NET Framework typów, COM obiektów, foldery i więcej. Funkcję uzupełniania karta została napisana, na podstawie nowy analizator składni i drzewa składni abstrakcyjnej do obsługi scenariuszy, w tym drzewa analizy w pamięci i uzupełniania po naciśnięciu tabulatora linii środkowej.
 
 ### <a name="module-auto-loading"></a>Automatyczne ładowanie modułu
-[Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenia cmdlet teraz pobiera wszystkie polecenia cmdlet i funkcje z wszystkich modułów, które są zainstalowane na komputerze, nawet jeśli moduł nie został zaimportowany do bieżącej sesji.
+[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenia cmdlet teraz pobiera wszystkie polecenia cmdlet i funkcje z wszystkich modułów, które są zainstalowane na komputerze, nawet jeśli moduł nie został zaimportowany do bieżącej sesji.
 
 Po wyświetleniu okna polecenia cmdlet, które są potrzebne, można go natychmiast bez importowania wszelkich modułów. Moduły programu Windows PowerShell teraz są importowane automatycznie, korzystając z dowolnym poleceniu cmdlet w module. Nie należy do wyszukania modułu i zaimportować go do korzystania z jego poleceń cmdlet.
 
-Automatyczne importowanie modułów zostanie wywołany za pomocą polecenia cmdlet uruchomione w poleceniu, **Get-Command** dla polecenia cmdlet bez symboli wieloznacznych lub systemem [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) dla polecenia cmdlet bez symboli wieloznacznych.
+Automatyczne importowanie modułów zostanie wywołany za pomocą polecenia cmdlet uruchomione w poleceniu, **Get-Command** dla polecenia cmdlet bez symboli wieloznacznych lub systemem [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) dla polecenia cmdlet bez symboli wieloznacznych.
 
 Można włączyć, wyłączyć i skonfigurować automatyczne importowanie modułów za pomocą **$PSModuleAutoLoadingPreference** zmiennej preferencji.
 
-Aby uzyskać więcej informacji, zobacz [modułach [4]](https://technet.microsoft.com/en-us/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b)i tematy pomocy dla [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) i [Import-Module ](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) polecenia cmdlet.
+Aby uzyskać więcej informacji, zobacz [modułach [4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b)i tematy pomocy dla [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) i [Import-Module ](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) polecenia cmdlet.
 
 ### <a name="module-experience-improvements"></a>Ulepszenia obsługi modułu
 Moduły, w tym następujące nowe funkcje programu Windows PowerShell 3.0 oferuje obsługę zaawansowanych funkcji.
@@ -672,16 +672,16 @@ Moduły, w tym następujące nowe funkcje programu Windows PowerShell 3.0 oferuj
 
 6. Ulepszone wymagania modułu, w tym pełną wymagane moduły z wersją i identyfikator GUID i automatyczne importowanie wymagane moduły
 
-7. Zapewniająca, sprawnego funkcjonowania [ModuleManifest nowy](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) polecenia cmdlet.
+7. Zapewniająca, sprawnego funkcjonowania [ModuleManifest nowy](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) polecenia cmdlet.
 
 8. Nowy **modułu** parametr #Requires
 
-9. Ulepszone [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) polecenia cmdlet zarówno **MinimumVersion** i **RequiredVersion** parametrów.
+9. Ulepszone [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) polecenia cmdlet zarówno **MinimumVersion** i **RequiredVersion** parametrów.
 
 ### <a name="simplified-command-discovery"></a>Polecenie uproszczony odnajdywania
-Nie trzeba importować wszystkie moduły, aby odnaleźć dostępne do sesji polecenia. W programie Windows PowerShell 3.0 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenie cmdlet pobiera wszystkie polecenia ze wszystkich zainstalowanych modułów. A jeśli używasz polecenia moduł, który eksportuje polecenia jest automatycznie importowane do sesji.
+Nie trzeba importować wszystkie moduły, aby odnaleźć dostępne do sesji polecenia. W programie Windows PowerShell 3.0 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenie cmdlet pobiera wszystkie polecenia ze wszystkich zainstalowanych modułów. A jeśli używasz polecenia moduł, który eksportuje polecenia jest automatycznie importowane do sesji.
 
-Nowy [Pokaż polecenie](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) polecenia cmdlet jest przeznaczona szczególnie dla początkujących użytkowników. W oknie można wyszukiwać. Można wyświetlić wszystkie polecenia lub filtrować przez moduł, zaimportować moduł, klikając przycisk, użyj pola tekstowe i list rozwijanych, aby utworzyć prawidłowe polecenie, a następnie skopiować lub uruchom polecenie bez zamykania okna.
+Nowy [Pokaż polecenie](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) polecenia cmdlet jest przeznaczona szczególnie dla początkujących użytkowników. W oknie można wyszukiwać. Można wyświetlić wszystkie polecenia lub filtrować przez moduł, zaimportować moduł, klikając przycisk, użyj pola tekstowe i list rozwijanych, aby utworzyć prawidłowe polecenie, a następnie skopiować lub uruchom polecenie bez zamykania okna.
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Rejestrowanie udoskonalone, diagnostyki i obsługa zasad grupy
 Program Windows PowerShell 3.0 poprawia rejestrowania i śledzenia pomocy technicznej dla poleceń i moduły ze śledzenia zdarzeń w dziennikach zdarzeń systemu Windows (ETW), można edytować **LogPipelineExecutionDetails** właściwości modułów i "Włącz w Module Grupy rejestrowania"ustawienia zasad. Teraz można uzyskać wartości parametrów z szczegóły dziennika za pomocą wyświetlania właściwości dziennika.
@@ -692,13 +692,13 @@ Nowy format i dane wyjściowe ulepszenia zwiększyć wydajność wszystkich uży
 ### <a name="enhanced-console-host-experience"></a>Środowisko hosta rozszerzone konsoli
 Program Windows PowerShell konsoli hosta ma nowe funkcje w tym pojedynczego komórek wielowątkowych domyślnie programu Windows PowerShell 3.0. Nowa opcja "Uruchamianie ze środowiska PowerShell" w Eksploratorze plików umożliwia uruchamianie skryptów w sesji nieograniczony przez kliknięcie prawym przyciskiem myszy. Nowe Logika uruchamiania hosta konsoli uruchamia środowiska Windows PowerShell szybciej i nowych czcionek pozwalają personalizować środowisko okna konsoli znane.
 
-Aby uzyskać więcej informacji, zobacz [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
+Aby uzyskać więcej informacji, zobacz [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
 
 ### <a name="new-cmdlet-and-hosting-apis"></a>Nowe polecenia Cmdlet i hostingu API
 Nowe polecenia Cmdlet interfejsu API i obsługa interfejsu API obejmują drzewo składni zaawansowane publiczny (AST) interfejsów API i interfejsów API potoku stronicowania, zagnieżdżonych potoki, uzupełniania po naciśnięciu tabulatora pule obszaru działania, Windows RT, atrybut przestarzałe polecenia cmdlet i właściwości zlecenie i rzeczownik obiektu FunctionInfo.
 
 ### <a name="performance-improvements"></a>Ulepszenia wydajności
-Znaczący wzrost wydajności w programie Windows PowerShell pochodzą z nowego analizatora języka, który jest oparty na dynamiczne środowiska uruchomieniowego języka (DLR) w programie .NET Framework 4., wraz z kompilacja skryptu środowiska uruchomieniowego, aparat ulepszenia niezawodności i zmiany Algorytm [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) który zwiększenia wydajności, szczególnie w przypadku udziałów wyszukiwanie w sieci.
+Znaczący wzrost wydajności w programie Windows PowerShell pochodzą z nowego analizatora języka, który jest oparty na dynamiczne środowiska uruchomieniowego języka (DLR) w programie .NET Framework 4., wraz z kompilacja skryptu środowiska uruchomieniowego, aparat ulepszenia niezawodności i zmiany Algorytm [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) który zwiększenia wydajności, szczególnie w przypadku udziałów wyszukiwanie w sieci.
 
 ### <a name="runas-and-shared-host-support"></a>Uruchom jako i obsługa hostów udostępnionego
 Program Windows PowerShell 3.0 obejmuje obsługę funkcji Uruchom jako i udostępnionych przez hosta.
@@ -708,8 +708,8 @@ Program Windows PowerShell 3.0 obejmuje obsługę funkcji Uruchom jako i udostę
 **SharedHost** funkcji umożliwia wielu użytkownikom na wielu komputerach, aby podłączyć się jednocześnie sesję przepływu pracy i monitorować postęp przepływu pracy. Użytkownicy mogą uruchomić przepływ pracy na jednym komputerze, a następnie nawiązać sesji przepływu pracy na innym komputerze bez rozłączeniu sesji z oryginalnego komputera. Użytkownicy muszą mieć te same uprawnienia i używać tą samą konfiguracją sesji. Aby uzyskać więcej informacji zobacz "Systemem Windows PowerShell Workflow" w wprowadzenie do przepływu pracy środowiska Windows PowerShell.
 
 ### <a name="special-character-handling-improvements"></a>Ulepszenia obsługi znaków specjalnych
-Aby zwiększyć możliwości programu Windows PowerShell 3.0 interpretowania i prawidłowej obsługi znaków specjalnych, **LiteralPath** parametr, który obsługuje znaków specjalnych w ścieżkach, jest prawidłowy w niemal wszystkich poleceń cmdlet, które mają  **Ścieżka** parametru, w tym nowe [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) i [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) polecenia cmdlet. Analizator obejmuje również specjalną logikę do poprawy obsługi znaku backtick (\`) i nawiasy kwadratowe w nazwach plików i ścieżek.
+Aby zwiększyć możliwości programu Windows PowerShell 3.0 interpretowania i prawidłowej obsługi znaków specjalnych, **LiteralPath** parametr, który obsługuje znaków specjalnych w ścieżkach, jest prawidłowy w niemal wszystkich poleceń cmdlet, które mają  **Ścieżka** parametru, w tym nowe [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) i [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) polecenia cmdlet. Analizator obejmuje również specjalną logikę do poprawy obsługi znaku backtick (\`) i nawiasy kwadratowe w nazwach plików i ścieżek.
 
 ## <a name="see-also"></a>Zobacz też
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [Środowisko Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)

@@ -2,11 +2,11 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: za pomocą konsoli programu powershell systemu windows oparte na sieci web
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Korzystanie z konsoli internetowej programu Windows PowerShell
 
@@ -81,7 +81,7 @@ Najprostszą metodą konfiguracji komputera w celu umożliwienia zarządzania zd
 
     Zwykle poświadczenia przekazywane za pośrednictwem bramy systemu Windows PowerShell Web Access są takie same, które są rozpoznawane przez komputer zdalny, które mają być zarządzane. Jeśli chcesz użyć innych poświadczeń do zarządzania komputerem zdalnym określoną w kroku 2, rozwiń węzeł **opcjonalne ustawienia połączenia** sekcji i udostępnienie alternatywnych poświadczeń. W przeciwnym razie przejdź do kroku 6.
 
-1. Jeśli administrator programu Windows PowerShell Web Access utworzył niestandardową konfigurację sesji dla użytkowników programu Windows PowerShell Web Access, wpisz nazwę konfiguracji sesji w **Nazwa konfiguracji** pola. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+1. Jeśli administrator programu Windows PowerShell Web Access utworzył niestandardową konfigurację sesji dla użytkowników programu Windows PowerShell Web Access, wpisz nazwę konfiguracji sesji w **Nazwa konfiguracji** pola. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Zachowaj **typ uwierzytelniania** ustawioną **domyślne** , chyba że użytkownik ma zalecił inaczej przez administratora programu Windows PowerShell Web Access.
 
