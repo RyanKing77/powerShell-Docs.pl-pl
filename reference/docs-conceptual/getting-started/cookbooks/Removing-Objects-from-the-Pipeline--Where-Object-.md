@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Usuwanie obiektów z potoku gdzie obiektów
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753842"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Usuwanie obiektów z potoku (Where-Object)
 
 W programie Windows PowerShell można często generować i przekazują więcej obiektów dla potoku nie ma. Możesz określić właściwości określonym obiektów do wyświetlenia za pomocą **Format** poleceń cmdlet, ale nie pomaga problemu usunięcie całych obiektów z ekranu. Można filtrować obiektów przed zakończeniem potoku, więc dostępne akcje na podzbiorze wstępnie wygenerowane obiekty.
 
-Program Windows PowerShell zawiera **Where-Object** polecenia cmdlet, które umożliwia testowanie każdego obiektu w potoku i tylko przekazywanie ich do potoku spełniający określonego warunku. Obiekty, które nie przejdą testów są usuwane z potoku. Podaj warunku w postaci wartości **Where ObjectFilterScript** parametru.
+Program Windows PowerShell zawiera `Where-Object` polecenia cmdlet, które umożliwia testowanie każdego obiektu w potoku i tylko przekazywanie ich do potoku spełniający określonego warunku. Obiekty, które nie przejdą testów są usuwane z potoku. Podaj warunku w postaci wartości `Where-Object` **FilterScript** parametru.
 
 ### <a name="performing-simple-tests-with-where-object"></a>Wykonywanie prostych testów z Where-Object
 
-Wartość **FilterScript** jest *bloku skryptu* — jeden lub więcej poleceń programu Windows PowerShell otoczona nawiasów klamrowych {} - który daje w wyniku wartość true lub false. Te bloki skryptu może być bardzo proste, ale są one tworzone wymaga wiedzy pojęcie innego środowiska Windows PowerShell i operatory porównania. Operator porównania porównuje elementy, które są wyświetlane na każdej stronie. Operatory porównania rozpoczynać się od "-" znak i zostaną wykonane przez nazwę. Operatory porównania podstawowe działają w niemal każdego rodzaju obiektu. Bardziej zaawansowane operatory porównania może działać tylko na tekst lub tablic.
+Wartość **FilterScript** jest *bloku skryptu* — co najmniej jeden poleceń programu Windows PowerShell otoczona nawiasów klamrowych {} — która daje w wyniku wartość true lub false. Te bloki skryptu może być bardzo proste, ale są one tworzone wymaga wiedzy pojęcie innego środowiska Windows PowerShell i operatory porównania. Operator porównania porównuje elementy, które są wyświetlane na każdej stronie. Operatory porównania rozpoczynać się od "-" znak i zostaną wykonane przez nazwę. Operatory porównania podstawowe działają w niemal każdego rodzaju obiektu. Bardziej zaawansowane operatory porównania może działać tylko na tekst lub tablic.
 
 > [!NOTE]
 > Domyślnie podczas pracy z tekstem programu Windows PowerShell operatory porównania jest rozróżniana wielkość liter.
@@ -30,9 +31,9 @@ Z powodu analizy zagadnienia, symbole, takie jak <>, i = nie są używane jako o
 |-ne|Nie równa się|1 - ne 2|
 |lt —|Jest mniejsza niż|1 - lt 2|
 |-le|Jest mniejsze niż lub równe|le 1 - 2|
-|-gt|Jest większa niż|2 - gt-1|
+|->|Jest większa niż|2 - gt-1|
 |-ge|Jest większe lub równe|2 -ge 1|
-|-like|Przypomina (symbol wieloznaczny porównanie tekstu)|"file.doc" — takie jak "f\*.korzystać?"|
+|— przykład|Przypomina (symbol wieloznaczny porównanie tekstu)|"file.doc" — takie jak "f\*.korzystać?"|
 |-notlike|Nie jest jak (symbol wieloznaczny porównanie tekstu)|"file.doc"-notlike "p\*doc"|
 |-zawiera|zawiera|1,2,3 - zawiera 1|
 |-notcontains|Nie zawiera|1,2,3 - notcontains 4|
