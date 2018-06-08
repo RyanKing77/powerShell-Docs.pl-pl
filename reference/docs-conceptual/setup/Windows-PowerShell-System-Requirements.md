@@ -4,10 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Wymagania systemowe programu Windows PowerShell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483053"
 ---
 # <a name="windows-powershell-system-requirements"></a>Wymagania systemowe programu Windows PowerShell
 Ten temat zawiera wymagania systemowe programu Windows PowerShell 3.0, programu Windows PowerShell 4.0 i programu Windows PowerShell 5.0 oraz funkcje specjalne, takie jak Windows PowerShell Integrated Scripting Environment (ISE), poleceń CIM i przepływów pracy.

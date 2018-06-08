@@ -4,10 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Jak pisać i uruchamiać skrypty w środowisku Windows PowerShell ISE
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483121"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Jak pisać i uruchamiać skrypty w środowisku Windows PowerShell ISE
 

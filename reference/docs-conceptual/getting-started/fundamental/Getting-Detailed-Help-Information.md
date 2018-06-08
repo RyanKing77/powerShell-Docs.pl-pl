@@ -4,10 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Uzyskiwanie szczegółowych informacji pomocy
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483036"
 ---
 # <a name="getting-detailed-help-information"></a>Uzyskiwanie szczegółowych informacji pomocy
 Program Windows PowerShell zawiera szczegółowe tematy pomocy, które opisano pojęcia dotyczące środowiska Windows PowerShell i język środowiska Windows PowerShell. Istnieją także tematy pomocy dla każdego polecenia cmdlet i dostawcy i tematy pomocy dla wielu funkcji i skryptów.

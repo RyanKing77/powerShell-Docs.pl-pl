@@ -3,10 +3,11 @@ ms.date: 08/09/2017
 keywords: środowiska PowerShell, polecenia cmdlet, pobierania, instalacji, ustawienia, systemu windows 10, windows 8.1, windows 8.0, windows 7
 title: Instalowanie programu Windows PowerShell
 ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483002"
 ---
 # <a name="installing-windows-powershell"></a>Instalowanie programu Windows PowerShell
 Środowisko Windows PowerShell jest zainstalowane domyślnie w każdym systemie Windows począwszy od systemu Windows 7 z dodatkiem SP1 i Windows Server 2008 R2 z dodatkiem SP1.
