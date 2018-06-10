@@ -1,11 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251487"
 ---
 # <a name="script-tracing-and-logging"></a>Śledzenie i rejestrowanie skryptów
 
@@ -104,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-Podobnie jak w przypadku wszystkich systemów rejestrowania mające buforu przechowywania ograniczone (tj. dzienniki zdarzeń systemu Windows), jest jeden atak tej infrastruktury do wypełniania dziennika fałszywe zdarzenia, aby ukryć dowód wcześniej. Aby zabezpieczyć się na ataki, upewnij się, że masz jakiegoś zbierania dzienników zdarzeń — konfiguracja (np. Windows funkcji przekazywania zdarzeń, [analizie atakujący dokonuje monitorowania dziennika zdarzeń systemu Windows z](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) można przenieść dzienniki zdarzeń wylogowuje na komputerze jako najszybciej, jak to możliwe.
+Podobnie jak w przypadku wszystkich systemów rejestrowania mające buforu przechowywania ograniczone (tj. dzienniki zdarzeń systemu Windows), jest jeden atak tej infrastruktury do wypełniania dziennika fałszywe zdarzenia, aby ukryć dowód wcześniej. Aby zabezpieczyć się na ataki, upewnij się, że masz jakiegoś zbierania dzienników zdarzeń — konfiguracja (np. Windows funkcji przekazywania zdarzeń, [analizie atakujący dokonuje monitorowania dziennika zdarzeń systemu Windows z](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) można przenieść dzienniki zdarzeń wylogowuje na komputerze jako najszybciej, jak to możliwe.

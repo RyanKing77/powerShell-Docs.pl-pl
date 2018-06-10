@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zmienianie stanu komputera
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c659ad54325b0f7305f882e1cb9607062abad6a4
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251521"
 ---
 # <a name="changing-computer-state"></a>Zmienianie stanu komputera
 
@@ -49,16 +50,16 @@ Aby uzyskać więcej informacji, a także znalezienia innych funkcji Metoda Win3
 
 Zamykanie i ponowne uruchamianie komputerów są zwykle te same rodzaje zadań. Narzędzia, które zamykanie komputera zazwyczaj uruchomi go również — i na odwrót. Dostępne są dwie opcje prostego do ponownego uruchomienia komputera w programie Windows PowerShell. Za pomocą Tsshutdn.exe lub Shutdown.exe odpowiednie argumenty. Można uzyskać informacji o szczegółowe dane użycia **tsshutdn.exe /?** lub **shutdown.exe /?**.
 
-Można również wykonać zamknięcia i ponownego uruchamiania działania za pomocą **Win32_OperatingSystem** bezpośrednio z Windows PowerShell.
+Można również wykonać zamknięcia i ponownego uruchamiania działania bezpośrednio z programu Windows PowerShell również.
 
-Aby wyłączyć komputer, należy użyć metody Win32Shutdown z **1** flagi.
+Aby wyłączyć komputer, użyj polecenia ponownego uruchomienia komputera
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-Aby ponownie uruchomić system operacyjny, należy użyć metody Win32Shutdown z **2** flagi.
+Aby ponownie uruchomić system operacyjny, użyj polecenia ponownego uruchomienia komputera
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```
