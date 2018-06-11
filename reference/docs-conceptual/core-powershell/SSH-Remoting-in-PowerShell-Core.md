@@ -74,7 +74,7 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Ustawienia na komputerze z systemem Linux (Ubuntu 14.04)
 
-1. Zainstaluj najnowszą [Środowiska PowerShell dla systemu Linux] kompilacji z witryny GitHub
+1. Zainstaluj najnowszą [Podstawowe programu PowerShell dla systemu Linux] kompilacji z witryny GitHub
 1. Zainstaluj [Ubuntu SSH] zgodnie z potrzebami
 
     ```bash
@@ -109,7 +109,7 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 ## <a name="setup-on-macos-machine"></a>Instalacja na komputerze MacOS
 
-1. Zainstaluj najnowszą [programu PowerShell dla MacOS] kompilacji
+1. Zainstaluj najnowszą [Podstawowe programu PowerShell dla MacOS] kompilacji
     - Upewnij się, że usługi zdalne SSH jest włączone, wykonaj następujące czynności:
       - Otwórz `System Preferences`
       - Kliknij pozycję `Sharing`
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. polecenie sudo nie działa w sesji zdalnej dla systemu Linux maszyny.
 
-[Podstawowe programu PowerShell dla systemu Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Podstawowe programu PowerShell dla systemu Windows]: ../setup/installing-powershell-core-on-windows.md#msi
+[Podstawowe programu PowerShell dla systemu Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[Podstawowe programu PowerShell dla MacOS]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Instalacja]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[Środowiska PowerShell dla systemu Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[Programu PowerShell dla MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
