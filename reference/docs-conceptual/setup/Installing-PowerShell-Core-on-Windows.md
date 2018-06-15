@@ -2,17 +2,17 @@
 
 ## <a name="msi"></a>MSI
 
-Do zainstalowania programu PowerShell na klientach z systemem Windows lub Windows Server (działa w systemie Windows 7 z dodatkiem SP1, Server 2008 R2 lub nowszy), Pobierz pakiet MSI z naszej usługi GitHub [zwalnia][] strony.
+Do zainstalowania programu PowerShell na klientach z systemem Windows lub Windows Server (działa w systemie Windows 7 z dodatkiem SP1, Server 2008 R2 lub nowszy), Pobierz pakiet MSI z naszą stronę [] GitHub [wersjach].
 
-Plik MSI wygląda tak- `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+Plik MSI wygląda tak- `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Po pobraniu, kliknij dwukrotnie Instalatora, a następnie postępuj zgodnie z monitami.
 
 Brak skrót umieszczone w Menu Start, podczas instalacji.
 
-- Domyślnie pakiet jest zainstalowany na `$env:ProgramFiles\PowerShell\`
-- Można uruchomić programu PowerShell za pomocą Start Menu lub `$env:ProgramFiles\PowerShell\pwsh.exe`
+- Domyślnie pakiet jest zainstalowany na `$env:ProgramFiles\PowerShell\<version>`
+- Można uruchomić programu PowerShell za pomocą Start Menu lub `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Wymagania wstępne
 
@@ -126,12 +126,12 @@ Poniższe kroki przedstawiono środowiska PowerShell Core uruchomione wystąpien
 PowerShell Core obsługuje protokół komunikacji zdalnej programu PowerShell (PSRP) za pośrednictwem protokołów SSH, jak i WSMan.
 Aby uzyskać więcej informacji, zobacz:
 
-- [SSH komunikację zdalną środowiska PowerShell główną][ssh-remoting]
-- [Usługi zdalne WSMan główną programu PowerShell][wsman-remoting]
+- [SSH komunikację zdalną środowiska PowerShell główną] [ssh-Komunikacja zdalna]
+- [WSMan komunikację zdalną środowiska PowerShell główną] [Komunikacja zdalna wsman]
 
 ## <a name="artifact-installation-instructions"></a>Instrukcje dotyczące instalacji artefaktów
 
-Firma Microsoft publikowania archiwum środowisko CoreCLR bitów w każdej kompilacji CI z [AppVeyor][].
+Firma Microsoft publikuje archiwum środowisko CoreCLR bitów w każdej kompilacji CI o [] [AppVeyor].
 
 Aby zainstalować podstawowe programu PowerShell z artefaktu środowisko CoreCLR:
 
@@ -140,8 +140,4 @@ Aby zainstalować podstawowe programu PowerShell z artefaktu środowisko CoreCLR
 3. Wyodrębnij plik zip do `bin` katalogu
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[zwalnia]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [zwalnia]: https://github.com/PowerShell/PowerShell/releases [ssh-Komunikacja zdalna]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman Komunikacja zdalna]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
