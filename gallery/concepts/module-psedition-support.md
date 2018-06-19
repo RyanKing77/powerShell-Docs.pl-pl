@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189520"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduły z niezgodne wersje programu PowerShell
 
@@ -249,4 +250,4 @@ Find-Module -Tag PSEdition_Core
 
 - [Skrypty z elementami PSEdition](script-psedition-support.md)
 - [Obsługa PSEditions na PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
-- [Manifestu modułu aktualizacji] (/ programu powershell/modułu/powershellget/update-modulemanifest)
+- [Manifestu modułu aktualizacji] (/powershell/module/powershellget/update-modulemanifest)
