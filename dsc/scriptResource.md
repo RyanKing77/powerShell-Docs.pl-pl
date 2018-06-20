@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189452"
 ---
 # <a name="dsc-script-resource"></a><span data-ttu-id="a57d3-103">Zasób skryptu konfiguracji DSC</span><span class="sxs-lookup"><span data-stu-id="a57d3-103">DSC Script Resource</span></span>
 

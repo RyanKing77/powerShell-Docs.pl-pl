@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953477"
 ---
 # <a name="learning-windows-powershell-names"></a><span data-ttu-id="e3a6c-103">Poznawanie nazw programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="e3a6c-103">Learning Windows PowerShell Names</span></span>
 <span data-ttu-id="e3a6c-104">Learning nazwy poleceń i parametrów polecenia jest inwestycji długiego czasu, większość interfejsów wiersza polecenia.</span><span class="sxs-lookup"><span data-stu-id="e3a6c-104">Learning names of commands and command parameters is a significant time investment with most command-line interfaces.</span></span> <span data-ttu-id="e3a6c-105">Problem polega na tym, czy bardzo mało wzorców, więc jedynym sposobem, aby dowiedzieć się, jest tylko każdego polecenia i każdego parametru, który musi być na bieżąco.</span><span class="sxs-lookup"><span data-stu-id="e3a6c-105">The issue is that there are very few patterns, so the only way to learn is by memorizing each command and each parameter that you need to use on a regular basis.</span></span>

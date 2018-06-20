@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218233"
 ---
 # <a name="deleting-items"></a><span data-ttu-id="e1b7f-103">Usuwanie elementów</span><span class="sxs-lookup"><span data-stu-id="e1b7f-103">Deleting items</span></span>
 

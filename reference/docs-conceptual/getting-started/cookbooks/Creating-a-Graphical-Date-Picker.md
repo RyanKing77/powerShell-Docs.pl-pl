@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954844"
 ---
 # <a name="creating-a-graphical-date-picker"></a><span data-ttu-id="f05b6-103">Tworzenie graficznego obiektu wyboru daty</span><span class="sxs-lookup"><span data-stu-id="f05b6-103">Creating a Graphical Date Picker</span></span>
 

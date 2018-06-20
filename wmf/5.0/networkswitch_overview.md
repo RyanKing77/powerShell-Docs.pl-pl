@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187915"
 ---
 # <a name="network-switch-management-with-powershell"></a><span data-ttu-id="eb730-102">Zarządzanie przełącznikiem sieciowym przy użyciu programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="eb730-102">Network Switch Management with PowerShell</span></span>
 

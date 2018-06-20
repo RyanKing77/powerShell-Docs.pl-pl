@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952345"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a><span data-ttu-id="9b42c-103">Instalowanie aparatu programu Windows PowerShell 2.0</span><span class="sxs-lookup"><span data-stu-id="9b42c-103">Installing the Windows PowerShell 2.0 Engine</span></span>
 <span data-ttu-id="9b42c-104">W tym temacie wyjaśniono, jak zainstalować aparat Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="9b42c-104">This topic explains how to install the Windows PowerShell 2.0 Engine.</span></span>

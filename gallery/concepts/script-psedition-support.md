@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219253"
 ---
 # <a name="script-with-compatible-powershell-editions"></a><span data-ttu-id="9eeee-103">Skrypt z niezgodne wersje programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="9eeee-103">Script with compatible PowerShell editions</span></span>
 

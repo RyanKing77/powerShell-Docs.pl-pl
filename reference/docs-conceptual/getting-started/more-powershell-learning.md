@@ -7,6 +7,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34047853"
 ---
 # <a name="more-powershell-learning"></a><span data-ttu-id="a02e8-103">Dalsze zasoby szkoleniowe dotyczące programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="a02e8-103">More PowerShell learning</span></span>
 

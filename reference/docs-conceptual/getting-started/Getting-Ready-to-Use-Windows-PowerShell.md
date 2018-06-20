@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950971"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a><span data-ttu-id="85503-103">Przygotowanie do korzystania z programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="85503-103">Getting Ready to Use Windows PowerShell</span></span>
 <span data-ttu-id="85503-104">Podczas instalowania i uruchamiania programu Windows PowerShell, należy wziąć pod uwagę następujące opcje konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="85503-104">When Windows PowerShell is installed and started, consider the following setup options.</span></span> <span data-ttu-id="85503-105">Te zadania można wykonać w dowolnym momencie.</span><span class="sxs-lookup"><span data-stu-id="85503-105">You can perform these tasks at any time.</span></span>

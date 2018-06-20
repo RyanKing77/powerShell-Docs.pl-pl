@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222438"
 ---
 # <a name="dsc-service-resource"></a><span data-ttu-id="2748b-103">Zasoby usługi Konfiguracja DSC</span><span class="sxs-lookup"><span data-stu-id="2748b-103">DSC Service Resource</span></span>
 

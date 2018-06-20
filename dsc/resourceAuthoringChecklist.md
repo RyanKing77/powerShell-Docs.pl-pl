@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189962"
 ---
 # <a name="resource-authoring-checklist"></a><span data-ttu-id="6fa30-103">Lista kontrolna tworzenia zasobu</span><span class="sxs-lookup"><span data-stu-id="6fa30-103">Resource authoring checklist</span></span>
 <span data-ttu-id="6fa30-104">Ta lista kontrolna znajduje się lista najlepszych praktyk podczas tworzenia nowego zasobu usługi Konfiguracja DSC.</span><span class="sxs-lookup"><span data-stu-id="6fa30-104">This checklist is a list of best practices when authoring a new DSC Resource.</span></span>

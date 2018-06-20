@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951073"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a><span data-ttu-id="fbe00-103">Opis potoku programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="fbe00-103">Understanding the Windows PowerShell Pipeline</span></span>
 <span data-ttu-id="fbe00-104">Przesyłanie potokowe działa praktycznie wszędzie w programie Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="fbe00-104">Piping works virtually everywhere in Windows PowerShell.</span></span> <span data-ttu-id="fbe00-105">Mimo że na ekranie zostanie wyświetlony tekst, programu Windows PowerShell nie potoku tekstu polecenia.</span><span class="sxs-lookup"><span data-stu-id="fbe00-105">Although you see text on the screen, Windows PowerShell does not pipe text between commands.</span></span> <span data-ttu-id="fbe00-106">Zamiast tego należy go powoduje przekazanie w potoku obiektów.</span><span class="sxs-lookup"><span data-stu-id="fbe00-106">Instead, it pipes objects.</span></span>

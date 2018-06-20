@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189809"
 ---
 # <a name="nonewline-parameter"></a><span data-ttu-id="a064e-102">Parametr NoNewLine</span><span class="sxs-lookup"><span data-stu-id="a064e-102">NoNewLine parameter</span></span>
 <span data-ttu-id="a064e-103">**Out-file**, **Dodaj zawartość**, i **zestawu zawartości** teraz ma nowego **— NoNewline** przełącznika, która po prostu pomija znakiem nowego wiersza po danych wyjściowych.</span><span class="sxs-lookup"><span data-stu-id="a064e-103">**Out-File**, **Add-Content**, and **Set-Content** now have a new **–NoNewline** switch which simply omits a new line after the output.</span></span>

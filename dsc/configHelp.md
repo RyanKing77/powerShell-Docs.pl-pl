@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222667"
 ---
 # <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="94b49-103">Pisanie tematów pomocy dotyczących konfiguracji DSC</span><span class="sxs-lookup"><span data-stu-id="94b49-103">Writing help for DSC configurations</span></span>
 

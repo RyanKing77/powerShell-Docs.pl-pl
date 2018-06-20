@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952583"
 ---
 # <a name="powershellexe-command-line-help"></a><span data-ttu-id="d837c-103">PowerShell.exe Pomoc wiersza polecenia</span><span class="sxs-lookup"><span data-stu-id="d837c-103">PowerShell.exe Command-Line Help</span></span>
 

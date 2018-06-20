@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189996"
 ---
 # <a name="desired-state-configuration-pull-service"></a><span data-ttu-id="b688e-103">Usługa replikacji ściąganej konfiguracji żądanego stanu</span><span class="sxs-lookup"><span data-stu-id="b688e-103">Desired State Configuration Pull Service</span></span>
 

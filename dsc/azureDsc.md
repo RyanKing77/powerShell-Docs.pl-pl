@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221888"
 ---
 # <a name="using-dsc-on-microsoft-azure"></a><span data-ttu-id="b8031-103">Korzystanie z platformy DSC na platformie Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="b8031-103">Using DSC on Microsoft Azure</span></span>
 

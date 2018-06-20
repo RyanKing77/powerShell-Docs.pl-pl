@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218029"
 ---
 # <a name="support-for-mixed-refreshmode"></a><span data-ttu-id="fd123-102">Obsługa RefreshMode mieszanych</span><span class="sxs-lookup"><span data-stu-id="fd123-102">Support for mixed RefreshMode</span></span>
 

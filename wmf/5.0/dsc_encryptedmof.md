@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222340"
 ---
 # <a name="mof-documents-are-encrypted-by-default"></a><span data-ttu-id="98d47-102">Domyślnie są szyfrowane MOF dokumentów</span><span class="sxs-lookup"><span data-stu-id="98d47-102">MOF Documents Are Encrypted By Default</span></span>
 

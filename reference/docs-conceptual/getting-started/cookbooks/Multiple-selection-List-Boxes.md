@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954895"
 ---
 # <a name="multiple-selection-list-boxes"></a><span data-ttu-id="c365e-103">Pola listy wielokrotnego wyboru</span><span class="sxs-lookup"><span data-stu-id="c365e-103">Multiple-selection List Boxes</span></span>
 

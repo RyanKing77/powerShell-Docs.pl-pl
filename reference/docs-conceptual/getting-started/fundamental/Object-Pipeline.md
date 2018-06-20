@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948214"
 ---
 # <a name="object-pipeline"></a><span data-ttu-id="a69d5-103">Potok obiektów</span><span class="sxs-lookup"><span data-stu-id="a69d5-103">Object Pipeline</span></span>
 <span data-ttu-id="a69d5-104">Potoki działać tak jak seria połączonych segmentów potoku.</span><span class="sxs-lookup"><span data-stu-id="a69d5-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="a69d5-105">Przenoszenie do potoku elementów przechodzą przez każdy z segmentów.</span><span class="sxs-lookup"><span data-stu-id="a69d5-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="a69d5-106">Aby utworzyć potok w programie Windows PowerShell, należy połączyć polecenia wraz z operatora potoku "|".</span><span class="sxs-lookup"><span data-stu-id="a69d5-106">To create a pipeline in Windows PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="a69d5-107">Dane wyjściowe każdego polecenia jest używane jako dane wejściowe do następnego polecenia.</span><span class="sxs-lookup"><span data-stu-id="a69d5-107">The output of each command is used as input to the next command.</span></span>

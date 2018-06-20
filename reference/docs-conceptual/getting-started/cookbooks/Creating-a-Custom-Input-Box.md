@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954759"
 ---
 # <a name="creating-a-custom-input-box"></a><span data-ttu-id="e1ac8-103">Tworzenie niestandardowego pola wejściowego</span><span class="sxs-lookup"><span data-stu-id="e1ac8-103">Creating a Custom Input Box</span></span>
 

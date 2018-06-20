@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225661"
 ---
 # <a name="additional-value-for-refreshmode-property"></a><span data-ttu-id="84225-102">Dodatkowe wartości dla właściwości RefreshMode</span><span class="sxs-lookup"><span data-stu-id="84225-102">Additional value for RefreshMode property</span></span>
 

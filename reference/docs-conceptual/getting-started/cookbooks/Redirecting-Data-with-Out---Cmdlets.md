@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952124"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a><span data-ttu-id="80f28-103">Przekierowywanie danych z Out-\* poleceń cmdlet</span><span class="sxs-lookup"><span data-stu-id="80f28-103">Redirecting Data with Out-\* Cmdlets</span></span>
 

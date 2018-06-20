@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954810"
 ---
 # <a name="the-iseaddontool-object"></a><span data-ttu-id="86cf4-103">Obiekt ISEAddOnTool</span><span class="sxs-lookup"><span data-stu-id="86cf4-103">The ISEAddOnTool Object</span></span>
 

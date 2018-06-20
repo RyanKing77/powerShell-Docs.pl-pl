@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222058"
 ---
 # <a name="uninstallation-instructions"></a><span data-ttu-id="a57b2-102">Instrukcje dotyczące odinstalowywania</span><span class="sxs-lookup"><span data-stu-id="a57b2-102">Uninstallation Instructions</span></span>
 

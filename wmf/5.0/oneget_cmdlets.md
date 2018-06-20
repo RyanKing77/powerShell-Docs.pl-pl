@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221957"
 ---
 # <a name="packagemanagement-cmdlets"></a><span data-ttu-id="76560-102">Polecenia cmdlet funkcji PackageManagement</span><span class="sxs-lookup"><span data-stu-id="76560-102">PackageManagement Cmdlets</span></span>
 <span data-ttu-id="76560-103">Jest to podstawowy PackageManagement do obsługi oprogramowania odnajdywania, instalacji i magazynu (SDII).</span><span class="sxs-lookup"><span data-stu-id="76560-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="76560-104">Wypróbowanie poleceń cmdlet do tych operacji:</span><span class="sxs-lookup"><span data-stu-id="76560-104">Try out the cmdlets for these operations:</span></span>

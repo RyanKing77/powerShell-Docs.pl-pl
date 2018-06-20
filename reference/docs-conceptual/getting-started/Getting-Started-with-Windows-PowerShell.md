@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949489"
 ---
 # <a name="getting-started-with-windows-powershell"></a><span data-ttu-id="5afc9-103">Wprowadzenie do programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="5afc9-103">Getting Started with Windows PowerShell</span></span>
 <span data-ttu-id="5afc9-104">Program Windows PowerShell jest powłoką wiersza polecenia systemu Windows, przeznaczonym zwłaszcza do administratorów systemu.</span><span class="sxs-lookup"><span data-stu-id="5afc9-104">Windows PowerShell is a Windows command-line shell designed especially for system administrators.</span></span> <span data-ttu-id="5afc9-105">Program Windows PowerShell zawiera monitu interakcyjnego i środowisko obsługi skryptów, który może służyć niezależnie lub razem.</span><span class="sxs-lookup"><span data-stu-id="5afc9-105">Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.</span></span>

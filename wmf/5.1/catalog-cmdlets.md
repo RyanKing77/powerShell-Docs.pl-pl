@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189071"
 ---
 # <a name="catalog-cmdlets"></a><span data-ttu-id="62901-103">Polecenia cmdlet katalogu</span><span class="sxs-lookup"><span data-stu-id="62901-103">Catalog Cmdlets</span></span>
 

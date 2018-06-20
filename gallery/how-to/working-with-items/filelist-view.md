@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219161"
 ---
 # <a name="filelist-feature-in-the-gallery"></a><span data-ttu-id="317da-103">Funkcja FileList w galerii</span><span class="sxs-lookup"><span data-stu-id="317da-103">FileList feature in the Gallery</span></span>
 

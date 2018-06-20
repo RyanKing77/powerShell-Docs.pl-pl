@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189707"
 ---
 # <a name="running-dsc-with-user-credentials"></a><span data-ttu-id="7d3cb-103">Uruchamianie platformy DSC przy użyciu poświadczeń użytkownika</span><span class="sxs-lookup"><span data-stu-id="7d3cb-103">Running DSC with user credentials</span></span>
 

@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188687"
 ---
 <span data-ttu-id="ac5e9-103">Polecenia cmdlet Menedżera przełącznika sieciowego może służyć do zarządzania przełączników sieciowych za pośrednictwem usługi WSMAN.</span><span class="sxs-lookup"><span data-stu-id="ac5e9-103">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
 <span data-ttu-id="ac5e9-104">Kilka poleceń cmdlet tego modułu są w stanie akceptowania wartości z potoków.</span><span class="sxs-lookup"><span data-stu-id="ac5e9-104">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>

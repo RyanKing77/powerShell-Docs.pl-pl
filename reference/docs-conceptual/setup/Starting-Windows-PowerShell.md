@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953127"
 ---
 # <a name="starting-windows-powershell"></a><span data-ttu-id="90790-103">Uruchamianie programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="90790-103">Starting Windows PowerShell</span></span>
 <span data-ttu-id="90790-104">PowerShell jest skryptów biblioteki dll aparat, które jest osadzony w wielu hostach.</span><span class="sxs-lookup"><span data-stu-id="90790-104">PowerShell is a scripting engine dll which is embedded into multiple hosts.</span></span>  <span data-ttu-id="90790-105">Najbardziej typowe hosta, który będzie uruchamiany są interaktywne wiersza polecenia PowerShell.exe i interaktywne PowerShell_ISE.exe środowisko obsługi skryptów.</span><span class="sxs-lookup"><span data-stu-id="90790-105">The most common host you will start are the interactive command line PowerShell.exe and the Interactive Scripting Environment PowerShell_ISE.exe.</span></span>

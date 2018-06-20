@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187565"
 ---
 # <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a><span data-ttu-id="a193a-102">Polecenia cmdlet test-DscConfiguration obsługuje konfiguracje odwołania</span><span class="sxs-lookup"><span data-stu-id="a193a-102">Test-DscConfiguration cmdlet supports Reference Configurations</span></span>
 

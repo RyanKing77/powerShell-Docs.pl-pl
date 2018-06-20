@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222024"
 ---
 # <a name="wow64-support-for-configuration-keyword"></a><span data-ttu-id="c0be2-102">Obsługa konfiguracji — słowo kluczowe przez środowisko WOW64</span><span class="sxs-lookup"><span data-stu-id="c0be2-102">WOW64 support for Configuration Keyword</span></span>
 

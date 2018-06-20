@@ -5,8 +5,10 @@ keywords: Środowiska PowerShell
 title: Moduły wymagające akceptacji licencji
 ms.openlocfilehash: fe197ea271e18580a221ad4d5245b685bd81775b
 ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048935"
 ---
 # <a name="modules-requiring-license-acceptance"></a><span data-ttu-id="dec0c-103">Moduły wymagające akceptacji licencji</span><span class="sxs-lookup"><span data-stu-id="dec0c-103">Modules Requiring License Acceptance</span></span>
 

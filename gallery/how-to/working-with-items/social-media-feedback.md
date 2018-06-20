@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188143"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a><span data-ttu-id="cef9b-103">Przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarze</span><span class="sxs-lookup"><span data-stu-id="cef9b-103">Providing Feedback via social media or comments</span></span>
 

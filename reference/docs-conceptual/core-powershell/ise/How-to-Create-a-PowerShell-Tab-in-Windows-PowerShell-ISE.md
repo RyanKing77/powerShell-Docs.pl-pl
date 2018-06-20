@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950050"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a><span data-ttu-id="cd414-103">Jak utworzyć kartę programu PowerShell w środowisku Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="cd414-103">How to Create a PowerShell Tab in Windows PowerShell ISE</span></span>
 
