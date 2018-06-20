@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953127"
 ---
 # <a name="starting-windows-powershell"></a>Uruchamianie programu Windows PowerShell
 PowerShell jest skryptów biblioteki dll aparat, które jest osadzony w wielu hostach.  Najbardziej typowe hosta, który będzie uruchamiany są interaktywne wiersza polecenia PowerShell.exe i interaktywne PowerShell_ISE.exe środowisko obsługi skryptów.

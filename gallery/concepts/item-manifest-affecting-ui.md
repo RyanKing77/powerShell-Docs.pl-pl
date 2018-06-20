@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048943"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Element manifestu wartości, które mają wpływ na Interfejsie galerii programu PowerShell
 

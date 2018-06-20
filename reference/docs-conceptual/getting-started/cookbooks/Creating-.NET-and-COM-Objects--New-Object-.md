@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953392"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Tworzenie usług .NET i obiektów COM (nowy obiekt)
 

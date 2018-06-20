@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221957"
 ---
 # <a name="packagemanagement-cmdlets"></a>Polecenia cmdlet funkcji PackageManagement
 Jest to podstawowy PackageManagement do obsługi oprogramowania odnajdywania, instalacji i magazynu (SDII). Wypróbowanie poleceń cmdlet do tych operacji:

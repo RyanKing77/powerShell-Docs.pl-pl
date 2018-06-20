@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953477"
 ---
 # <a name="learning-windows-powershell-names"></a>Poznawanie nazw programu Windows PowerShell
 Learning nazwy poleceń i parametrów polecenia jest inwestycji długiego czasu, większość interfejsów wiersza polecenia. Problem polega na tym, czy bardzo mało wzorców, więc jedynym sposobem, aby dowiedzieć się, jest tylko każdego polecenia i każdego parametru, który musi być na bieżąco.

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949489"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Wprowadzenie do programu Windows PowerShell
 Program Windows PowerShell jest powłoką wiersza polecenia systemu Windows, przeznaczonym zwłaszcza do administratorów systemu. Program Windows PowerShell zawiera monitu interakcyjnego i środowisko obsługi skryptów, który może służyć niezależnie lub razem.

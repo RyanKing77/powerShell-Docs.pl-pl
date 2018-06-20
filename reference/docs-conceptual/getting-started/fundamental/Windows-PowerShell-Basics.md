@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950538"
 ---
 # <a name="windows-powershell-basics"></a>Podstawy programu Windows PowerShell
 Graficzne interfejsy użytkownika użyj niektóre podstawowe założenia, które są powszechnie znane do większości użytkowników. Użytkownicy korzystają z znajomości tych interfejsów w celu wykonania określonych zadań. Systemy operacyjne zaprezentować użytkownikom graficzną reprezentację elementów, które można przeglądać, zazwyczaj z menu rozwijanego do uzyskiwania dostępu do określonych funkcji oraz kontekst menu do uzyskiwania dostępu do funkcji tego kontekstu.

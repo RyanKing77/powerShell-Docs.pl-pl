@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189554"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>Polecenia cmdlet PowerShellGet na potrzeby zarządzania skryptami
 

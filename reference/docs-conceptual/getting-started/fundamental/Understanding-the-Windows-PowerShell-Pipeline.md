@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951073"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>Opis potoku programu Windows PowerShell
 Przesyłanie potokowe działa praktycznie wszędzie w programie Windows PowerShell. Mimo że na ekranie zostanie wyświetlony tekst, programu Windows PowerShell nie potoku tekstu polecenia. Zamiast tego należy go powoduje przekazanie w potoku obiektów.

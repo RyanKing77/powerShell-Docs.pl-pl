@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225593"
 ---
 # <a name="new-guid"></a>New-Guid
 Często skryptu (lub prawdopodobnie zapisywania zasobu DSC), muszą zapewnić Unikatowy identyfikator. Identyfikatory GUID działał prawidłowo i ułatwia wywołać go wygenerować klasy identyfikatora Guid programu .NET Framework, ale po użyciu polecenia cmdlet powoduje, że to mogą szybciej odnajdywać dla użytkowników końcowych, którzy nie są już znasz klasy .NET Framework:

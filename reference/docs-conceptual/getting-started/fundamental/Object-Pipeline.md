@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948214"
 ---
 # <a name="object-pipeline"></a>Potok obiektów
 Potoki działać tak jak seria połączonych segmentów potoku. Przenoszenie do potoku elementów przechodzą przez każdy z segmentów. Aby utworzyć potok w programie Windows PowerShell, należy połączyć polecenia wraz z operatora potoku "|". Dane wyjściowe każdego polecenia jest używane jako dane wejściowe do następnego polecenia.

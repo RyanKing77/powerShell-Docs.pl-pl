@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951090"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Opis ważnych pojęć związanych z programem Windows PowerShell
 Projekt programu Windows PowerShell integruje pojęcia z wielu różnych środowiskach. Niektóre z nich są znane osoby z doświadczeniem w środowiskach programowania i powłoki określonego, ale tylko kilka osób będzie wiedzieć o wszystkich z nich. Niektóre z tych pojęć patrzeć Przegląd przydatne powłoki.

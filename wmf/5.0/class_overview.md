@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225729"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Tworzenie typów niestandardowych przy użyciu klas programu PowerShell
 

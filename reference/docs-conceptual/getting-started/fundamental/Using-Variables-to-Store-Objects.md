@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953331"
 ---
 # <a name="using-variables-to-store-objects"></a>Używanie zmiennych na potrzeby przechowywania obiektów
 PowerShell współpracuje z obiektami. PowerShell umożliwia tworzenie zmiennych zasadniczo o nazwie obiektów, aby zachować dane wyjściowe do późniejszego użycia. Jeśli są używane do pracy z zmiennych w innych powłok należy pamiętać, że zmienne środowiska PowerShell obiektów, nie tekstu.

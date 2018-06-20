@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225695"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Obsługa modułów deklarowania zakresu (1.* itp.)
 Połączone z **- MinimumVersion**, **- MaximumVersion** teraz zezwala użytkownikowi na module get/import określonego zakresu. Obsługiwane jest również parametr **.** \*. W poniższym przykładzie pokazano, jak to działa:

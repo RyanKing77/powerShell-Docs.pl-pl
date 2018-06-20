@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950971"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>Przygotowanie do korzystania z programu Windows PowerShell
 Podczas instalowania i uruchamiania programu Windows PowerShell, należy wziąć pod uwagę następujące opcje konfiguracji. Te zadania można wykonać w dowolnym momencie.
