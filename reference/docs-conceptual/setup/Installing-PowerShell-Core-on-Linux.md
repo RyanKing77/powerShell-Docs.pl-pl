@@ -1,11 +1,11 @@
 # <a name="installing-powershell-core-on-linux"></a>Instalowanie programu PowerShell Core w systemie Linux
 
-Obsługuje [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25 ] [ fed25], [Fedora 26][fed26], i [Arch Linux][arch].
+Supports <bpt id="p1">[</bpt>Ubuntu 14.04<ept id="p1">]</ept><bpt id="p2">[</bpt><ept id="p2">u14]</ept>, <bpt id="p3">[</bpt>Ubuntu 16.04<ept id="p3">]</ept><bpt id="p4">[</bpt><ept id="p4">u16]</ept>, <bpt id="p5">[</bpt>Ubuntu 17.04<ept id="p5">]</ept><bpt id="p6">[</bpt><ept id="p6">u17]</ept>, <bpt id="p7">[</bpt>Debian 8<ept id="p7">]</ept><bpt id="p8">[</bpt><ept id="p8">deb8]</ept>, <bpt id="p9">[</bpt>Debian 9<ept id="p9">]</ept><bpt id="p10">[</bpt><ept id="p10">deb9]</ept>, <bpt id="p11">[</bpt>CentOS 7<ept id="p11">]</ept><bpt id="p12">[</bpt><ept id="p12">cos]</ept>, <bpt id="p13">[</bpt>Red Hat Enterprise Linux (RHEL) 7<ept id="p13">]</ept><bpt id="p14">[</bpt><ept id="p14">rhel7]</ept>, <bpt id="p15">[</bpt>OpenSUSE 42.2<ept id="p15">]</ept><bpt id="p16">[</bpt><ept id="p16">opensuse]</ept>, <bpt id="p17">[</bpt>Fedora 27<ept id="p17">]</ept><bpt id="p18">[</bpt><ept id="p18">fedora]</ept>, <bpt id="p19">[</bpt>Fedora 28<ept id="p19">]</ept><bpt id="p20">[</bpt><ept id="p20">fedora]</ept>, and <bpt id="p21">[</bpt>Arch Linux<ept id="p21">]</ept><bpt id="p22">[</bpt><ept id="p22">arch]</ept>.
 
 Dla dystrybucje systemu Linux, które nie są obsługiwane oficjalnie, można spróbować użyć [PowerShell AppImage][lai].
 Można też spróbować wdrożenia plików binarnych programu PowerShell bezpośrednio przy użyciu systemu Linux [ `tar.gz` archiwum][tar], ale należy skonfigurować wymagane zależności, oparte na system operacyjny w oddzielne kroki.
 
-Wszystkie pakiety są dostępne w naszej witrynie GitHub [zwalnia][] strony.
+Wszystkie pakiety są dostępne w naszej witrynie GitHub [Wersje][] strony.
 Po zainstalowaniu pakietu `pwsh` z terminalu.
 
 [u14]: #ubuntu-1404
@@ -16,8 +16,7 @@ Po zainstalowaniu pakietu `pwsh` z terminalu.
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse-422
-[fed25]: #fedora-25
-[fed26]: #fedora-26
+[fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
@@ -51,7 +50,7 @@ Następnie należy po prostu użyć `sudo apt-get upgrade powershell` aktualizac
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Ubuntu 14.04
 
-Pobierz pakiet Debian `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` z [zwalnia][] strony na maszynie Ubuntu.
+Pobierz pakiet Debian `powershell_6.0.2-1.ubuntu.14.04_amd64.deb` z [Wersje][] strony na maszynie Ubuntu.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -96,7 +95,7 @@ Po zarejestrowaniu repozytorium Microsoft raz jako administratora, od, wystarczy
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Ubuntu 16.04
 
-Pobierz pakiet Debian `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` z [zwalnia][] strony na maszynie Ubuntu.
+Pobierz pakiet Debian `powershell_6.0.2-1.ubuntu.16.04_amd64.deb` z [Wersje][] strony na maszynie Ubuntu.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -141,7 +140,7 @@ Po zarejestrowaniu repozytorium Microsoft raz jako administratora, od, wystarczy
 
 ### <a name="installation-via-direct-download---ubuntu-1704"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Ubuntu 17.04
 
-Pobierz pakiet Debian `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` z [zwalnia][] strony na maszynie Ubuntu.
+Pobierz pakiet Debian `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` z [Wersje][] strony na maszynie Ubuntu.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -190,7 +189,7 @@ Po zarejestrowaniu repozytorium Microsoft raz jako administratora, od, wystarczy
 
 ### <a name="installation-via-direct-download---debian-8"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Debian 8
 
-Pobierz pakiet Debian `powershell_6.0.2-1.debian.8_amd64.deb` z [zwalnia][] strony na Debian maszyny.
+Pobierz pakiet Debian `powershell_6.0.2-1.debian.8_amd64.deb` z [Wersje][] strony na Debian maszyny.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -241,7 +240,7 @@ Po zarejestrowaniu repozytorium Microsoft raz jako administratora, od, wystarczy
 
 ### <a name="installation-via-direct-download---debian-9"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Debian 9
 
-Pobierz pakiet Debian `powershell_6.0.2-1.debian.9_amd64.deb` z [zwalnia][] strony na Debian maszyny.
+Pobierz pakiet Debian `powershell_6.0.2-1.debian.9_amd64.deb` z [Wersje][] strony na Debian maszyny.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -283,7 +282,7 @@ Po zarejestrowaniu repozytorium Microsoft raz jako administratora, wystarczy uż
 
 ### <a name="installation-via-direct-download---centos-7"></a>Instalacja za pośrednictwem bezpośredniego pobierania - CentOS 7
 
-Przy użyciu [CentOS 7][], Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [zwalnia][] strony na maszynie CentOS.
+Przy użyciu [CentOS 7][], Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [Wersje][] strony na maszynie CentOS.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -326,7 +325,7 @@ Po zarejestrowaniu repozytorium Microsoft raz jako administratora, wystarczy uż
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Red Hat Enterprise Linux (RHEL) 7
 
-Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [zwalnia][] strony na maszynie Red Hat Enterprise Linux.
+Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [Wersje][] strony na maszynie Red Hat Enterprise Linux.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -388,7 +387,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>Instalacja za pośrednictwem bezpośredniego pobierania - OpenSUSE 42.2
 
-Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [zwalnia][] strony na maszynie OpenSUSE.
+Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [Wersje][] strony na maszynie OpenSUSE.
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -408,58 +407,9 @@ sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v
 sudo zypper remove powershell
 ```
 
-## <a name="fedora-25"></a>Fedora 25
+## <a name="fedora"></a>Fedora
 
-### <a name="installation-via-package-repository-preferred---fedora-25"></a>Instalacja za pośrednictwem repozytorium pakietów (preferowane) - Fedora 25
-
-Podstawowe programu PowerShell dla systemu Linux jest publikowany oficjalnego repozytoria Microsoft easy instalacji (i aktualizacji).
-
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Update the list of products
-sudo dnf update
-
-# Install PowerShell
-sudo dnf install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-### <a name="installation-via-direct-download---fedora-25"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Fedora 25
-
-Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [zwalnia][] strony na maszynie Fedora.
-
-```sh
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
-```
-
-W terminalu następnie wykonaj następujące czynności:
-
-```sh
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-Można także zainstalować RPM bez pośredniego kroku pobierania go:
-
-```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---fedora-25"></a>Dezinstalacja - Fedora 25
-
-```sh
-sudo dnf remove powershell
-```
-
-## <a name="fedora-26"></a>Fedora 26
-
-### <a name="installation-via-package-repository-preferred---fedora-26"></a>Instalacja za pośrednictwem repozytorium pakietów (preferowane) - Fedora 26
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Instalacja za pośrednictwem repozytorium pakietów (preferowane) - Fedora 27 Fedora 28
 
 Podstawowe programu PowerShell dla systemu Linux jest publikowany oficjalnego repozytoria Microsoft easy instalacji (i aktualizacji).
 
@@ -483,14 +433,13 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-26"></a>Instalacja za pośrednictwem bezpośredniego pobierania - 26 Fedora
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Instalacja za pośrednictwem bezpośredniego pobierania - Fedora 27, Fedora 28
 
-Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [zwalnia][] strony na maszynie Fedora.
+Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [Wersje][] strony na maszynie Fedora.
 
 W terminalu następnie wykonaj następujące czynności:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
@@ -498,12 +447,11 @@ sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 Można także zainstalować RPM bez pośredniego kroku pobierania go:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-26"></a>Dezinstalacja - 26 Fedora
+### <a name="uninstallation---fedora-27-fedora-28"></a>Dezinstalacja - Fedora 27 Fedora 28
 
 ```sh
 sudo dnf remove powershell
@@ -511,7 +459,7 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Arch Linux
 
-Środowisko PowerShell jest dostępny z [Arch Linux][] użytkownika repozytorium (AUR).
+Środowisko PowerShell jest dostępny z [Arch systemu Linux][] użytkownika repozytorium (AUR).
 
 * Może być kompilowana przy użyciu [najnowszej oznakowane zlecenia][arch-release]
 * Mogą być kompilowane z [najnowszym zatwierdzeniu do wzorca][arch-git]
@@ -521,14 +469,14 @@ Pakiety w AUR Wspólnotę utrzymane — nie jest oficjalną obsługiwane.
 
 Aby uzyskać więcej informacji na temat instalowania pakietów z AUR, zobacz [wiki Arch Linux](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) lub społeczności [plik DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arch Linux]: https://www.archlinux.org/download/
+[Arch systemu Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
 ## <a name="linux-appimage"></a>AppImage systemu Linux
 
-Przy użyciu najnowszych dystrybucji systemu Linux, Pobierz AppImage `powershell-6.0.1-x86_64.AppImage` z [zwalnia][] strony na komputerze systemu Linux.
+Przy użyciu najnowszych dystrybucji systemu Linux, Pobierz AppImage `powershell-6.0.1-x86_64.AppImage` z [Wersje][] strony na komputerze systemu Linux.
 
 W terminalu następnie wykonaj następujące czynności:
 
@@ -642,8 +590,8 @@ W poniższej tabeli przedstawiono zależności .NET Core 2.0 oficjalnie obsługi
 | Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
 | Debian 8 (Joasia)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc ++ 6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, biblioteki openssl, libicu |
-| Fedora 26          | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, biblioteki openssl, libicu |
+| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 Aby wdrożyć pliki binarne programu PowerShell na dystrybucje systemu Linux, które nie są obsługiwane oficjalnie, należy zainstalować zależności niezbędne dla docelowego systemu operacyjnego w oddzielne kroki.
 Na przykład naszych [plik dockerfile Amazon Linux] [ amazon-dockerfile] najpierw instaluje zależności, a następnie wyodrębnia systemu Linux `tar.gz` archiwum.
@@ -691,5 +639,5 @@ Profile przestrzegać konfiguracji na hosta w programie PowerShell, więc domyś
 
 PowerShell szanuje [specyfikacji katalogu Base XDG] [ xdg-bds] w systemie Linux.
 
-[zwalnia]: https://github.com/PowerShell/PowerShell/releases/latest
+[Wersje]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
