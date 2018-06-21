@@ -161,6 +161,8 @@
           href: lnxGroupResource.md
         - name: Zasób nxPackage
           href: lnxPackageResource.md
+        - name: Zasób nxScript
+          href: lnxScriptResource.md
         - name: Zasób nxService
           href: lnxServiceResource.md
         - name: Zasób nxSshAuthorizedKeys
