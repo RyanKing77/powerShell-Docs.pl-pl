@@ -1,7 +1,7 @@
-# <a name="installing-powershell-core-on-macos"></a>Instalowanie programu PowerShell Core na macOS
+# <a name="installing-powershell-core-on-macos"></a>Instalowanie programu PowerShell Core w systemie macOS
 
 PowerShell Core obsługuje macOS 10.12 i wyższych.
-Wszystkie pakiety są dostępne w naszej witrynie GitHub [zwalnia][] strony.
+Wszystkie pakiety są dostępne w naszej witrynie GitHub [Wersje][] strony.
 Po zainstalowaniu pakietu `pwsh` z terminalu.
 
 ### <a name="installation-via-homebrew-on-macos-1012"></a>Instalacja za pomocą oprogramowania Homebrew na macOS 10.12
@@ -36,15 +36,14 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> W ramach hosta programu PowerShell (pwsh) można wywołać z powyższych poleceń, ale następnie powłoki PowerShell, należy ponownie uruchomić, aby ukończyć uaktualnianie.
-> i Odśwież wartości widoczne w $PSVersionTable.
+> W ramach hosta programu PowerShell (pwsh) można wywołać z powyższych poleceń, ale następnie powłoki PowerShell, należy ponownie uruchomić, aby dokończyć uaktualnianie i Odśwież wartości widoczne w $PSVersionTable.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
 
 ### <a name="installation-via-direct-download"></a>Instalacja za pośrednictwem bezpośredniego pobierania
 
-Pobierz pakiet PKG `powershell-6.0.2-osx.10.12-x64.pkg` z [zwalnia][] strony na tym komputerze macOS.
+Pobierz pakiet PKG `powershell-6.0.2-osx.10.12-x64.pkg` z [Wersje][] strony na tym komputerze macOS.
 
 Możesz kliknij dwukrotnie plik i postępuj zgodnie z monitami lub zainstalować go z terminala:
 
@@ -94,11 +93,11 @@ Aby usunąć dodatkowe ścieżki programu PowerShell, zobacz [ścieżki][] sekcj
 > [!NOTE]
 > Nie jest to konieczne, jeśli podczas instalacji oprogramowania Homebrew.
 
-[ścieżki]:#paths
+[Ścieżki]:#paths
 
 ## <a name="paths"></a>Ścieżki
 
-* `$PSHOME` jest `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` jest `/usr/local/microsoft/powershell/6.0.2/`
 * Profile użytkowników będą odczytywane z `~/.config/powershell/profile.ps1`
 * Domyślne profile będą odczytywane z `$PSHOME/profile.ps1`
 * Moduły użytkownika będą odczytywane z `~/.local/share/powershell/Modules`
@@ -112,7 +111,7 @@ Dlatego domyślnych profilów specyficzne dla hosta istnieje w `Microsoft.PowerS
 PowerShell szanuje [specyfikacji katalogu Base XDG] [ xdg-bds] na macOS.
 
 Ponieważ system macOS jest typem pochodnym BSD, prefiks `/usr/local` jest używany zamiast `/opt`.
-W związku z tym `$PSHOME` jest `/usr/local/microsoft/powershell/6.0.0/`, i Utwórz Link symboliczny znajduje się w `/usr/local/bin/pwsh`.
+W związku z tym `$PSHOME` jest `/usr/local/microsoft/powershell/6.0.2/`, i Utwórz Link symboliczny znajduje się w `/usr/local/bin/pwsh`.
 
-[zwalnia]: https://github.com/PowerShell/PowerShell/releases/latest
+[Wersje]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
