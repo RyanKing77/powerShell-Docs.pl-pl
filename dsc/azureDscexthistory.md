@@ -1,14 +1,14 @@
 ---
 description: Więcej informacji na temat Historia wersji rozszerzenia konfiguracji żądanego stanu (DSC) na platformie Azure.
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extension
 title: Historia wersji Azure rozszerzenia usługi Konfiguracja DSC
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189945"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940331"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Historia wersji rozszerzenia konfiguracji Azure żądany stan
 
@@ -16,12 +16,12 @@ Konfiguracja żądanego stanu Azure (DSC) rozszerzenia maszyny Wirtualnej jest a
 
 W tym artykule będzie zawierał informacje o każdej wersji rozszerzenia maszyny Wirtualnej Azure DSC, jakie środowisk obsługuje i komentarze i uwagi na nowe funkcje i zmiany.
 
-## <a name="latest-versions"></a>Najnowsze wersje
+## <a name="latest-version"></a>Najnowsza wersja
 
 ### <a name="version-276"></a>Wersja 2.76
 
 - **Data wydania:**
-  - 9 maja 2018
+  - 9 maja 2018 (Azure) | 21 czerwca 2018 (Chiny Azure, Azure dla instytucji rządowych)
 - **Obsługiwane systemy operacyjne:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ W tym artykule będzie zawierał informacje o każdej wersji rozszerzenia maszyn
   - WMF 4.0
 - **Środowisko:**
   - Azure
+  - Azure China
+  - Azure dla instytucji rządowych
 - **Uwagi:** DSC korzysta z tej wersji w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework w wersji 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (instalowanie WMF wymaga ponownego uruchomienia). Nano Server DSC rola jest zainstalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
   - Ulepszenia w metadanych rozszerzenia podstanu i innych niewielkie poprawki błędów.
-
-### <a name="version-219"></a>Wersja 2.19
-
-- **Data wydania:**
-  - 3 czerwca 2016 r.
-- **Obsługiwane systemy operacyjne:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 z dodatkiem SP1
-- **Obsługa WMF:**
-  - WMF 5.0 RTM
-  - Zaktualizuj WMF 4.0
-  - WMF 4.0
-- **Środowisko:**
-  - Azure
-  - Azure China
-  - Azure dla instytucji rządowych
-- **Uwagi:** DSC korzysta z tej wersji w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (instalowanie WMF wymaga ponownego uruchomienia).
-- **Nowe funkcje:**
-  - Rozszerzenia DSC teraz jest na dodawanej do Chińskiej wersji platformy Azure. Ta wersja zawiera głównie poprawki dotyczące uruchamiania rozszerzenia w chińskiej wersji platformy Azure.
 
 ## <a name="supported-versions"></a>Obsługiwane wersje
 

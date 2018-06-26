@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
 title: Przy użyciu danych konfiguracji
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189690"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940382"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Przy użyciu danych konfiguracji w konfiguracji DSC
 
->Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
+> Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
 
 Za pomocą wbudowanych DSC **ConfigurationData** parametru, można zdefiniować dane, które mogą być używane w konfiguracji.
 Dzięki temu można utworzyć pojedynczą konfiguracją, która może służyć do wielu węzłów lub dla różnych środowisk.
@@ -25,10 +25,11 @@ Przykłady sposobu używania danych konfiguracji, zobacz [oddzielanie danych kon
 Typowy Parametr przyjmuje konfiguracji DSC **ConfigurationData**, określ, kiedy kompilacja konfiguracji.
 Informacje o konfiguracjach kompilacji, zobacz [konfiguracji DSC](configurations.md).
 
-**ConfigurationData** parametr jest hasthtable, który musi mieć co najmniej jeden klucz o nazwie **AllNodes**.
+**ConfigurationData** parametr ma tablicę skrótów, który musi mieć co najmniej jeden klucz o nazwie **AllNodes**.
 Może również mieć co najmniej jeden klucz.
 
->**Uwaga:** przykłady w tym temacie, użyj jednego klucza dodatkowe (innych niż nazwany **AllNodes** klucza) o nazwie `NonNodeData`, jednak zawierać dowolną liczbę dodatkowych kluczy i nazwy dowolne.
+> [!NOTE]
+> Przykłady w tym temacie, użyj jednego klucza dodatkowe (innych niż nazwany **AllNodes** klucza) o nazwie `NonNodeData`, jednak zawierać dowolną liczbę dodatkowych kluczy i nazwy dowolne.
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC udostępnia trzy zmienne specjalne, których można użyć w skrypcie konfig
 
 - **$AllNodes** odwołuje się do całego kolekcja węzłów zdefiniowane w **ConfigurationData**. Można filtrować **AllNodes** kolekcji przy użyciu **. WHERE()** i **. ForEach()**.
 - **Węzeł** odwołuje się do określonego wpisu w **AllNodes** kolekcji po jest filtrowana za pomocą **. WHERE()** lub **. ForEach()**.
+  - Możesz przeczytać więcej na temat tych metod w [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 - **ConfigurationData** odwołuje się do tabeli całego wyznaczania wartości skrótu, która jest przekazywana jako parametr podczas kompilowania konfiguracji.
 
 ## <a name="using-non-node-data"></a>Przy użyciu danych z systemem innym niż węzeł
@@ -199,5 +201,6 @@ Można jednak określić dowolną liczbę dodatkowych kluczy i nazwy dowolnych z
 Na przykład przy użyciu danych z systemem innym niż węzeł, zobacz [oddzielanie danych konfiguracji i środowiska](separatingEnvData.md).
 
 ## <a name="see-also"></a>Zobacz też
+
 - [Opcje poświadczeń w danych konfiguracji](configDataCredentials.md)
 - [Konfiguracji DSC](configurations.md)
