@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Nowe scenariusze i funkcje w wersji 5.1 WMF
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190319"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090367"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nowe scenariusze i funkcje w wersji 5.1 WMF
 
@@ -25,12 +25,12 @@ Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które cha
 
 - [Określić uruchomiona wersja programu PowerShell przy użyciu $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filtrowanie wyników Get-Module przez CompatiblePSEditions za pomocą parametru PSEdition](/powershell/module/microsoft.powershell.core/get-module)
-- [Uniemożliwić wykonywanie skryptu, chyba że Uruchom na zgodna wersja środowiska PowerShell](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [Deklarowanie zgodności modułu do określonej wersji programu PowerShell](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [Uniemożliwić wykonywanie skryptu, chyba że Uruchom na zgodna wersja środowiska PowerShell](/powershell/gallery/concepts/script-psedition-support)
+- [Deklarowanie zgodności modułu do określonej wersji programu PowerShell](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>Polecenia cmdlet katalogu
 
-Dodano dwa nowe polecenia cmdlet w [Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) modułu; te Generowanie i zweryfikować pliki w katalogu systemu Windows.
+Dodano dwa nowe polecenia cmdlet w [Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) modułu; te Generowanie i zweryfikować pliki w katalogu systemu Windows.
 
 ### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ Spowoduje to utworzenie pliku wykazu.
 
 ![](../images/CatalogFile2.jpg)
 
-Aby sprawdzić integralność pliku katalogu (Pester.cat w powyżej przykładzie), podpisz go za pomocą [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) polecenia cmdlet.
+Aby sprawdzić integralność pliku katalogu (Pester.cat w powyżej przykładzie), podpisz go za pomocą [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) polecenia cmdlet.
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 To polecenie cmdlet porównuje wszystkie wartości skrótów plików i ich ścieżek względnych znalezione w *katalogu* z tych na *dysku*.
 W przypadku wykrycia niezgodność wartości skrótu pliku i ścieżki zwraca stan jako *ValidationFailed*.
 Użytkownicy mogą pobierać te informacje przy użyciu *— szczegółowe* parametru.
-Wyświetla również podpisywania stan katalogu w *podpisu* właściwości, który jest odpowiednikiem wywołania [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) polecenia cmdlet na plik wykazu.
+Wyświetla również podpisywania stan katalogu w *podpisu* właściwości, który jest odpowiednikiem wywołania [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) polecenia cmdlet na plik wykazu.
 Użytkownicy mogą też pominąć każdego pliku, podczas sprawdzania poprawności przy użyciu *- FilesToSkip* parametru.
 
 ## <a name="module-analysis-cache"></a>Moduł analizy w pamięci podręcznej
@@ -115,7 +115,7 @@ Wcześniej trzeba było ma sposobu na określenie wersji danego modułu; Jeśli 
 
 W WMF 5.1:
 
-- Można użyć [ModuleSpecification — Konstruktor (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+- Można użyć [ModuleSpecification — Konstruktor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 Ta tabela skrótów ma tego samego formatu co `Get-Module -FullyQualifiedName`.
 
 **Przykład:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
