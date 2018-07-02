@@ -34,7 +34,7 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 ## <a name="setup-on-windows-machine"></a>Instalacja na komputerze z systemem Windows
 
-1. Zainstaluj najnowszą wersję pakietu [Podstawowe programu PowerShell dla systemu Windows]
+1. Zainstaluj najnowszą wersję pakietu [Core programu PowerShell dla systemu Windows]
     - Można określić, czy obsługa komunikacji zdalnej SSH analizując parametr ustawia New-PSSession
 
     ```powershell
@@ -42,7 +42,7 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Zainstaluj najnowszą [Win32 OpenSSH] kompilacji z witryny GitHub przy użyciu [Instalacja] instrukcje
+1. Zainstaluj najnowszą [Win32 OpenSSH] kompilacji z witryny GitHub przy użyciu [instalacji] instrukcje
 1. Edytuj plik sshd_config w lokalizacji, w którym zainstalowano Win32 OpenSSH
     - Upewnij się, że jest włączone uwierzytelnianie hasła
 
@@ -54,6 +54,22 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+    ```
+    
+    > [!NOTE]
+    Brak usterki w OpenSSH dla systemu Windows, która uniemożliwia miejsca do pracy w podsystemie ścieżki pliku wykonywalnego.
+    Zobacz [ten problem w usłudze GitHub, aby uzyskać więcej informacji](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    Jedno rozwiązanie polega na utworzeniu łącza symbolicznego do katalogu instalacyjnego programu Powershell, który nie zawiera spacji:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    a następnie wprowadzić w podsystemie:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
     - Opcjonalnie włączyć uwierzytelnianie za pomocą klucza
@@ -74,7 +90,7 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Ustawienia na komputerze z systemem Linux (Ubuntu 14.04)
 
-1. Zainstaluj najnowszą [Podstawowe programu PowerShell dla systemu Linux] kompilacji z witryny GitHub
+1. Zainstaluj najnowszą [Core programu PowerShell dla systemu Linux] kompilacji z witryny GitHub
 1. Zainstaluj [Ubuntu SSH] zgodnie z potrzebami
 
     ```bash
@@ -109,7 +125,7 @@ Ponadto należy włączyć uwierzytelnianie hasła i opcjonalnie klucza uwierzyt
 
 ## <a name="setup-on-macos-machine"></a>Instalacja na komputerze MacOS
 
-1. Zainstaluj najnowszą [Podstawowe programu PowerShell dla MacOS] kompilacji
+1. Zainstaluj najnowszą [Core programu PowerShell dla MacOS] kompilacji
     - Upewnij się, że usługi zdalne SSH jest włączone, wykonaj następujące czynności:
       - Otwórz `System Preferences`
       - Kliknij pozycję `Sharing`
@@ -241,9 +257,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. polecenie sudo nie działa w sesji zdalnej dla systemu Linux maszyny.
 
-[Podstawowe programu PowerShell dla systemu Windows]: ../setup/installing-powershell-core-on-windows.md#msi
-[Podstawowe programu PowerShell dla systemu Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
-[Podstawowe programu PowerShell dla MacOS]: ../setup/installing-powershell-core-on-macos.md
+[Core programu PowerShell dla systemu Windows]: ../setup/installing-powershell-core-on-windows.md#msi
+[Core programu PowerShell dla systemu Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[Core programu PowerShell dla MacOS]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[Instalacja]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[instalacji]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
