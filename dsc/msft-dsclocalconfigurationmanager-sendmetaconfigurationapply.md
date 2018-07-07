@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Metoda SendMetaConfigurationApply klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 46acd86ac52b7b6b39f06fc65af2498b4f5348ed
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b372a6c0ab9d4561dcf67026275e7d3ca6aa2584
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218845"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892961"
 ---
 # <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda SendMetaConfigurationApply klasy MSFT_DSCLocalConfigurationManager
 
-Konfiguruje ustawienia lokalny program Configuration Manager, które są używane do sterowania agenta konfiguracji.
+Ustawia ustawienia Local Configuration Manager, które są używane do kontrolowania przez agenta konfiguracji.
 
-<a name="syntax"></a>Składnia
-------
+## <a name="syntax"></a>Składnia
 
 ```mof
 uint32 SendMetaConfigurationApply(
@@ -23,30 +22,26 @@ uint32 SendMetaConfigurationApply(
 );
 ```
 
-<a name="parameters"></a>Parametry
-----------
+## <a name="parameters"></a>Parametry
 
-*ConfigurationData* \[w\] danych środowiska w konfiguracji.
+*ConfigurationData* \[w\] danych środowiska dla konfiguracji.
 
 *Wymuś* \[w\] **true** wymusić konfigurację, aby zatrzymać.
 
 ## <a name="return-value"></a>Wartość zwracana
-------------
 
 Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.
 
 ## <a name="remarks"></a>Uwagi
 
-To jest metodą statyczną.
+Jest to metoda statyczna.
 
 ## <a name="requirements"></a>Wymagania
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Plik MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zobacz też
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -1,56 +1,56 @@
 ---
 ms.date: 06/09/2017
 schema: 2.0.0
-keywords: Środowiska PowerShell
-title: Element manifestu wartości, które mają wpływ na Interfejsie galerii programu PowerShell
-ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+keywords: Program PowerShell
+title: Wartości manifestu elementów, które mają wpływ na interfejs użytkownika galerii programu PowerShell
+ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048943"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893481"
 ---
-# <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Element manifestu wartości, które mają wpływ na Interfejsie galerii programu PowerShell
+# <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Wartości manifestu elementów, które mają wpływ na interfejs użytkownika galerii programu PowerShell
 
-Ten temat zawiera wydawców z podsumowanie informacji na temat sposobu zmodyfikuj manifest ich publikacji galerii programu PowerShell, tak aby będzie mieć wpływ na funkcje PowerShellGet poleceń cmdlet i interfejsu użytkownika z galerii programu PowerShell.
-Ta zawartość jest zorganizowana według której zmiana pojawi się w górnej części, a następnie w obszarze nawigacyjnym po lewej stronie, począwszy. Brak sekcji szczegółów tagi obejmujący określający ważne tagi, jak również niektórych najczęściej używanych tagów.
+Ten temat zawiera wydawców podsumowanie informacji na temat sposobu zmodyfikować manifest w swoich publikacjach galerii programu PowerShell, dzięki czemu będzie mieć wpływ na funkcje polecenia cmdlet PowerShellGet i interfejs użytkownika galerii programu PowerShell.
+Ta zawartość jest posortowana według której zmiana zostanie zastosowana, zaczynając od w górnej części, a następnie w obszarze nawigacyjnym po lewej stronie. Ma sekcji szczegółów obejmujący znaczników, który identyfikuje istotne, tagi, a także niektórych najczęściej używanych tagów.
 Istnieją dwa tematy, które zawierają przykłady manifestu:
 
-- Dla modułów, zobacz [manifestu modułu aktualizacji](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
-- Skryptów, zobacz [Tworzenie pliku skryptu za pomocą metadanych](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+- Dla modułów, zobacz [manifestu modułu aktualizacji](/powershell/module/powershellget/Update-ModuleManifest)
+- W przypadku skryptów, zobacz [Tworzenie pliku skryptu z metadanymi](/powershell/module/powershellget/New-ScriptFileInfo)
 
-## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Kontrolowane przez Manifest elementy funkcji galerii programu PowerShell
+## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Galeria programu PowerShell funkcji elementy kontrolowane przez w manifeście
 
-Poniższa tabela zawiera elementy interfejsu użytkownika strony elementu galerii programu PowerShell, które są kontrolowane przez wydawcę.
-Każdy element wskazuje, czy mogą być kontrolowane przez manifest modułu lub skryptu.
+W poniższej tabeli przedstawiono elementy strony elementu galerii programu PowerShell, interfejsu użytkownika, które są kontrolowane przez wydawcę.
+Każdy element wskazuje, czy może kontrolowane przez w manifeście modułu lub skryptu.
 
 | Element interfejsu użytkownika | Opis | Moduł | Skrypt |
 | --- | --- | --- | --- |
 | **Tytuł** | Jest to nazwa elementu, który jest opublikowany w galerii  | Nie | Nie |
-| **Wersja** | Wersja wyświetlana jest ciąg wersji w metadanych, a jeśli wstępnej określono. Część podstawowej wersji w manifeście modułu jest ModuleVersion. Aby uzyskać skrypt jest identyfikowane jako. Wersja. Jeśli zostanie określony ciąg wersji wstępnej, te będą być dołączany do ModuleVersion dla modułów lub określony jako część. Wersja skryptów. Brak dokumentacji służący do określania wersji wstępnej ciągów w [modułów](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule)i w [skryptów](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Tak | Tak |
-| **Opis** | Jest to opis w manifeście modułu, a w manifeście pliku skryptu jest. OPIS ELEMENTU | Tak | Tak |
-| **Wymagaj akceptacji licencji** | Moduł może wymagać, że użytkownik akceptuje licencji, modyfikując manifestu modułu RequireLicenseAcceptance = $true, podając LicenseURI i dostarczanie pliku license.txt w katalogu głównym folderu modułu. Dodatkowe informacje są dostępne w [akceptacji licencji wymaga](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance) tematu. | Tak | Nie |
-| **Informacje o wersji** | Dla modułów te informacje jest pobierana z sekcji ReleaseNotes w obszarze PSData\PrivateData. W manifestach skryptu jest. RELEASENOTES element. | Tak | Tak |
-| **Właściciele** | Właściciele są listy użytkowników w galerii programu PowerShell, który można aktualizować elementu. Na liście właściciela nie jest uwzględniony w manifeście elementu. Dodatkowe dokumentacji opisano sposób [Zarządzaj właścicielami elementu](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | Nie | Nie |
-| **Autor** | To jest uwzględniane w manifeście modułu autor oraz w manifeście skryptu jako. AUTORA. Pole Author często służy do określania, firma lub organizacja skojarzony z elementem. | Tak | Tak |
-| **Copyright** | To jest pole praw autorskich w manifeście modułu i. COPYRIGHT w manifeście skryptu. | Tak | Tak |
-| **FileList** | Lista plików jest przenoszony z pakietu, gdy zostanie opublikowany w galerii programu PowerShell. Nie jest kontrolowane przez manifestu informacji. Uwaga: jest plik .nuspec dodatkowe na liście z każdego elementu w galerii programu PowerShell, która nie występuje po zainstalowaniu elementu w systemie. Jest to plik manifestu pakietu Nuget dla elementu i można zignorować. | Nie | Nie |
-| **Tagi** | Dla modułów tagi są objęte PSData\PrivateData. W przypadku skryptów sekcja jest oznaczona. TAGI. Należy pamiętać, że tagi nie może zawierać spacji, nawet wtedy, gdy są one w cudzysłowy. Znaczniki mają dodatkowe wymagania i znaczenie, które są opisane w dalszej części tego tematu w sekcji szczegółów znacznika. | Tak | Tak |
-| **Polecenia cmdlet** | Odbywa się przy użyciu CmdletsToExport modułu. Należy pamiętać, że najlepszym rozwiązaniem jest jawnie listę elementów, a nie za pomocą symbolu wieloznacznego "*", ponieważ moduł ładowania przyspieszyć dla użytkowników. | Tak | Nie |
-| **Funkcje** | Odbywa się przy użyciu FunctionsToExport modułu. Należy pamiętać, że najlepszym rozwiązaniem jest jawnie listę elementów, a nie za pomocą symbolu wieloznacznego "*", ponieważ moduł ładowania przyspieszyć dla użytkowników. | Tak | Nie |
-| **Zasoby usługi Konfiguracja DSC** | Dla modułów, które będą używane w środowisku PowerShell w wersji 5.0 lub nowszym odbywa się przy użyciu DscResourcesToExport. Jeśli moduł jest do użycia w programie PowerShell 4, DSCResourcesToExport powinien nie można użyć jako nie jest obsługiwane kluczem manifestu. (DSC nie był dostępny przed programu PowerShell 4). | Tak | Nie |
-| **Przepływy pracy** | Przepływy pracy są publikowane w galerii programu PowerShell jako skrypty i zidentyfikowane jako przepływy pracy (zobacz [Connect AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) przykład) w kodzie. Nie jest to kontrolowane przez plik manifestu. | Nie | Nie |
-| **Możliwości roli** | To będzie wyświetlane, gdy moduł opublikowany w galerii programu PowerShell zawiera jeden lub więcej liczbą plików możliwości (.psrc) roli, które są używane przez JEA. Można znaleźć w dokumentacji JEA, aby uzyskać więcej informacji na [możliwości roli](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Tak | Nie |
-| **Wersje programu PowerShell** | Jest to wymienione w manifeście skryptu lub module. Dla modułów przeznaczone do użycia z programu PowerShell 5.0 a poniżej, jest kontrolowany przy użyciu tagów. Na pulpicie znacznika PSEdition_Desktop i podstawowych, użyj tagu PSEdition_Core. Dla modułów, które będą używane tylko w środowisku PowerShell w wersji 5.1 i nowszych istnieje klucz CompatiblePSEditions w manifeście głównego. Dodatkowe szczegóły, zapoznaj się z funkcji wersji PS w [w dokumentacji programu PowerShell Get](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport). | Tak | Tak |
+| **Wersja** | Wyświetlana jest wersja ciąg wersji metadanych i wstępnej Jeśli jest określony. Część podstawowej wersji w manifeście modułu jest ModuleVersion. Aby uzyskać skrypt jest identyfikowany jako. Wersja. Jeśli zostanie określony ciąg wersji wstępnej, on dołączany do ModuleVersion dla modułów, lub określony jako część. WERSJA dla skryptów. Brak dokumentacji do określania ciągów wersji wstępnej w [modułów](/powershell/gallery/concepts/module-prerelease-support), a następnie w [skryptów](/powershell/gallery/concepts/script-prerelease-support) | Tak | Tak |
+| **Opis** | Jest to opis w manifeście modułu, a w manifest pliku skryptu. OPIS ELEMENTU | Tak | Tak |
+| **Wymaganie akceptacji licencji** | Moduł może wymagać, że użytkownik akceptuje licencji, modyfikując manifestu modułu RequireLicenseAcceptance = $true, podając LicenseURI i podając pliku license.txt w katalogu głównym folderu modułu. Dodatkowe informacje są dostępne w [wymaga zaakceptowania licencji](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance) tematu. | Tak | Nie |
+| **Informacje o wersji** | Dla modułów te informacje są pobierane z sekcji ReleaseNotes w obszarze PSData\PrivateData. W manifestach skryptu jest. RELEASENOTES element. | Tak | Tak |
+| **Właściciele** | Właściciele są listy użytkowników w galerii programu PowerShell, który może zaktualizować element. Listy właścicieli jest niedostępna w manifeście elementu. Dodatkowa dokumentacja zawiera opis sposobu [Zarządzanie właścicielami elementów](/powershell/gallery/how-to/publishing-items/managing-item-owners). | Nie | Nie |
+| **Autor** | Jest to zawarte w manifeście modułu autor oraz w manifeście jako skrypt. AUTOR. Pola Autor jest często używany do określenia firmy lub organizacji skojarzonego z elementem. | Tak | Tak |
+| **Copyright** | Jest to w polu Copyright w manifeście modułu i. COPYRIGHT w manifeście skryptu. | Tak | Tak |
+| **FileList** | Lista plików jest rysowana od pakietu, gdy zostanie opublikowany w galerii programu PowerShell. Nie jest kontrolowane przez informacje manifestu. Uwaga: jest plik dodatkowe .nuspec z każdego elementu w galerii programu PowerShell, który nie jest obecny po zainstalowaniu elementu w systemie. To jest manifest pakietu Nuget dla elementu i można zignorować. | Nie | Nie |
+| **Tagi** | Dla modułów tagi znajdują się w obszarze PSData\PrivateData. W przypadku skryptów jest oznaczona sekcji. TAGI. Należy pamiętać, że tagi nie może zawierać spacji, nawet wtedy, gdy są one w cudzysłowie. Tagi mają dodatkowe wymagania i znaczenie, które są opisane w dalszej części tego tematu w sekcji szczegółów tagu. | Tak | Tak |
+| **Polecenia cmdlet** | To jest dostępna w manifeście modułu przy użyciu CmdletsToExport. Należy pamiętać, że najlepszym rozwiązaniem jest jawnie listę elementów, a nie za pomocą symbolu wieloznacznego "*", ponieważ moduł ładowania usprawnić dla użytkowników. | Tak | Nie |
+| **Funkcje** | To jest dostępna w manifeście modułu przy użyciu FunctionsToExport. Należy pamiętać, że najlepszym rozwiązaniem jest jawnie listę elementów, a nie za pomocą symbolu wieloznacznego "*", ponieważ moduł ładowania usprawnić dla użytkowników. | Tak | Nie |
+| **Zasoby DSC** | Dla modułów, które będą używane w programie PowerShell w wersji 5.0 lub nowszym to jest podawany jako manifest za pomocą DscResourcesToExport. Jeśli moduł jest ma być używany w programie PowerShell 4, DSCResourcesToExport nie należy użyć, ponieważ nie jest obsługiwane klucza manifestu. (DSC nie była dostępna przed 4 programu PowerShell). | Tak | Nie |
+| **Przepływy pracy** | Przepływy pracy są publikowane w galerii programu PowerShell jako skrypty i zidentyfikowane jako przepływy pracy (zobacz [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) przykład) w kodzie. To nie są kontrolowane przez manifestu. | Nie | Nie |
+| **Możliwości roli** | To będzie wyświetlane, gdy moduł, który został opublikowany w galerii programu PowerShell plikami przynajmniej jednej roli możliwości (.psrc), które są używane przez usługi JEA. Znajdują się w dokumentacji usługi JEA, aby uzyskać więcej informacji na [możliwości roli](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Tak | Nie |
+| **Wersje programu PowerShell** | To jest określona w manifeście skryptu lub modułu. Dla modułów, przeznaczony do użycia przy użyciu programu PowerShell w wersji 5.0, a poniżej, jest kontrolowany przy użyciu tagów. Dla komputerów Użyj tagu PSEdition_Desktop i core, można użyć w tagu PSEdition_Core. Dla modułów, które będą używane tylko w programie PowerShell 5.1 i nowszych istnieje klucz CompatiblePSEditions w manifeście głównego. Aby uzyskać dodatkowe szczegóły, zapoznaj się z funkcji wersji PS w [dokumentacji programu PowerShell Get](/powershell/gallery/concepts/module-psedition-support). | Tak | Tak |
 | **Zależności** | Zależności są moduły w galerii programu PowerShell, które są zadeklarowane w module jako RequiredModules lub w manifeście skryptu jako #Requires — moduł (nazwa). | Tak | Tak |
-| **Minimalna wersja programu Powershell** | Można to wymienione w manifeście modułu jako PowerShellVersion | Tak | Nie |
-| **Historia wersji** | Historia wersji odzwierciedla aktualizacjach do modułu w galerii programu PowerShell. Jeśli wersja elementu jest ukryty, za pomocą funkcji usuwania, będzie nie być wyświetlany w Historia wersji z wyjątkiem właścicieli elementu. | Nie | Nie |
-| **Witryny projektu** | Witryny projektu jest dostępna dla modułów w sekcji Privatedata\PSData w manifeście modułu, określając ProjectURI. W manifeście skryptu jest kontrolowana przez określenie. PROJECTURI. | Tak | Tak |
-| **Licencji** | Łącze licencji jest dostępna dla modułów w sekcji Privatedata\PSData w manifeście modułu, określając LicenseURI. W manifeście skryptu jest kontrolowana przez określenie. LICENSEURI. Należy zauważyć, że jeśli nie podano licencję za pośrednictwem LicenseURI lub następnie do modułu, warunki użytkowania galerii programu PowerShell Określ warunki użytkowania dla elementu. Zapoznaj się z warunkami użytkowania, aby uzyskać szczegółowe informacje. | Tak | Tak |
+| **Minimalna wersja programu Powershell** | To może być określona w manifeście modułu jako PowerShellVersion | Tak | Nie |
+| **Historia wersji** | Historia wersji odzwierciedla aktualizacje wprowadzone w module w galerii programu PowerShell. Jeśli wersja elementu jest ukryty za pomocą funkcji usuwania, go nie pojawi się w historii wersji, z wyjątkiem właścicielom elementu. | Nie | Nie |
+| **Witryny projektu** | Moduły w sekcji Privatedata\PSData manifestu modułu umowy witryny projektu, określając ProjectURI. W manifeście skryptu jest kontrolowana przez określenie. PROJECTURI. | Tak | Tak |
+| **Licencja** | Link licencji umowy modułów w sekcji Privatedata\PSData manifestu modułu, określając LicenseURI. W manifeście skryptu jest kontrolowana przez określenie. LICENSEURI. Należy zauważyć, że jeśli licencji nie jest oferowana w ramach LicenseURI lub w module warunków użytkowania dla galerii programu PowerShell Określ warunki użytkowania dla elementu. Zobacz warunki użytkowania, aby uzyskać szczegółowe informacje. | Tak | Tak |
 
 ## <a name="editing-item-details"></a>Edytowanie szczegółów elementu
 
-Strona elementu edytować galerii programu PowerShell zezwala na wydawcy zmienić kilka pól wyświetlanych dla elementu, w szczególności:
+Strona elementów edytować galerii programu PowerShell pozwala na wydawcy zmienić kilka pól wyświetlanych dla elementu, w szczególności:
 
 - Tytuł
 - Opis
@@ -63,53 +63,52 @@ Strona elementu edytować galerii programu PowerShell zezwala na wydawcy zmieni�
 - Informacje o wersji
 - Wymaga licencji
 
-Ta metoda nie jest zwykle zalecane, z wyjątkiem przypadków, gdy konieczne jest Popraw wyświetlanych dla starszej wersji modułu.
-Użytkownicy, którzy nabyli moduł będzie znaleźć metadanych jest niezgodny wyświetlanych w galerii programu PowerShell, który powoduje problemy dotyczące pozycji.
-Spowoduje to często zapytania, przechodząc do właścicieli element, aby potwierdzić zmianę.
-Zdecydowanie zaleca się, że zawsze, gdy ta metoda jest używana, nowa wersja elementu powinien zostać opublikowany, takie same zmiany.
+To podejście jest zwykle niezalecane, z wyjątkiem sytuacji, gdy konieczne Popraw wyświetlanych dla starszej wersji modułu.
+Użytkownicy, którzy zakupili moduł zobaczą, że metadanych jest niezgodny wyświetlanych w galerii programu PowerShell, który wywołuje wątpliwości dotyczących elementu.
+Spowoduje to często zapytania zamierza z właścicielami elementów, aby potwierdzić zmiany.
+Zdecydowanie zaleca się, że każdym razem, gdy ta metoda jest stosowana, nową wersję elementu powinny być publikowane z tej samej zmiany.
 
 ## <a name="tag-details"></a>Szczegóły tagu
 
-Tagi to proste ciągi konsumentów użycia można znaleźć elementów.
-Tagi są najbardziej przydatna, gdy są one używane spójnie przez wiele elementów związanych z tym samym tematem. Wiele wersji tego samego word (na przykład bazy danych i baz danych, lub testowym i testowania) zwykle zapewnia korzyści mały.
-Znaczniki są jednowyrazowej ciągów bez uwzględniania wielkości liter i nie może zawierać spacji. Jeśli istnieje wyrażenie, które uważasz, że użytkownicy będą wyszukiwać, dodać go do opisu elementu i zostaną znalezione w wynikach wyszukiwania. Jeśli chcesz zwiększyć czytelność, należy użyć Pascal wielkości liter, łącznik, podkreślenie lub okres. Należy zachować ostrożność tworzenie tagi długich, złożonych i nietypowych, jak często są one błędna.
+Tagi są zwykłe ciągi odbiorcy Użyj, aby znaleźć elementy.
+Tagi są najbardziej przydatne, gdy są one stosowane konsekwentnie w wielu elementów, które dotyczą tego samego tematu. Za pomocą wiele wersji tego samego programu word (na przykład bazy danych i baz danych, lub testów i testowania) zwykle zapewnia niewielkie korzyści.
+Tagi są jednowyrazowej ciągów bez uwzględniania wielkości liter i nie może zawierać spacji. W przypadku frazy, które uważasz, że użytkownicy będą wyszukiwać, dodaj ją do opisu i zostanie znaleziony w wynikach wyszukiwania. Użyj Pascal wielkość liter w wyrazie, łącznik, podkreślenie lub okres, jeśli próbujesz w celu poprawienia czytelności. Należy zachować ostrożność w przypadku tworzenia tagów długie, złożone i nietypowe, ponieważ są one często błędna.
 
-Tagi, które są należy pamiętać, w galerii programu PowerShell i PowerShellGet poleceń cmdlet je traktować unikatowo. PSEdition_Desktop PSEdition_Core są szczegółowe przykłady i opisanych powyżej.
+Istnieją znaczniki, które są pamiętać, galerii programu PowerShell oraz PowerShellGet poleceń cmdlet je traktować unikatowo. PSEdition_Desktop PSEdition_Core są konkretne przykłady i opisanych powyżej.
 
-Jak wspomniano powyżej, tagi Podaj wartość większość, jeśli są one określone i używany spójnie przez wiele elementów.
-Jako wydawca próby zlokalizowania najlepsze tagi do użycia Najprostszym sposobem jest wyszukiwanie galerii programu PowerShell tagów, które zamierzasz.
-W idealnym przypadku będzie wiele elementów zwróconych i opisy elementów są wyrównane z korzystania z tego słowa kluczowego.
+Jak wspomniano powyżej, tagi zapewniają najbardziej wartości, gdy są określone i używany konsekwentnie między wiele elementów.
+Jako wydawca próbuje zlokalizować najlepsze tagów do użycia to najłatwiejsza metoda jest wyszukiwanie w galerii programu PowerShell dla tagów, które zamierzasz.
+W idealnym przypadku będzie istnieć wiele elementów zwróconych i opisy elementów są wyrównane z użytkowania tego słowa kluczowego.
 
-Odwołania poniżej przedstawiono niektóre tagi najczęściej używane na 12/14/2017 r.
-W niektórych przypadkach istnieją podobne, ale mniej idealne opcje wymienione obok tagu.
-Jest najlepszym rozwiązaniem do użycia jako Tag preferowane powoduje mniej szumu i lepsze wyniki wyszukiwania dla konsumentów.
+Odwołanie poniżej przedstawiono niektóre najczęściej używanych tagi, począwszy od 12/14/2017.
+W niektórych przypadkach są podobne, ale może być mniej idealne opcje wymienione na liście obok znacznikiem.
+Jest najlepszym rozwiązaniem jest używany Tag preferowane jako skutkować mniejszą hałasu i lepsze wyniki wyszukiwania dla konsumentów.
 
-
-| **Preferowany tag** | **Alternatywy i uwagi** |
+| **Preferowany tagu** | **Alternatywy i uwagi** |
 | --- | --- |
 | **Azure** |  |
-| **DSC** | DesiredStateConfiguration jest mniej pożądana, jest zbyt długa |
-| **ResourceManager** | ARM jest używany do opisu grupy procesorów i nie powinna być używana dla usługi Azure Resource Manager | **DSCResourceKit** |  |
+| **DSC** | DesiredStateConfiguration jest mniej pożądana, jest za długa |
+| **ResourceManager** | Służy do opisywania grupy procesorów ARM i nie powinny być używane dla usługi Azure Resource Manager | **DSCResourceKit** |  |
 | **SQL** |  |
 | **AWS** |  |
 | **DSCResource** |  |
-| **Automatyzacja** |  |
+| **Usługi Automation** |  |
 | **REST** |  |
-| **ActiveDirectory** | Usługi AD nie jest obecnie używany przez samego siebie  |
+| **ActiveDirectory** | Usługi AD nie jest obecnie używany przez siebie  |
 | **SQLServer** |  |
 | **DBA** |  |
-| **Bezpieczeństwo** | Obrony jest mniej dokładne |
-| **Bazy danych** | Bazy danych (w liczbie mnogiej) jest mniej pożądana |
-| **Opracowywania oprogramowania** |  |
+| **Bezpieczeństwo** | Ochrona jest mniej dokładny |
+| **Bazy danych** | Bazy danych (liczba mnoga) jest mniej pożądana |
+| **Metodyka DevOps** |  |
 | **Windows** |  |
-| **Kompilacji** |  |
-| **wdrożenia** | Wdrażanie jest nieco rzadziej używane |
-| **Chmury** |  |
-| **GIT** |  |
+| **Kompilacja** |  |
+| **Wdrożenia** | Wdrażanie jest nieco mniej często używane |
+| **Chmura** |  |
+| **USŁUGI GIT** |  |
 | **Test** | Testowanie jest mniej pożądana |
-| **VersionControl** | Wersja jest mniej dokładne, chociaż często używane  |
+| **Kontrola wersji** | Wersja jest mniej dokładne, mimo że częściej używane  |
 | **Rejestrowanie** | Użyj preferowanych rejestrowania akcji |
-| **Dziennik** | Użyj preferowanych dziennika jako element |
+| **Dziennik** | Preferowany korzystanie z dziennika jako rzeczy |
 | **Kopia zapasowa** |  |
 | **IaaS** |  |
 | **Linux** |  |
@@ -121,8 +120,8 @@ Jest najlepszym rozwiązaniem do użycia jako Tag preferowane powoduje mniej szu
 | **Exchange** |  |
 | **Sieci** | Sieć jest podobny, rzadziej używane |
 | **SharePoint** |  |
-| **Raportowanie** | Zgłoszenie jest akcją, raport należy |
-| **Raport** | Raport jest operacją |
+| **Raportowanie** | Raportowanie jest akcja, jest to raport |
+| **Raport** | Jest to raport |
 | **WinRM** |  |
 | **Monitorowanie** |  |
 | **VSTS** |  |
@@ -130,17 +129,17 @@ Jest najlepszym rozwiązaniem do użycia jako Tag preferowane powoduje mniej szu
 | **Google** |  |
 | **Kolor** |  |
 | **DNS** |  |
-| **Office365** | Preferowane jest pisownia limit pakietu Office. Usługa Office 365 jest rzadko używane, mimo że krótszą | **Gitlab** |  |
+| **Office365** | Preferowane jest pisownia się pakietu Office. Usługi Office 365 jest rzadko używane, ale krótszy | **Gitlab** |  |
 | **Pester** |  |
 | **AzureAD** |  |
 | **HTML** |  |
-| **Funkcja Hyper-V** | Funkcji Hyper-v jest mniej typowych jako tag |
+| **Funkcji Hyper-V** | Funkcji Hyper-v jest mniej typowe jako tag |
 | **Konfiguracja** |  |
 | **ChatOps** |  |
 | **PackageManagement** |  |
 | **WMI** |  |
 | **Zapory** |  |
-| **Docker** |  |
+| **Platformy docker** |  |
 | **Appveyor** |  |
 | **AzureRm** | Zazwyczaj używany do modułów AzureRM |
 | **Zip** |  |

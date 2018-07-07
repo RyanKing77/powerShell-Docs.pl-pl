@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Metoda TestConfiguration klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219015"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893930"
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda TestConfiguration klasy MSFT_DSCLocalConfigurationManager
 
-Wysyła dokument konfiguracji do węzła zarządzanego i sprawdza bieżącą konfigurację względem dokumentu.
+Wysyła dokument konfiguracji w węźle zarządzanym i sprawdza bieżącą konfigurację dla dokumentu.
 
-<a name="syntax"></a>Składnia
-------
+## <a name="syntax"></a>Składnia
 
 ```mof
 uint32 TestConfiguration(
@@ -25,34 +24,30 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parametry
-----------
+## <a name="parameters"></a>Parametry
 
-*configurationData* \[w\] danych środowiska dla confuguration.
+*configurationData* \[w\] confuguration dane środowisko.
 
-*InDesiredState* \[limit\] przy powrocie, określa, czy węzeł zarządzany w stan określony w dokumencie konfiguracji.
+*InDesiredState* \[się\] przy powrocie, określa, czy zarządzany węzeł jest w stanie określone przez dokumentu konfiguracji.
 
-*ResourcesInDesiredState* \[limit\] przy powrocie, zawiera osadzony wystąpienia **MSFT_ResourceInDesiredState** klasy, która określa zasoby, które są w żądanym stanie.
+*ResourcesInDesiredState* \[się\] przy powrocie, zawiera osadzony wystąpienia **MSFT_ResourceInDesiredState** klasę, która określa zasoby, które znajdują się w żądanym stanie.
 
-*ResourcesNotInDesiredState* \[limit\] przy powrocie, zawiera osadzony wystąpienia **MSFT_ResourceNotInDesiredState** klasy, która określa zasoby, które nie są w żądanym stanie.
+*ResourcesNotInDesiredState* \[się\] przy powrocie, zawiera osadzony wystąpienia **MSFT_ResourceNotInDesiredState** klasę, która określa zasoby, które nie znajdują się w żądanym stanie.
 
 ## <a name="return-value"></a>Wartość zwracana
-------------
 
 Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.
 
 ## <a name="remarks"></a>Uwagi
 
-To jest metodą statyczną.
+Jest to metoda statyczna.
 
 ## <a name="requirements"></a>Wymagania
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Plik MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zobacz też
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

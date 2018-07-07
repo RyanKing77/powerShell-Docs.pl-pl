@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Metoda SendConfiguration klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: b4d4c901268344ba67d77e4dc982042bfc2abd78
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3529bc56ecba19ed0fbbf070a4e86d0692824d39
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222211"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892447"
 ---
 # <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda SendConfiguration klasy MSFT_DSCLocalConfigurationManager
 
-Wysyła dokument konfiguracji do węzła zarządzanego i zapisuje go jako oczekujące zmiany.
+Wysyła dokument konfiguracji w węźle zarządzanym i zapisuje go jako oczekujące zmiany.
 
-<a name="syntax"></a>Składnia
-------
+## <a name="syntax"></a>Składnia
 
 ```mof
 uint32 SendConfiguration(
@@ -23,30 +22,26 @@ uint32 SendConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parametry
-----------
+## <a name="parameters"></a>Parametry
 
-*ConfigurationData* \[w\] danych środowiska w konfiguracji.
+*ConfigurationData* \[w\] danych środowiska dla konfiguracji.
 
 *Wymuś* \[w\] **true** wymusić konfigurację, aby zatrzymać.
 
 ## <a name="return-value"></a>Wartość zwracana
-------------
 
 Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.
 
 ## <a name="remarks"></a>Uwagi
 
-To jest metodą statyczną.
+Jest to metoda statyczna.
 
 ## <a name="requirements"></a>Wymagania
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Plik MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zobacz też
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -3,34 +3,34 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: ryanpu
-title: Ulepszenia wystarczającego administracyjnej (JEA)
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Ulepszenia wystarczający zakres administracji (JEA)
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222421"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892723"
 ---
-# <a name="improvements-to-just-enough-administration-jea"></a>Ulepszenia wystarczającego administracyjnej (JEA)
+# <a name="improvements-to-just-enough-administration-jea"></a>Ulepszenia wystarczający zakres administracji (JEA)
 
-## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>Kopiowanie plików ograniczone z JEA punkty końcowe
+## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>Kopiowanie plików ograniczone do/z punktów końcowych JEA
 
-Teraz można zdalnie skopiuj pliki do/z JEA punktu końcowego i rest pewność, że użytkownik nawiązujący połączenie nie można skopiować tylko *żadnych* pliku w systemie.
-Jest to możliwe, konfigurując pliku Współpracuje instalowanie dysku użytkownika do łączenia użytkowników.
-Stacja użytkownika jest nowego elementu PSDrive jest unikatowy dla każdego łączącego się użytkownika, który będzie się powtarzał między sesjami.
-Copy-Item używanego do kopiowania plików do lub z sesji JEA jest ograniczane tylko umożliwia dostęp do dysku użytkownika.
-Próby skopiuj pliki do innego elementu PSDrive zakończy się niepowodzeniem.
+Teraz możesz zdalnie skopiować plików do/z usługi JEA punktu końcowego i rest pewność, że użytkownik nawiązujący połączenie nie można po prostu skopiować *wszelkie* plików w systemie.
+Jest to możliwe, konfigurując pliku Współpracuje instalowanie dysku użytkownika łączenia się użytkowników.
+Dysk użytkownik jest nowy PSDrive, który jest unikatowy dla każdego użytkownika łączącego się i są utrwalane w sesjach.
+Gdy `Copy-Item` jest używany do kopiowania plików do lub z sesji JEA, jest ona ograniczona tylko zezwolić na dostęp do dysku użytkownika.
+Próby skopiuj pliki do innych PSDrive zakończy się niepowodzeniem.
 
-Aby skonfigurować dysk użytkownika w pliku konfiguracji sesji JEA, użyj pola nowe:
+Aby skonfigurować dysk użytkownika w pliku konfiguracji usługi JEA sesji, użyj następujące nowe pola:
 
 ```powershell
 MountUserDrive = $true
 UserDriveMaximumSize = 10485760    # 10 MB
 ```
 
-Folder kopii dysku użytkownika zostanie utworzona na `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
+Folder kopii dysku użytkownika zostanie utworzone po `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-Aby korzystać z dysku użytkownika i skopiuj pliki do/z punktu końcowego JEA skonfigurowany tak, aby ujawnić stacji użytkownika, użyj `-ToSession` i `-FromSession` parametrów w elemencie kopiowania.
+Aby korzystanie z dysku użytkownika i skopiuj pliki do/z punktu końcowego JEA skonfigurowany tak, aby udostępnić dysk użytkownika, użyj `-ToSession` i `-FromSession` parametrów w `Copy-Item`.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -44,15 +44,15 @@ Copy-Item -Path .\SampleFile.txt -Destination User: -ToSession $jeasession
 Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 ```
 
-Następnie można zapisać funkcji niestandardowych do przetwarzania danych przechowywanych na dysku użytkownika i udostępnić tych użytkowników w pliku możliwości roli.
+Następnie można napisać funkcji niestandardowych do przetwarzania danych przechowywanych w stacji użytkownika i należy je do użytkowników w pliku możliwości roli.
 
-## <a name="support-for-group-managed-service-accounts"></a>Obsługa grupy zarządzania usługi kont
+## <a name="support-for-group-managed-service-accounts"></a>Obsługa grupy usługi zarządzanej kont
 
-W niektórych przypadkach zadanie, które użytkownik musi wykonać w ramach sesji JEA może być konieczne uzyskiwać dostęp do zasobów poza komputera lokalnego.
-Podczas sesji JEA jest skonfigurowany do używania konta wirtualnego, wszelkie próby osiągnąć tych zasobów pojawi się pochodzą z tożsamości komputera lokalnego, nie konta wirtualnego lub podłączonego użytkownika.
-W TP5, możemy włączono obsługę działających JEA w kontekście [grupy konta usługi zarządzanego przez] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), co znacznie ułatwia dostęp do zasobów sieciowych przy użyciu tożsamości domeny.
+W niektórych przypadkach zadania, które użytkownik musi wykonać w ramach sesji usługi JEA może być konieczne uzyskiwać dostęp do zasobów poza komputera lokalnego.
+Podczas sesji JEA jest skonfigurowany do używania konta wirtualnego, wszelkie próby uzyskania dostępu do tych zasobów pojawi się pochodzić z tożsamości komputera lokalnego, nie wirtualnego konta lub połączonego użytkownika.
+W TP5, uwzględniliśmy obsługę uruchamiania JEA w kontekście [grupy zarządzane konto usługi] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), znacznie ułatwiając dostęp do zasobów sieciowych przy użyciu tożsamości domeny.
 
-Aby skonfigurować sesję JEA do uruchomienia w ramach konta gMSA, użyj następujących nowy klucz w pliku Współpracuje:
+Aby skonfigurować sesję JEA uruchamiany w kontekście konta gMSA, należy użyć następujących nowy klucz w pliku Współpracuje:
 
 ```powershell
 # Provide the name of your gMSA account here (don't include a trailing $)
@@ -64,19 +64,20 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **Uwaga:** konta usług zarządzane przez grupę nie dają izolacji lub ograniczonym zakresie kont wirtualnych.
-> Każdy użytkownik nawiązujący połączenie będzie udostępniać tej samej tożsamości gMSA, które mogą mieć uprawnienia w całym przedsiębiorstwie.
-> Trzeba zwrócić szczególną uwagę podczas wybierania grupę, a zawsze wybierasz kont wirtualnych, które są ograniczone do komputera lokalnego, jeśli to możliwe.
+> [!NOTE]
+> Konta usług zarządzane przez grupę nie dają izolacji lub ograniczony zakres kont wirtualnych.
+> Każdy użytkownik nawiązujący połączenie współużytkują ten sam tożsamości przez grupę, która może mieć uprawnień w całym przedsiębiorstwie.
+> Ostrożność bardzo przy wybieraniu gMSA, a zawsze preferują kont wirtualnych, które są ograniczone do komputera lokalnego, jeśli jest to możliwe.
 
 ## <a name="conditional-access-policies"></a>Zasady dostępu warunkowego
 
-JEA jest doskonałym rozwiązaniem ograniczanie ktoś czynności podłączeni już do systemu zarządzania, ale co zrobić, gdy zostanie również chcesz ograniczyć *podczas* osoba może użyć JEA?
-Dodaliśmy opcje konfiguracji w plikach konfiguracji sesji (.pssc) pozwala określić grupę zabezpieczeń, do których użytkownik musi należeć w celu ustanowienia sesji JEA.
-Może to być szczególnie przydatne, jeśli masz system tylko w czasie (JIT) w danym środowisku i mają być użytkowników przed uzyskaniem dostępu do punktu końcowego JEA uprawnieniach podniesienie poziomu ich uprawnień.
+Technologia JEA jest doskonałym ograniczanie ktoś możliwościach gdy zostało podłączone do systemu, aby zarządzać, ale co, jeśli możesz również chcesz ograniczyć *podczas* ktoś można użyć technologii JEA?
+Dodano opcje konfiguracji w plikach konfiguracji sesji (.pssc) pozwala określić grupę zabezpieczeń, do których użytkownik musi należeć do ustanowienia sesji JEA.
+Może to być szczególnie przydatne, jeśli masz system tylko w czas (JIT) w danym środowisku i chcesz stworzyć podniesienia swoich uprawnień przed uzyskaniem dostępu do punktu końcowego JEA wysoce uprzywilejowanych użytkowników.
 
-Nowy *RequiredGroups* polem w pliku Współpracuje pozwala na określenie logiki, aby ustalić, czy użytkownik może łączyć się JEA.
-Składa się z określania hashtable (opcjonalnie zagnieżdżona), który używa "I" i "Lub" klucze do utworzenia reguły.
-Oto kilka przykładów sposób korzystania z tego pola:
+Nowy *RequiredGroups* polem w pliku Współpracuje umożliwia określenie logiki, aby określić, jeśli użytkownik może łączyć się JEA.
+Składa się z określania hashtable (opcjonalnie zagnieżdżona), który używa "I" i "Lub" klucze do konstruowania reguły.
+Poniżej przedstawiono kilka przykładów jak korzystać z tego pola:
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -90,6 +91,7 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Stały: Kont wirtualnych są teraz obsługiwane w systemie Windows Server 2008 R2
-W wersji 5.1 WMF jesteś teraz mogą używać kont wirtualnych w systemie Windows Server 2008 R2, włączanie konfiguracji spójne i parzystość funkcji w systemie Windows Server 2008 R2 — 2016.
-Kont wirtualnych pozostają nieobsługiwane, gdy przy użyciu JEA w systemie Windows 7.
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Naprawiono: Kont wirtualnych są teraz obsługiwane w systemie Windows Server 2008 R2
+
+W program WMF 5.1 można mogą teraz używać kont wirtualnych w systemie Windows Server 2008 R2, umożliwiając jednolitych konfiguracji i równoważności funkcji w systemie Windows Server 2008 R2 — 2016.
+Kont wirtualnych pozostają nieobsługiwane w przypadku korzystania z usługi JEA na Windows 7.

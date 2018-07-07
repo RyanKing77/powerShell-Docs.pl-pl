@@ -1,32 +1,32 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Uruchamianie platformy DSC przy użyciu poświadczeń użytkownika
-ms.openlocfilehash: b2992ad562dea375aba980611312c7b96a23189c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4a6c3d8b561cd0a27be07a68f1b577f7bf764254
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189707"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893913"
 ---
 # <a name="running-dsc-with-user-credentials"></a>Uruchamianie platformy DSC przy użyciu poświadczeń użytkownika
 
-> Dotyczy: Środowiska Windows PowerShell 5.0, środowiska Windows PowerShell w wersji 5.1
+> Dotyczy: Windows PowerShell 5.0, programu Windows PowerShell 5.1
 
-Zasób DSC pod określony zestaw poświadczeń, można uruchomić przy użyciu automatycznego **PsDscRunAsCredential** właściwości w konfiguracji.
-Domyślnie DSC uruchamiane każdego zasobu jako konta systemowego.
-Brak razy podczas udostępniania działający jako użytkownik jest to konieczne, takich jak instalowanie pakiety MSI w kontekście użytkownika, ustawienie kluczy rejestru użytkownika, uzyskiwanie dostępu do określonego katalogu lokalnego użytkownika lub uzyskiwania dostępu do sieci.
+Zasób DSC określony zestaw poświadczeń, można uruchomić za pomocą automatycznego **PsDscRunAsCredential** właściwości w konfiguracji.
+Domyślnie DSC jest uruchamiane poszczególne zasoby za pomocą konta system.
+Istnieją terminy, podczas udostępniania działający jako użytkownik, jest to konieczne, takich jak instalowanie pakietów MSI w kontekście określonego użytkownika, ustawienie kluczy rejestru użytkownika, uzyskiwanie dostępu do określonego katalogu lokalnego użytkownika lub uzyskiwania dostępu do sieci.
 
-Każdy zasób DSC ma **PsDscRunAsCredential** właściwość, która może być ustawiony na wszystkie poświadczenia użytkownika ( [PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) obiektu).
-Poświadczenia mogą być ustalony jako wartość właściwości w konfiguracji lub możesz ustawić wartość [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx), który zostanie monit o podanie poświadczeń podczas kompilowania (Aby uzyskać informacje o konfiguracji Trwa kompilowanie konfiguracji, zobacz [konfiguracje](configurations.md).
+Każdy zasób DSC ma **PsDscRunAsCredential** właściwości, które można ustawić żadnych poświadczeń użytkownika ( [PSCredential](/dotnet/api/system.management.automation.pscredential) obiektu).
+Poświadczenia mogą być zakodowane jako wartość właściwości w konfiguracji lub wartość można ustawić, [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential), który zostanie wyświetlony monit o poświadczenia podczas kompilowania (Aby uzyskać informacje o konfiguracji kompilowanie konfiguracji, zobacz [konfiguracje](configurations.md).
 
->**Uwaga:** w programie PowerShell 5.0, za pomocą **PsDscRunAsCredential** właściwości w konfiguracjach wywoływania złożonego zasobów nie jest obsługiwana.
->W programie PowerShell 5.1 **PsDscRunAsCredential** właściwość jest obsługiwana w konfiguracjach wywoływania złożonego zasobów.
+> [!NOTE] 
+> W programie PowerShell 5.0, za pomocą **PsDscRunAsCredential** właściwości w konfiguracji wywoływania zasoby złożone nie jest obsługiwana.
+> W programie PowerShell 5.1 **PsDscRunAsCredential** właściwość jest obsługiwana w konfiguracjach wywoływania zasoby złożone.
+> **PsDscRunAsCredential** właściwość nie jest dostępna w programie PowerShell 4.0.
 
->**Uwaga:** **PsDscRunAsCredential** właściwość nie jest dostępna w programie PowerShell w wersji 4.0.
-
-W poniższym przykładzie **Get-Credential** jest używany w celu monitowania użytkownika o podanie poświadczeń.
-[Rejestru](registryResource.md) zasobu służy do zmiany klucza rejestru, który określa kolor tła dla okna wiersza polecenia systemu Windows.
+W poniższym przykładzie `Get-Credential` jest używany w celu wyświetlenia monitu o podanie poświadczeń użytkownika.
+[Rejestru](registryResource.md) zasobów służy do zmiany klucza rejestru, który określa kolor tła okna wiersza polecenia Windows.
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -62,5 +62,7 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**Uwaga:** w tym przykładzie założono, że prawidłowy certyfikat w `C:\publicKeys\targetNode.cer`, oraz że odcisk palca certyfikatu jest wartość wyświetlana.
->Aby uzyskać informacje dotyczące szyfrowania poświadczeń w pliki MOF konfiguracji DSC, zobacz [Zabezpieczanie pliku MOF](secureMOF.md).
+
+> [!NOTE]
+> W tym przykładzie założono, że prawidłowy certyfikat na `C:\publicKeys\targetNode.cer`, i że odcisk palca certyfikatu jest wartość wyświetlana.
+> Aby dowiedzieć się, jak szyfrowania poświadczeń w plikach MOF konfiguracji DSC, zobacz [Zabezpieczanie pliku MOF](secureMOF.md).

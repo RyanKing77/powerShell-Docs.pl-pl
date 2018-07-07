@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: Galeria, programu powershell, polecenia cmdlet, psget
+keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Moduły z niezgodne wersje programu PowerShell
-ms.openlocfilehash: fbbfda2f913d54c3e69c0724fea4d977923279c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 653cfa82be9d0150da8d8765c96e35be99497262
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189520"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892325"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduły z niezgodne wersje programu PowerShell
 
@@ -21,7 +21,9 @@ Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które cha
 
 ```powershell
 $PSVersionTable
+```
 
+```output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.14300.1000
@@ -36,52 +38,65 @@ SerializationVersion           1.1.0.1
 
 ## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>Autorzy modułów mogą zadeklarować zgodność swoich modułów z jedną lub kilkoma wersjami programu PowerShell przy użyciu klucza manifestu modułu CompatiblePSEditions. Ten klucz jest obsługiwany tylko w programie PowerShell 5.1 i w nowszych wersjach.
 
-*Uwaga* po manifestu modułu określono z kluczem CompatiblePSEditions, nie można go zaimportować w niższych wersjach programu PowerShell.
+> [!NOTE]
+> Po określeniu manifestu modułu CompatiblePSEditions kluczem, nie mogą być importowane w niższych wersjach programu PowerShell.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
 $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
+```
 
+```powershell
 $ModuleInfo | Get-Member CompatiblePSEditions
+```
 
+```output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
 ----                 ---------- ----------
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
-
 ```
 
 Podczas pobierania listy dostępnych modułów można filtrować tę listę według wersji programu PowerShell.
 
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
+```
 
+```output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
-
-Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
-Desktop
-Core
-
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Autorzy modułu można opublikować pojedynczy moduł celem jedną lub obie te wersje programu PowerShell (Desktop i rdzenie)
+```powershell
+Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
+```
 
-Pojedynczy moduł może pracować na komputerach stacjonarnych i Core wersje, w tym module autora musi dodać logikę wymagane w każdym RootModule lub w manifeście modułu przy użyciu zmiennej $PSEdition.
-Moduły mogą mieć dwa zestawy skompilowane pliki dll przeznaczonych dla zarówno środowisko CoreCLR i FullCLR.
-Poniżej przedstawiono kilka opcji, aby pakiet modułu z logiką ładowania biblioteki DLL właściwe.
+```output
+Desktop
+Core
+```
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Opcja 1: Tworzenie pakietów modułu do użycia z wieloma wersjami i kilka wersji programu PowerShell
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>Autorzy modułów mogą publikować moduł pojedynczego celem lub obie te wersje programu PowerShell (Desktop i rdzeni)
 
-#### <a name="module-folder-contents"></a>Zawartości folderu modułu
+Pojedynczy moduł może pracować na komputerach stacjonarnych, jak i Core wersje, w tym module Autor ma dodać logikę wymagane w obu polach RootModule, lub w manifeście modułu przy użyciu zmiennej $PSEdition.
+Moduły mogą mieć dwa zestawy skompilowane pliki dll przeznaczonych dla programów CoreCLR i FullCLR.
+Poniżej przedstawiono kilka opcji, aby pakiet modułu z logiką ładowania odpowiednie biblioteki dll.
+
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Opcja 1: Pakowanie modułu dla przeznaczone dla wielu wersji i wiele wersji programu PowerShell
+
+#### <a name="module-folder-contents"></a>Zawartość folderu modułu
 
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
@@ -121,7 +136,7 @@ ModuleVersion = '1.6.1'
 
 #### <a name="contents-of-psscriptanalyzerpsm1-file"></a>Zawartość pliku PSScriptAnalyzer.psm1
 
-Poniżej logiki ładuje wymaganych zestawów, w zależności od bieżącej wersji lub wersji.
+Poniżej logiki ładuje wymaganych zestawów w zależności od bieżącej wersji lub wersji.
 
 ```powershell
 #
@@ -157,15 +172,15 @@ $PSModule.OnRemove = {
 
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Opcja 2: Użyj zmiennej $PSEdition w plik PSD1 załadować właściwego biblioteki dll i zagnieżdżone/wymagane moduły
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Opcja 2: Użyj zmiennej $PSEdition w pliku PSD1 ładują odpowiednie biblioteki dll i zagnieżdżone/wymagane moduły
 
-W wersji 5.1 PS lub nowszej $PSEdition — zmienna globalna jest dozwolone w pliku manifestu modułu.
-Za pomocą tej zmiennej, autora modułu, można określić warunkowego wartości w pliku manifestu modułu. Zmienna $PSEdition można odwoływać się w trybie ograniczonym języka lub w sekcji danych.
+W PS 5.1 lub nowszej $PSEdition zmienna globalna jest dozwolone w pliku manifestu modułu.
+Za pomocą tej zmiennej, autora modułu, można określić wartości warunkowym w pliku manifestu modułu. $PSEdition zmiennej można odwoływać się w trybie ograniczonym języka lub w sekcji danych.
 
-*Uwaga* po manifestu modułu zostanie użyty klucz CompatiblePSEditions lub użyto zmiennej $PSEdition, nie można go zaimportować w niższych wersjach programu PowerShell.
+> [!NOTE]
+> Gdy manifestu modułu została określona za pomocą klucza CompatiblePSEditions lub użyto zmiennej $PSEdition, nie mogą być importowane w niższych wersjach programu PowerShell.
 
-
-#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Przykładowy plik manifestu modułu z kluczem CompatiblePSEditions
+#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>Przykładowy plik manifestu modułu przy użyciu klucza CompatiblePSEditions
 
 ```powershell
 @{
@@ -203,9 +218,10 @@ else # Desktop
 #### <a name="module-contents"></a>Zawartość modułu
 
 ```powershell
+dir -Recurse
+```
 
-PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
-
+```output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode                LastWriteTime         Length Name
@@ -231,9 +247,9 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
 ```
 
-## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>Użytkownicy w galerii programu PowerShell można znaleźć na liście modułów obsługiwane w określonej wersji programu PowerShell przy użyciu tagów PSEdition_Desktop i PSEdition_Core.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>Użytkownicy z galerii programu PowerShell można znaleźć na liście modułów obsługiwane w określonej wersji programu PowerShell przy użyciu tagów PSEdition_Desktop i PSEdition_Core.
 
-Moduły bez tagów PSEdition_Desktop i PSEdition_Core są traktowane jako działają prawidłowo w przypadku wersji środowiska PowerShell pulpitu.
+Moduły bez użycia tagów PSEdition_Desktop i PSEdition_Core są traktowane jako działają prawidłowo w wersji Desktop programu PowerShell.
 
 ```powershell
 
@@ -245,9 +261,10 @@ Find-Module -Tag PSEdition_Core
 
 ```
 
+## <a name="more-details"></a>Więcej szczegółów
 
-## <a name="more-details"></a>więcej informacji
+[Skrypty z elementami PSEdition](script-psedition-support.md)
 
-- [Skrypty z elementami PSEdition](script-psedition-support.md)
-- [Obsługa PSEditions na PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
-- [Manifestu modułu aktualizacji] (/powershell/module/powershellget/update-modulemanifest)
+[Obsługa elementami Psedition w galerii PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+
+[Aktualizowanie manifestu modułu](/powershell/module/powershellget/update-modulemanifest)

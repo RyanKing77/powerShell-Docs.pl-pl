@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Metoda GetConfigurationResultOutput klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 73d10a8b44e5056e3fce1598518630a84aff6ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ea572a4a66befd4e4b8d83e2957632b1b5ed7d93
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186810"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893947"
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda GetConfigurationResultOutput klasy MSFT_DSCLocalConfigurationManager
 
-Pobiera dane wyjściowe Agent konfiguracji skojarzone z danego zadania.
+Pobiera dane wyjściowe agenta konfiguracji skojarzone z określonego zadania.
 
-<a name="syntax"></a>Składnia
-------
+## <a name="syntax"></a>Składnia
 
 ```mof
 uint32 GetConfigurationResultOutput(
@@ -24,32 +23,28 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-<a name="parameters"></a>Parametry
-----------
+## <a name="parameters"></a>Parametry
 
-*Identyfikator zadania* \[w\] identyfikator zadania, dla którego można pobrać danych wyjściowych.
+*jobId* \[w\] identyfikator zadania, dla którego należy pobrać dane wyjściowe.
 
-*resumeOutputBookmark* \[w\] Określa, czy dane wyjściowe powinny być kontynuacja z poprzedniej zakładki.
+*resumeOutputBookmark* \[w\] Określa, że dane wyjściowe powinny być kontynuacji poprzedniej zakładki.
 
-*dane wyjściowe* \[limit\] produktu wyjściowego dla określonego zadania.
+*dane wyjściowe* \[się\] danych wyjściowych dla określonego zadania.
 
 ## <a name="return-value"></a>Wartość zwracana
-------------
 
 Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.
 
 ## <a name="remarks"></a>Uwagi
 
-To jest metodą statyczną.
+Jest to metoda statyczna.
 
 ## <a name="requirements"></a>Wymagania
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Plik MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zobacz też
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

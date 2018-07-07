@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Metoda RollBack klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: d2f9b7025d611912e119800408e25fcb66bc0228
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4956900ecd2c9cb7f2e2b5bcab94616f9f5d5565
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219882"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893022"
 ---
 # <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda RollBack klasy MSFT_DSCLocalConfigurationManager
 
-Przywraca konfigurację do poprzedniej wersji.
+Nastąpi powrót do wcześniejszej konfiguracji do poprzedniej wersji.
 
-<a name="syntax"></a>Składnia
-------
+## <a name="syntax"></a>Składnia
 
 ```mof
 uint32 RollBack(
@@ -22,28 +21,24 @@ uint32 RollBack(
 );
 ```
 
-<a name="parameters"></a>Parametry
-----------
+## <a name="parameters"></a>Parametry
 
 *configurationNumber* \[w\] określa żądanej konfiguracji.
 
 ## <a name="return-value"></a>Wartość zwracana
-------------
 
 Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.
 
 ## <a name="remarks"></a>Uwagi
 
-To jest metodą statyczną.
+Jest to metoda statyczna.
 
 ## <a name="requirements"></a>Wymagania
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Plik MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zobacz też
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

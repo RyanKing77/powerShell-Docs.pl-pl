@@ -1,24 +1,25 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 description: Udostępnia mechanizm do zarządzania grupami lokalnymi w docelowym węźle.
-title: Zasób GroupSet DSC
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Zasób Groupset DSC
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222357"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892430"
 ---
-# <a name="dsc-groupset-resource"></a>Zasób GroupSet DSC
+# <a name="dsc-groupset-resource"></a>Zasób Groupset DSC
 
-> Dotyczy: Windows środowiska Windows PowerShell 5.0
+> Dotyczy: Windows Windows PowerShell 5.0
 
-**GroupSet** zasób w Windows PowerShell Desired stan konfiguracji (DSC) zapewnia mechanizm zarządzania grup lokalnych w docelowym węźle. Ten zasób jest [złożonego zasobów](authoringResourceComposite.md) wywołującym [grupy zasobów](groupResource.md) dla każdej grupy określonej w `GroupName` parametru.
+**GroupSet** zasobów w Windows PowerShell Desired State Configuration (DSC) udostępnia mechanizm do zarządzania grupami lokalnymi w docelowym węźle. Ten zasób jest [złożonego zasobów](authoringResourceComposite.md) wywołująca [grupy zasobów](groupResource.md) dla każdej grupy określony w `GroupName` parametru.
 
-Jeśli chcesz dodać i/lub Usuń tę samą listę elementów członkowskich do więcej niż jednej grupy, Usuń więcej niż jedną grupę lub Dodaj więcej niż jednej grupy z tej samej listy elementów członkowskich, należy użyć tego zasobu.
+Korzystając z tego zasobu, jeśli chcesz dodać i/lub usunięcia tej samej listy elementów członkowskich do więcej niż jednej grupy, usunąć więcej niż jednej grupy lub Dodaj więcej niż jednej grupy o tej samej listy elementów członkowskich.
 
-##<a name="syntax"></a>Składnia ##
+## <a name="syntax"></a>Składnia
+
 ```
 Group [string] #ResourceName
 {
@@ -35,17 +36,17 @@ Group [string] #ResourceName
 
 |  Właściwość  |  Opis   |
 |---|---|
-| Nazwa grupy| Nazwy grup, dla których chcesz zapewnić z określonym stanem.|
-| MembersToExclude| Ta właściwość umożliwia usunięcie członków z istniejącego członkostwa w grupach. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj **członków** właściwości. W ten sposób spowoduje wystąpienie błędu.|
-| Poświadczenie| Poświadczenia wymagane do dostępu do zasobów zdalnego. **Uwaga**: to konto musi mieć odpowiednich uprawnień usługi Active Directory, aby dodać wszystkie konta innego niż lokalne do grupy; w przeciwnym razie wystąpi błąd.
-| Upewnij się| Wskazuje, czy istnieją grupy. Ustaw tę właściwość na "Brak", aby upewnić się, że grupy nie istnieją. Ustawienie jej "Przedstawienie" (wartość domyślna) zapewnia, że istnieją grupy.|
-| Elementy członkowskie| Ta właściwość służy do Zamień od bieżącego członkostwa grupy określone elementy członkowskie. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj albo **MembersToExclude** lub **MembersToInclude** właściwości. W ten sposób spowoduje wystąpienie błędu.|
-| MembersToInclude| Ta właściwość służy do dodawania członków do istniejącego członkostwa grupy. Wartość tej właściwości jest tablicą ciągów w postaci *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj **członków** właściwości. W ten sposób spowoduje wystąpienie błędu.|
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości to "DependsOn ="[ResourceName ResourceType]"".|
+| Nazwa grupy| Nazwy grup, dla których chcesz mieć pewność określonego stanu.|
+| MembersToExclude| Ta właściwość służy do usuwania członków z istniejących członkostwa w grupach. Wartość tej właściwości jest tablicą ciągów formularza *domeny*\\*UserName*. Jeśli ustawisz tę właściwość w ramach konfiguracji należy używać **członków** właściwości. Ten sposób spowoduje wygenerowanie błędu.|
+| Poświadczenie| Poświadczenia wymagane do dostępu do zasobów zdalnych. **Uwaga**: to konto musi mieć odpowiednie uprawnienia usługi Active Directory można dodać wszystkie konta innego niż lokalne do grupy; w przeciwnym razie wystąpi błąd.
+| Upewnij się| Wskazuje, czy istnieją grupy. Ustaw tę właściwość na "Brak", aby upewnić się, że nie istnieją grupy. Ustawienie "Przedstawia" (wartość domyślna) gwarantuje, że istnieją grupy.|
+| Elementy członkowskie| Użyj tej właściwości, aby zamienić bieżącego członkostwa w grupie z tymi elementami. Wartość tej właściwości jest tablicą ciągów formularza *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj albo **MembersToExclude** lub **MembersToInclude** właściwości. Ten sposób spowoduje wygenerowanie błędu.|
+| MembersToInclude| Aby dodać członków do istniejących członkostwa w grupie, należy używać tej właściwości. Wartość tej właściwości jest tablicą ciągów formularza *domeny*\\*UserName*. Jeśli ustawisz tę właściwość w ramach konfiguracji należy używać **członków** właściwości. Ten sposób spowoduje wygenerowanie błędu.|
+| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości to "DependsOn ="[ ResourceName ResourceType]"".|
 
-## <a name="example-1"></a>Przykład 1
+## <a name="example-1-ensuring-groups-are-present"></a>Przykład 1: Zapewnianie grupy są obecne
 
-Poniższy przykład przedstawia sposób upewnić się, że istnieją dwie grupy o nazwie "mojaGrupa" i "myOtherGroup".
+Poniższy przykład pokazuje, jak upewnić się, że istnieją dwie grupy o nazwie "mojaGrupa" i "myOtherGroup".
 
 ```powershell
 configuration GroupSetTest
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**Uwaga:** w tym przykładzie używane poświadczenia w postaci zwykłego tekstu, dla uproszczenia. Aby uzyskać informacje dotyczące do szyfrowania poświadczeń w pliku MOF konfiguracji, zobacz [Zabezpieczanie pliku MOF](secureMOF.md).
+> [!NOTE] 
+> W tym przykładzie przy użyciu poświadczeń w postaci zwykłego tekstu dla uproszczenia. Aby uzyskać informacje o tym, jak można zaszyfrować poświadczenia w pliku MOF konfiguracji, zobacz [Zabezpieczanie pliku MOF](secureMOF.md).

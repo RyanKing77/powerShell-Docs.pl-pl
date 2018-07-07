@@ -1,41 +1,46 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: e4588e8c69efb965cd33c273ad09a8bef8e9bf16
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189571"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892367"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Wyodrębnianie i analizowanie obiektów ze strukturą poza ciągiem
-Wprowadza to również kilka dodatkowych funkcji ConvertFrom parametry polecenia cmdlet:
 
--   Usuwa właściwość text zakresie domyślnie. Można dołączyć ją za pomocą parametru - IncludeExtent.
+Wprowadza również nowe funkcje dla `ConvertFrom-String` polecenia cmdlet:
 
--   Wiele uczenia algorytm poprawki z opinii MVP oraz społeczność użytkowników.
+- Usuwa właściwość text zakresu, domyślnie. Możesz dołączyć ją za pomocą parametru - IncludeExtent.
 
--   Nowy parametr - UpdateTemplate, aby zapisać wyniki algorytmie uczenia w komentarz w pliku szablonu. Dzięki temu learning przetworzyć jednorazowe koszt (etap najwolniejsze). Niemal natychmiastowe jest teraz uruchomiona przekonwertować ciągu z szablonu, który zawiera Algorytm uczenia zakodowany.
+- Wiele uczenie algorytmu poprawki z programu MVP i społeczności opinii.
 
+- Nowy parametr - UpdateTemplate, aby zapisać wyniki algorytmu uczenia na komentarz w pliku szablonu. Dzięki temu learning przetwarzania kosztu jednorazowe (etap najwolniejsze). Niemal natychmiastowe jest teraz uruchomiona przekonwertować ciągu przy użyciu szablonu, który zawiera algorytmu uczenia zakodowany.
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>Wyodrębnij i analizować strukturalnych obiektów poza zawartości ciągu
-----------------------------------------------------------
+## <a name="extract-and-parse-structured-objects-out-of-string-content"></a>Wyodrębnianie i analizowanie obiektów ze strukturą poza zawartość ciągu
 
-We współpracy z [Microsoft Research](http://research.microsoft.com/), nowy **ConvertFrom ciąg** dodano polecenia cmdlet.
+We współpracy z [Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F), nowy `ConvertFrom-String` dodano polecenia cmdlet.
 
-To polecenie cmdlet obsługuje dwa tryby: basic rozdzielany analizowania i automatycznie generowane oparte na przykład podczas analizowania.
+To polecenie cmdlet obsługuje dwa tryby: podstawowa lista analizy i analizy opartej na przykład automatycznie generowane.
 
-Rozdzielany analizy, domyślnie dzieli dane wejściowe na biały znak i przypisuje nazw właściwości do uzyskane grupy. Ogranicznik, który można dostosować:
+Rozdzielany podczas analizowania, domyślnie dzieli dane wejściowe na biały znak, a następnie przypisuje nazwy właściwości do wynikowego grup. Można dostosować, ogranicznik:
 
-> 1 \[C:\\temp\] &gt; &gt; "Hello World" | Ciąg ConvertFrom | Format-Table-Auto
+```powershell
+"Hello World" | ConvertFrom-String | Format-Table -Auto
+```
 
-P1    P2
---    --
+```output
+P1     P2
+--     --
+Hello  World
+```
 
-Polecenie cmdlet obsługuje również automatycznie generowanej oparte na przykład analizy na podstawie [FlashExtract](http://research.microsoft.com/en-us/um/people/sumitg/flashextract.html) badania pracy w [Microsoft Research](http://research.microsoft.com).
+Polecenie cmdlet obsługuje również generowanych automatycznie oparte na przykładzie analizy na podstawie [FlashExtract](https://www.microsoft.com/en-us/research/publication/flashextract-framework-data-extraction-examples/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fum%2Fpeople%2Fsumitg%2Fflashextract.html) badawczych pracy w [Microsoft Research](https://www.microsoft.com/en-us/research/?from=http%3A%2F%2Fresearch.microsoft.com%2F).
 
-Aby rozpocząć pracę, należy wziąć pod uwagę książki adresowej tekstowych:
+Aby rozpocząć pracę, należy wziąć pod uwagę książki adresowej na podstawie tekstu:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -55,9 +60,11 @@ Aby rozpocząć pracę, należy wziąć pod uwagę książki adresowej tekstowyc
     Hanna Moos
 
     Puyallup, WA
+```
 
-Do pliku, który będzie używany jako szablon, należy skopiować kilka przykładów:
+Skopiuj z kilkoma przykładami do pliku, który będzie używany jako szablon:
 
+```
     Ana Trujillo
 
     Redmond, WA
@@ -65,11 +72,11 @@ Do pliku, który będzie używany jako szablon, należy skopiować kilka przykł
     Antonio Moreno
 
     Renton, WA
+```
 
+Umieść nawiasy klamrowe wokół danych, którą chcesz wyodrębnić, nadając mu nazwę, jak można to zrobić. Ponieważ **nazwa** właściwości (i jego skojarzone inne właściwości) może pojawić się wiele razy, należy użyć gwiazdki (\*) do wskazania, że powoduje to wiele rekordów (w odróżnieniu od wyodrębnienie wiele właściwości do jednego rekord):
 
-
-Umieść nawiasy klamrowe wokół dane, które mają zostać wyodrębnione, nadanie mu nazwy, jak możesz to zrobić. Ponieważ **nazwa** właściwości (i jego skojarzony inne właściwości) może pojawić się wiele razy, należy użyć gwiazdki (\*) wskazująca, że spowoduje to wiele rekordów (zamiast wyodrębniania zbiór właściwości do jednego rekord):
-
+```
     {Name\*:Ana Trujillo}
 
     {City:Redmond}, {State:WA}
@@ -77,15 +84,22 @@ Umieść nawiasy klamrowe wokół dane, które mają zostać wyodrębnione, nada
     {Name\*:Antonio Moreno}
 
     {City:Renton}, {State:WA}
+```
 
-Z tego zestawu przykłady **ConvertFrom ciąg** może teraz automatycznie wyodrębnić oparty na dane wyjściowe z plików wejściowych z podobną strukturę.
+Z tego zestawu przykłady `ConvertFrom-String` teraz automatycznie wyodrębniać oparte na obiekt danych wyjściowych z plików wejściowych podobną strukturę.
 
-> 2 \[C:\\temp\]
->
-> &gt;&gt; Get-Content .\\addresses.output.txt | ConvertFrom-String -TemplateFile .\\addresses.template.txt | &gt;&gt;&gt; Format-Table -Auto
->
-> ExtentText nazwę miejscowości stanu
-> ----------                     ----               ----     -----
-> Ana Trujillo...                Ana Trujillo Redmond, WA Antonio Moreno...              Antonio Moreno Renton WA blogu Thomasa Hardy...                Kowalski Aneta Seattle WA Hardy blogu Thomasa...          Hanna WA Redmond Kowalski Krystyna Moos...                  Hanna Moos Puyallup WA
+```powershell
+Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresses.template.txt | Format-Table -Auto
+```
 
-Do manipulowania dodatkowe dane na wyodrębnionego tekstu, **ExtentText** właściwości przechwytuje nieprzetworzony tekst, z którego został wyodrębniony rekordu. Aby wyrazić swoją opinię na temat tej funkcji lub udostępnić zawartość, dla którego masz problemy zapisywania przykłady, Wyślij wiadomość e-mail <psdmfb@microsoft.com>.
+```output
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
+```
+
+Celu manipulowania dodatkowe dane na wyodrębniony tekst **ExtentText** właściwość przechwytuje nieprzetworzony tekst, z którego został wyodrębniony rekordu. Aby przekazać opinię na temat tej funkcji lub udostępniać zawartość, dla której występują trudności, zapisywanie przykłady, Wyślij wiadomość na adres <psdmfb@microsoft.com>.

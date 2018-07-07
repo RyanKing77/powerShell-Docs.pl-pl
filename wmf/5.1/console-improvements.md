@@ -1,29 +1,29 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-title: Ulepszenia konsoli w WMF 5.1
-ms.openlocfilehash: fb689002caf42203d760f11acc64e52cfa681069
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Ulepszenia konsoli w programie WMF 5.1
+ms.openlocfilehash: a8e82e2f973916c2ed5007eba90ee6f2b7a9a769
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189316"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892930"
 ---
-# <a name="console-improvements-in-wmf-51"></a>Ulepszenia konsoli w WMF 5.1#
+# <a name="console-improvements-in-wmf-51"></a>Ulepszenia konsoli w programie WMF 5.1
 
 ## <a name="powershell-console-improvements"></a>Ulepszenia konsoli programu PowerShell
 
-Następujące zmiany zostały wprowadzone do powershell.exe w wersji 5.1 WMF celu usprawnienie obsługi konsoli:
+Wprowadzono następujące zmiany do powershell.exe programu WMF 5.1 do udoskonalenia środowiska konsoli:
 
-###<a name="vt100-support"></a>Obsługa VT100
+### <a name="vt100-support"></a>Obsługa VT100
 
-Windows 10 dodano obsługę [sekwencji unikowych VT100](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx).
-PowerShell zignoruje sekwencje specjalne formatowanie niektórych VT100 podczas obliczania szerokości tabel.
+Windows 10 dodano obsługę [sekwencje ucieczki VT100](/windows/console/console-virtual-terminal-sequences).
+PowerShell będzie ignorować niektórych sekwencji unikowych formatowania VT100, podczas obliczania szerokości tabel.
 
-Programu PowerShell również został dodany nowy interfejs API, który może być używany w formatowaniu kod, aby określić, czy VT100 jest obsługiwana.
+PowerShell również dodane do nowego interfejsu API, który może służyć do formatowania kodu w celu ustalenia, czy VT100 jest obsługiwana.
 Przykład:
 
-```
+```powershell
 if ($host.UI.SupportsVirtualTerminal)
 {
     $esc = [char]0x1b
@@ -34,21 +34,22 @@ else
     "A default hello"
 }
 ```
-W tym miejscu jest kompletna [przykład](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) można wyróżnić zgodny z wybierz ciągu.
-Zapisz przykładu w pliku o nazwie `MatchInfo.format.ps1xml`, aby użyć go w profilu lub w innym miejscu, i uruchom `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
-Należy pamiętać, że sekwencje unikowe VT100 są obsługiwane tylko począwszy od aktualizacji systemu Windows 10 Anniversary; nie są obsługiwane w starszych systemach.
+Oto kompletny [przykład](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) można wyróżnić dopasowania z `Select-String`.
+Zapisz przykładowy plik o nazwie `MatchInfo.format.ps1xml`, aby użyć go w profilu lub w innych miejscach, uruchomi `Update-FormatData -Prepend MatchInfo.format.ps1xml`.
 
-### <a name="vi-mode-support-in-psreadline"></a>Pomoc techniczna trybu VI w PSReadline
+Należy zauważyć, że VT100 sekwencje ucieczki są tylko obsługiwane począwszy od systemu Windows 10 rozliczenia aktualizacji. nie są obsługiwane w starszych systemach.
+
+### <a name="vi-mode-support-in-psreadline"></a>Obsługa trybu VI w PSReadline
 
 [PSReadline](https://github.com/lzybkr/PSReadLine) dodaje obsługę trybu vi. Aby użyć trybu vi, uruchom `Set-PSReadlineOption -EditMode Vi`.
 
-### <a name="redirected-stdin-with-interactive-input"></a>Stdin przekierowane przy użyciu interaktywnych danych wejściowych
+### <a name="redirected-stdin-with-interactive-input"></a>Przekierowane stdin z danymi wejściowymi interaktywne
 
-We wcześniejszych wersjach uruchamiania programu PowerShell z `powershell -File -` była wymagana, gdy stdin zostało przekierowane i chcesz interaktywnie wprowadź poleceń.
+We wcześniejszych wersjach, uruchamianie programu PowerShell przy użyciu `powershell -File -` była wymagana, gdy zostało przekierowane stdin chciała interaktywnie wprowadzanie poleceń.
 
-Z 5.1 WMF, tym twardym dowiedzieć się, że opcja nie jest już konieczne.
+Z programem WMF 5.1, tym twardym dowiedzieć się, że opcja nie jest już konieczne.
 Można uruchomić programu PowerShell bez żadnych opcji, np. `powershell`.
 
-Należy pamiętać, że PSReadline nie obsługuje obecnie przekierowanie stdin i wbudowane proces edycji wiersza polecenia z przekierowanego stdin jest bardzo ograniczona, na przykład klawisze strzałek nie działają.
-Przyszłym wydaniu PSReadline powinno rozwiązać ten problem.
+Należy zauważyć, że nie obsługuje obecnie PSReadline przekierowanie stdin i z przekierowanego stdin wbudowane środowisko edycji wiersza polecenia jest bardzo ograniczona, na przykład, nie działają klawisze strzałek.
+Przyszłej wersji PSReadline powinno rozwiązać ten problem.

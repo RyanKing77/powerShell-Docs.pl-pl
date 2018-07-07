@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Metoda RemoveConfiguration klasy MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: c68d17d38336dec08e078366ea5f2071fcf7c5a8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 03555cc73da1272bdebebc3d93b26aaf8fabc18e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189741"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892688"
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Metoda RemoveConfiguration klasy MSFT_DSCLocalConfigurationManager
 
 Usuwa pliki konfiguracji.
 
-<a name="syntax"></a>Składnia
-------
+## <a name="syntax"></a>Składnia
 
 ```mof
 uint32 RemoveConfiguration(
@@ -23,10 +22,9 @@ uint32 RemoveConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parametry
-----------
+## <a name="parameters"></a>Parametry
 
-*Etap* \[w\] Określa, który dokument konfiguracji do usunięcia. Prawidłowe są następujące wartości:
+*Etap* \[w\] Określa, które dokumentu konfiguracji do usunięcia. Następujące wartości są prawidłowe:
 
 |Wartość |Opis |
 |:--- |:---|
@@ -34,25 +32,22 @@ uint32 RemoveConfiguration(
 |**2** | **Oczekujące** dokumentu konfiguracji (pending.mof).  |
 |**4** | **Wstecz** dokumentu konfiguracji (previous.mof). |
 
-*Wymuś* \[w\] **true** wymuszenie usunięcia konfiguracji.
+*Wymuś* \[w\] **true** wymusić usunięcie konfiguracji.
 
 ## <a name="return-value"></a>Wartość zwracana
-------------
 
 Zwraca wartość zero w przypadku powodzenia; w przeciwnym razie zwraca kod błędu.
 
 ## <a name="remarks"></a>Uwagi
 
-To jest metodą statyczną.
+Jest to metoda statyczna.
 
 ## <a name="requirements"></a>Wymagania
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**Plik MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Zobacz też
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
