@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: Program PowerShell
 title: Wartości manifestu elementów, które mają wpływ na interfejs użytkownika galerii programu PowerShell
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893481"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093977"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Wartości manifestu elementów, które mają wpływ na interfejs użytkownika galerii programu PowerShell
 
@@ -84,65 +84,67 @@ Odwołanie poniżej przedstawiono niektóre najczęściej używanych tagi, pocz�
 W niektórych przypadkach są podobne, ale może być mniej idealne opcje wymienione na liście obok znacznikiem.
 Jest najlepszym rozwiązaniem jest używany Tag preferowane jako skutkować mniejszą hałasu i lepsze wyniki wyszukiwania dla konsumentów.
 
-| **Preferowany tagu** | **Alternatywy i uwagi** |
+| Preferowany tagu | Alternatywy i uwagi |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration jest mniej pożądana, jest za długa |
-| **ResourceManager** | Służy do opisywania grupy procesorów ARM i nie powinny być używane dla usługi Azure Resource Manager | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Usługi Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | Usługi AD nie jest obecnie używany przez siebie  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Bezpieczeństwo** | Ochrona jest mniej dokładny |
-| **Bazy danych** | Bazy danych (liczba mnoga) jest mniej pożądana |
-| **Metodyka DevOps** |  |
-| **Windows** |  |
-| **Kompilacja** |  |
-| **Wdrożenia** | Wdrażanie jest nieco mniej często używane |
-| **Chmura** |  |
-| **USŁUGI GIT** |  |
-| **Test** | Testowanie jest mniej pożądana |
-| **Kontrola wersji** | Wersja jest mniej dokładne, mimo że częściej używane  |
-| **Rejestrowanie** | Użyj preferowanych rejestrowania akcji |
-| **Dziennik** | Preferowany korzystanie z dziennika jako rzeczy |
-| **Kopia zapasowa** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Magazyn** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Sieci** | Sieć jest podobny, rzadziej używane |
-| **SharePoint** |  |
-| **Raportowanie** | Raportowanie jest akcja, jest to raport |
-| **Raport** | Jest to raport |
-| **WinRM** |  |
-| **Monitorowanie** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Kolor** |  |
-| **DNS** |  |
-| **Office365** | Preferowane jest pisownia się pakietu Office. Usługi Office 365 jest rzadko używane, ale krótszy | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Funkcji Hyper-V** | Funkcji Hyper-v jest mniej typowe jako tag |
-| **Konfiguracja** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Zapory** |  |
-| **Platformy docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Zazwyczaj używany do modułów AzureRM |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration jest mniej pożądana, jest za długa |
+| Menedżer zasobów | Służy do opisywania grupy procesorów ARM i nie powinny być używane dla usługi Azure Resource Manager |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| Automatyzacja |  |
+| REST |  |
+| Polecenie cmdlet | Usługi AD nie jest obecnie używany przez siebie  |
+| SQLServer |  |
+| DBA |  |
+| Bezpieczeństwo | Ochrona jest mniej dokładny |
+| Baza danych | Bazy danych (liczba mnoga) jest mniej pożądana |
+| Metodyka DevOps |  |
+| Windows |  |
+| Kompilacja |  |
+| Wdrażanie | Wdrażanie jest nieco mniej często używane |
+| Chmura |  |
+| USŁUGI GIT |  |
+| Test | Testowanie jest mniej pożądana |
+| Kontrola wersji | Wersja jest mniej dokładne, mimo że częściej używane  |
+| Rejestrowanie | Użyj preferowanych rejestrowania akcji |
+| Dziennik | Preferowany korzystanie z dziennika jako rzeczy |
+| Zapasowy |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| Magazyn |  |
+| GitHub |  |
+| JSON |  |
+| Exchange |  |
+| Sieć | Sieć jest podobny, rzadziej używane |
+| Program SharePoint |  |
+| Raportowanie | Raportowanie jest akcja, jest to raport |
+| Raport | Jest to raport |
+| Usługa WinRM |  |
+| Monitorowanie |  |
+| USŁUGA VSTS |  |
+| Excel |  |
+| Google |  |
+| Kolor |  |
+| DNS |  |
+| Usługi Office 365 | Preferowane jest pisownia się pakietu Office. Usługi Office 365 jest rzadko używane, ale krótszy |
+| Gitlab |  |
+| Pester |  |
+| Usługi Azure AD |  |
+| HTML |  |
+| Funkcja Hyper-V | Funkcji Hyper-v jest mniej typowe jako tag |
+| Konfiguracja |  |
+| ChatOps |  |
+| Funkcja PackageManagement |  |
+| WMI |  |
+| Zapora |  |
+| Platformy docker |  |
+| Appveyor |  |
+| AzureRm | Zazwyczaj używany do modułów AzureRM |
+| ZIP |  |
+| TOŻSAMOŚCI USŁUGI ZARZĄDZANEJ |  |
+| Mac |  |
+| PoshBot |  |

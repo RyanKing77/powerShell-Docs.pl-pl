@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: Galeria, programu powershell, polecenia cmdlet, psget
-title: Skrypt z niezgodne wersje programu PowerShell
-ms.openlocfilehash: 27b50be4e99b6c6b8fa089d1d4a436a27eeb17c9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: Galeria, programu powershell, polecenie cmdlet, psget
+title: Skrypt za pomocą niezgodne wersje programu PowerShell
+ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219253"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093664"
 ---
-# <a name="script-with-compatible-powershell-editions"></a>Skrypt z niezgodne wersje programu PowerShell
+# <a name="script-with-compatible-powershell-editions"></a>Skrypt za pomocą niezgodne wersje programu PowerShell
 
 Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które charakteryzują się różnymi zestawami funkcji i zgodnością z różnymi platformami.
 
@@ -52,20 +52,18 @@ At line:1 char:1
     + FullyQualifiedErrorId : ScriptRequiresUnmatchedPSEdition
 ```
 
-Użytkownicy w galerii programu PowerShell można znaleźć listy skryptów obsługiwane w określonej wersji programu PowerShell.
-Skrypty bez PSEdition_Desktop i PSEditon_Core są traktowane jako działają prawidłowo w przypadku wersji środowiska PowerShell pulpitu.
+Użytkownicy z galerii programu PowerShell można znaleźć listy skrypty obsługiwane w określonej wersji programu PowerShell.
+Skrypty bez PSEdition_Desktop i PSEditon_Core są traktowane jako działają prawidłowo w wersji Desktop programu PowerShell.
 
 ```powershell
-
 # Find scripts supported on PowerShell Desktop edition
 Find-Script -Tag PSEditon_Desktop
 
 # Find scripts supported on PowerShell Core editions
 Find-Script -Tag PSEditon_Core
-
 ```
 
-## <a name="more-details"></a>więcej informacji
+## <a name="more-details"></a>Więcej szczegółów
 
 - [Moduły z elementami PSEdition](module-psedition-support.md)
-- [Obsługa PSEditions na PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+- [Obsługa elementami Psedition w galerii PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)

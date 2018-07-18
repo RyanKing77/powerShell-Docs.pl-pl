@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
-title: DSC dla systemu Linux nxService zasobów
-ms.openlocfilehash: 9cab889368469f2c854a387b919aea58a49f2210
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, konfiguracja, ustawienia
+title: DSC dla systemu Linux zasób nxService
+ms.openlocfilehash: ab6544762862c9b2477e92f0d782b13afb96f2c9
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187722"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093572"
 ---
-# <a name="dsc-for-linux-nxservice-resource"></a>DSC dla systemu Linux nxService zasobów
+# <a name="dsc-for-linux-nxservice-resource"></a>DSC dla systemu Linux zasób nxService
 
-**NxService** zasób w PowerShell żądanego stanu konfiguracji (DSC) zapewnia mechanizm zarządzania usługami w węźle systemu Linux.
+**NxService** zasobów w programie PowerShell Desired State Configuration (DSC) udostępnia mechanizm do zarządzania usługami w węźle systemu Linux.
 
 ## <a name="syntax"></a>Składnia
 
@@ -19,11 +19,10 @@ ms.locfileid: "34187722"
 nxService <string> #ResourceName
 {
     Name = <string>
-    [ Controller = <string> { init | upstart | systemd }  ]
+    [ Controller = <string> { init | upstart | systemd } ]
     [ Enabled = <bool> ]
     [ State = <string> { Running | Stopped } ]
     [ DependsOn = <string[]> ]
-
 }
 ```
 
@@ -31,31 +30,29 @@ nxService <string> #ResourceName
 |  Właściwość |  Opis |
 |---|---|
 | Nazwa| Nazwa usługi/demona do skonfigurowania.|
-| Kontrolera| Typ kontrolera usługi do użycia podczas konfigurowania usługi.|
+| Kontroler| Typ kontrolera usługi do użycia podczas konfigurowania usługi.|
 | Włącz| Wskazuje, czy usługa jest uruchamiana podczas rozruchu.|
-| Stan| Wskazuje, czy usługa jest uruchomiona. Ustaw tę właściwość na "Zatrzymane", aby upewnić się, że usługa nie jest uruchomiona. Ustaw ją na "Uruchomiona", aby upewnić się, że usługa nie jest uruchomiona.|
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest pierwszy blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** i jej typ jest **ResourceType**, za pomocą tej składni Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
-
+| Stan| Wskazuje, czy usługa jest uruchomiona. Ustaw wartość "Stopped", aby upewnić się, że usługa nie jest uruchomiony. Ustaw ją na "Uruchomiona", aby upewnić się, że usługa nie jest uruchomiony.|
+| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Dodatkowe informacje
 
-**NxService** zasobów nie utworzy definicji usługi lub skryptu usługi, gdy nie istnieje. Można użyć konfiguracji żądanego stanu środowiska PowerShell **nxFile** zasób zasobów do zarządzania istnienie lub zawartość skryptu lub pliku definicji usługi.
+**NxService** zasobu nie utworzy definicji usługi lub skryptu dla usługi, gdy nie istnieje. Możesz użyć programu PowerShell Desired State Configuration **nxFile** zasobów zasobów do zarządzania istnienie lub zawartości pliku definicji usługi lub skryptu.
 
 ## <a name="example"></a>Przykład
 
-W poniższym przykładzie przedstawiono konfigurację usługi "host z wieloma adresami" (dla Apache HTTP Server), zarejestrowany **SystemD** kontrolera usług.
+W poniższym przykładzie pokazano konfigurację usługi "host z wieloma adresami" (w przypadku Apache HTTP Server), zarejestrowane w usłudze **SystemD** kontrolera usług.
 
-```
+```powershell
 Import-DSCResource -Module nx
 
 Node $node {
-#Apache Service
-nxService ApacheService
-{
-Name = "httpd"
-State = "running"
-Enabled = $true
-Controller = "systemd"
-}
+    #Apache Service
+    nxService ApacheService {
+        Name = 'httpd'
+        State = 'running'
+        Enabled = $true
+        Controller = 'systemd'
+    }
 }
 ```

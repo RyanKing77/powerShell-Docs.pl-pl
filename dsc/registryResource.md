@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób rejestru DSC
-ms.openlocfilehash: 8819b3704fa1a61d2be5ce11c974542f48177e09
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188704"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093589"
 ---
 # <a name="dsc-registry-resource"></a>Zasób rejestru DSC
 
-> Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-**Rejestru** zasób w Windows PowerShell Desired stan konfiguracji (DSC) zapewnia mechanizm zarządzania kluczy rejestru i wartości w docelowym węźle.
+**Rejestru** zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania kluczy rejestru i wartości w węźle docelowym.
 
 ## <a name="syntax"></a>Składnia
 
@@ -32,35 +32,22 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Właściwości
+
 |  Właściwość  |  Opis   |
 |---|---|
-| Klawisz| Określa ścieżkę klucza rejestru, dla którego chcesz zapewnić z określonym stanem. Ta ścieżka musi zawierać gałęzi.|
-| ValueName| Wskazuje nazwę wartości rejestru. Aby dodać lub usunąć klucz rejestru, bez określenia ValueType lub Dane_wartości należy określić tę właściwość jako ciąg pusty. Aby zmodyfikować lub usunąć domyślną wartością klucza rejestru, należy określić tę właściwość jako ciąg pusty, jeśli określono również ValueType lub Dane_wartości.|
-| Upewnij się| Wskazuje, czy istnieje klucz i wartość. Aby upewnić się, że ich ustaw wartość "Brak". Aby upewnić się, że nie istnieją, ustaw właściwość na "Brak". Wartość domyślna to "Brak".|
-| Force| Jeśli określony klucz rejestru jest obecny, __życie__ zastępuje go przy użyciu nowej wartości. Jeśli usuwanie klucza rejestru za pomocą podkluczy, musi to być __$true__|
-| Hex| Wskazuje, czy dane są wyrażane w formacie szesnastkowym. Jeśli jest określony, dane wartości DWORD/QWORD jest podana w formacie szesnastkowym. Nie jest prawidłowy dla innych typów. Wartość domyślna to __$false__.|
-| dependsOn| Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
+| Klawisz| Wskazuje ścieżkę klucza rejestru, dla którego chcesz zapewnić określonego stanu. Ta ścieżka musi zawierać gałęzi.|
+| valueName| Wskazuje nazwę wartości rejestru. Aby dodać lub usunąć klucz rejestru, należy określić tę właściwość jako ciąg pusty, bez wcześniejszego określania ValueType lub Dane_wartości. Aby zmodyfikować lub usunąć domyślną wartością klucza rejestru, należy określić tę właściwość jako ciąg pusty podczas również określenie ValueType lub Dane_wartości.|
+| Upewnij się| Wskazuje, czy istnieją kluczy i wartości. Aby upewnić się, że tak, należy ustawić tę właściwość na "Obecny". Aby upewnić się, że nie istnieją, należy ustawić właściwość na "Brak". Wartość domyślna to "Istnieje".|
+| Force| Jeśli określony klucz rejestru jest obecny, **życie** zastępowane nową wartością. Jeśli usuwanie klucza rejestru za pomocą podkluczy, musi to być **$true** |
+| Hex| Wskazuje, jeśli dane są wyrażane w formacie szesnastkowym. Jeśli zostanie określony, dane wartość DWORD/QWORD są prezentowane w formacie szesnastkowym. Nie jest prawidłowy dla innych typów. Wartość domyślna to **$false**.|
+| DependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 | Dane_wartości| Dane wartości rejestru.|
-| ValueType| Wskazuje typ wartości. Obsługiwane typy to:
-<ul><li>W ciągu (REG_SZ)</li>
-
-
-<li>Dane binarne (REG BINARY)</li>
-
-
-<li>DWORD 32-bitowych (REG_DWORD)</li>
-
-
-<li>Qword 64-bitowych (REG_QWORD)</li>
-
-
-<li>Ciągu wielokrotnego (REG_MULTI_SZ)</li>
-
-
-<li>Ciąg rozwijania (REG_EXPAND_SZ)</li></ul>
+| ValueType| Wskazuje typ wartości. Obsługiwane typy to: ciągu (REG_SZ), plik binarny (dane BINARNE REG), Dword 32-bitowych (REG_DWORD), Qword 64-bitowych (REG_QWORD), ciągu wielokrotnego (REG_MULTI_SZ), ciągu rozwijalnego (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Przykład
-W tym przykładzie zapewnia, że klucz o nazwie "ExampleKey" są obecne w **HKEY\_lokalnego\_maszyny** hive.
+
+W tym przykładzie gwarantuje, że klucz o nazwie "ExampleKey" jest obecny w **HKEY\_lokalnego\_maszyny** hive.
+
 ```powershell
 Configuration RegistryTest
 {
@@ -74,5 +61,5 @@ Configuration RegistryTest
 }
 ```
 
->**Uwaga:** zmiany ustawień rejestru **HKEY\_bieżącego\_użytkownika** gałęzi wymaga, czy konfiguracja jest uruchomiony przy użyciu poświadczeń użytkownika, a nie jako system.
->Można użyć **PsDscRunAsCredential** właściwość, aby określić poświadczenia użytkownika w konfiguracji. Na przykład zobacz [DSC uruchomiony przy użyciu poświadczeń użytkownika](runAsUser.md)
+> [!NOTE]
+> Zmiany ustawień rejestru **HKEY\_bieżącego\_użytkownika** gałęzi wymaga, że konfiguracja jest uruchamiany przy użyciu poświadczeń użytkownika, a nie jako system. Możesz użyć **PsDscRunAsCredential** właściwości w celu określenia poświadczeń użytkownika do konfiguracji. Aby uzyskać przykład, zobacz [systemem DSC przy użyciu poświadczeń użytkownika](runAsUser.md).

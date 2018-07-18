@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188432"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093722"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Tworzenie punktu końcowego usługi JEA i łączenie się z nim
-Aby utworzyć punkt końcowy JEA, należy utworzyć i zarejestrować specjalnie skonfigurować konfigurację sesji programu PowerShell plik, który można wygenerować za pomocą **PSSessionConfigurationFile nowy** polecenia cmdlet.
+Aby utworzyć punkt końcowy usługi JEA, należy utworzyć i zarejestrować specjalnie skonfigurowanym konfiguracji sesji programu PowerShell pliku, który można wygenerować za pomocą **New PSSessionConfigurationFile** polecenia cmdlet.
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-Spowoduje to utworzenie pliku konfiguracji sesji, który wygląda następująco:
+Spowoduje to utworzenie pliku konfiguracji sesji, który wygląda w następujący sposób:
 ```powershell
 @{
 
@@ -53,20 +53,20 @@ RoleDefinitions = @{
 
 }
 ```
-Podczas tworzenia punktu końcowego JEA, należy ustawić następujące parametry polecenia (i odpowiadające im klucze w pliku):
+Podczas tworzenia punktu końcowego JEA, należy ustawić następujące parametry polecenia (i odpowiadających im kluczy w pliku):
 1.  SessionType do RestrictedRemoteServer
 2.  RunAsVirtualAccount do **$true**
-3.  TranscriptPath do katalogu, w której "za pośrednictwem ramię" zapisy będą zapisywane po każdej sesji
-4.  RoleDefinitions do hashtable, który definiuje, które grupy mają dostęp do "Możliwości roli".  To pole określa **kto** możliwość **co** na tym punkcie końcowym.   Możliwości roli są specjalne pliki, które opisano wkrótce.
+3.  TranscriptPath do katalogu, w którym "za pośrednictwem ramię" zapisy zostaną zapisane po każdej sesji
+4.  RoleDefinitions do tablicy skrótów, który definiuje, które grupy mają dostęp do których "możliwości roli."  To pole określa **kto** zrobić **co** dla tego punktu końcowego.   Możliwości roli to specjalne pliki, które zostaną wyjaśnione wkrótce.
 
 
-W polu RoleDefinitions definiuje grupy, które ma dostęp do możliwości roli.  Możliwość roli jest plik, który definiuje zestaw funkcji, które mają być widoczne łączenia użytkowników.  Możesz utworzyć możliwości roli za pomocą **PSRoleCapabilityFile nowy** polecenia.
+Pole RoleDefinitions definiuje grupy, które ma dostęp do możliwości roli.  Możliwości roli jest plikiem, który definiuje zestaw funkcji, które będą dostępne do procesu łączenia użytkowników.  Można utworzyć roli możliwości **New PSRoleCapabilityFile** polecenia.
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-Spowoduje to wygenerowanie możliwości roli szablonu, który wygląda następująco:
+Spowoduje to wygenerowanie szablonu możliwości roli, który wygląda w następujący sposób:
 ```
 @{
 
@@ -128,22 +128,24 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
-Mają być używane w konfiguracji sesji JEA, możliwości roli musi zostać zapisany jako prawidłowy moduł programu PowerShell w katalogu o nazwie "RoleCapabilities". Moduł może zawierać wiele plików możliwości roli, w razie potrzeby.
 
-Aby rozpocząć konfigurowanie które polecenia cmdlet, funkcji, aliasy i skrypty, które użytkownik może uzyskać dostęp podczas łączenia z sesją JEA, należy dodać własne reguły do pliku możliwości roli po komentarze limit szablonów. Uzyskać lepszy wygląd do sposobu konfigurowania roli funkcji, zapoznaj się z pełnego [wystąpić przewodnik](http://aka.ms/JEA).
+Ma być używana przez konfigurację sesji JEA, możliwości roli muszą być zapisane jako prawidłowy modułu programu PowerShell w katalogu o nazwie "RoleCapabilities". Moduł może zawierać wiele plików możliwości roli, jeśli to konieczne.
 
-Na koniec, po zakończeniu Dostosowywanie konfiguracji sesji i powiązane funkcje roli zarejestrować tej konfiguracji sesji i utworzyć punktu końcowego, uruchamiając **Register-PSSessionConfiguration**.
+Aby rozpocząć, konfigurowanie, które poleceń cmdlet, funkcji, aliasy i skrypty, które użytkownik może uzyskać dostęp podczas nawiązywania połączenia z sesją usługi JEA, należy dodać własne reguły do pliku możliwości roli, zgodnie z komentarzem się z szablonami. Aby dowiedzieć się więcej, w jaki skonfigurujesz możliwości roli, zapoznaj się z pełną [środowisko przewodnik](http://aka.ms/JEA).
+
+Na koniec, po zakończeniu dostosowanie konfigurację sesji i powiązanych możliwości roli zarejestrować tej konfiguracji sesji i utworzyć punkt końcowy, uruchamiając **Register-PSSessionConfiguration**.
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a>Połącz z punktem końcowym JEA
-Nawiązywanie połączenia z punktem końcowym JEA działa tak samo połączenie z innych prac punktu końcowego programu PowerShell.  Wystarczy podać jako parametr "ConfigurationName" Nazwa punktu końcowego JEA **New-PSSession**, **Invoke-Command**, lub **Enter-PSSession**.
+## <a name="connect-to-a-jea-endpoint"></a>Łączenie do punktu końcowego usługi JEA
+
+Nawiązywanie połączenia z punktem końcowym usługi JEA działa tak samo, nawiązywania połączenia z innych prac do punktu końcowego programu PowerShell.  Wystarczy podać nazwę punktu końcowego usługi JEA jako parametr "ConfigurationName" **New-PSSession**, **Invoke-Command**, lub **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-Po połączeniu się z sesją JEA, będzie ograniczony do uruchamiania białej poleceń w możliwości roli, do której masz dostęp do. Jeśli zostanie podjęta próba uruchomienia polecenia nie jest dozwolone dla roli użytkownika, wystąpi błąd.
+
+Po nawiązaniu połączenia z sesją usługi JEA, będzie ograniczona do uruchamiania poleceń na liście dozwolonych w możliwości roli, który ma dostęp do. Jeśli spróbujesz uruchomić dowolne polecenie nie jest dozwolona dla roli użytkownika, wystąpi błąd.

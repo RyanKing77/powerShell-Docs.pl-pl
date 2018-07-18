@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
-title: Zasób WindowsProcess DSC
-ms.openlocfilehash: 72668136a3a51c17c52f762c6f94bec3ed4597b0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, konfiguracja, ustawienia
+title: Zasób Windowsprocess DSC
+ms.openlocfilehash: 3c4e6d8377c3dcbf4f1db87a603d5483b8caafb8
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187031"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093739"
 ---
-# <a name="dsc-windowsprocess-resource"></a>Zasób WindowsProcess DSC
+# <a name="dsc-windowsprocess-resource"></a>Zasób Windowsprocess DSC
 
-> Dotyczy: Środowiska Windows PowerShell 4.0, programu Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-**WindowsProcess** zasób w Windows PowerShell Desired stan konfiguracji (DSC) zapewnia mechanizm konfigurowania procesów w docelowym węźle.
+**WindowsProcess** zasobów w Windows PowerShell Desired State Configuration (DSC) udostępnia mechanizm do konfigurowania procesów na węzeł docelowy.
 
 ## <a name="syntax"></a>Składnia
 
@@ -33,14 +33,15 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Właściwości
+
 |  Właściwość  |  Opis   |
 |---|---|
-| Argumenty| Wskazuje ciąg argumenty do przekazania do procesu jako — jest. Aby przekazać argumenty kilka należy umieścić je w tym ciągu.|
-| Ścieżka| Ścieżka do pliku wykonywalnego procesu. Jeśli nazwa pliku wykonywalnego (nie pełni kwalifikowana ścieżka), zasobu DSC przeszuka środowiska **ścieżki** zmiennej (`$env:Path`) można znaleźć pliku wykonywalnego. Jeśli wartość tej właściwości jest w pełni kwalifikowana, nie będzie używać DSC **ścieżki** zmiennej środowiskowej, aby znaleźć plik i zgłosi błąd, jeśli ścieżka nie istnieje. Ścieżki względne nie są dozwolone.|
-| Poświadczenie| Wskazuje poświadczeń dla uruchamiania procesu.|
-| Upewnij się| Wskazuje, czy Proces istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, czy Proces istnieje. W przeciwnym wypadku ustaw ją na "Brak". Wartość domyślna to "Brak".|
-| dependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli identyfikator konfiguracji zasobu skryptu bloku, który chcesz uruchomić najpierw jest __ResourceName__ i jej typ jest __ResourceType__, składnia za pomocą tej właściwości to "DependsOn ="[ResourceName ResourceType]"".|
-| StandardErrorPath| Określa ścieżkę katalogu do zapisania standardowy błąd. Wszystkie istniejące pliki zostaną zastąpione.|
-| StandardInputPath| Określa lokalizację standardowe wejściowego.|
+| Argumenty| Wskazuje ciąg argumenty do przekazania do procesu jako-to. Jeśli musisz przekazać argumenty kilka umieściliśmy je w tym ciągu.|
+| Ścieżka| Ścieżka do pliku wykonywalnego procesu. Jeśli nazwa pliku wykonywalnego (nie w pełni kwalifikowana ścieżka), zasobu DSC wyszuka środowiska **ścieżki** zmiennej (`$env:Path`) można znaleźć pliku wykonywalnego. Jeśli wartość tej właściwości jest w pełni kwalifikowaną ścieżkę, DSC nie będzie używać **ścieżki** zmiennej środowiskowej, aby znaleźć plik i zgłosi błąd, jeśli ścieżka nie istnieje. Ścieżki względne są niedozwolone.|
+| Poświadczenie| Określa poświadczenia do uruchamiania procesu.|
+| Upewnij się| Wskazuje, czy Proces istnieje. Ustaw tę właściwość "Present", aby upewnić się, że istnieje proces. W przeciwnym wypadku ustaw ją na "Brak". Wartość domyślna to "Istnieje".|
+| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości to "DependsOn ="[ ResourceName ResourceType]"".|
+| StandardErrorPath| Określa ścieżkę katalogu do zapisu błędu standardowego. Wszystkie istniejące pliki zostaną zastąpione.|
+| StandardInputPath| Wskazuje standardowy lokalizację danych wejściowych.|
 | StandardOutputPath| Wskazuje lokalizację do zapisania wyjścia standardowego. Wszystkie istniejące pliki zostaną zastąpione.|
-| WorkingDirectory| Określa lokalizację, która będzie służyć jako bieżący katalog roboczy dla procesu.|
+| WorkingDirectory| Wskazuje lokalizację, która będzie służyć jako bieżący katalog roboczy dla procesu.|

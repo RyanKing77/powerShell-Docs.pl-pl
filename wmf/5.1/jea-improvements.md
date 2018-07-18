@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: ryanpu
 title: Ulepszenia wystarczający zakres administracji (JEA)
-ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a9a8a0fd2b726ded33aa07c205292efd7148f3f0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892723"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093623"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Ulepszenia wystarczający zakres administracji (JEA)
 
@@ -50,7 +50,7 @@ Następnie można napisać funkcji niestandardowych do przetwarzania danych prze
 
 W niektórych przypadkach zadania, które użytkownik musi wykonać w ramach sesji usługi JEA może być konieczne uzyskiwać dostęp do zasobów poza komputera lokalnego.
 Podczas sesji JEA jest skonfigurowany do używania konta wirtualnego, wszelkie próby uzyskania dostępu do tych zasobów pojawi się pochodzić z tożsamości komputera lokalnego, nie wirtualnego konta lub połączonego użytkownika.
-W TP5, uwzględniliśmy obsługę uruchamiania JEA w kontekście [grupy zarządzane konto usługi] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx), znacznie ułatwiając dostęp do zasobów sieciowych przy użyciu tożsamości domeny.
+W TP5, uwzględniliśmy obsługę uruchamiania JEA w kontekście [konta usługi zarządzanego przez grupę](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), znacznie ułatwiając dostęp do zasobów sieciowych przy użyciu tożsamości domeny.
 
 Aby skonfigurować sesję JEA uruchamiany w kontekście konta gMSA, należy użyć następujących nowy klucz w pliku Współpracuje:
 

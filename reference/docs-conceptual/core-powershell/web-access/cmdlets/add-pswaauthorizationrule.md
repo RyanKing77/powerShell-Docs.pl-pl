@@ -4,12 +4,12 @@ keywords: polecenia cmdlet programu PowerShell
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893743"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094232"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -191,8 +191,10 @@ To polecenie cmdlet zwraca obiekt reguły autoryzacji.
 
 ### <a name="example-1"></a>PRZYKŁAD 1
 
-W tym przykładzie daje dostęp do konfiguracji sesji *Punktkoncowypswa*, ograniczonym obszarem działania, na *srv2* dla użytkowników w *SMAdmins* grupy. \
-**Uwaga**: Nazwa komputera musi być w pełni kwalifikowaną nazwę domeny (FQDN). Administratorzy zdefiniować konfigurację sesji z ograniczonym lub obszaru działania, czyli ograniczonym zakresem poleceń cmdlet i zadań, które użytkownicy końcowi mogą być uruchamiane. Definiowanie ograniczonym obszarem działania można uniemożliwić użytkownikom uzyskanie dostępu do innych komputerów, które są nie w obszarze dozwolone działania Windows PowerShell® związku z tym oferują bardziej bezpiecznego połączenia. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) lub [instalacji i użyj Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
+W tym przykładzie daje dostęp do konfiguracji sesji _Punktkoncowypswa_, ograniczonym obszarem działania, na _srv2_ dla użytkowników w _SMAdmins_ grupy.
+
+> [!NOTE]
+> Nazwa komputera musi być w pełni kwalifikowaną nazwę domeny (FQDN). Administratorzy zdefiniować konfigurację sesji z ograniczonym lub obszaru działania, czyli ograniczonym zakresem poleceń cmdlet i zadań, które użytkownicy końcowi mogą być uruchamiane. Definiowanie ograniczonym obszarem działania można uniemożliwić użytkownikom uzyskanie dostępu do innych komputerów, które są nie w obszarze dozwolone działania Windows PowerShell® związku z tym oferują bardziej bezpiecznego połączenia. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) lub [instalacji i użyj Windows PowerShell Web Access](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
@@ -240,8 +242,10 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 ### <a name="example-6"></a>PRZYKŁAD 6
 
 Ten przykład umożliwia wszystkim użytkownikom dostęp do wszystkich punktów końcowych na wszystkich komputerach.
-Zasadniczo powoduje to wyłączenie reguł autoryzacji. \
-**Uwaga**: użycie `*` znak symbolu wieloznacznego nie jest zalecane w przypadku wdrożeń z istotnymi dla zabezpieczeń i tylko powinny być traktowane jako dla środowisk testowych lub używane we wdrożeniach, których bezpieczeństwo może zostać złagodzone.
+Wyłącza to zasadniczo reguły autoryzacji.
+
+> [!NOTE]
+> Korzystanie z `*` znak symbolu wieloznacznego nie jest zalecane w przypadku wdrożeń z istotnymi dla zabezpieczeń i tylko powinny być traktowane jako dla środowisk testowych lub używane we wdrożeniach, których bezpieczeństwo może zostać złagodzone.
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

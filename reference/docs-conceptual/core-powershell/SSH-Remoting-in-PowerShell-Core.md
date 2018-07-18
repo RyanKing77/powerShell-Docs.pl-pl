@@ -46,8 +46,8 @@ Ponadto należy włączyć uwierzytelnianie przy użyciu hasła i opcjonalnie kl
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Zainstaluj najnowszą kompilację [Win32 OpenSSH] z usługi GitHub za pomocą instrukcji [instalacji]
-3. Edytowanie pliku sshd_config w lokalizacji, w którym instalowane Win32 OpenSSH
+1. Zainstaluj najnowszą kompilację [Win32 OpenSSH] z usługi GitHub za pomocą instrukcji [instalacji]
+1. Edytowanie pliku sshd_config w lokalizacji, w którym instalowane Win32 OpenSSH
    - Upewnij się, że włączone jest uwierzytelnianie przy użyciu hasła
 
    ```
@@ -59,8 +59,8 @@ Ponadto należy włączyć uwierzytelnianie przy użyciu hasła i opcjonalnie kl
     ```
 
     > [!NOTE]
-    Brak usterkę w OpenSSH dla Windows uniemożliwiający pracujących w ścieżki pliku wykonywalnego podsystemu miejsc do magazynowania.
-    Zobacz [ten problem w serwisie GitHub, aby uzyskać więcej informacji](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    > Brak usterkę w OpenSSH dla Windows uniemożliwiający pracujących w ścieżki pliku wykonywalnego podsystemu miejsc do magazynowania.
+    > Zobacz [ten problem w serwisie GitHub, aby uzyskać więcej informacji](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
     Rozwiązanie polega na Utwórz Link symboliczny do katalogu instalacyjnego programu Powershell, który nie zawiera spacji:
 
@@ -84,27 +84,27 @@ Ponadto należy włączyć uwierzytelnianie przy użyciu hasła i opcjonalnie kl
    PubkeyAuthentication yes
    ```
 
-4. Uruchom ponownie usługę sshd
+1. Uruchom ponownie usługę sshd
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Dodaj ścieżkę zainstalowanym OpenSSH do swojej zmiennej Env ścieżki
+1. Dodaj ścieżkę zainstalowanym OpenSSH do swojej zmiennej Env ścieżki
    - Powinno to być wzdłuż linii `C:\Program Files\OpenSSH\`
    - Dzięki temu ssh.exe ma zostać odnaleziona
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Ustawienia na komputerze z systemem Linux (Ubuntu 14.04)
 
 1. Zainstaluj najnowszą kompilację [program PowerShell Core dla systemu Linux] z usługi GitHub
-2. Zainstaluj [Ubuntu SSH] zgodnie z potrzebami
+1. Zainstaluj [Ubuntu SSH] zgodnie z potrzebami
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Edytowanie pliku sshd_config w lokalizacji /etc/ssh
+1. Edytowanie pliku sshd_config w lokalizacji /etc/ssh
    - Upewnij się, że włączone jest uwierzytelnianie przy użyciu hasła
 
    ```
@@ -123,7 +123,7 @@ Ponadto należy włączyć uwierzytelnianie przy użyciu hasła i opcjonalnie kl
    PubkeyAuthentication yes
    ```
 
-4. Uruchom ponownie usługę sshd
+1. Uruchom ponownie usługę sshd
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ Ponadto należy włączyć uwierzytelnianie przy użyciu hasła i opcjonalnie kl
      - Kliknij pozycję `Sharing`
      - Sprawdź `Remote Login` — powinna być widoczna nazwa `Remote Login: On`
      - Zezwalaj na dostęp do odpowiednich użytkowników
-2. Edytuj `sshd_config` pliku w lokalizacji `/private/etc/ssh/sshd_config`
+1. Edytuj `sshd_config` pliku w lokalizacji `/private/etc/ssh/sshd_config`
    - Użyj ulubionego edytora lub
 
      ```bash
@@ -162,7 +162,7 @@ Ponadto należy włączyć uwierzytelnianie przy użyciu hasła i opcjonalnie kl
      PubkeyAuthentication yes
      ```
 
-3. Uruchom ponownie usługę sshd
+1. Uruchom ponownie usługę sshd
 
    ```bash
    sudo launchctl stop com.openssh.sshd

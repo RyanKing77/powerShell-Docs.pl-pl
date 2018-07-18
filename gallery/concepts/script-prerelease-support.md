@@ -1,32 +1,32 @@
 ---
 ms.date: 10/17/2017
 contributor: keithb
-keywords: Galeria, programu powershell, polecenia cmdlet, psget
+keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Wersje wstępne skryptów
-ms.openlocfilehash: 5b93da418b836d537491d3f1e4e29fa2e61f2f77
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188568"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093852"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Wersje wstępne skryptów
 
-Począwszy od wersji 1.6.0 PowerShellGet i galerii programu PowerShell zapewniają obsługę znakowania w wersjach nowszych niż 1.0.0 jako wstępnej wersji. Przed tej funkcji wersji wstępnej elementy były ograniczone do o wersji, począwszy od 0. Celem tych funkcji jest zapewniają lepsze wsparcie [v1.0.0 programu SemVer](http://semver.org/spec/v1.0.0.html) Konwencji versioning bez przerywania zapewnienia zgodności z programu PowerShell 3 i powyżej lub istniejącej wersji programu PowerShellGet. Ten temat koncentruje się na funkcji specyficznych dla skryptu. Są równoważne funkcje dla modułów [wstępnej wersji modułu](module-prerelease-support.md) tematu. Korzystanie z tych funkcji, wydawców można zidentyfikować skrypt jako 2.5.0-alpha wersji, a później Zwolnij wersji gotowe do produkcji 2.5.0 zastępuje wersji wstępnej.
+Począwszy od wersji 1.6.0 modułu PowerShellGet oraz spełnione galerii programu PowerShell zapewniają obsługę tagowania w wersjach nowszych niż 1.0.0 jako wersji wstępnej. Przed tej funkcji wersji wstępnej elementy były korzystać z wersji począwszy od 0. Celem tych funkcji jest zapewniają lepsze wsparcie [1.0.0 SemVer](http://semver.org/spec/v1.0.0.html) Konwencji wersji bez przerywania wstecznej zgodności przy użyciu programu PowerShell 3 i powyżej lub istniejącej wersji programu PowerShellGet. Ten temat koncentruje się na funkcji specyficznych dla skryptu. Równoważne funkcje dla modułów znajdują się w [wersje modułu wersję wstępną](module-prerelease-support.md) tematu. Korzystając z tych funkcji, wydawców można skrypt jako 2.5.0-alpha wersji i później wydanej wersji gotowe do produkcji 2.5.0, która zastępuje wersję wstępną.
 
 Na wysokim poziomie funkcje wersji wstępnej skryptu obejmują:
 
-- Dodanie sufiksu PrereleaseString ciąg wersji w manifeście skryptu. Gdy skryptów zostanie opublikowany w galerii programu PowerShell, te dane są wyodrębniane w manifeście i używany do identyfikowania wstępnej elementów.
-- Uzyskiwanie elementów wstępnej wymaga Dodawanie flagi - AllowPrerelease do polecenia PowerShellGet Znajdź skryptów skrypt instalacji skryptu aktualizacji i Zapisz skrypt. Jeśli nie określono flagę, nie można wyświetlić elementy wersji wstępnej.
-- Wersje skryptu wyświetlane przez skrypt Znajdź, Get-InstalledScript i w galerii programu PowerShell zostanie wyświetlony z PrereleaseString, tak jak 2.5.0-alpha.
+- Dodanie do ciąg wersji w manifeście skrypt sufiksu PrereleaseString. Po opublikowaniu skrypty w galerii programu PowerShell te dane są wyodrębniane z manifestu i używany do identyfikowania elementów wersji wstępnej.
+- Pobieranie elementów wstępnych wymaga dodanie flagi - AllowPrerelease poleceń modułu PowerShellGet Find-Script skrypt instalacji skryptu aktualizacji i Zapisz skrypt. Jeśli nie określono flagę, wstępna elementy nie będą wyświetlane.
+- Wersje skryptu wyświetlane przez Find-Script, Get-InstalledScript i w galerii programu PowerShell będą wyświetlane z PrereleaseString, tak jak 2.5.0-alpha.
 
-Poniżej znajdują się szczegółowe informacje dotyczące funkcji.
+Poniżej znajdują się szczegółowe informacje dla funkcji.
 
-## <a name="identifying-a-script-version-as-a-prerelease"></a>Identyfikowanie jako wersja wstępna wersja skryptu
+## <a name="identifying-a-script-version-as-a-prerelease"></a>Identyfikowanie wersji skryptu jako wersji wstępnej
 
-Obsługa PowerShellGet wersje wstępne jest łatwiej niż moduły skryptów. Przechowywanie wersji skryptu jest obsługiwana przez PowerShellGet, tylko, dlatego nie ma żadnych problemów ze zgodnością spowodowane przez dodanie ciągu wersji wstępnej. Aby zidentyfikować skryptu w galerii programu PowerShell jako wstępnej wersji, należy dodać sufiks wersji wstępnej do ciąg wersji poprawnie sformatowana w metadanych skryptu.
+Obsługa modułu PowerShellGet wersje wstępne jest łatwiejsze w przypadku skryptów niż moduły. Przechowywanie wersji skrypt jest obsługiwany tylko modułu PowerShellGet, więc nie ma żadnych problemów ze zgodnością spowodowane przez dodanie ciągu wersji wstępnej. Aby określić skrypt w galerii programu PowerShell, zgodnie z wersji wstępnej, należy dodać sufiks wersji wstępnej do wersji poprawnie sformatowany ciąg znaków w metadanych skryptów.
 
-Przykład części manifestu skryptu z wersji wstępnej może wyglądać następująco:
+Przykład części manifestu skryptu za pomocą wersji wstępnej powinien wyglądać następująco:
 
 ```powershell
 <#PSScriptInfo
@@ -38,31 +38,30 @@ Przykład części manifestu skryptu z wersji wstępnej może wyglądać następ
 ...
 
 #>
-
 ```
 
-Aby używać sufiksu wstępnej, ciąg wersji musi spełniać następujące wymagania:
+Aby użyć sufiks wersji wstępnej, ciąg wersji musi spełniać następujące wymagania:
 
-- Sufiks wstępnej może być określona tylko w przypadku wersji 3 segmentów dla Major.Minor.Build.
-  Jest to zgodne z programu SemVer v1.0.0
-- Wstępna sufiks jest ciągiem, który rozpoczyna się od łącznika i może zawierać alfanumeryczne ASCII [0-9A-Za - z —]
-- Tylko ciągi wersji wstępnej programu SemVer v1.0.0 są obsługiwane w tej chwili tak wstępnej sufiks __nie mogą__ zawierać albo okres lub + [. +], które są dozwolone w programu SemVer 2.0
+- Sufiks wersji wstępnej może być określona tylko, gdy wersja jest 3 segmenty dla główna.pomocnicza.kompilacja.
+  Jest to zgodne z 1.0.0 SemVer
+- Wstępna sufiks jest to ciąg, który rozpoczyna się łącznikiem i może zawierać znaki alfanumeryczne ASCII [0-9A-Za - z-]
+- Tylko ciągi wstępna wersja 1.0.0 SemVer są obsługiwane w tej chwili więc sufiks wersji wstępnej __nie__ zawierać albo okres lub + [. +], mogą SemVer w wersji 2.0
 - Przykłady obsługiwanych ciągów PrereleaseString:-alfa, - 1,-BETA, - update20171020
 
 __Wpływ wersji wstępnej w folderach instalacji i kolejność sortowania__
 
-Kolejność sortowania zmian za pomocą wersji wstępnej, co jest ważne podczas publikowania w galerii programu PowerShell, a podczas instalowania skryptów przy użyciu polecenia PowerShellGet. Jeśli dwa skrypty wersji z numerem wersji istnieje, kolejność sortowania jest oparta na części ciągu po łącznik. Tak 2.5.0-alpha wersji jest mniejsza niż 2.5.0-beta, czyli mniej niż 2.5.0-gamma. Jeśli dwa skrypty mają ten sam numer wersji i tylko jeden z nich ma PrereleaseString, skrypt __bez__ wstępnej sufiks zakłada, że wersja gotowe do produkcji i będą sortowane jako wersja większa niż wstępną Wersja. Na przykład podczas porównywania zwalnia 2.5.0 i 2.5.0-beta, 2.5.0 wersji będą uznawane za większa niż dwa.
+Kolejność sortowania zmienia się podczas korzystania z wersji wstępnej, co jest ważne w przypadku publikowania w galerii programu PowerShell, a podczas instalowania skryptów przy użyciu poleceń modułu PowerShellGet. Jeśli dwa skrypty w wersji z numerem wersji istnieją, kolejność sortowania jest oparty na fragment ciągu, postępując łącznika. Dlatego 2.5.0-alpha wersji jest mniejszy niż 2.5.0-beta, która jest mniejsza niż 2.5.0-gamma. Jeśli dwa skrypty mają ten sam numer wersji, i tylko jeden PrereleaseString, skrypt __bez__ sufiks wersji wstępnej zakłada, że wersja gotowe do produkcji i będą sortowane jako nowszej wersji niż wersja wstępna Wersja. Na przykład podczas porównywania zwalnia 2.5.0 i 2.5.0-beta, 2.5.0 wersji będą uznawane za większa niż dwa.
 
-Podczas publikowania w galerii programu PowerShell, domyślnie wersji skryptu publikowaną muszą mieć wyższej wersji niż wersja wszystkie wcześniej publikowane w galerii programu PowerShell. Wydawcą może zaktualizować 2.5.0-alpha wersji 2.5.0-beta lub 2.5.0 (sufiksem nie wstępnej).
+Publikowanie w galerii programu PowerShell, domyślnie wersja skryptu publikacji musi mieć nieco większa niż wersja wszystkie wcześniej publikowane w galerii programu PowerShell. Wydawca może aktualizować 2.5.0-alpha wersji 2.5.0-beta lub z 2.5.0 (sufiksem nie wstępnej).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Wyszukiwanie i pobieranie elementów wstępnej za pomocą polecenia PowerShellGet
+## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Wyszukiwanie i pobieranie elementów wersji wstępnej, za pomocą poleceń modułu PowerShellGet
 
-Zajmujących się wstępnej elementów za pomocą skryptu-PowerShellGet Znajdź skryptów, skrypt instalacji aktualizacji, i Zapisz skrypt poleceń wymaga Dodawanie flagi - AllowPrerelease. Jeśli określono - AllowPrerelease, elementy wstępnej można włączyć, jeśli są obecne. Jeśli nie określono flagę - AllowPrerelease, nie można wyświetlić elementy wersji wstępnej.
+Korzystające z elementów wersji wstępnej, za pomocą skryptu-PowerShellGet Find-Script, skrypt instalacji aktualizacji, a polecenia Save-Script wymaga dodanie flagi - AllowPrerelease. Jeśli - AllowPrerelease jest określony, wstępnej elementy zostaną dołączone, jeśli są obecne. Flaga - AllowPrerelease nie zostanie określona, wstępna elementy nie będą wyświetlane.
 
-Tylko wyjątki od tej reguły w poleceń skryptu PowerShellGet są Get InstalledScript i czasami z skrypt dezinstalacji skryptu.
+Jedynym wyjątkiem od tej w poleceniach skryptu PowerShellGet są Get InstalledScript i czasami z skrypt dezinstalacji.
 
-- Get-InstalledScript zawsze automatycznie wyświetli informacje o wersji wstępnej w ciągu wersji Jeśli jest obecny.
-- Odinstaluj skryptu domyślnie odinstaluje najnowszej wersji skryptu, jeśli __nie została zainstalowana wersja__ jest określona. To zachowanie nie została zmieniona. Jednak jeśli wstępna wersja jest określona za pomocą - RequiredVersion, - AllowPrerelease będzie wymagane.
+- Get-InstalledScript zawsze automatycznie wyświetli informacje wstępne w ciągu wersji Jeśli jest obecny.
+- Odinstaluj skryptu domyślnie odinstaluje najnowszej wersji skryptu, jeśli __nie została zainstalowana wersja__ jest określony. To zachowanie nie zmienił się. Jednak jeśli jest to wersja wstępna produktu jest określony, przy użyciu - RequiredVersion, - AllowPrerelease jest wymagana.
 
 ## <a name="examples"></a>Przykłady
 
@@ -107,8 +106,8 @@ Version         Name                                Repository           Descrip
 # If -RequiredVersion is not specified, all installed scripts will be displayed by Get-InstalledScript
 ```
 
-Odinstaluj skryptu spowoduje usunięcie bieżącej wersji skryptu po - RequiredVersion nie jest dostarczony.
-Jeśli określono - RequiredVersion i jest wersja wstępna, - AllowPrerelease należy dodać do polecenia.
+Odinstaluj skrypt spowoduje usunięcie bieżącej wersji skryptu, gdy - RequiredVersion nie zostanie dostarczona.
+Jeśli - RequiredVersion zostanie określona, jest w wersji wstępnej, - AllowPrerelease należy dodać do polecenia.
 
 ``` powershell
 C:\windows\system32> Get-InstalledScript TestPackage
@@ -139,12 +138,12 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="more-details"></a>więcej informacji
+## <a name="more-details"></a>Więcej szczegółów
 
-- [Wersji wstępnej modułów](module-prerelease-support.md)
-- [Znajdź skryptu](/powershell/module/powershellget/find-script)
+- [Wersje wstępne modułu](module-prerelease-support.md)
+- [Znajdź script](/powershell/module/powershellget/find-script)
 - [Skrypt instalacji](/powershell/module/powershellget/install-script)
-- [Zapisz skrypt](/powershell/module/powershellget/save-script)
+- [Save-script](/powershell/module/powershellget/save-script)
 - [Skrypt aktualizacji](/powershell/module/powershellget/update-script)
 - [Get-Installedscript](/powershell/module/powershellget/get-installedscript)
 - [Odinstaluj skryptu](/powershell/module/powershellget/uninstall-script)

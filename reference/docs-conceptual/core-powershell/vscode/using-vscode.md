@@ -58,8 +58,8 @@ Aby zakończyć działanie programu Visual Studio Code, **Plik -> Zakończ**.
 Jeśli użytkownik chce określoną instalacją programu PowerShell za pomocą programu Visual Studio Code, należy dodać nową zmienną do pliku ustawień użytkownika.
 
 1. Kliknij przycisk **Plik -> Preferencje -> Ustawienia**
-2. Są wyświetlane dwa okienka edytora.
-   W okienku najdalej z prawej strony (`settings.json`), wstawić ustawienie poniżej odpowiednie dla Twojego systemu operacyjnego gdzieś między dwoma nawiasów klamrowych (`{` i `}`) i Zastąp *<version>* z zainstalowanych Wersja programu PowerShell:
+1. Są wyświetlane dwa okienka edytora.
+   W okienku najdalej z prawej strony (`settings.json`), wstawić ustawienie poniżej odpowiednie dla Twojego systemu operacyjnego gdzieś między dwoma nawiasów klamrowych (`{` i `}`) i Zastąp **\<wersji\>** z zainstalowaną wersją programu PowerShell:
 
    ```json
     // On Windows:
@@ -72,8 +72,8 @@ Jeśli użytkownik chce określoną instalacją programu PowerShell za pomocą p
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. Zastąp ustawienia ścieżki do żądanego pliku wykonywalnego programu PowerShell
-4. Zapisz plik ustawień i ponownie uruchom Visual Studio Code
+1. Zastąp ustawienia ścieżki do żądanego pliku wykonywalnego programu PowerShell
+1. Zapisz plik ustawień i ponownie uruchom Visual Studio Code
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Ustawienia konfiguracji dla programu Visual Studio Code
 

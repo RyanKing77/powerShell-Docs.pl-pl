@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893726"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094249"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
 
@@ -163,9 +163,8 @@ Poniżej przedstawiono kilka przykładów tego scenariusza.
 
 - Administrator skonfigurował prywatne środowisko testowe i chce zezwolić wszystkim autoryzowanym użytkownikom sieci na dostęp do wszystkich komputerów w sieci, do których zwykle mają oni dostęp, ze wszystkimi konfiguracjami sieci, do których zwykle mają dostęp. Ponieważ jest to prywatne środowisko testowe, administrator tworzy regułę autoryzacji, która nie jest bezpieczna. -Administrator uruchamia polecenie cmdlet `Add-PswaAuthorizationRule * * *`, który używa znaku wieloznacznego **\*** do reprezentowania wszystkich użytkowników, wszystkie komputery i wszystkie konfiguracje. — Ta reguła jest odpowiednikiem następującego: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Ta zasada nie jest zalecane w bezpiecznym środowisku i pomija warstwę reguły autoryzacji zabezpieczeń zapewnianych przez program Windows PowerShell Web Access.
+  > [!NOTE]
+  > Ta zasada nie jest zalecane w bezpiecznym środowisku i pomija warstwę reguły autoryzacji zabezpieczeń zapewnianych przez program Windows PowerShell Web Access.
 
 - Administrator musi zezwolić użytkownikom na łączenie się z komputerami docelowymi w środowisku obejmującym zarówno grupy robocze, jak i domeny, w którym komputery grup roboczych są czasami używane do łączenia się z komputerami docelowymi w domenach, a komputery w domenach są czasami używane do łączenia się z komputerami docelowymi w grupach roboczych. Administrator ma serwer bramy *PswaServer*, w grupie roboczej i komputer docelowy *srv1.contoso.com* znajduje się w domenie. Użytkownik *Chris* jest autoryzowanym użytkownikiem lokalnym na serwerze bramy grupy roboczej i komputer docelowy. Jego nazwa użytkownika na serwerze grupy roboczej jest *chrisLocal*; a jego nazwa użytkownika na komputerze docelowym jest *contoso\\chris*. Aby zezwolić Chrisowi na dostęp do komputera srv1.contoso.com, administrator dodaje następującą regułę.
 
@@ -180,10 +179,9 @@ W powyższym scenariuszu program Windows PowerShell Web Access ustanawia pomyśl
 
 1. Uwierzytelnianie na serwerze bramy grupy roboczej przez dodanie nazwy użytkownika w formacie *nazwa_serwera*\\*nazwa_użytkownika* reguły autoryzacji
 
-2. Uwierzytelnianie na komputerze docelowym, korzystając z poświadczeń wprowadzonych na stronie logowania w **opcjonalne ustawienia połączenia** obszaru
+1. Uwierzytelnianie na komputerze docelowym, korzystając z poświadczeń wprowadzonych na stronie logowania w **opcjonalne ustawienia połączenia** obszaru
 
    > [!NOTE]
-   >
    > Jeśli brama i komputer docelowy znajdują się w różnych grupach roboczych lub domenach, należy ustanowić relację zaufania między oboma komputerami w grupach roboczych, obiema domenami lub grupą roboczą a domeną. Ta relacja nie można skonfigurować za pomocą poleceń cmdlet reguł autoryzacji programu Windows PowerShell Web Access. Reguły autoryzacji nie definiują relacji zaufania między komputerami, a jedynie autoryzują użytkowników do łączenia się z określonymi komputerami docelowymi i konfiguracjami sesji. Aby uzyskać więcej informacji na temat sposobu konfigurowania relacji zaufania między domenami, zobacz [Tworzenie domeny i relacje zaufania lasu](https://technet.microsoft.com/library/cc794775.aspx").
    > Aby uzyskać więcej informacji na temat dodawania komputerów grupy roboczej do listy zaufanych hostów, zobacz [zdalne zarządzanie za pomocą Menedżera serwera](https://technet.microsoft.com/library/dd759202.aspx)
 

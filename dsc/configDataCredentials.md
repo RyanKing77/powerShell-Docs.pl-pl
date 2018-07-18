@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Opcje poświadczeń w danych konfiguracji
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190047"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093681"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opcje poświadczeń w danych konfiguracji
->Dotyczy: Środowiska Windows PowerShell 5.0
+>Dotyczy: Windows PowerShell 5.0
 
-## <a name="plain-text-passwords-and-domain-users"></a>Haseł w postaci zwykłego tekstu, a użytkownicy domeny
+## <a name="plain-text-passwords-and-domain-users"></a>Hasła w postaci zwykłego tekstu, a użytkownicy domeny
 
-Konfiguracji DSC zawierający poświadczenia bez szyfrowania wygeneruje komunikat o błędzie dotyczący haseł w postaci zwykłego tekstu.
+Konfiguracje DSC zawierający poświadczenia bez szyfrowania wygeneruje komunikat o błędzie dotyczących haseł w postaci zwykłego tekstu.
 Ponadto DSC wygeneruje ostrzeżenie, gdy przy użyciu poświadczeń domeny.
-Aby pominąć tych błędów i ostrzeżeń, użyj słowa kluczowe dane konfiguracji DSC:
+Aby pominąć tych błędów i komunikaty ostrzegawcze, użyj słowa kluczowe dane konfiguracji DSC:
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
 > [!NOTE]
-> Przechowywanie/przesyła niezaszyfrowane hasła w postaci zwykłego tekstu zwykle nie jest bezpieczne. Zaleca się zabezpieczenie poświadczeń przy użyciu techniki omówione w dalszej części tego tematu.
-> Usługi Konfiguracja DSC automatyzacji Azure umożliwia centralne zarządzanie poświadczenia, aby być skompilowany w konfiguracji i bezpiecznie przechowywane.
-> Aby uzyskać informacje, zobacz: [kompilowania konfiguracji DSC / zasoby poświadczeń](/azure/automation/automation-dsc-compile#credential-assets)
+> Przechowywanie/przekazywania niezaszyfrowane hasła w postaci jawnej ogólnie nie jest bezpieczne. Zalecane jest zabezpieczanie poświadczenia za pomocą techniki omówione w dalszej części tego tematu.
+> Usługa Azure Automation DSC umożliwia centralne zarządzanie poświadczenia, aby być skompilowany w konfiguracji i bezpiecznie przechowywane.
+> Aby uzyskać informacje, zobacz: [kompilowanie konfiguracji DSC / zasobów poświadczeń](/azure/automation/automation-dsc-compile#credential-assets)
 
-Poniżej przedstawiono przykład przekazywania poświadczeń w postaci zwykłego tekstu:
+Oto przykład przekazywania poświadczeń w postaci zwykłego tekstu:
 
 ```powershell
 #Prompt user for their credentials
@@ -125,20 +125,20 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-## <a name="handling-credentials-in-dsc"></a>Obsługa poświadczeń w konfiguracji DSC
+## <a name="handling-credentials-in-dsc"></a>Obsługa poświadczeń w DSC
 
 Zasoby konfiguracji DSC Uruchom jako `Local System` domyślnie.
-Jednak niektóre zasoby potrzebne poświadczenia, na przykład gdy `Package` zasobów, należy zainstalować oprogramowanie w ramach określonego konta użytkownika.
+Niektóre zasoby muszą mieć jednak poświadczenia, na przykład gdy `Package` zasobu należy zainstalować oprogramowanie w ramach określonego konta użytkownika.
 
-Używane wcześniej zasoby ustalony `Credential` nazwę właściwości, aby rozwiązać.
-Automatyczne dodany WMF 5.0 `PsDscRunAsCredential` właściwości dla wszystkich zasobów.
-Aby uzyskać informacje o korzystaniu z `PsDscRunAsCredential`, zobacz [DSC uruchomiony przy użyciu poświadczeń użytkownika](runAsUser.md).
-Nowsze zasobów i zasobów niestandardowych można użyć tej właściwości automatyczne zamiast tworzenia własnych właściwości dla poświadczenia.
+Wcześniejsze zasoby użyte, ustalone `Credential` nazwę właściwości, aby to obsłużyć.
+Program WMF 5.0 dodaje automatyczne `PsDscRunAsCredential` właściwości dla wszystkich zasobów.
+Aby uzyskać informacje o używaniu `PsDscRunAsCredential`, zobacz [systemem DSC przy użyciu poświadczeń użytkownika](runAsUser.md).
+Nowsze zasobów i zasobów niestandardowych można użyć tej właściwości automatyczne zamiast tworzyć własne właściwości dla poświadczenia.
 
 > [!NOTE]
-> Projekt niektórych zasobów są używają wielu poświadczeń z określonego powodu i mają one właściwości własne poświadczenia.
+> Projekt niektóre zasoby są używają wielu poświadczeń z określonego powodu i będą mieć własne właściwości poświadczeń.
 
-Aby odnaleźć dostępne poświadczeń właściwości w zasobie użyj jednej `Get-DscResource -Name ResourceName -Syntax` i technologii Intellisense w ISE (`CTRL+SPACE`).
+Aby znaleźć dostępne poświadczeń we właściwościach zasobu należy użyć `Get-DscResource -Name ResourceName -Syntax` i technologii Intellisense w środowisku ISE (`CTRL+SPACE`).
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -156,26 +156,26 @@ Group [String] #ResourceName
 }
 ```
 
-W tym przykładzie użyto [grupy](https://msdn.microsoft.com/powershell/dsc/groupresource) zasób z `PSDesiredStateConfiguration` wbudowany moduł zasobów usługi Konfiguracja DSC.
-Możesz tworzyć grupy lokalne i dodać lub usunąć członków.
-Akceptuje zarówno `Credential` właściwości i automatyczne `PsDscRunAsCredential` właściwości.
-Jednak używa tylko zasób `Credential` właściwości.
+W tym przykładzie użyto [grupy](https://msdn.microsoft.com/powershell/dsc/groupresource) zasób z `PSDesiredStateConfiguration` modułu wbudowanego zasobów DSC.
+Można utworzyć grupy lokalne i dodać lub usunąć członków.
+Akceptuje zarówno `Credential` właściwość i automatyczne `PsDscRunAsCredential` właściwości.
+Jednak tylko używa zasobu `Credential` właściwości.
 
-Aby uzyskać więcej informacji na temat `PsDscRunAsCredential` właściwości, zobacz [DSC uruchomiony przy użyciu poświadczeń użytkownika](runAsUser.md).
+Aby uzyskać więcej informacji na temat `PsDscRunAsCredential` właściwości, zobacz [systemem DSC przy użyciu poświadczeń użytkownika](runAsUser.md).
 
-## <a name="example-the-group-resource-credential-property"></a>Przykład: Grupy zasobów właściwości poświadczeń
+## <a name="example-the-group-resource-credential-property"></a>Przykład: Grupa zasobów właściwości Credential
 
-DSC jest uruchamiana `Local System`, więc jest już uprawnień do zmiany użytkowników i grup lokalnych.
-Jeśli dodano element członkowski jest kontem lokalnym, niezbędne jest nie ma poświadczeń.
-Jeśli `Group` zasobów dodaje konto domeny do lokalnej grupy, a następnie konieczne jest podanie poświadczeń.
+DSC, o których uruchamiany `Local System`, więc jest już uprawnień do zmiany użytkowników i grup lokalnych.
+Jeśli dodano element członkowski jest kontem lokalnym, poświadczenie nie jest konieczne.
+Jeśli `Group` zasobów doda konto domeny do lokalnej grupy, a następnie poświadczenie jest konieczne.
 
 Nie są dozwolone anonimowe zapytania do usługi Active Directory.
-`Credential` Właściwość `Group` zasób jest konto domeny używane do zapytania usługi Active Directory.
-W większości przypadków może to być konto użytkownika ogólnego, ponieważ domyślnie użytkownicy mogą *odczytu* większość obiektów w usłudze Active Directory.
+`Credential` Właściwość `Group` zasobów jest kontem domeny, używany do wykonywania zapytań w usłudze Active Directory.
+W większości przypadków prawdopodobnie ogólne konto użytkownika, domyślnie użytkownicy mogą *odczytu* większości obiektów w usłudze Active Directory.
 
 ## <a name="example-configuration"></a>Przykładowa konfiguracja
 
-Poniższy przykład kodu wykorzystuje DSC do wypełniania grupy lokalnej z użytkownikiem domeny:
+Poniższy przykład kodu używa DSC do wypełniania grupy lokalnej o użytkownik domeny:
 
 ```powershell
 Configuration DomainCredentialExample
@@ -201,7 +201,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-Ten kod generuje zarówno błędu i ostrzeżenia:
+Ten kod generuje błąd i komunikat ostrzegawczy:
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing
@@ -224,15 +224,15 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-W tym przykładzie występują dwa problemy:
-1. Wystąpił błąd wyjaśniono, że haseł w postaci zwykłego tekstu nie są zalecane
-2. Ostrzeżenia z informacją o tym przed przy użyciu poświadczeń domeny
+Ten przykład ma dwa problemy:
+1. Błąd wyjaśnia, czy hasła w postaci zwykłego tekstu nie są zalecane
+2. Ostrzeżenie z informacją o tym względem przy użyciu poświadczeń domeny
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 Pierwszy komunikat o błędzie zawiera adres URL z dokumentacją.
-To łącze wyjaśniono, jak do szyfrowania haseł przy użyciu [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) struktury i certyfikatu.
-Aby uzyskać więcej informacji o certyfikatach i DSC [odczytać ten wpis](http://aka.ms/certs4dsc).
+Ten link wyjaśnia, jak zaszyfrować hasła, przy użyciu [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) struktury i certyfikatu.
+Aby uzyskać więcej informacji o certyfikatach i DSC [przeczytaj ten wpis](http://aka.ms/certs4dsc).
 
 Aby wymusić hasła w postaci zwykłego tekstu, wymaga zasób `PsDscAllowPlainTextPassword` — słowo kluczowe w danych konfiguracji sekcji w następujący sposób:
 
@@ -270,26 +270,24 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> `NodeName` nie może być równa gwiazdka nazwę określonego węzła jest wymagana.
+> `NodeName` nie może być równa gwiazdka obowiązkowa jest tylko nazwa określonego węzła.
 
-**Microsoft informacją o tym, aby uniknąć hasła w formacie tekstowym z powodu znaczące zagrożenie bezpieczeństwa.**
-
-Wystąpił wyjątek może być podczas korzystania z usługi Konfiguracja DSC automatyzacji Azure tylko dane zawsze jest przechowywany jako zaszyfrowany (podczas przesyłania, przechowywane w usłudze i magazynowane w węźle).
+**Microsoft informacją o tym, aby uniknąć hasła w formacie tekstowym ze względu na istotne zagrożenie bezpieczeństwa.**
 
 ## <a name="domain-credentials"></a>Poświadczenia domeny
 
-Nadal uruchomiona ponownie skryptu konfiguracji przykład (z lub bez szyfrowania), generuje ostrzeżenie, że, przy użyciu domeny konto dla poświadczeń nie jest zalecane.
-Za pomocą konta lokalnego eliminuje ryzyko poświadczeń domeny, które mogłyby zostać użyte na innych serwerach.
+Nadal uruchomione ponownie skrypt konfiguracji przykład (z lub bez szyfrowania), generuje ostrzeżenie, niezalecana korzystać z domeny, konto dla poświadczeń.
+Za pomocą konta lokalnego pozwala wyeliminować ryzyko poświadczeń domeny, które mogłyby zostać użyte na innych serwerach.
 
-**Korzystając z poświadczeń z usługi Konfiguracja DSC zasobów, preferowane jest kontem lokalnym za pośrednictwem konta domeny, jeśli to możliwe.**
+**Korzystając z poświadczeń przy użyciu zasobów DSC, należy najpierw konta lokalnego za pośrednictwem konta domeny, jeśli jest to możliwe.**
 
-W przypadku "\' lub" @ "w `Username` właściwość credential, a następnie DSC będzie je traktować jako konto domeny.
-Brak wyjątek dla "localhost", "127.0.0.1" i ":: 1" w domenie część nazwy użytkownika.
+W przypadku "\' lub" @ "w `Username` właściwości poświadczeń, a następnie DSC będzie je traktować jako konto domeny.
+Występuje wyjątek "localhost", "127.0.0.1" i ":: 1" w domenie część nazwy użytkownika.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-W konfiguracji DSC `Group` zasobów przykładzie przedstawionym powyżej zapytań domeny usługi Active Directory *wymaga* konta domeny.
-W takim przypadku Dodaj `PSDscAllowDomainUser` właściwości `ConfigurationData` zablokować w następujący sposób:
+W DSC `Group` przykładu zasobów powyżej, wykonywanie zapytań do domeny usługi Active Directory *wymaga* konta domeny.
+W takim przypadku Dodaj `PSDscAllowDomainUser` właściwość `ConfigurationData` blokowania w następujący sposób:
 
 ```powershell
 $cd = @{
@@ -304,4 +302,4 @@ $cd = @{
 }
 ```
 
-Teraz skryptu konfiguracji spowoduje wygenerowanie pliku MOF bez błędów lub ostrzeżeń.
+Teraz skryptu konfiguracji spowoduje wygenerowanie pliku MOF bez błędów i ostrzeżeń.

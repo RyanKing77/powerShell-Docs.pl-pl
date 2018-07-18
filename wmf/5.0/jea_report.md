@@ -1,19 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218726"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093766"
 ---
 # <a name="reporting-on-jea"></a>Raporty dotyczące usługi JEA
-Aby zgłosić stanu konfiguracji JEA, można użyć:
-1.  **Get-PSSessionConfiguration** zwraca listę wszystkich zarejestrowanych punktów końcowych na danym komputerze.
-2.  **Get-PSSessionCapability** raport ma dotyczyć możliwości danego użytkownika ma w określonym punkcie końcowym.
 
-Oto przykład **Get-PSSessionCapability**:
+W celu raportowania stanu konfiguracji JEA, można użyć:
+
+1. **Get-PSSessionConfiguration** aby powrócić do listy wszystkich zarejestrowanych punkty końcowe na danym komputerze.
+1. **Get-PSSessionCapability** Aby sporządzić raport na temat możliwości danego użytkownika ma w określonym punkcie końcowym.
+
+Oto przykład **Get PSSessionCapability**:
+
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -35,10 +38,8 @@ Function        Measure-Object
 Function        Out-Default
 Function        Select-Object
 Cmdlet          Restart-Service                                    3.0.0.0 Microsof...
-
-
 ```
 
-Raport ma dotyczyć _akcje_ trwało użytkowników podczas sesji JEA, możesz:
-1. Włącz zapisy "over ramię" dla tego punktu końcowego JEA i poszukaj katalogu wykaz pełny dziennik czynności wykonywanych przez użytkownika
+Aby sporządzić raport na temat _akcje_ użytkowników trwało podczas sesji JEA, możesz:
+1. Włącz zapisów "over ramię" dla tego punktu końcowego JEA i poszukaj katalogu transkrypcji pełny dziennik akcji każdego użytkownika
 2. Włączanie logowania modułu programu PowerShell i sprawdź dzienniki zdarzeń programu PowerShell.
