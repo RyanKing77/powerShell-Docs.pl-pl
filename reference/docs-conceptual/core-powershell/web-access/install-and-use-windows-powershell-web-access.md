@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Instalowanie i używanie programu windows powershell web access
-ms.openlocfilehash: d60670954d6ab6998e905382383d60ead1129d31
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: c14da421e372f6c4c4f203b16bbd37f28a9ba255
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893760"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094266"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalowanie programu Windows PowerShell Web Access i korzystanie z niego
 
@@ -329,29 +329,29 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
    - Na Windows **Start** ekranu, wpisz dowolną część nazwy **Internet Information Services (IIS) Manager**. Kliknij skrót, gdy jest on wyświetlany w **aplikacje** wyników.
 
-2. W okienku drzewa Menedżera usług IIS, rozwiń węzeł serwera, na którym zainstalowany jest program Windows PowerShell Web Access, aż do **witryn** folder jest widoczny. Wybierz **witryn** folderu.
+1. W okienku drzewa Menedżera usług IIS, rozwiń węzeł serwera, na którym zainstalowany jest program Windows PowerShell Web Access, aż do **witryn** folder jest widoczny. Wybierz **witryn** folderu.
 
-3. W **akcje** okienku kliknij **Dodawanie witryny sieci Web**.
+1. W **akcje** okienku kliknij **Dodawanie witryny sieci Web**.
 
-4. Wpisz nazwę witryny sieci Web, takie jak **programu Windows PowerShell Web Access**.
+1. Wpisz nazwę witryny sieci Web, takie jak **programu Windows PowerShell Web Access**.
 
-5. Dla nowej witryny internetowej zostanie automatycznie utworzona pula aplikacji. Aby użyć innej puli aplikacji, kliknij **wybierz** można wybrać pulę aplikacji do skojarzenia z nową witrynę sieci Web. Wybierz alternatywną pulę aplikacji w **Wybieranie puli aplikacji** okno dialogowe, a następnie kliknij przycisk **OK**.
+1. Dla nowej witryny internetowej zostanie automatycznie utworzona pula aplikacji. Aby użyć innej puli aplikacji, kliknij **wybierz** można wybrać pulę aplikacji do skojarzenia z nową witrynę sieci Web. Wybierz alternatywną pulę aplikacji w **Wybieranie puli aplikacji** okno dialogowe, a następnie kliknij przycisk **OK**.
 
-6. W **ścieżkę fizyczną** tekstu, przejdź do %*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. W **ścieżkę fizyczną** tekstu, przejdź do %*windir*% / Web/PowerShellWebAccess/wwwroot.
 
-7. W **typu** pole **powiązanie** wybierz opcję **https**.
+1. W **typu** pole **powiązanie** wybierz opcję **https**.
 
-8. Przypisz do witryny internetowej numer portu, który nie jest jeszcze używany przez inną witrynę lub aplikację. Aby zlokalizować otwarte porty, można uruchomić **netstat** polecenia w oknie wiersza polecenia. Domyślny numer portu to 443.
+1. Przypisz do witryny internetowej numer portu, który nie jest jeszcze używany przez inną witrynę lub aplikację. Aby zlokalizować otwarte porty, można uruchomić **netstat** polecenia w oknie wiersza polecenia. Domyślny numer portu to 443.
 
    Zmień domyślny port, jeśli inna witryna internetowa korzysta już z portu 443 lub jeśli istnieją inne względy bezpieczeństwa przemawiające za zmianą numeru portu. Jeśli z wybranego portu korzysta inna witryna internetowa, która jest uruchomiona na serwerze bramy, po kliknięciu zostanie wyświetlone ostrzeżenie **OK** w **Dodawanie witryny sieci Web** okno dialogowe. Aby uruchomić program Windows PowerShell Web Access, należy użyć nieużywanego portu.
 
-9. Opcjonalnie, w razie potrzeby w swojej organizacji, określ nazwę hosta pasującą do organizacji i użytkowników, takie jak **www.contoso.com**. Kliknij przycisk **OK**.
+1. Opcjonalnie, w razie potrzeby w swojej organizacji, określ nazwę hosta pasującą do organizacji i użytkowników, takie jak **www.contoso.com**. Kliknij przycisk **OK**.
 
-10. Aby zwiększyć bezpieczeństwo środowiska produkcyjnego, zdecydowanie zaleca się użycie prawidłowego certyfikatu, który został podpisany przez urząd certyfikacji. Musisz podać certyfikat SSL, ponieważ użytkownicy mogą łączyć się tylko z programu Windows PowerShell Web Access za pośrednictwem witryny internetowej HTTPS. Zobacz [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie, aby uzyskać więcej informacji o sposobie uzyskiwania certyfikatu.
+1. Aby zwiększyć bezpieczeństwo środowiska produkcyjnego, zdecydowanie zaleca się użycie prawidłowego certyfikatu, który został podpisany przez urząd certyfikacji. Musisz podać certyfikat SSL, ponieważ użytkownicy mogą łączyć się tylko z programu Windows PowerShell Web Access za pośrednictwem witryny internetowej HTTPS. Zobacz [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie, aby uzyskać więcej informacji o sposobie uzyskiwania certyfikatu.
 
-11. Kliknij przycisk **OK** zamknąć **Dodawanie witryny sieci Web** okno dialogowe.
+1. Kliknij przycisk **OK** zamknąć **Dodawanie witryny sieci Web** okno dialogowe.
 
-12. W sesji środowiska Windows PowerShell, która została otwarta z podwyższonym poziomem uprawnień użytkownika (Uruchom jako Administrator), uruchom następujący skrypt, w którym *nazwa_puli_aplikacji* reprezentuje nazwę puli aplikacji, który został utworzony w kroku 4, Aby udzielić tej puli aplikacji uprawnień dostępu do pliku autoryzacji.
+1. W sesji środowiska Windows PowerShell, która została otwarta z podwyższonym poziomem uprawnień użytkownika (Uruchom jako Administrator), uruchom następujący skrypt, w którym _nazwa_puli_aplikacji_ reprezentuje nazwę puli aplikacji, który został utworzony w kroku 4, Aby udzielić tej puli aplikacji uprawnień dostępu do pliku autoryzacji.
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -365,11 +365,11 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. Z wybraniu nowej witryny internetowej w okienku drzewa Menedżera usług IIS, kliknij przycisk **Start** w **akcje** okienko, aby uruchomić witrynę internetową.
+1. Z wybraniu nowej witryny internetowej w okienku drzewa Menedżera usług IIS, kliknij przycisk **Start** w **akcje** okienko, aby uruchomić witrynę internetową.
 
-14. Otwórz sesję przeglądarki na urządzeniu klienckim. Aby uzyskać więcej informacji o obsługiwanych przeglądarkach i urządzeniach, zobacz [przeglądarki i urządzenia klienckiego, które obsługują](#browser-and-client-device-support) w tym dokumencie.
+1. Otwórz sesję przeglądarki na urządzeniu klienckim. Aby uzyskać więcej informacji o obsługiwanych przeglądarkach i urządzeniach, zobacz [przeglądarki i urządzenia klienckiego, które obsługują](#browser-and-client-device-support) w tym dokumencie.
 
-15. Otwórz nową witrynę sieci Web programu Windows PowerShell Web Access.
+1. Otwórz nową witrynę sieci Web programu Windows PowerShell Web Access.
 
     Ponieważ główna witryna internetowa wskazuje folder programu Windows PowerShell Web Access, przeglądarce powinna zostać wyświetlona strona logowania programu Windows PowerShell Web Access, po otwarciu **https://\<*nazwa_serwera_bramy* \>**. Nie należy dodać **/pswa** do adresu URL.
 
@@ -392,11 +392,11 @@ Aby uzyskać więcej szczegółów na temat reguł autoryzacji programu Windows 
 
    - Na Windows **Start** ekranu, kliknij prawym przyciskiem myszy **programu Windows PowerShell**, a następnie kliknij przycisk **Uruchom jako Administrator**.
 
-2. ![Uwaga dotycząca zabezpieczeń](images/SecurityNote.jpeg) Krok opcjonalny, umożliwiający ograniczenie dostępu użytkowników za pomocą konfiguracji sesji:
+1. ![Uwaga dotycząca zabezpieczeń](images/SecurityNote.jpeg) Krok opcjonalny, umożliwiający ograniczenie dostępu użytkowników za pomocą konfiguracji sesji:
 
    Sprawdź, czy konfiguracje sesji, których chcesz użyć w regułach, już istnieją. Jeśli one nie zostały jeszcze utworzone, skorzystaj z instrukcji tworzenia konfiguracji sesji w [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
-3. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
+1. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
 
    Polecenia Add-PswaAuthorizationRule - UserName < domena\użytkownik | Komputer\Użytkownik > - ComputerName < nazwa_komputera > - ConfigurationName < session_configuration_name >
 
@@ -406,7 +406,7 @@ Aby uzyskać więcej szczegółów na temat reguł autoryzacji programu Windows 
 
    Polecenia Add-PswaAuthorizationRule - UserName "Contoso\JSmith" - ComputerName Contoso_214 - ConfigurationName NewAdminsOnly
 
-4. Sprawdź, czy reguła została utworzona za pomocą `Get-PswaAuthorizationRule` polecenia cmdlet, lub `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
+1. Sprawdź, czy reguła została utworzona za pomocą `Get-PswaAuthorizationRule` polecenia cmdlet, lub `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
    Na przykład `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -420,9 +420,9 @@ W bezpiecznym środowisku produkcyjnym zawsze używaj prawidłowego certyfikatu 
 
 1. W okienku drzewa Menedżera usług IIS wybierz serwer, na którym jest zainstalowany program Windows PowerShell Web Access.
 
-2. W okienku zawartości kliknij dwukrotnie **certyfikaty serwera**.
+1. W okienku zawartości kliknij dwukrotnie **certyfikaty serwera**.
 
-3. W **akcje** okienko, wykonaj jedną z następujących czynności. Aby uzyskać więcej informacji na temat konfigurowania certyfikatów serwera w usługach IIS, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+1. W **akcje** okienko, wykonaj jedną z następujących czynności. Aby uzyskać więcej informacji na temat konfigurowania certyfikatów serwera w usługach IIS, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Kliknij przycisk **zaimportować** Aby zaimportować istniejący, prawidłowy certyfikat z lokalizacji w sieci.
 
@@ -432,11 +432,11 @@ W bezpiecznym środowisku produkcyjnym zawsze używaj prawidłowego certyfikatu 
 
    - Kliknij przycisk **Utwórz certyfikat z podpisem własnym** do utworzenia certyfikatu można użyć od razu i podpisać później przez urząd certyfikacji w razie potrzeby. Określ przyjazną nazwę certyfikatu z podpisem własnym, taki jak **programu Windows PowerShell Web Access**. Ta opcja jest uważana za niebezpieczną i jest zalecana tylko na potrzeby prywatnego środowiska testowego.
 
-4. Po utworzeniu lub otrzymaniu certyfikatu, wybierz witrynę sieci Web, do którego zastosowano certyfikatu (na przykład **domyślna witryna sieci Web**) okienku drzewa Menedżera usług IIS, a następnie kliknij przycisk **powiązania** w **Akcje** okienka.
+1. Po utworzeniu lub otrzymaniu certyfikatu, wybierz witrynę sieci Web, do którego zastosowano certyfikatu (na przykład **domyślna witryna sieci Web**) okienku drzewa Menedżera usług IIS, a następnie kliknij przycisk **powiązania** w **Akcje** okienka.
 
-5. W **Dodawanie powiązania witryny** okna dialogowego Dodaj **https** wiązanie dla danej lokacji, jeśli nie jest już wyświetlany. Jeśli nie używasz certyfikatu z podpisem własnym, określ nazwę hosta z kroku 3 tej procedury. Jeśli używasz certyfikatu z podpisem własnym, ten krok nie jest wymagany.
+1. W **Dodawanie powiązania witryny** okna dialogowego Dodaj **https** wiązanie dla danej lokacji, jeśli nie jest już wyświetlany. Jeśli nie używasz certyfikatu z podpisem własnym, określ nazwę hosta z kroku 3 tej procedury. Jeśli używasz certyfikatu z podpisem własnym, ten krok nie jest wymagany.
 
-6. Wybierz certyfikat uzyskany lub utworzony w kroku 3 tej procedury, a następnie kliknij przycisk **OK**.
+1. Wybierz certyfikat uzyskany lub utworzony w kroku 3 tej procedury, a następnie kliknij przycisk **OK**.
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>Korzystanie z konsoli internetowej programu Windows PowerShell
 
