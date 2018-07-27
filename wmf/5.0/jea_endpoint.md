@@ -1,151 +1,153 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 3acd266a75bc61ffe4bce467cfb804ac7865c629
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093722"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267926"
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="960d4-102">Tworzenie punktu końcowego usługi JEA i łączenie się z nim</span><span class="sxs-lookup"><span data-stu-id="960d4-102">Creating and Connecting to a JEA Endpoint</span></span>
-<span data-ttu-id="960d4-103">Aby utworzyć punkt końcowy usługi JEA, należy utworzyć i zarejestrować specjalnie skonfigurowanym konfiguracji sesji programu PowerShell pliku, który można wygenerować za pomocą **New PSSessionConfigurationFile** polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="960d4-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="b3a35-102">Tworzenie punktu końcowego usługi JEA i łączenie się z nim</span><span class="sxs-lookup"><span data-stu-id="b3a35-102">Creating and Connecting to a JEA Endpoint</span></span>
+
+<span data-ttu-id="b3a35-103">Aby utworzyć punkt końcowy usługi JEA, należy utworzyć i zarejestrować specjalnie skonfigurowanym konfiguracji sesji programu PowerShell pliku, który można wygenerować za pomocą **New PSSessionConfigurationFile** polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b3a35-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-<span data-ttu-id="960d4-104">Spowoduje to utworzenie pliku konfiguracji sesji, który wygląda w następujący sposób:</span><span class="sxs-lookup"><span data-stu-id="960d4-104">This will create a session configuration file that looks like this:</span></span>
+<span data-ttu-id="b3a35-104">Spowoduje to utworzenie pliku konfiguracji sesji, który wygląda w następujący sposób:</span><span class="sxs-lookup"><span data-stu-id="b3a35-104">This will create a session configuration file that looks like this:</span></span>
+
 ```powershell
 @{
 
-# Version number of the schema used for this document
-SchemaVersion = '2.0.0.0'
+    # Version number of the schema used for this document
+    SchemaVersion = '2.0.0.0'
 
-# ID used to uniquely identify this document
-GUID = 'a384fdd3-5830-4a2c-ac86-cdd1822c3afd'
+    # ID used to uniquely identify this document
+    GUID = 'a384fdd3-5830-4a2c-ac86-cdd1822c3afd'
 
-# Author of this document
-Author = 'Administrator'
+    # Author of this document
+    Author = 'Administrator'
 
-# Description of the functionality provided by these settings
-# Description = ''
+    # Description of the functionality provided by these settings
+    # Description = ''
 
-# Session type defaults to apply for this session configuration. Can be 'RestrictedRemoteServer' (recommended), 'Empty', or 'Default'
-SessionType = 'RestrictedRemoteServer'
+    # Session type defaults to apply for this session configuration. Can be 'RestrictedRemoteServer' (recommended), 'Empty', or 'Default'
+    SessionType = 'RestrictedRemoteServer'
 
-# Directory to place session transcripts for this session configuration
-TranscriptDirectory = 'C:\ProgramData\JEATranscripts'
+    # Directory to place session transcripts for this session configuration
+    TranscriptDirectory = 'C:\ProgramData\JEATranscripts'
 
-# Whether to run this session configuration as the machine's (virtual) administrator account
-RunAsVirtualAccount = $true
+    # Whether to run this session configuration as the machine's (virtual) administrator account
+    RunAsVirtualAccount = $true
 
-# Groups associated with machine's (virtual) administrator account
-# RunAsVirtualAccountGroups = 'Remote Desktop Users', 'Remote Management Users'
+    # Groups associated with machine's (virtual) administrator account
+    # RunAsVirtualAccountGroups = 'Remote Desktop Users', 'Remote Management Users'
 
-# Scripts to run when applied to a session
-# ScriptsToProcess = 'C:\ConfigData\InitScript1.ps1', 'C:\ConfigData\InitScript2.ps1'
+    # Scripts to run when applied to a session
+    # ScriptsToProcess = 'C:\ConfigData\InitScript1.ps1', 'C:\ConfigData\InitScript2.ps1'
 
-# User roles (security groups), and the Role Capabilities that should be applied to them when applied to a session
-RoleDefinitions = @{
-    'CONTOSO\NonAdmin_Operators' = @{
-        'RoleCapabilities' = 'Maintenance' } }
-
+    # User roles (security groups), and the Role Capabilities that should be applied to them when applied to a session
+    RoleDefinitions = @{ 'CONTOSO\NonAdmin_Operators' = @{ 'RoleCapabilities' = 'Maintenance' } }
 }
 ```
-<span data-ttu-id="960d4-105">Podczas tworzenia punktu końcowego JEA, należy ustawić następujące parametry polecenia (i odpowiadających im kluczy w pliku):</span><span class="sxs-lookup"><span data-stu-id="960d4-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
-1.  <span data-ttu-id="960d4-106">SessionType do RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="960d4-106">SessionType to RestrictedRemoteServer</span></span>
-2.  <span data-ttu-id="960d4-107">RunAsVirtualAccount do **$true**</span><span class="sxs-lookup"><span data-stu-id="960d4-107">RunAsVirtualAccount to **$true**</span></span>
-3.  <span data-ttu-id="960d4-108">TranscriptPath do katalogu, w którym "za pośrednictwem ramię" zapisy zostaną zapisane po każdej sesji</span><span class="sxs-lookup"><span data-stu-id="960d4-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
-4.  <span data-ttu-id="960d4-109">RoleDefinitions do tablicy skrótów, który definiuje, które grupy mają dostęp do których "możliwości roli."</span><span class="sxs-lookup"><span data-stu-id="960d4-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="960d4-110">To pole określa **kto** zrobić **co** dla tego punktu końcowego.</span><span class="sxs-lookup"><span data-stu-id="960d4-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="960d4-111">Możliwości roli to specjalne pliki, które zostaną wyjaśnione wkrótce.</span><span class="sxs-lookup"><span data-stu-id="960d4-111">Role Capabilities are special files that will be explained shortly.</span></span>
 
+<span data-ttu-id="b3a35-105">Podczas tworzenia punktu końcowego JEA, należy ustawić następujące parametry polecenia (i odpowiadających im kluczy w pliku):</span><span class="sxs-lookup"><span data-stu-id="b3a35-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
 
-<span data-ttu-id="960d4-112">Pole RoleDefinitions definiuje grupy, które ma dostęp do możliwości roli.</span><span class="sxs-lookup"><span data-stu-id="960d4-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="960d4-113">Możliwości roli jest plikiem, który definiuje zestaw funkcji, które będą dostępne do procesu łączenia użytkowników.</span><span class="sxs-lookup"><span data-stu-id="960d4-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="960d4-114">Można utworzyć roli możliwości **New PSRoleCapabilityFile** polecenia.</span><span class="sxs-lookup"><span data-stu-id="960d4-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
+1. <span data-ttu-id="b3a35-106">SessionType do RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="b3a35-106">SessionType to RestrictedRemoteServer</span></span>
+2. <span data-ttu-id="b3a35-107">RunAsVirtualAccount do **$true**</span><span class="sxs-lookup"><span data-stu-id="b3a35-107">RunAsVirtualAccount to **$true**</span></span>
+3. <span data-ttu-id="b3a35-108">TranscriptPath do katalogu, w którym "za pośrednictwem ramię" zapisy zostaną zapisane po każdej sesji</span><span class="sxs-lookup"><span data-stu-id="b3a35-108">TranscriptPath to the directory where "over the shoulder" transcripts will be saved after each session</span></span>
+4. <span data-ttu-id="b3a35-109">RoleDefinitions do tablicy skrótów, który definiuje, które grupy mają dostęp do których "możliwości roli."</span><span class="sxs-lookup"><span data-stu-id="b3a35-109">RoleDefinitions to a hashtable that defines which groups have access to which "Role Capabilities."</span></span> <span data-ttu-id="b3a35-110">To pole określa **kto** zrobić **co** dla tego punktu końcowego.</span><span class="sxs-lookup"><span data-stu-id="b3a35-110">This field defines **who** can do **what** on this endpoint.</span></span> <span data-ttu-id="b3a35-111">Możliwości roli to specjalne pliki, które zostaną wyjaśnione wkrótce.</span><span class="sxs-lookup"><span data-stu-id="b3a35-111">Role Capabilities are special files that will be explained shortly.</span></span>
+
+<span data-ttu-id="b3a35-112">Pole RoleDefinitions definiuje grupy, które ma dostęp do możliwości roli.</span><span class="sxs-lookup"><span data-stu-id="b3a35-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span> <span data-ttu-id="b3a35-113">Możliwości roli jest plikiem, który definiuje zestaw funkcji, które będą dostępne do procesu łączenia użytkowników.</span><span class="sxs-lookup"><span data-stu-id="b3a35-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>
+<span data-ttu-id="b3a35-114">Można utworzyć roli możliwości **New PSRoleCapabilityFile** polecenia.</span><span class="sxs-lookup"><span data-stu-id="b3a35-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-<span data-ttu-id="960d4-115">Spowoduje to wygenerowanie szablonu możliwości roli, który wygląda w następujący sposób:</span><span class="sxs-lookup"><span data-stu-id="960d4-115">This will generate a template role capability that looks like this:</span></span>
-```
+<span data-ttu-id="b3a35-115">Spowoduje to wygenerowanie szablonu możliwości roli, który wygląda w następujący sposób:</span><span class="sxs-lookup"><span data-stu-id="b3a35-115">This will generate a template role capability that looks like this:</span></span>
+
+```powershell
 @{
+    # ID used to uniquely identify this document
+    GUID = '9287a34f-3f0e-4fbe-9dd7-f1361ba9fd65'
 
-# ID used to uniquely identify this document
-GUID = '9287a34f-3f0e-4fbe-9dd7-f1361ba9fd65'
+    # Author of this document
+    Author = 'Administrator'
 
-# Author of this document
-Author = 'Administrator'
+    # Description of the functionality provided by these settings
+    # Description = ''
 
-# Description of the functionality provided by these settings
-# Description = ''
+    # Company associated with this document
+    CompanyName = 'Unknown'
 
-# Company associated with this document
-CompanyName = 'Unknown'
+    # Copyright statement for this document
+    Copyright = '(c) 2015 Administrator. All rights reserved.'
 
-# Copyright statement for this document
-Copyright = '(c) 2015 Administrator. All rights reserved.'
+    # Modules to import when applied to a session
+    # ModulesToImport = 'MyCustomModule', @{ ModuleName = 'MyCustomModule'; ModuleVersion = '1.0.0.0'; GUID = '4d30d5f0-cb16-4898-812d-f20a6c596bdf' }
 
-# Modules to import when applied to a session
-# ModulesToImport = 'MyCustomModule', @{ ModuleName = 'MyCustomModule'; ModuleVersion = '1.0.0.0'; GUID = '4d30d5f0-cb16-4898-812d-f20a6c596bdf' }
+    # Aliases to make visible when applied to a session
+    # VisibleAliases = 'Item1', 'Item2'
 
-# Aliases to make visible when applied to a session
-# VisibleAliases = 'Item1', 'Item2'
+    # Cmdlets to make visible when applied to a session
+    # VisibleCmdlets = 'Invoke-Cmdlet1', @{ Name = 'Invoke-Cmdlet2'; Parameters = @{ Name = 'Parameter1'; ValidateSet = 'Item1', 'Item2' }, @{ Name = 'Parameter2'; ValidatePattern = 'L*' } }
 
-# Cmdlets to make visible when applied to a session
-# VisibleCmdlets = 'Invoke-Cmdlet1', @{ Name = 'Invoke-Cmdlet2'; Parameters = @{ Name = 'Parameter1'; ValidateSet = 'Item1', 'Item2' }, @{ Name = 'Parameter2'; ValidatePattern = 'L*' } }
+    # Functions to make visible when applied to a session
+    # VisibleFunctions = 'Invoke-Function1', @{ Name = 'Invoke-Function2'; Parameters = @{ Name = 'Parameter1'; ValidateSet = 'Item1', 'Item2' }, @{ Name = 'Parameter2'; ValidatePattern = 'L*' } }
 
-# Functions to make visible when applied to a session
-# VisibleFunctions = 'Invoke-Function1', @{ Name = 'Invoke-Function2'; Parameters = @{ Name = 'Parameter1'; ValidateSet = 'Item1', 'Item2' }, @{ Name = 'Parameter2'; ValidatePattern = 'L*' } }
+    # External commands (scripts and applications) to make visible when applied to a session
+    # VisibleExternalCommands = 'Item1', 'Item2'
 
-# External commands (scripts and applications) to make visible when applied to a session
-# VisibleExternalCommands = 'Item1', 'Item2'
+    # Providers to make visible when applied to a session
+    # VisibleProviders = 'Item1', 'Item2'
 
-# Providers to make visible when applied to a session
-# VisibleProviders = 'Item1', 'Item2'
+    # Scripts to run when applied to a session
+    # ScriptsToProcess = 'C:\ConfigData\InitScript1.ps1', 'C:\ConfigData\InitScript2.ps1'
 
-# Scripts to run when applied to a session
-# ScriptsToProcess = 'C:\ConfigData\InitScript1.ps1', 'C:\ConfigData\InitScript2.ps1'
+    # Aliases to be defined when applied to a session
+    # AliasDefinitions = @{ Name = 'Alias1'; Value = 'Invoke-Alias1'}, @{ Name = 'Alias2'; Value = 'Invoke-Alias2'}
 
-# Aliases to be defined when applied to a session
-# AliasDefinitions = @{ Name = 'Alias1'; Value = 'Invoke-Alias1'}, @{ Name = 'Alias2'; Value = 'Invoke-Alias2'}
+    # Functions to define when applied to a session
+    # FunctionDefinitions = @{ Name = 'MyFunction'; ScriptBlock = { param($MyInput) $MyInput } }
 
-# Functions to define when applied to a session
-# FunctionDefinitions = @{ Name = 'MyFunction'; ScriptBlock = { param($MyInput) $MyInput } }
+    # Variables to define when applied to a session
+    # VariableDefinitions = @{ Name = 'Variable1'; Value = { 'Dynamic' + 'InitialValue' } }, @{ Name = 'Variable2'; Value = 'StaticInitialValue' }
 
-# Variables to define when applied to a session
-# VariableDefinitions = @{ Name = 'Variable1'; Value = { 'Dynamic' + 'InitialValue' } }, @{ Name = 'Variable2'; Value = 'StaticInitialValue' }
+    # Environment variables to define when applied to a session
+    # EnvironmentVariables = @{ Variable1 = 'Value1'; Variable2 = 'Value2' }
 
-# Environment variables to define when applied to a session
-# EnvironmentVariables = @{ Variable1 = 'Value1'; Variable2 = 'Value2' }
+    # Type files (.ps1xml) to load when applied to a session
+    # TypesToProcess = 'C:\ConfigData\MyTypes.ps1xml', 'C:\ConfigData\OtherTypes.ps1xml'
 
-# Type files (.ps1xml) to load when applied to a session
-# TypesToProcess = 'C:\ConfigData\MyTypes.ps1xml', 'C:\ConfigData\OtherTypes.ps1xml'
+    # Format files (.ps1xml) to load when applied to a session
+    # FormatsToProcess = 'C:\ConfigData\MyFormats.ps1xml', 'C:\ConfigData\OtherFormats.ps1xml'
 
-# Format files (.ps1xml) to load when applied to a session
-# FormatsToProcess = 'C:\ConfigData\MyFormats.ps1xml', 'C:\ConfigData\OtherFormats.ps1xml'
-
-# Assemblies to load when applied to a session
-# AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+    # Assemblies to load when applied to a session
+    # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
 ```
 
-<span data-ttu-id="960d4-116">Ma być używana przez konfigurację sesji JEA, możliwości roli muszą być zapisane jako prawidłowy modułu programu PowerShell w katalogu o nazwie "RoleCapabilities".</span><span class="sxs-lookup"><span data-stu-id="960d4-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="960d4-117">Moduł może zawierać wiele plików możliwości roli, jeśli to konieczne.</span><span class="sxs-lookup"><span data-stu-id="960d4-117">A module may have multiple role capability files, if desired.</span></span>
+<span data-ttu-id="b3a35-116">Ma być używana przez konfigurację sesji JEA, możliwości roli muszą być zapisane jako prawidłowy modułu programu PowerShell w katalogu o nazwie "RoleCapabilities".</span><span class="sxs-lookup"><span data-stu-id="b3a35-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named "RoleCapabilities".</span></span> <span data-ttu-id="b3a35-117">Moduł może zawierać wiele plików możliwości roli, jeśli to konieczne.</span><span class="sxs-lookup"><span data-stu-id="b3a35-117">A module may have multiple role capability files, if desired.</span></span>
 
-<span data-ttu-id="960d4-118">Aby rozpocząć, konfigurowanie, które poleceń cmdlet, funkcji, aliasy i skrypty, które użytkownik może uzyskać dostęp podczas nawiązywania połączenia z sesją usługi JEA, należy dodać własne reguły do pliku możliwości roli, zgodnie z komentarzem się z szablonami.</span><span class="sxs-lookup"><span data-stu-id="960d4-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="960d4-119">Aby dowiedzieć się więcej, w jaki skonfigurujesz możliwości roli, zapoznaj się z pełną [środowisko przewodnik](http://aka.ms/JEA).</span><span class="sxs-lookup"><span data-stu-id="960d4-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
+<span data-ttu-id="b3a35-118">Aby rozpocząć, konfigurowanie, które poleceń cmdlet, funkcji, aliasy i skrypty, które użytkownik może uzyskać dostęp podczas nawiązywania połączenia z sesją usługi JEA, należy dodać własne reguły do pliku możliwości roli, zgodnie z komentarzem się z szablonami.</span><span class="sxs-lookup"><span data-stu-id="b3a35-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="b3a35-119">Aby dowiedzieć się więcej, w jaki skonfigurujesz możliwości roli, zapoznaj się z pełną [środowisko przewodnik](http://aka.ms/JEA).</span><span class="sxs-lookup"><span data-stu-id="b3a35-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
 
-<span data-ttu-id="960d4-120">Na koniec, po zakończeniu dostosowanie konfigurację sesji i powiązanych możliwości roli zarejestrować tej konfiguracji sesji i utworzyć punkt końcowy, uruchamiając **Register-PSSessionConfiguration**.</span><span class="sxs-lookup"><span data-stu-id="960d4-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
+<span data-ttu-id="b3a35-120">Na koniec, po zakończeniu dostosowanie konfigurację sesji i powiązanych możliwości roli zarejestrować tej konfiguracji sesji i utworzyć punkt końcowy, uruchamiając `Register-PSSessionConfiguration`.</span><span class="sxs-lookup"><span data-stu-id="b3a35-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running `Register-PSSessionConfiguration`.</span></span>
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="960d4-121">Łączenie do punktu końcowego usługi JEA</span><span class="sxs-lookup"><span data-stu-id="960d4-121">Connect to a JEA Endpoint</span></span>
+## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="b3a35-121">Łączenie do punktu końcowego usługi JEA</span><span class="sxs-lookup"><span data-stu-id="b3a35-121">Connect to a JEA Endpoint</span></span>
 
-<span data-ttu-id="960d4-122">Nawiązywanie połączenia z punktem końcowym usługi JEA działa tak samo, nawiązywania połączenia z innych prac do punktu końcowego programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="960d4-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="960d4-123">Wystarczy podać nazwę punktu końcowego usługi JEA jako parametr "ConfigurationName" **New-PSSession**, **Invoke-Command**, lub **Enter-PSSession**.</span><span class="sxs-lookup"><span data-stu-id="960d4-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
+<span data-ttu-id="b3a35-122">Nawiązywanie połączenia z punktem końcowym usługi JEA działa tak samo, nawiązywania połączenia z innych prac do punktu końcowego programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="b3a35-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>
+<span data-ttu-id="b3a35-123">Wystarczy podać nazwę punktu końcowego usługi JEA jako parametr "ConfigurationName" **New-PSSession**, **Invoke-Command**, lub **Enter-PSSession**.</span><span class="sxs-lookup"><span data-stu-id="b3a35-123">You simply have to give your JEA endpoint name as the "ConfigurationName" parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 
-<span data-ttu-id="960d4-124">Po nawiązaniu połączenia z sesją usługi JEA, będzie ograniczona do uruchamiania poleceń na liście dozwolonych w możliwości roli, który ma dostęp do.</span><span class="sxs-lookup"><span data-stu-id="960d4-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="960d4-125">Jeśli spróbujesz uruchomić dowolne polecenie nie jest dozwolona dla roli użytkownika, wystąpi błąd.</span><span class="sxs-lookup"><span data-stu-id="960d4-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
+<span data-ttu-id="b3a35-124">Po nawiązaniu połączenia z sesją usługi JEA, będzie ograniczona do uruchamiania poleceń na liście dozwolonych w możliwości roli, który ma dostęp do.</span><span class="sxs-lookup"><span data-stu-id="b3a35-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="b3a35-125">Jeśli spróbujesz uruchomić dowolne polecenie nie jest dozwolona dla roli użytkownika, wystąpi błąd.</span><span class="sxs-lookup"><span data-stu-id="b3a35-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
