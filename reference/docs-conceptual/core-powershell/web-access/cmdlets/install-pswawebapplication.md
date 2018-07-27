@@ -3,18 +3,18 @@ ms.topic: reference
 keywords: polecenia cmdlet programu PowerShell
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189605"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268303"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-Konfiguruje aplikację sieci web programu Windows PowerShell® Web Access w usługach IIS.
+Umożliwia skonfigurowanie aplikacji sieci web programu Windows PowerShell Web Access w usługach IIS.
 
 ## <a name="syntax"></a>SKŁADNIA
 
@@ -25,13 +25,14 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>OPIS
 
-**Install-PswaWebApplication** polecenia cmdlet konfiguruje aplikację sieci web programu Windows PowerShell Web Access. To polecenie cmdlet instaluje aplikację sieci web, kojarzy go z witryny sieci web i opcjonalnie tworzy, używając certyfikatu SSL testu **useTestCertificate** parametru. Dla bezpieczeństwa przyczyny Administratorzy sieci web nie należy używać certyfikatu testowego dla środowisk produkcyjnych.
+**Install-PswaWebApplication** polecenie cmdlet umożliwia skonfigurowanie aplikacji sieci web programu Windows PowerShell Web Access.
+To polecenie cmdlet instaluje aplikację sieci web, kojarzy ją z witryny sieci web i opcjonalnie tworzy test SSL certyfikatu przy użyciu **useTestCertificate** parametru. Dla bezpieczeństwa przyczyny Administratorzy sieci web nie należy używać certyfikatu testowego w środowiskach produkcyjnych.
 
 ## <a name="parameters"></a>PARAMETRY
 
 ### <a name="-usetestcertificate"></a>-UseTestCertificate
 
-Określa, czy certyfikat testowy został utworzony. Jeśli ten parametr ma ustawioną wartość PRAWDA, to polecenie cmdlet tworzy certyfikat testowy i konfiguruje aplikację sieci web programu Windows PowerShell Web Access do używania certyfikatu dla żądania HTTPS. Jeśli ten parametr ma wartość false, następnie nie certyfikatu powiązania jest utworzone lub. Wartość tę należy ustawić na wartość false, jeśli inny certyfikat jest używany dla programu Windows PowerShell Web Access.
+Określa, czy certyfikat testowy został utworzony. Jeśli ten parametr ma wartość true, to polecenie cmdlet tworzy certyfikat testowy i konfiguruje aplikację sieci web programu Windows PowerShell Web Access, aby użyć certyfikatu dla żądania HTTPS. Jeśli ten parametr ma wartość false, następnie nie powiązania lub certyfikat zostanie utworzony. Wartość tę należy ustawić na wartość false, jeśli jest używany inny certyfikat, programu Windows PowerShell Web Access.
 
 |||
 |-|-|
@@ -42,7 +43,7 @@ Określa, czy certyfikat testowy został utworzony. Jeśli ten parametr ma ustaw
 | Akceptowanie danych wejściowych potoku?               | false                                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;ciągu&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
 Określa nazwę aplikacji sieci web. Jest on wyświetlany jako ostatnia część adres URL programu Windows PowerShell Web Access.
 
@@ -55,9 +56,9 @@ Określa nazwę aplikacji sieci web. Jest on wyświetlany jako ostatnia część
 | Akceptowanie danych wejściowych potoku?               | false                                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="-websitenameltstringgt"></a>-Podaną&lt;ciągu&gt;
+### <a name="-websitename"></a>-Podaną nazwą
 
-Określa nazwę witryny sieci Web serwer sieci Web (IIS), na których chcesz zainstalować tę aplikację sieci web programu Windows PowerShell Web Access.
+Określa nazwę witryny sieci Web serwer sieci Web (IIS), na którym chcesz zainstalować tę aplikację sieci web programu Windows PowerShell Web Access.
 
 |||
 |-|-|
@@ -93,10 +94,9 @@ Polecenie cmdlet nie zostało uruchomione.
 | Akceptowanie danych wejściowych potoku?               | false                                |
 | Akceptowanie symboli wieloznacznych?          | false                                |
 
-### <a name="ltcommonparametersgt"></a>&lt;Parametry&gt;
+### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-To polecenie cmdlet obsługuje typowe parametry:-Verbose,-Debug, - ErrorAction, - ErrorVariable,-OutBuffer i - OutVariable.
-Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry:-Verbose,-Debug, - ErrorAction, - ErrorVariable,-OutBuffer oraz - OutVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
 
 ## <a name="inputs"></a>DANE WEJŚCIOWE
 
@@ -110,7 +110,7 @@ To polecenie cmdlet nie generuje żadnych danych wyjściowych.
 
 ### <a name="example-1"></a>PRZYKŁAD 1
 
-Instalacja przy użyciu wartości domyślnych dla aplikacji sieci web PSWA **WebApplicationName** (*pswa*) i **podaną** (*domyślnej witryny sieci Web* ) parametrów.
+W tym przykładzie instaluje przy użyciu wartości domyślnych dla aplikacji sieci web PSWA **WebApplicationName** (*pswa*) i **podaną nazwą** (*domyślna witryna sieci Web* ) parametry.
 
 ```
 Install-PswaWebApplication
@@ -118,7 +118,7 @@ Install-PswaWebApplication
 
 ### <a name="example-2"></a>PRZYKŁAD 2
 
-Instalacja aplikacji sieci web PSWA z certyfikatu testowego i przy użyciu wartości domyślnych **WebApplicationName** i **podaną** parametrów.
+W tym przykładzie instaluje PSWA aplikacji sieci web przy użyciu certyfikatu testowego i przy użyciu wartości domyślnych dla **WebApplicationName** i **podaną nazwą** parametrów.
 
 ```
 Install-PswaWebApplication -UseTestCertificate

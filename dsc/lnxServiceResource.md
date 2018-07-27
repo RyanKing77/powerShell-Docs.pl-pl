@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxService
-ms.openlocfilehash: ab6544762862c9b2477e92f0d782b13afb96f2c9
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: fe8043995205649378725f2ab0a78e19313739c9
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093572"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267783"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC dla systemu Linux zasób nxService
 
@@ -27,7 +27,8 @@ nxService <string> #ResourceName
 ```
 
 ## <a name="properties"></a>Właściwości
-|  Właściwość |  Opis |
+
+| Właściwość | Opis |
 |---|---|
 | Nazwa| Nazwa usługi/demona do skonfigurowania.|
 | Kontroler| Typ kontrolera usługi do użycia podczas konfigurowania usługi.|

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093885"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267943"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Ujednolicony i spójny stan oraz reprezentacja stanu
 
@@ -15,40 +15,41 @@ Szereg ulepszeń zostały wprowadzone w tym wydaniu automatyzacji stanu LCM i st
 Reprezentacja stanu LCM i stan operacji dla DSC są poprawiony i ujednolicone zgodnie z następującymi zasadami:
 
 1. Notprocessed zasobów nie ma wpływu na stanu LCM i stan DSC.
-1. LCM zatrzymać dalsze zasoby przetwarzanie po napotkaniu zasobem, który żąda ponownego uruchomienia.
-1. Zasób, który żąda ponownego rozruchu nie jest w żądanym stanie do momentu ponownego uruchomienia rzeczywiście się dzieje.
-1. Po napotkaniu zasobem, który zakończy się niepowodzeniem, LCM utrzymuje dalsze przetwarzanie zasobów tak długo, jak nie są zależne od awarii jednej.
-1. Ogólny stan zwrócony przez `Get-DscConfigurationStatus` polecenie cmdlet jest zbiór super stanu wszystkich zasobów.
-1. Stan PendingReboot jest nadzbiorem PendingConfiguration stanu.
+2. LCM zatrzymać dalsze zasoby przetwarzanie po napotkaniu zasobem, który żąda ponownego uruchomienia.
+3. Zasób, który żąda ponownego rozruchu nie jest w żądanym stanie do momentu ponownego uruchomienia rzeczywiście się dzieje.
+4. Po napotkaniu zasobem, który zakończy się niepowodzeniem, LCM utrzymuje dalsze przetwarzanie zasobów tak długo, jak nie są zależne od awarii jednej.
+5. Ogólny stan zwrócony przez `Get-DscConfigurationStatus` polecenie cmdlet jest zbiór super stanu wszystkich zasobów.
+6. Stan PendingReboot jest nadzbiorem PendingConfiguration stanu.
 
-   W poniższej tabeli przedstawiono wynikowe stanu i statusu powiązane właściwości pod kilka typowych scenariuszy.
+W poniższej tabeli przedstawiono wynikowe stanu i statusu powiązane właściwości pod kilka typowych scenariuszy.
 
-   | Scenariusz                    | LCMState       | Stan | Wymagane ponowne uruchomienie komputera  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-   | S**^**                          | W stanie bezczynności                 | Success    | $false        | S                            | $null                          |
-   | F**^**                          | PendingConfiguration | Niepowodzenie    | $false        | $null                        | F                              |
-   | S, F                             | PendingConfiguration | Niepowodzenie    | $false        | S                            | F                              |
-   | F, S                             | PendingConfiguration | Niepowodzenie    | $false        | S                            | F                              |
-   | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Niepowodzenie    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-   | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Niepowodzenie    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-   | S, r                            | PendingReboot        | Success    | $true         | S                            | r                              |
-   | F, r                            | PendingReboot        | Niepowodzenie    | $true         | $null                        | F, r                           |
-   | r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
-   | r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
+| Scenariusz                        | LCMState             | Stan     | Wymagane ponowne uruchomienie komputera | ResourcesInDesiredState   | ResourcesNotInDesiredState |
+|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+| S**^**                          | W stanie bezczynności                 | Success    | $false        | S                            | $null                          |
+| F**^**                          | PendingConfiguration | Niepowodzenie    | $false        | $null                        | F                              |
+| S, F                             | PendingConfiguration | Niepowodzenie    | $false        | S                            | F                              |
+| F, S                             | PendingConfiguration | Niepowodzenie    | $false        | S                            | F                              |
+| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Niepowodzenie    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Niepowodzenie    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+| S, r                            | PendingReboot        | Success    | $true         | S                            | r                              |
+| F, r                            | PendingReboot        | Niepowodzenie    | $true         | $null                        | F, r                           |
+| r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
+| r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
-   ^
-   S<sub>i</sub>: szeregu zasobów, które zostały zastosowane pomyślnie F<sub>i</sub>: szeregu zasobów, które stosowane niepomyślnie zasób r: element, który wymaga ponownego uruchomienia \*
+- S<sub>i</sub>: szeregu zasobów, które zostały zastosowane pomyślnie
+- F<sub>i</sub>: szeregu zasobów, które stosowane niepomyślnie
+- r: z zasobem, który wymaga ponownego uruchomienia
 
-   ```powershell
-   $LCMState = (Get-DscLocalConfigurationManager).LCMState
-   $Status = (Get-DscConfigurationStatus).Status
+```powershell
+$LCMState = (Get-DscLocalConfigurationManager).LCMState
+$Status = (Get-DscConfigurationStatus).Status
 
-   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
 
-   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
-   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-   ```
+$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+```
 
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Rozszerzenie w poleceniu cmdlet Get-DscConfigurationStatus
 
@@ -56,32 +57,32 @@ Wprowadzono kilka ulepszeń `Get-DscConfigurationStatus` polecenia cmdlet w tej 
 
 ```powershell
 (Get-DscConfigurationStatus).StartDate | Format-List *
-DateTime : Friday, November 13, 2015 1:39:44 PM
-Date : 11/13/2015 12:00:00 AM
-Day : 13
-DayOfWeek : Friday
-DayOfYear : 317
-Hour : 13
-Kind : Local
+
+DateTime    : Friday, November 13, 2015 1:39:44 PM
+Date        : 11/13/2015 12:00:00 AM
+Day         : 13
+DayOfWeek   : Friday
+DayOfYear   : 317
+Hour        : 13
+Kind        : Local
 Millisecond : 886
-Minute : 39
-Month : 11
-Second : 44
-Ticks : 635830187848860000
-TimeOfDay : 13:39:44.8860000
-Year : 2015
+Minute      : 39
+Month       : 11
+Second      : 44
+Ticks       : 635830187848860000
+TimeOfDay   : 13:39:44.8860000
+Year        : 2015
 ```
 
-Poniżej znajduje się przykład, która zwraca wszystkie rekordy operacji DSC stało się tego samego dnia, tygodnia, jak już dziś.
+Poniższy przykład zwraca wszystkie rekordy operacji DSC, które miały miejsce tego samego dnia, tygodnia jako bieżący dzień.
 
 ```powershell
 (Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-Rejestruje operacje, które należy wprowadzać zmian w konfiguracji węzła (tj. tylko operacji odczytu) są eliminowane. W związku z tym `Test-DscConfiguration`, `Get-DscConfiguration` operacje są już zafałszowane za w zwracanych obiektów z `Get-DscConfigurationStatus` polecenia cmdlet.
-Rekordy operacja ustawienie konfiguracji metadanych jest dodawana do powrotu `Get-DscConfigurationStatus` polecenia cmdlet.
+Rejestruje operacje, które należy wprowadzać zmian w konfiguracji węzła (tj. tylko operacji odczytu) są eliminowane. W związku z tym `Test-DscConfiguration`, `Get-DscConfiguration` operacje są już zafałszowane za w zwracanych obiektów z `Get-DscConfigurationStatus` polecenia cmdlet. Rekordy operacja ustawienie konfiguracji metadanych jest dodawana do powrotu `Get-DscConfigurationStatus` polecenia cmdlet.
 
-Poniżej znajduje się przykład wyniku zwracanego z `Get-DscConfigurationStatus` — wszystkie polecenia cmdlet.
+Poniżej znajduje się przykład wyniku zwracanego z `Get-DscConfigurationStatus –All` polecenia cmdlet.
 
 ```output
 All configuration operations:

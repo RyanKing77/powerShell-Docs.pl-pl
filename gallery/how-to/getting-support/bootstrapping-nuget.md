@@ -3,24 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Uruchamianie NuGet
-ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094021"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267851"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Uruchomienie dostawcy NuGet i NuGet.exe
 
-NuGet.exe nie są objęte najnowszego dostawcę NuGet.
-Do publikowania w operacji modułu lub skryptu, modułu PowerShellGet wymaga binarne NuGet.exe pliku wykonywalnego.
-Dostawcy NuGet jest wymagany tylko dla wszystkich innych operacji, w tym *znaleźć*, *zainstalować*, *Zapisz*, i *odinstalować*.
-Moduł PowerShellGet zawiera logikę obsługującą albo połączone bootstrap dostawcy NuGet i NuGet.exe lub bootstrap dostawcę NuGet.
-W obu przypadkach powinien wystąpić tylko pojedynczą wiadomość szybkiego.
-Jeśli komputer nie jest połączony z Internetem, użytkownik lub administrator należy skopiować zaufanych wystąpienie dostawcy NuGet i/lub pliku NuGet.exe maszyny bez połączenia.
+NuGet.exe nie są objęte najnowszego dostawcę NuGet. Do publikowania w operacji modułu lub skryptu, modułu PowerShellGet wymaga binarne NuGet.exe pliku wykonywalnego. Dostawcy NuGet jest wymagany tylko dla wszystkich innych operacji, w tym *znaleźć*, *zainstalować*, *Zapisz*, i *odinstalować*.
+Moduł PowerShellGet zawiera logikę obsługującą albo połączone bootstrap dostawcy NuGet i NuGet.exe lub bootstrap dostawcę NuGet. W obu przypadkach powinien wystąpić tylko pojedynczą wiadomość szybkiego. Jeśli komputer nie jest połączony z Internetem, użytkownik lub administrator należy skopiować zaufanych wystąpienie dostawcy NuGet i/lub pliku NuGet.exe maszyny bez połączenia.
 
 > [!NOTE]
-> Począwszy od wersji 6 dostawcy NuGet znajduje się w instalacji programu PowerShell. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> Począwszy od wersji 6 dostawcy NuGet znajduje się w instalacji programu PowerShell.
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>Rozwiązywanie błędów podczas dostawcy NuGet nie został zainstalowany na komputerze, na którym jest Internet połączone
 
@@ -123,15 +119,11 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 
 ## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>Ręczne uruchamianie dostawcy NuGet na komputerze, który nie jest połączony z Internetem
 
-Procesy pokazano powyżej przyjęto założenie, komputer jest połączony z Internetem i mogą pobierać pliki z lokalizacji publicznej.
-Jeśli nie jest to możliwe, jedyną opcją jest uruchamiania na maszynie za pomocą procesów podanej powyżej, a następnie ręcznie skopiuj dostawcę z izolowanym węzłem proces zaufanego w trybie offline.
-Najbardziej typowy przypadek użycia, w tym scenariuszu to ona prywatną galerię do obsługi środowiska izolowanego.
+Procesy pokazano powyżej przyjęto założenie, komputer jest połączony z Internetem i mogą pobierać pliki z lokalizacji publicznej. Jeśli nie jest to możliwe, jedyną opcją jest uruchamiania na maszynie za pomocą procesów podanej powyżej, a następnie ręcznie skopiuj dostawcę z izolowanym węzłem proces zaufanego w trybie offline. Najbardziej typowy przypadek użycia, w tym scenariuszu to ona prywatną galerię do obsługi środowiska izolowanego.
 
 Po wykonaniu powyższych uruchomienie maszynę połączoną z Internetem, pliki dostawcy znajduje się w lokalizacji:
 
-```
-C:\Program Files\PackageManagement\ProviderAssemblies\
-```
+`C:\Program Files\PackageManagement\ProviderAssemblies\`
 
 Struktura folderów i plików dostawcy NuGet będzie (także z liczbą innej wersji):
 
@@ -147,11 +139,9 @@ Skopiuj te foldery i plik przy użyciu zaufanego proces maszyny w trybie offline
 
 Oprócz procesu ręczne uruchomienie dostawcy NuGet, jeśli maszyna będzie używana do publikowania modułów i skryptów za pomocą galerii prywatnej `Publish-Module` lub `Publish-Script` poleceń cmdlet programu NuGet.exe binarny plik wykonywalny będzie wymagane.
 
-Najbardziej typowy przypadek użycia, w tym scenariuszu to ona prywatną galerię do obsługi środowiska izolowanego.
-Istnieją dwa sposoby uzyskania pliku NuGet.exe.
+Najbardziej typowy przypadek użycia, w tym scenariuszu to ona prywatną galerię do obsługi środowiska izolowanego. Istnieją dwa sposoby uzyskania pliku NuGet.exe.
 
-Jedną z opcji jest uruchomienie na komputerze, na którym jest połączonych z Internetem, a następnie skopiuj pliki do przy użyciu zaufanym procesie maszyny w trybie offline.
-Po uruchamianie maszynę połączoną Internet, NuGet.exe binary będą znajdować się w jednym z dwóch folderów:
+Jedną z opcji jest uruchomienie na komputerze, na którym jest połączonych z Internetem, a następnie skopiuj pliki do przy użyciu zaufanym procesie maszyny w trybie offline. Po uruchamianie maszynę połączoną Internet, NuGet.exe binary będą znajdować się w jednym z dwóch folderów:
 
 Jeśli `Publish-Module` lub `Publish-Script` polecenia cmdlet zostały wykonane z podwyższonym poziomem uprawnień (dla administratora):
 
@@ -165,9 +155,7 @@ Jeśli polecenia cmdlet zostały wykonane jako użytkownik bez uprawnień z podw
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Drugą opcją jest pobranie NuGet.exe w witrynie NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) po wybraniu wersji NugGet dla maszyn w środowisku produkcyjnym, upewnij się, że jest późniejsza niż 2.8.5.208 i identyfikowania wersji, które zostały oznaczone " Zaleca się".
-Pamiętaj, aby odblokować plik, jeśli został on pobrany przy użyciu przeglądarki.
-Można to wykonać za pomocą `Unblock-File` polecenia cmdlet.
+Drugą opcją jest pobranie NuGet.exe w witrynie NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) po wybraniu wersji NugGet dla maszyn w środowisku produkcyjnym, upewnij się, że jest późniejsza niż 2.8.5.208 i identyfikowania wersji, które zostały oznaczone " Zaleca się". Pamiętaj, aby odblokować plik, jeśli został on pobrany przy użyciu przeglądarki. Można to wykonać za pomocą `Unblock-File` polecenia cmdlet.
 
 W obu przypadkach można skopiować do dowolnej lokalizacji w pliku NuGet.exe `$env:path`, ale standardowe lokalizacje:
 

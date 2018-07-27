@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC dziennika
-ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 50fd6cd31ba426108830fcf124a767318060a95d
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093480"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268436"
 ---
 # <a name="dsc-log-resource"></a>Zasób DSC dziennika
 
-> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 __Dziennika__ zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm aby zapisywać komunikaty w dzienniku zdarzeń Microsoft-Windows-Desired State Configuration / analityczne.
 
@@ -26,14 +26,14 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> Domyślnie dzienniki operacyjne dla DSC są włączone. Zanim dziennik analityczny będą dostępne lub widoczne, musi być włączona. Aby uzyskać więcej informacji, zobacz [których dzienniki zdarzeń DSC?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
+> Domyślnie dzienniki operacyjne dla DSC są włączone. Zanim dziennik analityczny będą dostępne lub widoczne, musi być włączona. Aby uzyskać więcej informacji, zobacz [których dzienniki zdarzeń DSC?](troubleshooting.md#where-are-dsc-event-logs).
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość  |  Opis   |
-|---|---|
+| Właściwość | Opis |
+| --- | --- |
 | Wiadomość| Wskazuje komunikat, który chcesz zapisać w dzienniku zdarzeń Microsoft-Windows-Desired stan konfiguracji/analityczne.|
-| DependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed zapisaniem pobiera ten komunikat dziennika. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = '[ResourceType]ResourceName'`.|
+| DependsOn | Wskazuje, że konfiguracja inny zasób należy uruchomić przed zapisaniem pobiera ten komunikat dziennika. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Przykład
 

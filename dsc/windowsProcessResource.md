@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób Windowsprocess DSC
-ms.openlocfilehash: 3c4e6d8377c3dcbf4f1db87a603d5483b8caafb8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: cee93ab283ded407d6e032161125aa6d6ac98827
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093739"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267961"
 ---
 # <a name="dsc-windowsprocess-resource"></a>Zasób Windowsprocess DSC
 
-> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 **WindowsProcess** zasobów w Windows PowerShell Desired State Configuration (DSC) udostępnia mechanizm do konfigurowania procesów na węzeł docelowy.
 
@@ -34,13 +34,13 @@ WindowsProcess [string] #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość  |  Opis   |
-|---|---|
+| Właściwość | Opis |
+| --- | --- |
 | Argumenty| Wskazuje ciąg argumenty do przekazania do procesu jako-to. Jeśli musisz przekazać argumenty kilka umieściliśmy je w tym ciągu.|
 | Ścieżka| Ścieżka do pliku wykonywalnego procesu. Jeśli nazwa pliku wykonywalnego (nie w pełni kwalifikowana ścieżka), zasobu DSC wyszuka środowiska **ścieżki** zmiennej (`$env:Path`) można znaleźć pliku wykonywalnego. Jeśli wartość tej właściwości jest w pełni kwalifikowaną ścieżkę, DSC nie będzie używać **ścieżki** zmiennej środowiskowej, aby znaleźć plik i zgłosi błąd, jeśli ścieżka nie istnieje. Ścieżki względne są niedozwolone.|
 | Poświadczenie| Określa poświadczenia do uruchamiania procesu.|
 | Upewnij się| Wskazuje, czy Proces istnieje. Ustaw tę właściwość "Present", aby upewnić się, że istnieje proces. W przeciwnym wypadku ustaw ją na "Brak". Wartość domyślna to "Istnieje".|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości to "DependsOn ="[ ResourceName ResourceType]"".|
+| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"` .|
 | StandardErrorPath| Określa ścieżkę katalogu do zapisu błędu standardowego. Wszystkie istniejące pliki zostaną zastąpione.|
 | StandardInputPath| Wskazuje standardowy lokalizację danych wejściowych.|
 | StandardOutputPath| Wskazuje lokalizację do zapisania wyjścia standardowego. Wszystkie istniejące pliki zostaną zastąpione.|

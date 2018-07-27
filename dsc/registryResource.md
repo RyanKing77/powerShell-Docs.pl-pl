@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób rejestru DSC
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093589"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267725"
 ---
 # <a name="dsc-registry-resource"></a>Zasób rejestru DSC
 
-> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 **Rejestru** zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania kluczy rejestru i wartości w węźle docelowym.
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość  |  Opis   |
-|---|---|
+| Właściwość | Opis |
+| --- | --- |
 | Klawisz| Wskazuje ścieżkę klucza rejestru, dla którego chcesz zapewnić określonego stanu. Ta ścieżka musi zawierać gałęzi.|
 | valueName| Wskazuje nazwę wartości rejestru. Aby dodać lub usunąć klucz rejestru, należy określić tę właściwość jako ciąg pusty, bez wcześniejszego określania ValueType lub Dane_wartości. Aby zmodyfikować lub usunąć domyślną wartością klucza rejestru, należy określić tę właściwość jako ciąg pusty podczas również określenie ValueType lub Dane_wartości.|
 | Upewnij się| Wskazuje, czy istnieją kluczy i wartości. Aby upewnić się, że tak, należy ustawić tę właściwość na "Obecny". Aby upewnić się, że nie istnieją, należy ustawić właściwość na "Brak". Wartość domyślna to "Istnieje".|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> Zmiany ustawień rejestru **HKEY\_bieżącego\_użytkownika** gałęzi wymaga, że konfiguracja jest uruchamiany przy użyciu poświadczeń użytkownika, a nie jako system. Możesz użyć **PsDscRunAsCredential** właściwości w celu określenia poświadczeń użytkownika do konfiguracji. Aby uzyskać przykład, zobacz [systemem DSC przy użyciu poświadczeń użytkownika](runAsUser.md).
+> Zmiany ustawień rejestru `HKEY\CURRENT\USER` gałęzi wymaga, że konfiguracja jest uruchamiany przy użyciu poświadczeń użytkownika, a nie jako system. Możesz użyć **PsDscRunAsCredential** właściwości w celu określenia poświadczeń użytkownika do konfiguracji. Aby uzyskać przykład, zobacz [systemem DSC przy użyciu poświadczeń użytkownika](runAsUser.md).

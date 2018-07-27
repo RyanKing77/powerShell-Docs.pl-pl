@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Wersje wstępne skryptów
-ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093852"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268470"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Wersje wstępne skryptów
 
@@ -45,12 +45,12 @@ Aby użyć sufiks wersji wstępnej, ciąg wersji musi spełniać następujące w
 - Sufiks wersji wstępnej może być określona tylko, gdy wersja jest 3 segmenty dla główna.pomocnicza.kompilacja.
   Jest to zgodne z 1.0.0 SemVer
 - Wstępna sufiks jest to ciąg, który rozpoczyna się łącznikiem i może zawierać znaki alfanumeryczne ASCII [0-9A-Za - z-]
-- Tylko ciągi wstępna wersja 1.0.0 SemVer są obsługiwane w tej chwili więc sufiks wersji wstępnej __nie__ zawierać albo okres lub + [. +], mogą SemVer w wersji 2.0
+- Tylko ciągi wstępna wersja 1.0.0 SemVer są obsługiwane w tej chwili więc sufiks wersji wstępnej **nie** zawierać albo okres lub + [. +], mogą SemVer w wersji 2.0
 - Przykłady obsługiwanych ciągów PrereleaseString:-alfa, - 1,-BETA, - update20171020
 
-__Wpływ wersji wstępnej w folderach instalacji i kolejność sortowania__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Wpływ wersji wstępnej w folderach instalacji i kolejność sortowania
 
-Kolejność sortowania zmienia się podczas korzystania z wersji wstępnej, co jest ważne w przypadku publikowania w galerii programu PowerShell, a podczas instalowania skryptów przy użyciu poleceń modułu PowerShellGet. Jeśli dwa skrypty w wersji z numerem wersji istnieją, kolejność sortowania jest oparty na fragment ciągu, postępując łącznika. Dlatego 2.5.0-alpha wersji jest mniejszy niż 2.5.0-beta, która jest mniejsza niż 2.5.0-gamma. Jeśli dwa skrypty mają ten sam numer wersji, i tylko jeden PrereleaseString, skrypt __bez__ sufiks wersji wstępnej zakłada, że wersja gotowe do produkcji i będą sortowane jako nowszej wersji niż wersja wstępna Wersja. Na przykład podczas porównywania zwalnia 2.5.0 i 2.5.0-beta, 2.5.0 wersji będą uznawane za większa niż dwa.
+Kolejność sortowania zmienia się podczas korzystania z wersji wstępnej, co jest ważne w przypadku publikowania w galerii programu PowerShell, a podczas instalowania skryptów przy użyciu poleceń modułu PowerShellGet. Jeśli dwa skrypty w wersji z numerem wersji istnieją, kolejność sortowania jest oparty na fragment ciągu, postępując łącznika. Dlatego 2.5.0-alpha wersji jest mniejszy niż 2.5.0-beta, która jest mniejsza niż 2.5.0-gamma. Jeśli dwa skrypty mają ten sam numer wersji, i tylko jeden PrereleaseString, skrypt **bez** sufiks wersji wstępnej zakłada, że wersja gotowe do produkcji i będą sortowane jako nowszej wersji niż wersja wstępna Wersja. Na przykład podczas porównywania zwalnia 2.5.0 i 2.5.0-beta, 2.5.0 wersji będą uznawane za większa niż dwa.
 
 Publikowanie w galerii programu PowerShell, domyślnie wersja skryptu publikacji musi mieć nieco większa niż wersja wszystkie wcześniej publikowane w galerii programu PowerShell. Wydawca może aktualizować 2.5.0-alpha wersji 2.5.0-beta lub z 2.5.0 (sufiksem nie wstępnej).
 
@@ -61,7 +61,7 @@ Korzystające z elementów wersji wstępnej, za pomocą skryptu-PowerShellGet Fi
 Jedynym wyjątkiem od tej w poleceniach skryptu PowerShellGet są Get InstalledScript i czasami z skrypt dezinstalacji.
 
 - Get-InstalledScript zawsze automatycznie wyświetli informacje wstępne w ciągu wersji Jeśli jest obecny.
-- Odinstaluj skryptu domyślnie odinstaluje najnowszej wersji skryptu, jeśli __nie została zainstalowana wersja__ jest określony. To zachowanie nie zmienił się. Jednak jeśli jest to wersja wstępna produktu jest określony, przy użyciu - RequiredVersion, - AllowPrerelease jest wymagana.
+- Odinstaluj skryptu domyślnie odinstaluje najnowszej wersji skryptu, jeśli **nie została zainstalowana wersja** jest określony. To zachowanie nie zmienił się. Jednakże jeśli jest to wersja wstępna produktu jest określony, przy użyciu `-RequiredVersion`, `-AllowPrerelease` będą wymagane.
 
 ## <a name="examples"></a>Przykłady
 
@@ -83,13 +83,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

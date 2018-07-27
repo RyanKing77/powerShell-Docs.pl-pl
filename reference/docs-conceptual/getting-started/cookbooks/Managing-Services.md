@@ -3,22 +3,22 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie usługami
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094174"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268079"
 ---
 # <a name="managing-services"></a>Zarządzanie usługami
 
-Ma osiem rdzeni usługi poleceń cmdlet przeznaczone dla różnych zadań usługi. Przyjrzymy się tylko wyświetlanie i zmiana w stanie uruchomionym dla usługi, ale można uzyskać listę poleceń cmdlet usługi za pomocą **Get-Help \*— usługa**, oraz informacje dotyczące każdego polecenia cmdlet usługi można znaleźć przy użyciu  **Get-Help \<nazwa polecenia Cmdlet\>**, takich jak **Get-Help nową usługę**.
+Ma osiem rdzeni usługi poleceń cmdlet przeznaczone dla różnych zadań usługi. Przyjrzymy się tylko wyświetlanie i zmiana w stanie uruchomionym dla usługi, ale można uzyskać listę poleceń cmdlet usługi za pomocą `Get-Help \*-Service`, oraz informacje dotyczące każdego polecenia cmdlet usługi można znaleźć przy użyciu `Get-Help <Cmdlet-Name>`, takich jak `Get-Help New-Service`.
 
 ## <a name="getting-services"></a>Uzyskiwanie usługi
 
-Można uzyskać usługi na komputerze lokalnym lub zdalnym za pomocą **Get-Service** polecenia cmdlet. Podobnie jak w przypadku **Get-Process**przy użyciu **Get-Service** polecenie bez parametrów zwraca wszystkie usługi. Możesz filtrować według nazwy, nawet przy użyciu gwiazdki jako symbolu wieloznacznego:
+Można uzyskać usługi na komputerze lokalnym lub zdalnym za pomocą `Get-Service` polecenia cmdlet. Podobnie jak w przypadku `Get-Process`przy użyciu `Get-Service` polecenie bez parametrów zwraca wszystkie usługi. Możesz filtrować według nazwy, nawet przy użyciu gwiazdki jako symbolu wieloznacznego:
 
-```
+```powershell
 PS> Get-Service -Name se*
 
 Status   Name               DisplayName
@@ -30,7 +30,7 @@ Stopped  ServiceLayer       ServiceLayer
 
 Ponieważ nie zawsze jest oczywiste co to jest to prawdziwa nazwa usługi, może się okazać potrzebne do znalezienia usługi, według nazwy wyświetlanej. Można to zrobić przy użyciu określonej nazwy, przy użyciu symboli wieloznacznych lub listę nazw wyświetlanych:
 
-```
+```powershell
 PS> Get-Service -DisplayName se*
 
 Status   Name               DisplayName
@@ -63,7 +63,7 @@ Te parametry są wyświetlane tylko wartości DependentServices i ServicesDepend
 
 Następujące polecenie pobiera usługi, których wymaga usługa LanmanWorkstation.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
 
 Status   Name               DisplayName
@@ -76,7 +76,7 @@ Running  NSI                Network Store Interface Service
 
 Następujące polecenie pobiera usług, które wymagają usługa LanmanWorkstation.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
 
 Status   Name               DisplayName
@@ -94,6 +94,7 @@ Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Zatrzymywanie, uruchamianie, wstrzymywanie i ponowne uruchamianie usług
+
 Wszystkie polecenia cmdlet usługi mają tego samego formularza ogólne. Usługi można określić nazwy pospolitej lub nazwę wyświetlaną i list i symboli wieloznacznych jako wartości. Aby zatrzymać buforu wydruku, należy użyć:
 
 ```powershell
@@ -112,9 +113,9 @@ Aby wstrzymać bufor wydruku, należy użyć:
 Suspend-Service -Name spooler
 ```
 
-**Restart-Service** polecenia cmdlet działa w taki sam sposób jak inne polecenia cmdlet usługi, ale w tekście objaśniono niektóre przykłady bardziej złożonych dla niego. Najprostsza używany należy określić nazwę usługi:
+`Restart-Service` Polecenia cmdlet działa w taki sam sposób jak inne polecenia cmdlet usługi, ale w tekście objaśniono niektóre przykłady bardziej złożonych dla niego. Najprostsza używany należy określić nazwę usługi:
 
-```
+```powershell
 PS> Restart-Service -Name spooler
 
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
@@ -126,7 +127,7 @@ Zauważysz, Pobierz powtarzanych komunikat ostrzegawczy informujący o bufor wyd
 
 Jeśli chcesz ponownie uruchomić wiele usług, możesz pobrać listę usług, filtrować je, a następnie wykonaj ponowne uruchomienie:
 
-```
+```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
 
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
@@ -147,9 +148,10 @@ Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 
 ## <a name="setting-service-properties"></a>Ustawianie właściwości usługi
 
-Polecenie cmdlet Set-Service zmienia właściwości usługi na komputerze lokalnym lub zdalnym. Ponieważ stan usługi jest właściwością, umożliwia to polecenie cmdlet uruchamianie, zatrzymywanie i wstrzymania usługi. Polecenia cmdlet Set-Service ma również parametr StartupType, który pozwala zmienić typ uruchamiania usługi.
+`Set-Service` Polecenie cmdlet zmienia właściwości usługi na komputerze lokalnym lub zdalnym. Ponieważ stan usługi jest właściwością, umożliwia to polecenie cmdlet uruchamianie, zatrzymywanie i wstrzymania usługi.
+Polecenia cmdlet Set-Service ma również parametr StartupType, który pozwala zmienić typ uruchamiania usługi.
 
-Aby użyć zestawu usługi w systemach Windows Vista i nowszych wersjach systemu Windows, otwórz środowiska Windows PowerShell przy użyciu opcji "Uruchom jako administrator".
+Aby użyć `Set-Service` na Windows Vista i nowszych wersjach systemu Windows, Otwórz program Windows PowerShell przy użyciu opcji "Uruchom jako administrator".
 
 Aby uzyskać więcej informacji, zobacz [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 

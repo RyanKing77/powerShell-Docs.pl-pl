@@ -3,18 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Skrypt za pomocą niezgodne wersje programu PowerShell
-ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093664"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267817"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skrypt za pomocą niezgodne wersje programu PowerShell
 
 Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które charakteryzują się różnymi zestawami funkcji i zgodnością z różnymi platformami.
 
 - **Wersja Desktop:** jest oparta na programie .NET Framework i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w pełnych wersjach systemu Windows, takich jak instalacja Podstawowe funkcje serwera i system Windows dla komputerów stacjonarnych.
+
 - **Wersja Core:** jest oparta na module .NET Core i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w ograniczonych wersjach systemu Windows, takich jak system Nano Server i Windows IoT.
 
 Informacje o działającej wersji programu PowerShell można znaleźć we właściwości PSEdition tabeli $PSVersionTable.
@@ -34,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-Autorzy skryptów mogą uniemożliwić wykonywanie skryptu, jeśli nie jest on uruchamiany w zgodnej wersji programu PowerShell, przy użyciu parametru PSEdition w instrukcji #requires.
+Autorzy skryptów mogą uniemożliwić wykonywanie, chyba że jest on uruchamiany w zgodnej wersji programu PowerShell przy użyciu parametru PSEdition w skrypcie `#requires` instrukcji.
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core

@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób PackageManagement DSC
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892505"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268096"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Zasób PackageManagement DSC
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość  |  Opis   |
-|---|---|
+| Właściwość | Opis |
+| --- | --- |
 | Nazwa| Określa nazwę pakietu do zainstalowania lub odinstalowania.|
 | AdditionalParameters| Dostawca hashtable określonych parametrów, które zostaną przekazane do `Get-Package -AdditionalArguments`. Na przykład dla dostawcy NuGet można przekazywać dodatkowych parametrów, takich jak Ścieżka_docelowa.|
 | Upewnij się| Określa, czy pakiet jest zainstalowane lub odinstalowane.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>Dodatkowe parametry
 
 W poniższej tabeli wymieniono opcje dla właściwości AdditionalParameters.
-|  Parametr  | Opis   |
-|---|---|
+
+| Parametr | Opis |
+| --- | --- |
 | Ścieżka_docelowa| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa lokalizację pliku, którego pakiet do zainstalowania.|
-| InstallationPolicy| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa, czy ufasz źródłu pakietu. Jeden z: "Niezaufanych", "Zaufanych".|
+| InstallationPolicy| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa, czy ufasz źródłu pakietu. Jeden z: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Przykład
 

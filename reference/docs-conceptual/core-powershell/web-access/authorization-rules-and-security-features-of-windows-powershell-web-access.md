@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
-ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 07b85a3c7bced58b9ee8db401f0339ba6011bc96
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094249"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268351"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
 
@@ -19,21 +19,20 @@ Program Windows PowerShell Web Access w systemie Windows Server 2012 R2 i Window
 
 ## <a name="configuring-authorization-rules-and-site-security"></a>Konfiguracja reguł autoryzacji i zabezpieczeń lokacji
 
-Po zainstalowaniu programu Windows PowerShell Web Access, a brama jest skonfigurowana, użytkownicy mogą otwierać strony logowania w przeglądarce, ale nie można zalogować do momentu administratora programu Windows PowerShell Web Access jawnego przydzielenia im dostępu.
-Kontrola dostępu "Windows PowerShell Web Access" odbywa się przy użyciu zestawu poleceń cmdlet Windows PowerShell opisanych w poniższej tabeli. Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi. Zobacz [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md).
+Po zainstalowaniu programu Windows PowerShell Web Access, a brama jest skonfigurowana, użytkownicy mogą otwierać strony logowania w przeglądarce, ale nie można zalogować do momentu administratora programu Windows PowerShell Web Access jawnego przydzielenia im dostępu. Kontrola dostępu "Windows PowerShell Web Access" odbywa się przy użyciu zestawu poleceń cmdlet Windows PowerShell opisanych w poniższej tabeli. Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi.
+Zobacz [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md).
 
 Administratorzy mogą definiować `{0-n}` reguł uwierzytelniania dla programu Windows PowerShell Web Access. Domyślne zabezpieczenia mają charakter ograniczenia, a nie zezwolenia; zero reguł uwierzytelniania oznacza, że żaden użytkownik nie ma dostępu do żadnej funkcji.
 
-[Polecenia Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) i [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) w systemie Windows Server 2012 R2 zawiera parametr Credential, która pozwala na dodawanie i testowanie reguł autoryzacji programu Windows PowerShell Web Access z lokalizacji zdalnej komputerze lub w obrębie aktywnej sesji programu Windows PowerShell Web Access. Jak z innymi poleceniami cmdlet programu Windows PowerShell, która ma parametr Credential, można określić obiekt PSCredential jako wartość parametru. Aby utworzyć obiekt PSCredential zawierający poświadczenia, które mają być przekazywane do komputera zdalnego, uruchom [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) polecenia cmdlet.
+[Polecenia Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) i [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) w systemie Windows Server 2012 R2 zawiera parametr Credential, która pozwala na dodawanie i testowanie reguł autoryzacji programu Windows PowerShell Web Access z lokalizacji zdalnej komputerze lub w obrębie aktywnej sesji programu Windows PowerShell Web Access. Jak z innymi poleceniami cmdlet programu Windows PowerShell, która ma parametr Credential, można określić obiekt PSCredential jako wartość parametru. Aby utworzyć obiekt PSCredential zawierający poświadczenia, które mają być przekazywane do komputera zdalnego, uruchom [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) polecenia cmdlet.
 
-Reguły uwierzytelniania programu Windows PowerShell Web Access to reguły określające elementy dozwolone. Każda reguła stanowi definicję dozwolonego połączenia między użytkownikami, komputerami docelowymi i określonego PowerShellÂ Windows [konfiguracje sesji](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (określane również jako punkty końcowe lub _obszary działania_) na wskazanych komputerach docelowych.
+Reguły uwierzytelniania programu Windows PowerShell Web Access to reguły określające elementy dozwolone. Każda reguła stanowi definicję dozwolonego połączenia między użytkownikami, komputerami docelowymi i określonego PowerShellÂ Windows [konfiguracje sesji](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (określane również jako punkty końcowe lub _obszary działania_) na wskazanych komputerach docelowych.
 Aby uzyskać informacje na **obszary działania** zobacz [początku użyj programu PowerShell z obszary działania](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
-> **Uwaga dotycząca zabezpieczeń** użytkownik potrzebuje tylko jedna reguła jest prawdziwa uzyskiwanie dostępu. Jeśli użytkownik otrzyma dostęp do jednego komputera z pełną obsługą języka lub dostęp tylko do polecenia cmdlet zarządzania zdalnego programu Windows PowerShell, za pomocą konsoli sieci web użytkownik może zalogować się (lub przeskoku) na innych komputerach, które są połączone z pierwszym komputerem docelowym. Najbezpieczniejszą metodą, aby skonfigurować program Windows PowerShell Web Access jest zezwolić użytkownikom na dostęp tylko do ograniczonych konfiguracji sesji, umożliwiających im realizację określonych zadań, które muszą zwykle wykonać zdalnie.
+> Użytkownik otrzyma dostęp, jeśli co najmniej jedna reguła jest prawdziwa. Jeśli użytkownik otrzyma dostęp do jednego komputera z pełną obsługą języka lub dostęp tylko do polecenia cmdlet zarządzania zdalnego programu Windows PowerShell, za pomocą konsoli sieci web użytkownik może zalogować się (lub przeskoku) na innych komputerach, które są połączone z pierwszym komputerem docelowym. Najbezpieczniejszą metodą, aby skonfigurować program Windows PowerShell Web Access jest zezwolić użytkownikom na dostęp tylko do ograniczonych konfiguracji sesji, umożliwiających im realizację określonych zadań, które muszą zwykle wykonać zdalnie.
 
-Polecenia cmdlet, do którego odwołuje się [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md) Zezwalaj, aby utworzyć zestaw reguł dostępu, które są używane do autoryzacji użytkownika w bramie Windows PowerShell Web Access.
-Reguły te różnią się od list kontroli dostępu na komputerze docelowym i zapewniają dodatkową warstwę zabezpieczeń dla dostępu przez sieć Web. Następna sekcja zawiera bardziej szczegółowe informacje na temat zabezpieczeń.
+Polecenia cmdlet, do którego odwołuje się [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md) Zezwalaj, aby utworzyć zestaw reguł dostępu, które są używane do autoryzacji użytkownika w bramie Windows PowerShell Web Access. Reguły te różnią się od list kontroli dostępu na komputerze docelowym i zapewniają dodatkową warstwę zabezpieczeń dla dostępu przez sieć Web. Następna sekcja zawiera bardziej szczegółowe informacje na temat zabezpieczeń.
 
 Jeśli użytkownicy nie przejdą którejkolwiek z poprzednich warstw zabezpieczeń, otrzymają komunikat ogólny "odmowa dostępu" w oknie przeglądarki. Szczegóły zabezpieczeń są rejestrowane na serwerze bramy, ale użytkownicy końcowi nie otrzymują informacji na temat liczby warstw zabezpieczeń, przez które przeszli, ani też warstwy, w której wystąpił błąd logowania lub uwierzytelniania.
 
@@ -42,6 +41,7 @@ Aby uzyskać więcej informacji na temat konfigurowania reguł autoryzacji, zoba
 ### <a name="security"></a>Bezpieczeństwo
 
 Model zabezpieczeń Windows PowerShell Web Access znajdują się cztery warstwy między użytkownikiem końcowym konsoli internetowej a komputerem docelowym. Windows PowerShell Web Access, Administratorzy mogą dodawać warstwy zabezpieczeń za pomocą dodatkowych czynności konfiguracyjnych, w konsoli Menedżera usług IIS. Aby uzyskać więcej informacji na temat zabezpieczania witryn internetowych w konsoli Menedżera usług IIS, zobacz [Konfigurowanie zabezpieczeń serwera sieci Web (IIS7)](https://technet.microsoft.com/library/cc731278).
+
 Aby uzyskać więcej informacji na temat usług IIS najlepsze rozwiązania i zapobieganie atakom typu "odmowa usługi", zobacz [najlepsze rozwiązania do zapobiegania DoS/atakom typu odmowa usługi](https://technet.microsoft.com/library/cc750213).
 Administrator można kupić i zainstalować oprogramowanie uwierzytelniania dodatkowego handlu detalicznego.
 
@@ -60,14 +60,14 @@ Szczegółowe informacje na temat poszczególnych warstw można znaleźć w nast
 
 Windows PowerShell Web Access użytkownicy muszą zawsze podawać nazwę użytkownika i hasło do uwierzytelniania kont w bramie. Jednak administratorzy programu Windows PowerShell Web Access można również włączyć opcjonalne uwierzytelnianie certyfikatu klienta, lub wyłączyć zobacz [Instalowanie i używanie programu windows powershell web access](install-and-use-windows-powershell-web-access.md) umożliwiające certyfikat testowy i nowszych, jak skonfigurować oryginalnego certyfikatu).
 
-Opcjonalna funkcja certyfikatu klienta, będąca częścią konfiguracji serwera sieci Web (IIS), wymaga od użytkowników końcowych posiadania, oprócz nazwy użytkownika i hasła, prawidłowego certyfikatu klienta. Po włączeniu warstwy certyfikatu klienta, strony logowania programu Windows PowerShell Web Access monit o dostarczenie prawidłowego przed wyznaczeniem poświadczeń logowania.
-Funkcja uwierzytelniania certyfikatu klienta automatycznie sprawdza, czy certyfikat klienta istnieje. Jeśli certyfikat nie zostanie znaleziony, programu Windows PowerShell Web Access informuje użytkowników, dzięki czemu mogą podać certyfikat. Jeśli zostanie znaleziony prawidłowy certyfikat klienta, programu Windows PowerShell Web Access otwiera stronę logowania dla użytkowników zapewnić ich nazwy użytkownika i hasła.
+Opcjonalna funkcja certyfikatu klienta, będąca częścią konfiguracji serwera sieci Web (IIS), wymaga od użytkowników końcowych posiadania, oprócz nazwy użytkownika i hasła, prawidłowego certyfikatu klienta. Po włączeniu warstwy certyfikatu klienta, strony logowania programu Windows PowerShell Web Access monit o dostarczenie prawidłowego przed wyznaczeniem poświadczeń logowania. Funkcja uwierzytelniania certyfikatu klienta automatycznie sprawdza, czy certyfikat klienta istnieje. Jeśli certyfikat nie zostanie znaleziony, programu Windows PowerShell Web Access informuje użytkowników, dzięki czemu mogą podać certyfikat. Jeśli zostanie znaleziony prawidłowy certyfikat klienta, programu Windows PowerShell Web Access otwiera stronę logowania dla użytkowników zapewnić ich nazwy użytkownika i hasła.
 
-Jest jednym z przykładów dodatkowych ustawień zabezpieczeń, które są oferowane przez serwer sieci Web usług IIS. Aby uzyskać więcej informacji o innych funkcjach zabezpieczeń usług IIS, zobacz [Konfigurowanie zabezpieczeń serwera sieci Web (IIS 7)](https://technet.microsoft.com/library/cc731278)
+Jest jednym z przykładów dodatkowych ustawień zabezpieczeń, które są oferowane przez serwer sieci Web usług IIS. Aby uzyskać więcej informacji o innych funkcjach zabezpieczeń usług IIS, zobacz [Konfigurowanie zabezpieczeń serwera sieci Web (IIS 7)](https://technet.microsoft.com/library/cc731278).
 
 #### <a name="windows-powershell-web-access-forms-based-gateway-authentication"></a>Uwierzytelnianie bramy oparte na formularzach Windows PowerShell Web Access
 
-Strony logowania programu Windows PowerShell Web Access wymaga zestawu poświadczeń (nazwy użytkownika i hasło) i udostępniana opcja podania innych poświadczeń dla komputera docelowego. Jeśli użytkownik nie poda innych poświadczeń, do połączenia z komputerem docelowym zostaną użyte podstawowa nazwa użytkownika i hasło używane do połączenia z bramą.
+Strony logowania programu Windows PowerShell Web Access wymaga zestawu poświadczeń (nazwy użytkownika i hasło) i udostępniana opcja podania innych poświadczeń dla komputera docelowego.
+Jeśli użytkownik nie poda innych poświadczeń, do połączenia z komputerem docelowym zostaną użyte podstawowa nazwa użytkownika i hasło używane do połączenia z bramą.
 
 Wymagane poświadczenia są uwierzytelniane przez bramę programu Windows PowerShell Web Access. Te poświadczenia muszą odpowiadać prawidłowym kontom użytkowników albo z programu Windows PowerShell Web Access bramy serwera lokalnego lub w usłudze Active Directory.
 
@@ -81,18 +81,17 @@ Reguły są sprawdzane dopiero po uwierzytelnieniu użytkownika przez bramę, al
 
 Ostatnią warstwą zabezpieczeń programu Windows PowerShell Web Access jest konfiguracja zabezpieczeń na komputerze docelowym. Użytkownicy muszą mieć odpowiednie uprawnienia dostępu skonfigurowane na komputerze docelowym, a także w regułach autoryzacji programu Windows PowerShell Web Access, aby uruchomić konsoli sieci web programu Windows PowerShell, która ma wpływ na komputerze docelowym za pośrednictwem programu Windows PowerShell Web Access.
 
-Ta warstwa oferuje te same mechanizmy zabezpieczeń, które są używane do oceny próby połączenia przypadku, gdy użytkownicy próbują utworzyć sesji zdalnej programu Windows PowerShell na komputerze docelowym z wnętrza programu Windows PowerShell, uruchamiając [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) lub [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) polecenia cmdlet.
+Ta warstwa oferuje te same mechanizmy zabezpieczeń, które są używane do oceny próby połączenia przypadku, gdy użytkownicy próbują utworzyć sesji zdalnej programu Windows PowerShell na komputerze docelowym z wnętrza programu Windows PowerShell, uruchamiając [Enter-PSSession](/powershell/module/microsoft.powershell.core/Enter-PSSession) lub [New-PSSession](/powershell/module/microsoft.powershell.core/new-pssession) polecenia cmdlet.
 
 Domyślnie program Windows PowerShell Web Access używa podstawowej nazwy użytkownika i hasło do uwierzytelniania, zarówno brama i komputer docelowy. Oparte na sieci web strony logowania, w sekcji **opcjonalne ustawienia połączenia**, udostępniana opcja podania innych poświadczeń dla komputera docelowego, jeśli są one wymagane. Jeśli użytkownik nie poda innych poświadczeń, do połączenia z komputerem docelowym zostaną użyte podstawowa nazwa użytkownika i hasło używane do połączenia z bramą.
 
-Przy użyciu reguł autoryzacji można zezwalać użytkownikom na dostęp do określonej konfiguracji sesji. Możesz utworzyć _ograniczonych obszarach działania_ lub konfiguracje sesji programu Windows PowerShell Web Access, i zezwolić określonym użytkownikom połączyć tylko określonymi konfiguracjami sesji po zalogowaniu się do programu Windows PowerShell Web Access. Za pomocą list kontroli dostępu można określić, którzy użytkownicy mają dostęp do określonych punktów końcowych, a następnie dodatkowo ograniczyć dostęp do danego punktu końcowego do określonych użytkowników przy użyciu reguł autoryzacji opisanych w tej sekcji.
-Aby uzyskać więcej informacji o ograniczonych obszarach działania, zobacz [tworzenia ograniczonego obszaru działania](https://msdn.microsoft.com/library/dn614668).
+Przy użyciu reguł autoryzacji można zezwalać użytkownikom na dostęp do określonej konfiguracji sesji. Możesz utworzyć _ograniczonych obszarach działania_ lub konfiguracje sesji programu Windows PowerShell Web Access, i zezwolić określonym użytkownikom połączyć tylko określonymi konfiguracjami sesji po zalogowaniu się do programu Windows PowerShell Web Access. Za pomocą list kontroli dostępu można określić, którzy użytkownicy mają dostęp do określonych punktów końcowych, a następnie dodatkowo ograniczyć dostęp do danego punktu końcowego do określonych użytkowników przy użyciu reguł autoryzacji opisanych w tej sekcji. Aby uzyskać więcej informacji o ograniczonych obszarach działania, zobacz [tworzenia ograniczonego obszaru działania](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Konfigurowanie reguł autoryzacji
 
 Administratorzy mogą mają tę samą regułę autoryzacji dla użytkowników programu Windows PowerShell Web Access, które jest już zdefiniowany w swoim środowisku, do zarządzania zdalnego programu Windows PowerShell. W pierwszej procedurze w tej sekcji opisano sposób dodawania bezpiecznej reguły autoryzacji przydzielającej dostęp jednemu użytkownikowi logującemu się w celu zarządzania jednym komputerem w ramach jednej konfiguracji sesji. W drugiej procedurze opisano sposób usuwania reguły autoryzacji, która nie jest już potrzebna.
 
-Jeśli planujesz używanie niestandardowych konfiguracji sesji, aby zezwolić określonym użytkownikom do pracy tylko w obrębie ograniczonych obszarach działania w programie Windows PowerShell Web Access, należy utworzyć niestandardowe konfiguracje sesji przed dodaniem reguł autoryzacji, które odwołują się do nich. Nie można użyć poleceń cmdlet programu Windows PowerShell Web Access, aby utworzyć niestandardowe konfiguracje sesji. Aby uzyskać więcej informacji na temat tworzenia niestandardowych konfiguracji sesji, zobacz [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Jeśli planujesz używanie niestandardowych konfiguracji sesji, aby zezwolić określonym użytkownikom do pracy tylko w obrębie ograniczonych obszarach działania w programie Windows PowerShell Web Access, należy utworzyć niestandardowe konfiguracje sesji przed dodaniem reguł autoryzacji, które odwołują się do nich. Nie można użyć poleceń cmdlet programu Windows PowerShell Web Access, aby utworzyć niestandardowe konfiguracje sesji. Aby uzyskać więcej informacji na temat tworzenia niestandardowych konfiguracji sesji, zobacz [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
 Polecenia cmdlet programu Windows PowerShell Web Access obsługują jeden symbol wieloznaczny, znak gwiazdki ( \* ). Symbole wieloznaczne w ciągach nie są obsługiwane; możesz użyć jednej gwiazdki na każdą właściwość (użytkownicy, komputery, sesje konfiguracji).
 
@@ -111,23 +110,24 @@ Polecenia cmdlet programu Windows PowerShell Web Access obsługują jeden symbol
 
    Sprawdź, czy konfiguracje sesji, do których chcesz użyć, już istnieją w regułach.
 
-   Jeśli one nie zostały jeszcze utworzone, skorzystaj z instrukcji tworzenia konfiguracji sesji w [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+   Jeśli one nie zostały jeszcze utworzone, skorzystaj z instrukcji tworzenia konfiguracji sesji w [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Ta reguła autoryzacji zezwala określonemu użytkownikowi na dostęp do jednego komputera w sieci, do których zwykle mają dostęp z uprawnieniami do konfiguracji określonej sesji, które są ograniczone do użytkownika "™ s typowe potrzeby skrypty i polecenia cmdlet. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**.
 
-```
-Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
-   -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
-```
+   ```
+   Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
+      -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+   ```
 
-- W poniższym przykładzie użytkownik o nazwie _JSmith_ w _Contoso_ domeny ma uprawnienia do zarządzania komputerem _Contoso_214_i korzystać z konfiguracji sesji o nazwie _NewAdminsOnly_.
+   - W poniższym przykładzie użytkownik o nazwie _JSmith_ w _Contoso_ domeny ma uprawnienia do zarządzania komputerem _Contoso_214_i korzystać z konfiguracji sesji o nazwie _NewAdminsOnly_.
 
-```powershell
-Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' `
-   -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
-```
+   ```powershell
+   Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' `
+      -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+   ```
 
-4. Sprawdź, czy reguła została utworzona za pomocą **Get-PswaAuthorizationRule** polecenia cmdlet, lub **Test-PswaAuthorizationRule - UserName &lt;domeny\\użytkownika | komputera\\ Użytkownik&gt; - ComputerName** &lt;nazwa_komputera&gt;. Na przykład **Test-PswaAuthorizationRule - UserName Contoso\\JSmith - ComputerName Contoso_214**.
+4. Sprawdź, czy reguła została utworzona za pomocą **Get-PswaAuthorizationRule** polecenia cmdlet, lub `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>`.
+   Na przykład `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`.
 
 #### <a name="to-remove-an-authorization-rule"></a>Aby usunąć regułę autoryzacji
 
@@ -135,27 +135,26 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' `
 
 2. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**, gdzie *ID reguły* reprezentuje unikatowy numer identyfikacyjny reguły, która ma zostać usunięty.
 
-```
-Remove-PswaAuthorizationRule -ID <rule ID>
-```
+   ```
+   Remove-PswaAuthorizationRule -ID <rule ID>
+   ```
 
-Jeśli nie znasz numeru identyfikacyjnego, ale znasz przyjazną nazwę reguły, którą chcesz usunąć, możesz pobrać nazwę reguły i przekazać ją w potoku do polecenia cmdlet `Remove-PswaAuthorizationRule`, aby usunąć regułę, zgodnie z tym przykładem:
+   Jeśli nie znasz numeru identyfikacyjnego, ale znasz przyjazną nazwę reguły, którą chcesz usunąć, możesz pobrać nazwę reguły i przekazać ją w potoku do polecenia cmdlet `Remove-PswaAuthorizationRule`, aby usunąć regułę, zgodnie z tym przykładem:
 
-```
-Get-PswaAuthorizationRule `
-   -RuleName <rule-name> | Remove-PswaAuthorizationRule
-```
+   ```
+   Get-PswaAuthorizationRule `
+      -RuleName <rule-name> | Remove-PswaAuthorizationRule
+  ```
 
 > [!NOTE]
->
 > Nie monit o potwierdzenie chęci usunięcia wskazanej reguły autoryzacji; Reguła zostanie usunięta po naciśnięciu klawisza **Enter**. Upewnij się, że chcesz usunąć regułę autoryzacji, zanim uruchomisz polecenie cmdlet `Remove-PswaAuthorizationRule`.
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Inne przykłady scenariuszy związanych z regułami autoryzacji
 
-Każdej sesji programu Windows PowerShell korzysta z konfiguracji sesji; Jeśli nie została wskazana dla sesji, programu Windows PowerShell korzysta z domyślną, wbudowaną konfigurację sesji programu Windows PowerShell, o nazwie Microsoft.PowerShell. Domyślna konfiguracja sesji obejmuje wszystkie polecenia cmdlet dostępne na danym komputerze. Administratorzy mogą ograniczyć dostęp do wszystkich komputerów, definiując konfigurację sesji z ograniczonym obszarem działania (ograniczonym zakresem poleceń cmdlet i zadań, które mogą wykonywać użytkownicy końcowi). Użytkownik, który uzyskuje dostęp do jednego komputera z pełną obsługą języka lub wyłącznie cmdlet zarządzania zdalnego programu Windows PowerShell można połączyć na innych komputerach, które są połączone z pierwszym komputerem. Definiowanie ograniczonym obszarem działania mogą uniemożliwić użytkownikom uzyskiwanie dostępu do innych komputerów z ich dozwolonych obszarem działania programu Windows PowerShell i zwiększa bezpieczeństwo środowiska Windows PowerShell Web Access. Konfiguracja sesji mogą być dystrybuowane (przy użyciu zasad grupy), do wszystkich komputerów, które Administratorzy planują udostępnić za pośrednictwem programu Windows PowerShell Web Access. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://technet.microsoft.com/library/dd819508.aspx).
-Poniżej przedstawiono kilka przykładów tego scenariusza.
+Każdej sesji programu Windows PowerShell korzysta z konfiguracji sesji; Jeśli nie została wskazana dla sesji, programu Windows PowerShell korzysta z domyślną, wbudowaną konfigurację sesji programu Windows PowerShell, o nazwie Microsoft.PowerShell. Domyślna konfiguracja sesji obejmuje wszystkie polecenia cmdlet dostępne na danym komputerze. Administratorzy mogą ograniczyć dostęp do wszystkich komputerów, definiując konfigurację sesji z ograniczonym obszarem działania (ograniczonym zakresem poleceń cmdlet i zadań, które mogą wykonywać użytkownicy końcowi). Użytkownik, który uzyskuje dostęp do jednego komputera z pełną obsługą języka lub wyłącznie cmdlet zarządzania zdalnego programu Windows PowerShell można połączyć na innych komputerach, które są połączone z pierwszym komputerem. Definiowanie ograniczonym obszarem działania mogą uniemożliwić użytkownikom uzyskiwanie dostępu do innych komputerów z ich dozwolonych obszarem działania programu Windows PowerShell i zwiększa bezpieczeństwo środowiska Windows PowerShell Web Access. Konfiguracja sesji mogą być dystrybuowane (przy użyciu zasad grupy), do wszystkich komputerów, które Administratorzy planują udostępnić za pośrednictwem programu Windows PowerShell Web Access. Aby uzyskać więcej informacji na temat konfiguracji sesji, zobacz [informacje o konfiguracjach sesji](https://technet.microsoft.com/library/dd819508.aspx). Poniżej przedstawiono kilka przykładów tego scenariusza.
 
-- Administrator tworzy punkt końcowy o nazwie **Punktkoncowypswa**, z ograniczonym obszarem działania. Następnie administrator tworzy regułę,  **\*,\*, Punktkoncowypswa**i rozpowszechnia punkt końcowy na innych komputerach. Ta reguła zezwala wszystkim użytkownikom na dostęp do wszystkich komputerów z punktem końcowym **Punktkoncowypswa**. Jeśli to jedyna reguła autoryzacji zdefiniowana w zestawie reguł, komputery bez tego punktu końcowego będą niedostępne.
+- Administrator tworzy punkt końcowy o nazwie **Punktkoncowypswa**, z ograniczonym obszarem działania. Następnie administrator tworzy regułę, `*,*,PswaEndpoint`i rozpowszechnia punkt końcowy na innych komputerach. Ta reguła zezwala wszystkim użytkownikom na dostęp do wszystkich komputerów z punktem końcowym **Punktkoncowypswa**.
+  Jeśli to jedyna reguła autoryzacji zdefiniowana w zestawie reguł, komputery bez tego punktu końcowego będą niedostępne.
 
 - Administrator utworzył punkt końcowy z ograniczonym obszarem działania o nazwie **Punktkoncowypswa**i chce ograniczyć dostęp do określonych użytkowników. Administrator tworzy grupę użytkowników o nazwie **pomoc1poziomu**i definiuje następującą regułę: **pomoc1poziomu,\*, Punktkoncowypswa**. Reguła zezwala wszystkim użytkownikom w grupie **pomoc1poziomu** dostęp do wszystkich komputerów z **Punktkoncowypswa** konfiguracji. W podobny sposób można zezwolić na dostęp tylko do określonego zestawu komputerów.
 
@@ -179,11 +178,11 @@ W powyższym scenariuszu program Windows PowerShell Web Access ustanawia pomyśl
 
 1. Uwierzytelnianie na serwerze bramy grupy roboczej przez dodanie nazwy użytkownika w formacie *nazwa_serwera*\\*nazwa_użytkownika* reguły autoryzacji
 
-1. Uwierzytelnianie na komputerze docelowym, korzystając z poświadczeń wprowadzonych na stronie logowania w **opcjonalne ustawienia połączenia** obszaru
+2. Uwierzytelnianie na komputerze docelowym, korzystając z poświadczeń wprowadzonych na stronie logowania w **opcjonalne ustawienia połączenia** obszaru
 
    > [!NOTE]
-   > Jeśli brama i komputer docelowy znajdują się w różnych grupach roboczych lub domenach, należy ustanowić relację zaufania między oboma komputerami w grupach roboczych, obiema domenami lub grupą roboczą a domeną. Ta relacja nie można skonfigurować za pomocą poleceń cmdlet reguł autoryzacji programu Windows PowerShell Web Access. Reguły autoryzacji nie definiują relacji zaufania między komputerami, a jedynie autoryzują użytkowników do łączenia się z określonymi komputerami docelowymi i konfiguracjami sesji. Aby uzyskać więcej informacji na temat sposobu konfigurowania relacji zaufania między domenami, zobacz [Tworzenie domeny i relacje zaufania lasu](https://technet.microsoft.com/library/cc794775.aspx").
-   > Aby uzyskać więcej informacji na temat dodawania komputerów grupy roboczej do listy zaufanych hostów, zobacz [zdalne zarządzanie za pomocą Menedżera serwera](https://technet.microsoft.com/library/dd759202.aspx)
+   > Jeśli brama i komputer docelowy znajdują się w różnych grupach roboczych lub domenach, należy ustanowić relację zaufania między oboma komputerami w grupach roboczych, obiema domenami lub grupą roboczą a domeną. Ta relacja nie można skonfigurować za pomocą poleceń cmdlet reguł autoryzacji programu Windows PowerShell Web Access. Reguły autoryzacji nie definiują relacji zaufania między komputerami, a jedynie autoryzują użytkowników do łączenia się z określonymi komputerami docelowymi i konfiguracjami sesji. Aby uzyskać więcej informacji na temat sposobu konfigurowania relacji zaufania między domenami, zobacz [Tworzenie domeny i relacje zaufania lasu](https://technet.microsoft.com/library/cc794775.aspx).
+   > Aby uzyskać więcej informacji na temat dodawania komputerów grupy roboczej do listy zaufanych hostów, zobacz [zdalne zarządzanie za pomocą Menedżera serwera](https://technet.microsoft.com/library/dd759202.aspx).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Używanie jednego zestawu reguł autoryzacji dla wielu lokacji
 
@@ -193,11 +192,9 @@ Reguły autoryzacji są przechowywane w pliku XML. Domyślnie nazwa ścieżki pl
 
 ## <a name="session-management"></a>Zarządzanie sesjami
 
-Domyślnie program Windows PowerShell Web Access ogranicza użytkownikowi trzy sesji w tym samym czasie. Można edytować aplikacji sieci web **web.config** plików w Menedżerze usług IIS w celu obsługi innej liczby sesji na użytkownika.
-Ścieżka do **web.config** plik jest `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+Domyślnie program Windows PowerShell Web Access ogranicza użytkownikowi trzy sesji w tym samym czasie. Można edytować aplikacji sieci web **web.config** plików w Menedżerze usług IIS w celu obsługi innej liczby sesji na użytkownika. Ścieżka do **web.config** plik jest `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
-Domyślnie serwer sieci Web usług IIS jest skonfigurowany na ponowne uruchomienie puli aplikacji, jeśli jakichkolwiek zmian ustawień. Na przykład, ponownym uruchomieniu puli aplikacji, jeśli zmiany zostały wprowadzone **web.config** pliku.
->Ponieważ **programu Windows PowerShell Web Access** stanów sesji w pamięci używana, użytkownicy zalogowani do **programu Windows PowerShell Web Access** sesje tracą swoje sesje, po ponownym uruchomieniu puli aplikacji.
+Domyślnie serwer sieci Web usług IIS jest skonfigurowany na ponowne uruchomienie puli aplikacji, jeśli jakichkolwiek zmian ustawień. Na przykład, ponownym uruchomieniu puli aplikacji, jeśli zmiany zostały wprowadzone **web.config** pliku. > ponieważ **programu Windows PowerShell Web Access** używa stanów sesji w pamięci > Użytkownicy zalogowani celu **programu Windows PowerShell Web Access** sesje tracą swoje sesje, po ponownym uruchomieniu puli aplikacji.
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>Ustawianie parametrów domyślnych na stronie logowania
 
@@ -206,16 +203,16 @@ Jeśli brama programu Windows PowerShell Web Access jest uruchomiony w systemie 
 Na przykład `defaultApplicationName` klucza, jak pokazano w poniższym fragmencie kodu jest wartością **$PSSessionApplicationName** zmiennej preferencji na komputerze docelowym.
 
 ```xml
-    <appSettings>
-            <add key="maxSessionsAllowedPerUser" value="3"/>
-            <add key="defaultPortNumber" value="5985"/>
-            <add key="defaultSSLPortNumber" value="5986"/>
-            <add key="defaultApplicationName" value="WSMAN"/>
-            <add key="defaultUseSslSelection" value="0"/>
-            <add key="defaultAuthenticationType" value="0"/>
-            <add key="defaultAllowRedirection" value="0"/>
-            <add key="defaultConfigurationName" value="Microsoft.PowerShell"/>
-    </appSettings>
+  <appSettings>
+      <add key="maxSessionsAllowedPerUser" value="3"/>
+      <add key="defaultPortNumber" value="5985"/>
+      <add key="defaultSSLPortNumber" value="5986"/>
+      <add key="defaultApplicationName" value="WSMAN"/>
+      <add key="defaultUseSslSelection" value="0"/>
+      <add key="defaultAuthenticationType" value="0"/>
+      <add key="defaultAllowRedirection" value="0"/>
+      <add key="defaultConfigurationName" value="Microsoft.PowerShell"/>
+  </appSettings>
 ```
 
 ### <a name="time-outs-and-unplanned-disconnections"></a>Limity czasu i rozłączenia nieplanowane

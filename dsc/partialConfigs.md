@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfiguracje częściowe PowerShell Desired State Configuration
-ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 1b9ff8534f4c11d6859587830a04075be55a7d54
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093936"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268385"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Konfiguracje częściowe PowerShell Desired State Configuration
 
-> Dotyczy: Windows PowerShell 5.0 lub nowszy.
+_Dotyczy: Windows PowerShell 5.0 lub nowszy._
 
-W programie PowerShell 5.0 Desired State Configuration (DSC) umożliwia konfiguracje, które mają zostać dostarczone we fragmentach i z wielu źródeł. Lokalny Menedżer konfiguracji (LCM) w docelowym węźle umieszcza fragmenty ze sobą przed zastosowaniem ich jako jedną konfigurację. Ta funkcja umożliwia udostępnianie kontrolę nad konfiguracją między zespołami i klientów indywidualnych.
-Na przykład jeśli co najmniej dwóch zespołów deweloperów współpracują w usłudze, może każdego chcą tworzyć konfiguracje do zarządzania ich część usługi. Każda z tych konfiguracji może zostać pobrane z ściągnięcia różne serwery i może zostać dodany na różnych etapach cyklu rozwoju. Konfiguracje częściowe umożliwiają także różne konkretnych osób lub zespołów kontrolować różne aspekty konfigurowanie węzłów bez konieczności koordynowania edycji dokumentu jednej konfiguracji. Na przykład jeden zespół może być odpowiedzialnego za wdrożenie maszyny Wirtualnej i systemu operacyjnego, podczas gdy inny zespół może wdrożyć inne aplikacje i usługi na tej maszynie Wirtualnej. Za pomocą konfiguracje częściowe każdy zespół może utworzyć własną konfigurację, bez każdej z nich jest niepotrzebnie skomplikowane.
+W programie PowerShell 5.0 Desired State Configuration (DSC) umożliwia konfiguracje, które mają zostać dostarczone we fragmentach i z wielu źródeł. Lokalny Menedżer konfiguracji (LCM) w docelowym węźle umieszcza fragmenty ze sobą przed zastosowaniem ich jako jedną konfigurację. Ta funkcja umożliwia udostępnianie kontrolę nad konfiguracją między zespołami i klientów indywidualnych. Na przykład jeśli co najmniej dwóch zespołów deweloperów współpracują w usłudze, może każdego chcą tworzyć konfiguracje do zarządzania ich część usługi. Każda z tych konfiguracji może zostać pobrane z ściągnięcia różne serwery i może zostać dodany na różnych etapach cyklu rozwoju. Konfiguracje częściowe umożliwiają także różne konkretnych osób lub zespołów kontrolować różne aspekty konfigurowanie węzłów bez konieczności koordynowania edycji dokumentu jednej konfiguracji. Na przykład jeden zespół może być odpowiedzialnego za wdrożenie maszyny Wirtualnej i systemu operacyjnego, podczas gdy inny zespół może wdrożyć inne aplikacje i usługi na tej maszynie Wirtualnej. Za pomocą konfiguracje częściowe każdy zespół może utworzyć własną konfigurację, bez każdej z nich jest niepotrzebnie skomplikowane.
 
 Możesz użyć częściowe konfiguracji w trybie wypychania, tryb ściągania lub kombinacji obu.
 
@@ -24,8 +23,7 @@ Aby użyć konfiguracje częściowe w trybie wypychania, należy skonfigurować 
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Konfigurowanie programu LCM w trybie wypychania częściowe konfiguracji
 
-Aby skonfigurować LCM częściowe konfiguracji w trybie wypychania, należy utworzyć **DSCLocalConfigurationManager** konfiguracji o jednym **PartialConfiguration** bloku dla każdej konfiguracji częściowe. Aby uzyskać więcej informacji na temat Konfigurowanie programu LCM zobacz [Windows Konfigurowanie programu Local Configuration Manager](/powershell/dsc/metaConfig).
-W poniższym przykładzie pokazano konfigurację LCM, który oczekuje, że dwie konfiguracje częściowe — jedną, która wdraża system operacyjny oraz jedna, która służy do wdrażania i konfiguruje program SharePoint.
+Aby skonfigurować LCM częściowe konfiguracji w trybie wypychania, należy utworzyć **DSCLocalConfigurationManager** konfiguracji o jednym **PartialConfiguration** bloku dla każdej konfiguracji częściowe. Aby uzyskać więcej informacji na temat Konfigurowanie programu LCM zobacz [Windows Konfigurowanie programu Local Configuration Manager](/powershell/dsc/metaConfig). W poniższym przykładzie pokazano konfigurację LCM, który oczekuje, że dwie konfiguracje częściowe — jedną, która wdraża system operacyjny oraz jedna, która służy do wdrażania i konfiguruje program SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -111,8 +109,7 @@ Konfiguracje częściowe mogą zostać pobrane z co najmniej jeden serwer ścią
 
 Aby skonfigurować LCM do ściągania konfiguracje częściowe z serwera ściągania, zdefiniuj serwera ściągania albo **ConfigurationRepositoryWeb** (na serwerze ściągania HTTP) lub **ConfigurationRepositoryShare** () dla serwera ściągania SMB) bloku. Następnie utwórz **PartialConfiguration** bloki, które odwołują się do serwera ściągania przy użyciu **ConfigurationSource** właściwości. Musisz także utworzyć **ustawienia** bloku LCM korzysta z trybu ściągania i określ **ConfigurationNames** lub **ConfigurationID** , serwerze ściągania i Użyj węzła docelowego do identyfikowania konfiguracji. Następująca konfiguracja meta definiuje serwera ściągania HTTP o nazwie CONTOSO PullSrv i serwerze ściągania dwie konfiguracje częściowe, które, które używają.
 
-Aby uzyskać więcej informacji o konfigurowaniu przy użyciu LCM **ConfigurationNames**, zobacz [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](pullClientConfigNames.md).
-Informacje o konfigurowaniu przy użyciu LCM **ConfigurationID**, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji](pullClientConfigID.md).
+Aby uzyskać więcej informacji o konfigurowaniu przy użyciu LCM **ConfigurationNames**, zobacz [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](pullClientConfigNames.md). Informacje o konfigurowaniu przy użyciu LCM **ConfigurationID**, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji](pullClientConfigID.md).
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Konfigurowanie programu LCM w przypadku konfiguracji tryb ściągania przy użyciu nazw konfiguracji
 
@@ -196,13 +193,12 @@ Po utworzeniu meta konfiguracji, należy uruchomić go do tworzenia dokumentu ko
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Nazewnictwo i wprowadzania dokumentów konfiguracji na serwerze ściągania (ConfigurationNames)
 
-Dokumenty częściowe konfiguracji musi być umieszczony w folderze określonym jako **ConfigurationPath** w `web.config` plików na serwerze ściągania (zazwyczaj `C:\Program Files\WindowsPowerShell\DscService\Configuration`).
+Dokumenty częściowe konfiguracji musi być umieszczony w folderze określonym jako **ConfigurationPath** w `web.config` plików na serwerze ściągania (zazwyczaj `C:\Program
+Files\WindowsPowerShell\DscService\Configuration`).
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Nadawanie nazw dokumentów konfiguracji na serwerze ściągania w programie PowerShell 5.1
 
-Jeśli należy pobrać tylko jeden częściowe konfiguracji z serwera ściągania poszczególnych dokumentu konfiguracji może mieć dowolną nazwę.
-Jeśli należy pobrać więcej niż jeden częściowe konfiguracji z serwera ściągania dokumentu konfiguracji może mieć nazwę albo `<ConfigurationName>.mof`, gdzie *ConfigurationName* nazywa się częściowe konfiguracji lub `<ConfigurationName>.<NodeName>.mof`, gdzie  *ConfigurationName* nazywa się częściowe konfiguracji i *NodeName* jest nazwa węzła docelowego.
-Dzięki temu można do ściągania konfiguracji z serwera ściągania usługi Azure Automation DSC.
+Jeśli należy pobrać tylko jeden częściowe konfiguracji z serwera ściągania poszczególnych dokumentu konfiguracji może mieć dowolną nazwę. Jeśli należy pobrać więcej niż jeden częściowe konfiguracji z serwera ściągania dokumentu konfiguracji może mieć nazwę albo `<ConfigurationName>.mof`, gdzie *ConfigurationName* nazywa się częściowe konfiguracji lub `<ConfigurationName>.<NodeName>.mof`, gdzie *ConfigurationName* nazywa się częściowe konfiguracji i *NodeName* jest nazwa węzła docelowego. Dzięki temu można do ściągania konfiguracji z serwera ściągania usługi Azure Automation DSC.
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Nadawanie nazw dokumentów konfiguracji na serwerze ściągania w programie PowerShell 5.0
 
@@ -217,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Nazewnictwo i wprowadzania dokumentów konfiguracji na serwerze ściągania (ConfigurationID)
 
-Dokumenty częściowe konfiguracji musi być umieszczony w folderze określonym jako **ConfigurationPath** w `web.config` plików na serwerze ściągania (zazwyczaj `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Dokumenty konfiguracji musi mieć nazwę w następujący sposób: _ConfigurationName_. * ConfigurationID8`.mof`, gdzie _ConfigurationName_ nazywa się częściowe konfiguracji i _ConfigurationID_ identyfikator konfiguracji zdefiniowano LCM w docelowym węźle. W naszym przykładzie dokumentów konfiguracji powinien zostać nazwany w następujący sposób:
+Dokumenty częściowe konfiguracji musi być umieszczony w folderze określonym jako **ConfigurationPath** w `web.config` plików na serwerze ściągania (zazwyczaj `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Dokumenty konfiguracji musi mieć nazwę w następujący sposób: `<ConfigurationName>.<ConfigurationID>.mof`, gdzie _ConfigurationName_ nazywa się częściowe konfiguracji i _ConfigurationID_ jest Konfiguracja identyfikator zdefiniowany w LCM w docelowym węźle. W naszym przykładzie dokumentów konfiguracji powinien zostać nazwany w następujący sposób:
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -232,8 +228,7 @@ Po LCM na węzeł docelowy został skonfigurowany, a konfiguracja dokumentów zo
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Konfiguracje częściowe w mieszanych trybach wypychania i ściągania
 
-Możesz mieszać wypychania i ściągania tryby konfiguracje częściowe. Oznacza to może mieć jedną konfigurację częściowe są pobierane z serwera ściągania, gdy zostanie przypisany inny częściowe konfiguracji. Określ tryb odświeżania dla każdej konfiguracji częściowe, zgodnie z opisem w poprzedniej sekcji.
-Na przykład następująca konfiguracja metadanych w tym artykule opisano tym samym przykładzie, za pomocą `ServiceAccountConfig` częściowe konfiguracji w trybie ściągania i `SharePointConfig` częściowe konfiguracji w trybie wypychania.
+Możesz mieszać wypychania i ściągania tryby konfiguracje częściowe. Oznacza to może mieć jedną konfigurację częściowe są pobierane z serwera ściągania, gdy zostanie przypisany inny częściowe konfiguracji. Określ tryb odświeżania dla każdej konfiguracji częściowe, zgodnie z opisem w poprzedniej sekcji. Na przykład następująca konfiguracja metadanych w tym artykule opisano tym samym przykładzie, za pomocą `ServiceAccountConfig` częściowe konfiguracji w trybie ściągania i `SharePointConfig` częściowe konfiguracji w trybie wypychania.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Mieszane trybach wypychania i ściągania przy użyciu ConfigurationNames
 
@@ -314,7 +309,8 @@ PartialConfigDemo
 
 Należy pamiętać, że **RefreshMode** określone w bloku ustawień jest "Ściągania", ale **RefreshMode** dla `SharePointConfig` częściowe konfiguracji to "Push".
 
-Nadaj nazwę, a następnie zlokalizuj pliki MOF konfiguracji, zgodnie z powyższym opisem dla trybów ich odpowiednich odświeżania. Wywołaj `Publish-DSCConfiguration` publikowanie `SharePointConfig` częściowe konfiguracji, a następnie poczekaj, aż `ServiceAccountConfig` konfigurację, aby zostać pobrane z serwera ściągania lub wymusić odświeżenie, wywołując [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
+Nadaj nazwę, a następnie zlokalizuj pliki MOF konfiguracji, zgodnie z powyższym opisem dla trybów ich odpowiednich odświeżania.
+Wywołaj `Publish-DSCConfiguration` publikowanie `SharePointConfig` częściowe konfiguracji, a następnie poczekaj, aż `ServiceAccountConfig` konfigurację, aby zostać pobrane z serwera ściągania lub wymusić odświeżenie, wywołując [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration).
 
 ## <a name="example-serviceaccountconfig-partial-configuration"></a>Przykładowa konfiguracja ServiceAccountConfig częściowego
 
@@ -381,4 +377,4 @@ SharePointConfig
 
 [Program Windows PowerShell Desired State Configuration ściągnięcia serwerów](pullServer.md)
 
-[Windows Konfigurowanie programu Local Configuration Manager](/powershell/dsc/metaConfig)
+[Windows Konfigurowanie programu Local Configuration Manager](metaConfig.md)
