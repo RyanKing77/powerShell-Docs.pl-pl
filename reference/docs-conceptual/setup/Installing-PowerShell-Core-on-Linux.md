@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>Instalowanie programu PowerShell Core w systemie Linux
 
-Obsługuje [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], i [Arch Linux][arch].
+Obsługuje [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10] [ u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7] [ cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27 ] [ fedora], [Fedora 28][fedora], i [Arch Linux][arch].
 
 Dystrybucje systemu Linux, które nie są oficjalnie obsługiwane, spróbuj użyć [PowerShell AppImage][lai].
 Możesz też spróbować wdrażania plików binarnych programu PowerShell bezpośrednio przy użyciu systemu Linux [ `tar.gz` archiwum][tar], ale należy skonfigurować niezbędne zależności, w oparciu o system operacyjny w oddzielne kroki.
@@ -11,11 +11,12 @@ Po zainstalowaniu pakietu Uruchom `pwsh` z poziomu terminalu.
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u17]: #ubuntu-1710
+[u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-422
+[opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
@@ -29,7 +30,7 @@ Instalowanie przy użyciu bezpośredniego pobierania nie ulega zmianie, inna ni�
 
 W tym miejscu znajduje się tabela polecenia, aby zainstalować pakiety w wersji zapoznawczej i stabilny, przy użyciu różnych menedżerów pakietów:
 
-|Distrobution(s)|Polecenie stabilne | Polecenia w wersji zapoznawczej |
+|Distribution(s)|Polecenie stabilne | Polecenia w wersji zapoznawczej |
 |---------------|---------------|-----------------|
 | Ubuntu, Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS, RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
@@ -205,7 +206,7 @@ sudo apt-get update
 sudo apt-get install -y powershell-preview
 
 # Start PowerShell
-pwsh
+pwsh-preview
 ```
 
 Po zarejestrowaniu programu Microsoft repository raz jako administratora, od tego momentu, po prostu musisz użyć `sudo apt-get upgrade powershell` ją zaktualizować.
@@ -225,7 +226,7 @@ sudo apt-get install -f
 > `dpkg -i` Polecenia nie powiodło się niewypełnienia zależności.
 > Następne polecenie `apt-get install -f` rozwiązuje te problemy, a następnie kończy Konfigurowanie pakietami programu PowerShell.
 
-### <a name="uninstallation---ubuntu-1710"></a>Dezinstalacja — Ubuntu 17.10
+### <a name="uninstallation---ubuntu-1804"></a>Dezinstalacja — Ubuntu 18.04
 
 ```sh
 sudo apt-get remove powershell
@@ -416,7 +417,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo yum remove powershell
 ```
 
-## <a name="opensuse-422"></a>OpenSUSE 42.2
+## <a name="opensuse-423"></a>OpenSUSE 42.3
 
 Podczas instalowania programu PowerShell Core `zypper` może Zgłoś następujący błąd:
 
@@ -434,7 +435,7 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 
 Następnie wybierz `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` rozwiązania podczas instalowania pakietu programu PowerShell.
 
-### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Instalację przy użyciu repozytorium pakietów (preferowany) - OpenSUSE 42.2
+### <a name="installation-via-package-repository-preferred---opensuse-423"></a>Instalację przy użyciu repozytorium pakietów (preferowany) - OpenSUSE 42.3
 
 Program PowerShell Core dla systemu Linux jest publikowany oficjalnych repozytoriów firmy Microsoft do łatwej instalacji (i aktualizacji).
 
@@ -442,8 +443,8 @@ Program PowerShell Core dla systemu Linux jest publikowany oficjalnych repozytor
 # Register the Microsoft signature key
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-# Add the Microsoft Product feed
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
+# Add the Microsoft Repository
+zypper ar https://packages.microsoft.com/rhel/7/prod/
 
 # Update the list of products
 sudo zypper update
@@ -455,7 +456,7 @@ sudo zypper install powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-422"></a>Instalację za pomocą bezpośredniego pobierania - OpenSUSE 42.2
+### <a name="installation-via-direct-download---opensuse-423"></a>Instalację za pomocą bezpośredniego pobierania - OpenSUSE 42.3
 
 Pobierz pakiet RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` z [zwalnia][] strony na komputerze OpenSUSE.
 
@@ -471,7 +472,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---opensuse-422"></a>Dezinstalacja - OpenSUSE 42.2
+### <a name="uninstallation---opensuse-423"></a>Dezinstalacja - OpenSUSE 42.3
 
 ```sh
 sudo zypper remove powershell
@@ -676,7 +677,7 @@ Poniższej tabeli przedstawiono zależności platformy .NET Core 2.0, które są
 | Ubuntu 18.04       | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3 libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, biblioteki openssl, libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind, libcurl, biblioteki openssl, libicu |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 Aby wdrożyć pliki binarne programu PowerShell, w dystrybucjach systemu Linux, które nie są oficjalnie obsługiwane, należy zainstalować wymagane zależności dla docelowego systemu operacyjnego w oddzielne kroki.

@@ -48,7 +48,7 @@ Platformy wymienione jako `Experimental` oficjalnie nie są obsługiwane, ale s�
 | Debian 8.7 + i 9                                | Obsługiwane   | Obsługiwane   |
 | CentOS 7                                          | Obsługiwane   | Obsługiwane   |
 | Red Hat Enterprise Linux 7                        | Obsługiwane   | Obsługiwane   |
-| OpenSUSE 42.2                                     | Obsługiwane   | Obsługiwane   |
+| OpenSUSE 42.3                                     | Obsługiwane   | Obsługiwane   |
 | Fedora 27                                         | Obsługiwane   | Obsługiwane   |
 | Fedora 28                                         |             | Obsługiwane   |
 | macOS 10.12+                                      | Obsługiwane   | Obsługiwane   |
