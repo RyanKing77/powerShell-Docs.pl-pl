@@ -1,45 +1,45 @@
 # <a name="installing-powershell-core-on-windows"></a>Instalowanie programu PowerShell Core w systemie Windows
 
-## <a name="msi"></a>MSI
+## <a name="msi"></a>TOŻSAMOŚCI USŁUGI ZARZĄDZANEJ
 
-Do zainstalowania programu PowerShell na klientach z systemem Windows lub Windows Server (działa w systemie Windows 7 z dodatkiem SP1, Server 2008 R2 lub nowszy), Pobierz pakiet MSI z naszą stronę [] GitHub [wersjach].
+Aby zainstalować program PowerShell w klienta Windows lub Windows Server (działa w systemie Windows 7 z dodatkiem SP1, Server 2008 R2 i nowszych), Pobierz pakiet MSI w usłudze GitHub [zwalnia][] strony.
 
-Plik MSI wygląda tak- `PowerShell-<version>-win-<os-arch>.msi`
+Plik MSI wyglądają następująco — `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Po pobraniu, kliknij dwukrotnie Instalatora, a następnie postępuj zgodnie z monitami.
 
-Brak skrót umieszczone w Menu Start, podczas instalacji.
+Brak skrótu umieszczone w trakcie instalacji, w Menu Start.
 
 - Domyślnie pakiet jest zainstalowany na `$env:ProgramFiles\PowerShell\<version>`
-- Można uruchomić programu PowerShell za pomocą Start Menu lub `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- Można uruchomić programu PowerShell przy użyciu Start Menu lub `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 ### <a name="prerequisites"></a>Wymagania wstępne
 
-Aby włączyć obsługę zdalną środowiska PowerShell przez WSMan, muszą zostać spełnione następujące wymagania wstępne:
+Aby włączyć komunikację zdalną programu PowerShell za pośrednictwem usługi WS-Management, muszą zostać spełnione następujące wymagania wstępne:
 
-- Zainstaluj [Universal C Runtime](https://www.microsoft.com/download/details.aspx?id=50410) w wersjach systemu Windows przed systemem Windows 10.
-  Jest ona dostępna za pośrednictwem bezpośredniego pobierania lub usługi Windows Update.
-  Poprawiono pełni (w tym opcjonalnych pakietów), obsługiwane systemy mają już to zainstalowane.
-- W systemie Windows 7 i Windows Server 2008 R2, należy zainstalować Windows Management Framework (WMF) 4.0 lub nowszej.
+- Zainstaluj [uniwersalnego środowiska uruchomieniowego c.](https://www.microsoft.com/download/details.aspx?id=50410) na Windows wersjach wcześniejszych niż Windows 10.
+  Jest ona dostępna za pośrednictwem bezpośredniego pobierania lub Windows Update.
+  W pełni zastosować poprawki względem jakiegokolwiek (w tym opcjonalnych pakietów), obsługiwane systemy mają już to zainstalowane.
+- Windows Management Framework (WMF) 4.0 lub nowszym należy zainstalować na Windows 7 i Windows Server 2008 R2.
 
 ## <a name="zip"></a>ZIP
 
-Binarny archiwum ZIP programu PowerShell umożliwiające zaawansowanych scenariuszach wdrożenia.
-Należy zauważyć, że podczas korzystania z archiwum ZIP, nie będzie otrzymywał sprawdzania wymagań wstępnych, tak jak pakiet MSI.
-Dlatego w celu komunikacji zdalnej za pośrednictwem usługi WSMan działają prawidłowo w wersjach systemu Windows przed systemem Windows 10, trzeba upewnij się, że [wymagania wstępne](#prerequisites) są spełnione.
+Binarny archiwa ZIP programu PowerShell są podane w celu włączenia zaawansowanych scenariuszach wdrożenia.
+Należy zauważyć, że korzystając z archiwum ZIP, nie będą otrzymywać sprawdzania wymagań wstępnych, tak jak pakietu MSI.
+Aby dla niego komunikacji zdalnej za pośrednictwem usługi WS-Management działało poprawnie, w wersjach Windows przed systemem Windows 10, należy się upewnić, [wymagania wstępne](#prerequisites) są spełnione.
 
-## <a name="deploying-on-windows-iot"></a>Wdrażanie na IoT z systemem Windows
+## <a name="deploying-on-windows-iot"></a>Wdrażanie na Windows IoT
 
-IoT z systemem Windows jest dostarczany już z programu Windows PowerShell, który zostanie wykorzystany do wdrożenia programu PowerShell Core 6.
+Zawiera już Windows IoT za pomocą programu Windows PowerShell, które firma Microsoft będzie używany do wdrażania programu PowerShell Core 6.
 
-1. Utwórz `PSSession` do urządzenia docelowego
+1. Utwórz `PSSession` urządzenie docelowe
 
    ```powershell
    $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
-2. Skopiuj pakiet ZIP na urządzeniu
+2. Skopiuj pakiet ZIP do urządzenia
 
    ```powershell
    # change the destination to however you had partitioned it with sufficient
@@ -48,7 +48,7 @@ IoT z systemem Windows jest dostarczany już z programu Windows PowerShell, któ
    Copy-Item .\PowerShell-6.0.2-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
-3. Nawiąż połączenie z urządzeniem, a następnie rozwiń węzeł archiwum
+3. Łączenie z urządzeniem, a następnie rozwiń archiwum
 
    ```powershell
    Enter-PSSession $s
@@ -56,7 +56,7 @@ IoT z systemem Windows jest dostarczany już z programu Windows PowerShell, któ
    Expand-Archive .\PowerShell-6.0.2-win-arm32.zip
    ```
 
-4. Konfiguracja usług zdalnych do programu PowerShell Core 6
+4. Konfigurowanie komunikacji zdalnej programu PowerShell Core 6
 
    ```powershell
    cd .\PowerShell-6.0.2-win-arm32
@@ -66,47 +66,47 @@ IoT z systemem Windows jest dostarczany już z programu Windows PowerShell, któ
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. Połącz do punktu końcowego programu PowerShell Core 6 na urządzeniu
+5. Łączenie do endpoint programu PowerShell Core 6 na urządzeniu
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.0.2
    ```
 
-## <a name="deploying-on-nano-server"></a>Wdrażanie na serwerze Nano
+## <a name="deploying-on-nano-server"></a>Wdrażanie na serwerze Nano Server
 
-W poniższych instrukcjach przyjęto, że wersja programu PowerShell jest już uruchomiona w obrazie Nano Server i że ma zostać wygenerowane przez [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server).
-Nano Server jest "bezobsługowe" systemu operacyjnego. Podstawowe pliki binarne można wdrożyć, przy użyciu dwóch różnych metod.
+W poniższych instrukcjach przyjęto, że wersja programu PowerShell jest już uruchomiona na obrazie Nano Server i czy ma zostać wygenerowane przez [Kreator obrazów serwera Nano](/windows-server/get-started/deploy-nano-server).
+Serwer nano Server jest "bezobsługowe" systemu operacyjnego. Podstawowe pliki binarne można wdrożyć przy użyciu dwóch różnych metod.
 
-1. W trybie offline — zainstalować dysk VHD Nano Server i rozpakuj zawartość pliku zip do wybranej lokalizacji w zainstalowanym obrazie.
-2. Tryb online — transferu pliku zip w sesji programu PowerShell i Rozpakuj go w wybranej lokalizacji.
+1. W trybie offline — zainstalować dysk VHD serwera Nano i rozpakuj zawartość pliku zip do wybranej lokalizacji w zainstalowanym obrazie.
+2. Tryb online — przenoszenie pliku zip przez sesję programu PowerShell i Rozpakuj go w wybranej lokalizacji.
 
-W obu przypadkach należy wersji systemu Windows 10 x64 ZIP pakietu i będzie musiał uruchomić polecenia w ramach wystąpienia programu PowerShell "Administrator".
+W obu przypadkach należy wersji systemu Windows 10 x64 ZIP pakietu i będzie konieczne uruchomienie poleceń w ramach wystąpienia programu PowerShell "Administrator".
 
-### <a name="offline-deployment-of-powershell-core"></a>W trybie offline wdrażania podstawowych programu PowerShell
+### <a name="offline-deployment-of-powershell-core"></a>Wdrożenie programu PowerShell Core w trybie offline
 
-1. Rozpakuj pakiet do katalogu w zainstalowanym obrazie Nano Server za pomocą narzędzia Twoje ulubione zip.
-2. Odinstaluj obraz i uruchom go.
-3. Połącz się z wystąpieniem skrzynki odbiorczej, programu Windows PowerShell.
-4. Postępuj zgodnie z instrukcjami, aby utworzyć punktu końcowego usług zdalnych za pomocą ["innej techniki wystąpienia"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+1. Aby rozpakować pakiet do katalogu w zainstalowanym obrazie systemu Nano Server przy użyciu usługi narzędzia zip ulubionych.
+2. Odinstaluj obraz i jego rozruch.
+3. Połącz z wystąpieniem skrzynki odbiorczej programu Windows PowerShell.
+4. Postępuj zgodnie z instrukcjami, aby utworzyć punkt końcowy komunikacji zdalnej za pomocą ["inna technika wystąpienia"](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-### <a name="online-deployment-of-powershell-core"></a>Wdrożenie online PowerShell Core
+### <a name="online-deployment-of-powershell-core"></a>Online wdrożenia programu PowerShell Core
 
-Poniższe kroki przedstawiono środowiska PowerShell Core uruchomione wystąpienie Nano Server i konfiguracji punktu końcowego zdalnego.
+Poniższe kroki prowadzą przez wdrożenia programu PowerShell Core do uruchomionego wystąpienia systemu Nano Server i konfiguracji jego zdalnego punktu końcowego.
 
-- Połącz z wystąpieniem skrzynki odbiorczej programu Windows PowerShell
+- Połącz się z wystąpieniem skrzynki odbiorczej programu Windows PowerShell
 
   ```powershell
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
   ```
 
-- Skopiuj plik do wystąpienia Nano Server
+- Skopiuj plik do wystąpienia systemu Nano Server
 
   ```powershell
   Copy-Item <local PS Core download location>\powershell-<version>-win-x64.zip c:\ -ToSession $session
   ```
 
-- Wprowadź sesji
+- Wprowadź sesję
 
   ```powershell
   Enter-PSSession $session
@@ -119,25 +119,30 @@ Poniższe kroki przedstawiono środowiska PowerShell Core uruchomione wystąpien
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
   ```
 
-- Oparta na usłudze WSMan komunikacji zdalnej, wykonaj instrukcje tworzenia punktu końcowego usług zdalnych za pomocą ["innej techniki wystąpienia"](../core-powershell/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+- Chcąc oparta na usłudze WSMan komunikacji zdalnej, postępuj zgodnie z instrukcjami, aby utworzyć punkt końcowy komunikacji zdalnej przy użyciu ["inna technika wystąpienia"](../core-powershell/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>Instrukcje dotyczące tworzenia punktu końcowego usługi zdalne
+## <a name="instructions-to-create-a-remoting-endpoint"></a>Instrukcje, aby utworzyć punkt końcowy komunikacji zdalnej
 
-PowerShell Core obsługuje protokół komunikacji zdalnej programu PowerShell (PSRP) za pośrednictwem protokołów SSH, jak i WSMan.
+Program PowerShell Core obsługuje protokół komunikacji zdalnej programu PowerShell (PSRP) za pośrednictwem protokołu SSH i WSMan.
 Aby uzyskać więcej informacji, zobacz:
 
-- [SSH komunikację zdalną środowiska PowerShell główną] [ssh-Komunikacja zdalna]
-- [WSMan komunikację zdalną środowiska PowerShell główną] [Komunikacja zdalna wsman]
+- [SSH komunikacji zdalnej w programie PowerShell Core][ssh-remoting]
+- [Komunikacja zdalna usługi WS-Management, w programie PowerShell Core][wsman-remoting]
 
-## <a name="artifact-installation-instructions"></a>Instrukcje dotyczące instalacji artefaktów
+## <a name="artifact-installation-instructions"></a>Instrukcje dotyczące instalacji artefaktu
 
-Firma Microsoft publikuje archiwum środowisko CoreCLR bitów w każdej kompilacji CI o [] [AppVeyor].
+Publikujemy archiwum z bitami CoreCLR przy każdej kompilacji ciągłej integracji przy użyciu [AppVeyor][].
 
-Aby zainstalować podstawowe programu PowerShell z artefaktu środowisko CoreCLR:
+Aby zainstalować program PowerShell Core z artefaktów CoreCLR:
 
-1. Pobierz pakiet ZIP z **artefakty** kartę określonej kompilacji.
-2. Plik ZIP Odblokuj: kliknij prawym przyciskiem myszy w Eksploratorze plików -> Właściwości -> Zastosuj "Odblokuj" -> pole wyboru
+1. Pobierz pakiet pliku ZIP z **artefaktów** kartę konkretnej kompilacji.
+2. Odblokuj plik ZIP: kliknij prawym przyciskiem myszy w Eksploratorze plików -> Właściwości -> wyboru Zastosuj "Odblokuj" box ->
 3. Wyodrębnij plik zip do `bin` katalogu
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO --> [zwalnia]: https://github.com/PowerShell/PowerShell/releases [ssh-Komunikacja zdalna]:... /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.MD [wsman Komunikacja zdalna]:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO -->
+
+[zwalnia]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
