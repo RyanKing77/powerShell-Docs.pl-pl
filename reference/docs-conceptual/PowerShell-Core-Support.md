@@ -1,3 +1,14 @@
+---
+title: Cykl życia pomocy technicznej programu PowerShell Core
+description: Zasady dotyczące pomocy technicznej dla programu PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587163"
+---
 # <a name="powershell-core-support-lifecycle"></a>Cykl życia pomocy technicznej programu PowerShell Core
 
 PowerShell Core to zestaw różne narzędzia i składniki, które są dostarczane, zainstalować i skonfigurować oddzielnie, za pomocą programu Windows PowerShell.
@@ -44,7 +55,8 @@ Platformy wymienione jako `Experimental` oficjalnie nie są obsługiwane, ale s�
 | Windows Server 2008 R2, 2012 R2, 2016             | Obsługiwane   | Obsługiwane   |
 | [Półroczny kanał dystrybucji systemu Windows Server][semi-annual] | Obsługiwane   | Obsługiwane   |
 | Ubuntu 14.04 i 16.04                           | Obsługiwane   | Obsługiwane   |
-| Ubuntu 17.10 i 18.04                           |             | Obsługiwane   |
+| Ubuntu 18.04                                      |             | Obsługiwane   |
+| Ubuntu 18.10 (za pośrednictwem przyciągania pakiet)                   |             | Społeczność   |
 | Debian 8.7 + i 9                                | Obsługiwane   | Obsługiwane   |
 | CentOS 7                                          | Obsługiwane   | Obsługiwane   |
 | Red Hat Enterprise Linux 7                        | Obsługiwane   | Obsługiwane   |
@@ -56,6 +68,10 @@ Platformy wymienione jako `Experimental` oficjalnie nie są obsługiwane, ale s�
 | Raspbian                                          | Eksperymentalne| Społeczność   |
 | Kali                                              | Społeczność   | Społeczność   |
 | AppImage (działa na wielu platformach systemu Linux)     | Społeczność   | Społeczność   |
+| [Przyciągaj pakietu](https://snapcraft.io/powershell)   | Patrz Uwaga    | Patrz Uwaga    |
+
+> [!NOTE]
+> Pakiety przyciągania będzie eksperymentalne w danym okresie.  Po mamy pewność, że przyciągania nie wprowadzają nowych problemów, pomocy technicznej będą się odbywać w dystrybucji pakietu są uruchomione na.
 
 ## <a name="platform-which-are-out-of-support"></a>Platforma, której znajdą się poza pomocy technicznej
 
@@ -65,13 +81,14 @@ W związku z tym obsługę następujących wersji oprogramowania została zakoń
 
 | System operacyjny       | Wersja | Koniec cyklu życia                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [Maja 2018 r.](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [Grudnia 2017 r.](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [Sierpnia 2017 r.](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| OpenSUSE | 42.2    | [Stycznia 2018 r.](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [Grudnia 2017 r.](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [Maja 2018 r.](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42.1    | [Maja 2017 r.](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [Stycznia 2018 r.](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| OpenSUSE | 42.2    | [Stycznia 2018 r.](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [Lipca 2017 r.](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [Stycznia 2018 r.](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [Lipca 2018 r.](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Uwagi dotyczące licencjonowania
 

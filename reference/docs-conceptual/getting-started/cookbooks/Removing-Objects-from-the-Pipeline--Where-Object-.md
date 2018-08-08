@@ -1,44 +1,44 @@
 ---
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Usuwanie obiektów z potoku gdzie obiektów
+title: Usuwanie obiektów z potoku gdzie obiektu
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753842"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587146"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Usuwanie obiektów z potoku (Where-Object)
 
-W programie Windows PowerShell można często generować i przekazują więcej obiektów dla potoku nie ma. Możesz określić właściwości określonym obiektów do wyświetlenia za pomocą **Format** poleceń cmdlet, ale nie pomaga problemu usunięcie całych obiektów z ekranu. Można filtrować obiektów przed zakończeniem potoku, więc dostępne akcje na podzbiorze wstępnie wygenerowane obiekty.
+W programie Windows PowerShell możesz często Generowanie i przekazują więcej obiektów do potoku niż potrzebujesz. Można określić właściwości określonego obiektów przeznaczonych do wyświetlenia przy użyciu **Format** poleceń cmdlet, ale nie jest pomocne w rozwiązaniu problemu usunięcia całe obiekty z widoku. Można filtrować obiektów przed zakończeniem potoku, dzięki czemu można przeprowadzać na tylko podzbiór obiektów początkowo wygenerował.
 
-Program Windows PowerShell zawiera `Where-Object` polecenia cmdlet, które umożliwia testowanie każdego obiektu w potoku i tylko przekazywanie ich do potoku spełniający określonego warunku. Obiekty, które nie przejdą testów są usuwane z potoku. Podaj warunku w postaci wartości `Where-Object` **FilterScript** parametru.
+Program Windows PowerShell zawiera `Where-Object` polecenia cmdlet, które umożliwia testowanie każdy obiekt w potoku i tylko przekazać go do potoku Jeśli dana jednostka spełnia warunek określonego testu. Obiekty, które nie są przekazywane do testu są usuwane z potoku. Możesz podać warunek testu jako wartość `Where-Object` **FilterScript** parametru.
 
-### <a name="performing-simple-tests-with-where-object"></a>Wykonywanie prostych testów z Where-Object
+### <a name="performing-simple-tests-with-where-object"></a>Wykonując proste testy za pomocą Where-Object
 
-Wartość **FilterScript** jest *bloku skryptu* — co najmniej jeden poleceń programu Windows PowerShell otoczona nawiasów klamrowych {} — która daje w wyniku wartość true lub false. Te bloki skryptu może być bardzo proste, ale są one tworzone wymaga wiedzy pojęcie innego środowiska Windows PowerShell i operatory porównania. Operator porównania porównuje elementy, które są wyświetlane na każdej stronie. Operatory porównania rozpoczynać się od "-" znak i zostaną wykonane przez nazwę. Operatory porównania podstawowe działają w niemal każdego rodzaju obiektu. Bardziej zaawansowane operatory porównania może działać tylko na tekst lub tablic.
+Wartość **FilterScript** jest *blok skryptu* — jedno lub kilka poleceń programu Windows PowerShell, ujęte w nawiasy klamrowe {} — która daje w wyniku wartość true lub false. Te bloki skryptu może być bardzo proste, ale są one tworzone wymaga, wiedząc o innym pojęcia programu Windows PowerShell, operatory porównania. Operator porównania porównuje elementów, które pojawiają się na każdej stronie. Operatory porównania zaczynają się od "-" znaków i są następuje nazwa. Operatory porównania podstawowe działa na prawie każdy rodzaj obiektu. Więcej informacji o zaawansowanych operatory porównania może działać wyłącznie względem tekstu lub tablic.
 
 > [!NOTE]
-> Domyślnie podczas pracy z tekstem programu Windows PowerShell operatory porównania jest rozróżniana wielkość liter.
+> Domyślnie podczas pracy z tekstem operatory porównania programu Windows PowerShell jest rozróżniana wielkość liter.
 
-Z powodu analizy zagadnienia, symbole, takie jak <>, i = nie są używane jako operatory porównania. Zamiast tego operatory porównania składają się z liter. Operatory porównania podstawowe są wymienione w poniższej tabeli.
+Ze względu na analizowanie zagadnienia, symbole, takie jak <>, i = nie są używane jako operatory porównania. Zamiast tego operatory porównania składają się z liter. Operatory porównania podstawowe są wymienione w poniższej tabeli.
 
 |Operator porównania|Znaczenie|Przykład (zwraca wartość true)|
 |-----------------------|-----------|--------------------------|
 |-eq|jest równa|1 - eq 1|
 |-ne|Nie równa się|1 - ne 2|
-|lt —|Jest mniejsza niż|1 - lt 2|
-|-le|Jest mniejsze niż lub równe|le 1 - 2|
-|->|Jest większa niż|2 - gt-1|
+|-lt|jest mniejsza niż|1 - lt 2|
+|-le|Jest mniejsze niż lub równe|1 - le 2|
+|-gt|jest większa niż|2 - > 1|
 |-ge|Jest większe lub równe|2 -ge 1|
-|— przykład|Przypomina (symbol wieloznaczny porównanie tekstu)|"file.doc" — takie jak "f\*.korzystać?"|
-|-notlike|Nie jest jak (symbol wieloznaczny porównanie tekstu)|"file.doc"-notlike "p\*doc"|
+|— np.|Przypomina (symbol wieloznaczny porównanie tekstu)|"file.doc" — takich jak "f\*.korzystać?"|
+|-notlike|Nie jest podobne (symbol wieloznaczny porównanie tekstu)|"file.doc"-notlike "p\*doc"|
 |-zawiera|zawiera|1,2,3 - zawiera 1|
-|-notcontains|Nie zawiera|1,2,3 - notcontains 4|
+|-notcontains|nie zawiera|1,2,3 - notcontains 4|
 
-WHERE-Object blokach skryptu za pomocą specjalnych zmiennej '$_' do odwoływania się do bieżącego obiektu w potoku. Poniżej przedstawiono przykładowy sposób jej działania. Jeśli masz listę liczb i chcesz tylko te, które są mniej niż 3 zwracać, umożliwia Where-Object filtrować liczb, wpisując:
+WHERE-Object Bloki skryptu za pomocą specjalnych zmiennej `$_` do odwoływania się do bieżącego obiektu w potoku. Oto przykład sposobu działania. Jeśli masz listę liczb i tylko mają być zwracane te, które są mniej niż 3, można użyć Where-Object do filtrowania liczby, wpisując:
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -48,15 +48,15 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 
 ### <a name="filtering-based-on-object-properties"></a>Filtrowanie oparte na właściwości obiektu
 
-Ponieważ $_ odwołuje się do bieżącego obiektu potoku, firma Microsoft dostęp do jej właściwości na potrzeby testów.
+Ponieważ `$_` odwołuje się do bieżącego obiektu potoku, firma Microsoft będą mogli jej właściwości na potrzeby testów.
 
-Na przykład można przyjrzymy się Klasa Win32_SystemDriver w usłudze WMI. Może to być setki sterowników systemu w określonym systemie, ale może być zainteresowany określony zestaw sterowników systemu, takich jak te, które są aktualnie uruchomione. Jeśli element członkowski Get służy do wyświetlania elementów członkowskich Win32_SystemDriver (**Get-WmiObject — Klasa Win32_SystemDriver | Właściwość Get-Member - MemberType**) pojawi się stan jest odpowiednie właściwości i że ma wartość "Działa" po uruchomieniu sterownika. Można filtrować sterowniki systemu wybranie tylko uruchomione te, wpisując:
+Na przykład można przyjrzymy się Klasa Win32_SystemDriver w usłudze WMI. Mogą istnieć setki sterowników systemu w określonym systemie, ale może być tylko zainteresowana określony zestaw sterowników systemu, takie jak te, które są aktualnie uruchomione. Jeśli używasz Get-Member, aby wyświetlić elementy członkowskie Win32_SystemDriver (**Get-WmiObject — Klasa Win32_SystemDriver | Właściwość Get-Member - MemberType**) widać to za pomocą odpowiednich właściwości stanu i że ma wartość "Uruchomiona", gdy sterownik jest uruchomiony. Możesz filtrować sterowniki systemowe, wybierając tylko uruchomione, wpisując:
 
 ```powershell
 Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq 'Running'}
 ```
 
-Daje to nadal długą listę. Można filtrować można wybrać tylko sterowniki uruchamiana automatycznie, sprawdzając wartość StartMode również:
+Daje to nadal długą listę. Można filtrować tylko wybranym sterowniki uruchamiana automatycznie, testując również wartość StartMode:
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq "Running"} | Where-Object -FilterScript {$_.StartMode -eq "Auto"}
@@ -74,7 +74,7 @@ Status      : OK
 Started     : True
 ```
 
-Daje wiele informacji, które firma Microsoft nie jest już potrzebny, ponieważ wiemy, że sterowniki są uruchomione. W rzeczywistości tylko informacje, które prawdopodobnie potrzebujemy w tym momencie są nazwa i nazwę wyświetlaną. Polecenie zawiera tylko te dwie właściwości, co znacznie prostsze danych wyjściowych:
+To daje nam mnóstwo informacji, które firma Microsoft nie są już potrzebne, ponieważ wiemy, że sterowniki są uruchomione. W rzeczywistości tylko informacje, które prawdopodobnie należy w tym momencie są nazwę i nazwę wyświetlaną. Poniższe polecenie uwzględnia tylko te dwie właściwości, co znacznie przyspiesza dane wyjściowe:
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript {$_.State -eq "Running"} | Where-Object -FilterScript {$_.StartMode -eq "Manual"} | Format-Table -Property Name,DisplayName
@@ -91,7 +91,7 @@ MRxDAV                                  WebDav Client Redirector
 mssmbios                                Microsoft System Management BIOS Driver
 ```
 
-Istnieją dwa elementy Where-Object w poleceniu powyżej, ale może zostać wyrażona w jednym elemencie Where-Object przy użyciu i operatora logicznego następująco:
+Istnieją dwa elementy Where-Object w poleceniu powyżej, ale mogą być wyrażone w pojedynczym elemencie Where-Object przy użyciu i operatora logicznego w następujący sposób:
 
 ```powershell
 Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State -eq 'Running') -and ($_.StartMode -eq 'Manual') } | Format-Table -Property Name,DisplayName
@@ -101,7 +101,7 @@ Standardowe operatory logiczne są wymienione w poniższej tabeli.
 
 |Operator logiczny|Znaczenie|Przykład (zwraca wartość true)|
 |--------------------|-----------|--------------------------|
-|- i|Logiczne i; wartość true, jeśli obie strony mają wartość true|(1 - eq 1) - i (2 - eq 2).|
-|- lub|Logiczna lub; wartość true, jeśli jedna strona ma wartość true|(1 - eq 1) - lub (1 - eq 2).|
-|-nie|Negacja; Odwraca wartość true i false|-nie (1 - eq 2)|
-|\!|Negacja; Odwraca wartość true i false|\!(1 - eq 2)|
+|- i|Logiczne i; wartość true, jeśli obie strony mają wartość true|(1 - eq 1) — a (2 - eq 2).|
+|— lub|Logiczne lub; wartość true, jeśli strona ma wartość true|(1 - eq 1) - lub (1 - eq 2).|
+|-nie|Logiczne not; Odwraca wartość PRAWDA i FAŁSZ|-nie (1 - eq 2)|
+|\!|Logiczne not; Odwraca wartość PRAWDA i FAŁSZ|\!(1 - eq 2)|
