@@ -2,12 +2,12 @@
 title: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 description: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: f8e1e9af257037fc7bd74549e4197c9a1695e952
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587435"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134104"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 
@@ -36,7 +36,7 @@ W przypadku tradycyjnych obciążeń programu Windows PowerShell, zobacz [Instal
   > [!IMPORTANT]
   > W systemie macOS należy zainstalować protokół OpenSSL rozszerzenia programu PowerShell, do prawidłowego działania.
   > W tym celu najłatwiej zainstalował [Homebrew](http://brew.sh/) , a następnie uruchom `brew install openssl`.
-  > Program VS Code można obecnie załadować rozszerzeń programu PowerShell pomyślnie.
+  > Program VS Code można teraz pomyślnie załadować rozszerzenia programu PowerShell.
 
 - **Windows**: postępuj zgodnie z instrukcjami instalacji na [uruchomiony program VS Code w Windows](https://code.visualstudio.com/docs/setup/windows) strony
 

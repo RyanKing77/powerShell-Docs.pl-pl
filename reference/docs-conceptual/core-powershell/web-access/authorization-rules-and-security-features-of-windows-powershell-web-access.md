@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
-ms.openlocfilehash: 07b85a3c7bced58b9ee8db401f0339ba6011bc96
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
+ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268351"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43133842"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
 
@@ -144,7 +144,7 @@ Polecenia cmdlet programu Windows PowerShell Web Access obsługują jeden symbol
    ```
    Get-PswaAuthorizationRule `
       -RuleName <rule-name> | Remove-PswaAuthorizationRule
-  ```
+   ```
 
 > [!NOTE]
 > Nie monit o potwierdzenie chęci usunięcia wskazanej reguły autoryzacji; Reguła zostanie usunięta po naciśnięciu klawisza **Enter**. Upewnij się, że chcesz usunąć regułę autoryzacji, zanim uruchomisz polecenie cmdlet `Remove-PswaAuthorizationRule`.

@@ -1,37 +1,43 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Uzyskiwanie informacji dotyczących poleceń
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-ms.openlocfilehash: c51579fe2cdf4f2a0d3248d1aaf3f1f9cac83868
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: f4238927f10b4204cd3e23f0b0453011f54cb04a
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482730"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134014"
 ---
 # <a name="getting-information-about-commands"></a>Uzyskiwanie informacji dotyczących poleceń
-Programu Windows PowerShell `Get-Command` polecenie cmdlet pobiera wszystkie polecenia, które są dostępne w bieżącej sesji. Podczas wpisywania `Get-Command` w wierszu polecenia programu PowerShell zostanie wyświetlone dane wyjściowe podobne do następującego:
 
-```
-PS> Get-Command
-CommandType     Name                            Definition
------------     ----                            ----------
-Cmdlet          Add-Content                     Add-Content [-Path] <String[...
-Cmdlet          Add-History                     Add-History [[-InputObject] ...
-Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
+PowerShell `Get-Command` Wyświetla polecenia, które są dostępne w bieżącej sesji.
+Po uruchomieniu `Get-Command` polecenia cmdlet, zauważysz coś, co jest podobne do następujących danych wyjściowych:
+
+```output
+CommandType     Name                    Version    Source
+-----------     ----                    -------    ------
+Cmdlet          Add-Computer            3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-Content             3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Add-History             3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-JobTrigger          1.1.0.0    PSScheduledJob
+Cmdlet          Add-LocalGroupMember    1.0.0.0    Microsoft.PowerShell.LocalAccounts
+Cmdlet          Add-Member              3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Add-PSSnapin            3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-Wygląda to output wiele takich jak dane wyjściowe pomocy Cmd.exe: tabelarycznym podsumowanie poleceń wewnętrznego. W fragmencie z **Get-Command** polecenia wyjście przedstawionych powyżej, co zostało przedstawione ma CommandType Cmdlet. Polecenia cmdlet jest typem wewnętrzne polecenia programu Windows PowerShell — typ, który odpowiada około do **dir** i **cd** polecenia Cmd.exe oraz built-ins w powłoki systemu UNIX, takich jak BASH.
+To danych wyjściowych wygląda bardzo podobnie jak dane wyjściowe Cmd.exe Help: tabelarycznych podsumowanie poleceń wewnętrznego. W wycinku z `Get-Command` polecenia powyżej każdego polecenia wyświetlane w danych wyjściowych ma CommandType Cmdlet. Polecenie cmdlet jest typ wewnętrzne polecenia programu PowerShell. Ten typ odpowiada mniej więcej poleceń, takich jak `dir` i `cd` Cmd.exe lub wbudowanego polecenia systemu Unix powłoki, takie jak bash.
 
-W danych wyjściowych `Get-Command` polecenia, wszystkie definicje kończyć wielokropek (...), aby wskazać, że programu PowerShell nie można wyświetlić całej zawartości w dostępnego miejsca. Gdy środowiska Windows PowerShell umożliwia wyświetlenie danych wyjściowych, formatuje dane wyjściowe jako tekst, a następnie rozmieszcza aby prawidłowo mieści się w oknie danych. Zostanie omawianiu to później w sekcji na elementy formatujące.
+`Get-Command` Polecenie cmdlet ma **składni** parametr, który zwraca składni każdego polecenia cmdlet. Poniższy przykład pokazuje, jak uzyskać składnię `Get-Help` polecenia cmdlet:
 
-`Get-Command` Polecenie cmdlet ma **składni** parametr, który pobiera składnia każde polecenie cmdlet. Aby wyświetlić składnię polecenia cmdlet Get-Help, użyj następującego polecenia:
-
-```
+```powershell
 Get-Command Get-Help -Syntax
+```
 
+```output
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
  [-Role <String[]>] [-Full] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 
@@ -45,8 +51,15 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### <a name="displaying-available-command-types"></a>Wyświetlanie typów
-**Get-Command** polecenia nie ma każdego polecenia, które jest dostępne w programie Windows PowerShell. Zamiast tego **Get-Command** polecenie wyświetla tylko polecenia cmdlet w bieżącej sesji. Program Windows PowerShell faktycznie obsługuje kilka typów poleceń. Aliasy, funkcji i skryptów są również poleceń programu Windows PowerShell, chociaż nie opisano szczegółowo w podręczniku użytkownika programu Windows PowerShell. Zewnętrzne pliki wykonywalne lub ma typ obsługi plików, również są sklasyfikowane jako polecenia.
+## <a name="displaying-available-command-by-type"></a>Wyświetlanie dostępnych poleceń według typu
+
+`Get-Command` Polecenie wyświetla listę tylko polecenia cmdlet w bieżącej sesji. Program PowerShell faktycznie obsługuje kilka typów poleceń:
+
+- Aliasy
+- Funkcje
+- Skrypty
+
+Zewnętrzne pliki wykonywalne lub pliki, których program obsługi typów plików, również są klasyfikowane jako polecenia.
 
 Aby uzyskać wszystkie polecenia w sesji, wpisz:
 
@@ -54,26 +67,28 @@ Aby uzyskać wszystkie polecenia w sesji, wpisz:
 Get-Command *
 ```
 
-Ponieważ ta lista zawiera zewnętrzne pliki w ścieżce wyszukiwania, może on zawierać tysięcy elementów. Warto więcej przyjrzeć się ograniczonego zestawu poleceń.
-
-Aby uzyskać natywnych poleceń innych typów, użyj **CommandType** parametr `Get-Command` polecenia cmdlet.
+Ta lista zawiera poleceń zewnętrznych w ścieżce wyszukiwania, dzięki czemu może zawierać tysięcy elementów.
+Jest bardziej użyteczny przyjrzeć się ograniczonego zestawu poleceń.
 
 > [!NOTE]
-> Gwiazdka (\*) służy do dopasowanie w argumentach polecenia środowiska Windows PowerShell z symbolami wieloznacznymi. \* Oznacza "odpowiada jednej lub więcej znaków". Możesz wpisać `Get-Command a*` znaleźć wszystkie polecenia, które zaczynają się od litery "". W przeciwieństwie do dopasowania w Cmd.exe symboli wieloznacznych symbol wieloznaczny środowiska Windows PowerShell również zgodna okres.
+> Gwiazdka (\*) służy do dopasowanie w argumentach polecenia programu PowerShell z symbolami wieloznacznymi. \* Oznacza, że "odpowiada jednej lub więcej znaków". Możesz wpisać `Get-Command a*` można znaleźć wszystkie polecenia, które zaczynają się od litery "". W odróżnieniu od dopasowanie w Cmd.exe z symbolami wieloznacznymi programu PowerShell symboli wieloznacznych również dopasowanie kropki.
 
-Aby uzyskać aliasy poleceń, które są przypisane pseudonimy poleceń, wpisz:
+Użyj **CommandType** parametru `Get-Command` można pobrać natywnych poleceń innych typów.
+.
+
+Aby uzyskać aliasów poleceń, które są przypisane pseudonimy poleceń, wpisz:
 
 ```powershell
 Get-Command -CommandType Alias
 ```
 
-Aby uzyskać te funkcje w bieżącej sesji, wpisz:
+Aby uzyskać funkcje w bieżącej sesji, wpisz:
 
 ```powershell
 Get-Command -CommandType Function
 ```
 
-Aby wyświetlić skryptów w ścieżce wyszukiwania programu Windows PowerShell, wpisz:
+Aby wyświetlić skrypty w ścieżce wyszukiwania programu PowerShell, wpisz:
 
 ```powershell
 Get-Command -CommandType Script

@@ -1,47 +1,44 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Uruchamianie poleceń zdalnych
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: d21d1def1e25895f65b3578bf2892d56f14cc150
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482883"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133830"
 ---
 # <a name="running-remote-commands"></a>Uruchamianie poleceń zdalnych
 
-Polecenia można wykonać na co najmniej setek komputerów za pomocą jednego polecenia programu Windows PowerShell. Program Windows PowerShell obsługuje przetwarzania zdalnego przy użyciu różnych technologii, w tym usługi WMI, RPC i WS-Management.
+Możesz uruchamiać polecenia w jednym węźle lub setek komputerów za pomocą jednego polecenia programu PowerShell. Program Windows PowerShell obsługuje przetwarzania zdalnego przy użyciu różnych technologii, takich jak usługi WMI, RPC i WS-Management.
 
-## <a name="remoting-in-powershell-core"></a>Usługi zdalne środowiska PowerShell główną
+Program PowerShell Core obsługuje WMI, usługi WS-Management i usług zdalnych SSH. RPC nie jest już obsługiwana.
 
-Jądro programu PowerShell, nowszej wersji programu PowerShell w systemach Windows, system macOS i Linux, obsługuje usługi WMI, WS-Management i usług zdalnych SSH.
-(RPC nie jest już obsługiwany.)
+Aby uzyskać więcej informacji na temat komunikacji zdalnej w programie PowerShell Core zobacz następujące artykuły:
 
-Aby uzyskać więcej informacji na temat konfigurowania to zobacz:
+- [SSH komunikacji zdalnej w programie PowerShell Core][ssh-remoting]
+- [Komunikacja zdalna usługi WS-Management, w programie PowerShell Core][wsman-remoting]
 
-* [SSH komunikację zdalną środowiska PowerShell główną][ssh-remoting]
-* [Usługi zdalne WSMan główną programu PowerShell][wsman-remoting]
+## <a name="windows-powershell-remoting-without-configuration"></a>Komunikacji zdalnej programu Windows PowerShell bez konfiguracji
 
-## <a name="remoting-without-configuration"></a>Komunikację zdalną bez konfiguracji
-
-Wiele poleceń cmdlet programu Windows PowerShell ma parametr ComputerName, który umożliwia zbieranie danych i zmienić ustawienia, na co najmniej jeden komputer zdalny. We wszystkich systemach operacyjnych Windows, które środowiska Windows PowerShell obsługuje bez żadnej specjalnej konfiguracji korzystają z różnych technologii komunikacji i wiele pracy.
+Wiele poleceń cmdlet programu Windows PowerShell ma parametr ComputerName, który umożliwia zbieranie danych i zmienić ustawienia, na co najmniej jeden komputer zdalny. Te polecenia cmdlet Użyj różnych protokołów komunikacyjnych i działa we wszystkich systemach operacyjnych Windows, bez żadnej specjalnej konfiguracji.
 
 Te polecenia cmdlet obejmują:
 
-* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Wyczyść EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
-* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
-* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
-* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
-* [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
+- [Restart-Computer](/powershell/module/microsoft.powershell.management/restart-computer)
+- [Test-Connection](/powershell/module/microsoft.powershell.management/test-connection)
+- [Wyczyść w dzienniku zdarzeń](/powershell/module/microsoft.powershell.management/clear-eventlog)
+- [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
+- [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
+- [Get-Process](/powershell/module/microsoft.powershell.management/get-process)
+- [Get-Service](/powershell/module/microsoft.powershell.management/get-service)
+- [Set-Service](/powershell/module/microsoft.powershell.management/set-service)
+- [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent)
+- [Get-WmiObject](/powershell/module/microsoft.powershell.management/get-wmiobject)
 
-Zazwyczaj polecenia cmdlet, które obsługują komunikację zdalną bez specjalnej konfiguracji ma parametr ComputerName, a nie ma parametru sesji. Aby znaleźć te polecenia cmdlet w sesji, wpisz:
+Zazwyczaj polecenia cmdlet, które obsługują komunikację zdalną bez specjalnej konfiguracji ma parametr ComputerName, a nie ma parametr sesji. Aby znaleźć te polecenia cmdlet w sesji, wpisz:
 
 ```powershell
 Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
@@ -49,35 +46,39 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 
 ## <a name="windows-powershell-remoting"></a>Komunikacji zdalnej programu Windows PowerShell
 
-Komunikacji zdalnej programu Windows PowerShell, która używa protokołu WS-Management, można uruchomić wszystkie polecenia programu Windows PowerShell na jednym lub wielu komputerach zdalnych. Umożliwia ustanowienie połączenia trwałe, sesje interakcyjne 1:1 i uruchamiać skrypty na wielu komputerach.
+Przy użyciu protokołu WS-Management, komunikacji zdalnej programu Windows PowerShell umożliwiają uruchamianie dowolnego polecenia programu Windows PowerShell na co najmniej jeden komputer zdalny. Możesz ustanowienia połączeń trwałych, uruchamiania interaktywnych sesji i uruchamiać skrypty na komputerach zdalnych.
 
-Aby użyć komunikacji zdalnej programu Windows PowerShell, komputer zdalny musi być skonfigurowany do zdalnego zarządzania. Aby uzyskać więcej informacji, w tym instrukcje, zobacz [o wymagania dotyczące zdalnego](https://technet.microsoft.com/library/dd315349.aspx).
+Aby użyć komunikacji zdalnej programu Windows PowerShell, należy określić komputer zdalny do zdalnego zarządzania.
+Aby uzyskać więcej informacji, w tym instrukcje, zobacz [o wymagania dotyczące zdalnego](/powershell/module/microsoft.powershell.core/about/about_remote_requirements).
 
-Po skonfigurowaniu komunikacji zdalnej programu Windows PowerShell, wiele strategii komunikacji zdalnej są dostępne. W pozostałej części tego dokumentu zawiera tylko niektóre z nich. Aby uzyskać więcej informacji, zobacz [o zdalnego](https://technet.microsoft.com/library/dd347744.aspx) i [o zdalnego — często zadawane pytania](https://technet.microsoft.com/library/dd347744.aspx).
+Po skonfigurowaniu komunikacji zdalnej programu Windows PowerShell wiele strategii komunikacji zdalnej są dostępne dla Ciebie.
+W tym artykule wymieniono kilka z nich. Aby uzyskać więcej informacji, zobacz [o zdalnym](/powershell/module/microsoft.powershell.core/about/about_remote).
 
-### <a name="start-an-interactive-session"></a>Uruchomić sesji interaktywnej
+### <a name="start-an-interactive-session"></a>Rozpoczynania interaktywnej sesji
 
-Aby uruchomić sesji interaktywnej z jednym komputerem zdalnym, należy użyć [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) polecenia cmdlet.
-Na przykład aby rozpocząć sesji interaktywnej Serwer01 komputerem zdalnym, wpisz:
+Aby rozpocząć interaktywnej sesji z jednym komputerem zdalnym, użyj [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) polecenia cmdlet.
+Na przykład rozpoczynania interaktywnej sesji z komputerem zdalnym Serwer01, wpisz:
 
 ```powershell
 Enter-PSSession Server01
 ```
 
-Aby wyświetlić nazwę komputera, do którego są podłączeni zmiany wiersza polecenia. Następnie uruchom wszystkie wpisywane w wierszu polecenia na komputerze zdalnym, a wyniki są wyświetlane na komputerze lokalnym.
+Zmiany wiersza polecenia, aby wyświetlić nazwę komputera zdalnego. Wszystkie wpisywane w wierszu polecenia Uruchom na komputerze zdalnym, a wyniki są wyświetlane na komputerze lokalnym.
 
-Aby zakończyć sesję interaktywne, wpisz:
+Aby zakończyć interaktywną sesję, wpisz:
 
 ```powershell
 Exit-PSSession
 ```
 
-Aby uzyskać więcej informacji na temat polecenia cmdlet Enter-PSSession i zakończenia-PSSession, zobacz [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) i [zakończenia-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478).
+Aby uzyskać więcej informacji na temat polecenia cmdlet Enter-PSSession i PSSession zakończenia zobacz:
 
-### <a name="run-a-remote-command"></a>Uruchom polecenia zdalnego
+- [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
+- [PSSession zakończenia](/powershell/module/microsoft.powershell.core/exit-pssession)
 
-Aby uruchomić dowolnego polecenia na jednym lub wielu komputerach zdalnych, należy użyć [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) polecenia cmdlet.
-Na przykład, aby uruchomić [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) do Serwer01 i serwer02 komputerów zdalnych, wpisz polecenie:
+### <a name="run-a-remote-command"></a>Uruchom polecenie zdalne
+
+Aby uruchomić polecenie na co najmniej jeden komputer, użyj [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) polecenia cmdlet. Na przykład, aby uruchomić [Get UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) Serwer01 i serwer02 komputerów zdalnych, wpisz polecenie:
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -92,50 +93,45 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-Aby uzyskać więcej informacji na temat polecenia cmdlet Invoke-Command, zobacz [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
+### <a name="run-a-script"></a>Uruchamianie skryptu
 
-### <a name="run-a-script"></a>Uruchom skrypt
+Aby uruchomić skrypt w jeden lub wiele komputerów zdalnych, należy użyć parametru FilePath `Invoke-Command` polecenia cmdlet. Skryptu musi być na lub jest dostępny na komputerze lokalnym. Wyniki są zwracane do komputera lokalnego.
 
-Aby uruchomić skrypt na jednym lub wielu komputerach zdalnych, użyj parametru FilePath polecenia cmdlet Invoke-Command. Skrypt nie może być dostępny na komputerze lokalnym. Wyniki są zwracane do komputera lokalnego.
-
-Na przykład następujące polecenie uruchamia skrypt DiskCollect.ps1 na komputerach zdalnych Serwer01 i serwer02.
+Na przykład następujące polecenie uruchamia skrypt DiskCollect.ps1 na komputerach zdalnych, Serwer01 i serwer02.
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-Aby uzyskać więcej informacji na temat polecenia cmdlet Invoke-Command, zobacz [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493).
+### <a name="establish-a-persistent-connection"></a>Ustanowienia połączeń trwałych
 
-### <a name="establish-a-persistent-connection"></a>Ustanowić trwałe połączenie
-
-Na uruchomieniu serii pokrewnych poleceń, które udostępniają danych, utworzenia sesji na komputerze zdalnym, a następnie uruchom polecenia w sesji, który utworzono za pomocą polecenia cmdlet Invoke-Command. Aby utworzyć sesję zdalną, należy użyć polecenia cmdlet New-PSSession.
-
-Na przykład następujące polecenie tworzy sesję zdalną na komputerze Serwer01 i innej sesji zdalnej na komputerze serwer02. Obiektów sesji jest zapisywany w zmiennej $s.
+Użyj `New-PSSession` polecenia cmdlet, aby utworzyć trwały sesji na komputerze zdalnym. Poniższy przykład tworzy sesje zdalne Serwer01 i serwer02. Obiektów sesji są przechowywane w `$s` zmiennej.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
 ```
 
-Teraz, gdy sesje są ustalone, możesz uruchomić dowolne polecenie w nich. I ponieważ sesje są trwałe, można zbierać dane w jednym poleceniu i używany w kolejnych poleceniach.
+Teraz, gdy sesje są ustanowione, możesz uruchomić dowolne polecenie w nich. I sesje są trwałe, można zbierać dane z jednego polecenia i używać go w innym poleceniu.
 
-Na przykład następujące polecenie uruchamia polecenie Get-poprawki w sesji w zmiennej $s i zapisuje wyniki w zmiennej $h. Zmienna $h zostało utworzone w każdej sesji w $s, ale nie istnieje w lokalnej sesji.
+Na przykład następujące polecenie uruchamia polecenie Get-HotFix w sesji w zmiennej $s i zapisuje wyniki w zmiennej $h. Utworzono zmienną $h we wszystkich sesjach w $s, ale nie istnieje w lokalnej sesji.
 
 ```powershell
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Teraz można używać danych za pomocą zmiennej $h w kolejnych poleceniach, takie jak następujące. Wyniki są wyświetlane na komputerze lokalnym.
+Teraz możesz używać danych w `$h` zmiennej z innymi poleceniami w tej samej sesji. Wyniki są wyświetlane na komputerze lokalnym. Przykład:
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
-### <a name="advanced-remoting"></a>Zaawansowane usługi zdalne
+### <a name="advanced-remoting"></a>Zaawansowane komunikacji zdalnej.
 
-Zdalne zarządzanie programu Windows PowerShell rozpoczyna właśnie w tym miejscu. Za pomocą poleceń cmdlet, instalowane przy użyciu programu Windows PowerShell, można ustanowić i skonfigurować zdalnej sesji z lokalnymi i zdalnymi zakończeń tworzenia dostosowanego i ograniczeniami sesji, Zezwalaj użytkownikom na zaimportować polecenia w sesji zdalnej, które aktualnie ma uruchomiony niejawnie w sesji zdalnej, należy skonfigurować zabezpieczenia sesję zdalną i o wiele więcej.
+Zdalne zarządzanie programu Windows PowerShell po prostu zaczyna się tutaj. Korzystając z poleceń cmdlet zainstalowanych za pomocą programu Windows PowerShell, można ustanowić i skonfigurować zdalnej sesji z lokalnymi i zdalnymi kończy się tworzenie dostosowanych i objęty ograniczeniami sesji, umożliwia użytkownikom import poleceń w sesji zdalnej, które faktycznie uruchomić niejawnie w sesji zdalnej, należy skonfigurować zabezpieczenia sesję zdalną i o wiele więcej.
 
-W celu ułatwienia konfiguracji zdalnej, Windows PowerShell zawiera dostawcy usługi WSMan. WSMAN: dysk, który tworzy dostawcę umożliwia przechodzenie przez hierarchię ustawień konfiguracyjnych na komputerze lokalnym i komputerach zdalnych.
-Aby uzyskać więcej informacji o WSMan dostawcy, zobacz [dostawcy o WSMan](https://technet.microsoft.com/library/dd819476.aspx) i [polecenia cmdlet dotyczące protokołu WS-Management](https://technet.microsoft.com/library/dd819481.aspx), lub w konsoli środowiska Windows PowerShell, wpisz "Get-Help wsman".
+Program Windows PowerShell zawiera dostawcę usługi WS-Management. Tworzy dostawcę `WSMAN:` dysku, który pozwala nawigować po hierarchii ustawień konfiguracji na komputerze lokalnym i na komputerach zdalnych.
+
+Aby uzyskać więcej informacji na temat dostawcy usługi WS-Management, zobacz [dostawcy usługi WS-Management](https://technet.microsoft.com/library/dd819476.aspx) i [polecenia cmdlet dotyczące usługi WS-Management](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets), lub w konsoli programu Windows PowerShell, wpisz `Get-Help wsman`.
 
 Aby uzyskać więcej informacji, zobacz:
 
@@ -143,7 +139,7 @@ Aby uzyskać więcej informacji, zobacz:
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-Aby uzyskać pomoc dotyczącą usług zdalnych błędy, zobacz [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
+Aby uzyskać pomoc dotyczącą błędów usługami zdalnymi, zobacz [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
 
 ## <a name="see-also"></a>Zobacz też
 
@@ -153,11 +149,11 @@ Aby uzyskać pomoc dotyczącą usług zdalnych błędy, zobacz [about_Remote_Tro
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
-- [Dostawca o WSMan](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+- [Dostawca usługi WS-Management](https://technet.microsoft.com/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
 
 [wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
 [ssh-remoting]: SSH-Remoting-in-PowerShell-Core.md

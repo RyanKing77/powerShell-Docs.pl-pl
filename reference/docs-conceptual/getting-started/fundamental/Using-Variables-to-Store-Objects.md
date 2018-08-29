@@ -1,35 +1,37 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie zmiennych na potrzeby przechowywania obiektów
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953331"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134062"
 ---
-# <a name="using-variables-to-store-objects"></a>Używanie zmiennych na potrzeby przechowywania obiektów
-PowerShell współpracuje z obiektami. PowerShell umożliwia tworzenie zmiennych zasadniczo o nazwie obiektów, aby zachować dane wyjściowe do późniejszego użycia. Jeśli są używane do pracy z zmiennych w innych powłok należy pamiętać, że zmienne środowiska PowerShell obiektów, nie tekstu.
+# <a name="using-variables-to-store-objects"></a>Używanie zmiennych do przechowywania obiektów
 
-Zmienne zawsze są określane za pomocą $ litery i może zawierać dowolne znaki alfanumeryczne lub podkreślenie w nazwach.
+Program PowerShell działa z obiektami. Program PowerShell umożliwia tworzenie nazwane obiekty znane jako zmienne.
+Nazwy zmiennych może zawierać żadnych znaków alfanumerycznych możesz znaki podkreślenia. W przypadku użycia w programie PowerShell, zmienna jest zawsze określona za pomocą \$ znak następuje nazwa zmiennej.
 
-### <a name="creating-a-variable"></a>Tworzenie zmiennej
-Można utworzyć zmiennej, wpisz prawidłową nazwę zmiennej:
+## <a name="creating-a-variable"></a>Tworzenie zmiennej
+
+Można utworzyć zmienną, wpisując prawidłową nazwę zmiennej:
 
 ```
 PS> $loc
 PS>
 ```
 
-Zwraca żadnego wyniku, ponieważ **$loc** nie ma wartości. Można utworzyć zmienną i przypisz mu wartość w tym samym kroku. PowerShell tylko tworzy zmiennej, jeśli nie istnieją; w przeciwnym razie przypisuje określona wartość istniejącej zmiennej. Do przechowywania bieżącej lokalizacji w zmiennej **$loc**, wpisz:
+W tym przykładzie zwraca żadnego wyniku, ponieważ `$loc` nie ma wartości. Można utworzyć zmienną i przypisać jej wartości w tym samym kroku. Programu PowerShell tworzy zmienną tylko, jeśli nie istnieje.
+W przeciwnym razie przypisuje określoną wartość do istniejącej zmiennej. Poniższy przykład zapisuje bieżącej lokalizacji w zmiennej `$loc`:
 
-```
+```powershell
 $loc = Get-Location
 ```
 
-Brak żadnych danych wyjściowych wyświetlane po wpisaniu tego polecenia, ponieważ dane wyjściowe są wysyłane do $loc. W programie PowerShell wyświetlanych wyników jest efektem ubocznym fakt, że dane, który nie jest w przeciwnym razie skierowany, zawsze są wysyłane do ekranu. Wpisywanie $loc wyświetli bieżącej lokalizacji:
+Program PowerShell nie wyświetla danych wyjściowych po wpisaniu tego polecenia. Program PowerShell wysyła dane wyjściowe "Get-Location" `$loc`. W programie PowerShell, który nie jest przypisany lub przekierowanie przesyłane do ekranu. Wpisywanie `$loc` pokazuje bieżącą lokalizację:
 
 ```
 PS> $loc
@@ -39,9 +41,9 @@ Path
 C:\temp
 ```
 
-Można użyć **elementu członkowskiego Get** do wyświetlania informacji o zawartości zmiennych. Przekazanie w potoku $loc do elementu członkowskiego Get będzie pokazują, że jest **PATHINFO zawiera** obiektu, podobnie jak dane wyjściowe z lokalizacji pobierania:
+Możesz użyć `Get-Member` do wyświetlania informacji o zawartości zmiennych. `Get-Member` Pokazuje, że `$loc` jest **PATHINFO zawiera** obiektu, podobnie jak dane wyjściowe z `Get-Location`:
 
-```
+```powershell
 PS> $loc | Get-Member -MemberType Property
 
    TypeName: System.Management.Automation.PathInfo
@@ -54,47 +56,47 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### <a name="manipulating-variables"></a>Manipulowanie zmiennych
-PowerShell zawiera kilka poleceń do modyfikowania zmiennych. Aby zobaczyć pełną listę w czytelnej postaci, należy wpisać:
+## <a name="manipulating-variables"></a>Manipulowanie zmiennych
 
-```
+Program PowerShell udostępnia kilka poleceń do manipulowania zmiennych. Aby zobaczyć pełną listę w postaci do odczytu, należy wpisać:
+
+```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-Oprócz zmiennych tworzonych w bieżącej sesji programu PowerShell istnieje kilka zmienne zdefiniowane w systemie. Można użyć **Remove-Variable** polecenia cmdlet, aby umożliwić wyczyszczenie wszystkich zmiennych, które nie są kontrolowane przez programu PowerShell. Wpisz następujące polecenie, aby wyczyścić wszystkie zmienne:
+Program PowerShell tworzy również kilka zmiennych zdefiniowanych w systemie. Możesz użyć `Remove-Variable` polecenie cmdlet do usuwania zmiennych, które nie są kontrolowane przez program PowerShell z bieżącej sesji. Wpisz następujące polecenie, aby wyczyścić wszystkie zmienne:
 
-```
+```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-Spowoduje to utworzenie poniższą monit o potwierdzenie.
+Po uruchomieniu poprzednie polecenie `Get-Variable` polecenie cmdlet pokazuje zmiennych systemowych programu PowerShell.
 
-```
-Confirm
-Are you sure you want to perform this action?
-Performing operation "Remove Variable" on Target "Name: Error".
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
-(default is "Y"):A
-```
+Programu PowerShell tworzy dysk zmiennej. Skorzystaj z następującego przykładu, aby wyświetlić wszystkie zmienne programu PowerShell przy użyciu zmiennej dysku:
 
-Jeśli następnie uruchom **Get-Variable** polecenia cmdlet, zobaczysz pozostałych zmiennych środowiska PowerShell. Ponieważ jest również zmienną dysku środowiska PowerShell, można także wyświetlić wszystkich zmiennych środowiska PowerShell, wpisując:
-
-```
+```powershell
 Get-ChildItem variable:
 ```
 
-### <a name="using-cmdexe-variables"></a>Korzystając ze zmiennych Cmd.exe
-Mimo że programu PowerShell nie jest Cmd.exe, jest uruchamiany w środowisku powłoki poleceń i można używać tego samego zmiennych dostępnych w każdym środowisku w systemie Windows. Te zmienne są dostępne za pośrednictwem dysku o nazwie **env**:. Te zmienne można wyświetlić, wpisując:
+## <a name="using-cmdexe-variables"></a>Używanie zmiennych Cmd.exe
 
-```
+Program PowerShell można użyć tego samego zmiennych środowiskowych dostępnych do dowolnego procesu Windows, w tym Cmd.exe. Te zmienne są udostępniane za pośrednictwem dysku o nazwie `env:`. Te zmienne można wyświetlić, wpisując następujące polecenie:
+
+```powershell
 Get-ChildItem env:
 ```
 
-Mimo że cmdlet zmiennej standardowe nie są zaprojektowane do pracy z **env:** zmiennych, nadal można je, określając **env:** prefiks. Na przykład, aby wyświetlić katalog główny systemu operacyjnego, można użyć powłoki poleceń **katalogu % SystemRoot %** zmienną z wewnątrz środowiska PowerShell, wpisując:
+Standardowa `*-Variable` poleceń cmdlet nie są zaprojektowane do pracy ze zmiennymi środowiskowymi. Zmienne środowiskowe są dostępne przy użyciu `env:` prefiksu dysku. Na przykład **% SystemRoot %** zmiennej w Cmd.exe zawiera nazwę katalogu głównego systemu operacyjnego. W programie PowerShell użyj `$env:SystemRoot` dostępu do tej samej wartości.
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-Można również tworzyć i modyfikować zmiennych środowiskowych z wewnątrz środowiska PowerShell. Zmienne środowiskowe dostępne z programu Windows PowerShell jest zgodna z normalnym reguły dotyczące zmiennych środowiskowych w innym miejscu w systemie Windows.
+Można również tworzyć i modyfikować zmiennych środowiskowych z programu PowerShell. Zmienne środowiskowe w programie PowerShell, wykonaj te same zasady stosowania zmienne środowiskowe używane w innym miejscu w systemie operacyjnym. Poniższy przykład tworzy nową zmienną środowiskową:
+
+```powershell
+$env:LIB_PATH='/usr/local/lib'
+```
+
+Chociaż nie jest wymagane, czy jest typowe dla nazwy zmiennych środowiskowych użyć wielkie litery.
