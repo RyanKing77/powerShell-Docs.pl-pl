@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie znanych nazw poleceń
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 08402aa5b959711c150fff89aa6747b6b43f8aa8
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134087"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353253"
 ---
 # <a name="using-familiar-command-names"></a>Używanie znanych nazw poleceń
 
@@ -16,9 +16,9 @@ Program PowerShell obsługuje aliasów do odwoływania się do polecenia przy u�
 
 Aliasów kojarzy nazwę przy użyciu innego polecenia. Na przykład programu PowerShell ma funkcji o nazwie wewnętrznej `Clear-Host` , czyści okno danych wyjściowych. Można wpisać `cls` lub `clear` aliasu w wierszu polecenia. Program PowerShell interpretuje te aliasy i uruchamia `Clear-Host` funkcji.
 
-Ta funkcja pozwala użytkownikom, aby dowiedzieć się, programu PowerShell. Po pierwsze większość użytkowników Cmd.exe i Unix ma duże dostępnych poleceń, które znanych według nazw użytkowników. Odpowiedniki w programie PowerShell nie może utworzyć takie same wyniki. Wyniki są jednak Zamknij wystarczająco dużo, które użytkownicy mogą działać bez znajomości nazwa polecenia programu PowerShell. "Finger pamięci" jest inny główne źródło Rozczarowanie podczas nauki nowych powłoki poleceń. Jeśli używano Cmd.exe przez wiele lat, może być reflexively wpisz `cls` polecenie, aby wyczyścić ekran. Bez alias `Clear-Host`, otrzymujesz komunikat o błędzie i nie będą wiedzieli, co należy zrobić, aby wyczyścić dane wyjściowe.
+Ta funkcja pozwala użytkownikom, aby dowiedzieć się, programu PowerShell. Po pierwsze większość **cmd.exe** i dużych dostępnych poleceń, które użytkownicy znanych według nazwy użytkowników systemu Unix. Odpowiedniki w programie PowerShell nie może utworzyć takie same wyniki. Wyniki są jednak Zamknij wystarczająco dużo, które użytkownicy mogą działać bez znajomości nazwa polecenia programu PowerShell. "Finger pamięci" jest inny główne źródło Rozczarowanie podczas nauki nowych powłoki poleceń. Jeśli używano **cmd.exe** przez wiele lat, możesz reflexively wpisać `cls` polecenie, aby wyczyścić ekran. Bez alias `Clear-Host`, otrzymujesz komunikat o błędzie i nie będą wiedzieli, co należy zrobić, aby wyczyścić dane wyjściowe.
 
-Na poniższej liście przedstawiono niektóre typowe polecenia Cmd.exe i Unix, które są dostępne w programie PowerShell:
+Na poniższej liście przedstawiono niektóre typowe **cmd.exe** i polecenia systemu Unix, których można użyć w programie PowerShell:
 
 |||||
 |-|-|-|-|

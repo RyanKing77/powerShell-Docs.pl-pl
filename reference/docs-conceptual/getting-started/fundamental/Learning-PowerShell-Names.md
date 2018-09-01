@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Poznawanie nazw programu PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: d4e374530c8628df0d53fd860c4b7a149c58eb60
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134194"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353270"
 ---
 # <a name="learning-powershell-names"></a>Poznawanie nazw programu PowerShell
 
@@ -19,10 +19,13 @@ Może to być dla nazwy poleceń, ponieważ każde polecenie jest osobnego narz�
 
 ## <a name="learning-command-names-in-traditional-shells"></a>Poznawanie nazw poleceń w tradycyjnej powłoki
 
-Większość poleceń są kompilowane do elementów systemu operacyjnego lub aplikacji, takich jak usługi lub procesy zarządzania. Polecenia mają nazwy, jakie mogą być lub może nie być dopasowane do rodziny. Na przykład w przypadku systemów Windows, możesz użyć `net start` i `net stop` polecenia, aby uruchomić i zatrzymać usługę. **SC. Plik EXE** to kolejne narzędzie kontroli usługi dla Windows. Tej nazwy nie pasuje do wzorca nazewnictwa dla `net` usługi poleceń. Do zarządzania procesami Windows ma `tasklist` polecenia do listy procesów i `taskkill` polecenie, aby zatrzymywać procesy.
+Większość poleceń są kompilowane do elementów systemu operacyjnego lub aplikacji, takich jak usługi lub procesy zarządzania. Polecenia mają nazwy, jakie mogą być lub może nie być dopasowane do rodziny. Na przykład w przypadku systemów Windows, możesz użyć `net start` i `net stop` polecenia, aby uruchomić i zatrzymać usługę. **SC.exe** to kolejne narzędzie kontroli usługi dla Windows. Tej nazwy nie pasuje do wzorca nazewnictwa dla **net.exe** usługi poleceń. Do zarządzania procesami Windows ma **tasklist.exe** polecenia do listy procesów i **taskkill.exe** polecenie, aby zatrzymywać procesy.
 
-Ponadto tych poleceń obowiązują specyfikacje nieregularne parametru. Nie można użyć `net start` polecenie, aby uruchomić usługę na komputerze zdalnym. `sc` Polecenie można uruchomić usługę na komputerze zdalnym.
-Jednak aby określić komputer zdalny, możesz jej nazwę musi poprzedzać prefiks podwójny ukośnik odwrotny. Aby uruchomić usługę Bufor wydruku na komputerze zdalnym o nazwie DC01, możesz wpisać `sc \\DC01 start spooler`. Do listy podzadań uruchomionych w centrum danych DC01, użyj **/S** parametr i nazwę komputera bez ukośników odwrotnych. Na przykład `tasklist /S DC01`.
+Ponadto tych poleceń obowiązują specyfikacje nieregularne parametru. Nie można użyć `net start` polecenie, aby uruchomić usługę na komputerze zdalnym. **Sc.exe** polecenia można uruchomić usługę na komputerze zdalnym. Jednak aby określić komputer zdalny, możesz jej nazwę musi poprzedzać prefiks podwójny ukośnik odwrotny. Aby uruchomić usługę Bufor wydruku na komputerze zdalnym o nazwie DC01, możesz wpisać `sc.exe \\DC01 start spooler`.
+Do listy podzadań uruchomionych w centrum danych DC01, użyj **/S** parametr i nazwę komputera bez ukośników odwrotnych. Na przykład `tasklist /S DC01`.
+
+> [!NOTE]
+> Przed programu PowerShell w wersji 6 `sc` alias został `Set-Content` polecenia cmdlet. Aby uruchomić **sc.exe** polecenia, musi zawierać rozszerzenie pliku.
 
 Usługi i procesy są przykładami elementy zarządzane na komputerze, które mają dobrze zdefiniowanego cyklu. Może rozpocząć lub zatrzymać usług i procesów lub Uzyskaj listę wszystkich aktualnie uruchomionych usług lub procesów. Mimo że istnieją ważne różnice techniczne między nimi, akcje, które można wykonać na usług i procesów są koncepcyjnie takie same. Ponadto wyborów, których możemy wprowadzić dostosować akcję określania parametrów może być zachowuje się podobnie jak również.
 
@@ -37,8 +40,7 @@ Program PowerShell zawiera zalecany zestaw zleceń standardowych. Rzeczowniki s�
 Na przykład dwa rzeczowniki i zleceń spójności nie uprościć, nauki tej bardzo. Rozszerz tej liście, aby zestaw standardowych 10 zleceń i rzeczowniki 10. Teraz wystarczy tylko 20 wyrazy, aby zrozumieć.
 Jednak te słowa mogą być połączone do formularza 100 polecenia unikatowych nazw.
 
-Jest łatwa do zrozumienia, czytając nazwy działania polecenia programu PowerShell. To polecenie, aby zamknąć komputer `Stop-Computer`. Polecenie, aby wyświetlić listę wszystkich komputerów w sieci jest `Get-Computer`.
-To polecenie, aby pobrać daty systemowej `Get-Date`.
+Jest łatwa do zrozumienia, czytając nazwy działania polecenia programu PowerShell. To polecenie, aby zamknąć komputer `Stop-Computer`. Polecenie, aby wyświetlić listę wszystkich komputerów w sieci jest `Get-Computer`. To polecenie, aby pobrać daty systemowej `Get-Date`.
 
 Możesz wyświetlić listę wszystkich poleceń, które zawierają konkretnego zlecenia z **zlecenie** parametr `Get-Command`. Na przykład, aby wyświetlić wszystkie polecenia cmdlet, które używają zlecenie `Get`, wpisz:
 

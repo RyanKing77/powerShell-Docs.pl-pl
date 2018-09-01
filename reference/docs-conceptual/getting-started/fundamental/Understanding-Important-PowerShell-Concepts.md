@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Opis ważnych pojęć związanych z programu PowerShell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 5f8192f962cebb8ee5e5384e39b48de811b11003
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134216"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353198"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Opis ważnych pojęć związanych z programu PowerShell
 
@@ -23,10 +23,9 @@ Jeśli używano narzędzia przetwarzanie tekstu do przetwarzania danych w przesz
 
 ## <a name="the-command-family-is-extensible"></a>Rodzina poleceń jest rozszerzalny
 
-Interfejsów, takich jak Cmd.exe nie umożliwiają zwiększenie bezpośrednio zestawu wbudowanego polecenia.
-Można utworzyć zewnętrzne narzędzia wiersza polecenia, które działają w Cmd.exe. Ale tych narzędzi zewnętrznych nie ma usług, takich jak integracja pomocy. Cmd.exe automatycznie nie wie, że te narzędzia zewnętrzne są prawidłowych poleceń.
+Interfejsy, takie jak **cmd.exe**nie umożliwiają zwiększenie bezpośrednio zestawu wbudowanego polecenia. Można utworzyć zewnętrzne narzędzia wiersza polecenia, które działają w **cmd.exe**. Ale tych narzędzi zewnętrznych nie ma usług, takich jak integracja pomocy. **cmd.exe**automatycznie nie wie, że te narzędzia zewnętrzne są prawidłowych poleceń.
 
-Natywne poleceń w programie PowerShell, są znane jako *poleceń cmdlet* (Wymowa komand-). Można tworzyć własne moduły poleceń cmdlet i funkcji przy użyciu skompilowany kod lub skrypty. Moduły można dodać polecenia cmdlet i dostawców, powłoki. Program PowerShell obsługuje również skrypty, które są analogiczne do skryptów powłoki systemu UNIX i pliki wsadowe Cmd.exe.
+Natywne poleceń w programie PowerShell, są znane jako *poleceń cmdlet* (Wymowa komand-). Można tworzyć własne moduły poleceń cmdlet i funkcji przy użyciu skompilowany kod lub skrypty. Moduły można dodać polecenia cmdlet i dostawców, powłoki. Program PowerShell obsługuje również skrypty, które są analogiczne do skryptów powłoki systemu UNIX i **cmd.exe** pliki wsadowe.
 
 ## <a name="powershell-handles-console-input-and-display"></a>Program PowerShell obsługuje dane wejściowe konsoli i wyświetlanie
 

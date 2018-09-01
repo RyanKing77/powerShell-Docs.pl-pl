@@ -3,14 +3,14 @@ ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie zmiennych na potrzeby przechowywania obiektów
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 3168b64039a601857f9c684108de5770f88329e3
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134062"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353222"
 ---
-# <a name="using-variables-to-store-objects"></a>Używanie zmiennych do przechowywania obiektów
+# <a name="using-variables-to-store-objects"></a>Używanie zmiennych na potrzeby przechowywania obiektów
 
 Program PowerShell działa z obiektami. Program PowerShell umożliwia tworzenie nazwane obiekty znane jako zmienne.
 Nazwy zmiennych może zawierać żadnych znaków alfanumerycznych możesz znaki podkreślenia. W przypadku użycia w programie PowerShell, zmienna jest zawsze określona za pomocą \$ znak następuje nazwa zmiennej.
@@ -78,15 +78,15 @@ Programu PowerShell tworzy dysk zmiennej. Skorzystaj z następującego przykład
 Get-ChildItem variable:
 ```
 
-## <a name="using-cmdexe-variables"></a>Używanie zmiennych Cmd.exe
+## <a name="using-cmdexe-variables"></a>Używanie zmiennych cmd.exe
 
-Program PowerShell można użyć tego samego zmiennych środowiskowych dostępnych do dowolnego procesu Windows, w tym Cmd.exe. Te zmienne są udostępniane za pośrednictwem dysku o nazwie `env:`. Te zmienne można wyświetlić, wpisując następujące polecenie:
+Program PowerShell można użyć tego samego zmiennych środowiskowych dostępnych do dowolnego procesu Windows łącznie **cmd.exe**. Te zmienne są udostępniane za pośrednictwem dysku o nazwie `env:`. Te zmienne można wyświetlić, wpisując następujące polecenie:
 
 ```powershell
 Get-ChildItem env:
 ```
 
-Standardowa `*-Variable` poleceń cmdlet nie są zaprojektowane do pracy ze zmiennymi środowiskowymi. Zmienne środowiskowe są dostępne przy użyciu `env:` prefiksu dysku. Na przykład **% SystemRoot %** zmiennej w Cmd.exe zawiera nazwę katalogu głównego systemu operacyjnego. W programie PowerShell użyj `$env:SystemRoot` dostępu do tej samej wartości.
+Standardowa `*-Variable` poleceń cmdlet nie są zaprojektowane do pracy ze zmiennymi środowiskowymi. Zmienne środowiskowe są dostępne przy użyciu `env:` prefiksu dysku. Na przykład **% SystemRoot %** zmienną **cmd.exe** zawiera nazwę katalogu głównego systemu operacyjnego. W programie PowerShell użyj `$env:SystemRoot` dostępu do tej samej wartości.
 
 ```
 PS> $env:SystemRoot
