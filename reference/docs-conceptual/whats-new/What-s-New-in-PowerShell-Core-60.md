@@ -2,12 +2,12 @@
 title: Co nowego w programie PowerShell Core 6.0
 description: Nowe funkcje i zmiany w programie PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 9bd59dc1821e2fb3ec2d30254ab1fac4089f0340
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587248"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557236"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Co nowego w programie PowerShell Core 6.0
 
@@ -373,14 +373,14 @@ Aby uzyskać pełną listę poprawek i zmian, zapoznaj się z naszym [dziennika 
   - Platforma systemu operacyjnego (`$PSVersionTable.OSDescription`)
   - Dokładna wersja programu PowerShell (`$PSVersionTable.GitCommitId`)
 
-Jeśli chcesz zrezygnować z tych danych telemetrycznych po prostu usunąć `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` lub Utwórz `POWERSHELL_TELEMETRY_OPTOUT` zmienną środowiskową przy użyciu jednego z następujących wartości: `true`, `1` lub `yes`.
-Usunięcie tego pliku lub utworzenie zmiennej pomija wszystkie dane telemetryczne, nawet przed pierwszym uruchomieniu programu PowerShell.
+Jeśli chcesz zrezygnować z tych danych telemetrycznych po prostu Utwórz `POWERSHELL_TELEMETRY_OPTOUT` zmienną środowiskową przy użyciu jednego z następujących wartości: `true`, `1` lub `yes`.
+Tworzenie zmiennej pomija wszystkie dane telemetryczne, nawet przed pierwszym uruchomieniu programu PowerShell.
 Planujemy także udostępnianie tych danych telemetrycznych i szczegółowe dane możemy zgromadzonych danych telemetrycznych w [pulpit nawigacyjny społeczności][community-dashboard].
 Możesz dowiedzieć się więcej na temat sposobu ich wykorzystania przez nas w tym [wpis w blogu][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
