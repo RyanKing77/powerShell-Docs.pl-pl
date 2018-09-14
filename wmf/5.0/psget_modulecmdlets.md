@@ -1,49 +1,49 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190608"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522832"
 ---
-# <a name="powershellget-cmdlets-for-module-management"></a><span data-ttu-id="087d7-102">Polecenia cmdlet PowerShellGet na potrzeby zarządzania modułami</span><span class="sxs-lookup"><span data-stu-id="087d7-102">PowerShellGet Cmdlets for Module Management</span></span>
+# <a name="powershellget-cmdlets-for-module-management"></a><span data-ttu-id="bf42f-102">Polecenia cmdlet PowerShellGet na potrzeby zarządzania modułami</span><span class="sxs-lookup"><span data-stu-id="bf42f-102">PowerShellGet Cmdlets for Module Management</span></span>
 
-- [<span data-ttu-id="087d7-103">Find-DscResource</span><span class="sxs-lookup"><span data-stu-id="087d7-103">Find-DscResource</span></span>](https://technet.microsoft.com/library/mt654006.aspx)
-- [<span data-ttu-id="087d7-104">Znajdź moduł</span><span class="sxs-lookup"><span data-stu-id="087d7-104">Find-Module</span></span>](https://technet.microsoft.com/library/dn807167.aspx)
-- [<span data-ttu-id="087d7-105">Znajdź skryptu</span><span class="sxs-lookup"><span data-stu-id="087d7-105">Find-Script</span></span>](https://technet.microsoft.com/library/mt654001.aspx)
-- [<span data-ttu-id="087d7-106">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="087d7-106">Get-InstalledModule</span></span>](https://technet.microsoft.com/en-us/library/mt653990.aspx)
-- [<span data-ttu-id="087d7-107">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="087d7-107">Get-InstalledScript</span></span>](https://technet.microsoft.com/en-us/library/mt653994.aspx)
-- [<span data-ttu-id="087d7-108">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="087d7-108">Get-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [<span data-ttu-id="087d7-109">Install-Module</span><span class="sxs-lookup"><span data-stu-id="087d7-109">Install-Module</span></span>](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [<span data-ttu-id="087d7-110">Install-Script</span><span class="sxs-lookup"><span data-stu-id="087d7-110">Install-Script</span></span>](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [<span data-ttu-id="087d7-111">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="087d7-111">New-ScriptFileInfo</span></span>](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [<span data-ttu-id="087d7-112">Publish-Module</span><span class="sxs-lookup"><span data-stu-id="087d7-112">Publish-Module</span></span>](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [<span data-ttu-id="087d7-113">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="087d7-113">Publish-Script</span></span>](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [<span data-ttu-id="087d7-114">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="087d7-114">Register-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [<span data-ttu-id="087d7-115">Save-Module</span><span class="sxs-lookup"><span data-stu-id="087d7-115">Save-Module</span></span>](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [<span data-ttu-id="087d7-116">Save-Script</span><span class="sxs-lookup"><span data-stu-id="087d7-116">Save-Script</span></span>](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [<span data-ttu-id="087d7-117">Zestaw PSRepository</span><span class="sxs-lookup"><span data-stu-id="087d7-117">Set-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [<span data-ttu-id="087d7-118">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="087d7-118">Test-ScriptFileInfo</span></span>](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [<span data-ttu-id="087d7-119">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="087d7-119">Uninstall-Module</span></span>](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [<span data-ttu-id="087d7-120">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="087d7-120">Uninstall-Script</span></span>](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [<span data-ttu-id="087d7-121">Update-Module</span><span class="sxs-lookup"><span data-stu-id="087d7-121">Update-Module</span></span>](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [<span data-ttu-id="087d7-122">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="087d7-122">Update-ModuleManifest</span></span>](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [<span data-ttu-id="087d7-123">Update-Script</span><span class="sxs-lookup"><span data-stu-id="087d7-123">Update-Script</span></span>](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [<span data-ttu-id="087d7-124">Update-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="087d7-124">Update-ScriptFileInfo</span></span>](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [<span data-ttu-id="087d7-125">Unregister-PSRepository</span><span class="sxs-lookup"><span data-stu-id="087d7-125">Unregister-PSRepository</span></span>](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [<span data-ttu-id="bf42f-103">Find-DscResource</span><span class="sxs-lookup"><span data-stu-id="bf42f-103">Find-DscResource</span></span>](https://technet.microsoft.com/library/mt654006.aspx)
+- [<span data-ttu-id="bf42f-104">Find-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-104">Find-Module</span></span>](https://technet.microsoft.com/library/dn807167.aspx)
+- [<span data-ttu-id="bf42f-105">Find-Script</span><span class="sxs-lookup"><span data-stu-id="bf42f-105">Find-Script</span></span>](https://technet.microsoft.com/library/mt654001.aspx)
+- [<span data-ttu-id="bf42f-106">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="bf42f-106">Get-InstalledModule</span></span>](https://technet.microsoft.com/library/mt653990.aspx)
+- [<span data-ttu-id="bf42f-107">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="bf42f-107">Get-InstalledScript</span></span>](https://technet.microsoft.com/library/mt653994.aspx)
+- [<span data-ttu-id="bf42f-108">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="bf42f-108">Get-PSRepository</span></span>](https://technet.microsoft.com/library/dn807170.aspx)
+- [<span data-ttu-id="bf42f-109">Install-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-109">Install-Module</span></span>](https://technet.microsoft.com/library/dn807162.aspx)
+- [<span data-ttu-id="bf42f-110">Install-Script</span><span class="sxs-lookup"><span data-stu-id="bf42f-110">Install-Script</span></span>](https://technet.microsoft.com/library/mt653998.aspx)
+- [<span data-ttu-id="bf42f-111">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="bf42f-111">New-ScriptFileInfo</span></span>](https://technet.microsoft.com/library/mt653995.aspx)
+- [<span data-ttu-id="bf42f-112">Publish-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-112">Publish-Module</span></span>](https://technet.microsoft.com/library/dn807163.aspx)
+- [<span data-ttu-id="bf42f-113">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="bf42f-113">Publish-Script</span></span>](https://technet.microsoft.com/library/mt654003.aspx)
+- [<span data-ttu-id="bf42f-114">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="bf42f-114">Register-PSRepository</span></span>](https://technet.microsoft.com/library/dn807168.aspx)
+- [<span data-ttu-id="bf42f-115">Save-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-115">Save-Module</span></span>](https://technet.microsoft.com/library/mt653992.aspx)
+- [<span data-ttu-id="bf42f-116">Save-Script</span><span class="sxs-lookup"><span data-stu-id="bf42f-116">Save-Script</span></span>](https://technet.microsoft.com/library/mt654004.aspx)
+- [<span data-ttu-id="bf42f-117">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="bf42f-117">Set-PSRepository</span></span>](https://technet.microsoft.com/library/dn807165.aspx)
+- [<span data-ttu-id="bf42f-118">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="bf42f-118">Test-ScriptFileInfo</span></span>](https://technet.microsoft.com/library/mt654005.aspx)
+- [<span data-ttu-id="bf42f-119">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-119">Uninstall-Module</span></span>](https://technet.microsoft.com/library/mt653996.aspx)
+- [<span data-ttu-id="bf42f-120">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="bf42f-120">Uninstall-Script</span></span>](https://technet.microsoft.com/library/mt653989.aspx)
+- [<span data-ttu-id="bf42f-121">Update-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-121">Update-Module</span></span>](https://technet.microsoft.com/library/dn807166.aspx)
+- [<span data-ttu-id="bf42f-122">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="bf42f-122">Update-ModuleManifest</span></span>](https://technet.microsoft.com/library/mt654002.aspx)
+- [<span data-ttu-id="bf42f-123">Update-Script</span><span class="sxs-lookup"><span data-stu-id="bf42f-123">Update-Script</span></span>](https://technet.microsoft.com/library/mt653997.aspx)
+- [<span data-ttu-id="bf42f-124">Update-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="bf42f-124">Update-ScriptFileInfo</span></span>](https://technet.microsoft.com/library/mt653991.aspx)
+- [<span data-ttu-id="bf42f-125">Unregister-PSRepository</span><span class="sxs-lookup"><span data-stu-id="bf42f-125">Unregister-PSRepository</span></span>](https://technet.microsoft.com/library/dn807161.aspx)
 
-## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a><span data-ttu-id="087d7-126">Obsługa instalacji modułu zależności, Get-InstalledModule i polecenia cmdlet Uninstall-modułu</span><span class="sxs-lookup"><span data-stu-id="087d7-126">Module dependency installation support, Get-InstalledModule and Uninstall-Module cmdlets</span></span>
-- <span data-ttu-id="087d7-127">W dodanym module populacji zależności w poleceniu cmdlet Publish-Module.</span><span class="sxs-lookup"><span data-stu-id="087d7-127">Added module dependencies population in the Publish-Module cmdlet.</span></span> <span data-ttu-id="087d7-128">Listy RequiredModules i NestedModules PSModuleInfo są używane w celu przygotowania na liście zależności modułu do opublikowania.</span><span class="sxs-lookup"><span data-stu-id="087d7-128">The RequiredModules and NestedModules lists of PSModuleInfo are used in preparing the dependency list of a module to be published.</span></span>
-- <span data-ttu-id="087d7-129">Obsługa instalacji dodano zależności w polecenia cmdlet Install-Module i aktualizacji modułu.</span><span class="sxs-lookup"><span data-stu-id="087d7-129">Added dependency installation support in the Install-Module and Update-Module cmdlets.</span></span> <span data-ttu-id="087d7-130">Moduł zależności są zainstalowane i zaktualizować domyślnie.</span><span class="sxs-lookup"><span data-stu-id="087d7-130">Module dependencies are installed and updated by default.</span></span>
-- <span data-ttu-id="087d7-131">Dodać parametr - IncludeDependencies do obejmują zależności modułu w wynikach polecenia cmdlet modułu Znajdź.</span><span class="sxs-lookup"><span data-stu-id="087d7-131">Added an -IncludeDependencies parameter to the Find-Module cmdlet to include module dependencies in the results.</span></span>
-- <span data-ttu-id="087d7-132">Dodano obsługę - MaximumVersion w Module Znajdź moduł instalacji i polecenia cmdlet modułu aktualizacji.</span><span class="sxs-lookup"><span data-stu-id="087d7-132">Added -MaximumVersion support on the Find-Module, Install-Module, and Update-Module cmdlets.</span></span>
-- <span data-ttu-id="087d7-133">Dodano nowe Get InstalledModule i odinstalowywania modułu polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="087d7-133">Added new Get-InstalledModule and Uninstall-Module cmdlets.</span></span>
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a><span data-ttu-id="bf42f-126">Obsługa instalacji zależności modułu, Get-InstalledModule i polecenia cmdlet Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-126">Module dependency installation support, Get-InstalledModule and Uninstall-Module cmdlets</span></span>
+- <span data-ttu-id="bf42f-127">Dodano moduł wypełniania zależności w poleceniu cmdlet Publish-Module.</span><span class="sxs-lookup"><span data-stu-id="bf42f-127">Added module dependencies population in the Publish-Module cmdlet.</span></span> <span data-ttu-id="bf42f-128">RequiredModules lub NestedModules list PSModuleInfo są używane w ramach przygotowywania listy zależności modułu do opublikowania.</span><span class="sxs-lookup"><span data-stu-id="bf42f-128">The RequiredModules and NestedModules lists of PSModuleInfo are used in preparing the dependency list of a module to be published.</span></span>
+- <span data-ttu-id="bf42f-129">Obsługa instalacji dodano zależności w poleceniach cmdlet Install-Module i Update-Module.</span><span class="sxs-lookup"><span data-stu-id="bf42f-129">Added dependency installation support in the Install-Module and Update-Module cmdlets.</span></span> <span data-ttu-id="bf42f-130">Moduł zależności są zainstalowane i zaktualizować domyślnie.</span><span class="sxs-lookup"><span data-stu-id="bf42f-130">Module dependencies are installed and updated by default.</span></span>
+- <span data-ttu-id="bf42f-131">Dodano parametr - IncludeDependencies do polecenia cmdlet Find-Module, aby uwzględnić zależności modułów w wynikach.</span><span class="sxs-lookup"><span data-stu-id="bf42f-131">Added an -IncludeDependencies parameter to the Find-Module cmdlet to include module dependencies in the results.</span></span>
+- <span data-ttu-id="bf42f-132">Dodano obsługę - MaximumVersion na Find-Module Install-Module i polecenia cmdlet Update-Module.</span><span class="sxs-lookup"><span data-stu-id="bf42f-132">Added -MaximumVersion support on the Find-Module, Install-Module, and Update-Module cmdlets.</span></span>
+- <span data-ttu-id="bf42f-133">Dodano nowe Get InstalledModule i odinstalowywania modułu polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="bf42f-133">Added new Get-InstalledModule and Uninstall-Module cmdlets.</span></span>
 
-## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a><span data-ttu-id="087d7-134">Obsługuje PowerShellGet pokaz poleceń cmdlet z modułu zależności:</span><span class="sxs-lookup"><span data-stu-id="087d7-134">PowerShellGet cmdlets demo with module dependencies support:</span></span>
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a><span data-ttu-id="bf42f-134">Pokaz polecenia cmdlet PowerShellGet z zależności modułów pomocy technicznej:</span><span class="sxs-lookup"><span data-stu-id="bf42f-134">PowerShellGet cmdlets demo with module dependencies support:</span></span>
 
-### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a><span data-ttu-id="087d7-135">Upewnij się, że moduł zależności są dostępne w repozytorium:</span><span class="sxs-lookup"><span data-stu-id="087d7-135">Ensure that module dependencies are available on the repository:</span></span>
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a><span data-ttu-id="bf42f-135">Upewnij się, że moduł zależności są dostępne w repozytorium:</span><span class="sxs-lookup"><span data-stu-id="bf42f-135">Ensure that module dependencies are available on the repository:</span></span>
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -57,7 +57,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a><span data-ttu-id="087d7-136">Utwórz moduł z zależnościami, które są określone we właściwościach RequiredModules i NestedModules w manifeście modułu.</span><span class="sxs-lookup"><span data-stu-id="087d7-136">Create a module with dependencies that are specified in the RequiredModules and NestedModules properties of its module manifest.</span></span>
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a><span data-ttu-id="bf42f-136">Utwórz moduł z zależnościami, które są określone we właściwościach RequiredModules i NestedModules w manifeście modułu.</span><span class="sxs-lookup"><span data-stu-id="bf42f-136">Create a module with dependencies that are specified in the RequiredModules and NestedModules properties of its module manifest.</span></span>
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -71,12 +71,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a><span data-ttu-id="087d7-137">Publikowanie dwie wersje (**"1.0"** i **"2.0"**) modułu TestDepWithNestedRequiredModules1 zależności do repozytorium.</span><span class="sxs-lookup"><span data-stu-id="087d7-137">Publish two versions (**“1.0”** and **“2.0”**) of the TestDepWithNestedRequiredModules1 module with dependencies to the repository.</span></span>
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a><span data-ttu-id="bf42f-137">Publikowanie dwie wersje (**"1.0"** i **"w wersji 2.0"**) modułu TestDepWithNestedRequiredModules1 z zależnościami do repozytorium.</span><span class="sxs-lookup"><span data-stu-id="bf42f-137">Publish two versions (**“1.0”** and **“2.0”**) of the TestDepWithNestedRequiredModules1 module with dependencies to the repository.</span></span>
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a><span data-ttu-id="087d7-138">Znajdź moduł TestDepWithNestedRequiredModules1 z zależnościami, określając - IncludeDependencies.</span><span class="sxs-lookup"><span data-stu-id="087d7-138">Find the TestDepWithNestedRequiredModules1 module with its dependencies by specifying -IncludeDependencies.</span></span>
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a><span data-ttu-id="bf42f-138">Znajdź moduł TestDepWithNestedRequiredModules1 z jego zależności, określając - IncludeDependencies.</span><span class="sxs-lookup"><span data-stu-id="bf42f-138">Find the TestDepWithNestedRequiredModules1 module with its dependencies by specifying -IncludeDependencies.</span></span>
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -91,7 +91,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ```
 
-### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a><span data-ttu-id="087d7-139">Znajdź zależności modułu przy użyciu modułu Znajdź metadanych.</span><span class="sxs-lookup"><span data-stu-id="087d7-139">Use Find-Module metadata to find the module dependencies.</span></span>
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a><span data-ttu-id="bf42f-139">Aby znaleźć zależności modułów, użyj Find-Module metadanych.</span><span class="sxs-lookup"><span data-stu-id="bf42f-139">Use Find-Module metadata to find the module dependencies.</span></span>
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -130,7 +130,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="087d7-140">Zainstaluj moduł TestDepWithNestedRequiredModules1 z zależności.</span><span class="sxs-lookup"><span data-stu-id="087d7-140">Install the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="bf42f-140">Zainstaluj moduł TestDepWithNestedRequiredModules1 z zależnościami.</span><span class="sxs-lookup"><span data-stu-id="bf42f-140">Install the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -146,7 +146,7 @@ Version    Name                    Repository   Description
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="087d7-141">Zaktualizuj moduł TestDepWithNestedRequiredModules1 z zależności.</span><span class="sxs-lookup"><span data-stu-id="087d7-141">Update the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="bf42f-141">Zaktualizuj moduł TestDepWithNestedRequiredModules1 z zależnościami.</span><span class="sxs-lookup"><span data-stu-id="bf42f-141">Update the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -172,8 +172,8 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a><span data-ttu-id="087d7-142">Uruchom polecenie cmdlet Uninstall-Module, aby odinstalować moduł, który został zainstalowany przy użyciu PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="087d7-142">Run the Uninstall-Module cmdlet to uninstall a module that you installed by using PowerShellGet.</span></span>
-<span data-ttu-id="087d7-143">Jeśli inny moduł zależy od moduł, który chcesz usunąć, PowerShellGet zgłasza błąd.</span><span class="sxs-lookup"><span data-stu-id="087d7-143">If any other module depends on the module that you want to delete, PowerShellGet throws an error.</span></span>
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a><span data-ttu-id="bf42f-142">Uruchom polecenie cmdlet Uninstall-Module, aby odinstalować moduł, który został zainstalowany przy użyciu funkcji PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="bf42f-142">Run the Uninstall-Module cmdlet to uninstall a module that you installed by using PowerShellGet.</span></span>
+<span data-ttu-id="bf42f-143">Jeśli inne modułu zależy od moduł, który chcesz usunąć, PowerShellGet zgłasza błąd.</span><span class="sxs-lookup"><span data-stu-id="bf42f-143">If any other module depends on the module that you want to delete, PowerShellGet throws an error.</span></span>
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -185,7 +185,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## <a name="save-module-cmdlet"></a><span data-ttu-id="087d7-144">Polecenia cmdlet modułu zapisywania</span><span class="sxs-lookup"><span data-stu-id="087d7-144">Save-Module cmdlet</span></span>
+## <a name="save-module-cmdlet"></a><span data-ttu-id="bf42f-144">Polecenie cmdlet Save-Module</span><span class="sxs-lookup"><span data-stu-id="bf42f-144">Save-Module cmdlet</span></span>
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -203,12 +203,12 @@ d----- 4/21/2015 5:40 PM RequiredModule2
 d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
-## <a name="update-modulemanifest-cmdlet"></a><span data-ttu-id="087d7-145">Polecenie cmdlet Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="087d7-145">Update-ModuleManifest cmdlet</span></span>
-<span data-ttu-id="087d7-146">To nowe polecenie cmdlet służy do aktualizacji pliku z wartościami właściwości wejściowej manifestu.</span><span class="sxs-lookup"><span data-stu-id="087d7-146">This new cmdlet is used to help update manifest file with input property values.</span></span> <span data-ttu-id="087d7-147">Trwa wszystkich parametrów, które jest ModuleManifest testu.</span><span class="sxs-lookup"><span data-stu-id="087d7-147">It takes all parameters that Test-ModuleManifest does.</span></span>
+## <a name="update-modulemanifest-cmdlet"></a><span data-ttu-id="bf42f-145">Polecenie cmdlet Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="bf42f-145">Update-ModuleManifest cmdlet</span></span>
+<span data-ttu-id="bf42f-146">To nowe polecenie cmdlet służy do aktualizacji pliku z wartościami właściwości wejściowej manifestu.</span><span class="sxs-lookup"><span data-stu-id="bf42f-146">This new cmdlet is used to help update manifest file with input property values.</span></span> <span data-ttu-id="bf42f-147">Trwa wszystkie parametry, które obsługuje ModuleManifest testu.</span><span class="sxs-lookup"><span data-stu-id="bf42f-147">It takes all parameters that Test-ModuleManifest does.</span></span>
 
-<span data-ttu-id="087d7-148">Zauważymy, że wiele autorów modułu czy chcesz określić "\*" w wartości wyeksportowanej, takie jak FunctionsToExport, CmdletsToExport, itp. Podczas publikowania modułu w galerii programu PowerShell, nieokreślone funkcji i poleceń nie zostaną wypełnione prawidłowo na galerii.</span><span class="sxs-lookup"><span data-stu-id="087d7-148">We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery.</span></span> <span data-ttu-id="087d7-149">W związku z tym sugerujemy aktualizowanie autorów modułu ich manifestów odpowiednie wartości.</span><span class="sxs-lookup"><span data-stu-id="087d7-149">Therefore, we suggest module authors update their manifests with proper values.</span></span>
+<span data-ttu-id="bf42f-148">Zauważymy, że wiele autorzy modułów czy chcesz określić "\*" w wartości eksportowanych, takich jak FunctionsToExport, CmdletsToExport, itp. Podczas publikowania modułu do galerii programu PowerShell, funkcje nieokreślone i polecenia będą niewypełnione, prawidłowo na galerii.</span><span class="sxs-lookup"><span data-stu-id="bf42f-148">We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery.</span></span> <span data-ttu-id="bf42f-149">Dlatego zalecamy aktualizowanie autorzy modułu swoich manifestach z odpowiednimi wartościami.</span><span class="sxs-lookup"><span data-stu-id="bf42f-149">Therefore, we suggest module authors update their manifests with proper values.</span></span>
 
-<span data-ttu-id="087d7-150">Jeśli masz modułów, które zostały wyeksportowane właściwości ModuleManifest aktualizacji spowoduje wypełnienie wybranego pliku manifestu z informacjami z eksportowane funkcje, polecenia cmdlet, zmienne itp:</span><span class="sxs-lookup"><span data-stu-id="087d7-150">If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:</span></span>
+<span data-ttu-id="bf42f-150">W przypadku modułów, które zostały wyeksportowane właściwości ModuleManifest aktualizacji spowoduje wypełnienie wybranego pliku manifestu przy użyciu informacji z eksportowanych funkcji, poleceń cmdlet, zmienne itp.:</span><span class="sxs-lookup"><span data-stu-id="bf42f-150">If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:</span></span>
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -232,7 +232,7 @@ AliasesToExport = '*'
 }
 ```
 
-<span data-ttu-id="087d7-151">Po ModuleManifest aktualizacji:</span><span class="sxs-lookup"><span data-stu-id="087d7-151">After Update-ModuleManifest:</span></span>
+<span data-ttu-id="bf42f-151">Po ModuleManifest aktualizacji:</span><span class="sxs-lookup"><span data-stu-id="bf42f-151">After Update-ModuleManifest:</span></span>
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -257,11 +257,11 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-<span data-ttu-id="087d7-152">Dla każdego modułu są również pola metadanych skojarzonych z nim.</span><span class="sxs-lookup"><span data-stu-id="087d7-152">For each module, there are also metadata fields associated with it.</span></span> <span data-ttu-id="087d7-153">Aby prawidłowo wyświetlić metadanych w galerii PowrShell, ModuleManifest aktualizacji służy do wypełniania tych pól w obszarze PrivateData.</span><span class="sxs-lookup"><span data-stu-id="087d7-153">In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.</span></span>
+<span data-ttu-id="bf42f-152">Dla każdego modułu są również pola metadanych skojarzonych z nim.</span><span class="sxs-lookup"><span data-stu-id="bf42f-152">For each module, there are also metadata fields associated with it.</span></span> <span data-ttu-id="bf42f-153">Aby można było poprawnie wyświetlić metadane w galerii PowrShell, ModuleManifest aktualizacji służy do wypełniania tych pól w obszarze PrivateData.</span><span class="sxs-lookup"><span data-stu-id="bf42f-153">In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.</span></span>
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
-<span data-ttu-id="087d7-154">Hashtable PrivateData z szablonu pliku manifestu ma następujące właściwości:</span><span class="sxs-lookup"><span data-stu-id="087d7-154">PrivateData hashtable from the manifest file template has the following properties:</span></span>
+<span data-ttu-id="bf42f-154">Hashtable PrivateData z pliku manifestu szablonu ma następujące właściwości:</span><span class="sxs-lookup"><span data-stu-id="bf42f-154">PrivateData hashtable from the manifest file template has the following properties:</span></span>
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -286,4 +286,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-<span data-ttu-id="087d7-155">***Uwaga:*** DscResourcesToExport jest obsługiwana tylko w najnowszej programu PowerShell w wersji 5.0.</span><span class="sxs-lookup"><span data-stu-id="087d7-155">***Note:*** DscResourcesToExport is only supported on the latest PowerShell version 5.0.</span></span> <span data-ttu-id="087d7-156">Firma Microsoft nie można zaktualizować pola, jeśli są uruchomione na poprzedniej wersji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="087d7-156">We won’t be able to update the field if you are running on previous PowerShell version.</span></span>
+<span data-ttu-id="bf42f-155">***Uwaga:*** DscResourcesToExport jest obsługiwana tylko na najnowszą wersję programu PowerShell w wersji 5.0.</span><span class="sxs-lookup"><span data-stu-id="bf42f-155">***Note:*** DscResourcesToExport is only supported on the latest PowerShell version 5.0.</span></span> <span data-ttu-id="bf42f-156">Firma Microsoft nie będzie można zaktualizować pola, jeśli używasz poprzedniej wersji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="bf42f-156">We won’t be able to update the field if you are running on previous PowerShell version.</span></span>
