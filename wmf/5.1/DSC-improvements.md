@@ -2,49 +2,49 @@
 ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
-title: Ulepszenia usługi Konfiguracja DSC w WMF 5.1
-ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+title: Ulepszenia DSC w programie WMF 5.1
+ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309546"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523046"
 ---
-# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Ulepszenia w konfiguracji żądanego stanu (DSC) w wersji 5.1 WMF
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Ulepszenia w Desired State Configuration (DSC) w programie WMF 5.1
 
 ## <a name="dsc-class-resource-improvements"></a>Ulepszenia zasobów klasy DSC
 
-W wersji 5.1 WMF Naprawiono następujące znane problemy:
+W program WMF 5.1 usunęliśmy następujące znane problemy:
 
-- Get-DscConfiguration może zwrócić wartości puste (null) lub błędy, jeśli typem tabeli złożone i skrótu jest zwracane przez funkcję Get() zasobu DSC klasy.
-- Get-DscConfiguration zwraca błąd, jeśli poświadczeń Uruchom jako jest używane w konfiguracji DSC.
-- Nie można używać zasobów na podstawie klasy w złożonych konfiguracji.
-- Start-DscConfiguration zawiesza się, jeśli na podstawie klasy zasób ma właściwość jego własnego typu.
-- Na podstawie klasy zasobu nie można użyć jako zasób wyłącznego.
+- Get-DscConfiguration może zwracać wartości puste (null) lub błędy, jeśli typ tabeli złożone i skrótu jest zwracana przez funkcję Get() zasobu DSC oparte na klasach.
+- Get-DscConfiguration zwraca błąd, jeśli poświadczeń Uruchom jako jest używany w konfiguracji DSC.
+- Nie można używać zasobów na podstawie klasy złożonej konfiguracji.
+- Start-DscConfiguration zawiesza się, jeśli właściwość swój własny typ oparte na klasach zasobów.
+- Oparte na klasach zasobów nie można użyć jako zasób wyłączności.
 
-## <a name="dsc-resource-debugging-improvements"></a>Ulepszenia debugowania zasobów DSC
+## <a name="dsc-resource-debugging-improvements"></a>Zasób DSC ulepszenia debugowania
 
-W programie WMF 5.0 debuger programu PowerShell nie zatrzymał się w metodzie zasobów na podstawie klasy (Test-Get/Set) bezpośrednio.
-W wersji 5.1 WMF debuger zatrzymuje się na metodę klasy zasobów w taki sam sposób jak w przypadku zasobów opartych na plikach MOF metody.
+W programie WMF 5.0 debuger programu PowerShell nie zatrzymają w metodzie oparte na klasach zasobów (Get/Set/Test) bezpośrednio.
+W program WMF 5.1 debuger zatrzymuje się na metody oparte na klasach zasobów w taki sam sposób jak w przypadku metod zasoby oparte na pliku MOF.
 
-## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>Klient ściągania usługi Konfiguracja DSC obsługuje protokołu TLS 1.1 i TLS 1.2
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC pull klient obsługuje protokół TLS 1.1 i TLS 1.2
 
-Wcześniej klient ściągania usługi Konfiguracja DSC obsługiwane tylko SSL3.0 i TLS1.0 za pośrednictwem połączenia HTTPS.
-Gdy wymuszono są używane protokoły bardziej bezpieczne, klienta ściągania będzie przestaną działać.
-W wersji 5.1 WMF nie jest już klienta ściągania usługi Konfiguracja DSC protokół SSL 3.0 i dodaje obsługę bezpieczniejsze protokoły TLS 1.1 i TLS 1.2.
+Wcześniej klienta ściągania DSC obsługiwane tylko SSL3.0 lub TLS1.0 za pośrednictwem połączenia HTTPS.
+Przy wymuszonego, aby użyć bardziej bezpieczne protokoły, klienta ściągania może przestać działać.
+W program WMF 5.1 klienta ściągania DSC nie są już obsługuje protokół SSL 3.0 i dodaje obsługę bardziej bezpieczne protokoły TLS 1.1 i TLS 1.2.
 
 ## <a name="improved-pull-server-registration"></a>Rejestracja serwera ściągania ulepszone
 
-We wcześniejszych wersjach WMF równoczesnych rejestracji/reporting żądania do serwera ściągania usługi Konfiguracja DSC podczas korzystania z bazy danych ESENT doprowadziłoby do LCM nie powiodło się zarejestrować i/lub raportu.
-W takiej sytuacji dzienniki zdarzeń na serwerze ściągania ma błędu "Nazwa wystąpienia już w użyciu".
-Jest to spowodowane nieprawidłowy wzorzec używane do dostępu do bazy danych ESENT w scenariuszu wielowątkowych.
-W wersji 5.1 WMF ten problem został rozwiązany.
-Równoczesnych rejestracji lub wykonywania raportu (związanej z bazą danych ESENT) działa prawidłowo w wersji 5.1 WMF.
-Ten problem dotyczy tylko ESENT bazy danych i nie ma zastosowania do bazy danych OLEDB.
+We wcześniejszych wersjach programu WMF równoczesnych rejestracji/zgłoszenie żądania do serwera ściągania DSC podczas korzystania z bazy danych ESENT doprowadziłoby do LCM, których nie można zarejestrować i/lub raportu.
+W takiej sytuacji dzienniki zdarzeń na serwerze ściągania występuje błąd "Nazwa wystąpienia już w użyciu".
+Jest to spowodowane nieprawidłowy wzorzec używany do uzyskiwania ESENT bazy danych w scenariuszu wielowątkowych.
+Ten problem został rozwiązany w program WMF 5.1.
+Jednoczesnych rejestracji lub raportowania (obejmujące ESENT bazy danych) działa poprawnie WMF 5.1.
+Ten problem ma zastosowanie tylko do bazy danych ESENT i nie ma zastosowania do bazy danych OLE DB.
 
-## <a name="enable-circular-log-on-esent-database-instance"></a>Włącz cyklicznego pliku dziennika ESENT wystąpienia bazy danych
+## <a name="enable-circular-log-on-esent-database-instance"></a>Włącz dziennik cykliczne w wystąpieniu bazy danych ESENT
 
-W wersji eariler DSC PullServer pliki dziennika bazy danych ESENT zostały zapełnia się miejsca na dysku becouse pullserver, utworzenia wystąpienia bazy danych trwa bez logowanie cykliczne. W tej wersji istnieje możliwość kontrolowania zachowania logowanie cykliczne wystąpienia przy użyciu pliku web.config pullserver. Domyślnie CircularLogging ma wartość TRUE.
+W wersji eariler DSC PullServer pliki dziennika bazy danych ESENT zostały zapełnia się miejsca na dysku becouse pullserver, utworzenia wystąpienia bazy danych jest bez logowanie cykliczne. W tej wersji masz możliwość sterowania zachowaniem tego wystąpienia przy użyciu pliku web.config pullserver logowanie cykliczne. Domyślnie CircularLogging jest ustawiona na wartość TRUE.
 
 ```
 <appSettings>
@@ -55,17 +55,17 @@ W wersji eariler DSC PullServer pliki dziennika bazy danych ESENT zostały zape�
   </appSettings>
 ```
 
-## <a name="pull-partial-configuration-naming-convention"></a>Ściąganie konwencji nazewnictwa częściowe konfiguracji
+## <a name="pull-partial-configuration-naming-convention"></a>Ściągnij konwencji nazewnictwa częściowe konfiguracji
 
-W poprzednich wersjach konwencji nazewnictwa w przypadku konfiguracji z częściowa został czy nazwa pliku MOF w usłudze ściągania serwer/powinna odpowiadać nazwie częściowe konfiguracji określone w ustawieniach menedżera lokalnej konfiguracji, które z kolei muszą być zgodne Nazwa konfiguracji jest osadzony w pliku MOF.
+W poprzedniej wersji konwencji nazewnictwa częściowe konfiguracji został, czy nazwa pliku MOF usługi ściągania serwer/powinna odpowiadać nazwie częściowe konfiguracji, w określonego w ustawieniach Menedżera konfiguracji lokalnej, które z kolei muszą być zgodne Nazwa konfiguracji jest osadzony w pliku MOF.
 
-Zobacz migawki poniżej:
+Zobacz poniższe migawki:
 
-- Ustawienia konfiguracji lokalnej, które definiuje konfigurację częściowy, który może odbierać węzła.
+- Ustawienia konfiguracji lokalnej, które definiuje częściowe konfiguracji, który węzeł może odbierać.
 
-![Metakonfigurację próbki](../images/MetaConfigPartialOne.png)
+![Przykładowe metaconfiguration](../images/MetaConfigPartialOne.png)
 
-- Przykład definicji częściowej konfiguracji
+- Przykładowa definicja częściowe konfiguracji
 
 ```powershell
 Configuration PartialOne
@@ -82,18 +82,18 @@ Configuration PartialOne
 PartialOne
 ```
 
-- "ConfigurationName" osadzonego w wygenerowanym pliku MOF.
+- "ConfigurationName" osadzona w wygenerowanym pliku MOF.
 
 ![Przykładowy plik mof wygenerowany](../images/PartialGeneratedMof.png)
 
-- Nazwa pliku w repozytorium konfiguracji replikacji ściąganej
+- Nazwa pliku w repozytorium konfiguracji ściągania
 
 ![Nazwa pliku w repozytorium konfiguracji](../images/PartialInConfigRepository.png)
 
-Nazwa usługi Automatyzacja Azure wygenerowanych plików MOF jako `<ConfigurationName>.<NodeName>.mof`.
-Dlatego konfiguracja poniżej kompiluje do PartialOne.localhost.mof.
+Nazwa usługi w usłudze Azure Automation wygenerowanych plików MOF jako `<ConfigurationName>.<NodeName>.mof`.
+Dlatego konfiguracji poniżej kompiluje, aby PartialOne.localhost.mof.
 
-To uniemożliwił do ściągania jedną z częściowa konfiguracji od usługi Automatyzacja Azure.
+To uniemożliwił do ściągnięcia jeden częściowe konfiguracji z usługi Azure Automation.
 
 ```powershell
 Configuration PartialOne
@@ -110,11 +110,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-W wersji 5.1 WMF, częściowe konfiguracji w usłudze ściągania serwer/może mieć nazwę jako `<ConfigurationName>.<NodeName>.mof`.
-Ponadto jeśli maszyna jest ściąganie pojedynczą konfiguracją z ściąganie usługa następnie pliku konfiguracji w repozytorium konfiguracji serwera ściągania może mieć dowolną nazwę pliku.
-Taka elastyczność nazewnictwa pozwala na zarządzanie węzły częściowo przez usługi Automatyzacja Azure, gdzie konfiguracyjnych dla węzeł pochodzi z usługi Konfiguracja DSC automatyzacji Azure i z częściowa konfiguracji, którą zarządzasz lokalnie.
+W program WMF 5.1 częściowe konfiguracji w pull server/service może mieć nazwę jako `<ConfigurationName>.<NodeName>.mof`.
+Ponadto jeśli maszyna jest ściąganie konfiguracji jednego z ściąganie usługa następnie plik konfiguracji do repozytorium konfiguracji serwera ściągania mogą mieć dowolną nazwę pliku.
+Ta elastyczność nazewnictwa pozwala na zarządzanie węzły częściowo przez usługę Azure Automation, gdzie niektóre konfiguracji dla węzła pochodzi z usługi Azure Automation DSC i częściowe konfiguracji, który można zarządzać lokalnie.
 
-Metakonfigurację poniżej konfiguruje węzeł, aby być zarządzane zarówno lokalnie, a także przez usługi Automatyzacja Azure usługi.
+Metaconfiguration poniżej skonfigurowanie węzła jako zarządzane, zarówno lokalnie, jak również przez usługę Azure Automation do usługi.
 
 ```powershell
 [DscLocalConfigurationManager()]
@@ -152,17 +152,17 @@ RegistrationMetaConfig
 Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 ```
 
-## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Przy użyciu PsDscRunAsCredential z zasobami złożonego DSC
+## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Za pomocą PsDscRunAsCredential za pomocą DSC zasoby złożone
 
-Dodano obsługę protokołu [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) usłudze Konfiguracja DSC [złożonego](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) zasobów.
+Dodaliśmy obsługę [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) za pomocą DSC [złożonego](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) zasobów.
 
-Teraz można określić wartość dla PsDscRunAsCredential, korzystając z zasobów złożonego w konfiguracji.
-W przypadku uruchamiania wszystkich zasobów wewnątrz złożonego zasobów użytkownika Uruchom jako.
+Teraz można określić wartość dla PsDscRunAsCredential, korzystając z zasoby złożone w konfiguracji.
+Jeśli zostanie określony, wszystkie zasoby są uruchamiane wewnątrz złożonego zasobów w jako użytkownika Uruchom jako.
 Złożone zasobów wywołuje inny zasób złożonego, wszystkie jej zasoby są również wykonywane jako użytkownika Uruchom jako.
 Poświadczenia programu RunAs są propagowane do dowolnego poziomu hierarchii złożonego zasobów.
-Jeśli dowolnego zasobu wewnątrz złożonego zasobu określa własnej wartości PsDscRunAsCredential, błąd scalania wyniki podczas kompilacji konfiguracji.
+Jeśli dowolny zasób wewnątrz złożonego zasobu określa jego własnej wartości dla PsDscRunAsCredential, powoduje błąd scalania, podczas kompilacji konfiguracji.
 
-W tym przykładzie pokazano sposób użycia z [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) złożonego zasobu zawarte w PSDesiredStateConfiguration module.
+W tym przykładzie przedstawiono sposób użycia za pomocą [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) złożonego zasobów zawartych w PSDesiredStateConfiguration module.
 
 ```powershell
 Configuration InstallWindowsFeature
@@ -197,31 +197,31 @@ InstallWindowsFeature -ConfigurationData $configData
 
 ## <a name="dsc-module-and-configuration-signing-validations"></a>Moduł DSC i podpisywania operacji sprawdzania poprawności konfiguracji
 
-W konfiguracji DSC konfiguracji i moduły są dystrybuowane do zarządzanych komputerów z serwera ściągania.
-W przypadku naruszenia zabezpieczeń serwera ściągania osoba atakująca może potencjalnie zmodyfikować konfiguracje i modułów na serwerze ściągania a go rozłożone na wszystkie węzły zarządzane, naruszania ich wszystkich.
+W DSC konfiguracji i modułów są dystrybuowane do komputerów zarządzanych z serwera ściągania.
+W przypadku naruszenia zabezpieczeń serwera ściągania osoba atakująca może potencjalnie modyfikowania konfiguracji i modułów na serwerze ściągania i jest dystrybuowane do wszystkich zarządzanych węzłów, wszystkich z nich naruszenie.
 
-W wersji 5.1 WMF, obsługuje weryfikowania podpisów cyfrowych w katalogu i konfiguracji DSC (. Pliki MOF).
-Ta funkcja zapobiega wykonywania konfiguracji lub moduł pliki, które nie są podpisane przez zaufane osoby podpisującej lub które zostały zmodyfikowane po zostały podpisane przez zaufane osoby podpisującej węzłów.
+Program WMF 5.1 DSC obsługuje sprawdzanie podpisów cyfrowych w katalogu i konfiguracji (. Pliki MOF).
+Ta funkcja zapobiega wykonywania konfiguracji lub plikach modułów, które nie są podpisane przez zaufane osoby podpisującej lub które zostały naruszone po zostały podpisane przez zaufane osoby podpisującej węzłów.
 
-### <a name="how-to-sign-configuration-and-module"></a>Jak zarejestrować konfiguracji i modułu
+### <a name="how-to-sign-configuration-and-module"></a>Jak zarejestrować konfiguracji i modułów
 
 ***
-* Pliki konfiguracji (. Za): istniejącego polecenia cmdlet programu PowerShell [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) jest rozszerzony do obsługi podpisywania plików MOF.
-* Moduły: Podpisywanie modułów można to zrobić po zarejestrowaniu odpowiedniego katalogu modułu, wykonując poniższe kroki:
-    1. Utworzenie pliku wykazu: plik katalogu zawiera kolekcję skróty kryptograficzne lub odciski palców.
+* Pliki konfiguracji (. Pliki MOF): istniejące polecenia cmdlet programu PowerShell [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) jest rozszerzona na potrzeby obsługi podpisywania plików MOF.
+* Moduły: Podpisywania modułów można to zrobić, rejestrując odpowiedniego katalogu modułu wykonując następujące czynności:
+    1. Utwórz plik wykazu: plik wykazu zawiera zbiór skróty kryptograficzne lub odciski palców.
        Każdy odcisk palca odnosi się do pliku, który znajduje się w module.
-       Nowe polecenia cmdlet [FileCatalog nowy](https://technet.microsoft.com/library/cc732148.aspx), dodano umożliwiające użytkownikom tworzenie plik katalogu dla ich modułu.
-    2. Podpisać plik wykazu: Użyj [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) do podpisywania pliku wykazu.
+       Nowe polecenie cmdlet [New FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), została dodana do Zezwól użytkownikom na tworzenie plik katalogu dla swojego modułu.
+    2. Utwórz plik wykazu: Użyj [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) do podpisania pliku wykazu.
     3. Umieść plik wykazu znajdujące się w folderze modułu.
-Według Konwencji modułu katalogu plik należy umieścić w folderze modułu o nazwie identycznej z nazwą modułu.
+Zgodnie z Konwencją plik do katalogu modułu powinna zostać umieszczona w folderze modułu o nazwie identycznej z nazwą modułu.
 
-### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager ustawienia, aby włączyć sprawdzanie poprawności podpisywania
+### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>Ustawienia LocalConfigurationManager, aby umożliwić sprawdzanie poprawności podpisywania
 
-#### <a name="pull"></a>Ściągania
+#### <a name="pull"></a>Ściągnij
 
-LocalConfigurationManager węzła sprawdza poprawność podpisywania modułów i konfiguracji w oparciu o bieżące ustawienia.
-Domyślnie jest wyłączona Walidacja podpisu.
-Walidacja podpisu można włączyć przez dodanie bloku "SignatureValidation" do definicji meta konfiguracji węzła jak pokazano poniżej:
+LocalConfigurationManager węzła przeprowadza weryfikację podpisywania modułów i konfiguracji, w oparciu o bieżące ustawienia.
+Domyślnie Weryfikacja podpisu jest wyłączona.
+Weryfikacja podpisu można włączyć poprzez dodanie bloku "SignatureValidation" do definicji metadanych konfiguracji węzła jak pokazano poniżej:
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -249,35 +249,35 @@ EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
 
-Ustawienie metakonfigurację powyżej w węźle umożliwia weryfikację podpisu na konfiguracje pobrane i modułów.
-Lokalny program Configuration Manager wykonuje następujące czynności w celu zweryfikowania podpisów cyfrowych.
+Ustawienie metaconfiguration powyżej w węźle umożliwia weryfikację podpisu na konfiguracje pobrane i modułów.
+Local Configuration Manager wykonuje następujące kroki, aby sprawdzanie podpisów cyfrowych.
 
-1. Weryfikacja podpisu w pliku konfiguracji (. MOF) jest nieprawidłowa.
-   Używa polecenia cmdlet programu PowerShell [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), który został rozszerzony w wersji 5.1 do obsługi sprawdzania poprawności podpisu MOF.
+1. Weryfikuje podpis w pliku konfiguracji (. MOF) jest nieprawidłowy.
+   Używa polecenia cmdlet programu PowerShell [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), który jest rozszerzony w 5.1 do obsługi sprawdzania poprawności podpisu pliku MOF.
 2. Sprawdź, czy urząd certyfikacji, który autoryzowane osoby podpisującej jest zaufany.
-3. Pobierz moduł zasobów zależności konfiguracji do tymczasowej lokalizacji.
-4. Weryfikacja podpisu katalogu uwzględniony w module.
-    * Znajdź `<moduleName>.cat` i sprawdzić jego podpisu za pomocą polecenia cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).
-    * Sprawdź, czy urząd certyfikacji, który uwierzytelnieni osoby podpisującej jest zaufany.
-    * Sprawdź nie został naruszony zawartość modułów za pomocą polecenia cmdlet nowe [FileCatalog testu](https://technet.microsoft.com/library/cc732148.aspx).
-5. Install-moduł $env: ProgramFiles\WindowsPowerShell\Modules\
+3. Pobierz moduł lub zasobu zależności w konfiguracji w tymczasowej lokalizacji.
+4. Zweryfikować podpisu wykazu zawarte wewnątrz modułu.
+    * Znajdź `<moduleName>.cat` i sprawdzić jego podpisu, używając polecenia cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).
+    * Sprawdź, czy urząd certyfikacji, który uwierzytelnił podpisującego jest zaufany.
+    * Sprawdź, nie został zmodyfikowany zawartość modułów za pomocą nowego polecenia cmdlet [FileCatalog testu](https://technet.microsoft.com/library/cc732148.aspx).
+5. Install-Module do $env: ProgramFiles\WindowsPowerShell\Modules\
 6. Konfiguracja procesu
 
-> Uwaga: Walidacja podpisu na katalog modułu oraz konfiguracji jest realizowane wyłącznie podczas stosowania konfiguracji systemu, po raz pierwszy lub gdy moduł jest pobierane i instalowane.
-Uruchamia spójności nie weryfikują podpisu Current.mof lub jego zależności modułu.
-Jeśli weryfikacja nie powiodła się na każdym etapie, na przykład, jeśli konfiguracji są pobierane z z serwerem ściągania nie jest podpisany, następnie kończy przetwarzanie konfiguracji z powodu błędu, pokazano poniżej i wszystkie pliki tymczasowe są usuwane.
+> Uwaga: Weryfikacja podpisu na katalog modułu i konfiguracji jest realizowane wyłącznie podczas stosowania konfiguracji systemu, po raz pierwszy lub w przypadku, gdy moduł jest pobierane i instalowane.
+Przebiegi spójności nie weryfikują podpisu Current.mof lub jego zależności modułu.
+Jeśli weryfikacja nie powiodła się na każdym etapie, na przykład jeśli konfiguracji są pobierane z serwera ściągania jest podpisany, a następnie przetwarzania konfiguracji kończy się błędem pokazany poniżej i zostaną usunięte wszystkie pliki tymczasowe.
 
 ![Przykładowa konfiguracja danych wyjściowych błędu](../images/PullUnsignedConfigFail.png)
 
-Podobnie ściąganie modułu, którego katalogu nie jest podpisany powoduje następujący błąd:
+Podobnie ściąganie modułu, którego katalog nie jest podpisany wyniki w następujący błąd:
 
-![Moduł wyjściowej błąd próbki](../images/PullUnisgnedCatalog.png)
+![Przykładowe błąd danych wyjściowych modułu](../images/PullUnisgnedCatalog.png)
 
-#### <a name="push"></a>Push
+#### <a name="push"></a>wypychania
 
-Konfiguracji wydana za pomocą wypychania może niepowołane w jego źródle przed on dostarczony do tego węzła.
-Lokalny program Configuration Manager wykonuje podobne kroki weryfikacji podpisu dla konfiguracje wciśnięcia lub opublikowany.
-Poniżej znajduje się pełny przykład Walidacja podpisu do wypychania.
+Konfiguracja dostarczane za pomocą instalacji wypychanej może dało się w ich źródle przed dostarczeniem jej do węzła.
+Local Configuration Manager wykonuje podobne kroki weryfikacji podpisu konfiguracje nastąpiło wypychanie oraz opublikowane.
+Poniżej znajduje się pełny przykład Weryfikacja podpisu do wypychania.
 
 - Włącz weryfikację podpisu na węźle.
 
@@ -315,7 +315,7 @@ Configuration Test
 Test
 ```
 
-- Spróbuj wypychanie pliku konfiguracji bez znaku do węzła.
+- Spróbuj wypychaniu można znaleźć pliku konfiguracji bez znaku w do węzła.
 
 ```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force

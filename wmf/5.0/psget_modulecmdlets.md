@@ -1,47 +1,47 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190608"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522832"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Polecenia cmdlet PowerShellGet na potrzeby zarządzania modułami
 
 - [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
-- [Znajdź moduł](https://technet.microsoft.com/library/dn807167.aspx)
-- [Znajdź skryptu](https://technet.microsoft.com/library/mt654001.aspx)
-- [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
-- [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
-- [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Install-Script](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [Publish-Module](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [Register-PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [Save-Module](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Zestaw PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Uninstall-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [Uninstall-Script](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [Update-Module](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [Update-ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Update-Script](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
+- [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
+- [Get-InstalledModule](https://technet.microsoft.com/library/mt653990.aspx)
+- [Get-InstalledScript](https://technet.microsoft.com/library/mt653994.aspx)
+- [Get-PSRepository](https://technet.microsoft.com/library/dn807170.aspx)
+- [Install-Module](https://technet.microsoft.com/library/dn807162.aspx)
+- [Install-Script](https://technet.microsoft.com/library/mt653998.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/library/mt653995.aspx)
+- [Publish-Module](https://technet.microsoft.com/library/dn807163.aspx)
+- [Publish-Script](https://technet.microsoft.com/library/mt654003.aspx)
+- [Register-PSRepository](https://technet.microsoft.com/library/dn807168.aspx)
+- [Save-Module](https://technet.microsoft.com/library/mt653992.aspx)
+- [Save-Script](https://technet.microsoft.com/library/mt654004.aspx)
+- [Set-PSRepository](https://technet.microsoft.com/library/dn807165.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/library/mt654005.aspx)
+- [Uninstall-Module](https://technet.microsoft.com/library/mt653996.aspx)
+- [Uninstall-Script](https://technet.microsoft.com/library/mt653989.aspx)
+- [Update-Module](https://technet.microsoft.com/library/dn807166.aspx)
+- [Update-ModuleManifest](https://technet.microsoft.com/library/mt654002.aspx)
+- [Update-Script](https://technet.microsoft.com/library/mt653997.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/library/mt653991.aspx)
+- [Unregister-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
-## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Obsługa instalacji modułu zależności, Get-InstalledModule i polecenia cmdlet Uninstall-modułu
-- W dodanym module populacji zależności w poleceniu cmdlet Publish-Module. Listy RequiredModules i NestedModules PSModuleInfo są używane w celu przygotowania na liście zależności modułu do opublikowania.
-- Obsługa instalacji dodano zależności w polecenia cmdlet Install-Module i aktualizacji modułu. Moduł zależności są zainstalowane i zaktualizować domyślnie.
-- Dodać parametr - IncludeDependencies do obejmują zależności modułu w wynikach polecenia cmdlet modułu Znajdź.
-- Dodano obsługę - MaximumVersion w Module Znajdź moduł instalacji i polecenia cmdlet modułu aktualizacji.
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Obsługa instalacji zależności modułu, Get-InstalledModule i polecenia cmdlet Uninstall-Module
+- Dodano moduł wypełniania zależności w poleceniu cmdlet Publish-Module. RequiredModules lub NestedModules list PSModuleInfo są używane w ramach przygotowywania listy zależności modułu do opublikowania.
+- Obsługa instalacji dodano zależności w poleceniach cmdlet Install-Module i Update-Module. Moduł zależności są zainstalowane i zaktualizować domyślnie.
+- Dodano parametr - IncludeDependencies do polecenia cmdlet Find-Module, aby uwzględnić zależności modułów w wynikach.
+- Dodano obsługę - MaximumVersion na Find-Module Install-Module i polecenia cmdlet Update-Module.
 - Dodano nowe Get InstalledModule i odinstalowywania modułu polecenia cmdlet.
 
-## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>Obsługuje PowerShellGet pokaz poleceń cmdlet z modułu zależności:
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>Pokaz polecenia cmdlet PowerShellGet z zależności modułów pomocy technicznej:
 
 ### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Upewnij się, że moduł zależności są dostępne w repozytorium:
 ```powershell
@@ -71,12 +71,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Publikowanie dwie wersje (**"1.0"** i **"2.0"**) modułu TestDepWithNestedRequiredModules1 zależności do repozytorium.
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Publikowanie dwie wersje (**"1.0"** i **"w wersji 2.0"**) modułu TestDepWithNestedRequiredModules1 z zależnościami do repozytorium.
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>Znajdź moduł TestDepWithNestedRequiredModules1 z zależnościami, określając - IncludeDependencies.
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>Znajdź moduł TestDepWithNestedRequiredModules1 z jego zależności, określając - IncludeDependencies.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -91,7 +91,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ```
 
-### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Znajdź zależności modułu przy użyciu modułu Znajdź metadanych.
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Aby znaleźć zależności modułów, użyj Find-Module metadanych.
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -130,7 +130,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zainstaluj moduł TestDepWithNestedRequiredModules1 z zależności.
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zainstaluj moduł TestDepWithNestedRequiredModules1 z zależnościami.
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -146,7 +146,7 @@ Version    Name                    Repository   Description
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zaktualizuj moduł TestDepWithNestedRequiredModules1 z zależności.
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zaktualizuj moduł TestDepWithNestedRequiredModules1 z zależnościami.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -172,8 +172,8 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Uruchom polecenie cmdlet Uninstall-Module, aby odinstalować moduł, który został zainstalowany przy użyciu PowerShellGet.
-Jeśli inny moduł zależy od moduł, który chcesz usunąć, PowerShellGet zgłasza błąd.
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Uruchom polecenie cmdlet Uninstall-Module, aby odinstalować moduł, który został zainstalowany przy użyciu funkcji PowerShellGet.
+Jeśli inne modułu zależy od moduł, który chcesz usunąć, PowerShellGet zgłasza błąd.
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -185,7 +185,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## <a name="save-module-cmdlet"></a>Polecenia cmdlet modułu zapisywania
+## <a name="save-module-cmdlet"></a>Polecenie cmdlet Save-Module
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -204,11 +204,11 @@ d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
 ## <a name="update-modulemanifest-cmdlet"></a>Polecenie cmdlet Update-ModuleManifest
-To nowe polecenie cmdlet służy do aktualizacji pliku z wartościami właściwości wejściowej manifestu. Trwa wszystkich parametrów, które jest ModuleManifest testu.
+To nowe polecenie cmdlet służy do aktualizacji pliku z wartościami właściwości wejściowej manifestu. Trwa wszystkie parametry, które obsługuje ModuleManifest testu.
 
-Zauważymy, że wiele autorów modułu czy chcesz określić "\*" w wartości wyeksportowanej, takie jak FunctionsToExport, CmdletsToExport, itp. Podczas publikowania modułu w galerii programu PowerShell, nieokreślone funkcji i poleceń nie zostaną wypełnione prawidłowo na galerii. W związku z tym sugerujemy aktualizowanie autorów modułu ich manifestów odpowiednie wartości.
+Zauważymy, że wiele autorzy modułów czy chcesz określić "\*" w wartości eksportowanych, takich jak FunctionsToExport, CmdletsToExport, itp. Podczas publikowania modułu do galerii programu PowerShell, funkcje nieokreślone i polecenia będą niewypełnione, prawidłowo na galerii. Dlatego zalecamy aktualizowanie autorzy modułu swoich manifestach z odpowiednimi wartościami.
 
-Jeśli masz modułów, które zostały wyeksportowane właściwości ModuleManifest aktualizacji spowoduje wypełnienie wybranego pliku manifestu z informacjami z eksportowane funkcje, polecenia cmdlet, zmienne itp:
+W przypadku modułów, które zostały wyeksportowane właściwości ModuleManifest aktualizacji spowoduje wypełnienie wybranego pliku manifestu przy użyciu informacji z eksportowanych funkcji, poleceń cmdlet, zmienne itp.:
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -257,11 +257,11 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-Dla każdego modułu są również pola metadanych skojarzonych z nim. Aby prawidłowo wyświetlić metadanych w galerii PowrShell, ModuleManifest aktualizacji służy do wypełniania tych pól w obszarze PrivateData.
+Dla każdego modułu są również pola metadanych skojarzonych z nim. Aby można było poprawnie wyświetlić metadane w galerii PowrShell, ModuleManifest aktualizacji służy do wypełniania tych pól w obszarze PrivateData.
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
-Hashtable PrivateData z szablonu pliku manifestu ma następujące właściwości:
+Hashtable PrivateData z pliku manifestu szablonu ma następujące właściwości:
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -286,4 +286,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***Uwaga:*** DscResourcesToExport jest obsługiwana tylko w najnowszej programu PowerShell w wersji 5.0. Firma Microsoft nie można zaktualizować pola, jeśli są uruchomione na poprzedniej wersji programu PowerShell.
+***Uwaga:*** DscResourcesToExport jest obsługiwana tylko na najnowszą wersję programu PowerShell w wersji 5.0. Firma Microsoft nie będzie można zaktualizować pola, jeśli używasz poprzedniej wersji programu PowerShell.

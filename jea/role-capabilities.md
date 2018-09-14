@@ -1,74 +1,74 @@
 ---
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
-title: Możliwości roli JEA
-ms.openlocfilehash: 0531baa284e66a42a162329ea20ecfdca6d0b526
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Możliwości roli usługi JEA
+ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190540"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522946"
 ---
-# <a name="jea-role-capabilities"></a>Możliwości roli JEA
+# <a name="jea-role-capabilities"></a>Możliwości roli usługi JEA
 
-> Dotyczy: środowiska Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 5.0
 
-Podczas tworzenia punktu końcowego JEA, musisz zdefiniować co najmniej jeden "roli funkcji" opisujące *co* ktoś zrobić w sesji JEA.
-Możliwość roli jest plik danych programu PowerShell z rozszerzeniem .psrc, które wyświetla listę wszystkich poleceń cmdlet, funkcji, dostawców i zewnętrzne programy, które powinny być udostępniane łączenia użytkowników.
+Podczas tworzenia punktu końcowego JEA, należy zdefiniować co najmniej jeden "możliwości roli" zawierające *co* ktoś można wykonać w ramach sesji usługi JEA.
+Funkcja roli jest plikiem danych środowiska PowerShell z rozszerzeniem .psrc, które wyświetla listę wszystkich poleceń cmdlet, funkcji, dostawców i zewnętrznych programów, które powinny zostać udostępnione do procesu łączenia użytkowników.
 
-W tym temacie opisano, jak utworzyć plik programu PowerShell roli możliwości użytkowników JEA.
+W tym temacie opisano, jak utworzyć plik możliwości roli programu PowerShell dla użytkowników usługi JEA.
 
-## <a name="determine-which-commands-to-allow"></a>Ustalić, jakie polecenia, aby umożliwić
+## <a name="determine-which-commands-to-allow"></a>Określić, jakie polecenia, aby umożliwić
 
-Pierwszym krokiem podczas tworzenia pliku możliwości roli jest określenie, co użytkownicy, którzy mają przypisaną rolę wymaga dostępu do.
-Wymagania, ten proces zbierania może trochę potrwać, ale jest bardzo ważne procesu.
-Przyznawanie użytkownikom dostępu do zbyt mało polecenia cmdlet i funkcje może uniemożliwić ich pobierania ich pracy.
-Zezwalania na dostęp do zbyt wielu poleceń cmdlet i funkcje może prowadzić do użytkowników czynności więcej niż przeznaczone z ich uprawnieniami administratora niejawne osłabienia Twojej strony zabezpieczeń.
+Pierwszym krokiem podczas tworzenia pliku możliwości roli jest należy wziąć pod uwagę, jakie użytkownicy, którzy mają przypisaną rolę będą potrzebowali dostępu do.
+To wymaganie procesu zbierania może wymagać trochę czasu, ale jest bardzo ważne procesu.
+Zapewniając użytkownikom dostęp do zbyt małej liczby poleceń cmdlet i funkcji może uniemożliwić ich wprowadzenie ich pracę.
+Zezwalanie na dostęp do zbyt wielu poleceń cmdlet i funkcji może prowadzić do użytkowników, wykonując bardziej niż planowano z ich uprawnieniami administratora niejawne osłabienia Twoje wystąpienie zabezpieczeń.
 
-Jak przejść na ten tego procesu zależy od organizacji i cele, jednak poniższe porady mogą pomóc, upewnij się, że jesteś na prawidłową ścieżkę.
+Jak obniżyć informacji na temat tego procesu zależy od organizacji i cele, jednak poniższe porady mogą pomóc upewnić się, że jesteś na prawidłową ścieżkę.
 
-1. **Zidentyfikuj** użytkowników poleceń używasz do wykonywania pracy. Może to obejmować badanie personel działu informatycznego, sprawdzanie skryptów automatyzacji lub analizowania zapisy sesji programu PowerShell lub dzienniki.
-2. **Aktualizacja** używać narzędzi wiersza polecenia, aby ich odpowiedniki programu PowerShell, jeśli to możliwe, najlepszą inspekcji i JEA dostosowanie doświadczenie. Nie można ograniczyć programy zewnętrzne jako częściami jako natywnych poleceń cmdlet programu PowerShell i funkcji w ramach zasad JEA.
-3. **Ogranicz** zakresu polecenia cmdlet, jeśli to konieczne tylko pozwalają określonych parametrów lub wartości parametrów. Jest to szczególnie ważne, jeśli użytkownicy powinni być tylko możliwość zarządzania części systemu.
-4. **Utwórz** niestandardowych funkcji w celu zastąpienia złożonych polecenia lub poleceń, które są trudne do ograniczyć w ramach zasad JEA. Proste funkcję, która opakowuje złożone polecenia lub stosuje logikę weryfikacji dodatkowe mogą oferować dodatkową kontrolę dla uproszczenia administratorów i użytkowników końcowych.
-5. **Test** listy zakresie dozwolonym poleceń użytkowników i/lub automatyzacji usług i Dostosuj odpowiednio do potrzeb.
+1. **Identyfikowanie** korzystają użytkownicy polecenia do wykonywania ich zadań. Może to obejmować badanie informatykami, sprawdzanie skryptów automatyzacji lub analizowanie zapisy sesji programu PowerShell lub dzienniki.
+2. **Aktualizacja** na użytek narzędzi wiersza polecenia do odpowiedników środowiska PowerShell, jeśli jest to możliwe, najlepsze inspekcji i JEA dostosowywania środowiska. Nie można ograniczyć zewnętrznych programów jako dokładnością jako natywnych poleceń cmdlet programu PowerShell i funkcji jea.
+3. **Ogranicz** zakresu poleceń cmdlet, jeśli to konieczne tylko pozwalają określonych parametrów lub wartości parametrów. Jest to szczególnie ważne, jeśli użytkownicy tylko powinny mieć możliwość zarządzania części systemu.
+4. **Utwórz** funkcji niestandardowych w celu zastąpienia polecenia złożonych lub polecenia, które są trudne do ograniczenia jea. Prostej funkcji, która opakowuje złożone polecenia lub stosuje logikę dodatkowe sprawdzenie poprawności oferują dodatkową kontrolę dla uproszczenia administratorów i użytkowników końcowych.
+5. **Test** o określonym zakresie listę dopuszczalnych poleceń z użytkowników i/lub automatyzacji usług i dostosować zgodnie z potrzebami.
 
-Należy pamiętać, że polecenia w sesji JEA są często uprawnień uruchom admin (lub w inny sposób z podniesionymi uprawnieniami).
-Staranne wybieranie dostępnych poleceń ważne jest, aby upewnić się, że punkt końcowy JEA nie zezwala użytkownik nawiązujący połączenie podniesienie poziomu uprawnień.
-Poniżej przedstawiono kilka przykładów poleceń, których można użyć złośliwie Jeśli dozwolone w stanie nieograniczonego.
-Zauważ, że to nie jest kompletną listą i należy używać tylko jako punktu wyjścia ostrzegawcze.
+Koniecznie należy pamiętać, że polecenia w sesji JEA często uprawnieniami Uruchom za pomocą administratora (lub inaczej podwyższonego poziomu uprawnień).
+Staranne wybieranie dostępnych poleceń ważne jest, aby upewnić się, że punkt końcowy usługi JEA nie zezwala na użytkownik nawiązujący połączenie do podniesienia swoich uprawnień.
+Poniżej przedstawiono kilka przykładów poleceń, które mogą służyć złośliwie Jeśli jest to dozwolone w stanie nieograniczone.
+Pamiętaj, że to nie jest kompletną listą i powinna służyć wyłącznie jako punktu wyjścia ostrzegawcze.
 
 ### <a name="examples-of-potentially-dangerous-commands"></a>Przykłady poleceń potencjalnie niebezpiecznych
 
-Ryzyko | Przykład | Pokrewne polecenia
+Ryzyko | Przykład | Powiązane polecenia
 -----|---------|-----------------
-Udzielanie uprawnień administratora, aby pominąć JEA użytkownik nawiązujący połączenie | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
-Uruchomienia dowolnego kodu, np. złośliwego oprogramowania, luki w zabezpieczeniach lub niestandardowych skryptów do obejścia zabezpieczeń | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
+Udzielanie użytkownik nawiązujący połączenie z uprawnieniami administratora w celu OBEJŚCIE usługi JEA | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
+Uruchamiania dowolnego kodu, takich jak złośliwe oprogramowanie luki w zabezpieczeniach i niestandardowe skrypty do obejścia zabezpieczeń | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
 ## <a name="create-a-role-capability-file"></a>Utwórz plik możliwości roli
 
-Można utworzyć nowy plik możliwości roli programu PowerShell z [PSRoleCapabilityFile nowy](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) polecenia cmdlet.
+Można utworzyć nowy plik możliwości roli programu PowerShell przy użyciu [New PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) polecenia cmdlet.
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 ```
 
-Wynikowy plik możliwości roli można go otworzyć w edytorze tekstów i zmodyfikowane w celu umożliwienia żądanych poleceń dla roli.
+Wynikowy plik możliwości roli można otworzyć w edytorze tekstów i zmodyfikowane w celu zezwalania na żądaną polecenia dla roli.
 Dokumentacja pomocy programu PowerShell zawiera kilka przykładów sposobu konfigurowania pliku.
 
-### <a name="allowing-powershell-cmdlets-and-functions"></a>Stosowanie poleceń cmdlet programu PowerShell i funkcji
+### <a name="allowing-powershell-cmdlets-and-functions"></a>Polecenia cmdlet programu PowerShell i funkcji
 
-Aby zezwolić użytkownikom na uruchamianie poleceń cmdlet programu PowerShell lub funkcje, Dodaj nazwę polecenia cmdlet lub funkcja do VisbibleCmdlets lub VisibleFunctions pól.
-Jeśli nie masz pewności, czy polecenie jest polecenie cmdlet lub funkcji, można uruchomić `Get-Command <name>` i sprawdź właściwość "CommandType" w danych wyjściowych.
+Aby autoryzować użytkowników o uruchomienie polecenia cmdlet programu PowerShell lub funkcje, należy dodać nazwę polecenia cmdlet lub funkcji do VisbibleCmdlets lub VisibleFunctions pól.
+Jeśli nie masz pewności, czy polecenie jest polecenie cmdlet lub funkcji, możesz uruchomić `Get-Command <name>` i sprawdź właściwość "CommandType" w danych wyjściowych.
 
 ```powershell
 VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
 ```
 
-Czasami zakres konkretnego polecenia cmdlet lub funkcji jest zbyt szerokie do własnych potrzeb.
-Administrator DNS, na przykład potrzeby prawdopodobnie tylko dostęp do Uruchom ponownie usługę DNS.
-W środowisku wielu dzierżawców gdzie dzierżaw uzyskają dostęp do narzędzia do samoobsługowego zarządzania dzierżaw powinien być ograniczony do zarządzanie za pomocą ich własnych zasobów.
-W tych przypadkach można ograniczyć, parametry, które są dostępne z polecenie cmdlet lub funkcji.
+Czasami zakresu określonego polecenia cmdlet lub funkcji jest zbyt ogólnym, na potrzeby użytkowników.
+Administrator systemu DNS, na przykład wymaga jedynie prawdopodobnie uzyskać dostęp do ponownego uruchomienia usługi DNS.
+W środowisku z wieloma dzierżawami, gdy dzierżawcy uzyskują dostęp do narzędzia do samoobsługowego zarządzania dzierżaw, należy ograniczyć do zarządzania za pomocą ich własnych zasobów.
+W takich przypadkach można ograniczyć, które parametry są udostępniane z polecenia cmdlet lub funkcji.
 
 ```powershell
 
@@ -76,8 +76,8 @@ VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
 
 ```
 
-W bardziej zaawansowanych scenariuszy, może być również konieczne ograniczanie ktoś może dostarczyć wartości dla tych parametrów.
-Możliwości roli pozwalają zdefiniować zestaw dozwolonych wartości lub wzorzec wyrażenia regularnego, które jest obliczane w celu ustalenia, czy jest dozwolone w określonych danych wejściowych.
+W bardziej zaawansowanych scenariuszy może być również konieczne ograniczenie wartości, które osoba może dostarczyć do tych parametrów.
+Możliwości roli pozwalają zdefiniować zestaw dozwolonych wartości lub wzorzec wyrażenia regularnego, który jest oceniany w celu określenia, czy dany danych wejściowych może.
 
 ```powershell
 VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
@@ -85,74 +85,74 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> [Typowe parametry programu PowerShell](https://technet.microsoft.com/library/hh847884.aspx) są zawsze dozwolone, nawet jeśli ograniczysz dostępnych parametrów.
-> Użytkownik nie powinny jawnie zawierać je w polu Parametry.
+> [Typowe parametry programu PowerShell](https://technet.microsoft.com/library/hh847884.aspx) zawsze dozwolone, nawet wtedy, gdy ograniczenia dostępnych parametrów.
+> Należy nie jawnie ich listę w polu Parametry.
 
 W poniższej tabeli opisano różne sposoby, które można dostosować widoczne polecenia cmdlet lub funkcji.
-Można mieszać i zgodna z żadną poniżej w VisibleCmdlets pola.
+Możesz mieszać i dopasowywać znajdujących się poniżej w VisibleCmdlets pola.
 
 Przykład                                                                                      | Przypadek użycia
 ---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------
 `'My-Func'` lub `@{ Name = 'My-Func' }`                                                       | Zezwala użytkownikowi na uruchamianie `My-Func` bez żadnych ograniczeń na parametry.
 `'MyModule\My-Func'`                                                                         | Zezwala użytkownikowi na uruchamianie `My-Func` z modułu `MyModule` bez żadnych ograniczeń na parametry.
-`'My-*'`                                                                                     | Zezwala użytkownikowi na uruchamianie polecenia cmdlet ani funkcja ze zleceniem `My`.
-`'*-Func'`                                                                                   | Zezwala użytkownikowi na Uruchom polecenie cmdlet ani funkcji z rzeczownikiem `Func`.
-`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | Zezwala użytkownikowi na uruchamianie `My-Func` z `Param1` i/lub `Param2` parametrów. Można podać wartości parametrów.
+`'My-*'`                                                                                     | Zezwala użytkownikowi na uruchamianie dowolnego polecenia cmdlet lub funkcji za pomocą zlecenie `My`.
+`'*-Func'`                                                                                   | Zezwala użytkownikowi na uruchamianie dowolnego polecenia cmdlet lub funkcji z rzeczownikiem `Func`.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | Zezwala użytkownikowi na uruchamianie `My-Func` z `Param1` i/lub `Param2` parametrów. Dowolna wartość mogą być dostarczane do parametrów.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Zezwala użytkownikowi na uruchamianie `My-Func` z `Param1` parametru. Tylko "Wartość1" i "Wartość2" mogą być dostarczane do parametru.
-`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Zezwala użytkownikowi na uruchamianie `My-Func` z `Param1` parametru. Można podać wartości, zaczynając od "contoso" do parametru.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Zezwala użytkownikowi na uruchamianie `My-Func` z `Param1` parametru. Żadnej wartości, zaczynając od "contoso" mogą być dostarczane do parametru.
 
 
 > [!WARNING]
-> Aby uzyskać najlepsze rozwiązania w zakresie zabezpieczeń nie zaleca się użyć symboli wieloznacznych, definiując widoczne poleceń cmdlet lub funkcji.
-> Zamiast tego należy jawnie listy każdego zaufanych polecenie, aby upewnić się, że wszystkie inne polecenia, które współużytkują tego samego schematu nazewnictwa przypadkowo są autoryzowane.
+> Aby uzyskać najlepsze rozwiązania w zakresie zabezpieczeń nie zaleca się używać symboli wieloznacznych, podczas definiowania widoczne dla poleceń cmdlet lub funkcji.
+> Zamiast tego należy jawnie listę każdego zaufanych polecenia, aby upewnić się, że żadne polecenia, które współużytkują ten sam schemat nazewnictwa przypadkowo uprawnienia.
 
-Zarówno ValidatePattern i ValidateSet nie można zastosować do tego samego polecenia cmdlet lub funkcji.
+Nie można zastosować ValidatePattern i ValidateSet do tego samego polecenia cmdlet lub funkcji.
 
-Jeśli to zrobisz, ValidatePattern przesłoni ValidateSet.
+Jeśli to zrobisz, ValidatePattern spowoduje zastąpienie ValidateSet.
 
-Aby uzyskać więcej informacji na temat ValidatePattern, zapoznaj się z [to *Witaj, Twórco skryptów!* post](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) i [wyrażeń regularnych programu PowerShell](https://technet.microsoft.com/library/hh847880.aspx) odwołania zawartości.
+Aby uzyskać więcej informacji na temat ValidatePattern, zapoznaj się [to *Hey, Scripting Guy!* wpis](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) i [wyrażeń regularnych w programie PowerShell](https://technet.microsoft.com/library/hh847880.aspx) odwoływać się do zawartości.
 
-### <a name="allowing-external-commands-and-powershell-scripts"></a>Stosowanie zewnętrznych poleceń i skryptów programu PowerShell
+### <a name="allowing-external-commands-and-powershell-scripts"></a>Dzięki niemu agencje poleceń zewnętrznych i skryptów programu PowerShell
 
-Aby zezwolić użytkownikom na uruchamianie plików wykonywalnych i skryptów programu PowerShell (ps1) w sesji JEA, należy dodać pełną ścieżkę do każdego programu w polu VisibleExternalCommands.
+Aby zezwolić użytkownikom na uruchamianie plików wykonywalnych i skryptów programu PowerShell (.ps1) w ramach sesji usługi JEA, musisz dodać pełną ścieżkę do każdego programu, w polu VisibleExternalCommands.
 
 ```powershell
 VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
 ```
 
-Zalecane jest, gdzie to możliwe, użyj programu PowerShell polecenia cmdlet/funkcja odpowiedniki zewnętrznych plików wykonywalnych, zezwolić, ponieważ mają kontroli nad którym parametry są dozwolone z poleceń cmdlet programu PowerShell/funkcje.
+Zalecane jest, jeśli to możliwe, użyj odpowiedników funkcji/polecenia cmdlet programu PowerShell zewnętrznych plików wykonywalnych, autoryzowane, ponieważ masz pełną kontrolę nad tym, którzy parametrów są dozwolone w przypadku poleceń cmdlet programu PowerShell/funkcji.
 
-Wiele plików wykonywalnych umożliwiają zarówno odczytać bieżący stan, a następnie zmień ją tak, zapewniając innych parametrów.
+Wiele plików wykonywalnych umożliwiają zarówno odczyt bieżącego stanu, a następnie zmienić je po prostu, podając różne parametry.
 
-Rozważmy na przykład rolę Administrator serwera plików, który chce, aby sprawdzić, które udziały sieciowe są obsługiwane przez komputer lokalny.
-Jednym ze sposobów sprawdzenia, jest użycie `net share`.
-Jednakże, dzięki czemu net.exe jest bardzo niebezpieczne, ponieważ administrator może równie łatwo używać polecenia w celu uzyskania uprawnień administratora z `net group Administrators unprivilegedjeauser /add`.
-Lepszym rozwiązaniem jest umożliwienie [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) które osiąga ten sam rezultat, ale ma znacznie bardziej ograniczony zakres.
+Na przykład należy wziąć pod uwagę w roli administratora serwera plików, kto chce, aby sprawdzić, które udziały sieciowe są hostowane przez komputer lokalny.
+Jednym ze sposobów, aby sprawdzić, jest użycie `net share`.
+Jednakże, dzięki czemu net.exe jest bardzo niebezpieczny, ponieważ administrator może równie łatwo polecenie służy do uzyskania uprawnień administratora za pomocą `net group Administrators unprivilegedjeauser /add`.
+Lepszym rozwiązaniem jest umożliwienie [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) które osiąga ten sam wynik, ale ma bardziej ograniczony zakres.
 
-Podczas wprowadzania poleceń zewnętrznych dostępne dla użytkowników w sesji JEA, należy zawsze podać pełną ścieżkę do pliku wykonywalnego, aby upewnić się o podobnej nazwie (i potencjalnie malicous) program umieszczone w innym miejscu w systemie nie są wykonywane zamiast tego.
+Podczas wprowadzania poleceń zewnętrznych dostępnych dla użytkowników w ramach sesji usługi JEA, zawsze należy określić pełną ścieżkę do pliku wykonywalnego, aby upewnić się, program o podobnej nazwie (i potencjalnie malicous) umieszczone w innym miejscu w systemie nie są wykonywane zamiast tego.
 
 ### <a name="allowing-access-to-powershell-providers"></a>Zezwalanie na dostęp do dostawcy programu PowerShell
 
-Domyślnie nie dostawcy programu PowerShell są dostępne w sesji JEA.
+Domyślnie żaden dostawca programu PowerShell są dostępne w sesji JEA.
 
-To jest głównie zmniejszenia ryzyka poufne informacje i ustawienia konfiguracji są ujawniane użytkownik nawiązujący połączenie.
+To jest głównie zmniejszenia ryzyka poufnych informacji i ustawienia konfiguracji zostały ujawnione użytkownik nawiązujący połączenie.
 
-Jeśli to konieczne, można zezwolić na dostęp do dostawcy programu PowerShell przy użyciu `VisibleProviders` polecenia.
-Aby zapoznać się z pełną listą dostawców, uruchamiania `Get-PSProvider`.
+Gdy jest to konieczne, można zezwolić na dostęp do dostawcy programu PowerShell przy użyciu `VisibleProviders` polecenia.
+Aby uzyskać pełną listę dostawców, uruchamianie `Get-PSProvider`.
 
 ```powershell
 VisibleProviders = 'Registry'
 ```
 
-Proste zadania, które wymagają dostępu do systemu plików, rejestru, magazynu certyfikatów lub innych poufnych dostawców należy również rozważyć pisanie niestandardowej funkcji, która współpracuje z dostawcą w imieniu użytkownika.
-Funkcje, polecenia cmdlet i programów zewnętrznych, które są dostępne w sesji JEA nie podlegają takich samych ograniczeń jako JEA — domyślnie uzyskać dostęp do każdego dostawcy.
-Należy również rozważyć przy użyciu [dysku użytkownika](session-configurations.md#user-drive) podczas kopiowania plików do/z punktu końcowego JEA jest wymagana.
+Proste zadania, które wymagają dostępu do systemu plików, rejestru, magazynu certyfikatów lub innych dostawców poufnych możesz też rozważyć pisanie niestandardowej funkcji, która współpracuje z dostawcą w imieniu użytkownika.
+Funkcje, poleceń cmdlet i zewnętrznych programów, które są dostępne w ramach sesji usługi JEA nie podlegają tych samych ograniczeń, jak JEA — mogą uzyskiwać dostęp do dowolnego dostawcy domyślnie.
+Ponadto należy wziąć pod uwagę przy użyciu [dysku użytkownika](session-configurations.md#user-drive) podczas kopiowania plików do/z punktu końcowego JEA jest wymagana.
 
-### <a name="creating-custom-functions"></a>Tworzenie funkcji niestandardowej
+### <a name="creating-custom-functions"></a>Tworzenie funkcji niestandardowych
 
-Można tworzyć niestandardowe funkcji w pliku możliwości roli uprościć złożone zadania dla użytkowników końcowych.
-Funkcje niestandardowe są także przydatne, gdy wymagają logikę weryfikacji zaawansowane wartości parametrów polecenia cmdlet.
-Proste funkcje można pisać w **FunctionDefinitions** pola:
+Można tworzyć niestandardowe funkcje w pliku możliwości roli, aby uprościć złożone zadania dla użytkowników końcowych.
+Funkcje niestandardowe są również przydatne, gdy potrzebujesz logikę weryfikacji zaawansowane o wprowadzenie wartości parametrów polecenia cmdlet.
+Możesz pisać proste funkcje **FunctionDefinitions** pola:
 
 ```powershell
 VisibleFunctions = 'Get-TopProcess'
@@ -169,28 +169,28 @@ FunctionDefinitions = @{
 ```
 
 > [!IMPORTANT]
-> Nie zapomnij dodać nazwę funkcji niestandardowych do **VisibleFunctions** pól, co może być uruchamiane przez użytkowników JEA.
+> Nie zapomnij dodać nazwę Twojej funkcji niestandardowych do **VisibleFunctions** pola, aby mogły być uruchamiane przez użytkowników usługi JEA.
 
 
-Treść funkcji niestandardowych (bloku skryptu) działa w trybie język domyślny dla systemu i nie podlega JEA w języku ograniczenia.
-Oznacza to, że funkcji można uzyskiwać dostęp do systemu plików i rejestru i uruchamiania poleceń, które zostały utworzone widoczne w pliku możliwości roli.
-Zwrócić uwagę, aby uniknąć dowolnego kodu ma być uruchamiany przy użyciu parametrów i uniknąć potokowanie danych wejściowych użytkownika bezpośrednio do polecenia cmdlet, takich jak `Invoke-Expression`.
+Treść funkcji niestandardowych (blok skryptu) działa w trybie język domyślny dla systemu i nie jest przedmiotem ograniczeń języka firmy JEA.
+Oznacza to, czy funkcje można uzyskać dostęp do systemu plików i rejestru i uruchamiania poleceń, które zostały utworzone widoczny w pliku możliwości roli.
+Pamiętaj, aby uniknąć, dzięki czemu dowolny kod ma być uruchamiany przy użyciu parametrów i uniknąć dane wejściowe użytkownika potokowanie bezpośrednio do polecenia cmdlet, takich jak `Invoke-Expression`.
 
-W powyższym przykładzie, można zauważyć, że nazwa FQDN modułu (FQMN) `Microsoft.PowerShell.Utility\Select-Object` użyto zamiast skrócona `Select-Object`.
-Funkcje zdefiniowane w plikach możliwości roli nadal obowiązują na zakres JEA sesji, która obejmuje funkcje serwera proxy JEA tworzy ograniczyć istniejących poleceń.
+W powyższym przykładzie można zauważyć, że nazwa FQDN modułu (FQMN) `Microsoft.PowerShell.Utility\Select-Object` był używany zamiast skrót `Select-Object`.
+Funkcje zdefiniowane w plikach możliwości roli są nadal podlega procesowi zakresu sesji JEA, który zawiera funkcje serwera proxy usługi JEA tworzy ograniczenie istniejące polecenia.
 
-Select-Object jest domyślnie ograniczonego polecenia cmdlet we wszystkich sesjach JEA, który nie pozwala na wybranie dowolnego właściwości obiektów.
-Aby używać nieograniczonego Select-Object w funkcjach, określając FQMN musi jawne żądanie pełnego wdrożenia.
-Ograniczone dowolnym poleceniu cmdlet w sesji JEA będzie mieć takie samo zachowanie, gdy została wywołana z funkcji, zgodnie z jego środowiska PowerShell [pierwszeństwa poleceń](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
+Select-Object jest domyślnie ograniczone polecenia cmdlet we wszystkich sesjach JEA, który nie zezwala na wybranie dowolnego właściwości obiektów.
+Aby używać nieograniczonego Select-Object w przypadku funkcji, możesz jawne żądanie pełną implementację, określając FQMN.
+Każdego ograniczone polecenia cmdlet w sesji JEA będzie mieć takie samo zachowanie, gdy wywoływana z funkcji, zgodnie z programu PowerShell [polecenia pierwszeństwo](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
 
-Jeśli piszesz wiele funkcji niestandardowych, może być łatwiej umieść je w [moduł skryptu programu PowerShell](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx).
+Jeśli piszesz wiele niestandardowych funkcji może być łatwiej je umieszczać [modułu skryptu PowerShell](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 Następnie można wprowadzić te funkcje widoczne w sesji JEA, korzystając z pola VisibleFunctions, jak w przypadku modułów wbudowane i innych firm.
 
-## <a name="place-role-capabilities-in-a-module"></a>Umieść funkcji ról w module
+## <a name="place-role-capabilities-in-a-module"></a>W module umieścić możliwości roli
 
-Aby dla programu PowerShell znaleźć plik możliwości roli muszą być przechowywane w folderze "RoleCapabilities" w module środowiska PowerShell.
-Moduł mogą być przechowywane w dowolnym folderze zawarte w `$env:PSModulePath` zmiennej środowiskowej, jednak należy nie umieszczać w System32 (zastrzeżone dla wbudowanych modułów) lub w folderze gdzie niezaufanych, łączenie użytkowników można zmodyfikować plików.
-Poniżej przedstawiono przykład tworzenia podstawowych moduł skryptu programu PowerShell o nazwie *ContosoJEA* w ścieżce "Program Files".
+Aby dla programu PowerShell, aby znaleźć plik możliwości roli muszą być przechowywane w folderze "RoleCapabilities" w module programu PowerShell.
+Moduł mogą być przechowywane w dowolnym folderze zawarte w `$env:PSModulePath` zmiennej środowiskowej, jednak należy nie umieszczać w System32 (zarezerwowane dla wbudowanych modułów) lub folderu gdzie niezaufanych, łączenie użytkowników można zmodyfikować pliki.
+Poniżej znajduje się przykład tworzenia podstawowych moduł skrypt programu PowerShell o nazwie *ContosoJEA* w ścieżce "Program Files".
 
 ```powershell
 # Create a folder for the module
@@ -207,41 +207,41 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-Zobacz [opis modułu programu PowerShell](https://msdn.microsoft.com/en-us/library/dd878324.aspx) uzyskać więcej informacji o moduły programu PowerShell, manifesty modułu i PSModulePath zmiennej środowiskowej.
+Zobacz [opis modułu programu PowerShell](https://msdn.microsoft.com/library/dd878324.aspx) Aby uzyskać więcej informacji na temat modułów programu PowerShell, moduł manifesty i zmienną środowiskową PSModulePath.
 
-## <a name="updating-role-capabilities"></a>Aktualizowanie roli
-
-
-Należy zaktualizować plik możliwości roli w dowolnym momencie przez po prostu zapisywanie zmian w pliku możliwości roli.
-Wszystkie nowe sesje JEA uruchomiony po zaktualizowaniu możliwości roli będzie odzwierciedlać poprawione funkcje.
-
-To dlatego tak ważne jest kontrolowanie dostępu do folderu możliwości roli.
-Tylko wysoce zaufanych administratorów powinna być możliwość zmiany roli plikach możliwości.
-Niezaufanych użytkownik może zmienić plikach możliwości roli, łatwo przyznanie sobie dostępu do poleceń cmdlet, które zezwolić im na podniesienie ich uprawnień.
+## <a name="updating-role-capabilities"></a>Aktualizowanie możliwości roli
 
 
-Dla administratorów chcących blokowania dostępu do funkcji roli upewnij się, że System lokalny ma dostęp do odczytu do plików możliwości roli i zawierające moduły.
+Aby zaktualizować plik możliwości roli w dowolnym momencie, po prostu zapisywanie zmian w pliku możliwości roli.
+Wszystkie nowe sesje JEA pracę po zaktualizowaniu możliwości roli będą odzwierciedlać poprawione możliwości.
+
+Jest to, dlaczego kontrola dostępu do folderu możliwości roli jest tak ważny.
+Tylko wysoce zaufanych administratorów powinno być możliwe na zmianę plików możliwości roli.
+Niezaufanego użytkownika mogą zmieniać pliki możliwości roli, łatwo udzielenie się dostępu do poleceń cmdlet, co pozwala je do podniesienia swoich uprawnień.
+
+
+Dla administratorów chcących blokowanie dostępu do możliwości roli upewnij się, że System lokalny ma dostęp do odczytu do plików funkcji roli i zawierającego moduły.
 
 ## <a name="how-role-capabilities-are-merged"></a>Jak są scalane możliwości roli
 
-Użytkownicy mogą uzyskać dostęp do wiele możliwości roli po wprowadzeniu JEA sesji w zależności od roli mapowania w [pliku konfiguracji sesji](session-configurations.md).
-W takim przypadku JEA próbuje dla użytkownika *najbardziej ograniczająca* zestaw poleceń, przy użyciu jednej z ról.
+Użytkownicy mogą uzyskać dostęp do wiele możliwości roli po użytkownik podał sesję JEA w zależności od roli mapowania w [plik konfiguracji sesji](session-configurations.md).
+W takim przypadku JEA próbuje przyznać użytkownikowi *restrykcyjny* zestaw poleceń dozwolone przez dowolną rolę.
 
 **VisibleCmdlets i VisibleFunctions**
 
-Najbardziej złożonej logiki scalania dotyczy poleceń cmdlet i funkcje, które mogą ich parametrów i wartości parametrów w ramach zasad JEA ograniczone.
+Najbardziej złożoną logikę scalanie wpływa na poleceń cmdlet i funkcje, które mogą mieć ich parametrów i wartości parametrów ograniczone jea.
 
 Dostępne są następujące reguły:
 
-1. Jeśli polecenie cmdlet tylko stają się widoczne w jedną rolę, będą widoczne dla użytkowników z żadnych ograniczeń odpowiednich parametrów.
-2. Jeśli polecenie cmdlet stają się widoczne w więcej niż jednej roli, a każda rola ma takich samych ograniczeń na polecenia cmdlet, polecenie cmdlet będą widoczne dla użytkowników z tych ograniczeń.
-3. Jeśli polecenie cmdlet stają się widoczne w więcej niż jednej roli, a tych rolach inny zestaw parametrów, polecenia cmdlet i wszystkich parametrów zdefiniowanych w każdej roli będzie widoczny dla użytkownika. Jeśli jedna rola nie ma ograniczenia dotyczące parametrów, dozwolone będą wszystkie parametry.
-4. Jeśli jedną rolę definiuje zestaw weryfikacji lub wzorca sprawdzania poprawności dla parametru polecenia cmdlet i innych ról pozwala parametru, ale nie ograniczenie wartości parametrów, sprawdzanie poprawności zestawu lub wzorzec zostanie zignorowany.
-5. Zestaw weryfikacji jest zdefiniowany dla tego samego parametru polecenia cmdlet w więcej niż jednej roli, dozwolone będą wszystkie wartości ze wszystkich zbiorów weryfikacji.
-6. Jeśli wzorzec weryfikacji jest zdefiniowany dla tego samego parametru polecenia cmdlet w więcej niż jednej roli, dozwolone wartości, które spełniają wzorce.
-7. Jeśli zestaw weryfikacji jest zdefiniowany w jedną lub więcej ról, a wzorzec weryfikacji jest zdefiniowany w innej roli dla tego samego parametru polecenia cmdlet, jest ignorowana, ustaw weryfikacji i reguła (6) jest stosowana do pozostałych wzorców weryfikacji.
+1. Jeśli polecenie cmdlet jest dostępne tylko widoczne w jednej roli, będzie widoczna dla użytkownika o wszelkich ograniczeń odpowiednich parametrów.
+2. Jeśli polecenie cmdlet jest widoczny w więcej niż jednej roli, a każda rola ma ograniczenia tego samego polecenia cmdlet, polecenie cmdlet będzie widoczny dla użytkownika przy użyciu tych ograniczeń.
+3. Jeśli polecenie cmdlet jest widoczny w więcej niż jednej roli, a każda rola umożliwia inny zbiór parametrów, polecenia cmdlet i wszystkich parametrów zdefiniowanych w każdej roli będą widoczne dla użytkownika. Jeśli jedna rola nie ma ograniczenia dotyczące parametrów, będą miały wszystkie parametry.
+4. Jeśli jedna rola definiuje zestaw sprawdzania poprawności lub wzorca weryfikacji dla parametru polecenia cmdlet, a także innych ról pozwala parametru, ale nie ogranicza wartości parametrów, sprawdzanie poprawności zestawu lub wzorzec zostanie zignorowany.
+5. Jeśli zestaw sprawdzania poprawności jest zdefiniowany dla tego samego parametru polecenia cmdlet w więcej niż jednej roli, może być wszystkie wartości z wszystkich zestawów sprawdzania poprawności.
+6. Jeśli wzorzec sprawdzania poprawności jest zdefiniowany dla tego samego parametru polecenia cmdlet w więcej niż jednej roli, będą miały żadnych wartości, które pasuje do żadnego z wzorców.
+7. Jeśli zestaw sprawdzania poprawności jest zdefiniowany w co najmniej jedną rolę, a wzorzec sprawdzania poprawności jest zdefiniowany w innej roli dla tego samego parametru polecenia cmdlet, zestaw sprawdzania poprawności jest ignorowana, a do pozostałych wzorców sprawdzania poprawności zostanie zastosowana reguła (6).
 
-Poniżej przedstawiono przykładowy sposób role są łączone zgodnie z następującymi regułami:
+Poniżej przedstawiono przykładowy sposób role są łączone zgodnie z tymi zasadami:
 
 ```powershell
 # Role A Visible Cmdlets
@@ -269,12 +269,12 @@ $mergedAandB = @{
 
 **VisibleExternalCommands, ScriptsToProcess VisibleAliases, VisibleProviders,**
 
-Wszystkie pola w pliku możliwości roli po prostu są dodawane do zbiorczego zestawu dopuszczalny poleceń zewnętrznych, aliasy dostawców i skrypty uruchamiania.
-Polecenia, aliasu, dostawcy lub dostępne w jednym możliwości roli skryptu będzie dostępne dla użytkownika JEA.
+Wszystkie pola w pliku możliwości roli, po prostu są dodawane do zbiorczego zestawu poleceń zewnętrznych dopuszczalny rozmiar, aliasy, dostawców i skrypty uruchamiania.
+Polecenia, alias, dostawca lub skryptu w jedną rolę możliwości będą dostępne dla użytkownika usługi JEA.
 
-Uważaj, upewnij się, że połączony zestaw dostawców z jednego możliwości roli i poleceń cmdlet/funkcje/poleceń z innego nie zezwalają na użytkowników łączących niezamierzone dostęp do zasobów systemowych.
-Na przykład, jeśli zezwala na jedną rolę `Remove-Item` polecenia cmdlet, a druga zezwala `FileSystem` dostawcy, są narażeni na ataki użytkownika JEA usuwanie dowolnych plików na komputerze.
-Dodatkowe informacje na temat identyfikowania czynnych uprawnień użytkowników znajdują się w [inspekcji tematu JEA](audit-and-report.md).
+Uważaj upewnić się, że połączony zestaw dostawców z jednej roli funkcji i poleceń cmdlet/funkcje/poleceń z innego nie zezwalają na połączenia użytkowników niezamierzonego dostępu do zasobów systemowych.
+Na przykład, jeśli zezwala na jedną rolę `Remove-Item` polecenia cmdlet, a drugi umożliwia `FileSystem` dostawcy, są narażeni użytkownika JEA usuwanie dowolnych plików na komputerze.
+Dodatkowe informacje na temat identyfikowania czynnych uprawnień użytkowników można znaleźć w [inspekcji JEA temacie](audit-and-report.md).
 
 ## <a name="next-steps"></a>Następne kroki
 
