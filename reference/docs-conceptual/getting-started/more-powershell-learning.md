@@ -2,53 +2,54 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Dalsze zasoby szkoleniowe dotyczące programu PowerShell
-ms.openlocfilehash: b0e17a6894468696365e5a553e6ffccfaa8eb499
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34047853"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289212"
 ---
 # <a name="more-powershell-learning"></a>Dalsze zasoby szkoleniowe dotyczące programu PowerShell
 
-Inne źródła informacji programu PowerShell
+Innych źródeł, aby dowiedzieć się, programu PowerShell
 
 ## <a name="resources-for-windows-powershell-users"></a>Zasoby dla użytkowników programu Windows PowerShell
 
-Oprócz dostępnej w wierszu polecenia następujące zasoby zawierają więcej informacji dla użytkowników, którzy chcą, aby uruchomić program Windows PowerShell.
+Oprócz pomocy dostępnej w wierszu polecenia poniższe zasoby przedstawiają więcej informacji dla użytkowników, którzy chcą, aby uruchomić program Windows PowerShell.
 
-- [Blog zespołu programu PowerShell Windows](http://blogs.msdn.com/b/powershell/). Najlepsze źródło learning bezpośrednio od zespołu produktu Windows PowerShell.
-- [Windows PowerShell klienta połączenia](http://Connect.Microsoft.com/PowerShell). Sugestię, Wyślij opinię lub o usterce dla zespołu programu Windows PowerShell. Można pliku usterki kodu, usterki dokumentacji lub usterki lokalizacji (język tłumaczenia).
-- [Witaj, Twórco skryptów! Blog](https://blogs.technet.microsoft.com/heyscriptingguy/) publikuje nową zawartość siedem dni w tygodniu i stale wyznaczona ranga na początku pięciu wszystkie blogi firmy Microsoft. Artykuły są oparte na scenariuszu i zapisywane w sposób atrakcyjne i żywszego.
-- [Na stronie PowerShell Dowiedz się](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/) jest Centrum programu Windows PowerShell w Centrum skryptów w witrynie TechNet. Ta strona obsługuje szereg początkujących sesje wideo przeprowadzonych przez Ed Wilson Twórco skryptów w Microsoft. Zawiera również środowiska Windows PowerShell kwizy, linki do zawartości społeczności i inne.
-- Masz pytania dotyczące korzystania z programu Windows PowerShell? Połącz z setkami innych osób, które mają podobne korzyści na [forum oficjalnego Guys skryptów](http://social.technet.microsoft.com/forums/itcg/threads/).
-- [Centrum skryptów Microsoft](https://technet.microsoft.com/scriptcenter). Portal do wielu przydatne zasoby programu Windows PowerShell, w tym [repozytorium Centrum skryptów](http://gallery.technet.microsoft.com/scriptcenter/). Jednym z najlepszym sposobem, aby dowiedzieć się więcej skryptów jest przykłady w akcji. Przeszukaj tysiące skryptów programu Windows PowerShell, wszystko gotowe do oceny i dostosować do własnych potrzeb.
-- Angażowanie się w społeczność użytkowników programu Windows PowerShell. Zobacz [strona społeczności Centrum skryptów](https://technet.microsoft.com/scriptcenter/hh182567.aspx) dla lokalizacji dziesiątki grupy użytkowników programu Windows PowerShell - prawdopodobnie wystąpił jeden pobliżu. Również aktualności z działaniami społeczności Microsoft Scripting Guy.
+- [Blog zespołu programu PowerShell Windows](https://blogs.msdn.microsoft.com/powershell/). Najlepsze źródło learning bezpośrednio od zespołu produktu programu Windows PowerShell.
+- [Witaj, Twórco skryptów! Blog](https://blogs.technet.microsoft.com/heyscriptingguy/) publikuje nową zawartość siedem dni w tygodniu i stale jest określany na początku pięciu wszystkie blogi firmy Microsoft. Artykuły są oparte na scenariuszu i zapis w sposób atrakcyjne i ich ożywienia.
+- [Na stronie informacje programu PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/) jest Centrum programu Windows PowerShell w Centrum skryptów TechNet. Ta strona obsługuje szereg sesje wideo dla początkujących przeprowadzonych przez EDA Wilsona Microsoft Guy skryptów. Zawiera także programu Windows PowerShell kwizy, linki do zawartości społeczności i nie tylko.
+- Masz pytania dotyczące korzystania z programu Windows PowerShell? Połącz się z setkami innych osób, które mają podobne korzyści na [forum TechNet PowerShell](https://social.technet.microsoft.com/Forums/home?forum=winserverpowershell).
 
-## <a name="video-training"></a>Szkolenie wideo
+## <a name="video-training"></a>Szkolenia wideo
 
 ### <a name="microsoft-virtual-academy"></a>Wirtualna Akademia firmy Microsoft
-- [Wprowadzenie do programu PowerShell 3.0 przeskoku uruchamiania](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
-- [Zaawansowane narzędzia i skryptów programu PowerShell 3.0 Szybki Start](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8231)
 
-### <a name="script-center-learn"></a>Dowiedz się, Centrum skryptów
+- [Wprowadzenie do programu PowerShell 3.0 — Szybkie rozpoczynanie pracy](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
+- [Zaawansowane narzędzia i skrypty przy użyciu programu PowerShell 3.0 szybkie rozpoczęcie pracy](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
+
+### <a name="script-center-learn"></a>Dowiedz się więcej w Centrum skryptów
+
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials zajęty serii administratora
-- [PowerShell "SmowerShell" — Dlaczego należy dowiedzieć się środowiska Windows PowerShell &#40;część 1&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Niektórzy go za pośrednictwem potoku — jak złożone poleceń programu Windows PowerShell dla zabawy i zysku &#40;część 2&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Jedyny dostawca? Nie trudno — przyjrzeć się programu Windows PowerShell dostawców &#40;część 3&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Zdarzenie głównego — środowisko Windows PowerShell jest dzienniki zdarzeń &#40;część 4&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Więcej niż jest możliwe zdalnie — za pomocą środowiska Windows PowerShell do zarządzania pulpitu zdalnego &#40;część 5&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+
+- [PowerShell "SmowerShell" — Dlaczego należy dowiesz się, program Windows PowerShell część 1](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Słyszeli go za pośrednictwem potoku — jak do złożone polecenia programu PowerShell Windows dla zabawy i zysk, część 2](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Jedyny dostawca? Nie jest bardzo trudno — przyjrzeć się Windows PowerShell dostawców część 3](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [Zdarzenie główne — środowisko Windows PowerShell jest dzienniki zdarzeń, część 4](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Więcej niż jest możliwe zdalnie — za pomocą programu Windows PowerShell do zarządzania zdalnego pulpitu część 5](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Dowiedz się go teraz przed awaryjnego
+
 - [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
 - [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 2](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
 - [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 3](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
 - [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 4](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
 - [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 5](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
-## <a name="resources-for-windows-powershell-developers"></a>Zasoby dla deweloperów systemu Windows PowerShell
+## <a name="resources-for-windows-powershell-developers"></a>Zasoby dla deweloperów programu PowerShell Windows
 
-Zasoby, aby pomóc deweloperom tworzenie własnych środowiska Windows PowerShell modułów, funkcje, polecenia cmdlet, dostawców i hostingu aplikacji można znaleźć w następujących zasobach.
+Następujące zasoby zawierają zasoby, które ułatwiają deweloperom tworzenie własnych programu Windows PowerShell modułów, funkcji, poleceń cmdlet, dostawców i hostowanie aplikacji.
 
-- [Zestaw SDK programu Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89595). Zawiera informacje.
-- [Przewodnik programisty programu PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89596). Udostępnia samouczki. Zawiera także informacje o podstawowych pojęciach środowiska Windows PowerShell.
+- [Zestaw SDK programu Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89595). Zawiera odwołania do zawartości.
+- [Windows PowerShell przewodnik](http://go.microsoft.com/fwlink/p/?LinkID=89596). Zawiera samouczki. Zawiera także informacje o podstawowe pojęcia programu Windows PowerShell.

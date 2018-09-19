@@ -2,12 +2,12 @@
 title: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 description: Komunikacji zdalnej w programie PowerShell Core przy użyciu protokołu SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 0605e2400ab23a5ca97910621a59a64d19a80bde
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
+ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557111"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46134284"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 
@@ -167,22 +167,6 @@ W przypadku systemu Linux Zainstaluj SSH (takie jak serwer sshd) odpowiednie dla
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
-
-## <a name="authentication"></a>Uwierzytelnianie
-
-Komunikacja zdalna programu PowerShell za pomocą protokołu SSH opiera się na Wymiana uwierzytelniania między klientem SSH i usługę SSH i nie implementuje żadnych schematów uwierzytelniania sam.
-Oznacza to, że wszelkie schematów uwierzytelniania skonfigurowany, w tym usługi uwierzytelnianie wieloskładnikowe jest obsługiwane przez SSH i niezależna od programu PowerShell.
-Na przykład można skonfigurować usługę SSH, aby wymagać uwierzytelniania klucza publicznego, a także hasła jednorazowego w celu zwiększenia poziomu bezpieczeństwa.
-Konfiguracja usługi Multi-Factor authentication jest poza zakresem niniejszej dokumentacji.
-Zajrzyj do dokumentacji dla protokołu SSH na temat sposobu poprawnie skonfigurować uwierzytelnianie wieloskładnikowe i sprawdzić jego poprawność działa poza programem PowerShell przed podjęciem próby korzystania z komunikacji zdalnej programu PowerShell.
-
-## <a name="authentication"></a>Uwierzytelnianie
-
-Komunikacja zdalna programu PowerShell za pomocą protokołu SSH opiera się na Wymiana uwierzytelniania między klientem SSH i usługę SSH i nie implementuje żadnych schematów uwierzytelniania sam.
-Oznacza to, że wszelkie schematów uwierzytelniania skonfigurowany, w tym usługi uwierzytelnianie wieloskładnikowe jest obsługiwane przez SSH i niezależna od programu PowerShell.
-Na przykład można skonfigurować usługę SSH, aby wymagać uwierzytelniania klucza publicznego, a także hasła jednorazowego w celu zwiększenia poziomu bezpieczeństwa.
-Konfiguracja usługi Multi-Factor authentication jest poza zakresem niniejszej dokumentacji.
-Zajrzyj do dokumentacji dla protokołu SSH na temat sposobu poprawnie skonfigurować uwierzytelnianie wieloskładnikowe i sprawdzić jego poprawność działa poza programem PowerShell przed podjęciem próby korzystania z komunikacji zdalnej programu PowerShell.
 
 ## <a name="authentication"></a>Uwierzytelnianie
 
