@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: Program PowerShell
 title: Wartości manifestu elementów, które mają wpływ na interfejs użytkownika galerii programu PowerShell
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268181"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532974"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Wartości manifestu elementów, które mają wpływ na interfejs użytkownika galerii programu PowerShell
 
@@ -44,6 +44,8 @@ W poniższej tabeli przedstawiono elementy strony elementu galerii programu Powe
 | **Historia wersji** | Historia wersji odzwierciedla aktualizacje wprowadzone w module w galerii programu PowerShell. Jeśli wersja elementu jest ukryty za pomocą funkcji usuwania, go nie pojawi się w historii wersji, z wyjątkiem właścicielom elementu. | Nie | Nie |
 | **Witryny projektu** | Moduły w sekcji Privatedata\PSData manifestu modułu umowy witryny projektu, określając ProjectURI. W manifeście skryptu jest kontrolowana przez określenie. PROJECTURI. | Tak | Tak |
 | **Licencja** | Link licencji umowy modułów w sekcji Privatedata\PSData manifestu modułu, określając LicenseURI. W manifeście skryptu jest kontrolowana przez określenie. LICENSEURI. Należy zauważyć, że jeśli licencji nie jest oferowana w ramach LicenseURI lub w module warunków użytkowania dla galerii programu PowerShell Określ warunki użytkowania dla elementu. Zobacz warunki użytkowania, aby uzyskać szczegółowe informacje. | Tak | Tak |
+| **Ikona** | Ikona można określić dla każdego elementu w galerii programu PowerShell, podając wartość IconURI Flaga w manifeście skryptów lub w sekcji Privatedata PSData manifestu modułu. Wartość IconURI powinien wskazywać obraz 32 x 32, przezroczystość tła. Identyfikator URI **musi** być adresem URL obrazu bezpośrednie i **nie** przejdź do strony sieci web zawierającej obraz lub plików w pakiecie galerii programu PowerShell. | Tak | Tak |
+
 
 ## <a name="editing-item-details"></a>Edytowanie szczegółów elementu
 
