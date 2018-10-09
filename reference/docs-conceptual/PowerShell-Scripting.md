@@ -2,16 +2,16 @@
 ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Wykonywanie skryptów programu PowerShell
-ms.openlocfilehash: 754805148dc815a12c5c77e4894fb598c6927f7e
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43133997"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851190"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell to oparta na zadaniach powłoka wiersza polecenia i język skryptowy oparta na programie .NET Framework.
+PowerShell jest powłoką wiersza polecenia opartego na zadaniach i język skryptowy, oparte na platformie .NET.
 Program PowerShell ułatwia administratorom systemu i użytkownicy zaawansowani mogą szybko Automatyzowanie zadań, które zarządzania systemów operacyjnych (Linux, macOS i Windows) oraz procesy.
 
 Polecenia programu PowerShell umożliwiają zarządzanie komputerami z poziomu wiersza polecenia. Dostawcy programu PowerShell umożliwiają dostęp do magazynów danych, takich jak rejestr i magazyn certyfikatów, równie łatwo, jak dostęp do systemu plików. Program PowerShell zawiera analizator składni wyrażeń i pełni rozwinięty język skryptowy.

@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Uzyskiwanie szczegółowych informacji pomocy
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134038"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851276"
 ---
 # <a name="getting-detailed-help-information"></a>Uzyskiwanie szczegółowych informacji pomocy
 
@@ -149,7 +149,7 @@ Przeglądanie artykułów pomocy online jest jednym z najlepszych sposobów uzys
 Aby uzyskać pomoc w trybie online, należy użyć **Online** parametru `Get-Help` polecenia cmdlet. Wszystkich artykułów pomocy, które przy użyciu programu PowerShell, włącznie z dostawcą pomocy i pojęciach (artykułów pomocy informacje) są dostępne w trybie online w [PowerShell](/powershell/scripting/powershell-scripting) dokumentacji.
 
 > [!NOTE]
-> Nie można użyć **Online** parametrem koncepcyjnej (about_ *) lub dostawca artykułów pomocy.
+> Nie można użyć **Online** parametrem koncepcyjnej (about_\*) lub dostawca artykułów pomocy.
 > Pomoc online jest opcjonalne, więc nie działa dla każdego polecenia cmdlet, funkcji lub skryptu.
 
 Na przykład, aby uzyskać wersję online artykułu pomocy na temat `Get-ChildItem` polecenia cmdlet, wpisz:

@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 description: Wytyczne dotyczące wydawców
 title: Galeria programu PowerShell publikowania wskazówki i najlepsze rozwiązania
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523036"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851173"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Galerii PowerShellGallery publikowania wskazówki i najlepsze rozwiązania
 
@@ -39,6 +39,7 @@ Elementy, które należy wykonać te wytyczne są znacznie bardziej prawdopodobn
 - Postępuj zgodnie z [SemVer](http://semver.org/) wytyczne dotyczące wersji
 - Za pomocą typowych tagów, zgodnie z opisem w galerii programu PowerShell typowych tagów
 - Publikowanie testu przy użyciu repozytorium lokalnego
+- Publikowanie przy użyciu funkcji PowerShellGet
 
 Każda z tych omówiono pokrótce w poniższych sekcjach.
 
@@ -215,6 +216,12 @@ Za pomocą dowolnego z tych rozwiązań Użyj Register-PSRepository, aby zdefini
 Jeden dodatkowy punkt o publikowaniu testu: nie można usunąć dowolny element publikowanie w galerii programu PowerShell bez pomocy działu operacyjnego, która potwierdzi, że nic nie jest zależne od elementu, którą chce opublikować.
 Z tego powodu firma Microsoft nie obsługują galerii programu PowerShell jako obiekt docelowy testowania i skontaktuje się z dowolnego wydawcy, który wykonuje tę funkcję.
 
+## <a name="use-powershellget-to-publish"></a>Publikowanie przy użyciu funkcji PowerShellGet
+
+Zdecydowanie zaleca się, że wydawcy używają poleceń cmdlet Publish-Module i Publish-Script podczas pracy z galerii programu PowerShell. Moduł PowerShellGet został utworzony, aby pomóc w uniknięciu zapamiętywanie ważne informacje dotyczące instalowania z publikowanie w galerii programu PowerShell. Czasami wydawców wybrano opuszczenia PowerShellGet i użycia klienta programu NuGet, lub polecenia cmdlet funkcji PackageManagement, zamiast Publish-Module. Istnieje szereg szczegółowe informacje, które są łatwo przeoczyć, co skutkuje szereg żądania pomocy technicznej.
+
+W przypadku przyczyna, że nie możesz użyć Publish-Module ani Publish-Script, Daj nam znać. Prześlij zgłoszenie w repozytorium PowerShellGet GitHub i podaj szczegółowe informacje, które można wybrać NuGet lub PackageManagement spowodować. 
+
 ## <a name="recommended-workflow"></a>Zalecanym przepływie pracy
 
 Najbardziej podejście, które znaleźliśmy dla elementów opublikowanych w galerii programu PowerShell są następujące:
@@ -229,3 +236,4 @@ Najbardziej podejście, które znaleźliśmy dla elementów opublikowanych w gal
 - Określenie, czy kodowi zarejestrować przedmiot
 - Jeśli uważasz, że projekt jest gotowa do użycia w środowisku produkcyjnym, należy opublikować 1.0.0 wersji w galerii programu PowerShell
 - Przejdź do zbierania opinii i powtarzanie czynności w kodzie, w oparciu o dane wejściowe użytkownika
+

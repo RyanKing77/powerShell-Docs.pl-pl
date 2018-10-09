@@ -3,29 +3,29 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Jak używać funkcji uzupełniania po naciśnięciu klawisza TAB w okienku skryptów i okienku konsoli
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
-ms.openlocfilehash: e1f8146b6113a82fd3d857c98550ec2e459715a4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 24a3f00987ff5ca4bf82d1a3206857ec3c4b3f09
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954929"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851139"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Jak używać funkcji uzupełniania po naciśnięciu klawisza TAB w okienku skryptów i okienku konsoli
 
-Uzupełnianie po naciśnięciu tabulatora zapewnia automatyczne pomocy podczas wpisywania, w okienku skryptów lub w okienku polecenia. Aby móc korzystać z tej funkcji, wykonaj następujące kroki:
+Uzupełnianie po naciśnięciu tabulatora zapewnia automatyczne pomocy podczas wpisywania, w okienku skryptów lub w okienku poleceń. Aby móc korzystać z tej funkcji, należy użyć następujące czynności:
 
-## <a name="to-automatically-complete-a-command-entry"></a>Aby automatycznie wypełnić polecenie wpisu
+## <a name="to-automatically-complete-a-command-entry"></a>Aby automatycznie wypełnić pozycji polecenia
 
-W okienku polecenia lub skryptu w okienku wpisz polecenie kilku znaków, a następnie naciśnij klawisz TAB, aby wybrać żądaną uzupełniania tekstu. Jeśli wiele elementów zaczyna się od tekstu, który został początkowo wpisany, Kontynuuj, naciskając klawisz Tab, aż zostanie wyświetlony element, który ma. Uzupełnianie po naciśnięciu tabulatora może pomóc w trakcie pisania nazwa polecenia cmdlet, nazwa parametru, nazwa zmiennej, nazwa właściwości obiektu lub ścieżkę do pliku.
+W okienku polecenia lub w okienku skryptów wpisać kilka znaków, polecenia, a następnie naciśnij klawisz TAB, aby zaznaczyć tekst żądanego zakończenia. Jeśli wiele elementów zaczynają się od początku wpisany tekst, a następnie naciskając klawisz Tab, aż pojawi się element, który ma. Uzupełnianie po naciśnięciu tabulatora może ułatwić wpisując nazwę polecenia cmdlet, nazwa parametru, nazwa zmiennej, nazwa właściwości obiektu lub ścieżkę do pliku.
 
 > [!NOTE]
-> W okienku skryptów naciskając klawisz TAB automatycznie ukończy polecenie tylko podczas edytowania .ps1, psd1 lub plikach .psm1. Uzupełnianie po naciśnięciu tabulatora działa w dowolnym momencie podczas wpisywania w okienku polecenia.
+> W okienku skryptu klawisza TAB automatycznie ukończy polecenia tylko wtedy, gdy edytujesz, ps1, psd1 lub plikach .psm1. Uzupełnianie po naciśnięciu tabulatora działa w dowolnym momencie, kiedy wpisujesz w okienku poleceń.
 
 ## <a name="to-automatically-complete-a-cmdlet-parameter-entry"></a>Aby automatycznie wypełnić zapis parametru polecenia cmdlet
 
-W okienku Okienko polecenia lub skryptu wpisz polecenie cmdlet następuje myślnik, a następnie naciśnij klawisz TAB.
+W okienku okienka polecenia lub skryptu wpisz polecenie cmdlet kreska, a następnie naciśnij klawisz TAB.
 
-Na przykład wpisz `Get-Process -` , a następnie naciśnij kilkakrotnie klawisz TAB do wyświetlania każdego z parametrów polecenia cmdlet z kolei.
+Na przykład wpisz `Get-Process -` i następnie naciśnij klawisz TAB kilka razy do wyświetlenia każdego z parametrów polecenia cmdlet z osobna.
 
 ## <a name="see-also"></a>Zobacz też
 

@@ -2,12 +2,12 @@
 title: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 description: Komunikacji zdalnej w programie PowerShell Core przy użyciu protokołu SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
-ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46134284"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851241"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 
@@ -35,7 +35,7 @@ W przypadku systemu Linux Zainstaluj SSH (takie jak serwer sshd) odpowiednie dla
 
 ## <a name="set-up-on-windows-machine"></a>Skonfiguruj na komputerze Windows
 
-1. Zainstaluj najnowszą wersję programu [program PowerShell Core Windows]
+1. Zainstaluj najnowszą wersję [programu PowerShell Core dla Windows](../setup/installing-powershell-core-on-windows.md#msi)
 
    - Można stwierdzić, jeśli ma on Obsługa komunikacji zdalnej SSH, analizując parametr ustawia `New-PSSession`
 
@@ -47,7 +47,7 @@ W przypadku systemu Linux Zainstaluj SSH (takie jak serwer sshd) odpowiednie dla
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Zainstaluj najnowszą kompilację [Win32 OpenSSH] z usługi GitHub za pomocą instrukcji [instalacji]
+2. Zainstaluj najnowszą wersję [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) kompilacji z GitHub przy użyciu [instalacji](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH) instrukcje
 3. Edytowanie pliku sshd_config w lokalizacji, w którym instalowane Win32 OpenSSH
 
    - Upewnij się, że włączone jest uwierzytelnianie przy użyciu hasła
@@ -91,8 +91,8 @@ W przypadku systemu Linux Zainstaluj SSH (takie jak serwer sshd) odpowiednie dla
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Skonfiguruj na komputerze z systemem Linux (Ubuntu 14.04)
 
-1. Zainstaluj najnowszą kompilację [program PowerShell Core dla systemu Linux] z usługi GitHub
-2. Zainstaluj [Ubuntu SSH] zgodnie z potrzebami
+1. Zainstaluj najnowszą wersję [programu PowerShell Core dla systemu Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) kompilacji z usługi GitHub
+2. Zainstaluj [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) zgodnie z potrzebami
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ W przypadku systemu Linux Zainstaluj SSH (takie jak serwer sshd) odpowiednie dla
 
 ## <a name="set-up-on-macos-machine"></a>Na komputerze z systemem MacOS
 
-1. Zainstaluj najnowszą kompilację [program PowerShell Core dla systemu MacOS]
+1. Zainstaluj najnowszą wersję [programu PowerShell Core dla systemu MacOS](../setup/installing-powershell-core-on-macos.md) kompilacji
 
    - Upewnij się, że komunikacja zdalna SSH jest włączona, wykonując następujące czynności:
      - Otwórz `System Preferences`
@@ -316,7 +316,5 @@ Polecenie "sudo" nie działa w sesji zdalnej do maszyny z systemem Linux.
 [Program PowerShell Core dla systemu MacOS](../setup/installing-powershell-core-on-macos.md)
 
 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[Instalacja](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

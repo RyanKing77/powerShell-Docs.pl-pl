@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Instalowanie i używanie programu windows powershell web access
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268419"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851328"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalowanie programu Windows PowerShell Web Access i korzystanie z niego
 
@@ -327,7 +327,7 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
    Zmień domyślny port, jeśli inna witryna internetowa korzysta już z portu 443 lub jeśli istnieją inne względy bezpieczeństwa przemawiające za zmianą numeru portu. Jeśli z wybranego portu korzysta inna witryna internetowa, która jest uruchomiona na serwerze bramy, po kliknięciu zostanie wyświetlone ostrzeżenie **OK** w **Dodawanie witryny sieci Web** okno dialogowe. Aby uruchomić program Windows PowerShell Web Access, należy użyć nieużywanego portu.
 
-1. Opcjonalnie, w razie potrzeby w swojej organizacji, określ nazwę hosta pasującą do organizacji i użytkowników, takie jak **www.contoso.com**. Kliknij przycisk **OK**.
+1. Opcjonalnie, w razie potrzeby w swojej organizacji, określ nazwę hosta pasującą do organizacji i użytkowników, takie jak **`www.contoso.com`**. Kliknij przycisk **OK**.
 
 1. Aby zwiększyć bezpieczeństwo środowiska produkcyjnego, zdecydowanie zaleca się użycie prawidłowego certyfikatu, który został podpisany przez urząd certyfikacji. Musisz podać certyfikat SSL, ponieważ użytkownicy mogą łączyć się tylko z programu Windows PowerShell Web Access za pośrednictwem witryny internetowej HTTPS. Zobacz [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie, aby uzyskać więcej informacji o sposobie uzyskiwania certyfikatu.
 
@@ -406,7 +406,7 @@ W bezpiecznym środowisku produkcyjnym zawsze używaj prawidłowego certyfikatu 
    - Kliknij przycisk **zaimportować** Aby zaimportować istniejący, prawidłowy certyfikat z lokalizacji w sieci.
    - Kliknij przycisk **Utwórz żądanie certyfikatu** żądania certyfikatu od urzędu certyfikacji, takich jak [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), lub [GeoTrust](https://www.geotrust.com/). Nazwa pospolita certyfikatu musi być zgodna z nagłówkiem hosta w żądaniu.
 
-     Na przykład, jeśli przeglądarka klienta żąda http://www.contoso.com/, a następnie nazwę pospolitą również musi być http://www.contoso.com/. Jest to najbardziej bezpieczna i zalecana opcja umożliwiająca dostarczanie bramę programu Windows PowerShell Web Access przy użyciu certyfikatu.
+     Na przykład, jeśli przeglądarka klienta żąda `http://www.contoso.com/`, a następnie nazwę pospolitą również musi być `http://www.contoso.com/`. Jest to najbardziej bezpieczna i zalecana opcja umożliwiająca dostarczanie bramę programu Windows PowerShell Web Access przy użyciu certyfikatu.
 
    - Kliknij przycisk **Utwórz certyfikat z podpisem własnym** do utworzenia certyfikatu można użyć od razu i podpisać później przez urząd certyfikacji w razie potrzeby. Określ przyjazną nazwę certyfikatu z podpisem własnym, taki jak **programu Windows PowerShell Web Access**. Ta opcja jest uważana za niebezpieczną i jest zalecana tylko na potrzeby prywatnego środowiska testowego.
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zmienianie stanu komputera
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 4b5b4adb349dd8036117c364ed2ebb1ffaf8c88f
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267889"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851087"
 ---
 # <a name="changing-computer-state"></a>Zmienianie stanu komputera
 
@@ -52,14 +52,20 @@ Zamykanie i ponowne uruchamianie komputerów są zwykle te same typy zadań. Nar
 
 Możesz również wykonać zamknięcia i ponownego uruchamiania działania bezpośrednio z programu Windows PowerShell również.
 
-Aby wyłączyć komputer, użyj polecenia stop-computer
+Aby wyłączyć komputer, użyj polecenia Stop-Computer
 
 ```powershell
-stop-computer
+Stop-Computer
 ```
 
-Aby ponownie uruchomić system operacyjny, należy użyć polecenia Uruchom ponownie komputer
+Aby ponownie uruchomić system operacyjny, użyj polecenia Restart-Computer
 
 ```powershell
-restart-computer
+Restart-Computer
+```
+
+Aby wymusić natychmiastowe ponowne uruchomienie komputera, użyj parametru - Force.
+
+```powershell
+Restart-Computer -Force
 ```

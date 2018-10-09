@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Opis ważnych pojęć związanych z programu PowerShell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353198"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851001"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Opis ważnych pojęć związanych z programu PowerShell
 
@@ -23,7 +23,7 @@ Jeśli używano narzędzia przetwarzanie tekstu do przetwarzania danych w przesz
 
 ## <a name="the-command-family-is-extensible"></a>Rodzina poleceń jest rozszerzalny
 
-Interfejsy, takie jak **cmd.exe**nie umożliwiają zwiększenie bezpośrednio zestawu wbudowanego polecenia. Można utworzyć zewnętrzne narzędzia wiersza polecenia, które działają w **cmd.exe**. Ale tych narzędzi zewnętrznych nie ma usług, takich jak integracja pomocy. **cmd.exe**automatycznie nie wie, że te narzędzia zewnętrzne są prawidłowych poleceń.
+Interfejsy, takie jak **cmd.exe** nie umożliwiają zwiększenie bezpośrednio zestawu wbudowanego polecenia. Można utworzyć zewnętrzne narzędzia wiersza polecenia, które działają w **cmd.exe**. Ale tych narzędzi zewnętrznych nie ma usług, takich jak integracja pomocy. **cmd.exe** automatycznie nie wie, że te narzędzia zewnętrzne są prawidłowych poleceń.
 
 Natywne poleceń w programie PowerShell, są znane jako *poleceń cmdlet* (Wymowa komand-). Można tworzyć własne moduły poleceń cmdlet i funkcji przy użyciu skompilowany kod lub skrypty. Moduły można dodać polecenia cmdlet i dostawców, powłoki. Program PowerShell obsługuje również skrypty, które są analogiczne do skryptów powłoki systemu UNIX i **cmd.exe** pliki wsadowe.
 
