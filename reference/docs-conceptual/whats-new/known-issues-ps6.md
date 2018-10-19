@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Znane problemy dotyczące programu PowerShell w wersji 6.0
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268006"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451000"
 ---
 # <a name="known-issues-for-powershell-60"></a>Znane problemy dotyczące programu PowerShell w wersji 6.0
 
@@ -90,9 +90,9 @@ Możliwość tworzenia ograniczone administracji punktów końcowych usług zdal
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec`, jak i programu PowerShell
 
-Ponieważ program PowerShell działa większość używanych poleceń w pamięci (na przykład języka Python lub Ruby), nie można użyć "sudo" bezpośrednio za pomocą programu PowerShell elementy wbudowane. (Mogą oczywiście uruchamiać `powershell` z "sudo".) W razie potrzeby uruchomić polecenia cmdlet programu PowerShell z wnętrza programu PowerShell przy użyciu programu sudo, na przykład `sudo `zestaw data` 8/18/2016`, a następnie należy wykonać `sudo powershell `zestaw data` 8/18/2016`. Podobnie można wykonać exec programu PowerShell, które są wbudowane bezpośrednio. Zamiast tego trzeba wykonać `exec powershell item_to_exec`.
+Ponieważ program PowerShell działa większość używanych poleceń w pamięci (na przykład języka Python lub Ruby), nie można użyć "sudo" bezpośrednio za pomocą programu PowerShell elementy wbudowane. (Mogą oczywiście uruchamiać `pwsh` z "sudo".) Jeśli to konieczne do uruchamiania polecenia cmdlet programu PowerShell z wnętrza programu PowerShell przy użyciu programu sudo, na przykład `sudo Set-Date 8/18/2016`, a następnie należy wykonać `sudo pwsh Set-Date 8/18/2016`. Podobnie można wykonać exec programu PowerShell, które są wbudowane bezpośrednio. Zamiast tego trzeba wykonać `exec pwsh item_to_exec`.
 
-Ten problem, obecnie jest śledzona jako część #3232.
+Ten problem, obecnie jest śledzona jako część [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Brak polecenia cmdlet
 
