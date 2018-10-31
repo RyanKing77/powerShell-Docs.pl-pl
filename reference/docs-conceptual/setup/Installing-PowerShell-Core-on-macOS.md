@@ -2,12 +2,12 @@
 title: Instalowanie programu PowerShell Core w systemie macOS
 description: Informacje o instalowaniu programu PowerShell Core w systemie macOS
 ms.date: 08/06/2018
-ms.openlocfilehash: 042c933dfa83f3ab52e315036e4f817145116d00
-ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
+ms.openlocfilehash: e226cd64f8788ae74dc72fdc0cd219923b7a2cd6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45611491"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002363"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Instalowanie programu PowerShell Core w systemie macOS
 
@@ -40,8 +40,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Powyższe polecenia mogą być wywoływane z w ramach hosta programu PowerShell (pwsh), ale następnie powłoki programu PowerShell, należy ponownie uruchomić, aby ukończyć uaktualnienie.
-> i Odśwież wartości widocznych na $PSVersionTable.
+> Powyższe polecenia mogą być wywoływane z w ramach hosta programu PowerShell (pwsh), ale następnie powłoki programu PowerShell, należy ponownie uruchomić, aby zakończyć uaktualnianie, a następnie Odśwież wartości widocznych na $PSVersionTable.
 
 [brew]: http://brew.sh/
 

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Znane problemy w programie WMF 5.1
-ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e59ea1b9a5282eb5727a37ce605c71724a219827
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892141"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225849"
 ---
 # <a name="known-issues-in-wmf-51"></a>Znane problemy w programie WMF 5.1
 
@@ -33,7 +33,7 @@ W tej wersji istnieją dwa problemy, których należy wiedzieć podczas na serwe
 
 ## <a name="dsc-after-uninstall-wmf"></a>DSC po Odinstaluj program WMF
 
-- Odinstalowywanie programu WMF nie powoduje usunięcia dokumentów DSC MOF z folderu konfiguracji. DSC nie będzie działać prawidłowo, jeśli dokumenty MOF zawiera nowszą właściwości, które nie są dostępne w starszych systemach. W takim przypadku uruchom następujący skrypt z konsoli programu PowerShell z podwyższonym poziomem uprawnień, aby wyczyścić stany DSC.
+- Odinstalowywanie programu WMF nie powoduje usunięcia dokumentów DSC MOF z folderu konfiguracji. DSC nie będzie działać prawidłowo, jeśli dokumenty MOF zawiera nowszą właściwości, które nie są dostępne w starszych systemach. W takim przypadku uruchom następujący skrypt z podwyższonym poziomem uprawnień konsoli PowerShell, aby wyczyścić stany DSC.
 
   ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",

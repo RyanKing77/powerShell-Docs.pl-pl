@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
+keywords: DSC, powershell, konfiguracja, ustawienia
 title: Pisanie tematów pomocy dotyczących konfiguracji DSC
-ms.openlocfilehash: 316fd69ab1eae66ebe141b2575a05b502fc261ea
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a4b5e688744b9a4519ce06d920ad8f11efeb99ad
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222667"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225696"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Pisanie tematów pomocy dotyczących konfiguracji DSC
 
->Dotyczy: Windows środowiska Windows PowerShell 5.0
+>Dotyczy: Windows PowerShell 5.0
 
-Korzystanie z pomocy na podstawie komentarza, w konfiguracji DSC. Użytkownicy mają dostęp do pomocy przez wywołanie funkcji z konfiguracji `-?`, lub za pomocą [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) polecenia cmdlet. Aby uzyskać więcej informacji o pomoc oparta na komentarzach programu PowerShell, zobacz [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
+Korzystanie z pomocy oparta na komentarzach, w konfiguracjach DSC. Użytkownicy mają dostęp do pomocy przez wywołanie funkcji konfiguracji za pomocą `-?`, lub za pomocą [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) polecenia cmdlet. Aby uzyskać więcej informacji na temat programu PowerShell oparta na komentarzach pomocy zobacz [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).
 
-W poniższym przykładzie przedstawiono skrypt, który zawiera konfigurację i oparta na komentarzach pomocy dla niej:
+Poniższy przykład pokazuje skrypt, który zawiera konfigurację i oparta na komentarzach pomoc dotyczącą go:
 
 ```powershell
 <#
@@ -50,18 +50,18 @@ This example will be labeled "EXAMPLE 2" when help is displayed to the user.
 
 configuration HelpSample1
 {
-    param([string]$ComputerName,[string]$FilePath)
-    File f
-    {
+    param([string]$ComputerName,[string]$FilePath)
+    File f
+    {
         Contents="Hello World"
-        DestinationPath = "c:\Destination.txt"
-    }
+        DestinationPath = "c:\Destination.txt"
+    }
 }
 ```
 
 ## <a name="viewing-configuration-help"></a>Wyświetlanie pomocy konfiguracji
 
-Aby wyświetlić Pomoc dla konfiguracji, użyj **Get-Help** polecenia cmdlet z nazwą funkcji lub typu następuje nazwa funkcji `-?`. Poniżej przedstawiono dane wyjściowe poprzedniego funkcji przekazany do **Get-Help**:
+Aby wyświetlić Pomoc dla konfiguracji, należy użyć **Get-Help** polecenia cmdlet, o nazwie funkcji lub wpisz nazwę funkcji następuje `-?`. Oto dane wyjściowe poprzedniego funkcji, gdy przekazywane do **Get-Help**:
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -91,4 +91,4 @@ REMARKS
 ```
 
 ## <a name="see-also"></a>Zobacz też
-* [Konfiguracji DSC](configurations.md)
+* [Konfiguracje DSC](configurations.md)

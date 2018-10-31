@@ -1,88 +1,88 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
-title: Często zadawane pytania dotyczące galerii programu PowerShell
-ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
+title: Galeria programu PowerShell — często zadawane pytania
+ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190438"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002876"
 ---
 # <a name="frequently-asked-questions"></a>Często zadawane pytania
 
 ## <a name="what-is-a-powershell-module"></a>Co to jest moduł programu PowerShell?
 
-Moduł programu PowerShell jest wielokrotnego użytku pakiet zawierający niektóre funkcje programu PowerShell. W modułach można spakować wszystko w programie PowerShell (funkcje, zmienne, DSC zasobów itp.). Moduły są zazwyczaj folderów zawierających określonych typów plików przechowywanych w określonej ścieżce. Istnieje kilka różnych typów tam moduły programu PowerShell.
+Moduł programu PowerShell to do ponownego użycia pakietu zawierającego niektóre funkcje programu PowerShell. Wszystko, co w programie PowerShell (funkcje, zmienne, zasoby DSC, itp.) można spakować w modułach. Zazwyczaj moduły są foldery zawierające określonych typów plików przechowywanych w określonej ścieżce. Istnieje kilka różnych typów modułów programu PowerShell tam.
 
 ## <a name="what-is-a-powershell-script"></a>Co to jest skrypt programu PowerShell?
 
-Skrypt programu PowerShell jest serii poleceń, które są przechowywane w pliku .ps1, aby umożliwić udostępnianie i ponowne użycie. Przepływy pracy programu PowerShell są również skrypty programu PowerShell, które przedstawiają zestaw zadań i podaj sekwencji zadań. Aby uzyskać więcej informacji, odwiedź stronę [wprowadzenie do przepływu pracy programu PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
+Skrypt programu PowerShell jest serię poleceń, które są przechowywane w pliku .ps1, aby umożliwić udostępnianie i ponowne użycie. Przepływy pracy programu PowerShell są również skrypty programu PowerShell, które opisują zestaw zadań i podać sekwencji zadań. Aby uzyskać więcej informacji, odwiedź [rozpoczęcie korzystania z przepływu pracy programu PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
 
-## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Jak skrypty programu PowerShell są inne niż moduły programu PowerShell
+## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Czym różnią się skryptów programu PowerShell z modułów programu PowerShell?
 
-Moduły są zazwyczaj większą do udostępniania, ale jest włączane, udostępnianie skryptu w celu ułatwienia współtworzenia przepływami pracy a skryptami społeczności. Aby uzyskać więcej informacji można znaleźć na następujących blogach:
+Moduły są zazwyczaj większą do udostępniania, ale jest włączane, udostępnianie skrypt, aby ułatwić współtworzyć przepływami pracy a skryptami społeczności. Aby uzyskać więcej informacji można znaleźć na następujących blogach:
 
-- [Nie pisanie skryptów, moduły programu PowerShell zapisu](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
+- [Nie zapisuj skryptów i modułów programu PowerShell Write](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
 - [Opis modułów programu PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
 
-## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Jak można publikować w galerii programu PowerShell?
+## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Jak mogę opublikować w galerii programu PowerShell
 
-Przed rozpoczęciem publikowania elementów galerii, musisz zarejestrować konta w galerii programu PowerShell. Jest to spowodowane publikowania elementów wymaga NuGetApiKey, która jest dostępna podczas rejestracji. Aby zarejestrować, służbowy osobiste, konta służbowego do logowania się w galerii programu PowerShell. Proces rejestracji jednorazowe jest wymagany, gdy zalogujesz się po raz pierwszy. Później NuGetApiKey programu jest dostępna na stronie profilu.
+Konto należy zarejestrować w galerii programu PowerShell, zanim będzie można opublikować pakietów do galerii. Jest to spowodowane publikowania pakietów wymaga NuGetApiKey, która jest dostarczana w chwili rejestracji. Aby się zarejestrować, użyj osobistego, konta służbowego do logowania się w galerii programu PowerShell. Po zalogowaniu się po raz pierwszy, proces rejestracji jednorazowy jest wymagany. Później Twoje NuGetApiKey jest dostępna na stronie profilu.
 
-Po zarejestrowaniu się w galerii, użyj [modułu publikowania](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) lub [skryptu publikowania](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) poleceń cmdlet do publikowania tego elementu w galerii. Więcej szczegółów na temat sposobu uruchamiania tych poleceń cmdlet, odwiedź stronę karty Publikowanie lub odczytać [modułu publikowania](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) i [skryptu publikowania](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) dokumentacji.
+Po zarejestrowaniu się w galerii, użyj [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) lub [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) poleceń cmdlet do opublikowania pakietu do galerii. Aby uzyskać więcej informacji na temat sposobu uruchamiania tych poleceń cmdlet można znaleźć na karcie publikowanie lub przeczytaj [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) i [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) dokumentacji.
 
-**Nie należy do zarejestrowania lub zaloguj się do galerii, aby zainstalować lub zapisać elementów.**
+**Nie musisz zarejestrować się lub zaloguj się do galerii, aby zainstalować lub zapisać pakietów.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>Otrzymuję "nie można przetworzyć żądania. "Określony klucz interfejsu API jest nieprawidłowa lub nie ma uprawnień dostępu do określonego pakietu.". Serwer zdalny zwrócił błąd: (403) zabroniony. " Wystąpił błąd przy próbie opublikować element galerii programu PowerShell. Co to oznacza?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Został wyświetlony "nie można przetworzyć żądania. "Określony klucz interfejsu API jest nieprawidłowa lub nie ma uprawnień do dostępu do określonego pakietu.". Serwer zdalny zwrócił błąd: (403) zabroniony. " Wystąpił błąd podczas próby opublikowania pakietu w galerii programu PowerShell. Co to oznacza?
 
 Ten błąd może wystąpić z następujących powodów:
 
 - **Określony klucz interfejsu API jest nieprawidłowa.**
-     Upewnij się, że określono nieprawidłowy klucz interfejsu API z Twojego konta. Aby uzyskać klucz interfejsu API, Wyświetl strony swojego profilu.
-- **Nazwa określonego elementu właścicielem nie jest użytkownik.**
-     Jeśli potwierdzeniu, że klucz interfejsu API jest poprawna, a następnie może już istnieć element o takiej samej nazwie, który próbujesz użyć. Element zostały nieznajdujące się na liście przez właściciela, przez co nie będzie wyświetlany w żadnych wyników wyszukiwania. Aby ustalić, czy element o takiej samej nazwie już istnieje, otwórz przeglądarkę i przejdź do strony szczegółów elementu: `https://www.powershellgallery.com/packages/<itemName>`. Na przykład Nawigacja bezpośrednio do `https://www.powershellgallery.com/packages/pester` spowoduje przejście do strony szczegółów modułu Pester, czy nie jest on nieznajdujące się na liście. Jeśli element o nazwie powodujące konflikt już istnieje i jest nieznajdujące się na liście, można:
-    - Wybierz inną nazwę dla tego elementu.
-    - Skontaktuj się z właściciele istniejący element.
+     Upewnij się, że określono prawidłowego klucza interfejsu API z Twojego konta. Aby uzyskać klucz interfejsu API, wyświetlać stronę profilu.
+- **Nazwa pakietu określona właścicielem nie jest użytkownik.**
+     Jeśli potwierdzeniu, że klucz interfejsu API jest poprawna, a następnie może już istnieć pakiet o tej samej nazwie, który próbujesz użyć. Pakiet zostały nieznajdujące się na liście przez właściciela, w tym przypadku nie będzie wyświetlany w żadnych wyników wyszukiwania. Aby ustalić, czy pakiet o tej samej nazwie już istnieje, otwórz przeglądarkę i przejdź do strony szczegółów pakietu: `https://www.powershellgallery.com/packages/<packageName>`. Na przykład, przechodząc bezpośrednio do `https://www.powershellgallery.com/packages/pester` spowoduje przejście do strony szczegółów modułu usług Pester, czy jest ono nieznajdujące się na liście, czy nie. Jeśli pakiet o nazwie powodujące konflikt już istnieje i jest nieobecne na liście, możesz to zrobić:
+    - Wybierz inną nazwę dla pakietu.
+    - Skontaktuj się z właścicielami istniejącego pakietu.
 
-## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Dlaczego nie można zalogować się przy użyciu konta osobiste, ale można zarejestrować się w wczoraj?
+## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Dlaczego nie można zarejestrować się przy użyciu osobistego konta, ale można zarejestrować się w wczoraj?
 
-Należy pamiętać, Twoje konto galerii nie obsługuje zmiany zmian aliasu podstawowego poczty e-mail. Aby uzyskać więcej informacji, zobacz [aliasów E-mail Microsoft](https://windows.microsoft.com/windows/outlook/add-alias-account).
+Należy pamiętać, Twoje konto galerii nie obsługuje zmiany zmiany alias podstawowy adres e-mail. Aby uzyskać więcej informacji, zobacz [aliasy poczty E-mail firmy Microsoft](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
-## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Dlaczego nie widzisz wszystkich elementów galerii, po wybraniu wszystkich kategorii odpowiednie pola wyboru na karcie elementy?
+## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>Dlaczego nie widzisz wszystkie pakiety galerii, po wybraniu wszystkich pól kategorii wyboru na karcie pakiety?
 
-Zaznaczając pole wyboru kategorii są podając "Chcę wyświetlić wszystkie elementy w tej kategorii." Pojawi się tylko do elementów w wybranej kategorii. Dlatego podobnie wybierając wszystkie pola wyboru kategorii, możesz są z informacją "Chcę wyświetlić wszystkie elementy w każdej kategorii." Jednak niektóre elementy w galerii należy do żadnej kategorii na liście, więc nie będą widoczne w wynikach. Aby wyświetlić wszystkie elementy w galerii, wyczyść wszystkie kategorie, lub wybierz kartę elementy ponownie.
+Zaznaczając pole wyboru kategorii, są informacją "Czy chcesz zobaczyć wszystkie pakiety z tej kategorii." Wyświetlane są tylko pakiety z wybranych kategorii. Dlatego podobnie zaznaczenie wszystkich pól wyboru kategorii, możesz są z informacją "Czy chcesz zobaczyć wszystkie pakiety w dowolnej kategorii." Jednak niektóre pakiety w galerii nie należą do żadnej z kategorii na liście, dzięki czemu będą widoczne w wynikach. Aby wyświetlić wszystkie pakiety w galerii, usuń zaznaczenie wszystkich kategorii lub ponownie wybierz kartę pakietów.
 
-## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Jakie są wymagania, aby opublikować modułu w galerii programu PowerShell?
+## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Jakie są wymagania, aby opublikować moduł galerii programu PowerShell?
 
-Dowolny rodzaj modułu programu PowerShell (modułów skryptów, moduły binarne lub moduły manifestu) mogą być publikowane do galerii. Aby opublikować modułu, PowerShellGet musi wiedzieć, kilka rzeczy, o - wersji, opis, autora i jak jest licencjonowana. Te informacje jest do odczytu w trakcie procesu publikowania z *manifestu modułu* pliku (psd1), lub wartość [ **modułu publikowania** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet **LicenseUri** parametru. Wszystkie moduły opublikowany w galerii musi mieć manifestów modułu. Każdy moduł, który zawiera następujące informacje w swoim manifeście można opublikować w galerii:
+Dowolny rodzaj modułu programu PowerShell (moduły skryptów, moduły binarne lub moduły manifestu) mogą być publikowane w galerii. Aby opublikować modułu, PowerShellGet musi wiedzieć, kilka kwestii, o nim — wersji, opis, autora i jak jest licencjonowana. Informacja ta jest do odczytu w ramach procesu publikowania z *manifestu modułu* pliku (psd1), lub wartość [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet **LicenseUri** parametru. Wszystkie moduły, opublikowane w galerii, musi mieć manifesty modułu. Każdy moduł, który zawiera następujące informacje w swoim manifeście mogą być publikowane w galerii:
 
 - Wersja
 - Opis
 - Autor
-- Identyfikator URI postanowień licencyjnych modułu, albo w ramach **PrivateData** sekcji manifestu lub w **LicenseUri** parametr [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
+- Identyfikator URI do postanowień licencyjnych w module, albo w ramach **PrivateData** sekcji manifestu lub w **LicenseUri** parametru [ **Publish-Module** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
 
-## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Jak utworzyć manifestu modułu prawidłowo sformatowane?
+## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Jak utworzyć manifest poprawnie sformatowany modułu?
 
-Najprostszym sposobem tworzenia manifestu modułu jest uruchomienie [ **ModuleManifest nowy** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet. W programie PowerShell 5.0 lub nowszej, New-ModuleManifest generuje manifest modułu prawidłowo sformatowane z puste pola przydatne metadanych, takich jak **ProjectUri**, **LicenseUri**, i **tagi**. Po prostu Wypełnij puste wartości, lub użyj wygenerowanego manifestu na przykład poprawnego formatowania.
+Najprostszym sposobem utworzenia manifestu modułu jest uruchomienie [ **New ModuleManifest** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet. W programie PowerShell 5.0 lub nowszego, New-ModuleManifest generuje manifestu modułu poprawnie sformatowany za pomocą puste pola, aby uzyskać przydatne metadane, takie jak **ProjectUri**, **LicenseUri**, i **tagi**. Po prostu Wypełnij puste wartości lub użyć wygenerowanego manifestu, na przykład prawidłowe formatowanie.
 
-Aby sprawdzić, czy wszystkie wymagane pola metadane zostały poprawnie wypełnione, użyj [ **ModuleManifest testu** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
+Aby sprawdzić, czy wszystkie wymagane pola metadanych została prawidłowo wypełniona, użyj [ **ModuleManifest testu** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
 
 Aby zaktualizować pola pliku manifestu modułu, należy użyć [ **ModuleManifest aktualizacji** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
 
-## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Jakie są wymagania dotyczące publikowania skrypt do galerii?
+## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Jakie są wymagania, aby opublikować skrypt do galerii?
 
-Dowolny skrypt programu PowerShell (skrypty lub przepływów pracy) mogą być publikowane do galerii. Aby opublikować skryptu, PowerShellGet musi wiedzieć, kilka rzeczy, o - wersji, opis, autora i jak jest licencjonowana. Te informacje jest do odczytu w trakcie procesu publikowania z pliku skryptu *PSScriptInfo* sekcji, lub wartość [ **publikowania skryptu** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet  **LicenseUri** parametru. Wszystkie skrypty opublikowany w galerii musi mieć informacji o metadanych. Dowolny skrypt, który zawiera następujące informacje w sekcji dotyczącej PSScriptInfo można opublikować w galerii:
+Dowolny skrypt programu PowerShell (skrypty lub przepływów pracy) mogą być publikowane w galerii. Aby opublikować skryptu, PowerShellGet musi wiedzieć, kilka kwestii, o nim — wersji, opis, autora i jak jest licencjonowana. Informacja ta jest do odczytu w ramach procesu publikowania z pliku skryptu *PSScriptInfo* sekcji, lub wartość [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet  **LicenseUri** parametru. Wszystkie skrypty, opublikowane w galerii, musi mieć informacji o metadanych. Dowolny skrypt, który zawiera następujące informacje w sekcji PSScriptInfo mogą być publikowane w galerii:
 
 - Wersja
 - Opis
 - Autor
-- Identyfikator URI postanowienia licencyjne dotyczące skryptu, albo w ramach **PSScriptInfo** sekcji skryptu lub w **LicenseUri** parametr [ **skryptów publikowania** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
+- Identyfikator URI postanowienia licencyjne dotyczące skryptu, albo w ramach **PSScriptInfo** sekcji skryptu lub w **LicenseUri** parametru [ **Publish-Script** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
 
-## <a name="how-do-i-search"></a>Sposób wyszukiwania
+## <a name="how-do-i-search"></a>Jak wyszukiwanie
 
-Wpisz, czego szukasz w polu tekstowym. Na przykład jeśli chcesz znaleźć modułów, które odnoszą się do bazy danych SQL Azure, wpisz "azure sql". Nasze aparat wyszukiwania będzie szukać tych słów kluczowych w opublikowanych elementów, w tym tytuły i opisy oraz w metadanych. Następnie w oparciu o wynik ważoną jakości, będzie wyświetlany najbliższy dopasowań. Można także przeszukać według określonego pola za pomocą pola: "wartość" składni w kwerendzie wyszukiwania dla następujących pól:
+Wpisz, czego szukasz w polu tekstowym. Na przykład jeśli chcesz znaleźć moduły, które są powiązane z usługi Azure SQL, po prostu wpisz "sql platformy azure". Naszego aparatu wyszukiwania będzie szukał tych słów kluczowych w wszystkie opublikowane pakiety, w tym tytuły i opisy i w ramach metadanych. Następnie na podstawie ważonej jakości wyniku, wyświetli najbliższego dopasowań. Możesz również wyszukiwać według określonego pola za pomocą pola: "wartość" składni w zapytaniu wyszukiwania dla następujących pól:
 
 - Tagi
 - Funkcje
@@ -90,63 +90,63 @@ Wpisz, czego szukasz w polu tekstowym. Na przykład jeśli chcesz znaleźć modu
 - DscResources
 - PowerShellVersion
 
-Tak, na przykład podczas wyszukiwania PowerShellVersion: "2.0" tylko wyniki, które są zgodne z PowerShellVersion 2.0 (oparte na ich manifest skryptu lub modułu) zostaną wyświetlone.
+Tak więc, na przykład podczas wyszukiwania PowerShellVersion: "2.0" tylko wyniki, które są zgodne z 2.0 PowerShellVersion (oparte na manifeście modułu skryptu) zostaną wyświetlone.
 
-## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Jak utworzyć plik skryptu prawidłowo sformatowane?
+## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Jak utworzyć plik skryptu poprawnie sformatowany?
 
-Najprostszym sposobem tworzenia pliku skryptu poprawnie sformatowana jest uruchomienie [ **ScriptFileInfo nowy** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet. W programie PowerShell 5.0, New-ScriptFileInfo generuje plik skryptu prawidłowo sformatowane z puste pola przydatne metadanych, takich jak **ProjectUri**, **LicenseUri**, i **tagi** . Po prostu Wypełnij puste wartości lub użyć pliku skryptu wygenerowany przykład poprawnego formatowania.
+Najprostszym sposobem utworzenia pliku skryptu poprawnie sformatowana, jest uruchomienie [ **New ScriptFileInfo** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet. W programie PowerShell 5.0, New-ScriptFileInfo generuje plik skryptu poprawnie sformatowany za pomocą pustych pól dla przydatne metadane, takie jak **ProjectUri**, **LicenseUri**, i **tagi** . Po prostu Wypełnij puste wartości lub użyć pliku skryptu wygenerowanego na przykład prawidłowe formatowanie.
 
-Aby sprawdzić, czy wszystkie wymagane pola metadane zostały poprawnie wypełnione, użyj [ **ScriptFileInfo testu** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
+Aby sprawdzić, czy wszystkie wymagane pola metadanych została prawidłowo wypełniona, użyj [ **ScriptFileInfo testu** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
 
 Aby zaktualizować pola metadanych skryptu, użyj [ **ScriptFileInfo aktualizacji** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
 
-## <a name="what-other-types-of-powershell-modules-exist"></a>Jakie inne rodzaje moduły programu PowerShell?
+## <a name="what-other-types-of-powershell-modules-exist"></a>Jakie inne rodzaje modułów programu PowerShell?
 
-Moduł PowerShell termin odnosi się także do plików, które implementuje rzeczywistej funkcji. Pliki modułu skryptu (.psm1) zawiera kod programu PowerShell. Pliki binarne modułu (.dll) zawierają skompilowany kod.
+Moduł PowerShell termin odnosi się także do plików, które implementują funkcjonalność rzeczywiste. Pliki modułu skryptu (.psm1) zawierają kod programu PowerShell. Pliki binarne modułu (.dll) zawierają kod skompilowany.
 
-W tym miejscu jest jednym ze sposobów można traktować go: folder, który hermetyzuje modułu jest folder modułu. Folder moduł może zawierać manifestu modułu (psd1), który opisuje zawartość folderu. Pliki, które faktycznie pracy są pliki modułu skryptu (.psm1) i pliki binarne modułu (.dll). Zasoby usługi Konfiguracja DSC znajdują się w określonym folderze podrzędne i są zaimplementowane jako pliki modułu skryptu lub pliki binarne modułu.
+W tym miejscu jest jednym ze sposobów myślenia o nim: folder, który hermetyzuje modułu jest folderem modułu. Folder modułu może zawierać manifest modułu (psd1), który opisuje zawartość tego folderu. Pliki, które rzeczywiście wykonują pracę są pliki modułu skryptu (.psm1) i pliki binarne modułu (.dll). Zasoby DSC znajdują się w określonym folderze podrzędnych i są implementowane jako pliki modułów skryptów lub pliki binarne modułu.
 
-Wszystkie moduły w galerii zawierać manifestów modułu, a większość tych modułów pliki modułu skryptu lub pliki binarne modułu. Z powodu tych inną funkcję modułu terminu może być trudne. O ile nie zaznaczono inaczej, wszystkie użycia modułu programu word na tej stronie można znaleźć folderu modułu zawierające te pliki.
+Wszystkie moduły w galerii zawierać manifesty modułu, a większość z tych modułów zawierają pliki modułów skryptów lub pliki binarne modułu. Ze względu na te różne znaczenie modułu terminu może być mylące. O ile nie zaznaczono inaczej, wszystkie przypadki użycia modułu programu word na tej stronie można znaleźć folderu modułu zawierającego te pliki.
 
 ## <a name="how-does-packagemanagement-relate-to-powershellget-high-level-answer"></a>Jaki jest związek między PackageManagement PowerShellGet? (Wysokiego poziomu odpowiedzi)
 
-PackageManagement jest wspólny interfejs do pracy z dowolnego Menedżera pakietów. Po pewnym czasie czy jest zajmujących moduły programu PowerShell, MSI, gems dopisków fonetycznych, pakiety NuGet lub moduły Perl, można używać poleceń w PackageManagement (Znajdź pakiet i Install-Package), aby znaleźć i zainstalować je. PackageManagement robi to przez dostawcę pakietu dla każdego Menedżera pakietów, które podłącza się do PackageManagement. Dostawców wykonać całą pracę; Pobieranie zawartości z repozytoriami i zainstaluj zawartość lokalnie. Często dostawców pakietu po prostu otacza istniejące narzędzia menedżera pakietu dla typu danego pakietu.
+Funkcja PackageManagement jest wspólny interfejs do pracy z dowolnym Menedżera pakietów. Po pewnym czasie czy jesteś zajmujących modułów programu PowerShell, MSI, klejnoty języka Ruby, pakietów NuGet lub moduły języka Perl, można używać poleceń firmy PackageManagement (Znajdź pakiet i Install-Package), aby znaleźć i zainstalować je. Funkcja PackageManagement robi to przez dostawcę pakietu dla każdego Menedżera pakietów, które podłącza się do funkcji PackageManagement. Dostawców przyspieszające rzeczywista praca; Pobierz zawartość z repozytoriów i instalowanie zawartości lokalnie. Często dostawców pakietu po prostu otacza istniejące narzędzia Menedżera pakietów dla typu danego pakietu.
 
-PowerShellGet jest Menedżer pakietów dla elementów programu PowerShell. Brak dostawcy pakietu PSModule, który udostępnia funkcje PowerShellGet za pośrednictwem PackageManagement. W związku z tym można uruchomić [instalacji modułu](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) lub Install-Package-PSModule dostawcy, aby zainstalować moduł z galerii programu PowerShell. Niektóre funkcje PowerShellGet tym [aktualizacji modułu](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) i [modułu publikowania](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), nie będą dostępne za pośrednictwem polecenia PackageManagement.
+Moduł PowerShellGet to Menedżer pakietów dla pakietów programu PowerShell. Brak dostawcy pakietu PSModule, który udostępnia funkcje PowerShellGet za pomocą modułu PackageManagement. W związku z tym można uruchomić [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) lub Install-Package-PSModule dostawcy, aby zainstalować moduł z galerii programu PowerShell. Niektórych funkcji modułu PowerShellGet, w tym [aktualizacji modułu](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) i [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), nie są dostępne za pomocą modułu PackageManagement poleceń.
 
-Podsumowując PowerShellGet koncentruje się wyłącznie na o atrakcyjny interfejs zarządzania pakiet zawartości programu PowerShell. PackageManagement koncentruje się na udostępnianie wszystkie środowiska zarządzania udostępniającego pakietu za pomocą jednego ogólne zestawu narzędzi. Jeśli odpowiedzi to unsatisfying, jest długich odpowiedzi w dolnej części tego dokumentu w **jaki związek PackageManagement faktycznie między PowerShellGet?** sekcji.
+Podsumowanie PowerShellGet jest wyłącznie koncentruje się na o środowisko zarządzania pakiet w wersji premium dla zawartości programu PowerShell. Funkcja PackageManagement koncentruje się na udostępnianie wszystkich pakietów środowiska zarządzania za pośrednictwem jednego ogólnego zestawu narzędzi. Odnalezienie unsatisfying tej odpowiedzi jest długi odpowiedzi w dolnej części tego dokumentu w **jak PackageManagement faktycznie jest związek z modułu PowerShellGet?** sekcji.
 
-Aby uzyskać więcej informacji, odwiedź stronę [PackageManagement projektu strony](https://oneget.org/).
+Aby uzyskać więcej informacji, odwiedź [strony projektu PackageManagement](https://oneget.org/).
 
-## <a name="how-does-nuget-relate-to-powershellget"></a>Jaki jest związek między NuGet PowerShellGet?
+## <a name="how-does-nuget-relate-to-powershellget"></a>Jaki jest związek między NuGet modułu PowerShellGet?
 
-Galerii programu PowerShell jest zmodyfikowanej wersji [galerii NuGet](https://www.nuget.org/). PowerShellGet używa dostawcy NuGet do pracy z repozytoria NuGet, na podstawie takich jak galerii programu PowerShell.
+Galeria programu PowerShell to zmodyfikowana wersja [galerii pakietów NuGet](https://www.nuget.org/). Moduł PowerShellGet używa dostawcy NuGet do pracy z NuGet na podstawie repozytoriów, takich jak Galeria programu PowerShell.
 
-Możesz użyć PowerShellGet przed wszystkie prawidłowe NuGet repozytorium lub w udziale plików. Należy po prostu Dodaj repozytorium, uruchamiając [ **PSRepository rejestru** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
+Możesz używać modułu PowerShellGet, względem wszystkie prawidłowe NuGet repozytorium lub w udziale plików. Po prostu musisz dodać repozytorium, uruchamiając [ **Register-PSRepository** ](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) polecenia cmdlet.
 
-## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Czy oznacza to, że do pracy z galerii można używać NuGet.exe?
+## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>Oznacza, że NuGet.exe można używać do pracy z galerii?
 
 Tak.
 
-## <a name="how-does-packagemanagement-actually-relate-to-powershellget-technical-details"></a>Jak związek PackageManagement faktycznie między PowerShellGet? (Szczegóły techniczne)
+## <a name="how-does-packagemanagement-actually-relate-to-powershellget-technical-details"></a>Jaki związek PackageManagement faktycznie między PowerShellGet? (Szczegóły techniczne)
 
-Pod maską PowerShellGet silnie wykorzystuje infrastrukturę PackageManagement.
+Kulisy PowerShellGet intensywnie korzysta z infrastruktury PackageManagement.
 
-W warstwie polecenia cmdlet programu PowerShell [instalacji modułu](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) jest rzeczywiście cienką otoką wokół Install-Package-PSModule dostawcy.
+W warstwie polecenia cmdlet programu PowerShell [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) jest faktycznie alokowania elastycznego otokę Install-Package-PSModule dostawcy.
 
-W warstwie dostawcy pakietu PackageManagement dostawcy pakietu PSModule wywołuje do innych dostawców pakietu PackageManagement. Na przykład podczas pracy z systemem NuGet galerie (na przykład galerii programu PowerShell), Dostawca pakietu PSModule używa dostawcy pakietu NuGet do pracy z repozytorium.
+W warstwie dostawcy PackageManagement pakietu Dostawca pakietu PSModule rzeczywiście wywoła innych dostawców rozwiązań w pakiecie PackageManagement. Na przykład podczas pracy oparte na pakietach NuGet galerie (na przykład w galerii programu PowerShell), Dostawca pakietu PSModule używa dostawcy pakietu NuGet do pracy z repozytorium.
 
-![Architektura PowerShellGet](Images/powershellgetArchitecture.png)
+![Architektura modułu PowerShellGet](Images/powershellgetArchitecture.png)
 
-Rysunek 1: Architektura PowerShellGet
+Rysunek 1: Architektura modułu PowerShellGet
 
-## <a name="what-is-required-to-run-powershellget"></a>Co to jest wymagany do uruchamiania PowerShellGet?
+## <a name="what-is-required-to-run-powershellget"></a>Co to jest wymagane do uruchamiania modułu PowerShellGet?
 
-Ogólnie zaleca się pobrania najnowszej wersji modułu PowerShellGet (należy pamiętać, że wymaga platformy .NET 4.5).
+Ogólnie rzecz biorąc zalecamy pobranie najnowszej wersji modułu PowerShellGet (należy zauważyć, że wymaga platformy .NET 4.5).
 
-**PowerShellGet** module wymaga **programu PowerShell 3.0 lub nowszej**.
+**PowerShellGet** moduł wymaga **programu PowerShell w wersji 3.0 lub nowszej**.
 
-W związku z tym **PowerShellGet** wymaga jednego z następujących systemów operacyjnych:
+W związku z tym **PowerShellGet** wymaga jednej z następujących systemów operacyjnych:
 
 - 10 systemu Windows
 - Windows 8.1 Pro
@@ -156,16 +156,16 @@ W związku z tym **PowerShellGet** wymaga jednego z następujących systemów op
 - Windows Server 2012 R2
 - Windows Server 2008 R2 z dodatkiem SP1
 
-**PowerShellGet** również wymaga programu .NET Framework 4.5 lub nowszej. Możesz zainstalować program .NET Framework 4.5 lub nowszy z [tutaj](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**Moduł PowerShellGet** wymaga również programu .NET Framework 4.5 lub nowszej. Możesz zainstalować program .NET Framework 4.5 lub nowszy z [tutaj](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Czy jest możliwe do zarezerwowania nazwy elementów, które zostaną opublikowane w przyszłości?
+## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Czy jest możliwe do zarezerwowania nazwy pakietów, które mają zostać opublikowane w przyszłości?
 
-Nie jest możliwe wpuszczana w podłogę elementu nazwy. Jeśli uważasz, że istniejący element miało nazwy, która odpowiada przedmiot więcej, spróbuj [skontaktowanie się z właścicielem elementu](./how-to/working-with-items/contacting-item-owners.md). Jeśli nie otrzymasz odpowiedzi w ciągu kilku tygodni, można się z pomocą techniczną i będzie przeszukiwać zespołu galerii programu PowerShell do niego.
+Nie jest możliwe nazwy wpuszczana w podłogę pakietów. Jeśli uważasz, że istniejący pakiet miało nazwę, która odpowiada pakietu więcej, spróbuj [skontaktować się z właścicielem pakietu](./how-to/working-with-packages/contacting-package-owners.md). Jeśli nie otrzymasz odpowiedzi w ciągu kilku tygodni, możesz się z pomocą techniczną i zespołu galerii programu PowerShell będzie wyglądał w nim.
 
-## <a name="how-do-i-claim-ownership-for-items-"></a>Jak potwierdzić prawa własności do elementów?
+## <a name="how-do-i-claim-ownership-for-packages"></a>Jak oświadczenia własności dla pakietów?
 
-Zapoznaj się z [Zarządzanie właścicieli elementu na PowerShellGallery.com](./how-to/publishing-items/managing-item-owners.md) szczegółowe informacje.
+Zapoznaj się z [Zarządzanie właścicieli pakietu na PowerShellGallery.com](./how-to/publishing-packages/managing-package-owners.md) Aby uzyskać szczegółowe informacje.
 
-## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>Sposób postępowania z właściciela elementu, który narusza licencję elementu
+## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Sposób postępowania z właścicielem pakietu, który narusza licencję pakietu
 
-Firma Microsoft zachęca społeczności programu PowerShell współdziałają ze sobą rozwiązywać wszelkie sporów, które mogą wystąpić podczas między elementu właścicieli i innych elementów.  Firma Microsoft ma co [rozstrzygania procesu rozpoznawania](./how-to/getting-support/dispute-resolution.md) który poprosimy o należy wykonać przed intercede PowerShellGallery.com Administratorzy.
+Firma Microsoft zachęca do społeczności programu PowerShell, aby współpracują ze sobą w celu rozwiązania wszelkich sporów, które mogą wystąpić między właścicieli pakietu i innych pakietów.  Firma Microsoft ma specjalnie [proces rozstrzygania sporów](./how-to/getting-support/dispute-resolution.md) , poprosimy Cię, które należy wykonać przed intercede PowerShellGallery.com administratorów.

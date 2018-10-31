@@ -1,26 +1,26 @@
 ---
 ms.date: 06/09/2017
 schema: 2.0.0
-keywords: Środowiska PowerShell
+keywords: Program PowerShell
 title: Wymaganie akceptacji licencji dla skryptów
-ms.openlocfilehash: 6374c8c8536dd0c8f27580a5b8895b8db18424f9
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048883"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002586"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Wymaganie akceptacji licencji dla skryptów
 
-Akceptacja licencji nie jest obsługiwana dla skryptów. Jednak jest obsługiwany scenariusz, w którym skrypt jest zależna od moduł, który wymaga akceptacji licencji.
+Akceptacja licencji nie jest obsługiwana w przypadku skryptów. Jednak jest obsługiwany scenariusz, w której skrypt jest zależna od moduł, który wymaga zaakceptowania licencji.
 
-Skrypt commands(Install-Script/Save-Script/Update-Script) obsługuje nowy parametr - AcceptLicense, który zachowuje się tak, jakby użytkownik był wyświetlany licencji. Jeśli nie określono - AcceptLicense; użytkownik będzie wyświetlany license.txt zależnych modułu i poproszony o zaakceptowanie licencji.
+Skrypt commands(Install-Script/Save-Script/Update-Script) obsługuje nowy parametr - AcceptLicense, który zachowuje się tak, jakby użytkownik był wyświetlany licencji. Jeśli nie określono - AcceptLicense; użytkownik będzie wyświetlane license.txt zależne modułu i zostanie wyświetlony monit, aby zaakceptować licencję.
 
 ## <a name="examples"></a>PRZYKŁADY
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Przykład 1: Skrypt instalacji z zależnościami wymagająca akceptacji licencji
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Przykład 1: Skrypt instalacji z zależnościami wymagające akceptacji licencji
 
-Skrypt "ScriptRequireLicenseAcceptance" zależy od modułu "ModuleRequireLicenseAcceptance". Użytkownik jest monitowany o zaakceptować licencji.
+Skrypt "ScriptRequireLicenseAcceptance" zależy od modułu "ModuleRequireLicenseAcceptance". Użytkownik jest monitowany, aby zaakceptować licencję.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance
@@ -40,14 +40,14 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Przykład 2: Skrypt instalacji z zależnościami wymaganie akceptacji licencji i - AcceptLicense
 
-Skrypt "ScriptRequireLicenseAcceptance" zależy od modułu "ModuleRequireLicenseAcceptance". Użytkownik nie jest monitowany o zaakceptować licencji - AcceptLicense jest określony.
+Skrypt "ScriptRequireLicenseAcceptance" zależy od modułu "ModuleRequireLicenseAcceptance". Użytkownik nie jest monitowany o zaakceptowanie licencji, jak określono AcceptLicense —.
 
 ```PowerShell
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ```
 
-## <a name="more-details"></a>więcej informacji
+## <a name="more-details"></a>Więcej szczegółów
 
-- [Wymagana obsługa akceptacji licencji dla modułów](module-license-acceptance.md)
-- [Wymagana obsługa akceptacji licencji na PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
-- [Wymaganie akceptacji licencji na potrzeby wdrażania w usłudze Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+- [Wymagana jest obsługa akceptacja licencji dla modułów](module-license-acceptance.md)
+- [Wymagana jest Obsługa akceptacji licencji na galerii PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+- [Wymaganie akceptacji licencji na potrzeby wdrażania w usłudze Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

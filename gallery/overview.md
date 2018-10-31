@@ -1,51 +1,52 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: galerii programu powershell, polecenia cmdlet, psgallery, psget
-title: Galerii programu PowerShell
-ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+keywords: Galeria programu powershell, polecenie cmdlet, galerii programu PowerShell, psget
+title: Galeria programu PowerShell
+ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482934"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225622"
 ---
-# <a name="the-powershell-gallery"></a>Galerii programu PowerShell
+# <a name="the-powershell-gallery"></a>Galeria programu PowerShell
 
-Galerii programu PowerShell jest centralnym repozytorium zawartości programu PowerShell. W ramach tego można znaleźć przydatne moduły programu PowerShell, zawierająca poleceń programu PowerShell i zasoby konfiguracji żądanego stanu (DSC).
-Można również znaleźć skryptów programu PowerShell, niektóre z nich może zawierać przepływów pracy programu PowerShell, a które przedstawiają zestaw zadań i podaj sekwencji zadań. Niektóre z tych elementów są utworzone przez firmę Microsoft, a inne są tworzone przez społeczność programu PowerShell.
+Galeria programu PowerShell jest centralnym repozytorium zawartość programu PowerShell. Znajdziesz przydatne modułów programu PowerShell zawierający poleceń programu PowerShell i zasoby Desired State Configuration (DSC).
+Można również znaleźć skryptów programu PowerShell, niektóre z nich może zawierać przepływów pracy programu PowerShell i które opisują zestaw zadań i podać sekwencji zadań. Niektóre z tych pakietów są tworzone przez firmę Microsoft, a inne są tworzone przez społeczność użytkowników programu PowerShell.
 
-## <a name="powershellget-overview"></a>Omówienie PowerShellGet
+## <a name="powershellget-overview"></a>Omówienie modułu PowerShellGet
 
-Moduł PowerShellGet zawiera polecenia cmdlet do wykrywania, instalowania, aktualizowanie i publikowanie programu PowerShell artefaktów, takich jak moduły, zasobów usługi Konfiguracja DSC, możliwości roli i skrypty z [galerii programu PowerShell](https://www.PowerShellGallery.com) i innych prywatnej repozytoriów.
+Moduł PowerShellGet zawiera polecenia cmdlet na potrzeby odnajdywania, instalowania, aktualizowania i publikowania pakietów programu PowerShell, które zawierają artefaktów, takich jak moduły, zasoby DSC, możliwości roli i skryptów [galerii programu PowerShell](https://www.PowerShellGallery.com)i innych repozytoriów prywatnych.
 
-## <a name="getting-started-with-the-gallery"></a>Wprowadzenie do korzystania z galerii
+## <a name="getting-started-with-the-gallery"></a>Wprowadzenie do galerii
 
-Instalowanie elementów z galerii wymaga najnowszej wersji modułu PowerShellGet.
-Zobacz [instalowanie PowerShellGet](installing-psget.md) Aby uzyskać pełne instrukcje.
+Instalowanie pakietów z galerii wymaga najnowszej wersji modułu PowerShellGet.
+Zobacz [instalacji PowerShellGet](installing-psget.md) pełne instrukcje.
 
-Zapoznaj się z [wprowadzenie](getting-started.md) strony, aby uzyskać więcej informacji na temat korzystania z galerii PowerShellGet poleceń. Można również uruchomić *Update-Help — moduł PowerShellGet* instalacji lokalnej pomocy dla polecenia.
+Zapoznaj się z [wprowadzenie](getting-started.md) strony, aby uzyskać więcej informacji na temat korzystania z poleceń modułu PowerShellGet z galerią. Można również uruchomić *Update-Help-Module PowerShellGet* zainstalować lokalną pomoc dotyczącą tych poleceń.
 
 ## <a name="supported-operating-systems"></a>Obsługiwane systemy operacyjne
 
-**PowerShellGet** module wymaga **programu Windows PowerShell 3.0 lub nowszej**, lub **Core PowerShell 6.0 lub nowszej**.
+**PowerShellGet** moduł wymaga **programu Windows PowerShell w wersji 3.0 lub nowszej**, lub **programu PowerShell Core 6.0 lub nowszej**.
 
-Odpowiedniej wersji **programu Windows PowerShell** jest dostępna dla tych systemów operacyjnych:
+Odpowiedniej wersji **programu Windows PowerShell** jest dostępny dla tych systemów operacyjnych:
 
 - 10 systemu Windows
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 z dodatkiem SP1
+- System Windows Server 2019 r
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 z dodatkiem SP1
 
-**PowerShellGet** również wymaga programu .NET Framework 4.5 lub nowszej. Możesz zainstalować program .NET Framework 4.5 lub nowszy z [tutaj](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**Moduł PowerShellGet** wymaga programu .NET Framework 4.5 lub nowszej. Możesz zainstalować program .NET Framework 4.5 lub nowszy z [tutaj](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
-**Podstawowe programu PowerShell** obsługuje wiele systemów operacyjnych. Zobacz [w tym artykule](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) pełną listę.
+Ponieważ **programu PowerShell Core** jest dla wielu platform i że oznacza, że działa ona na Windows, Linux i MacOS, który sprawia, że **PowerShellGet** dostępnych w tych systemach. Aby uzyskać pełną listę obsługiwanych przez systemy **programu PowerShell Core** zobacz [Instalowanie programu PowerShell](/powershell/scripting/setup/installing-powershell).
 
-Wiele modułów hostowanej w galerii obsługi różnych systemów operacyjnych i mieć dodatkowe wymagania. Zapoznaj się z dokumentacją dla modułów, aby uzyskać więcej informacji.
+Wiele modułów hostowanych w galerii będzie obsługiwać różnych systemów operacyjnych i mają dodatkowe wymagania. Zapoznaj się z dokumentacją dla modułów, aby uzyskać więcej informacji.
 
-## <a name="got-a-question-have-feedback"></a>Masz pytania? Masz opinię?
+## <a name="got-a-question-have-feedback"></a>Masz pytanie? Chcesz przesłać opinię?
 
-Więcej informacji o galerii programu PowerShell i PowerShellGet znajdują się w [wprowadzenie](getting-started.md) strony. Podaj opinii i raportu problemów przy użyciu [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+Więcej informacji o galerii programu PowerShell i moduł PowerShellGet można znaleźć w [wprowadzenie](getting-started.md) strony. Podaj opinię i raport problemów za pomocą [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

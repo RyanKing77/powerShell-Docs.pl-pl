@@ -2,15 +2,15 @@
 ms.date: 09/05/2018
 contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
-title: Ustawienia konta w galerii programu PowerShell
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+title: Ustawienia konta galerii programu PowerShell
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523349"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002790"
 ---
-# <a name="powershell-gallery-account-settings"></a>Ustawienia konta w galerii programu PowerShell
+# <a name="powershell-gallery-account-settings"></a>Ustawienia konta galerii programu PowerShell
 
 Twoje konto galerii programu PowerShell jest widoczna publicznie nazwę, która jest połączona z tożsamością. Tej tożsamości jest albo identyfikator firmy Microsoft, takie jak `user@hotmail.com` lub `user@outlook.com`, lub konta usługi Azure Active Directory (AAD).
 
@@ -34,7 +34,7 @@ Po wprowadzeniu nowego adresu e-mail, galerii programu PowerShell wysyła wiadom
 Galeria programu PowerShell udostępnia następujące opcje powiadomień:
 
 - Użytkownicy mogą kontaktować się ze mną za pośrednictwem galerii programu PowerShell
-- Powiadom mnie, gdy element zostanie przypisany do galerii programu PowerShell przy użyciu mojego konta
+- Powiadom mnie, gdy pakiet zostanie przypisany do galerii programu PowerShell przy użyciu mojego konta
 
 ![Zmiana adresu e-mail](../../Images/PSGallery_AccountEmailOptions.png)
 

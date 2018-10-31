@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
-title: Zgłaszania nadużyć
-ms.openlocfilehash: 49f68ba634644c5d22d38a254b4c8c93ea9374d0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
+title: Zgłoś nadużycie
+ms.openlocfilehash: 70e599a26c6f04312ed7fc188047721bf96fefe2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218335"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002022"
 ---
-# <a name="report-abuse"></a>Zgłaszania nadużyć
+# <a name="report-abuse"></a>Zgłoś nadużycie
 
-Jeśli element, który narusza te elementy, kliknij przycisk **zgłaszania nadużyć** łącze na stronie szczegółów i przesłać raportu.
+Jeśli znajdziesz pakietu, który narusza dowolnego z tych elementów, kliknij przycisk **Zgłoś nadużycie** łącze na stronie szczegółów pakietu i przesłać raport.

@@ -1,31 +1,31 @@
 ---
 ms.date: 06/12/2017
-keywords: Konfiguracja DSC środowiska powershell, konfiguracji, ustawienia
-title: Pisanie niestandardowych zasobów DSC z klasami programu PowerShell
-ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: DSC, powershell, konfiguracja, ustawienia
+title: Pisanie zasobu DSC niestandardowych przy użyciu klas programu PowerShell
+ms.openlocfilehash: a8f08323f2cced8a17de4224bea94a54ba5ef0cd
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189469"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226087"
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Pisanie niestandardowych zasobów DSC z klasami programu PowerShell
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Pisanie zasobu DSC niestandardowych przy użyciu klas programu PowerShell
 
-> Dotyczy: Windows środowiska Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 5.0
 
-Wraz z wprowadzeniem klasy środowiska PowerShell w programie Windows PowerShell 5.0 można zdefiniować zasobów DSC przez tworzenie klasy. Klasa definiuje zarówno schematu, jak i implementację zasobu, więc nie trzeba utworzyć oddzielny plik MOF. Struktura folderów dla klasy zasobu również jest łatwiejsze, ponieważ **DSCResources** folder nie jest konieczne.
+Wraz z wprowadzeniem klas programu PowerShell w programie Windows PowerShell 5.0 można zdefiniować zasób DSC, tworząc klasę. Klasa określa zarówno schematu, jak i wdrażania zasobów, dzięki czemu nie trzeba utworzyć oddzielny plik MOF. Struktura folderów dla zasobu oparte na klasach również jest prostsze, ponieważ **DSCResources** folder nie jest konieczne.
 
-W zasobie DSC klasy schemat jest zdefiniowany jako właściwości klasy, które można zmodyfikować atrybutów, aby określić typ właściwości. Zasób jest implementowany przez **Get()**, **Set()**, i **Test()** metod (odpowiednikiem **Get-TargetResource**, **Zestaw TargetResource**, i **TargetResource testu** funkcji zasobu skryptu.
+W zasobie DSC oparte na klasach schematu jest zdefiniowany jako właściwości klasy, które można modyfikować za pomocą atrybutów, aby określić typ właściwości... Zasób jest implementowany przez **Get()**, **elementu Set()**, i **Test()** metody (równoważne **Get TargetResource**, **TargetResource zestaw**, i **TargetResource testu** funkcje w zasobie skryptu.
 
-W tym temacie, utworzymy proste zasób o nazwie **FileResource** który zarządza pliku w określonej ścieżce.
+W tym temacie utworzymy prostą zasób o nazwie **FileResource** który zarządza pliku w określonej ścieżce.
 
-Aby uzyskać więcej informacji o zasobach DSC, zobacz [kompilacji systemu Windows PowerShell Desired stan konfiguracji zasobów niestandardowych](authoringResource.md)
+Aby uzyskać więcej informacji na temat zasobów DSC, zobacz [kompilacji Windows PowerShell Desired State Configuration zasobów niestandardowych](authoringResource.md)
 
->**Uwaga:** kolekcje ogólne nie są obsługiwane w zasoby oparte na klasie.
+>**Uwaga:** kolekcje ogólne nie są obsługiwane w oparte na klasach zasobów.
 
-## <a name="folder-structure-for-a-class-resource"></a>Struktura folderów dla zasobu — klasa
+## <a name="folder-structure-for-a-class-resource"></a>Struktura folderów dla zasób klasy
 
-Aby zaimplementować DSC niestandardowego zasobu z klasą programu PowerShell, utwórz następującą strukturę folderów. Klasa jest zdefiniowana w **MyDscResource.psm1** i manifestu modułu jest zdefiniowany w **MyDscResource.psd1**.
+Aby zaimplementować niestandardowy zasobu DSC przy użyciu klas programu PowerShell, utwórz następującą strukturę folderów. Klasa jest zdefiniowana w **MyDscResource.psm1** i manifestu modułu jest zdefiniowany w **MyDscResource.psd1**.
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -36,7 +36,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 ## <a name="create-the-class"></a>Tworzenie klasy
 
-Class — słowo kluczowe umożliwia tworzenie klasy środowiska PowerShell. Aby określić, że klasa jest zasobem DSC, użyj **DscResource()** atrybutu. Nazwa klasy jest nazwa zasobu usługi Konfiguracja DSC.
+Class — słowo kluczowe jest użyć do tworzenia klas programu PowerShell. Aby określić, że klasa jest zasób DSC, użyj **DscResource()** atrybutu. Nazwa klasy jest nazwą zasobu DSC.
 
 ```powershell
 [DscResource()]
@@ -46,7 +46,7 @@ class FileResource {
 
 ### <a name="declare-properties"></a>Deklarowanie właściwości
 
-Schemat zasobów DSC jest zdefiniowany jako właściwości klasy. Firma Microsoft zadeklarować trzech właściwości w następujący sposób.
+Schemat zasobów DSC jest zdefiniowany jako właściwości klasy. Firma Microsoft w następujący sposób deklarowania trzy właściwości.
 
 ```powershell
 [DscProperty(Key)]
@@ -62,14 +62,14 @@ Schemat zasobów DSC jest zdefiniowany jako właściwości klasy. Firma Microsof
 [Nullable[datetime]] $CreationTime
 ```
 
-Należy zauważyć, że właściwości są modyfikowane przez atrybuty. Znaczenie atrybutów jest następujący:
+Należy zauważyć, że właściwości są modyfikowane przez atrybuty. Znaczenie atrybutów jest następująca:
 
-- **DscProperty(Key)**: właściwość jest wymagana. Właściwość jest kluczem. Wartości wszystkich właściwości oznaczone jako klucze połączyć do unikatowej identyfikacji wystąpienia zasobu, w konfiguracji.
+- **DscProperty(Key)**: właściwość jest wymagana. Właściwość jest kluczem. Wartości wszystkich właściwości oznaczone jako klucze należy łączyć do unikatowego identyfikowania wystąpienia zasobu, w ramach konfiguracji.
 - **DscProperty(Mandatory)**: właściwość jest wymagana.
-- **DscProperty(NotConfigurable)**: właściwość jest tylko do odczytu. Oznaczone atrybutem tej właściwości nie można ustawić konfiguracji, ale są wypełnione przez **Get()** metody, jeśli jest obecny.
-- **DscProperty()**: właściwość jest konfigurowalne, ale nie jest wymagana.
+- **DscProperty(NotConfigurable)**: właściwość jest tylko do odczytu. Właściwości oznaczona za pomocą tego atrybutu nie może ustawić konfigurację, ale są wypełniane przez **Get()** metody, jeśli jest obecny.
+- **DscProperty()**: właściwości nie można skonfigurować, ale nie jest wymagane.
 
-**$Path** i **$SourcePath** właściwości są oba parametry. **$CreationTime** jest [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) właściwości. **$Ensure** właściwość jest typu wyliczeniowego, zdefiniowane w następujący sposób.
+**$Path** i **$SourcePath** właściwości są oba ciągi. **$CreationTime** jest [daty/godziny](https://technet.microsoft.com/library/system.datetime.aspx) właściwości. **$Ensure** właściwość jest typem wyliczenia, zdefiniowane w następujący sposób.
 
 ```powershell
 enum Ensure
@@ -81,9 +81,9 @@ enum Ensure
 
 ### <a name="implementing-the-methods"></a>Implementacja metody
 
-**Get()**, **Set()**, i **Test()** metody są odpowiednikiem **Get-TargetResource**, **TargetResource zestawu** , i **TargetResource testu** funkcji zasobu skryptu.
+**Get()**, **elementu Set()**, i **Test()** metody są analogiczne do **Get TargetResource**, **TargetResource zestawu** , i **TargetResource testu** funkcje w zasobie skryptu.
 
-Ten kod zawiera również funkcję CopyFile() funkcji pomocnika, który kopiuje plik z **$SourcePath** do **$Path**.
+Ten kod zawiera również funkcję CopyFile() funkcja pomocnicza, która kopiuje plik z **$SourcePath** do **$Path**.
 
 ```powershell
 
@@ -216,8 +216,8 @@ Ten kod zawiera również funkcję CopyFile() funkcji pomocnika, który kopiuje 
     }
 ```
 
-### <a name="the-complete-file"></a>Zakończenie pliku
-Plik klasy pełną jest zgodna.
+### <a name="the-complete-file"></a>Kompletny plik
+Plik klasy pełną poniżej.
 
 ```powershell
 enum Ensure
@@ -417,7 +417,7 @@ class FileResource
 
 ## <a name="create-a-manifest"></a>Tworzenie manifestu
 
-Aby udostępnić aparat DSC klasy zasobu, należy uwzględnić **DscResourcesToExport** instrukcji w pliku manifestu, który powoduje, że modułu do eksportu zasobu. Nasze manifest wygląda następująco:
+Aby udostępnić zasób oparte na klasach aparatu DSC, należy dołączyć **DscResourcesToExport** instrukcja w pliku manifestu, który powoduje, że moduł można wyeksportować zasobu. Nasze manifest wygląda następująco:
 
 ```powershell
 @{
@@ -453,9 +453,9 @@ PowerShellVersion = '5.0'
 }
 ```
 
-## <a name="test-the-resource"></a>Test zasobu
+## <a name="test-the-resource"></a>Zasób testowy
 
-Po zapisaniu klasy i pliki manifestu w strukturze folderu, jak opisano wcześniej, można utworzyć konfiguracji, który używa nowego zasobu. Aby uzyskać informacje o sposobie uruchamiania konfiguracji DSC, zobacz [wprowadzania konfiguracji](enactingConfigurations.md). Następująca konfiguracja będzie sprawdzać czy pliku `c:\test\test.txt` istnieje i, jeśli nie, kopiuje plik z `c:\test.txt` (należy utworzyć `c:\test.txt` przed uruchomieniem konfiguracji).
+Po zapisaniu klasy i pliki manifestu w strukturze folderów, zgodnie z wcześniejszym opisem, można utworzyć konfiguracji, który używa nowego zasobu. Aby uzyskać informacje o sposobach uruchamiania konfiguracji DSC, zobacz [realizacja konfiguracji](enactingConfigurations.md). Następująca konfiguracja będzie sprawdzać czy plik w rozmiarze `c:\test\test.txt` istnieje i, jeśli nie, kopiuje plik z `c:\test.txt` (należy utworzyć `c:\test.txt` przed rozpoczęciem konfiguracji).
 
 ```powershell
 Configuration Test
@@ -476,20 +476,20 @@ Start-DscConfiguration -Wait -Force Test
 
 >**Uwaga:** **PsDscRunAsCredential** jest obsługiwana w programie PowerShell 5.0 i nowszych.
 
-**PsDscRunAsCredential** właściwość może być używana w [konfiguracji DSC](configurations.md) bloku zasobów, aby określić, że zasób powinny być uruchamiane w określonym zestawie poświadczeń.
-Aby uzyskać więcej informacji, zobacz [DSC uruchomiony przy użyciu poświadczeń użytkownika](runAsUser.md).
+**PsDscRunAsCredential** właściwości mogą być używane w [konfiguracje DSC](configurations.md) bloku zasobów, aby określić, że zasób powinien być wykonywany w ramach określonego zestawu poświadczeń.
+Aby uzyskać więcej informacji, zobacz [systemem DSC przy użyciu poświadczeń użytkownika](runAsUser.md).
 
-### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Wymagaj lub nie zezwalaj na PsDscRunAsCredential dla zasobu
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>Wymagaj lub nie zezwalaj na PsDscRunAsCredential zasobu bazy danych
 
 **DscResource()** atrybut przyjmuje opcjonalny parametr **RunAsCredential**.
-Ten parametr przyjmuje jeden z trzech wartości:
+Ten parametr ma jedną z trzech wartości:
 
 - `Optional` **PsDscRunAsCredential** jest opcjonalny w przypadku konfiguracji, które wywołują tego zasobu. Jest to wartość domyślna.
-- `Mandatory` **PsDscRunAsCredential** muszą być używane do żadnej konfiguracji, który wywołuje tego zasobu.
+- `Mandatory` **PsDscRunAsCredential** musi być używany dla żadnej konfiguracji, który wywołuje ten zasób.
 - `NotSupported` Konfiguracje, które wywołują tego zasobu nie można użyć **PsDscRunAsCredential**.
 - `Default` Taki sam jak `Optional`.
 
-Na przykład użyć następującego atrybutu, aby określić, że zasób niestandardowy nie obsługuje używania **PsDscRunAsCredential**:
+Na przykład użyć do określenia, czy niestandardowy zasób nie obsługuje następujący atrybut **PsDscRunAsCredential**:
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]
@@ -497,11 +497,11 @@ class FileResource {
 }
 ```
 
-### <a name="access-the-user-context"></a>Dostęp z kontekstu użytkownika
+### <a name="access-the-user-context"></a>Dostęp do kontekstu użytkownika
 
-Aby uzyskać dostęp z kontekstu użytkownika, w ramach zasobów niestandardowych, można użyć automatycznego zmiennej `$global:PsDscContext`.
+Aby uzyskać dostęp z kontekstu użytkownika, w ramach zasobów niestandardowych, można użyć zmiennej automatyczne `$global:PsDscContext`.
 
-Na przykład następujący kod zapisać kontekstu użytkownika, na którym uruchomiono zasobu w strumieniu pełne dane wyjściowe:
+Na przykład poniższy kod napisać kontekstu użytkownika, pod którym jest uruchamiany zasób w strumieniu pełne dane wyjściowe:
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -511,4 +511,4 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="see-also"></a>Zobacz też
 ### <a name="concepts"></a>Pojęcia
-[Tworzenie niestandardowych Windows PowerShell Desired konfiguracji stanu zasobów](authoringResource.md)
+[Tworzenie niestandardowych Windows PowerShell Desired State Configuration zasobów](authoringResource.md)

@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Wersje wstępne skryptów
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268470"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002739"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Wersje wstępne skryptów
 
-Począwszy od wersji 1.6.0 modułu PowerShellGet oraz spełnione galerii programu PowerShell zapewniają obsługę tagowania w wersjach nowszych niż 1.0.0 jako wersji wstępnej. Przed tej funkcji wersji wstępnej elementy były korzystać z wersji począwszy od 0. Celem tych funkcji jest zapewniają lepsze wsparcie [1.0.0 SemVer](http://semver.org/spec/v1.0.0.html) Konwencji wersji bez przerywania wstecznej zgodności przy użyciu programu PowerShell 3 i powyżej lub istniejącej wersji programu PowerShellGet. Ten temat koncentruje się na funkcji specyficznych dla skryptu. Równoważne funkcje dla modułów znajdują się w [wersje modułu wersję wstępną](module-prerelease-support.md) tematu. Korzystając z tych funkcji, wydawców można skrypt jako 2.5.0-alpha wersji i później wydanej wersji gotowe do produkcji 2.5.0, która zastępuje wersję wstępną.
+Począwszy od wersji 1.6.0 modułu PowerShellGet oraz spełnione galerii programu PowerShell zapewniają obsługę tagowania w wersjach nowszych niż 1.0.0 jako wersji wstępnej. Przed tą funkcją pakiety w wersjach wstępnych były korzystać z wersji począwszy od 0. Celem tych funkcji jest zapewniają lepsze wsparcie [1.0.0 SemVer](http://semver.org/spec/v1.0.0.html) Konwencji wersji bez przerywania wstecznej zgodności przy użyciu programu PowerShell 3 i powyżej lub istniejącej wersji programu PowerShellGet. Ten temat koncentruje się na funkcji specyficznych dla skryptu. Równoważne funkcje dla modułów znajdują się w [wersje modułu wersję wstępną](module-prerelease-support.md) tematu. Korzystając z tych funkcji, wydawców można skrypt jako 2.5.0-alpha wersji i później wydanej wersji gotowe do produkcji 2.5.0, która zastępuje wersję wstępną.
 
 Na wysokim poziomie funkcje wersji wstępnej skryptu obejmują:
 
-- Dodanie do ciąg wersji w manifeście skrypt sufiksu PrereleaseString. Po opublikowaniu skrypty w galerii programu PowerShell te dane są wyodrębniane z manifestu i używany do identyfikowania elementów wersji wstępnej.
-- Pobieranie elementów wstępnych wymaga dodanie flagi - AllowPrerelease poleceń modułu PowerShellGet Find-Script skrypt instalacji skryptu aktualizacji i Zapisz skrypt. Jeśli nie określono flagę, wstępna elementy nie będą wyświetlane.
+- Dodanie do ciąg wersji w manifeście skrypt sufiksu PrereleaseString. Po opublikowaniu skrypty w galerii programu PowerShell te dane są wyodrębniane z manifestu i używany do identyfikowania pakiety w wersjach wstępnych.
+- Pobieranie pakietów wydań wstępnych wymaga dodanie flagi - AllowPrerelease poleceń modułu PowerShellGet Find-Script skrypt instalacji skryptu aktualizacji i Zapisz skrypt. Jeśli nie określono flagę, pakiety w wersjach wstępnych nie będą wyświetlane.
 - Wersje skryptu wyświetlane przez Find-Script, Get-InstalledScript i w galerii programu PowerShell będą wyświetlane z PrereleaseString, tak jak 2.5.0-alpha.
 
 Poniżej znajdują się szczegółowe informacje dla funkcji.
@@ -54,9 +54,9 @@ Kolejność sortowania zmienia się podczas korzystania z wersji wstępnej, co j
 
 Publikowanie w galerii programu PowerShell, domyślnie wersja skryptu publikacji musi mieć nieco większa niż wersja wszystkie wcześniej publikowane w galerii programu PowerShell. Wydawca może aktualizować 2.5.0-alpha wersji 2.5.0-beta lub z 2.5.0 (sufiksem nie wstępnej).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Wyszukiwanie i pobieranie elementów wersji wstępnej, za pomocą poleceń modułu PowerShellGet
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Znajdowanie i Uzyskiwanie pakietów wydań wstępnych przy użyciu poleceń modułu PowerShellGet
 
-Korzystające z elementów wersji wstępnej, za pomocą skryptu-PowerShellGet Find-Script, skrypt instalacji aktualizacji, a polecenia Save-Script wymaga dodanie flagi - AllowPrerelease. Jeśli - AllowPrerelease jest określony, wstępnej elementy zostaną dołączone, jeśli są obecne. Flaga - AllowPrerelease nie zostanie określona, wstępna elementy nie będą wyświetlane.
+Obsługa pakietów wydań wstępnych przy użyciu skryptu-PowerShellGet Find-Script, skrypt instalacji aktualizacji, a polecenia Save-Script wymaga dodanie flagi - AllowPrerelease. Jeśli określono - AllowPrerelease, pakiety w wersjach wstępnych zostaną dołączone, jeśli są obecne. Jeśli nie określono flagę - AllowPrerelease, pakiety w wersjach wstępnych nie będą wyświetlane.
 
 Jedynym wyjątkiem od tej w poleceniach skryptu PowerShellGet są Get InstalledScript i czasami z skrypt dezinstalacji.
 

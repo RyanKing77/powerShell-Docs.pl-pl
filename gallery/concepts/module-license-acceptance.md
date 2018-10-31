@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: Program PowerShell
 title: Moduły wymagające akceptacji licencji
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893114"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002671"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Moduły wymagające akceptacji licencji
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-Działy prawne dla Niektórzy wydawcy modułu wymagają, że klienci muszą jawnie akceptuje przed zainstalowaniem ich modułu z galerii programu PowerShell. Jeśli użytkownik instaluje, aktualizacji lub zapisuje moduł za pomocą modułu PowerShellGet, bezpośrednio lub jako zależność dla innego elementu, a ten moduł wymaga od użytkownika zaakceptować licencję, użytkownik musi wskazywać akceptacji licencji lub kończy się niepowodzeniem.
+Działy prawne dla Niektórzy wydawcy modułu wymagają, że klienci muszą jawnie akceptuje przed zainstalowaniem ich modułu z galerii programu PowerShell. Jeśli użytkownik instaluje, aktualizacji lub zapisuje moduł za pomocą modułu PowerShellGet, bezpośrednio lub jako zależność inny pakiet, a ten moduł wymaga od użytkownika zaakceptować licencję, użytkownik musi wskazywać akceptacji licencji lub kończy się niepowodzeniem.
 
 ## <a name="publish-requirements-for-modules"></a>Publikowanie wymagania dotyczące modułów
 
@@ -43,7 +43,7 @@ Moduły, które chcesz wymagać od użytkowników zaakceptować licencję powinn
 
 - Podczas instalacji/Save/aktualizacji operacji, jeśli moduł zależne (coś innego zależy od modułu) wymaga zaakceptowania licencji, a następnie zachowanie akceptacja licencji (powyżej) będą wymagane.
 - Wersja modułu już znajduje się w katalogu lokalnym jako zainstalowane w systemie, czy możemy pominąć, sprawdzanie licencji.
-- Podczas operacji instalacji/Save/aktualizacji Jeśli moduł zależne muszą mieć licencję i akceptacja licencji nie jest wykonywane, operacja będzie się nie powieść i postępuj zgodnie z normalnym procesów dla elementu instalacji/save/aktualizacji nie udało się.
+- Podczas operacji instalacji/Save/aktualizacji Jeśli moduł zależne muszą mieć licencję i akceptacja licencji nie występuje, operacja będzie się nie powieść i postępuj zgodnie z normalnym procesów pakietu instalacji/save/aktualizacji nie udało się.
 
 ## <a name="impact-on--force"></a>Wpływ na - Force
 
@@ -219,6 +219,6 @@ Moduł jest aktualizowany bez dowolnego wiersza, aby zaakceptować licencję.
 
 [Wymaganie akceptacji licencji na potrzeby skryptów](./script-license-acceptance.md)
 
-[Wymagana jest Obsługa akceptacji licencji na galerii PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Wymagana jest Obsługa akceptacji licencji na galerii PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Wymaganie akceptacji licencji na potrzeby wdrażania w usłudze Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Wymaganie akceptacji licencji na potrzeby wdrażania w usłudze Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

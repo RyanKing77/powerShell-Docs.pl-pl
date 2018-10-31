@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-keywords: Galeria, programu powershell, polecenia cmdlet, psgallery
-title: Profil zasady ScriptAnalyzer galerii
-ms.openlocfilehash: 54100f7a530cbc769e4a0e2dbff18dbc5de88fa6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
+title: Profil zasady ScriptAnalyzer dla galerii
+ms.openlocfilehash: d91a88981cc2f3269a1f8b6ee864f8333a2f097c
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225746"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002500"
 ---
-# <a name="scriptanalyzer-rule-profile-for-gallery"></a>Profil zasady ScriptAnalyzer galerii
+# <a name="scriptanalyzer-rule-profile-for-gallery"></a>Profil zasady ScriptAnalyzer dla galerii
 
-W celu zapewnienia jakości elementów opublikowany w galerii programu PowerShell, przeprowadzana [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) zasady w celu ustalenia, czy naruszenie w skryptach przesłane.
+Aby zapewnić jakość pakiety opublikowane w galerii programu PowerShell, przeprowadzamy [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) zasady w celu ustalenia, czy naruszenie w skryptach przesłane.
 
-Można znaleźć na liście reguł Uruchamiamy ScriptAnalyzer [stronie GitHub](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1).
-Jeśli masz wszelkie problemy dotyczące dotyczące reguły się, że Uruchamiamy kontaktować z administratorami w galerii programu PowerShell, lub Otwórz problemu dla ScriptAnalzyer.
+Można znaleźć na liście reguł, które są uruchamiane na ScriptAnalyzer [strony GitHub](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1).
+Jeśli masz jakiekolwiek wątpliwości dotyczące reguły, że będziemy działają, skontaktuj się z administratorami galerii programu PowerShell, lub otworzyć zgłoszenie do ScriptAnalzyer.
 
-ScriptAnalyzer wyniki będą wyświetlane na każdej stronie pojedynczego elementu w galerii w najbliższych wersji. Firma Microsoft zachęca elementu właścicieli, aby sprawdzić ich elementów do upewnij się, że nie ma żadnych błędów poważny w opublikowanych elementów.
+ScriptAnalyzer wyniki będą wyświetlane na każdej stronie poszczególnych pakietów w galerii w nadchodzącym wydaniu. Firma Microsoft zachęca właścicieli pakietu do sprawdzenia ich pakiety, aby upewnić się, że nie ma żadnych poważne błędy w opublikowane pakiety.

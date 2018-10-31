@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxFileLine
-ms.openlocfilehash: f2a989dd3a6746948e09ba94e279c02be8ebe2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6a91db25638b09659adfabcec78f91bcb2e69dd9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893301"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225594"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>DSC dla systemu Linux zasób nxFileLine
 
-**NxFileLine** zasób w programie PowerShell Desired State Configuration (DSC) zapewnia mechanizm do zarządzania wierszy w pliku konfiguracji w węźle systemu Linux.
+**NxFileLine** zasób w programie PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania wierszy w pliku konfiguracji w węźle systemu Linux.
 
 ## <a name="syntax"></a>Składnia
 

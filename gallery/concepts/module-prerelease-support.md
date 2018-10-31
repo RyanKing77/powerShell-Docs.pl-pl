@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Wersje wstępne modułu
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268623"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002773"
 ---
 # <a name="prerelease-module-versions"></a>Wersje wstępne modułu
 
-Począwszy od wersji 1.6.0 modułu PowerShellGet oraz spełnione galerii programu PowerShell zapewniają obsługę tagowania w wersjach nowszych niż 1.0.0 jako wersji wstępnej. Przed tej funkcji wersji wstępnej elementy były korzystać z wersji począwszy od 0. Celem tych funkcji jest zapewniają lepsze wsparcie [1.0.0 SemVer](http://semver.org/spec/v1.0.0.html) Konwencji wersji bez przerywania wstecznej zgodności przy użyciu programu PowerShell 3 i powyżej lub istniejącej wersji programu PowerShellGet. Ten temat koncentruje się na funkcji specyficznych dla modułu. Równoważne funkcje dla skryptów znajdują się w [wersję wstępną wersji skryptów](script-prerelease-support.md) tematu. Korzystania z tych funkcji, wydawców można zidentyfikować modułu lub skryptu jako 2.5.0-alpha wersji i później wydanej wersji gotowe do produkcji 2.5.0, która zastępuje wersję wstępną.
+Począwszy od wersji 1.6.0 modułu PowerShellGet oraz spełnione galerii programu PowerShell zapewniają obsługę tagowania w wersjach nowszych niż 1.0.0 jako wersji wstępnej. Przed tą funkcją pakiety w wersjach wstępnych były korzystać z wersji począwszy od 0. Celem tych funkcji jest zapewniają lepsze wsparcie [1.0.0 SemVer](http://semver.org/spec/v1.0.0.html) Konwencji wersji bez przerywania wstecznej zgodności przy użyciu programu PowerShell 3 i powyżej lub istniejącej wersji programu PowerShellGet. Ten temat koncentruje się na funkcji specyficznych dla modułu. Równoważne funkcje dla skryptów znajdują się w [wersję wstępną wersji skryptów](script-prerelease-support.md) tematu. Korzystania z tych funkcji, wydawców można zidentyfikować modułu lub skryptu jako 2.5.0-alpha wersji i później wydanej wersji gotowe do produkcji 2.5.0, która zastępuje wersję wstępną.
 
 Na wysokim poziomie funkcje wersji wstępnej modułu obejmują:
 
-- Dodawanie ciąg wersji wstępnej do sekcji PSData manifestu modułu identyfikuje moduł jako wersji wstępnej. Gdy moduł zostanie opublikowany w galerii programu PowerShell, te dane są wyodrębniane z manifestu i używany do identyfikowania elementów wersji wstępnej.
-- Pobieranie elementów wstępnych wymaga dodania `-AllowPrerelease` Flaga poleceń modułu PowerShellGet `Find-Module`, `Install-Module`, `Update-Module`, i `Save-Module`. Jeśli nie określono flagę, wstępna elementy nie będą wyświetlane.
+- Dodawanie ciąg wersji wstępnej do sekcji PSData manifestu modułu identyfikuje moduł jako wersji wstępnej. Gdy moduł zostanie opublikowany w galerii programu PowerShell, te dane są wyodrębniane z manifestu i używany do identyfikowania pakiety w wersjach wstępnych.
+- Pobieranie pakietów wydań wstępnych wymaga dodania `-AllowPrerelease` Flaga poleceń modułu PowerShellGet `Find-Module`, `Install-Module`, `Update-Module`, i `Save-Module`. Jeśli nie określono flagę, pakiety w wersjach wstępnych nie będą wyświetlane.
 - Wersje modułu wyświetlane przez `Find-Module`, `Get-InstalledModule`, a w galerii programu PowerShell będą wyświetlane jako pojedynczy ciąg parametrami wstępnej dołączane, tak jak 2.5.0-alpha.
 
 Poniżej znajdują się szczegółowe informacje dla funkcji.
@@ -51,7 +51,7 @@ Szczegółowe wymagania wstępne ciągu są następujące:
 
 - Ciąg wersji wstępnej może być określona tylko po ModuleVersion 3 segmenty dla główna.pomocnicza.kompilacja. Jest to zgodne z SemVer 1.0.0.
 - Łącznik jest separator numer kompilacji i wersji wstępnej ciągu. Łącznik mogą zostać zawarte w wersji wstępnej ciągu jako pierwszego znaku, tylko.
-- Wstępna ciągu może zawierać tylko znaki alfanumeryczne ASCII [0-9A-Za - z-]. Jest najlepszym rozwiązaniem, aby rozpocząć wstępną ciągu za pomocą znaków alfanumerycznych, ponieważ będzie on łatwiej można zidentyfikować, że jest to wersja wstępna produktu podczas skanowania listy elementów.
+- Wstępna ciągu może zawierać tylko znaki alfanumeryczne ASCII [0-9A-Za - z-]. Jest najlepszym rozwiązaniem, aby rozpocząć wstępną ciągu za pomocą znaków alfanumerycznych, ponieważ będzie on łatwiej można zidentyfikować, że jest to wersja wstępna produktu podczas skanowania do listy pakietów.
 - Tylko SemVer 1.0.0 wstępnej ciągi są obsługiwane w tej chwili. Ciąg wersji wstępnej **nie** zawierać albo okres lub + [. +], mogą SemVer w wersji 2.0.
 - Przykłady obsługiwany ciąg wersji wstępnej:-alfa, - 1,-BETA, - update20171020
 
@@ -61,9 +61,9 @@ Kolejność sortowania zmienia się podczas korzystania z wersji wstępnej, co j
 
 Publikowanie w galerii programu PowerShell, domyślnie wersję modułu publikacji musi mieć nieco większa niż wersja wszystkie wcześniej publikowane w galerii programu PowerShell.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Wyszukiwanie i pobieranie elementów wersji wstępnej, za pomocą poleceń modułu PowerShellGet
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Znajdowanie i Uzyskiwanie pakietów wydań wstępnych przy użyciu poleceń modułu PowerShellGet
 
-Korzystające z elementów wersji wstępnej, za pomocą aktualizacji modułu PowerShellGet Find-Module Install-Module-Module, i polecenia Save-Module wymaga dodanie flagi - AllowPrerelease. Jeśli - AllowPrerelease jest określony, wstępnej elementy zostaną dołączone, jeśli są obecne. Flaga - AllowPrerelease nie zostanie określona, wstępna elementy nie będą wyświetlane.
+Obsługa pakietów wydań wstępnych, za pomocą aktualizacji modułu PowerShellGet Find-Module Install-Module-Module, i polecenia Save-Module wymaga dodanie flagi - AllowPrerelease. Jeśli określono - AllowPrerelease, pakiety w wersjach wstępnych zostaną dołączone, jeśli są obecne. Jeśli nie określono flagę - AllowPrerelease, pakiety w wersjach wstępnych nie będą wyświetlane.
 
 Jedynym wyjątkiem od tej poleceń modułu PowerShellGet są Get InstalledModule i czasami z modułem dezinstalacji.
 
