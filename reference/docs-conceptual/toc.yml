@@ -181,10 +181,8 @@ items:
     href: getting-started/cookbooks/changing-computer-state.md
   - name: Zbieranie informacji dotyczących komputerów
     href: getting-started/cookbooks/collecting-information-about-computers.md
-  - name: Tworzenie niestandardowego pola wejściowego
-    href: getting-started/cookbooks/creating-a-custom-input-box.md
-  - name: Tworzenie graficznego selektora daty
-    href: getting-started/cookbooks/creating-a-graphical-date-picker.md
+  - name: Dekodowanie polecenia programu PowerShell z uruchomionego procesu
+    href: getting-started/cookbooks/Decode-PowerShell-Command-from-a-Running-Process.md
   - name: Zarządzanie bieżącą lokalizacją
     href: getting-started/cookbooks/managing-current-location.md
   - name: Zarządzanie procesami przy użyciu poleceń cmdlet procesu
@@ -195,16 +193,18 @@ items:
     href: getting-started/cookbooks/managing-windows-powershell-drives.md
   - name: Bezpośrednie manipulowanie elementami
     href: getting-started/cookbooks/manipulating-items-directly.md
+  - name: Tworzenie niestandardowego pola wejściowego
+    href: getting-started/cookbooks/creating-a-custom-input-box.md
+  - name: Tworzenie graficznego selektora daty
+    href: getting-started/cookbooks/creating-a-graphical-date-picker.md
   - name: Pola list z możliwością wielokrotnego wyboru
     href: getting-started/cookbooks/multiple-selection-list-boxes.md
-  - name: Inne przydatne obiekty skryptowe
-    href: getting-started/cookbooks/other-useful-scripting-objects.md
+  - name: Wybieranie elementów w polu listy
+    href: getting-started/cookbooks/selecting-items-from-a-list-box.md
   - name: Wykonywanie zadań w sieci
     href: getting-started/cookbooks/performing-networking-tasks.md
   - name: Przekierowywanie danych przy użyciu poleceń cmdlet Out
     href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-  - name: Wybieranie elementów w polu listy
-    href: getting-started/cookbooks/selecting-items-from-a-list-box.md
   - name: Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
     href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
   - name: Wyświetlanie struktury obiektu — Get-Member
@@ -238,13 +238,15 @@ items:
     href: getting-started/cookbooks/working-with-registry-keys.md
   - name: Praca z instalacjami oprogramowania
     href: getting-started/cookbooks/working-with-software-installations.md
+  - name: Inne przydatne obiekty skryptowe
+    href: getting-started/cookbooks/other-useful-scripting-objects.md
   - name: Dodatek 1 Aliasy zgodności
     href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
   - name: Dodatek 2 Tworzenie niestandardowego skrótu programu PowerShell
     href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: e1cc2802354cbb58a8d4cc19903a62339aa333b5
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: 4a1d2db118f9f26da16a57208d801305087b58f2
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225747"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619147"
