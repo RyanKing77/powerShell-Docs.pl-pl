@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: polecenia cmdlet programu PowerShell
 title: PowerShell.exe — pomoc wiersza polecenia
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133848"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691834"
 ---
 # <a name="powershellexe-command-line-help"></a>Pomoc w wierszu polecenia PowerShell.exe
 
@@ -51,7 +51,10 @@ Domyślne zasady wykonywania dla bieżącej sesji i zapisuje je w $env: zmienna 
 
 Wykonuje określony skrypt w zakresie lokalnym ("dot Source"), dzięki czemu funkcje i zmienne, utworzonych przez skrypt są dostępne w bieżącej sesji. Wprowadź ścieżkę pliku skryptu oraz wszelkie parametry. **Plik** musi być ostatnim parametrem w poleceniu. Wszystkie wartości po **— plik** parametru są interpretowane jako skrypt ścieżkę pliku i parametry przekazywane do tego skryptu.
 
-Parametry przekazane do skryptu są przekazywane jako ciąg literału (po interpretacja w bieżącej powłoce). Na przykład, jeśli znajdują się w cmd.exe i mają być przekazywane wartości zmiennej środowiskowej, można użyć składni cmd.exe: `powershell -File .\test.ps1 -Sample %windir%` w tym przykładzie skrypt otrzymuje literału `$env:windir` , a nie wartość tej zmiennej środowiskowej: `powershell -File .\test.ps1 -Sample $env:windir`
+Parametry przekazane do skryptu są przekazywane jako ciągi literałowe po interpretacji w bieżącej powłoce. Na przykład jeśli znajdują się w cmd.exe i mają być przekazywane wartości zmiennej środowiskowej, użyj składni cmd.exe: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+Natomiast uruchomione `powershell.exe -File .\test.ps1 -TestParam $env:windir` w wynikach cmd.exe w skrypcie odbiera literału ciągu `$env:windir` ponieważ go nie ma specjalnego znaczenia do bieżącej powłoce cmd.exe.
+`$env:windir` Styl Odnośnik zmiennej środowiskowej _można_ można używać wewnątrz `-Command` parametru, ponieważ ma ona będzie interpretowany jako kod programu PowerShell.
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {tekstu | XML}
 
@@ -103,22 +106,31 @@ Ustawia styl okna sesji. Prawidłowe wartości to: Normalny, zminimalizowany, Ma
 
 ### <a name="-command"></a>— Polecenie
 
-Wykonuje określoną polecenia (przy użyciu żadnych parametrów), tak, jakby były one użyte w wierszu polecenia programu PowerShell. Po wykonaniu PowerShell kończy działanie, chyba że `-NoExit` określono parametr.
-Dowolny tekst po `-Command` jest wysyłany jako jeden wiersz polecenia dla programu PowerShell. To różni się od tego, jak `-File` obsługuje parametry wysłane do skryptu.
+Wykonuje określoną polecenia (przy użyciu żadnych parametrów), tak, jakby były one użyte w wierszu polecenia programu PowerShell.
+Po wykonaniu PowerShell kończy działanie, chyba że **NoExit** określono parametr.
+Dowolny tekst po `-Command` jest wysyłany jako jeden wiersz polecenia dla programu PowerShell.
+To różni się od tego, jak `-File` obsługuje parametry wysłane do skryptu.
 
-Wartość polecenia może być "-", ciąg. lub blok skryptu. Jeśli ma wartość polecenia "-", tekst polecenia jest do odczytu ze standardowego wejścia.
+Wartość `-Command` może być "-", ciąg lub blok skryptu.
+Wyniki polecenia są zwracane do powłoki nadrzędnego jako po deserializacji obiektów XML, nie na żywo obiektów.
 
-Bloki skryptu muszą być ujęte w nawiasy klamrowe ({}). Blok skryptu można określić tylko wtedy, gdy uruchomiony PowerShell.exe w programie PowerShell. Wyniki skryptu są zwracane do powłoki nadrzędnego jako po deserializacji obiektów XML, nie na żywo obiektów.
+Jeśli wartość `-Command` jest "-", tekst polecenia jest do odczytu ze standardowego wejścia.
 
-Jeśli wartość polecenia jest ciągiem, **polecenia** musi być ostatnim parametrem w wierszu polecenia, ponieważ wszystkie znaki wpisane po polecenia są interpretowane jako argumenty wiersza polecenia.
+Gdy wartość `-Command` jest ciągiem, **polecenia** _musi_ być ostatnim parametrem określona, ponieważ wszystkie znaki wpisane po polecenia są interpretowane jako argumenty wiersza polecenia.
 
-Aby zapisać ciąg, który uruchamia polecenia programu PowerShell, użyj formatu:
+**Polecenia** parametru akceptuje tylko blok skryptu do wykonania po jego rozpoznaje wartość przekazana do `-Command` jako typu blok skryptu.
+Jest to _tylko_ możliwe podczas uruchamiania PowerShell.exe z innego hosta programu PowerShell.
+ScriptBlock typu mogą być zawarte w istniejących zmiennych, zwracane wyrażenie lub przeanalizowany, programu PowerShell host jako blok skryptu literału, ujęte w nawiasy klamrowe `{}`, zanim został przekazany do PowerShell.exe.
 
-```powershell
+W cmd.exe, znajduje się coś takiego jak blok skryptu (lub ScriptBlock typu), więc wartość przekazana do **polecenia** będzie _zawsze_ jest ciąg.
+Można napisać blok skryptu wewnątrz ciągu, ale zamiast wykonywana będzie ona działać dokładnie tak, jakby wpisany w wierszu programu PowerShell typowe drukowanie zawartość skryptu blokady powrót do Ciebie.
+
+Ciąg przekazywany do `-Command` nadal będą wykonywane jako programu PowerShell, więc nawiasów klamrowych blok skryptu często nie są wymagane w pierwszej kolejności podczas uruchamiania z cmd.exe.
+Wykonanie bloku skryptu wbudowane, zdefiniowane wewnątrz ciągu, [operator wywołania](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` można użyć:
+
+```console
 "& {<command>}"
 ```
-
-Znaki cudzysłowu wskazują ciągu i invoke operator (&) powoduje, że polecenie do wykonania.
 
 ### <a name="-help---"></a>-Help,-?, /?
 
