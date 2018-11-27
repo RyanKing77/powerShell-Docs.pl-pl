@@ -2,12 +2,12 @@
 title: Instalowanie programu PowerShell Core w systemie Linux
 description: Informacje o instalowaniu programu PowerShell Core w różnych dystrybucjach systemu Linux
 ms.date: 08/06/2018
-ms.openlocfilehash: a20384c768113ed2313591cfa8c29eeadd94f80f
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50226002"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321115"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Instalowanie programu PowerShell Core w systemie Linux
 
@@ -27,7 +27,7 @@ Po zainstalowaniu pakietu Uruchom `pwsh` z poziomu terminalu.
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-423
+[opensuse]: #opensuse
 [fedora]: #fedora
 [arch]: #arch-linux
 [snap]: #snap-package
@@ -509,7 +509,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Obsługa architektury jest eksperymentalne.
 
-Program PowerShell jest dostępny z [Arch systemu Linux][] użytkownika repozytorium (AUR).
+Program PowerShell jest dostępny z [Arch Linux][] użytkownika repozytorium (AUR).
 
 * Może być skompilowana przy użyciu [najnowsze tagiem wydania][arch-release]
 * Może być kompilowane z [najnowsze zatwierdzenie do wzorca][arch-git]
@@ -519,7 +519,7 @@ Pakiety w AUR są utrzymywane społeczności — Brak obsługi oficjalnych.
 
 Aby uzyskać więcej informacji na temat instalowania pakietów z AUR, zobacz [wiki Arch Linux](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) lub społeczności [pliku DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arch systemu Linux]: https://www.archlinux.org/download/
+[Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
