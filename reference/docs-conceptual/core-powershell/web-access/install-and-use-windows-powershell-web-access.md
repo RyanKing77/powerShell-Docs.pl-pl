@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Instalowanie i używanie programu windows powershell web access
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851328"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320690"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalowanie programu Windows PowerShell Web Access i korzystanie z niego
 
@@ -25,7 +25,7 @@ Bramy pomyślnej instalacji i konfiguracji użytkownikom dostęp do konsoli śro
 
 Instalacja programu Windows PowerShell Web Access i konfiguracja jest procesem trzech kroków:
 
-1. [Instalowanie programu Windows PowerShell Web Access](#install-windows-powershell-web-access)
+1. [Instalowanie programu Windows PowerShell Web Access](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Konfigurowanie bramy](#configure-the-gateway)
 1. [Konfigurowanie restrykcyjnej reguły autoryzacji](#configure-a-restrictive-authorization-rule)
 
@@ -59,9 +59,9 @@ Konsola prawdopodobnie działa w innych przeglądarkach, które akceptują pliki
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Minimalnie przetestowane urządzenia przenośne lub przeglądarki
 
 - Windows Phone 7 i 7.5
-- System Google Android WebKit 3.1 dla systemu Android 2.2.1 (jądro 2.6)
+- Google Android WebKit 3.1 dla systemu Android 2.2.1 (jądro 2.6)
 - iPhone, przeglądarka Apple Safari dla systemu operacyjnego 5.0.1
-- Apple Safari dla tabletu iPad 2 systemu operacyjnego 5.0.1
+- iPad 2, przeglądarka Apple Safari dla systemu operacyjnego 5.0.1
 
 ### <a name="browser-requirements"></a>Wymagania dotyczące przeglądarek
 
@@ -75,7 +75,7 @@ Aby korzystać z konsoli internetowej programu Windows PowerShell Web Access, pr
 
 Bramę programu Windows PowerShell Web Access można zainstalować na serwerze, na którym jest uruchomiony system Windows Server 2012 R2 lub Windows Server 2012, przy użyciu albo polecenia cmdlet programu Windows PowerShell lub przy użyciu Dodaj role i funkcje kreatora, który jest otwierany z w Menedżerze serwera. Dla przeprowadzić szybką instalację i konfigurację użyj polecenia cmdlet programu Windows PowerShell, zgodnie z opisem w tej sekcji.
 
-1. [Instalowanie programu Windows PowerShell Web Access](#install-Windows-powershell-web-access)
+1. [Instalowanie programu Windows PowerShell Web Access](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Konfigurowanie bramy](#configure-the-gateway)
 1. [Konfigurowanie restrykcyjnej reguły autoryzacji](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ Domyślnie to polecenie cmdlet instaluje aplikację sieci web **pswa** (i jego p
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Konfigurowanie restrykcyjnej reguły autoryzacji
 
-Po zainstalowaniu programu Windows PowerShell Web Access, a brama jest skonfigurowana, użytkownicy mogą otwierać strony logowania w przeglądarce, ale nie można zalogować do momentu administratora programu Windows PowerShell Web Access jawnego przydzielenia im dostępu. Kontrola dostępu w programie Windows PowerShell Web Access odbywa się przy użyciu zestawu poleceń cmdlet Windows PowerShell opisanych w poniższej tabeli. Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi. Aby uzyskać szczegółowe informacje o poleceniach cmdlet programu Windows PowerShell Web Access, zobacz tematy dokumentacja poleceń cmdlet, [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md).
+Po zainstalowaniu programu Windows PowerShell Web Access, a brama jest skonfigurowana, użytkownicy mogą otwierać strony logowania w przeglądarce, ale nie można zalogować do momentu administratora programu Windows PowerShell Web Access jawnego przydzielenia im dostępu. Kontrola dostępu w programie Windows PowerShell Web Access odbywa się przy użyciu zestawu poleceń cmdlet Windows PowerShell opisanych w poniższej tabeli. Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi. Aby uzyskać szczegółowe informacje o poleceniach cmdlet programu Windows PowerShell Web Access, zobacz tematy dokumentacja poleceń cmdlet, [polecenia cmdlet programu Windows PowerShell Web Access](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Aby uzyskać więcej szczegółów na temat reguł autoryzacji programu Windows PowerShell Web Access i zabezpieczeń, zobacz [reguły autoryzacji i zabezpieczeń funkcji programu Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -360,7 +360,7 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>Konfigurowanie restrykcyjnej reguły autoryzacji
 
-Po zainstalowaniu programu Windows PowerShell Web Access, a brama jest skonfigurowana, użytkownicy mogą otwierać strony logowania w przeglądarce, ale nie można zalogować do momentu administratora programu Windows PowerShell Web Access jawnego przydzielenia im dostępu. Kontrola dostępu w programie Windows PowerShell Web Access odbywa się przy użyciu zestawu poleceń cmdlet Windows PowerShell opisanych w poniższej tabeli. Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi. Aby uzyskać szczegółowe informacje o poleceniach cmdlet programu Windows PowerShell Web Access, zobacz tematy dokumentacja poleceń cmdlet, [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md).
+Po zainstalowaniu programu Windows PowerShell Web Access, a brama jest skonfigurowana, użytkownicy mogą otwierać strony logowania w przeglądarce, ale nie można zalogować do momentu administratora programu Windows PowerShell Web Access jawnego przydzielenia im dostępu. Kontrola dostępu w programie Windows PowerShell Web Access odbywa się przy użyciu zestawu poleceń cmdlet Windows PowerShell opisanych w poniższej tabeli. Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi. Aby uzyskać szczegółowe informacje o poleceniach cmdlet programu Windows PowerShell Web Access, zobacz tematy dokumentacja poleceń cmdlet, [polecenia cmdlet programu Windows PowerShell Web Access](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Aby uzyskać więcej szczegółów na temat reguł autoryzacji programu Windows PowerShell Web Access i zabezpieczeń, zobacz [reguły autoryzacji i zabezpieczeń funkcji programu Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -404,7 +404,7 @@ W bezpiecznym środowisku produkcyjnym zawsze używaj prawidłowego certyfikatu 
 1. W **akcje** okienko, wykonaj jedną z następujących czynności. Aby uzyskać więcej informacji na temat konfigurowania certyfikatów serwera w usługach IIS, zobacz [Konfigurowanie certyfikatów serwera w usługach IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Kliknij przycisk **zaimportować** Aby zaimportować istniejący, prawidłowy certyfikat z lokalizacji w sieci.
-   - Kliknij przycisk **Utwórz żądanie certyfikatu** żądania certyfikatu od urzędu certyfikacji, takich jak [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/), lub [GeoTrust](https://www.geotrust.com/). Nazwa pospolita certyfikatu musi być zgodna z nagłówkiem hosta w żądaniu.
+   - Kliknij przycisk **Utwórz żądanie certyfikatu** żądania certyfikatu od urzędu certyfikacji, takich jak [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/), lub [GeoTrust](https://www.geotrust.com/). Nazwa pospolita certyfikatu musi być zgodna z nagłówkiem hosta w żądaniu.
 
      Na przykład, jeśli przeglądarka klienta żąda `http://www.contoso.com/`, a następnie nazwę pospolitą również musi być `http://www.contoso.com/`. Jest to najbardziej bezpieczna i zalecana opcja umożliwiająca dostarczanie bramę programu Windows PowerShell Web Access przy użyciu certyfikatu.
 

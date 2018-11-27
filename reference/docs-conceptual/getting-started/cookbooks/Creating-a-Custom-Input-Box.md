@@ -3,20 +3,20 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Tworzenie niestandardowego pola wejściowego
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
-ms.openlocfilehash: 681a75a28a8fb03eb4442d5e20b32b25a337d540
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2d04ad6df65cdb4ff13d136dea47bbba6a01f3a2
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954759"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320401"
 ---
 # <a name="creating-a-custom-input-box"></a>Tworzenie niestandardowego pola wejściowego
 
-Skrypt graficznego niestandardowego pola wejściowego przy użyciu funkcji tworzenia formularzy programu Microsoft .NET Framework w środowisku Windows PowerShell 3.0 i nowszych wersjach.
+Skrypt graficzny niestandardowego pola wejściowego, korzystając z funkcji tworzenia formularzy programu Microsoft .NET Framework w programie Windows PowerShell 3.0 i nowszych wersjach.
 
-## <a name="create-a-custom-graphical-input-box"></a>Tworzenie niestandardowych, graficznego pola wejściowego
+## <a name="create-a-custom-graphical-input-box"></a>Tworzenie niestandardowych, graficzne pola wejściowego
 
-Skopiuj i następnie wklej następujący kod do programu Windows PowerShell ISE, a następnie zapisz go jako skrypt programu Windows PowerShell (ps1).
+Skopiuj i następnie wklej poniższą zawartość do programu Windows PowerShell ISE, a następnie zapisz go jako skrypt programu Windows PowerShell (ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -66,19 +66,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Skrypt, który rozpoczyna się od ładowania dwie klasy .NET Framework: **System.Drawing** i **System.Windows.Forms**. Następnie należy uruchomić nowe wystąpienie klasy .NET Framework **klasie System.Windows.Forms.Form**; zapewnia pustego formularza lub okna, do którego można rozpocząć dodawanie kontrolki.
+Skrypt, który rozpoczyna się od ładowania dwóch klas .NET Framework: **System.Drawing** i **System.Windows.Forms**. Następnie uruchom nowe wystąpienie klasy .NET Framework **System.Windows.Forms.Form**; zapewniający pustego formularza lub okna, do którego można rozpocząć dodawanie kontrolki.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
 ```
 
-Po utworzeniu wystąpienia klasy formularza należy przypisać wartości do trzech właściwości tej klasy.
+Po utworzeniu wystąpienia klasy formularza, należy przypisać wartości do trzech właściwości tej klasy.
 
-- **tekst.** To jest tytuł okna.
+- **Tekst.** Staje się on tytuł okna.
 
-- **Rozmiar.** Jest to rozmiar w postaci, w pikselach. Powyższy skrypt tworzy formularz, który jest 300 pikseli szerokości i wysokości 200 pikseli.
+- **Rozmiar.** Jest to rozmiar formularza, w pikselach. Powyższy skrypt tworzy formularz, który jest 300 pikseli szerokości i wysokości 200 pikseli.
 
-- **StartingPosition.** Ta opcjonalna właściwość jest ustawiona na **CenterScreen** w powyższy skrypt. Jeśli nie dodasz tej właściwości, system Windows wybiera lokalizację po otwarciu formularza. Przez ustawienie **StartingPosition** do **CenterScreen**, automatycznie wyświetlasz formularza w środku ekranu zawsze ładuje.
+- **Pozycjapoczątkowa.** Tej opcjonalnej właściwości jest równa **CenterScreen** w poprzednim skrypcie. Jeśli nie dodasz tę właściwość, Windows wybiera lokalizację, gdy formularz jest otwarty. Ustawiając **Pozycjapoczątkowa** do **CenterScreen**, automatycznie wyświetlasz formularza w środku ekranu każdorazowo ładuje.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -86,7 +86,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Następnie należy utworzyć **OK** przycisk w formularzu. Określ rozmiar i zachowanie **OK** przycisku. W tym przykładzie położenie przycisku jest 120 pikseli od górnej krawędzi formularza i 75 pikseli od lewej krawędzi. Wysokość przycisku jest 23 pikseli, gdy długość przycisk 75 pikseli. Skrypt używa wstępnie zdefiniowanych typów formularzy systemu Windows w celu określenia zachowania przycisku.
+Następnie należy utworzyć **OK** przycisk dla formularza użytkownika. Określ rozmiar i zachowanie **OK** przycisku. W tym przykładzie położenie przycisku jest 120 pikseli od górnej krawędzi formularza i 75 pikseli od lewej krawędzi. Wysokość przycisku jest 23 pikseli, podczas gdy długość przycisk wynosi 75 pikseli. Skrypt używa wstępnie zdefiniowanych typów Windows Forms do określenia zachowania przycisku.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -98,7 +98,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Podobnie można utworzyć **anulować** przycisku. **Anulować** przycisk jest 120 pikseli od góry, ale 150 pikseli od lewej krawędzi okna.
+Podobnie można utworzyć **anulować** przycisku. **Anulować** przycisk jest 120 pikseli od górnej, ale 150 pikseli od lewej krawędzi okna.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -110,7 +110,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Następnie zawierają tekst etykiety opisujący informacje, które chcesz użytkowników w celu zapewnienia okna.
+Następnie należy podać tekst etykiety na okno, w tym artykule opisano informacje, które mają być zapewniają użytkownikom.
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -120,7 +120,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-Dodawanie formantu (w tym przypadku pole tekstowe), który umożliwia użytkownikom, podaj informacje, które zostały opisane w tekście etykiety. Istnieje wiele formantów, które można zastosować poza pól tekstowych. Aby uzyskać więcej opcji, zobacz [Namespace elementu System.Windows.Forms](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) w witrynie MSDN.
+Dodawanie kontrolki (w tym przypadku pole tekstowe), która umożliwia użytkownikom, podaj informacje, które zostały opisane w tekście etykiet. Istnieje wiele formantów, które można zastosować, oprócz pól tekstowych; Aby uzyskać więcej kontrolek, zobacz [Namespace System.Windows.Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) w witrynie MSDN.
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -129,36 +129,36 @@ $textBox.Size = New-Object System.Drawing.Size(260,20)
 $form.Controls.Add($textBox)
 ```
 
-Ustaw **Topmost** właściwości **$true** wymusić okno, aby otworzyć nad innych okien i oknach dialogowych.
+Ustaw **Topmost** właściwości **$true** wymusić okna, aby otworzyć na jego podstawie innych okien i okien dialogowych.
 
 ```powershell
 $form.Topmost = $true
 ```
 
-Następnie dodaj następujący wiersz kodu formularza i ustawić fokus do pola tekstowego, który został utworzony.
+Następnie dodaj następujący wiersz kodu, aby aktywować formularza i ustawić fokus do pola tekstowego, który został utworzony.
 
 ```powershell
 $form.Add_Shown({$textBox.Select()})
 ```
 
-Dodaj następujący wiersz kodu do wyświetlania formularza w systemie Windows.
+Dodaj następujący wiersz kodu w celu wyświetlenia formularza w Windows.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Na koniec kodu wewnątrz **Jeśli** bloku instruuje system Windows, co należy zrobić z formularza po użytkowników umieścić tekst w polu tekstowym, a następnie kliknij przycisk **OK** przycisk lub naciśnij przycisk **Enter** klucz.
+Na koniec kod wewnątrz **Jeśli** bloku powoduje, że Windows co należy zrobić z formularzem, po użytkowników w polu tekstowym, a następnie kliknij przycisk **OK** przycisk lub naciśnij klawisz **Enter** klucz.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $textBox.Text
-    $x
+    $x = $textBox.Text
+    $x
 }
 ```
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Witaj skryptów Guy: Dlaczego te przykłady graficznego interfejsu użytkownika programu PowerShell nie działają?](http://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: WinFormsExampleUpdates Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell porada tygodnia: Tworzenie niestandardowego pole wprowadzania](http://technet.microsoft.com/library/ff730941.aspx)
+- [Witaj twórco skryptów Guy: Dlaczego te przykłady programu PowerShell graficznego interfejsu użytkownika nie działają?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: Dave Wyatt WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Program Windows PowerShell porada tygodnia: Tworzenie niestandardowego pole wprowadzania](https://technet.microsoft.com/library/ff730941.aspx)

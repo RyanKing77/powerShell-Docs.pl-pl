@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Poznawanie nazw programu PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851259"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320486"
 ---
 # <a name="learning-powershell-names"></a>Poznawanie nazw programu PowerShell
 
-Poznawanie nazw poleceń i parametrów wymaga inwestycji znaczną ilość czasu, z większości interfejsów z wierszem polecenia. Problem polega na tym, że istnieje kilka wzorców. Zapamiętywania jest tylko sposobem nauczenia się polecenia i parametry, które należy użyć w regularnych odstępach czasu.
+Poznawanie nazw poleceń i parametrów wymaga inwestycji znaczną ilość czasu, z większości interfejsów z wierszem polecenia. Problem polega na tym, że istnieje kilka wzorców. Zapamiętywania jest jedynym sposobem, aby dowiedzieć się więcej poleceń i parametrów, które należy użyć w regularnych odstępach czasu.
 
 Podczas pracy za pomocą nowego polecenia lub parametru nie zawsze używaj tego, co już znasz. Należy znaleźć i Dowiedz się, nową nazwę. Tradycyjnie interfejsów z wierszem polecenia start wprowadzaj w małej grupie, narzędzi i rozwój za pomocą dodatków przyrostowe. To proste zobaczyć, dlatego nie standardowej strukturze.
 Może to być dla nazwy poleceń, ponieważ każde polecenie jest osobnego narzędzia. Program PowerShell ma lepszy sposób obsługi nazw poleceń.

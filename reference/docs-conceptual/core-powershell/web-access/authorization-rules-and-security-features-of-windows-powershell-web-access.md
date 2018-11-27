@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133842"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321085"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access
 
@@ -20,19 +20,19 @@ Program Windows PowerShell Web Access w systemie Windows Server 2012 R2 i Window
 ## <a name="configuring-authorization-rules-and-site-security"></a>Konfiguracja reguł autoryzacji i zabezpieczeń lokacji
 
 Po zainstalowaniu programu Windows PowerShell Web Access, a brama jest skonfigurowana, użytkownicy mogą otwierać strony logowania w przeglądarce, ale nie można zalogować do momentu administratora programu Windows PowerShell Web Access jawnego przydzielenia im dostępu. Kontrola dostępu "Windows PowerShell Web Access" odbywa się przy użyciu zestawu poleceń cmdlet Windows PowerShell opisanych w poniższej tabeli. Nie istnieje porównywalny graficzny interfejs użytkownika umożliwiający dodawanie reguł autoryzacji lub zarządzanie nimi.
-Zobacz [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md).
+Zobacz [polecenia cmdlet programu Windows PowerShell Web Access](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Administratorzy mogą definiować `{0-n}` reguł uwierzytelniania dla programu Windows PowerShell Web Access. Domyślne zabezpieczenia mają charakter ograniczenia, a nie zezwolenia; zero reguł uwierzytelniania oznacza, że żaden użytkownik nie ma dostępu do żadnej funkcji.
 
-[Polecenia Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) i [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) w systemie Windows Server 2012 R2 zawiera parametr Credential, która pozwala na dodawanie i testowanie reguł autoryzacji programu Windows PowerShell Web Access z lokalizacji zdalnej komputerze lub w obrębie aktywnej sesji programu Windows PowerShell Web Access. Jak z innymi poleceniami cmdlet programu Windows PowerShell, która ma parametr Credential, można określić obiekt PSCredential jako wartość parametru. Aby utworzyć obiekt PSCredential zawierający poświadczenia, które mają być przekazywane do komputera zdalnego, uruchom [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) polecenia cmdlet.
+[Polecenia Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) i [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) w systemie Windows Server 2012 R2 zawiera parametr Credential, która pozwala na dodawanie i testowanie reguł autoryzacji programu Windows PowerShell Web Access z lokalizacji zdalnej komputerze lub w obrębie aktywnej sesji programu Windows PowerShell Web Access. Jak z innymi poleceniami cmdlet programu Windows PowerShell, która ma parametr Credential, można określić obiekt PSCredential jako wartość parametru. Aby utworzyć obiekt PSCredential zawierający poświadczenia, które mają być przekazywane do komputera zdalnego, uruchom [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) polecenia cmdlet.
 
-Reguły uwierzytelniania programu Windows PowerShell Web Access to reguły określające elementy dozwolone. Każda reguła stanowi definicję dozwolonego połączenia między użytkownikami, komputerami docelowymi i określonego PowerShellÂ Windows [konfiguracje sesji](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (określane również jako punkty końcowe lub _obszary działania_) na wskazanych komputerach docelowych.
+Reguły uwierzytelniania programu Windows PowerShell Web Access to reguły określające elementy dozwolone. Każda reguła stanowi definicję dozwolonego połączenia między użytkownikami, komputerami docelowymi i określonego Windows PowerShell [konfiguracje sesji](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (określane również jako punkty końcowe lub _obszary działania_) na wskazanych komputerach docelowych.
 Aby uzyskać informacje na **obszary działania** zobacz [początku użyj programu PowerShell z obszary działania](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > Użytkownik otrzyma dostęp, jeśli co najmniej jedna reguła jest prawdziwa. Jeśli użytkownik otrzyma dostęp do jednego komputera z pełną obsługą języka lub dostęp tylko do polecenia cmdlet zarządzania zdalnego programu Windows PowerShell, za pomocą konsoli sieci web użytkownik może zalogować się (lub przeskoku) na innych komputerach, które są połączone z pierwszym komputerem docelowym. Najbezpieczniejszą metodą, aby skonfigurować program Windows PowerShell Web Access jest zezwolić użytkownikom na dostęp tylko do ograniczonych konfiguracji sesji, umożliwiających im realizację określonych zadań, które muszą zwykle wykonać zdalnie.
 
-Polecenia cmdlet, do którego odwołuje się [polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md) Zezwalaj, aby utworzyć zestaw reguł dostępu, które są używane do autoryzacji użytkownika w bramie Windows PowerShell Web Access. Reguły te różnią się od list kontroli dostępu na komputerze docelowym i zapewniają dodatkową warstwę zabezpieczeń dla dostępu przez sieć Web. Następna sekcja zawiera bardziej szczegółowe informacje na temat zabezpieczeń.
+Polecenia cmdlet, do którego odwołuje się [polecenia cmdlet programu Windows PowerShell Web Access](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) Zezwalaj, aby utworzyć zestaw reguł dostępu, które są używane do autoryzacji użytkownika w bramie Windows PowerShell Web Access. Reguły te różnią się od list kontroli dostępu na komputerze docelowym i zapewniają dodatkową warstwę zabezpieczeń dla dostępu przez sieć Web. Następna sekcja zawiera bardziej szczegółowe informacje na temat zabezpieczeń.
 
 Jeśli użytkownicy nie przejdą którejkolwiek z poprzednich warstw zabezpieczeń, otrzymają komunikat ogólny "odmowa dostępu" w oknie przeglądarki. Szczegóły zabezpieczeń są rejestrowane na serwerze bramy, ale użytkownicy końcowi nie otrzymują informacji na temat liczby warstw zabezpieczeń, przez które przeszli, ani też warstwy, w której wystąpił błąd logowania lub uwierzytelniania.
 
@@ -229,4 +229,4 @@ Jeśli serwer bramy działa system Windows Server 2012 R2, Windows PowerShell We
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Polecenia cmdlet programu Windows PowerShell Web Access](cmdlets/web-access-cmdlets.md)
+[Polecenia cmdlet programu Windows PowerShell Web Access](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

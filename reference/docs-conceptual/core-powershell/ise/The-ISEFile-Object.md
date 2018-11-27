@@ -3,26 +3,26 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Obiekt ISEFile
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 276e8f04a827e18999b5b3ecb08f47de4f4b23b1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951396"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320877"
 ---
 # <a name="the-isefile-object"></a>Obiekt ISEFile
 
-**ISEFile** obiekt reprezentuje plik w Windows PowerShell® Integrated Scripting Environment (ISE). To wystąpienie klasy Microsoft.PowerShell.Host.ISE.ISEFile. W tym temacie wymieniono elementu członkowskiego metod i właściwości elementu członkowskiego. **$PsISE.CurrentFile** i pliki w kolekcji plików na karcie programu PowerShell są wszystkie wystąpienia klasy Microsoft.PowerShell.Host.ISE.ISEFile.
+**ISEFile** obiekt reprezentuje plików w Windows PowerShell® zintegrowane Scripting Environment (ISE). Jest wystąpieniem klasy Microsoft.PowerShell.Host.ISE.ISEFile. Ten temat zawiera element członkowski metod i właściwości elementu członkowskiego. **$PsISE.CurrentFile** i pliki w kolekcji plików w kartę programu PowerShell są wszystkie wystąpienia klasy Microsoft.PowerShell.Host.ISE.ISEFile.
 
 ## <a name="methods"></a>Metody
 
 ### <a name="save-saveencoding-"></a>Zapisz\( \[saveEncoding\] \)
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
 Zapisuje plik na dysku.
 
-**\[saveEncoding\]**  — opcjonalnie [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcjonalnego parametru kodowanie parametr służący do zapisanego pliku. Wartość domyślna to **UTF8**.
+**\[saveEncoding\]**  — wartość opcjonalna [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcjonalny znak kodowanie parametr służący do zapisanego pliku. Wartość domyślna to **UTF8**.
 
 ### <a name="exceptions"></a>Wyjątki
 
@@ -40,15 +40,15 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a>Zapisz jako\(nazwę pliku, \[saveEncoding\]\)
+### <a name="saveasfilename-saveencoding"></a>Zapisz jako\(nazwy pliku, \[saveEncoding\]\)
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
-Kodowanie i zapisuje plik z określoną nazwą pliku.
+Zapisuje plik przy użyciu określonej nazwy pliku i kodowanie.
 
-**Nazwa pliku** -String Nazwa do użycia do zapisania pliku.
+**Nazwa pliku** -String nazwa ma być używany do zapisania pliku.
 
-**\[saveEncoding\]**  — opcjonalnie [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) opcjonalnego parametru kodowanie parametr służący do zapisanego pliku. Wartość domyślna to **UTF8**.
+**\[saveEncoding\]**  — wartość opcjonalna [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) opcjonalny znak kodowanie parametr służący do zapisanego pliku. Wartość domyślna to **UTF8**.
 
 ### <a name="exceptions"></a>Wyjątki
 
@@ -68,9 +68,9 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 ### <a name="displayname"></a>DisplayName
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
-Właściwość tylko do odczytu, która pobiera ciąg, który zawiera nazwę wyświetlaną tego pliku. Nazwa jest wyświetlana na **pliku** kartę w górnej części edytora. Obecność gwiazdkę \( \* \) na końcu nazwy wskazuje, że plik zawiera zmiany, które nie zostały zapisane.
+Właściwość tylko do odczytu, która pobiera ciąg, który zawiera nazwę wyświetlaną tego pliku. Nazwa jest wyświetlana na **pliku** kartę w górnej części edytora. Obecność gwiazdki \( \* \) na końcu nazwy wskazuje, że plik ma zmiany, które nie zostały zapisane.
 
 ```powershell
 # Shows the display name of the file.
@@ -79,9 +79,9 @@ $psISE.CurrentFile.DisplayName
 
 ### <a name="editor"></a>Edytor
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
-Właściwość tylko do odczytu, która pobiera [obiekt](The-ISEEditor-Object.md) używanego do określonego pliku.
+Właściwość tylko do odczytu, która pobiera [obiekt edytora](The-ISEEditor-Object.md) używany dla określonego pliku.
 
 ```powershell
 # Gets the editor and the text.
@@ -90,9 +90,9 @@ $psISE.CurrentFile.Editor.Text
 
 ### <a name="encoding"></a>Kodowanie
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
-Właściwość tylko do odczytu, która pobiera kodowanie oryginalnego pliku. Jest to **System.Text.Encoding** obiektu.
+Właściwość tylko do odczytu, oryginalnym kodowanie pliku. Jest to **System.Text.Encoding** obiektu.
 
 ```powershell
 # Shows the encoding for the file.
@@ -101,7 +101,7 @@ $psISE.CurrentFile.Encoding
 
 ### <a name="fullpath"></a>FullPath
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
 Właściwość tylko do odczytu, która pobiera ciąg, który określa pełną ścieżkę otwarty plik.
 
@@ -112,9 +112,9 @@ $psISE.CurrentFile.FullPath
 
 ### <a name="issaved"></a>IsSaved
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
-Właściwości typu Boolean tylko do odczytu, która zwraca **$true** Jeśli plik został zapisany po ostatniej modyfikacji.
+Właściwość logiczna przeznaczony tylko do odczytu, która zwraca **$true** Jeśli plik został zapisany po ostatniej modyfikacji.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -124,9 +124,9 @@ $myfile.IsSaved
 
 ### <a name="isuntitled"></a>IsUntitled
 
-Obsługiwane w programie Windows PowerShell ISE 2.0 lub nowszy.
+Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
-Właściwości tylko do odczytu, która zwraca **$true** Jeśli plik nigdy nie został podany tytuł.
+Właściwość tylko do odczytu, która zwraca **$true** Jeśli plik nigdy nie został podany tytuł.
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -137,6 +137,6 @@ $psISE.CurrentFile.IsUntitled
 
 ## <a name="see-also"></a>Zobacz też
 
-- [The ISEFileCollectionObject](The-ISEFileCollection-Object.md)
-- [Cel programu Windows PowerShell ISE skryptów modelu obiektów](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [ISEFileCollectionObject](The-ISEFileCollection-Object.md)
+- [Cel modelu obiektów skryptowych środowiska Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarchia modeli obiektów środowiska ISE](The-ISE-Object-Model-Hierarchy.md)

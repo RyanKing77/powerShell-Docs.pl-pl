@@ -3,20 +3,20 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Tworzenie graficznego obiektu wyboru daty
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 3727c90c314a6fc1b3a338ec60e44259f153d954
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6dd43a3b1f4c67633ad1755de3db88eb8c6772c8
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954844"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320333"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Tworzenie graficznego obiektu wyboru daty
 
-Umożliwia tworzenie formularza za pomocą graficznego, formantu Styl kalendarza, która umożliwia użytkownikom wybór dnia miesiąca w środowisku Windows PowerShell 3.0 i nowszych wersjach.
+Użyj programu Windows PowerShell 3.0 i nowszych wersjach, aby utworzyć formularza z formantem Styl kalendarza graficzny, pozwala użytkownikom na wybór dnia miesiąca.
 
-## <a name="create-a-graphical-date-picker-control"></a>Utwórz formant wyboru daty graficznego
+## <a name="create-a-graphical-date-picker-control"></a>Utwórz formant graficzny wyboru daty
 
-Skopiuj i następnie wklej następujący kod do programu Windows PowerShell ISE, a następnie zapisz go jako skrypt programu Windows PowerShell (ps1).
+Skopiuj i następnie wklej poniższą zawartość do programu Windows PowerShell ISE, a następnie zapisz go jako skrypt programu Windows PowerShell (ps1).
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -60,19 +60,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Skrypt, który rozpoczyna się od ładowania dwie klasy .NET Framework: **System.Drawing** i **System.Windows.Forms**. Następnie należy uruchomić nowe wystąpienie klasy .NET Framework **Windows.Forms.Form**; zapewnia pustego formularza lub okna, do którego można rozpocząć dodawanie kontrolki.
+Skrypt, który rozpoczyna się od ładowania dwóch klas .NET Framework: **System.Drawing** i **System.Windows.Forms**. Następnie uruchom nowe wystąpienie klasy .NET Framework **Windows.Forms.Form**; zapewniający pustego formularza lub okna, do którego można rozpocząć dodawanie kontrolki.
 
 ```powershell
 $form = New-Object Windows.Forms.Form
 ```
 
-Po utworzeniu wystąpienia klasy formularza należy przypisać wartości do trzech właściwości tej klasy.
+Po utworzeniu wystąpienia klasy formularza, należy przypisać wartości do trzech właściwości tej klasy.
 
-- **tekst.** To jest tytuł okna.
+- **Tekst.** Staje się on tytuł okna.
 
-- **Rozmiar.** Jest to rozmiar w postaci, w pikselach. Powyższy skrypt tworzy formularz, który jest 243 pikseli szerokości i wysokości 230 pikseli.
+- **Rozmiar.** Jest to rozmiar formularza, w pikselach. Powyższy skrypt tworzy formularz, który jest 243 pikseli szerokości i wysokości 230 pikseli.
 
-- **StartingPosition.** Ta opcjonalna właściwość jest ustawiona na **CenterScreen** w powyższy skrypt. Jeśli nie dodasz tej właściwości, system Windows wybiera lokalizację po otwarciu formularza. Przez ustawienie **StartingPosition** do **CenterScreen**, automatycznie wyświetlasz formularza w środku ekranu zawsze ładuje.
+- **Pozycjapoczątkowa.** Tej opcjonalnej właściwości jest równa **CenterScreen** w poprzednim skrypcie. Jeśli nie dodasz tę właściwość, Windows wybiera lokalizację, gdy formularz jest otwarty. Ustawiając **Pozycjapoczątkowa** do **CenterScreen**, automatycznie wyświetlasz formularza w środku ekranu każdorazowo ładuje.
 
 ```powershell
 $form.Text = 'Select a Date'
@@ -80,7 +80,7 @@ $form.Size = New-Object Drawing.Size @(243,230)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Następnie utwórz, a następnie dodaj formant kalendarza w formularzu. W tym przykładzie bieżącego dnia nie jest wyróżniony lub zaznaczona kółkiem. Użytkownicy mogą wybrać w tym samym czasie tylko jeden dzień w kalendarzu.
+Następnie utwórz, a następnie dodaj formant kalendarza w formularzu. W tym przykładzie bieżący dzień jest wyróżniony lub nie kółku. Użytkownicy mogą wybrać naraz tylko jeden dzień w kalendarzu.
 
 ```powershell
 $calendar = New-Object System.Windows.Forms.MonthCalendar
@@ -89,7 +89,7 @@ $calendar.MaxSelectionCount = 1
 $form.Controls.Add($calendar)
 ```
 
-Następnie należy utworzyć **OK** przycisk w formularzu. Określ rozmiar i zachowanie **OK** przycisku. W tym przykładzie położenie przycisku jest 165 pikseli od górnej krawędzi formularza i 38 pikseli od lewej krawędzi. Wysokość przycisku jest 23 pikseli, gdy długość przycisk 75 pikseli. Skrypt używa wstępnie zdefiniowanych typów formularzy systemu Windows w celu określenia zachowania przycisku.
+Następnie należy utworzyć **OK** przycisk dla formularza użytkownika. Określ rozmiar i zachowanie **OK** przycisku. W tym przykładzie położenie przycisku jest 165 pikseli od górnej krawędzi formularza i 38 pikseli od lewej krawędzi. Wysokość przycisku jest 23 pikseli, podczas gdy długość przycisk wynosi 75 pikseli. Skrypt używa wstępnie zdefiniowanych typów Windows Forms do określenia zachowania przycisku.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -101,7 +101,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-Podobnie można utworzyć **anulować** przycisku. **Anulować** znajduje się przycisk 165 pikseli od góry, ale 113 pikseli od lewej krawędzi okna.
+Podobnie można utworzyć **anulować** przycisku. **Anulować** znajduje się przycisk 165 pikseli od górnej, ale 113 pikseli od lewej krawędzi okna.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -113,19 +113,19 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-Ustaw **Topmost** właściwości **$true** wymusić okno, aby otworzyć nad innych okien i oknach dialogowych.
+Ustaw **Topmost** właściwości **$true** wymusić okna, aby otworzyć na jego podstawie innych okien i okien dialogowych.
 
 ```powershell
 $form.Topmost = $true
 ```
 
-Dodaj następujący wiersz kodu do wyświetlania formularza w systemie Windows.
+Dodaj następujący wiersz kodu w celu wyświetlenia formularza w Windows.
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-Na koniec kodu wewnątrz **Jeśli** bloku instruuje system Windows, co należy zrobić z formularza po użytkowników wybierz dzień w kalendarzu, a następnie kliknij przycisk **OK** przycisk lub naciśnij przycisk **Enter** klucz. Środowisko Windows PowerShell Wyświetla wybraną datą użytkownikom.
+Na koniec kod wewnątrz **Jeśli** bloku powoduje, że Windows co należy zrobić z formularzem, po użytkowników, wybierz dzień w kalendarzu, a następnie kliknij przycisk **OK** przycisk lub naciśnij klawisz **Enter** klucz. Program Windows PowerShell Wyświetla wybraną datą dla użytkowników.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -137,6 +137,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Witaj skryptów Guy: Dlaczego te przykłady graficznego interfejsu użytkownika programu PowerShell nie działają?](http://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: WinFormsExampleUpdates Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell porada tygodnia: tworzenie formant wyboru daty graficznego](http://technet.microsoft.com/library/ff730942.aspx)
+- [Witaj twórco skryptów Guy: Dlaczego te przykłady programu PowerShell graficznego interfejsu użytkownika nie działają?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: Dave Wyatt WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Program Windows PowerShell porada tygodnia: tworzenie graficznego obiektu wyboru daty](https://technet.microsoft.com/library/ff730942.aspx)

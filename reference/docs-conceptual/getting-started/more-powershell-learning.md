@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Dalsze zasoby szkoleniowe dotyczące programu PowerShell
-ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289212"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320418"
 ---
 # <a name="more-powershell-learning"></a>Dalsze zasoby szkoleniowe dotyczące programu PowerShell
 
@@ -33,23 +33,23 @@ Oprócz pomocy dostępnej w wierszu polecenia poniższe zasoby przedstawiają wi
 
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials zajęty serii administratora
 
-- [PowerShell "SmowerShell" — Dlaczego należy dowiesz się, program Windows PowerShell część 1](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Słyszeli go za pośrednictwem potoku — jak do złożone polecenia programu PowerShell Windows dla zabawy i zysk, część 2](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Jedyny dostawca? Nie jest bardzo trudno — przyjrzeć się Windows PowerShell dostawców część 3](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Zdarzenie główne — środowisko Windows PowerShell jest dzienniki zdarzeń, część 4](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Więcej niż jest możliwe zdalnie — za pomocą programu Windows PowerShell do zarządzania zdalnego pulpitu część 5](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell "SmowerShell" — Dlaczego należy dowiesz się, program Windows PowerShell część 1](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Słyszeli go za pośrednictwem potoku — jak do złożone polecenia programu PowerShell Windows dla zabawy i zysk, część 2](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Jedyny dostawca? Nie jest bardzo trudno — przyjrzeć się Windows PowerShell dostawców część 3](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [Zdarzenie główne — środowisko Windows PowerShell jest dzienniki zdarzeń, część 4](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [Więcej niż jest możliwe zdalnie — za pomocą programu Windows PowerShell do zarządzania zdalnego pulpitu część 5](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Dowiedz się go teraz przed awaryjnego
 
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 2](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 3](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 4](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 5](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 1](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
+- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 2](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
+- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 3](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
+- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 4](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
+- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 5](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
 ## <a name="resources-for-windows-powershell-developers"></a>Zasoby dla deweloperów programu PowerShell Windows
 
 Następujące zasoby zawierają zasoby, które ułatwiają deweloperom tworzenie własnych programu Windows PowerShell modułów, funkcji, poleceń cmdlet, dostawców i hostowanie aplikacji.
 
-- [Zestaw SDK programu Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89595). Zawiera odwołania do zawartości.
-- [Windows PowerShell przewodnik](http://go.microsoft.com/fwlink/p/?LinkID=89596). Zawiera samouczki. Zawiera także informacje o podstawowe pojęcia programu Windows PowerShell.
+- [Zestaw SDK programu Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkID=89595). Zawiera odwołania do zawartości.
+- [Windows PowerShell przewodnik](https://go.microsoft.com/fwlink/p/?LinkID=89596). Zawiera samouczki. Zawiera także informacje o podstawowe pojęcia programu Windows PowerShell.

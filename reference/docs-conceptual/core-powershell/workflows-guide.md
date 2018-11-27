@@ -1,21 +1,21 @@
 ---
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Przewodnik przepływów pracy
-ms.openlocfilehash: 7c4cbcb03bf5abaeba65563156acd588f7671d93
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+title: Przewodnik dotyczący przepływów pracy
+ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482798"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320384"
 ---
 # <a name="psworkflow-module"></a>Moduł PSWorkflow
 
-Ta sekcja zawiera tematy pomocy dla **PSWorkflow** moduł, który zawiera polecenia cmdlet, która obsługuje funkcję przepływ pracy programu Windows PowerShell. **PSWorkflow** moduł jest zainstalowany w środowisku Windows PowerShell.
+Ta sekcja zawiera tematy pomocy dla **PSWorkflow** moduł, który zawiera polecenia cmdlet, które obsługują funkcję przepływu pracy środowiska Windows PowerShell. **PSWorkflow** moduł został zainstalowany przy użyciu programu Windows PowerShell.
 
 ## <a name="help-topics"></a>Tematy pomocy
 
-[Polecenia cmdlet przepływu pracy](http://go.microsoft.com/fwlink/?LinkID=245865)
+[Polecenia cmdlet przepływu pracy](https://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 

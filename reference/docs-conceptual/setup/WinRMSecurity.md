@@ -2,83 +2,83 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: WinRMSecurity
-ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482951"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320554"
 ---
-# <a name="powershell-remoting-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń usługi zdalne środowiska PowerShell
+# <a name="powershell-remoting-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń komunikacji zdalnej programu PowerShell
 
-Usługi zdalne środowiska PowerShell jest zalecanym sposobem zarządzania komputerami z systemem Windows. Usługi zdalne środowiska PowerShell jest domyślnie włączone w systemie Windows Server 2012 R2. W tym dokumencie opisano problemy z zabezpieczeniami, zalecenia i najlepsze rozwiązania w przypadku korzystania z usługi zdalne środowiska PowerShell.
+Komunikacja zdalna programu PowerShell jest zalecanym sposobem zarządzania systemami Windows. Komunikacja zdalna programu PowerShell jest włączona domyślnie w systemie Windows Server 2012 R2. W tym dokumencie opisano zagadnienia dotyczące zabezpieczeń, zalecenia i najlepsze rozwiązania w przypadku korzystania z komunikacji zdalnej programu PowerShell.
 
-## <a name="what-is-powershell-remoting"></a>Co to jest obsługę zdalną środowiska PowerShell?
+## <a name="what-is-powershell-remoting"></a>Co to jest komunikacji zdalnej programu PowerShell?
 
-Korzysta z komunikacji zdalnej programu PowerShell [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), który jest przez firmę Microsoft implementacją [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokołu, aby zezwolić użytkownikom na uruchamianie programu PowerShell poleceń na komputerach zdalnych. Można znaleźć więcej informacji o korzystaniu z usługi zdalne środowiska PowerShell w [uruchamiania poleceń zdalnych](https://technet.microsoft.com/library/dd819505.aspx).
+Korzysta z komunikacji zdalnej programu PowerShell [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), który jest implementacja firmy Microsoft [Web Services for Management (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) protokołu, aby zezwolić użytkownikom na uruchamianie programu PowerShell polecenia na komputerach zdalnych. Można znaleźć więcej informacji na temat przy użyciu komunikacji zdalnej programu PowerShell w [uruchamianie poleceń zdalnych](https://technet.microsoft.com/library/dd819505.aspx).
 
-Usługi zdalne środowiska PowerShell nie jest taka sama, jak za pomocą **ComputerName** parametru polecenia cmdlet, aby uruchomić go na komputerze zdalnym, który używa zdalnego wywoływania procedur (RPC), jako jego podstawowy protokół.
+Komunikacja zdalna programu PowerShell nie jest taka sama jak za pomocą **ComputerName** parametru polecenia cmdlet, aby uruchomić go na komputerze zdalnym, który używa zdalnego wywołania procedury (RPC) jako jego podstawowy protokół.
 
-## <a name="powershell-remoting-default-settings"></a>Ustawienia domyślne obsługę zdalną środowiska PowerShell
+## <a name="powershell-remoting-default-settings"></a>Ustawienia domyślne komunikacji zdalnej programu PowerShell
 
-Usługi zdalne środowiska PowerShell (i WinRM) nasłuchiwania następujące porty:
+Komunikacja zdalna programu PowerShell (i usługi WinRM) nasłuchiwania następujące porty:
 
 - HTTP: 5985
 - HTTPS: 5986
 
-Domyślnie usługi zdalne środowiska PowerShell tylko zezwala na połączenia z członkami grupy Administratorzy. Sesje będą uruchamiane w kontekście użytkownika, dzięki czemu wszystkie formanty dostępu do systemu operacyjnego stosowane do poszczególnych użytkowników i grup nadal stosuje się do nich nawiązaniu połączenia za pośrednictwem usługi zdalne środowiska PowerShell.
+Domyślnie Komunikacja zdalna programu PowerShell tylko zezwala na połączenia z członkowie grupy Administratorzy. Sesje na rynek w kontekście użytkownika, dzięki czemu wszystkie kontroli dostępu systemu operacyjnego stosowane do poszczególnych użytkowników i grupy nadal stosować wobec nich po nawiązaniu połączenia za pośrednictwem komunikacji zdalnej programu PowerShell.
 
-W sieciach prywatnych domyślne reguły zapory systemu Windows dla niego komunikację zdalną środowiska PowerShell akceptuje wszystkie połączenia. W sieciach publicznych domyślna reguła zapory systemu Windows umożliwia obsługę zdalną środowiska PowerShell połączenia tylko z tej samej podsieci. Należy jawnie zmienić tej reguły, aby otworzyć komunikacji zdalnej programu PowerShell do wszystkich połączeń w sieci publicznej.
+W sieciach prywatnych domyślne reguły zapory Windows dla komunikacji zdalnej programu PowerShell akceptuje wszystkie połączenia. W sieciach publicznych domyślną regułę zapory Windows umożliwia komunikacji zdalnej programu PowerShell na połączenia tylko z tej samej podsieci. Musisz jawnie zmiany tej reguły, aby otworzyć komunikacji zdalnej programu PowerShell do wszystkich połączeń w sieci publicznej.
 
->**Ostrzeżenie:** reguły zapory dla sieci publicznych mają na celu ochronę komputera przed atakami połączenie zewnętrzne mogą okazać się złośliwe. Należy zachować ostrożność podczas usuwania tej reguły.
+>**Ostrzeżenie:** reguły zapory dla sieci publicznych jest przeznaczona do ochrony komputera przed atakami potencjalnie złośliwych połączenia zewnętrznego. Usunięcie tej reguły, należy zachować ostrożność.
 
 ## <a name="process-isolation"></a>Izolacja procesu
 
 Korzysta z komunikacji zdalnej programu PowerShell [Windows Remote Management (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) do komunikacji między komputerami.
-Usługa WinRM działa jako usługa na koncie Usługa sieciowa, a spowoduje utworzenie procesach izolowanych uruchomione jako konta użytkowników do hosta programu PowerShell wystąpień. Wystąpienie programu PowerShell uruchomione jako jeden użytkownik nie ma dostępu do procesu uruchomionego wystąpienia programu PowerShell jako inny użytkownik.
+Usługa WinRM działa jako usługa w ramach konta Usługa sieciowa i spowoduje utworzenie procesach izolowanych, uruchomione jako konta użytkowników do wystąpień programu PowerShell hosta. Wystąpienie programu PowerShell działających jako jeden użytkownik nie ma dostępu do procesu uruchomionego wystąpienia programu PowerShell jako inny użytkownik.
 
-## <a name="event-logs-generated-by-powershell-remoting"></a>Dzienniki zdarzeń generowanych przez usługi zdalne środowiska PowerShell
+## <a name="event-logs-generated-by-powershell-remoting"></a>Dzienniki zdarzeń generowane przez komunikacji zdalnej programu PowerShell
 
-FireEye udostępnił dobrej podsumowanie dzienniki zdarzeń i inne dowodów zabezpieczeń wygenerowane przez sesje komunikacji zdalnej programu PowerShell, dostępne pod adresem [badanie ataków PowerShell](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf).
+FireEye udostępnił dobre podsumowanie dzienników zdarzeń i inne dokumenty zabezpieczeń generowane przez sesje komunikacji zdalnej programu PowerShell, dostępne pod adresem [badania ataków PowerShell](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf).
 
-## <a name="encryption-and-transport-protocols"></a>Protokołów transportu i szyfrowania
+## <a name="encryption-and-transport-protocols"></a>Szyfrowanie i mechanizm transportu protokołów
 
-Warto wziąć pod uwagę zabezpieczeń połączenia komunikacji zdalnej programu PowerShell z dwóch perspektyw: początkowe uwierzytelnianie i stałą łączność.
+Warto wziąć pod uwagę zabezpieczeń połączenia komunikacji zdalnej programu PowerShell z dwóch perspektyw: początkowe uwierzytelnianie i utrzymują stałą łączność.
 
-Niezależnie od protokołu transportu używanego (HTTP lub HTTPS) usługi zdalne środowiska PowerShell zawsze szyfruje cała komunikacja po początkowego uwierzytelniania za pomocą klucza symetrycznego AES 256 sesji.
+Komunikacja zdalna programu PowerShell niezależnie od tego, transport protokół (HTTP lub HTTPS), jest zawsze szyfruje cała komunikacja po początkowego uwierzytelniania przy użyciu klucza symetrycznego AES-256 sesji.
 
 ### <a name="initial-authentication"></a>Początkowe uwierzytelnianie
 
-Uwierzytelnianie potwierdza tożsamość klienta do serwera — oraz w idealnym przypadku - serwera do klienta.
+Uwierzytelnianie potwierdza tożsamość klienta do serwera —, a najlepiej — serwera do klienta.
 
-Gdy klient nawiąże połączenie z serwerem domeny przy użyciu nazwy komputera (np.: serwer01, lub server01.contoso.com), jest domyślnym protokołem uwierzytelniania [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
-Kerberos gwarantuje tożsamość serwera i tożsamości użytkowników bez wysyłania dowolny rodzaj wielokrotnego poświadczenie.
+Gdy klient nawiąże połączenie do serwera domeny, przy użyciu nazwy komputera (czyli: serwer01, lub server01.contoso.com), domyślnym protokołem uwierzytelniania jest [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
+Protokół Kerberos gwarantuje tożsamość użytkownika i tożsamości serwera bez wysyłania dowolny rodzaj do ponownego użycia poświadczeń.
 
-Gdy klient łączy się z serwerem domeny przy użyciu jego adresu IP lub łączy się z serwerem grupy roboczej, uwierzytelnianie Kerberos nie jest możliwe. W takim przypadku obsługę zdalną środowiska PowerShell zależy od [protokół uwierzytelniania NTLM](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). Protokół uwierzytelniania NTLM gwarantuje tożsamość użytkownika bez wysyłania dowolny rodzaj możliwe poświadczeń. Do potwierdzenia tożsamości użytkownika, protokół NTLM wymaga, że klient i serwer obliczeniowe klucza sesji z hasła bez kiedykolwiek wymiana samego hasła. Serwer zwykle nie zna hasło użytkownika, więc komunikuje się z kontrolerem domeny, które znać hasło użytkownika, a następnie oblicza klucza sesji dla serwera.
+Gdy klient łączy się z serwerem domeny, przy użyciu jego adresu IP lub nawiązanie połączenia z serwerem grupy roboczej, uwierzytelnianie Kerberos nie jest możliwe. W takim przypadku komunikacji zdalnej programu PowerShell opiera się na [protokół uwierzytelniania NTLM](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). Protokół uwierzytelniania NTLM gwarantuje tożsamość użytkownika, bez wysyłania dowolny rodzaj delegowalne poświadczeń. Potwierdzenie tożsamości użytkownika, protokół NTLM wymaga, że klient i serwer obliczenia klucza sesji z hasła użytkownika bez kiedykolwiek wymiana samego hasła. Serwer zazwyczaj nie zna hasło użytkownika, więc komunikuje się ona z kontrolerem domeny, którego znasz hasło użytkownika, a następnie oblicza klucza sesji dla serwera.
 
-Protokół NTLM, jednak gwarantuje tożsamość serwera. Podobnie jak w przypadku wszystkich protokołów, który jest używany do uwierzytelniania NTLM, osoba atakująca z dostępem do konta komputera komputer przyłączony do domeny może wywołać kontrolera domeny w celu obliczania klucza sesji uwierzytelniania NTLM i tym samym podszyć się pod serwer.
+Protokół NTLM, jednak gwarantuje tożsamość serwera. Podobnie jak w przypadku wszystkich protokołów, który jest używany do uwierzytelniania NTLM, osoba nieuprawniona uzyska dostęp do komputera przyłączonego do domeny, konto komputera może wywołać kontrolera domeny w celu obliczenia klucza sesji protokołu NTLM i tym samym personifikacji serwera.
 
-Uwierzytelnianie NTLM jest domyślnie wyłączona, ale może być dozwolony przez albo Konfigurowanie protokołu SSL na serwerze docelowym lub przez skonfigurowanie ustawienia WinRM TrustedHosts na komputerze klienckim.
+Uwierzytelnianie NTLM jest domyślnie wyłączona, ale może być dozwolony, przez albo Konfigurowanie protokołu SSL na serwerze docelowym lub przez skonfigurowanie ustawienia TrustedHosts usługi WinRM na komputerze klienckim.
 
-#### <a name="using-ssl-certificates-to-validate-server-identity-during-ntlm-based-connections"></a>Aby sprawdzić tożsamość serwera podczas połączenia oparte na protokole NTLM przy użyciu certyfikatów SSL
+#### <a name="using-ssl-certificates-to-validate-server-identity-during-ntlm-based-connections"></a>Korzystania z certyfikatów SSL w celu zweryfikowania tożsamości serwera podczas połączeń opartych na NTLM
 
-Ponieważ protokół uwierzytelniania NTLM nie Sprawdź tożsamość serwera docelowego (tylko że on już zna hasło), można skonfigurować serwery docelowe, które używają protokołu SSL dla komunikacji zdalnej programu PowerShell. Przypisanie certyfikatu SSL na serwerze docelowym (jeśli wystawiony przez urząd certyfikacji, któremu ufa również klient) umożliwia uwierzytelnianie oparte na protokole NTLM, który gwarantuje tożsamość serwera i tożsamości użytkowników.
+Ponieważ protokół uwierzytelniania NTLM nie mogą zapewnić tożsamości na serwerze docelowym (tylko on już zna hasło), można skonfigurować serwery docelowe, które używają protokołu SSL dla komunikacji zdalnej programu PowerShell. Przypisywanie certyfikatu SSL na serwerze docelowym (jeśli jest wystawiony przez urząd certyfikacji, który ma także zaufany) umożliwia uwierzytelnianie NTLM, który gwarantuje tożsamość użytkownika i tożsamości serwera.
 
-#### <a name="ignoring-ntlm-based-server-identity-errors"></a>Ignorowanie błędów tożsamości serwera opartego na NTLM
+#### <a name="ignoring-ntlm-based-server-identity-errors"></a>Ignorowanie błędów tożsamości oparte na NTLM serwera
 
-W przypadku wdrażania certyfikatu SSL do serwera dla połączeń protokołu NTLM praktyce, może pominąć zwrócone błędy tożsamości przez dodanie serwera do usługi WinRM **TrustedHosts** listy. Należy pamiętać, że dodanie nazwę serwera do listy TrustedHosts nie należy traktować jako dowolnej formy instrukcji wiarygodności hostów, same — jak protokół uwierzytelniania NTLM nie może zagwarantować, że w rzeczywistości łączysz na hoście są ZAMIERZAJĄC nawiązać połączenie.
-Zamiast tego należy rozważyć ustawienie TrustedHosts listy hostów, dla których chcesz pominąć błędów wygenerowanych przez nie można zweryfikować tożsamości serwera.
-
-
-### <a name="ongoing-communication"></a>Stałe komunikacji
-
-Po zakończeniu uwierzytelniania początkowego [protokołu komunikacji zdalnej programu PowerShell](https://msdn.microsoft.com/library/dd357801.aspx) szyfruje wszystkie stałą łączność z sesji klucza symetrycznego AES 256.
+W przypadku wdrażania certyfikatu SSL na serwerze sieci dla połączeń protokołu NTLM niewykonalne, może pominąć wynikowe błędy tożsamości przez dodanie serwera do usługi WinRM **TrustedHosts** listy. Należy pamiętać, że dodanie nazwę serwera do listy TrustedHosts nie należy w jakiejkolwiek formy instrukcji wiarygodności hosty, samodzielnie — jak protokół uwierzytelniania NTLM nie gwarantuje, że w rzeczywistości łączysz na hoście są Pomyślny przebieg operacji nawiązać połączenie.
+Zamiast tego należy rozważyć ustawienie TrustedHosts listy hostów, dla których chcesz pominąć błędów generowanych przez nie będzie w stanie zweryfikować tożsamość serwera.
 
 
-## <a name="making-the-second-hop"></a>Co drugi przeskok
+### <a name="ongoing-communication"></a>Trwającą komunikacji
 
-Domyślnie usługi zdalne środowiska PowerShell użyje do uwierzytelniania NTLM lub Kerberos (jeśli jest dostępna). Oba te protokoły uwierzytelniania komputer zdalny bez wysyłania poświadczeń do niego.
-Jest to najbezpieczniejszy sposób uwierzytelniania, ale ponieważ komputer zdalny nie ma poświadczeń użytkownika, nie ma dostępu do innych komputerów i usług w imieniu użytkownika.
-Jest to nazywane "drugi problem przeskoku".
+Po zakończeniu początkowego uwierzytelniania [protokołu komunikacji zdalnej programu PowerShell](https://msdn.microsoft.com/library/dd357801.aspx) szyfruje wszystkie trwające komunikacji przy użyciu klucza symetrycznego AES-256 sesji.
 
-Istnieje kilka sposobów, aby uniknąć tego problemu. Opisy tych metod i zalet i wad każdej zobacz [co drugi przeskok w komunikacji zdalnej programu PowerShell](PS-remoting-second-hop.md).
+
+## <a name="making-the-second-hop"></a>Wykonywanie drugiego przeskoku
+
+Domyślnie do uwierzytelniania komunikacji zdalnej programu PowerShell używa protokołu Kerberos (jeśli jest dostępny) lub NTLM. Obu tych protokołów uwierzytelniania do maszyny zdalnej bez wysyłania poświadczeń do niego.
+Jest to najbezpieczniejsza metoda uwierzytelniania, ale ponieważ Maszyna zdalna nie ma poświadczeń użytkownika, nie może uzyskać dostępu innych komputerów i usług w imieniu użytkownika.
+Jest to nazywane "problem drugiego przeskoku".
+
+Istnieje kilka sposobów, aby uniknąć tego problemu. Opisy tych metod i zalet i wad każdego z nich, zobacz [wykonywanie drugiego przeskoku w komunikacji zdalnej programu PowerShell](PS-remoting-second-hop.md).

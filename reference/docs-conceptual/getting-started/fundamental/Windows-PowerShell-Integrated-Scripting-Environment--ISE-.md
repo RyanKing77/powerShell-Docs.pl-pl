@@ -1,72 +1,72 @@
 ---
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
-title: Środowisko Windows PowerShell Integrated skryptów środowiska ISE
+title: Windows PowerShell Integrated Scripting Environment środowiska ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: d116ec107c2d07e9fd55ee974008b3636b4ab049
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952073"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320520"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 
-Windows PowerShell Integrated Scripting Environment (ISE) jest jednym z dwóch hostów dla aparatu programu Windows PowerShell i języka. Z tym można zapisać, uruchamiania i przetestować skrypty w sposób, w którym nie są dostępne w konsoli programu Windows PowerShell. ISE dodaje kolorowanie składni, uzupełniania po naciśnięciu tabulatora, IntelliSense, debugowania visual i Pomoc kontekstowa.
+Windows PowerShell zintegrowane Scripting Environment (ISE) jest jednym z dwóch hostów dla aparatu programu Windows PowerShell i języka. Z nim, których można pisać uruchamianie i testowanie skryptów w sposób, który nie są dostępne w konsoli programu Windows PowerShell. Środowiska ISE dodaje kolorowanie składni, uzupełniania po naciśnięciu tabulatora, IntelliSense, debugowania visual i Pomoc kontekstowa.
 
-ISE umożliwia uruchamianie poleceń w okienku konsoli, ale obsługuje ona również okienka, które umożliwiają wyświetlanie kodu źródłowego skrypt i innych narzędzi, które można podłączyć do ISE. W tym samym czasie, który jest szczególnie przydatne podczas debugowania skryptu, który używa funkcji zdefiniowanych w inne skrypty lub moduły można nawet zwolnić wielu skryptów systemu windows.
+Środowiska ISE umożliwia uruchamianie poleceń w okienku konsoli, ale obsługuje ona również okienek, które umożliwiają jednoczesne wyświetlanie kodu źródłowego, skrypt i innych narzędzi, które można podłączyć do środowiska ISE. Można nawet otwierają wiele okien skryptu w tym samym czasie, który jest szczególnie przydatne podczas debugowania skryptu, który korzysta z funkcji zdefiniowanych w innych skryptów i modułów.
 
 ## <a name="whats-new"></a>Co nowego
 
-Poniżej przedstawiono niektóre funkcje, które zostały dodane do ISE w najnowszych wersjach programu PowerShell.
+Poniżej przedstawiono niektóre funkcje, które zostały dodane do środowiska ISE w najnowszych wersjach programu PowerShell.
 
-### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>Dodane w programie PowerShell 3.0 (Windows Server 2012, Windows 8)
+### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>Dodane w programie PowerShell 3.0 (system Windows Server 2012, Windows 8)
 
-**IntelliSense** automatycznie wykonuje poleceniach przez wyświetlanie menu pasującego poleceń cmdlet, parametry, wartości parametrów, plików lub folderów podczas pisania.
+**Funkcja IntelliSense** automatycznie wykonuje poleceń przez wyświetlanie menu pasującego poleceń cmdlet, parametry, wartości parametrów, plików lub folderów podczas wpisywania.
 
-**Wstawki kodu programu** są krótkich fragmentów kodu łatwo wstawiany do skryptów z zapisu. Kolekcja przydatne wstawki znajduje się w polu i bardziej można za pomocą **nowy fragment** polecenia cmdlet.
+**Fragmenty kodu** są krótkich fragmentów kodu, czy można łatwo wstawiać do skryptów usługi zapisu. Zbiór fragmentów przydatne znajduje się w polu, a także bardziej przy użyciu **nowy fragment** polecenia cmdlet.
 
-**Dodatkowe narzędzia** dodaje funkcje do ISE mogą być tworzone przez pisania kodu, który współdziała z [Windows PowerShell ISE skryptów Model obiektów](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
+**Dodatkowe narzędzia** dodaje funkcje do środowiska ISE mogą być tworzone przez pisanie kodu, który współdziała z [Windows PowerShell Model obiektów skryptowych ISE](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md).
 
-Narzędzia te można wyświetlić formantów w okienku z kartami lub działa w sposób niewidoczny w tle. **Polecenia** dodatek jest dobrym przykładem i znajduje się w wersji 3.0 lub nowszej, a później, który wyświetla listę dostępnych poleceń i ich pomocy.
+Te narzędzia można wyświetlić formanty do okienka z zakładkami lub działać w sposób niewidoczny w tle. **Polecenia** dodatek jest dobrym przykładem i jest dołączony do wersji 3.0 lub nowszej, a później, który wyświetla listę dostępnych poleceń i ich pomocy.
 
-**Ponownie uruchom Menedżera i automatycznego zapisywania** automatycznie co dwie minuty zapisać skrypty, aby pomóc w uniknięciu utraty danych, w przypadku awarii lub nieoczekiwane ponowne uruchomienie.
+**Ponownie uruchom Menedżera i automatycznego zapisywania** automatycznie co dwie minuty zapisują skryptów, aby pomóc w uniknięciu utraty wykonanej pracy w przypadku awarii lub nieoczekiwane ponowne uruchomienie.
 
-**Większość listy ostatnio używanych** jest obecnie częścią menu Otwórz plik, aby ułatwić uzyskanie dostępu do plików najczęściej używane.
+**Większość listy ostatnio używanych** jest teraz częścią menu Otwórz plik, aby ułatwić uzyskać dostęp do plików, o których najczęściej używane.
 
-**Scalone okienku konsoli**. W poprzednich wersjach programu ISE wystąpiły oddzielne polecenie z danymi wyjściowymi okienka. One zostały połączone w jeden czy więcej bezpośrednio naśladuje zostanie wyświetlony w konsoli programu Windows Powershell.
+**Scalone okienku konsoli**. W poprzednich wersjach środowiska ISE wystąpiły oddzielne polecenie z danymi wyjściowymi okienka. Są teraz połączone w jeden czy więcej bezpośrednio naśladuje zostanie wyświetlony w konsoli programu Windows Powershell.
 
-**Przełączniki wiersza polecenia**. Kilka nowych przełączników wiersza polecenia zapewniają większą kontrolę nad sposobem działania ISE. -NoProfile uruchamia ISE bez uruchamiania skryptów profilu. -Help otwiera okno Pomocy z ISE. -mta uruchamia ISE w "trybie wielowątkowej". Wartość domyślna to jednowątkowy.
+**Przełączniki wiersza polecenia**. Kilka nowych przełączników wiersza polecenia umożliwiają większą kontrolę nad sposobem działania środowiska ISE. -NoProfile uruchamia środowiska ISE bez konieczności uruchamiania skryptu profilu. -Help otwiera okno pomocy przy użyciu środowiska ISE. -mta uruchamia środowiska ISE w "trybie wielowątkowej". Wartość domyślna to apartamentem.
 
 **Nowe funkcje edytora** ułatwiają tworzenie i odczytywanie kodu:
 
-- **Kolorowanie składni XML**. Edytor ISE teraz kolory składni XML w taki sam sposób jak jego kolory Składnia kodu programu Windows PowerShell.
+- **Kolorowanie składni XML**. Edytora środowiska ISE teraz kolorów składni XML w taki sam sposób, zgodnie z jego kolory składni kodu programu Windows PowerShell.
 
-- **Dopasowywanie nawiasu klamrowego**. ISEWindows PowerShell ISE wyróżnia pasujących nawiasów klamrowych pomaga zapewnić prawo liczba klamrowe nawiasy zamykające do zgodne z otwierania tych. Użyj klawiszy CTRL -\[ zlokalizować zamykający nawias klamrowy odpowiadającego nawiasu otwierającego, na którym znajduje się kursor.
+- **Parowanie nawiasów klamrowych**. W środowisku PowerShell ISE ISEWindows wyróżnia parowanych nawiasów klamrowych ułatwiające upewnij się, że liczba zamykających nawiasów klamrowych, aby dopasować swoje otwieranie tych. Użyj klawiszy CTRL -\[ zlokalizować zamykającego nawiasu klamrowego, odpowiadającego nawiasu otwierającego, na którym znajduje się kursor.
 
-- **Wyświetlanie konspektu**. Należy Zwiń lub rozwiń sekcje kodu, kliknij przycisk plus lub minus loguje lewy margines. Dzięki temu można łatwiej znaleźć kod, którego szukasz w skrypcie długi.
+- **Wyświetlanie konspektu**. Możesz zwijać i rozwijać sekcji kodu, kliknij przycisk plus lub minus znaki na lewym marginesie. Dzięki temu można łatwiej znaleźć kod, który potrzebujesz długo skryptu.
 
-- **Przeciągnij i upuść edycji tekstu**. Można wybrać bloku tekstu i przeciągnij go do innej lokalizacji, aby go przenieść. Jeśli przytrzymując klawisz Ctrl podczas przeciągania zaznaczony tekst kopiowany zamiast przenieść.
+- **Przeciąganie i upuszczanie edycji tekstu**. Można wybrać blok tekstu i przeciągnij go do innej lokalizacji, aby go przenieść. Jeśli przytrzymując klawisz Ctrl podczas przeciągania zaznaczonego tekstu, który kopiujesz zamiast przenosić.
 
-- **Przeanalizować wyświetlania błędów**. Środowisko Windows PowerShell sprawdza, czy skrypt podczas pisania. Jeśli wykryje błąd zawiera czerwona falista kodem ataku. Po ustawieniu kursora wskazany błąd etykietka narzędzia zawiera problem, który został znaleziony.
+- **Analizowanie błędów**. Program Windows PowerShell sprawdza, czy skrypt podczas wpisywania. Jeśli wykryje błąd, pokazuje czerwona fala w kodzie powodujący problemy. Po umieszczeniu wskazany błąd etykietka narzędzia pokazuje problem, który został znaleziony.
 
-- **Powiększenie**. Możesz powiększać tekst w taki sposób, aby ułatwić do odczytu lub pomniejszyć aby zobaczyć pełny obraz za pomocą suwaka w prawym dolnym rogu okna ISE.
+- **Powiększenie**. Można powiększyć się w swoim tekście, aby ułatwić odczytu lub pomniejszyć, aby zobaczyć pełny obraz, używając suwaka w prawym dolnym rogu okna środowiska ISE.
 
-- **Sformatowanego tekstu kopiowania i wklejania**. Podczas kopiowania z ISE Schowka czcionki, rozmiaru i koloru informacji zaznaczonego tekstu jest dołączony.
+- **Kopiuj tekst sformatowany i Wklej**. Podczas kopiowania z środowiska ISE do Schowka, czcionki, rozmiaru i informacje o kolorze zaznaczonego tekstu jest dołączony.
 
-- **Blokowanie wybór**. Można wybrać fragment tekstu w kształcie bloku przez trzymając wciśnięty klawisz ALT Zaznaczanie tekstu w okienku skryptów myszą lub naciśnięcie **Alt + Shift + Strzałka w**.
+- **Zaznaczenie blokowe**. Można wybrać fragment tekstu w kształcie bloku, przytrzymując naciśnięty klawisz ALT podczas zaznaczania tekstu w okienku skryptów przy użyciu myszy lub naciskając **Alt + Shift + Strzałka**.
 
-### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Dodane w programie PowerShell 2.0 (Windows Server 2008 R2, Windows 7)
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>Dodane w programie PowerShell 2.0 (system Windows Server 2008 R2, Windows 7)
 
-ISE wprowadzono w systemie programu PowerShell w wersji 2.0.
+Środowiska ISE został wprowadzony przy użyciu programu PowerShell w wersji 2.0.
 
-## <a name="requirements-for-running-the-windows-powershell-ise"></a>Wymagania dotyczące systemu Windows PowerShell ISE
+## <a name="requirements-for-running-the-windows-powershell-ise"></a>Wymagania dotyczące uruchamiania środowiska Windows PowerShell ISE
 
-ISE jest dostępna na każdym komputerze z systemem Windows można uruchomić programu Windows PowerShell w wersji 2.0 lub nowszej. Każda wersja programu Windows i Windows Server zawiera wersję środowiska Windows PowerShell i ISE, ale można uaktualnić do najnowszej dostępnej przez zainstalowanie systemu Windows Management Framework (WMF). Zobacz [WMF](/powershell/wmf/readme) dokumentacji, aby uzyskać więcej informacji.
+Środowiska ISE jest dostępne na każdym komputerze Windows, która może uruchomić programu Windows PowerShell w wersji 2.0 lub nowszej. Każda wersja programu Windows i Windows Server zawiera wersję środowiska Windows PowerShell ISE, ale można uaktualnić do najnowszy dostępny, instalując program Windows Management Framework (WMF). Zobacz [WMF](/powershell/wmf) dokumentacji, aby uzyskać więcej informacji.
 
 > [!NOTE]
-> Windows PowerShell ISE wymaga graficznego interfejsu użytkownika, dlatego nie można uruchomić go w opcji Server Core systemu Windows Server.
+> Windows PowerShell ISE wymagają graficznego interfejsu użytkownika, dlatego nie można uruchomić go w opcji Server Core systemu Windows Server.
 
 ## <a name="see-also"></a>Zobacz też
 
-[Celem ise powłoki power windows scripting modelu obiektów](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Cel modelu obiektów skryptowych środowiska windows power shell ise](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
