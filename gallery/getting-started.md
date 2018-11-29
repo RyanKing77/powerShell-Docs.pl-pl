@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Rozpoczynanie pracy z galerii programu PowerShell
-ms.openlocfilehash: 85b0a754aba25d850dc918024419318554f92b33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
+ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225679"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52576893"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Rozpoczęcie korzystania z galerii programu PowerShell
 
-Właściwy sposób, aby zainstalować pakiety z galerii programu PowerShell jest użycie polecenia cmdlet w [PowerShellGet](/powershell/module/powershellget) modułu. Nie musisz zalogować się do pobierania elementów z galerii programu PowerShell.
+Galeria programu PowerShell jest zawierający skrypty, moduły i zasobów DSC można pobrać i wykorzystać repozytorium pakietów. Użyj polecenia cmdlet w [PowerShellGet](/powershell/module/powershellget) modułu, aby zainstalować pakiety z galerii programu PowerShell. Nie musisz zalogować się do pobierania elementów z galerii programu PowerShell.
 
 > [!NOTE]
 > Istnieje możliwość pobrania pakietu z galerii programu PowerShell bezpośrednio, ale nie jest to zalecane podejście.
@@ -20,9 +20,9 @@ Właściwy sposób, aby zainstalować pakiety z galerii programu PowerShell jest
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Wykrywanie pakietów z galerii programu PowerShell
 
-Pakietów można znaleźć w galerii programu PowerShell, za pomocą **wyszukiwania** kontroli w tej witrynie internetowej lub przeglądania stron modułów i skryptów. Można również wyszukiwać pakiety z galerii programu PowerShell, uruchamiając [Find-Module][] i [Find-Script][] poleceń cmdlet, w zależności od typu elementu z `-Repository PSGallery`.
+Pakietów można znaleźć w galerii programu PowerShell, za pomocą **wyszukiwania** kontrolkę w galerii programu PowerShell [strony głównej](https://www.powershellgallery.com), lub za pośrednictwem modułów i skryptów z [strony pakietów ](https://www.powershellgallery.com/packages). Można również wyszukiwać pakiety z galerii programu PowerShell, uruchamiając [Find-Module][], [Find-DscResource], i [Find-Script][] poleceń cmdlet, w zależności od typu pakietu za pomocą `-Repository PSGallery`.
 
-Filtrowanie wyników za pomocą galerii może odbywać się przy użyciu następujących parametrów:
+Można filtrować wyniki z galerii przy użyciu następujących parametrów:
 
 - Nazwa
 - AllVersions
@@ -75,15 +75,15 @@ Aby zainstalować starszą wersję pakietu, Dodaj `-RequiredVersion` parametru.
 
 ### <a name="deploy"></a>Wdróż program
 
-Aby wdrożyć pakiet z galerii programu PowerShell w usłudze Azure Automation, kliknij przycisk **wdrażanie w usłudze Azure Automation** na stronie szczegółów pakietu. Nastąpi przekierowanie do portalu zarządzania systemu Azure, w którym możesz logować się przy użyciu poświadczeń konta platformy Azure. Należy pamiętać, że wdrażanie pakietów z zależnościami wdroży wszystkie zależności do usługi Azure Automation. Można wyłączyć przez dodanie przycisku "Wdroż do usługi Azure Automation" **AzureAutomationNotSupported** tagu metadanych pakietu.
+Aby wdrożyć pakiet z galerii programu PowerShell w usłudze Azure Automation, kliknij przycisk **usługi Azure Automation**, następnie kliknij przycisk **wdrażanie w usłudze Azure Automation** na stronie szczegółów pakietu. Nastąpi przekierowanie do portalu zarządzania systemu Azure, w którym możesz logować się przy użyciu poświadczeń konta platformy Azure. Należy pamiętać, że wdrażanie pakietów zależności służy do wdrażania wszystkich zależności do usługi Azure Automation. Można wyłączyć przez dodanie przycisku "Wdroż do usługi Azure Automation" **AzureAutomationNotSupported** tagu metadanych pakietu.
 
 Aby dowiedzieć się więcej o usłudze Azure Automation, zobacz [usługi Azure Automation](/azure/automation) dokumentacji.
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Trwa aktualizowanie pakietów z galerii programu PowerShell
 
-Aby zaktualizować pakiety zainstalowany z galerii programu PowerShell, uruchom [Update-Module] [] lub polecenia cmdlet [] [skrypt aktualizacji]. Po uruchomieniu bez żadnych dodatkowych parametrów [] [Update-Module] próby uaktualnienia każdy moduł zainstalowane, uruchamiając [Install-Module][]. Aby selektywnie aktualizowanie modułów, należy dodać `-Name` parametru.
+Aby zaktualizować pakiety zainstalowany z galerii programu PowerShell, uruchom [Update-Module] [] lub polecenia cmdlet [] [skrypt aktualizacji]. Po uruchomieniu, bez żadnych dodatkowych parametrów, [] [Update-Module] próbuje zaktualizować wszystkie moduły zainstalowane, uruchamiając [Install-Module][]. Aby selektywnie aktualizowanie modułów, należy dodać `-Name` parametru. 
 
-Podobnie, gdy są uruchomione bez żadnych dodatkowych parametrów, [] [skrypt aktualizacji] również próby uaktualnienia każdego skryptu zainstalowane, uruchamiając [Install-Script][]. Aby selektywnie zaktualizować skrypty, Dodaj `-Name` parametru.
+Podobnie, gdy są uruchomione bez żadnych dodatkowych parametrów, [[skrypt aktualizacji]] próbuje również zaktualizować wszystkie skrypty zainstalowane, uruchamiając [Install-Script][]. Aby selektywnie zaktualizować skrypty, Dodaj `-Name` parametru.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Lista pakietów, zainstalowanych z galerii programu PowerShell
 
