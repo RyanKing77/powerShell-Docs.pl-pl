@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Składnia wyszukiwania w galerii
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004077"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742860"
 ---
 # <a name="gallery-search-syntax"></a>Składnia wyszukiwania w galerii
 
-Galeria programu PowerShell oferuje searchbox tekstu, których można użyć słów i fraz wyrażeń — słowo kluczowe, aby zawęzić wyniki wyszukiwania.
+Można wyszukiwać za pomocą galerii programu PowerShell [witryny sieci web galerii programu PowerShell](https://www.powershellgallery.com/).
+Witryny sieci web galerii programu PowerShell oferuje searchbox tekstu, których można użyć słów i fraz wyrażeń — słowo kluczowe, aby zawęzić wyniki wyszukiwania.
 
 ## <a name="search-by-keywords"></a>Wyszukiwanie według słów kluczowych
 
     dsc azure sql
 
-Wyszukiwanie wykonaj jego wszelkich starań, aby znaleźć odpowiednie dokumenty zawierające wszystkie 3 słowa kluczowe i zwracać pasujących dokumentów.
+Wyszukiwanie próbuje znaleźć odpowiednie dokumenty zawierające wszystkie 3 słowa kluczowe i zwracać pasujących dokumentów.
 
 ## <a name="search-using-phrases-and-keywords"></a>Wyszukaj przy użyciu słów kluczowych i fraz
 
@@ -37,10 +38,9 @@ Obecnie pola z możliwością wyszukiwania są "Id", "Version", "Autor", "DscRes
 
 ## <a name="examples"></a>Przykłady
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-Umożliwia znalezienie pakietów o "PSReadline" lub "AzureRM.Profile" w polu Identyfikatora odpowiednio.
+    ID:PSReadline
+    
+Umożliwia znalezienie pakietów o identyfikatorze zawierające "PSReadline".
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ Filtr 'Id' jest podciąg być zgodne, dlatego w przypadku wyszukiwania dla nast�
 
     Id:"azure"
 
-Otrzymasz wyników, takich jak "AzureRM.Profile" i "Azure.Storage".
+Dzięki temu wyniki, które obejmują AzureRM.Profile "i"Azure.Storage".
 
-Możesz również wyszukać wiele słów kluczowych w jednym polu. Lub mieszanie i Dopasowywanie pól.
+Możesz również wyszukać wiele słów kluczowych w jednym polu. 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-I wyszukiwanie frazy:
+I wyszukiwanie frazy przy użyciu podwójnych cudzysłowów:
 
     id:"azure.storage"
 
-
 Aby wyszukać wszystkie pakiety z tagiem DSC.
 
-    Tags:"DSC"
+    Tags:DSC
 
 Aby wyszukać wszystkie pakiety przy użyciu określonej funkcji.
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 Aby wyszukać wszystkie pakiety za pomocą określonego polecenia cmdlet.
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 Aby wyszukać wszystkie pakiety z określoną nazwą zasobu DSC.
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 Aby wyszukać wszystkie pakiety za pomocą określonego PowerShellVersion
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 Ponadto jeśli używasz pola, które nie są obsługiwane, takich jak "poleceń", utworzymy po prostu go zignorować i wszystkie pola wyszukiwania. Rozważmy następujące zapytanie
 

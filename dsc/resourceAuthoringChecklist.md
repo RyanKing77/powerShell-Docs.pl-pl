@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Lista kontrolna tworzenia zasobu
-ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 2b6e972776dba4ecc6fd1ab5c21361d653e1a469
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893559"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742843"
 ---
 # <a name="resource-authoring-checklist"></a>Lista kontrolna tworzenia zasobu
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>Zasób jest idempotentna, w tym przypadku dodatnią
 
-Jedną z podstawowych cech zasoby DSC jest idempotentność. Oznacza to, że trwa operacja zastosowania konfiguracji DSC, zawierająca ten zasób wielokrotnie będzie zawsze ten sam efekt. Jeśli na przykład możemy utworzyć konfigurację, która zawiera następujące zasoby pliku:
+Jednym z podstawowych charakterystyk zasobów DSC jest idempotentność. Oznacza to, że trwa operacja zastosowania konfiguracji DSC, zawierająca ten zasób wielokrotnie będzie zawsze ten sam efekt. Jeśli na przykład możemy utworzyć konfigurację, która zawiera następujące zasoby pliku:
 
 ```powershell
 File file {
