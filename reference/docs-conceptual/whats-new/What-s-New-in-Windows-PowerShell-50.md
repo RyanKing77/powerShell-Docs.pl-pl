@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co nowego w programie Windows PowerShell 5.0
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320724"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978899"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Co nowego w programie Windows PowerShell 5.0
 Windows PowerShell 5.0 zawiera istotne nowe funkcje, które rozszerzają zakres jego zastosowań, zwiększyć jego użyteczność i umożliwiają kontrolowanie i zarządzanie komputerami z systemem Windows, łatwiejsze i bardziej kompleksowe.
@@ -410,7 +410,7 @@ W programie Windows PowerShell 3.0, autorzy C# polecenia cmdlet można wypełni�
 
 Możesz również uwzględnić **HelpUri** wartość pierwszego łącza powiązane z pliku pomocy polecenia cmdlet opartego na XML lub. Dyrektywa łącze Pomoc oparta na komentarz w funkcji.
 
-Aby uzyskać więcej informacji na temat obsługi pomocy online, zobacz [Obsługa pomocy Online](https://go.microsoft.com/fwlink/?LinkId=242132) w bibliotece MSDN.
+Aby uzyskać więcej informacji na temat obsługi pomocy online, zobacz [Obsługa pomocy Online](/powershell/developer/module/supporting-online-help) w Microsoft Docs.
 
 ### <a name="cim-integration"></a>Integracja modelu CIM
 
