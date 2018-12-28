@@ -1,0 +1,146 @@
+---
+ms.date: 12/12/2018
+keywords: DSC, powershell, konfiguracja, ustawienia
+title: Zależności zasobów przy użyciu DependsOn
+ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
+ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53404903"
+---
+# <a name="resource-dependencies-using-dependson"></a><span data-ttu-id="83574-103">Zależności zasobów przy użyciu DependsOn</span><span class="sxs-lookup"><span data-stu-id="83574-103">Resource dependencies using DependsOn</span></span>
+
+<span data-ttu-id="83574-104">Podczas wpisywania [konfiguracje](configurations.md), możesz dodać [bloków zasobów](../resources/resources.md) skonfigurować aspekty elementu docelowego węzła.</span><span class="sxs-lookup"><span data-stu-id="83574-104">When you write [Configurations](configurations.md), you add [Resource blocks](../resources/resources.md) to configure aspects of a target Node.</span></span> <span data-ttu-id="83574-105">W miarę postępu dodawania zasobów bloki konfiguracje powiększać tak, bardzo duże i skomplikowane do zarządzania.</span><span class="sxs-lookup"><span data-stu-id="83574-105">As you continue to add Resource blocks, your Configurations can grow quite large and cumbersome to manage.</span></span> <span data-ttu-id="83574-106">Jednym z wyzwań jest kolejność stosowana z bloków zasobów.</span><span class="sxs-lookup"><span data-stu-id="83574-106">One such challenge is the applied order of your resource blocks.</span></span> <span data-ttu-id="83574-107">Zazwyczaj zasoby są stosowane w kolejności, w którym są zdefiniowane w ramach konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="83574-107">Typically resources are applied in the order they are defined within the Configuration.</span></span> <span data-ttu-id="83574-108">Wraz z rozwojem większej i bardziej złożonej konfiguracji można użyć `DependsOn` klawisz, aby zmienić kolejność zastosowane zasobów, określając, na które zasobem, który jest zależny od innego zasobu.</span><span class="sxs-lookup"><span data-stu-id="83574-108">As your Configuration grows larger and more complex, you can use the `DependsOn` key to change the applied order of your resources by specifying that a resource depends on another resource.</span></span>
+
+<span data-ttu-id="83574-109">`DependsOn` Klucz może zostać użyty w bloku zasobów.</span><span class="sxs-lookup"><span data-stu-id="83574-109">The `DependsOn` key can be used in any Resource block.</span></span> <span data-ttu-id="83574-110">Jest ona zdefiniowana z ten sam mechanizm klucz/wartość, jak inne klucze zasobu.</span><span class="sxs-lookup"><span data-stu-id="83574-110">It is defined with the same key/value mechanism as other Resource keys.</span></span> <span data-ttu-id="83574-111">`DependsOn` Klucz oczekuje, że tablica ciągów przy użyciu następującej składni.</span><span class="sxs-lookup"><span data-stu-id="83574-111">The `DependsOn` key expects an array of strings with the following syntax.</span></span>
+
+```
+DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+```
+
+<span data-ttu-id="83574-112">Poniższy przykład umożliwia skonfigurowanie reguły zapory po umożliwia włączenie i skonfigurowanie profilu publicznego.</span><span class="sxs-lookup"><span data-stu-id="83574-112">The following example configures a firewall rule after enabling and configuring the public profile.</span></span>
+
+```powershell
+# Install the NetworkingDSC module to configure firewall rules and profiles.
+Install-Module -Name NetworkingDSC
+
+Configuration ConfigureFirewall
+{
+    Import-DSCResource -Name Firewall, FirewallProfile
+    Node localhost
+    {
+        Firewall Firewall
+        {
+            Name                  = 'IIS-WebServerRole-HTTP-In-TCP'
+            Ensure                = 'Present'
+            Enabled               = 'True'
+            DependsOn             = '[FirewallProfile]FirewallProfilePublic'
+        }
+
+        FirewallProfile FirewallProfilePublic
+        {
+            Name = 'Public'
+            Enabled = 'True'
+            DefaultInboundAction = 'Block'
+            DefaultOutboundAction = 'Allow'
+            AllowInboundRules = 'True'
+            AllowLocalFirewallRules = 'False'
+            AllowLocalIPsecRules = 'False'
+            NotifyOnListen = 'True'
+            LogFileName = '%systemroot%\system32\LogFiles\Firewall\pfirewall.log'
+            LogMaxSizeKilobytes = 16384
+            LogAllowed = 'False'
+            LogBlocked = 'True'
+            LogIgnored = 'NotConfigured'
+        }
+    }
+}
+
+ConfigureFirewall -OutputPath C:\Temp\
+```
+
+<span data-ttu-id="83574-113">Po zastosowaniu konfiguracji profilu zapory są zawsze skonfigurowane po raz pierwszy niezależnie od tego, w jakiej kolejności bloków zasobów są zdefiniowane.</span><span class="sxs-lookup"><span data-stu-id="83574-113">When you apply the Configuration, the firewall profile will always be configured first regardless of which order the Resource blocks are defined.</span></span> <span data-ttu-id="83574-114">Możesz zastosować konfigurację, należy Pamiętaj węzłów docelowych istniejącej konfiguracji, aby można było przywrócić w razie potrzeby.</span><span class="sxs-lookup"><span data-stu-id="83574-114">If you apply the Configuration, be sure to note your target Nodes existing Configuration so you can revert if desired.</span></span>
+
+```
+PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
+
+VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
+VERBOSE: An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-181338-0189125723-1543119021-1282804.
+VERBOSE: [SERVER01]: LCM:  [ Start  Set      ]
+VERBOSE: [SERVER01]:                            [DSCEngine] Importing the module C:\Program Files\WindowsPowerShell\Modules\NetworkingDsc\6.1.0.0\DscResources\MSFT_Firewall\MSFT_Firewall.psm1 in force mode.
+VERBOSE: [SERVER01]:                            [DSCEngine] Importing the module C:\Program Files\WindowsPowerShell\Modules\NetworkingDsc\6.1.0.0\DscResources\MSFT_FirewallProfile\MSFT_FirewallProfile.psm1 in force mode.
+VERBOSE: [SERVER01]: LCM:  [ Start  Resource ]  [[FirewallProfile]FirewallProfilePublic]
+VERBOSE: [SERVER01]: LCM:  [ Start  Test     ]  [[FirewallProfile]FirewallProfilePublic]
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Importing the module MSFT_FirewallProfile in force mode.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Test-TargetResource: Testing Firewall Public Profile.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Test-TargetResource: Firewall Public Profile "AllowInboundRules" is "NotConfigured" but should be "True". Change required.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Test-TargetResource: Firewall Public Profile "AllowLocalFirewallRules" is "NotConfigured" but should be "False". Change required.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Test-TargetResource: Firewall Public Profile "AllowLocalIPsecRules" is "NotConfigured" but should be "False". Change required.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Test-TargetResource: Firewall Public Profile "DefaultOutboundAction" is "NotConfigured" but should be "Allow". Change required.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Test-TargetResource: Firewall Public Profile "LogBlocked" is "False" but should be "True". Change required.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Test-TargetResource: Firewall Public Profile "LogMaxSizeKilobytes" is "4096" but should be "16384". Change required.
+VERBOSE: [SERVER01]: LCM:  [ End    Test     ]  [[FirewallProfile]FirewallProfilePublic]  in 1.6890 seconds.
+VERBOSE: [SERVER01]: LCM:  [ Start  Set      ]  [[FirewallProfile]FirewallProfilePublic]
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Importing the module MSFT_FirewallProfile in force mode.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile.
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile parameter AllowInboundRules to "AllowInboundRules".
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile parameter AllowLocalFirewallRules to "AllowLocalFirewallRules".
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile parameter AllowLocalIPsecRules to "AllowLocalIPsecRules".
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile parameter DefaultOutboundAction to "DefaultOutboundAction".
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile parameter LogBlocked to "LogBlocked".
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile parameter LogMaxSizeKilobytes to "LogMaxSizeKilobytes".
+VERBOSE: [SERVER01]:                            [[FirewallProfile]FirewallProfilePublic] Set-TargetResource: Setting Firewall Public Profile updated.
+VERBOSE: [SERVER01]: LCM:  [ End    Set      ]  [[FirewallProfile]FirewallProfilePublic]  in 10.0360 seconds.
+VERBOSE: [SERVER01]: LCM:  [ End    Resource ]  [[FirewallProfile]FirewallProfilePublic]
+VERBOSE: [SERVER01]: LCM:  [ Start  Resource ]  [[Firewall]Firewall]
+VERBOSE: [SERVER01]: LCM:  [ Start  Test     ]  [[Firewall]Firewall]
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Importing the module MSFT_Firewall in force mode.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Test-TargetResource: Checking settings for firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP'.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Test-TargetResource: Find firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP'.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Get-FirewallRule: No Firewall Rule found with Name 'IIS-WebServerRole-HTTP-In-TCP'.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Test-TargetResource: Firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP' does not exist.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Test-TargetResource: Check Firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP' returning False.
+VERBOSE: [SERVER01]: LCM:  [ End    Test     ]  [[Firewall]Firewall]  in 1.1780 seconds.
+VERBOSE: [SERVER01]: LCM:  [ Start  Set      ]  [[Firewall]Firewall]
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Importing the module MSFT_Firewall in force mode.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Set-TargetResource: Applying settings for firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP'.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Set-TargetResource: Find firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP'.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Get-FirewallRule: No Firewall Rule found with Name 'IIS-WebServerRole-HTTP-In-TCP'.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Set-TargetResource: We want the firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP' to exist since Ensure is set to Present.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] Set-TargetResource: We want the firewall rule with Name 'IIS-WebServerRole-HTTP-In-TCP' to exist, but it does not.
+VERBOSE: [SERVER01]:                            [[Firewall]Firewall] New-NetFirewallRule DisplayName: IIS-WebServerRole-HTTP-In-TCP
+VERBOSE: [SERVER01]: LCM:  [ End    Set      ]  [[Firewall]Firewall]  in 1.0850 seconds.
+VERBOSE: [SERVER01]: LCM:  [ End    Resource ]  [[Firewall]Firewall]
+VERBOSE: [SERVER01]: LCM:  [ End    Set      ]
+VERBOSE: [SERVER01]: LCM:  [ End    Set      ]    in  15.2880 seconds.
+VERBOSE: Operation 'Invoke CimMethod' complete.
+VERBOSE: Time taken for configuration job to complete is 15.385 seconds
+```
+
+<span data-ttu-id="83574-115">To gwarantuje również, że jeśli **FirewallProfile** zasobu nie powiedzie się z jakiegokolwiek powodu **zapory** blok nie zostanie wykonany, nawet jeśli została zdefiniowana najpierw.</span><span class="sxs-lookup"><span data-stu-id="83574-115">This also ensures that if the **FirewallProfile** resource fails for any reason, the **Firewall** block will not execute even though it was defined first.</span></span> <span data-ttu-id="83574-116">`DependsOn` Klucz zapewnia większą elastyczność w grupowania bloków zasobów i sprawdzeniu, czy zależności zostały rozwiązane przed wykonaniem zasobu.</span><span class="sxs-lookup"><span data-stu-id="83574-116">The `DependsOn` key allows more flexibility in grouping resource blocks and ensuring that dependencies are resolved before a Resource executes.</span></span>
+
+<span data-ttu-id="83574-117">W bardziej zaawansowanych ustawień konfiguracji, można również użyć [zależności między węzłem](crossNodeDependencies.md) umożliwia bardziej szczegółową kontrolę (na przykład zapewnienie kontroler domeny jest skonfigurowana przed dołączeniem klientów do domeny).</span><span class="sxs-lookup"><span data-stu-id="83574-117">In more advanced Configurations, you can also use [Cross Node Dependency](crossNodeDependencies.md) to allow even more granular control (For example, ensuring a domain controller is configured before joining a client to the domain).</span></span>
+
+## <a name="cleaning-up"></a><span data-ttu-id="83574-118">Czyszczenie</span><span class="sxs-lookup"><span data-stu-id="83574-118">Cleaning Up</span></span>
+
+<span data-ttu-id="83574-119">Po zastosowaniu powyższych konfiguracji, należy wycofać kluczy w celu cofnięcia wszystkich zmian.</span><span class="sxs-lookup"><span data-stu-id="83574-119">If you applied the Configuration above, you can reverse keys to undo any changes.</span></span> <span data-ttu-id="83574-120">W powyższym przykładzie ustawienie **włączone** spowoduje wyłączenie klucza na wartość false, reguły zapory i profilu.</span><span class="sxs-lookup"><span data-stu-id="83574-120">In the above example, setting the **Enabled** key to false will disable the firewall rule and profile.</span></span> <span data-ttu-id="83574-121">Przykładu należy zmodyfikować odpowiednio do potrzeb, aby dopasować poprzedni stan skonfigurowanego Twój węzeł docelowy.</span><span class="sxs-lookup"><span data-stu-id="83574-121">You should modify the example as needed to match your target Node's previous configured state.</span></span>
+
+```powershell
+        Firewall Firewall
+        {
+            Name                  = 'IIS-WebServerRole-HTTP-In-TCP'
+            Enabled               = 'False'
+            DependsOn             = '[FirewallProfile]FirewallProfilePublic'
+        }
+
+        FirewallProfile FirewallProfilePublic
+        {
+            Name = 'Public'
+            Enabled = 'False'
+        }
+```
+
+## <a name="see-also"></a><span data-ttu-id="83574-122">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="83574-122">See also</span></span>
+
+- [<span data-ttu-id="83574-123">Użyj zależności między węzła</span><span class="sxs-lookup"><span data-stu-id="83574-123">Use Cross Node Dependencies</span></span>](./crossNodeDependencies.md)

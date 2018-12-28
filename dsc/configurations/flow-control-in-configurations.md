@@ -1,0 +1,113 @@
+---
+ms.date: 12/12/2018
+keywords: DSC, powershell, konfiguracja, ustawienia
+title: Instrukcje warunkowe i pętle w konfiguracji
+ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
+ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53404771"
+---
+# <a name="conditional-statements-and-loops-in-configurations"></a><span data-ttu-id="09522-103">Instrukcje warunkowe i pętle w konfiguracji</span><span class="sxs-lookup"><span data-stu-id="09522-103">Conditional statements and loops in Configurations</span></span>
+
+<span data-ttu-id="09522-104">Możesz wprowadzić swoje [konfiguracje](configurations.md) bardziej dynamiczne, przy użyciu słów kluczowych sterowanie przepływem programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="09522-104">You can make your [Configurations](configurations.md) more dynamic using PowerShell flow-control keywords.</span></span> <span data-ttu-id="09522-105">W tym artykule opisano, jak można użyć instrukcje warunkowe i pętle się bardziej dynamiczne konfiguracje.</span><span class="sxs-lookup"><span data-stu-id="09522-105">This article will show you how you can use conditional statements, and loops to make your Configurations more dynamic.</span></span> <span data-ttu-id="09522-106">Połączenie warunkowe i pętle z [parametry](add-parameters-to-a-configuration.md) i [dane konfiguracyjne](configData.md) umożliwia większą elastyczność i kontrolę podczas kompilowania konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="09522-106">Combining conditional and loops with [parameters](add-parameters-to-a-configuration.md) and [Configuration Data](configData.md) allows you more flexibility and control when compiling your Configurations.</span></span>
+
+<span data-ttu-id="09522-107">Podobnie jak funkcja lub blok skryptu można użyć dowolnego języka programu PowerShell w ramach konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="09522-107">Just like a Function or a Script Block, you can use any PowerShell language within a Configuration.</span></span> <span data-ttu-id="09522-108">Instrukcji, których można używać tylko zostaną ocenione, gdy wywołujesz konfigurację tak, aby skompilować pliku "MOF".</span><span class="sxs-lookup"><span data-stu-id="09522-108">The statements you use will only be evaluated when you call your Configuration to compile a ".mof" file.</span></span> <span data-ttu-id="09522-109">Poniższe przykłady pokazują prostych scenariuszy do zademonstrowania koncepcji.</span><span class="sxs-lookup"><span data-stu-id="09522-109">The examples below show simple scenarios to demonstrate concepts.</span></span> <span data-ttu-id="09522-110">Instrukcje warunkowe są pętli częściej są używane z parametrami i dane konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="09522-110">Conditionals are loops are more often used with parameters and Configuration Data.</span></span>
+
+<span data-ttu-id="09522-111">W tym prostym przykładzie **usługi** bloku zasobów pobiera bieżący stan usługi w czasie kompilacji, aby wygenerować plik "MOF", który przechowuje swojego bieżącego stanu.</span><span class="sxs-lookup"><span data-stu-id="09522-111">In this simple example, the **Service** resource block retrieves the current state of a service at compile time to generate a ".mof" file that maintains its current state.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="09522-112">Przy użyciu dynamicznych bloków zasobów będzie wywłaszczenia skuteczności Intellisense.</span><span class="sxs-lookup"><span data-stu-id="09522-112">Using dynamic Resource blocks will preempt the effectiveness of Intellisense.</span></span> <span data-ttu-id="09522-113">Analizator składni programu PowerShell nie można określić, jeśli określone wartości są akceptowane, dopóki jest kompilowana konfiguracja.</span><span class="sxs-lookup"><span data-stu-id="09522-113">The PowerShell parser cannot determine if the values specified are acceptable until the Configuration is compiled.</span></span>
+
+```powershell
+Configuration ServiceState
+{
+    # It is best practice to explicitly import any resources used in your Configurations.
+    Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
+    Node localhost
+    {
+        Service Spooler
+        {
+            Name = "Spooler"
+            State = $(Get-Service -Name 'spooler').Status
+            StartType = $(Get-Service -Name 'spooler').StartType
+        }
+    }
+}
+```
+
+<span data-ttu-id="09522-114">Ponadto można utworzyć **usługi** blokowania zasobów dla każdej usługi na bieżącym komputerze przy użyciu `foreach` pętli.</span><span class="sxs-lookup"><span data-stu-id="09522-114">Additionally, you could create a **Service** block resource for every service on the current machine, using a `foreach` loop.</span></span>
+
+```powershell
+Configuration ServiceState
+{
+    # It is best practice to explicitly import any resources used in your Configurations.
+    Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
+    Node localhost
+    {
+        Foreach ($service in $(Get-Service))
+        {
+            Service $service.Name
+            {
+                Name = $service.Name
+                State = $service.Status
+                StartType = $service.StartType
+            }
+        }
+    }
+}
+```
+
+<span data-ttu-id="09522-115">Można również tylko utworzyć konfiguracje dla maszyn, które są w trybie online, za pomocą prostego `if` instrukcji.</span><span class="sxs-lookup"><span data-stu-id="09522-115">You could also only create configurations for machines that are online, by using a simple `if` statement.</span></span>
+
+```powershell
+Configuration ServiceState
+{
+    # It is best practice to explicitly import any resources used in your Configurations.
+    Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
+
+    Foreach ($computer in @('Server01', 'Server02', 'Server03'))
+    {
+        if (Test-Connection -ComputerName $computer)
+        {
+            Node $computer
+            {
+                Service "Spooler"
+                {
+                    Name = "Spooler"
+                    State = "Started"
+                }
+            }
+        }
+    }
+}
+```
+
+> [!NOTE]
+> <span data-ttu-id="09522-116">Zasób dynamiczny bloków w powyższych odwołań przykłady bieżącej maszyny.</span><span class="sxs-lookup"><span data-stu-id="09522-116">The dynamic resource blocks in the above examples reference the current machine.</span></span> <span data-ttu-id="09522-117">W tym wystąpieniu, które będą maszyny tworzenia konfiguracji na nie element docelowy węzła.</span><span class="sxs-lookup"><span data-stu-id="09522-117">In this instance, that would be the machine you are authoring the Configuration on, not the target Node.</span></span>
+
+<!---
+Mention Get-DSCConfigurationFromSystem
+-->
+
+## <a name="summary"></a><span data-ttu-id="09522-118">Podsumowanie</span><span class="sxs-lookup"><span data-stu-id="09522-118">Summary</span></span>
+
+<span data-ttu-id="09522-119">Podsumowując można użyć dowolnego języka programu PowerShell w ramach konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="09522-119">In summary, you can use any PowerShell language within a Configuration.</span></span>
+
+<span data-ttu-id="09522-120">Obejmuje to np.:</span><span class="sxs-lookup"><span data-stu-id="09522-120">This includes things like:</span></span>
+
+- <span data-ttu-id="09522-121">Niestandardowe obiekty</span><span class="sxs-lookup"><span data-stu-id="09522-121">Custom Objects</span></span>
+- <span data-ttu-id="09522-122">Tabele</span><span class="sxs-lookup"><span data-stu-id="09522-122">Hashtables</span></span>
+- <span data-ttu-id="09522-123">Manipulowanie ciągami</span><span class="sxs-lookup"><span data-stu-id="09522-123">String manipulation</span></span>
+- <span data-ttu-id="09522-124">Komunikacja zdalna</span><span class="sxs-lookup"><span data-stu-id="09522-124">Remoting</span></span>
+- <span data-ttu-id="09522-125">Usługa WMI i CIM</span><span class="sxs-lookup"><span data-stu-id="09522-125">WMI and CIM</span></span>
+- <span data-ttu-id="09522-126">Obiekty ActiveDirectory</span><span class="sxs-lookup"><span data-stu-id="09522-126">ActiveDirectory objects</span></span>
+- <span data-ttu-id="09522-127">i więcej...</span><span class="sxs-lookup"><span data-stu-id="09522-127">and more...</span></span>
+
+<span data-ttu-id="09522-128">Każdy kod programu PowerShell, zdefiniowane w konfiguracji będą oceniane czasu kompilacji, ale możesz również umieścić kod w skrypcie zawierający konfigurację.</span><span class="sxs-lookup"><span data-stu-id="09522-128">Any PowerShell code defined in a Configuration will be evaluated a compile time, but you can also place code in the script containing your Configuration.</span></span> <span data-ttu-id="09522-129">Każdy kod poza blokiem konfiguracji zostaną wykonane podczas importowania konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="09522-129">Any code outside of the Configuration block will be executed when you import your Configuration.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="09522-130">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="09522-130">See also</span></span>
+
+- [<span data-ttu-id="09522-131">Dodaj parametry konfiguracji</span><span class="sxs-lookup"><span data-stu-id="09522-131">Add parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)
+- [<span data-ttu-id="09522-132">Oddzielenie danych konfiguracji z konfiguracji</span><span class="sxs-lookup"><span data-stu-id="09522-132">Separate Configuration data from Configurations</span></span>](configData.md)
