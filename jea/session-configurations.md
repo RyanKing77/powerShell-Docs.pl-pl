@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Konfiguracje sesji usługi JEA
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522966"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655467"
 ---
 # <a name="jea-session-configurations"></a>Konfiguracje sesji usługi JEA
 
@@ -80,6 +80,8 @@ Gdy określona jest co najmniej jedną grupę zabezpieczeń, konta wirtualnej ju
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> Kont wirtualnych tymczasowo są przyznawane logowanie w trybie usługi w zasadach zabezpieczeń serwera lokalnego.  Jeśli jeden z VirtualAccountGroups określone zostało już udzielone tego prawa w zasadach, pojedyncze konto wirtualnego nie jest już będą dodawane i usuwane z zasad.  Może to być przydatne w scenariuszach takich jak kontrolery domeny, w których poprawki, zasady zabezpieczeń kontrolera domeny są ściśle poddawane inspekcji.  To jest dostępna tylko w systemu Windows Server 2016 z listopada 2018 r lub nowszy pakiet zbiorczy i 2019 serwera systemu Windows za pomocą 2019 stycznia lub nowszej.
 
 #### <a name="group-managed-service-account"></a>Konto usługi zarządzane przez grupę
 

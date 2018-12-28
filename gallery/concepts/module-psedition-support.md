@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Moduły z niezgodne wersje programu PowerShell
-ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002688"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655331"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduły z niezgodne wersje programu PowerShell
 
 Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które charakteryzują się różnymi zestawami funkcji i zgodnością z różnymi platformami.
 
-- **Wersja Desktop:** jest oparta na programie .NET Framework i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w pełnych wersjach systemu Windows, takich jak instalacja Podstawowe funkcje serwera i system Windows dla komputerów stacjonarnych.
-- **Wersja Core:** jest oparta na module .NET Core i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w ograniczonych wersjach systemu Windows, takich jak system Nano Server i Windows IoT.
+- **Wersja Desktop:** Oparta na programie .NET Framework i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w pełnych wersjach systemu Windows, takich jak instalacja Server Core i Windows Desktop.
+- **Wersja Core:** Oparta na module .NET Core i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w ograniczonych wersjach systemu Windows, takich jak Nano Server i Windows IoT.
 
 Uruchomiona wersja programu PowerShell jest wyświetlany we właściwości PSEdition `$PSVersionTable`.
 
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [Skrypty z elementami PSEdition](script-psedition-support.md)
 
-[Obsługa elementami Psedition w galerii PowerShellGallery](../how-to/finding-packages/searching-by-psedition.md)
+[Obsługa elementami Psedition w galerii PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Aktualizowanie manifestu modułu](/powershell/module/powershellget/update-modulemanifest)

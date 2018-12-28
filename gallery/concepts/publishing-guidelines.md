@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 description: Wytyczne dotyczące wydawców
 title: Galeria programu PowerShell publikowania wskazówki i najlepsze rozwiązania
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235409"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655399"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Galerii PowerShellGallery publikowania wskazówki i najlepsze rozwiązania
 
@@ -33,6 +33,7 @@ Pakiety, które należy wykonać te wytyczne są znacznie bardziej prawdopodobna
 - Szybkość reakcji na opinie
 - Podaj modułów zamiast skryptów
 - Zawierają linki do witryny projektu
+- Tag do pakietu przy użyciu zgodnych PSEdition(s) i platform 
 - Uwzględnić testy za pomocą moduły
 - Obejmują i/lub łącze do postanowień licencyjnych
 - Zarejestruj swój kod
@@ -92,8 +93,8 @@ Użytkownicy, którzy zwyczajowo opinii są ważne, aby odpowiedzieć, jak zaint
 
 Dostępne są dwie metody opinii w galerii programu PowerShell:
 
-- Skontaktuj się z pomocą właściciela: Umożliwia użytkownikowi Wyślij wiadomość e-mail do właściciele pakietu. Jako właściciel pakietu ważne jest, aby monitorować adres e-mail używany w pakiety galerii programu PowerShell i reagowanie na problemy, które są wywoływane. Jedną wadą tej metody jest to, czy tylko użytkowników i właściciel nigdy nie zobaczą komunikacji, aby właściciel może być konieczne Odpowiedz na pytanie, tym samym wiele razy.
-- Uwagi: W dolnej części strony pakietu jest pole Komentarz.
+- Skontaktuj się z właścicielem: Dzięki temu użytkownikowi Wyślij wiadomość e-mail do właściciele pakietu. Jako właściciel pakietu ważne jest, aby monitorować adres e-mail używany w pakiety galerii programu PowerShell i reagowanie na problemy, które są wywoływane. Jedną wadą tej metody jest to, czy tylko użytkowników i właściciel nigdy nie zobaczą komunikacji, aby właściciel może być konieczne Odpowiedz na pytanie, tym samym wiele razy.
+- Uwagi: Pole komentarza jest strony w dolnej części pakietu.
   Zaletą tego systemu jest, że użytkownicy widzieli, komentarze i odpowiedzi, co zmniejsza liczbę przypadków, gdy otrzymasz odpowiedzi na każde pytanie w jednym.
   Jako właściciel pakietu zdecydowanie zaleca się postępowanie zgodnie z komentarzy dla każdego pakietu.
 Zobacz [zapewnianie opinii za pośrednictwem mediów społecznościowych i komentarzy](../how-to/working-with-packages/social-media-feedback.md) szczegółowe informacje na temat jak to zrobić.
@@ -134,6 +135,16 @@ Dodawanie łącza odbywa się przy tym ProjectURI w sekcji PSData w manifeście 
         ProjectUri = 'https://github.com/powershell/powershell'
 
 Gdy ProjectURI została podana, galerii programu PowerShell będzie zawierać link do witryny projektu z lewej strony pakietu.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Tag do pakietu przy użyciu zgodnych PSEdition(s) i platform 
+
+Aby zademonstrować dla użytkowników, które pakiety będą dobrze współpracować z ich środowiska za pomocą następujących znaczników:
+
+- PSEdition_Desktop: Pakiety, które są zgodne z programem Windows PowerShell 
+- PSEdition_Core: Pakiety, które są zgodne z programu Powershell Core 
+- Windows: Pakiety, które są zgodne z systemu operacyjnego Windows
+- Linux: Pakiety, które są zgodne z systemem operacyjnym Linux 
+- System MacOS: Pakiety, które są zgodne z systemu operacyjnego Mac
 
 ## <a name="include-tests"></a>Uwzględnić testy
 

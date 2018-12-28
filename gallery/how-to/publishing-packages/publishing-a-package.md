@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Tworzenie i publikowanie elementu
-ms.openlocfilehash: ced892b558b81c3ef9575b5a01e74932515b412a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 3875c7ae8231f254e655f149c788503cb0b3077c
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004080"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655433"
 ---
 # <a name="creating-and-publishing-an-item"></a>Tworzenie i publikowanie elementu
 
@@ -56,10 +56,11 @@ PrivateData obsługuje dodawanie nowych kluczy, więc elementy, które są okre�
 Manifest elementów, które są dla Ciebie najważniejsze do wypełnienia dla elementu, który publikowanie w galerii programu PowerShell są:
 
 - Skrypt lub modułu nazwa — te są pobierane z nazwy. PS1, aby uzyskać skrypt lub. PSD1 dla modułu.
-- Wersja — jest wymagany klucz podstawowy, format powinien być zgodny z wytycznymi SemVer (zobacz najważniejsze wskazówki, aby uzyskać szczegółowe informacje)
-- Autor - jest wymagany klucz podstawowy i zawiera nazwę, która ma zostać skojarzony z elementem (zobacz twórcy i właściciele, poniżej)
+- Wersja — jest wymagany klucz podstawowy, format powinien być zgodny z wytycznymi SemVer. Aby uzyskać szczegółowe informacje, zobacz najważniejsze wskazówki.
+- Autor - to jest wymagany klucz podstawowy i zawiera nazwę, która ma zostać skojarzony z elementem. Zobacz twórcy i właściciele poniżej.
 - Opis — jest wymagany klucz podstawowy używany do krótko opisano, co robi ten element, a także wymagania dotyczące korzystania z niego
 - ProjectURI — jest to zdecydowanie zalecane pole identyfikatora URI w PSData, która zawiera link do repozytorium Github lub podobne lokalizacji, w których wykonują rozwoju w elemencie
+- Tagi — silne zalecane jest tagowanie pakietu oparte na zgodności z elementami Psedition i platform. Zobacz [wskazówki dotyczące publikowania](/powershell/gallery/concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms) Aby uzyskać szczegółowe informacje.
 
 Elementy twórcy i właściciele galerii programu PowerShell to pojęcia pokrewne, ale nie zawsze być zgodna.
 Właścicielami elementów znajdują się użytkownicy z kontami w galerii programu PowerShell, które ma uprawnienia do zachowania elementu. Może istnieć wiele właścicieli, które mogą aktualizować dowolnego elementu.
@@ -104,7 +105,7 @@ Większość innych opcji wiersza polecenia powinny być manifestu danych dla el
 Aby uniknąć błędów, zalecane jest, spróbuj poleceń przy użyciu - Whatif-Verbose, przed opublikowaniem.
 Spowoduje to zapisanie znaczną ilość czasu od momentu za każdym razem, gdy opublikujesz w galerii programu PowerShell, należy zaktualizować numer wersji w sekcji manifestu elementu.
 
-Byłoby przykłady: "Publish-Module-ścieżki". \MyModule "- RequiredVersion"0.0.1"- NugetAPIKey"GUID"- Whatif — pełne" "Publish-Script-ścieżki".\MyScriptFile.PS1"- NugetAPIKey"GUID"- Whatif — pełne"
+Przykładami mogą być następujące: "Moduł publikowania — ścieżka". \MyModule "- RequiredVersion"0.0.1"- NugetAPIKey"GUID"- Whatif — pełne" "skryptów publikowania — - NugetAPIKey".\MyScriptFile.PS1"Path"GUID"- Whatif — pełne"
 
 Uważnie przejrzyj dane wyjściowe, a Jeśli widzisz nie ostrzeżeń ani błędów, powtórz polecenie bez - Whatif.
 
