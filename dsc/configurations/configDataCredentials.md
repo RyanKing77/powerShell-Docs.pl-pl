@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Opcje poświadczeń w danych konfiguracji
-ms.openlocfilehash: a1ecccfd0560903fa8c1cec9a4d57e7217be7f6c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c4057457bf6beb2c5fc9dffef9122cd488ccdcd7
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404970"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012436"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opcje poświadczeń w danych konfiguracji
 >Dotyczy: Windows PowerShell 5.0
@@ -41,23 +41,24 @@ $username = "User1"
 # DSC requires explicit confirmation before storing passwords insecurely
 $ConfigurationData = @{
     AllNodes = @(
-        @{
-            # The "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-            NodeName="*"
-            PSDscAllowPlainTextPassword = $true
-        },
-        #however, each node still needs to be explicitly defined for "*" to have meaning
-        @{
-            NodeName = "TestMachine1"
-        },
-        #we can also use a property to define node-specific passwords, although this is no more secure
-        @{
-            NodeName = "TestMachine2";
-            UserName = "User2"
-            LocalPassword = "ThisIsYetAnotherPlaintextPassword"
-        }
+            @{
+                # The "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
+                NodeName="*"
+                PSDscAllowPlainTextPassword = $true
+            },
+            #however, each node still needs to be explicitly defined for "*" to have meaning
+            @{
+                NodeName = "TestMachine1"
+            },
+            #we can also use a property to define node-specific passwords, although this is no more secure
+            @{
+                NodeName = "TestMachine2";
+                UserName = "User2"
+                LocalPassword = "ThisIsYetAnotherPlaintextPassword"
+            }
         )
 }
+
 configuration unencryptedPasswordDemo
 {
     Node "TestMachine1"
@@ -112,17 +113,48 @@ configuration unencryptedPasswordDemo
             MembersToInclude = "User2"
         }
     }
-
 }
+
 # We declared the ConfigurationData in a local variable, but we need to pass it in to our configuration function
 # We need to invoke the configuration function we created to generate a MOF
 unencryptedPasswordDemo -ConfigurationData $ConfigurationData
+
 # We need to pass the MOF to the machines we named.
 #-wait: doesn't use jobs so we get blocked at the prompt until the configuration is done
 #-verbose: so we can see what's going on and catch any errors
 #-force: for testing purposes, I run start-dscconfiguration frequently + want to make sure i'm
 #        not blocked by previous configurations that are still running
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
+```
+
+Jest to fragment pliku "MOF", wygenerowanego przez konfigurację "TestMachine1". `System.Security.SecureString` Używanych w konfiguracji został przekonwertowany na zwykły tekst i przechowywane w pliku "MOF" jako `MSF_Credential`. Element `SecureString` jest szyfrowana za pomocą bieżącego profilu użytkowników. Działa to dobrze z wszystkie formularze zarządzania zdalnego programu PowerShell. Plik "MOF" została zaprojektowana jako mechanizm autonomicznej konfiguracji autonomicznej. Począwszy od programu PowerShell w wersji 5.0 "pliki"MOF w węźle są szyfrowane w stanie spoczynku, ale nie przesyłanych do węzła. Oznacza to, czy w pliku "MOF" hasła są widoczne jako zwykłego tekstu, po zastosowaniu do węzła. Aby zaszyfrować poświadczenia, należy użyć **serwera ściągania**. Aby uzyskać więcej informacji, zobacz [MOF Zabezpieczanie plików przy użyciu certyfikatów](./pull-server/secureMOF.md).
+
+```syntax
+instance of MSFT_Credential as $MSFT_Credential1ref
+{
+Password = "ThisIsYetAnotherPlaintextPassword";
+ UserName = "User2";
+
+};
+
+instance of MSFT_UserResource as $MSFT_UserResource1ref
+{
+ResourceID = "[User]User2";
+ Description = "local account";
+ UserName = "User2";
+ Ensure = "Present";
+ Password = $MSFT_Credential1ref;
+ Disabled = False;
+ SourceInfo = "::66::9::User";
+ PasswordNeverExpires = True;
+ ModuleName = "PsDesiredStateConfiguration";
+ PasswordChangeRequired = False;
+
+ModuleVersion = "1.0";
+
+ ConfigurationName = "unencryptedPasswordDemo";
+
+};
 ```
 
 ## <a name="handling-credentials-in-dsc"></a>Obsługa poświadczeń w DSC

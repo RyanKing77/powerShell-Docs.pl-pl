@@ -1,16 +1,16 @@
 ---
 ms.date: 08/24/2018
 keywords: polecenia cmdlet programu PowerShell
-title: Poznawanie nazw programu PowerShell
+title: Poznawanie nazw poleceń programu PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405389"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012470"
 ---
-# <a name="learning-powershell-names"></a>Poznawanie nazw programu PowerShell
+# <a name="learning-powershell-command-names"></a>Poznawanie nazw poleceń programu PowerShell
 
 Poznawanie nazw poleceń i parametrów wymaga inwestycji znaczną ilość czasu, z większości interfejsów z wierszem polecenia. Problem polega na tym, że istnieje kilka wzorców. Zapamiętywania jest jedynym sposobem, aby dowiedzieć się więcej poleceń i parametrów, które należy użyć w regularnych odstępach czasu.
 

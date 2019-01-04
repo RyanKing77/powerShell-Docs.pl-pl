@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Dalsze zasoby szkoleniowe dotyczące programu PowerShell
-ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405228"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012555"
 ---
 # <a name="more-powershell-learning"></a>Dalsze zasoby szkoleniowe dotyczące programu PowerShell
 
@@ -29,23 +29,9 @@ Oprócz pomocy dostępnej w wierszu polecenia poniższe zasoby przedstawiają wi
 - [Wprowadzenie do programu PowerShell 3.0 — Szybkie rozpoczynanie pracy](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Zaawansowane narzędzia i skrypty przy użyciu programu PowerShell 3.0 szybkie rozpoczęcie pracy](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
-### <a name="script-center-learn"></a>Dowiedz się więcej w Centrum skryptów
+### <a name="channel-9-videos"></a>Filmy na kanale 9
 
-#### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials zajęty serii administratora
-
-- [PowerShell "SmowerShell" — Dlaczego należy dowiesz się, program Windows PowerShell część 1](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Słyszeli go za pośrednictwem potoku — jak do złożone polecenia programu PowerShell Windows dla zabawy i zysk, część 2](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Jedyny dostawca? Nie jest bardzo trudno — przyjrzeć się Windows PowerShell dostawców część 3](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [Zdarzenie główne — środowisko Windows PowerShell jest dzienniki zdarzeń, część 4](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [Więcej niż jest możliwe zdalnie — za pomocą programu Windows PowerShell do zarządzania zdalnego pulpitu część 5](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
-
-#### <a name="learn-it-now-before-its-an-emergency"></a>Dowiedz się go teraz przed awaryjnego
-
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 1](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 2](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 3](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 4](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Program Windows PowerShell: Dowiedz się go teraz przed nagłych — część 5](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+Witryna Channel 9 to nasze wideo platforma publikacji. Dostępne są setki filmów wideo na temat programu PowerShell. [Wyszukaj "PowerShell"](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) wideo są dostępne.
 
 ## <a name="resources-for-windows-powershell-developers"></a>Zasoby dla deweloperów programu PowerShell Windows
 

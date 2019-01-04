@@ -1,15 +1,15 @@
 ---
-title: Jak replikować środowiska ISE w programie Visual Studio Code
-description: Jak replikować środowiska ISE w programie Visual Studio Code
+title: Jak replikować obsługę środowiska ISE w programie Visual Studio Code
+description: Jak replikować obsługę środowiska ISE w programie Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: 0ac38985a842a0dfc6118d0ae7116d12e1579daf
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
+ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655539"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54012487"
 ---
-# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Jak replikować środowiska ISE w programie Visual Studio Code
+# <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Jak replikować obsługę środowiska ISE w programie Visual Studio Code
 
 Rozszerzenie programu PowerShell dla programu VSCode nie Szukaj równoważności funkcji pełną przy użyciu programu PowerShell ISE, są funkcje aby usprawnić środowisko programu VSCode stosować bardziej naturalne użytkownikom środowiska ISE.
 
@@ -57,7 +57,7 @@ Aby zatrzymać zintegrowana Konsola podczas uruchamiania, należy ustawić:
 ```
 
 > [!NOTE]
-> Tło procesu programu PowerShell nadal rozpocznie się, ponieważ zapewniający intellisense, analizy skryptu, nawigacji symboli, itp. Jednak konsoli nie był już wyświetlany.
+> Tło procesu programu PowerShell nadal rozpocznie się od czasu, który oferuje funkcję IntelliSense, analizy skryptu, nawigacji symboli, itp. Jednak konsoli nie był już wyświetlany.
 
 ## <a name="assume-files-are-powershell-by-default"></a>Przyjęto założenie, że pliki są PowerShell domyślnie
 
