@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasoby DSC
-ms.openlocfilehash: 02e1b9856942cf28e77d83dac89681a08cf6bb74
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012453"
+ms.locfileid: "54046695"
 ---
 # <a name="dsc-resources"></a>Zasoby DSC
 
@@ -104,3 +104,53 @@ Configuration TestConfig
 > Począwszy od programu PowerShell w wersji 5.0, dodano intellisense DSC. Ta nowa funkcja umożliwia \<kartę\> i \<Ctrl + spacja\> do automatycznego uzupełniania nazw kluczy.
 
 ![Uzupełnianie kartę zasobów](../media/resource-tabcompletion.png)
+
+## <a name="built-in-resources"></a>Zasoby wbudowane
+
+Oprócz zasobów społeczności istnieją wbudowane zasoby dla Windows, zasoby dla systemu Linux i zasoby dla zależności między węzłami. Skorzystaj z powyższych kroków, składni tych zasobów i sposobu ich używania. Stron, które pełnią te zasoby zostały zarchiwizowane w obszarze **odwołania**.
+
+Zasoby wbudowane Windows
+
+* [Zasób archiwum](../reference/resources/windows/archiveResource.md)
+* [Zasób środowiska](../reference/resources/windows/environmentResource.md)
+* [Zasób pliku](../reference/resources/windows/fileResource.md)
+* [Zasób grupy](../reference/resources/windows/groupResource.md)
+* [Zasób GroupSet](../reference/resources/windows/groupSetResource.md)
+* [Zasób dziennika](../reference/resources/windows/logResource.md)
+* [Zasób pakietu](../reference/resources/windows/packageResource.md)
+* [Zasób ProcessSet](../reference/resources/windows/ProcessSetResource.md)
+* [Zasób rejestru](../reference/resources/windows/registryResource.md)
+* [Zasób skryptu](../reference/resources/windows/scriptResource.md)
+* [Zasób usługi](../reference/resources/windows/serviceResource.md)
+* [Zasób ServiceSet](../reference/resources/windows/serviceSetResource.md)
+* [Zasób użytkownika](../reference/resources/windows/userResource.md)
+* [Zasób WindowsFeature](../reference/resources/windows/windowsFeatureResource.md)
+* [Zasób WindowsFeatureSet](../reference/resources/windows/windowsFeatureSetResource.md)
+* [Zasób WindowsOptionalFeature](../reference/resources/windows/windowsOptionalFeatureResource.md)
+* [Zasób WindowsOptionalFeatureSet](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+* [WindowsPackageCabResource zasobów](../reference/resources/windows/windowsPackageCabResource.md)
+* [Zasób WindowsProcess](../reference/resources/windows/windowsProcessResource.md)
+
+[Zależności między węzłami](../configurations/crossNodeDependencies.md) zasobów
+
+* [WaitForAll zasobów](../reference/resources/windows/waitForAllResource.md)
+* [WaitForSome zasobów](../reference/resources/windows/waitForSomeResource.md)
+* [WaitForAny zasobów](../reference/resources/windows/waitForAnyResource.md)
+
+Pakiet zarządzania zasobami
+
+* [Zasób funkcji PackageManagement](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource zasobów](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+
+Zasoby systemu Linux
+
+* [Zasób archiwum systemu Linux](../reference/resources/linux/lnxArchiveResource.md)
+* [Zasób środowiska systemu Linux](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Zasób FileLine systemu Linux](../reference/resources/linux/lnxFileLineResource.md)
+* [Zasób pliku systemu Linux](../reference/resources/linux/lnxFileResource.md)
+* [Zasób grupy systemu Linux](../reference/resources/linux/lnxGroupResource.md)
+* [Zasób pakietu systemu Linux](../reference/resources/linux/lnxPackageResource.md)
+* [Zasób skryptu systemu Linux](../reference/resources/linux/lnxScriptResource.md)
+* [Zasób usługi w systemie Linux](../reference/resources/linux/lnxServiceResource.md)
+* [Zasób SshAuthorizedKeys systemu Linux](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Zasób użytkownika w systemie Linux](../reference/resources/linux/lnxUserResource.md)

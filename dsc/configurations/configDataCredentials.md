@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Opcje poświadczeń w danych konfiguracji
-ms.openlocfilehash: c4057457bf6beb2c5fc9dffef9122cd488ccdcd7
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 10cf3456fcc7104b7dd779db30aebace54ba087a
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012436"
+ms.locfileid: "54046645"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Opcje poświadczeń w danych konfiguracji
 >Dotyczy: Windows PowerShell 5.0
@@ -115,7 +115,8 @@ configuration unencryptedPasswordDemo
     }
 }
 
-# We declared the ConfigurationData in a local variable, but we need to pass it in to our configuration function
+# We declared the ConfigurationData in a local variable, but we need to pass it
+# in to our configuration function
 # We need to invoke the configuration function we created to generate a MOF
 unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 
@@ -127,7 +128,7 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-Jest to fragment pliku "MOF", wygenerowanego przez konfigurację "TestMachine1". `System.Security.SecureString` Używanych w konfiguracji został przekonwertowany na zwykły tekst i przechowywane w pliku "MOF" jako `MSF_Credential`. Element `SecureString` jest szyfrowana za pomocą bieżącego profilu użytkowników. Działa to dobrze z wszystkie formularze zarządzania zdalnego programu PowerShell. Plik "MOF" została zaprojektowana jako mechanizm autonomicznej konfiguracji autonomicznej. Począwszy od programu PowerShell w wersji 5.0 "pliki"MOF w węźle są szyfrowane w stanie spoczynku, ale nie przesyłanych do węzła. Oznacza to, czy w pliku "MOF" hasła są widoczne jako zwykłego tekstu, po zastosowaniu do węzła. Aby zaszyfrować poświadczenia, należy użyć **serwera ściągania**. Aby uzyskać więcej informacji, zobacz [MOF Zabezpieczanie plików przy użyciu certyfikatów](./pull-server/secureMOF.md).
+Jest to fragment pliku "MOF", wygenerowanego przez konfigurację "TestMachine1". `System.Security.SecureString` Używanych w konfiguracji został przekonwertowany na zwykły tekst i przechowywane w pliku "MOF" jako `MSF_Credential`. Element `SecureString` jest szyfrowana za pomocą bieżącego profilu użytkowników. Działa to dobrze z wszystkie formularze zarządzania zdalnego programu PowerShell. Plik "MOF" została zaprojektowana jako mechanizm autonomicznej konfiguracji autonomicznej. Począwszy od programu PowerShell w wersji 5.0 "pliki"MOF w węźle są szyfrowane w stanie spoczynku, ale nie przesyłanych do węzła. Oznacza to, czy w pliku "MOF" hasła są widoczne jako zwykłego tekstu, po zastosowaniu do węzła. Aby zaszyfrować poświadczenia, należy użyć **serwera ściągania**. Aby uzyskać więcej informacji, zobacz [MOF Zabezpieczanie plików przy użyciu certyfikatów](../pull-server/secureMOF.md).
 
 ```syntax
 instance of MSFT_Credential as $MSFT_Credential1ref
