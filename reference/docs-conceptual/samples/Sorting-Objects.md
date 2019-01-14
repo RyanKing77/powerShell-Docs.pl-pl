@@ -137,7 +137,7 @@ Klucze w tabelach skrótów do sortowania można stosować skrót, jako pokazano
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-W tym przykładzie **e** oznacza **wyrażenie**, **d** oznacza **Descending**i **a**** oznacza **rosnąco**.
+W tym przykładzie **e** oznacza **wyrażenie**, **d** oznacza **Descending**i **a** oznacza **rosnąco**.
 
 Aby poprawić czytelność, możesz umieścić tabel skrótów do oddzielnych zmiennej:
 
