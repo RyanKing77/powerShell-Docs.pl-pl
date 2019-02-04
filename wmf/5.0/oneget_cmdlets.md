@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 2f05fe96ec792a31fabf3aff0f9e18b40178316c
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893192"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685312"
 ---
 # <a name="packagemanagement-cmdlets"></a>Polecenia cmdlet funkcji PackageManagement
 
@@ -52,7 +52,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdletpowershellmodulepackagemanagementfind-packageprovider"></a>[Znajdź PackageProvider polecenia Cmdlet](/powershell/module/PackageManagement/Find-PackageProvider)
+## <a name="find-packageprovider-cmdletpowershellmodulepackagemanagementfind-packageprovider"></a>[Find-PackageProvider Cmdlet](/powershell/module/PackageManagement/Find-PackageProvider)
 
 `Find-PackageProvider` Polecenie cmdlet umożliwia znalezienie dopasowania PackageManagement dostawców, które są dostępne w źródeł pakietów zarejestrowane przy użyciu funkcji PowerShellGet. Są one dostępne do zainstalowania przy użyciu dostawcy pakietu `Install-PackageProvider` polecenia cmdlet. Domyślnie w tym moduły dostępne w galerii programu PowerShell przy użyciu tagów "Provider" i "PackageManagement".
 
@@ -82,7 +82,7 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[Polecenie Cmdlet Get-PackageProvider](/powershell/module/PackageManagement/Get-PackageProvider)
+## <a name="get-packageprovider-cmdletpowershellmodulepackagemanagementget-packageprovider"></a>[Get-PackageProvider Cmdlet](/powershell/module/PackageManagement/Get-PackageProvider)
 
 Dostawcy pakietu, które są ładowane i gotowe do użycia na komputerze lokalnym można spisywany używając polecenia cmdlet.
 
@@ -106,7 +106,7 @@ Get-PackageSource
 Get-PackageSource –ProviderName PowerShellGet
 ```
 
-## <a name="import-packageprovider-cmdletpowershellmodulepackagemanagementimport-packageprovider"></a>[Polecenia Cmdlet Import-PackageProvider](/powershell/module/PackageManagement/Import-PackageProvider)
+## <a name="import-packageprovider-cmdletpowershellmodulepackagemanagementimport-packageprovider"></a>[Import-PackageProvider Cmdlet](/powershell/module/PackageManagement/Import-PackageProvider)
 
 To polecenie cmdlet umożliwia dodawanie dostawców pakietu zarządzania pakietami do bieżącej sesji.
 
@@ -145,7 +145,7 @@ Install-Package -Name jquery -Source nuget.org -Destination c:\test
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination c:\test
 ```
 
-## <a name="install-packageprovider-cmdletpowershellmodulepackagemanagementinstall-packageprovider"></a>[Polecenia Cmdlet Install-PackageProvider](/powershell/module/PackageManagement/Install-PackageProvider)
+## <a name="install-packageprovider-cmdletpowershellmodulepackagemanagementinstall-packageprovider"></a>[Install-PackageProvider Cmdlet](/powershell/module/PackageManagement/Install-PackageProvider)
 
 To polecenie cmdlet instaluje przynajmniej jednego dostawcy pakietu zarządzania pakietami.
 

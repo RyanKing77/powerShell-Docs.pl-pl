@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Dodatek 1 Aliasy zgodności
 ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
 ms.openlocfilehash: 113bbee1af185f98777df5767022d54accb69447
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405555"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684689"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Dodatek 1 - aliasy zgodności
 
@@ -24,14 +24,14 @@ Alias           cls                             Clear-Host
 
 |Polecenie CMD|Polecenie systemu UNIX|PS Polecenie|PS Alias|
 |---------------|----------------|--------------|------------|
-|**dir**|**Ls**|**Polecenie GET-ChildItem**|**gci**|
-|**ze specyfikacją CLS**|**Usuń zaznaczenie**|**Wyczyść hosta** (funkcja)|**ze specyfikacją CLS**|
-|**DEL, czyszczenie, rmdir**|**Menedżer zasobów**|**Usuń element**|**wystąpienie zarezerwowane**|
-|**Kopiuj**|**CP**|**Kopiuj element**|**ciągła Integracja**|
-|**Przenieś**|**mV**|**Przenieś element**|**wystąpienia zarządzanego**|
+|**dir**|**Ls**|**Get-ChildItem**|**gci**|
+|**cls**|**Usuń zaznaczenie**|**Wyczyść hosta** (funkcja)|**cls**|
+|**DEL, czyszczenie, rmdir**|**rm**|**Remove-Item**|**ri**|
+|**Kopiuj**|**cp**|**Kopiuj element**|**ci**|
+|**Przenieś**|**mV**|**Move-Item**|**mi**|
 |**Zmień nazwę**|**mV**|**Zmień nazwę elementu**|**rni**|
-|**Typ**|**CAT**|**Pobierz zawartość**|**odzyskiwanie pamięci**|
-|**ciągłe dostarczanie**|**ciągłe dostarczanie**|**Ustawianie lokalizacji**|**SL**|
-|**MD**|**mkdir**|**Nowy element**|**Ni**|
+|**type**|**cat**|**Get-Content**|**gc**|
+|**cd**|**cd**|**Ustawianie lokalizacji**|**sl**|
+|**md**|**mkdir**|**Nowy element**|**ni**|
 |**pushd**|**pushd**|**Lokalizacja wypychania**|**pushd**|
 |**popd**|**popd**|**Lokalizacji POP**|**popd**|

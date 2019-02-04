@@ -4,11 +4,11 @@ contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Instalowanie menedżera pakietów PowerShellGet
 ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002227"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683877"
 ---
 # <a name="installing-powershellget"></a>Instalowanie menedżera pakietów PowerShellGet
 
@@ -17,7 +17,7 @@ ms.locfileid: "50002227"
 - [Windows 10](https://www.microsoft.com/windows) lub nowszej
 - [System Windows Server 2016](/windows-server/windows-server) lub nowszej
 - [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) lub nowszej
-- [Program PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
+- [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>Uzyskiwanie modułu PowerShellGet w przypadku programu PowerShell w wersji 3.0 i 4.0
 

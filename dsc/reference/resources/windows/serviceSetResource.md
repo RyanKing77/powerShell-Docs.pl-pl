@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób Serviceset DSC
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048386"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685662"
 ---
 # <a name="dsc-serviceset-resource"></a>Zasób Serviceset DSC
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 **ServiceSet** zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania usługami na węzeł docelowy. Ten zasób jest [złożonego zasobów](../../../resources/authoringResourceComposite.md) wywołująca [usługi zasobów](serviceResource.md) każdą usług określonych w `Name` właściwości.
 

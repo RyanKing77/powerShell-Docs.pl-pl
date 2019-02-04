@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Obiekt ISEAddOnTool
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ms.openlocfilehash: e091f37601c7a4fdaf5deff8c668b18ee7369e74
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405515"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687902"
 ---
 # <a name="the-iseaddontool-object"></a>Obiekt ISEAddOnTool
 

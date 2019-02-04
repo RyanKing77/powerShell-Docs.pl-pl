@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1c4a7ad30b04d138ba8a840968a6bf1763448ac6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222008"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688266"
 ---
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interakcje z łącza symbolicznego przy użyciu ulepszone elementu poleceń cmdlet
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interakcja z symboliczne linki korzystające z poleceń cmdlet elementów ulepszone
 
-Do obsługi łączy symbolicznych,  **\*— element** i zostały rozszerzone kilka pokrewne polecenia cmdlet. Teraz możesz utworzyć łącza symbolicznego w jednej, prosty wiersz z **nowy element**. Można zauważyć, że polecenia cmdlet związane z elementu (**Remove-Item, Get-ChildItem**) działają bardzo podobnie do wcześniej.
+Do obsługi łącza symbolicznego,  **\*— element** i kilka powiązane polecenia cmdlet zostały rozszerzone. Teraz możesz utworzyć łącza symbolicznego, w wierszu pojedynczy, proste **nowy element**. Należy zauważyć, że polecenia cmdlet związane z elementu (**Remove-Item, Get-ChildItem**) działają bardzo podobnie do wcześniej.
 
-Poniżej zamieszczono niektóre zastosowań nowe możliwości:
+Poniżej przedstawiono, że niektóre zastosowań nowych możliwości:
 
 ## <a name="new-item"></a>NOWY ELEMENT
 
-### <a name="symbolic-link-files"></a>ŁĄCZE SYMBOLICZNE PLIKÓW
+### <a name="symbolic-link-files"></a>ŁĄCZA SYMBOLICZNEGO, PLIKI
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -45,21 +45,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### <a name="hard-links"></a>TWARDE ŁĄCZA
+### <a name="hard-links"></a>TWARDE LINKI
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a>SKRZYŻOWANIACH KATALOGU
+### <a name="directory-junctions"></a>KATALOG W PUNKTACH TRANSFERU
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## <a name="get-childitem"></a>GET-CHILDITEM
+## <a name="get-childitem"></a>POLECENIE GET-CHILDITEM
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem

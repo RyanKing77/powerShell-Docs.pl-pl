@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Program Windows PowerShell Desired State Configuration — omówienie
 ms.openlocfilehash: 3e4f0afa17ab60bfa98f1b86b9830462a7c8e1cf
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405269"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686313"
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Program Windows PowerShell Desired State Configuration — omówienie
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC to platforma zarządzania w programie PowerShell, który pozwala na zarządzanie IT i rozwój infrastruktury za pomocą konfiguracji jako kodu.
 

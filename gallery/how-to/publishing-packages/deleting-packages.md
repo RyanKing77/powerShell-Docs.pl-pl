@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Usuwanie pakietów
 ms.openlocfilehash: ca5e68fcad52e4c7561d2c2b3858228652f22e0b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004120"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684976"
 ---
 # <a name="deleting-packages"></a>Usuwanie pakietów
 

@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892367"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685620"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Wyodrębnianie i analizowanie obiektów ze strukturą poza ciągiem
 
@@ -31,8 +31,8 @@ Rozdzielany podczas analizowania, domyślnie dzieli dane wejściowe na biały zn
 ```
 
 ```output
-P1     P2
---     --
+P1     P2
+--     --
 Hello  World
 ```
 
@@ -41,49 +41,49 @@ Polecenie cmdlet obsługuje również generowanych automatycznie oparte na przyk
 Aby rozpocząć pracę, należy wziąć pod uwagę książki adresowej na podstawie tekstu:
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 
-    Thomas Hardy
+    Thomas Hardy
 
-    Seattle, WA
+    Seattle, WA
 
-    Christina Berglund
+    Christina Berglund
 
-    Redmond, WA
+    Redmond, WA
 
-    Hanna Moos
+    Hanna Moos
 
-    Puyallup, WA
+    Puyallup, WA
 ```
 
 Skopiuj z kilkoma przykładami do pliku, który będzie używany jako szablon:
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 ```
 
 Umieść nawiasy klamrowe wokół danych, którą chcesz wyodrębnić, nadając mu nazwę, jak można to zrobić. Ponieważ **nazwa** właściwości (i jego skojarzone inne właściwości) może pojawić się wiele razy, należy użyć gwiazdki (\*) do wskazania, że powoduje to wiele rekordów (w odróżnieniu od wyodrębnienie wiele właściwości do jednego rekord):
 
 ```
-    {Name\*:Ana Trujillo}
+    {Name\*:Ana Trujillo}
 
-    {City:Redmond}, {State:WA}
+    {City:Redmond}, {State:WA}
 
-    {Name\*:Antonio Moreno}
+    {Name\*:Antonio Moreno}
 
-    {City:Renton}, {State:WA}
+    {City:Renton}, {State:WA}
 ```
 
 Z tego zestawu przykłady `ConvertFrom-String` teraz automatycznie wyodrębniać oparte na obiekt danych wyjściowych z plików wejściowych podobną strukturę.
@@ -93,13 +93,13 @@ Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresse
 ```
 
 ```output
-ExtentText                     Name               City     State
-----------                     ----               ----     -----
-Ana Trujillo...                Ana Trujillo       Redmond  WA
-Antonio Moreno...              Antonio Moreno     Renton   WA
-Thomas Hardy...                Thomas Hardy       Seattle  WA
-Christina Berglund...          Christina Berglund Redmond  WA
-Hanna Moos...                  Hanna Moos         Puyallup WA
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
 ```
 
 Celu manipulowania dodatkowe dane na wyodrębniony tekst **ExtentText** właściwość przechwytuje nieprzetworzony tekst, z którego został wyodrębniony rekordu. Aby przekazać opinię na temat tej funkcji lub udostępniać zawartość, dla której występują trudności, zapisywanie przykłady, Wyślij wiadomość na adres <psdmfb@microsoft.com>.

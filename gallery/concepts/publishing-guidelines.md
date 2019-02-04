@@ -5,11 +5,11 @@ keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu Power
 description: Wytyczne dotyczące wydawców
 title: Galeria programu PowerShell publikowania wskazówki i najlepsze rozwiązania
 ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655399"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689120"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Galerii PowerShellGallery publikowania wskazówki i najlepsze rozwiązania
 
@@ -144,7 +144,7 @@ Aby zademonstrować dla użytkowników, które pakiety będą dobrze współprac
 - PSEdition_Core: Pakiety, które są zgodne z programu Powershell Core 
 - Windows: Pakiety, które są zgodne z systemu operacyjnego Windows
 - Linux: Pakiety, które są zgodne z systemem operacyjnym Linux 
-- System MacOS: Pakiety, które są zgodne z systemu operacyjnego Mac
+- MacOS : Pakiety, które są zgodne z systemu operacyjnego Mac
 
 ## <a name="include-tests"></a>Uwzględnić testy
 

@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 3f73b7cf0cdf033cbd561b3412734692bb7decd7
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 28f4f8ae2bbddc8fb5ef9d95d3061a91fcc8ffe2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187544"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687363"
 ---
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Zezwala na taki sam zduplikowane zasoby w konfiguracji
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Zezwalanie na identycznych powielonych zasobów w konfiguracji
 
-DSC Zezwalaj lub nie obsługiwać definicje powodujące konflikt zasobów w ramach konfiguracji. Zamiast w trakcie Rozwiąż konflikt, po prostu niepowodzenia. Jako ponownemu konfiguracji staje się bardziej wykorzystywany przy użyciu złożonego zasobów, konflikty itp. będzie przeprowadzana częściej. Gdy definicje powodujące konflikt zasobów są identyczne, DSC należy smart i umożliwia. W tej wersji firma Microsoft obsługuje posiadanie wielu wystąpień zasobów mających taki sam definicje:
+DSC Zezwalaj lub nie obsługiwać sprzeczne definicje zasobów w ramach konfiguracji. Zamiast próbować rozwiązać konflikt, ją po prostu nie powiedzie się. Jak ponowne użycie konfiguracji staje się bardziej wykorzystywany przez zasoby złożone, konflikty itp. nastąpi częściej. W przypadku identyczne sprzecznych definicji zasobu DSC należy inteligentne i zezwolić na to. W tej wersji obsługiwane jest posiadanie wielu wystąpień zasobów, które mają identyczne definicje:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -51,9 +51,9 @@ Configuration WebApplication
 }
 ```
 
-W poprzednich wersjach wyniki mogą być zainstalowano kompilacji nie powiodło się z powodu konfliktu między WindowsFeature FE_IIS i wystąpień WindowsFeature Worker_IIS próby zapewnienia rolę "Serwera sieci Web". Zwróć uwagę, że *wszystkie* właściwości, które mają być skonfigurowane są jednakowe w tych dwóch konfiguracjach. Ponieważ *wszystkie* właściwości w tych dwóch zasobów są identyczne, spowoduje to teraz pomyślnie kompilacji.
+W poprzednich wersjach wynik będzie, że zainstalowano kompilacji nie powiodło się z powodu konfliktu między WindowsFeature FE_IIS i wystąpień WindowsFeature Worker_IIS próby zapewnienia rolę "Serwer sieci Web". Należy zauważyć, że *wszystkich* właściwości, które są konfigurowane są identyczne w dwóch konfiguracjach. Ponieważ *wszystkich* właściwości w te dwa zasoby są identyczne, wynikiem będzie teraz pomyślnej kompilacji.
 
-Jeśli dowolne z właściwości różnią się między dwa zasoby, ich nie zostanie uwzględniony identyczne i kompilacja zakończy się niepowodzeniem:
+Jeśli dowolne z właściwości różnią się między dwa zasoby, one nie zostanie uwzględniony identyczne i kompilacja zakończy się niepowodzeniem:
 
 ```powershell
 Configuration IIS_FrontEnd
@@ -94,4 +94,4 @@ Configuration WebApplication
 }
 ```
 
-Ta konfiguracja bardzo podobne zakończy się niepowodzeniem, ponieważ WindowsFeature FE_IIS i zasoby WindowsFeature Worker_IIS nie są identyczne i w związku z tym w konflikcie.
+To bardzo podobnej konfiguracji nie powiedzie się, ponieważ WindowsFeature FE_IIS i zasoby WindowsFeature Worker_IIS nie są identyczne i w związku z tym w konflikcie.

@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 61a914cc05c4ca9592196c925e232224d193f9d8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 32a1a10ac30f4bccfdbdd4a1e4ca4ea9459a19af
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218216"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688000"
 ---
 # <a name="format-hex"></a>Format-Hex
-**Format szesnastkowy** pozwala wyświetlić dane tekstowe lub binarne w formacie szesnastkowym; zobacz [Format szesnastkowy](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
+**Format szesnastkowy** umożliwia wyświetlanie danych tekstowych lub binarnych w formacie szesnastkowym; zobacz [Format szesnastkowy](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
 
 ## <a name="example-1"></a>Przykład 1
-Wyświetl zawartość ciąg w formacie szesnastkowym.
+Wyświetl zawartość ciągu w formacie szesnastkowym.
 
 ```powershell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex

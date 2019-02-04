@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Obiekt ISEEditor
 ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405491"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686152"
 ---
 # <a name="the-iseeditor-object"></a>Obiekt ISEEditor
 
@@ -39,7 +39,7 @@ Przewija edytora, dzięki czemu wiersz, który odpowiada określony **lineNumber
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
-### <a name="focus"></a>Fokus\(\)
+### <a name="focus"></a>Focus\(\)
 
 Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 
@@ -86,7 +86,7 @@ Zamienia tekst zaznaczenia lub wstawia tekst w bieżącym położeniu karetki.
 
 Zobacz [skryptów przykład](#scripting-example) w dalszej części tego tematu.
 
-### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Wybierz\( startLine, startColumn, endLine, endColumn \)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
 
 Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 

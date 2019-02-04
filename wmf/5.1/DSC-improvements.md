@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Ulepszenia DSC w programie WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523046"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683800"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Ulepszenia w Desired State Configuration (DSC) w programie WMF 5.1
 
@@ -206,12 +206,12 @@ Ta funkcja zapobiega wykonywania konfiguracji lub plikach modułów, które nie 
 ### <a name="how-to-sign-configuration-and-module"></a>Jak zarejestrować konfiguracji i modułów
 
 ***
-* Pliki konfiguracji (. Pliki MOF): istniejące polecenia cmdlet programu PowerShell [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) jest rozszerzona na potrzeby obsługi podpisywania plików MOF.
-* Moduły: Podpisywania modułów można to zrobić, rejestrując odpowiedniego katalogu modułu wykonując następujące czynności:
-    1. Utwórz plik wykazu: plik wykazu zawiera zbiór skróty kryptograficzne lub odciski palców.
+* Pliki konfiguracji (. Pliki MOF): Istniejące polecenia cmdlet programu PowerShell [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) jest rozszerzona na potrzeby obsługi podpisywania plików MOF.
+* Moduły: Podpisywanie modułów można to zrobić, rejestrując odpowiedniego katalogu modułu wykonując następujące czynności:
+    1. Utwórz plik w katalogu: Plik wykazu zawiera zbiór skróty kryptograficzne lub odciski palców.
        Każdy odcisk palca odnosi się do pliku, który znajduje się w module.
        Nowe polecenie cmdlet [New FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), została dodana do Zezwól użytkownikom na tworzenie plik katalogu dla swojego modułu.
-    2. Utwórz plik wykazu: Użyj [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) do podpisania pliku wykazu.
+    2. Utwórz plik w katalogu: Użyj [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) do podpisania pliku wykazu.
     3. Umieść plik wykazu znajdujące się w folderze modułu.
 Zgodnie z Konwencją plik do katalogu modułu powinna zostać umieszczona w folderze modułu o nazwie identycznej z nazwą modułu.
 
@@ -263,7 +263,7 @@ Local Configuration Manager wykonuje następujące kroki, aby sprawdzanie podpis
 5. Install-Module do $env: ProgramFiles\WindowsPowerShell\Modules\
 6. Konfiguracja procesu
 
-> Uwaga: Weryfikacja podpisu na katalog modułu i konfiguracji jest realizowane wyłącznie podczas stosowania konfiguracji systemu, po raz pierwszy lub w przypadku, gdy moduł jest pobierane i instalowane.
+> Uwaga: Weryfikacja podpisu na katalog modułu i konfiguracji jest realizowane wyłącznie, gdy po raz pierwszy lub w przypadku, gdy moduł jest pobierany i instalowany, konfiguracja jest stosowana do systemu.
 Przebiegi spójności nie weryfikują podpisu Current.mof lub jego zależności modułu.
 Jeśli weryfikacja nie powiodła się na każdym etapie, na przykład jeśli konfiguracji są pobierane z serwera ściągania jest podpisany, a następnie przetwarzania konfiguracji kończy się błędem pokazany poniżej i zostaną usunięte wszystkie pliki tymczasowe.
 

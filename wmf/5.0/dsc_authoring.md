@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 1595a3e817fd711c35128f06927fd57df7a63fb8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec4ae8e4b2ef0ec226cb75607f7aaf34b48f6b76
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218250"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688763"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a>Ulepszenia tworzenia przy użyciu środowiska PowerShell ISE
 
-Tworzenie konfiguracji DSC w środowisku Windows PowerShell ISE jest znacznie prostsze, Dziękujemy do następujące udoskonalenia:
+Tworzenie konfiguracji DSC w środowisku Windows PowerShell ISE jest znacznie łatwiejsze, dziękuję do następujące ulepszenia:
 
-- Wyświetl listę wszystkich zasobów DSC w **konfiguracji** bloku lub **węzła** bloku, wprowadzając **klawisze Ctrl + spacja** w pustym wierszu w niej.
-- Automatyczne uzupełnianie na właściwości zasobów, które są właściwościami **wyliczenie** typu.
-- Automatyczne uzupełnianie na **DependsOn** właściwości zasobów DSC, w oparciu o inne wystąpienia zasobu w konfiguracji.
-- Lepsze uzupełniania po naciśnięciu tabulatora wartości właściwości zasobów.
+- Wyświetla listę wszystkich zasobów DSC w ramach **konfiguracji** bloku lub **węzła** bloku, wprowadzając **Ctrl + spacja** w pustym wierszu znajdujący się w nim.
+- Automatyczne uzupełnianie na właściwościach zasobów, które są **wyliczenie** typu.
+- Automatyczne uzupełnianie na **DependsOn** własności zasobów DSC, w oparciu o innych wystąpień zasobów w konfiguracji.
+- Lepsze uzupełniania po naciśnięciu tabulatora wartości właściwości zasobu.
 
-**Uwaga:** musi mieć ciągu pustego wartości właściwości zasobu zanim użyjesz Ctrl + spacja, aby wyświetlić opcje. Naciśnięcie przycisku **kartę** cykle za pomocą opcji.
+**Uwaga:** Pusty ciąg wartości właściwości zasobu musi mieć, zanim użyjesz Ctrl + spacja, aby wyświetlić listę opcji. Naciśnięcie klawisza **kartę** cykle za pomocą opcji.

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: DSC dla systemu Linux zasób nxFile
+title: DSC for Linux nxFile Resource
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048570"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688651"
 ---
-# <a name="dsc-for-linux-nxfile-resource"></a>DSC dla systemu Linux zasób nxFile
+# <a name="dsc-for-linux-nxfile-resource"></a>DSC for Linux nxFile Resource
 
 **NxFile** zasób w programie PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania pliki i katalogi w węźle systemu Linux.
 
@@ -39,7 +39,7 @@ nxFile <string> #ResourceName
 
 |  Właściwość |  Opis |
 |---|---|
-| Ścieżka_docelowa| Określa lokalizację, w którym chcesz upewnić się, stan dla pliku lub katalogu.|
+| DestinationPath| Określa lokalizację, w którym chcesz upewnić się, stan dla pliku lub katalogu.|
 | SourcePath| Określa ścieżkę, z którego można skopiować zasobu pliku lub folderu. Ta ścieżka może być ścieżką lokalną lub `http/https/ftp` adresu URL. Zdalne `http/https/ftp` adresy URL są tylko obsługiwane w przypadku wartości **typu** właściwość jest plik.|
 | Upewnij się| Określa, czy należy sprawdzić, czy plik istnieje. Ustaw tę właściwość "Present", aby upewnić się, że plik istnieje. Ustaw ją na "Brak", aby upewnić się, że plik nie istnieje. Wartość domyślna to "Istnieje".|
 | Typ| Określa, czy zasób konfigurowany jest katalog lub plik. Ustaw tę właściwość na "directory", aby wskazać, czy zasób jest katalogiem. Ustaw ją na "plik", aby wskazać, czy zasób jest plik. Wartość domyślna to "file"|

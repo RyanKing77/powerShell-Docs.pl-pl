@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Zależności zasobów przy użyciu DependsOn
+title: Zależności zasobów z użyciem właściwości DependsOn
 ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404903"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688063"
 ---
-# <a name="resource-dependencies-using-dependson"></a>Zależności zasobów przy użyciu DependsOn
+# <a name="resource-dependencies-using-dependson"></a>Zależności zasobów z użyciem właściwości DependsOn
 
 Podczas wpisywania [konfiguracje](configurations.md), możesz dodać [bloków zasobów](../resources/resources.md) skonfigurować aspekty elementu docelowego węzła. W miarę postępu dodawania zasobów bloki konfiguracje powiększać tak, bardzo duże i skomplikowane do zarządzania. Jednym z wyzwań jest kolejność stosowana z bloków zasobów. Zazwyczaj zasoby są stosowane w kolejności, w którym są zdefiniowane w ramach konfiguracji. Wraz z rozwojem większej i bardziej złożonej konfiguracji można użyć `DependsOn` klawisz, aby zmienić kolejność zastosowane zasobów, określając, na które zasobem, który jest zależny od innego zasobu.
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2d6a25908de746e296bef91e05c3d4e250aa77c9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e01f6ceea361f5a9b3de645346d0652986b6267d
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189809"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685914"
 ---
 # <a name="nonewline-parameter"></a>Parametr NoNewLine
-**Out-file**, **Dodaj zawartość**, i **zestawu zawartości** teraz ma nowego **— NoNewline** przełącznika, która po prostu pomija znakiem nowego wiersza po danych wyjściowych.
+**Out-file**, **Dodaj zawartość**, i **zestaw zawartości** powstał nowy **— NoNewline** przełącznika, który po prostu pomija znakiem nowego wiersza po danych wyjściowych.
 ```powershell
 PS C:\> "This is " | Out-File -FilePath Example.txt -NoNewline
 
@@ -21,7 +21,7 @@ PS C:\> Get-Content .\Example.txt
 
 This is a single sentence.
 ```
-Bez **— NoNewline** określony, każdy fragment będzie w osobnym wierszu:
+Bez **— NoNewline** określony, poszczególne fragmenty powinna znajdować się w osobnym wierszu:
 ```powershell
 PS C:\> "This is " | Out-File -FilePath Example.txt
 

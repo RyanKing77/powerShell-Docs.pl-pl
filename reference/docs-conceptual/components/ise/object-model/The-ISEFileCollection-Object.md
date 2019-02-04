@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Obiekt ISEFileCollection
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
 ms.openlocfilehash: eb4b2784820cbe51f662fd2fd945d8760ef9dbff
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405591"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684598"
 ---
 # <a name="the-isefilecollection-object"></a>Obiekt ISEFileCollection
 
@@ -32,7 +32,7 @@ $newFile = $psISE.CurrentPowerShellTab.Files.Add()
 $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 ```
 
-### <a name="remove-file-force-"></a>Usuń\( pliku \[Force\] \)
+### <a name="remove-file-force-"></a>Remove\( File, \[Force\] \)
 
 Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 

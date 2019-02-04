@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 802196d821303fcf2d3e87784ca2064c386f882e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cc859d68491c817d641cc598513efb3208db0619
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221826"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685242"
 ---
-# <a name="separation-of-configuration-resource-and-report-repositories"></a>Rozdzielenie konfiguracji, zasobów i repozytoriów raportu
+# <a name="separation-of-configuration-resource-and-report-repositories"></a>Oddzielanie repozytoriów konfiguracji, zasobów i raportów
 
-W tej wersji możemy pozwalają wszystkie potrzebne do ściągnięcia elastyczność i raport, aby co najmniej jednego serwera ściągania usługi Konfiguracja DSC. Każdy punkt końcowy można zdefiniować osobno, dzięki czemu można ściągnąć konfiguracje z jednej lokalizacji zasobów z innego i raportu do jeszcze innej lokalizacji.
+W tej wersji My pozwalamy wszystkie swobodę, które muszą ściągać i raport, aby co najmniej jeden serwer ściągania DSC. Każdy punkt końcowy, można zdefiniować oddzielnie, aby ściągnąć konfiguracje z jednej lokalizacji zasobów z innego i raportów do jeszcze innej lokalizacji.
 
-Aby uzyskać więcej informacji, zobacz [instalacji klienta ściągania za pomocą Identyfikatora konfiguracji](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) lub [Konfigurowanie klienta ściągania przy użyciu nazwy konfiguracji](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)
+Aby uzyskać więcej informacji, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) lub [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC grupy
 ms.openlocfilehash: 9894150f6f749fc23efd4ce2b155b18788557d1d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048393"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687510"
 ---
 # <a name="dsc-group-resource"></a>Zasób DSC grupy
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Zasób grupy w Windows PowerShell Desired State Configuration (DSC) udostępnia mechanizm do zarządzania grupami lokalnymi w docelowym węźle.
 
@@ -35,7 +35,7 @@ Group [string] #ResourceName
 
 |  Właściwość  |  Opis   |
 |---|---|
-| Nazwa grupy| Nazwa grupy, dla którego chcesz zapewnić określonego stanu.|
+| GroupName| Nazwa grupy, dla którego chcesz zapewnić określonego stanu.|
 | Poświadczenie| Poświadczenia wymagane do dostępu do zasobów zdalnych. **Uwaga**: To konto musi mieć odpowiednie uprawnienia usługi Active Directory, aby dodać wszystkie konta innego niż lokalne grupy; w przeciwnym razie wystąpi błąd, gdy konfiguracja jest wykonywana w docelowym węźle.
 | Opis| Opis grupy.|
 | Upewnij się| Wskazuje, czy grupa istnieje. Ustaw tę właściwość na "Brak", aby upewnić się, że grupa nie istnieje. Ustawienie "Przedstawia" (wartość domyślna) gwarantuje, czy grupa istnieje.|

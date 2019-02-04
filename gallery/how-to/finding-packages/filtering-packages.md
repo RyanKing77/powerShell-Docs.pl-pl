@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Filtrowanie wyników wyszukiwania
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004121"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687594"
 ---
 # <a name="filtering-search-results"></a>Filtrowanie wyników wyszukiwania
 
@@ -31,7 +31,7 @@ Pola wyboru w obszarze listy rozwijanej Zezwalaj użytkownikom na przefiltrować
   - Skrypt
 - Kategorie
   - Polecenie cmdlet
-  - Zasób DSC
+  - DSC Resource
   - Funkcja
   - Możliwości roli
   - Przepływ pracy
@@ -41,7 +41,7 @@ Podobnie Aby wyświetlić tylko skrypty w galerii programu PowerShell, Sprawdź 
 
 > [!NOTE]
 > Filtry są włącznie.
-> Przykład: Pakiet zawierający wersję poleceń cmdlet i funkcje będą wyświetlane, jeśli albo polecenia Cmdlet funkcji (i/lub) są sprawdzane.
+> Przykład: Pakiet zawierający wersję poleceń cmdlet i funkcje pojawi się zaznaczenie albo polecenia Cmdlet funkcji (i/lub).
 > Jeśli nie zaznaczono żadnego z tych celów, nie pojawi się pakiet.
 > Podobnie jeśli wszystkie kategorie są zaznaczone, tylko pakiety zawierające jeden z tych kategorii będą wyświetlane.
 > **Pakiety, które nie należą do żadnej z tych kategorii nie będą wyświetlane.**

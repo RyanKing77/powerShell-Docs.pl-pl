@@ -2,12 +2,12 @@
 ms.date: 08/14/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Wprowadzenie do środowiska Windows PowerShell ISE
-ms.openlocfilehash: 09a28b295855fd2a3c62bba8a681399dae3454f8
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
+ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411586"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685102"
 ---
 # <a name="the-windows-powershell-ise"></a>W środowisku Windows PowerShell ISE
 
@@ -15,8 +15,8 @@ Windows PowerShell zintegrowane Scripting Environment (ISE) jest aplikacją host
 
 ## <a name="support"></a>Pomoc techniczna
 
-Środowiska ISE została najpierw wprowadzona w systemach Windows PowerShell w wersji 2 i ponownie został zaprojektowany przy użyciu programu PowerShell w wersji 3. Środowiska ISE jest obsługiwana we wszystkich obsługiwanych wersjach programu Windows PowerShell do i łącznie Windows PowerShell V5.1. ISE, jednak działa w trybie maintennce i żadne nowe funkcje są prawdopodobnie ma zostać dodana.
-Ponadto nie jest obsługiwane w środowisku ISE przy użyciu programu PowerShell w wersji 6 i nie tylko. Użytkowników, którzy chcą mieć graficznego narzędzia, z których chcesz zarządzać PowerShell scrips itp., należy wziąć pod uwagę [programu Visual Studio Code](https://code.visualstudio.com/).
+Środowiska ISE została najpierw wprowadzona w systemach Windows PowerShell w wersji 2 i ponownie został zaprojektowany przy użyciu programu PowerShell w wersji 3. Środowiska ISE jest obsługiwana we wszystkich obsługiwanych wersjach programu Windows PowerShell do i łącznie Windows PowerShell V5.1. ISE, jednak jest w trybie konserwacji, a żadne nowe funkcje są prawdopodobnie ma zostać dodana.
+Ponadto nie jest obsługiwane w środowisku ISE przy użyciu programu PowerShell w wersji 6 i nie tylko. Użytkowników, którzy chcą mieć graficznego narzędzia, z których chcesz zarządzać, skrypty programu PowerShell, itd., należy wziąć pod uwagę [programu Visual Studio Code](https://code.visualstudio.com/).
 
 ## <a name="key-features"></a>Najważniejsze funkcje
 

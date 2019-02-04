@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Przewodnik dotyczący przepływów pracy
 ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404988"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687622"
 ---
 # <a name="psworkflow-module"></a>Moduł PSWorkflow
 

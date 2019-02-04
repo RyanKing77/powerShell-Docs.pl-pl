@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria programu powershell, polecenie cmdlet, galerii programu PowerShell, psget
 title: Galeria programu PowerShell
 ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225622"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685459"
 ---
 # <a name="the-powershell-gallery"></a>Galeria programu PowerShell
 
@@ -32,11 +32,11 @@ Zapoznaj się z [wprowadzenie](getting-started.md) strony, aby uzyskać więcej 
 
 Odpowiedniej wersji **programu Windows PowerShell** jest dostępny dla tych systemów operacyjnych:
 
-- 10 systemu Windows
+- Windows 10
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
-- Windows 7 z dodatkiem SP1
-- System Windows Server 2019 r
+- Windows 7 SP1
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 z dodatkiem SP1

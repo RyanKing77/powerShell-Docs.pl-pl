@@ -3,15 +3,15 @@ ms.date: 06/20/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób PackageManagement DSC
 ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048487"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686866"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Zasób PackageManagement DSC
 
-Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0, programu Windows PowerShell 5.1
+Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
 
 **PackageManagement** zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm, aby zainstalować lub odinstalować pakiety zarządzania pakietami na węzeł docelowy. Ten zasób wymaga **PackageManagement** modułu dostępnym [ http://PowerShellGallery.com ](http://PowerShellGallery.com).
 
@@ -57,7 +57,7 @@ W poniższej tabeli wymieniono opcje dla właściwości AdditionalParameters.
 
 | Parametr | Opis |
 | --- | --- |
-| Ścieżka_docelowa| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa lokalizację pliku, którego pakiet do zainstalowania.|
+| DestinationPath| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa lokalizację pliku, którego pakiet do zainstalowania.|
 | InstallationPolicy| Używane przez dostawców, takich jak wbudowanego dostawcy Nuget. Określa, czy ufasz źródłu pakietu. Jeden z: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Przykład

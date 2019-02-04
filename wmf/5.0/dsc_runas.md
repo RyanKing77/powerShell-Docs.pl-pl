@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 900960f20d251020b9b4a284d6c6175a7038e033
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b5ba6f6088e6a81d044fc513572f7c7cb688cd10
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219219"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687979"
 ---
-# <a name="automatic-runas-support-for-dsc-resources"></a>Automatyczna obsługa polecenia Uruchom jako dla zasobów usługi Konfiguracja DSC
+# <a name="automatic-runas-support-for-dsc-resources"></a>Automatyczna obsługa polecenia Uruchom jako dla zasobów DSC
 
-WMF 5.0 obsługuje uruchamianie **żadnych** DSC zasobów w obszarze określony zestaw poświadczeń przy użyciu właściwości `PsDscRunAsCredential`.
+Program WMF 5.0 obejmuje obsługę uruchamiania **wszelkie** DSC zasobami dostępnymi w ramach określonego zestawu poświadczeń za pomocą właściwości `PsDscRunAsCredential`.
 
-Aby uzyskać więcej informacji, zobacz [DSC uruchomiony przy użyciu poświadczeń użytkownika](https://msdn.microsoft.com/powershell/dsc/runasuser).
+Aby uzyskać więcej informacji, zobacz [systemem DSC przy użyciu poświadczeń użytkownika](https://msdn.microsoft.com/powershell/dsc/runasuser).

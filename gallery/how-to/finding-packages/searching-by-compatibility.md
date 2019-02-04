@@ -4,11 +4,11 @@ contributor: JKeithB, SydneyhSmith
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Pakiety z zgodne wersje programu PowerShell lub systemu operacyjnego
 ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747708"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685956"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakiety z zgodne wersje programu PowerShell lub systemów operacyjnych
 
@@ -56,7 +56,7 @@ Ponieważ program PowerShell Core jest dostępna dla Windows, Linux i MacOS, pak
 
 - Tagi: "Windows"
 - Tagi: "Linux"
-- Tagi: "System MacOS" 
+- Tagi: "MacOS" 
 
 Można określić te znaczniki `Find-Module` (i inne polecenia cmdlet w PowerShellGet module), podobnie do następującego:
 

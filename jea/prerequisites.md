@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Wymagania wstępne dotyczące usługi JEA
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893039"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688357"
 ---
 # <a name="prerequisites"></a>Wymagania wstępne
 
@@ -33,7 +33,7 @@ Umożliwia także JEA na komputerze domowe lub firmowe:
 System operacyjny klienta   | Dostępność usługi JEA
 --------------------------|-----------------------------------------------------
 Windows 10 1607+          | Wstępnie zainstalowane
-Windows 10 1603 1511     | Wstępnie zainstalowane, za pomocą funkcjonalność ograniczona<sup>2</sup>
+Windows 10 1603, 1511     | Wstępnie zainstalowane, za pomocą funkcjonalność ograniczona<sup>2</sup>
 Windows 10 1507           | Niedostępne
 Windows 8, 8.1            | Pełna funkcjonalność z programem WMF 5.1
 Windows 7                 | Ograniczona funkcjonalność<sup>1</sup> z programem WMF 5.1

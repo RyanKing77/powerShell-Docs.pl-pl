@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Pisanie zasobu DSC niestandardowych przy użyciu klas programu PowerShell
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405186"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688315"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Pisanie zasobu DSC niestandardowych przy użyciu klas programu PowerShell
 
@@ -30,8 +30,8 @@ Aby zaimplementować niestandardowy zasobu DSC przy użyciu klas programu PowerS
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Tworzenie klasy
@@ -86,7 +86,6 @@ enum Ensure
 Ten kod zawiera również funkcję CopyFile() funkcja pomocnicza, która kopiuje plik z **$SourcePath** do **$Path**.
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ Ten kod zawiera również funkcję CopyFile() funkcja pomocnicza, która kopiuje
 ```
 
 ### <a name="the-complete-file"></a>Kompletny plik
+
 Plik klasy pełną poniżej.
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>Tworzenie manifestu
 
 Aby udostępnić zasób oparte na klasach aparatu DSC, należy dołączyć **DscResourcesToExport** instrukcja w pliku manifestu, który powoduje, że moduł można wyeksportować zasobu. Nasze manifest wygląda następująco:
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Deklarowanie wiele zasobów klasy w module
+
+Moduł można zdefiniować wiele zasobów DSC oparte na klasach. Struktura folderów można utworzyć w następujący sposób:
+
+1. Zdefiniuj pierwszy zasób w "<ModuleName>psm1" plików i kolejnych zasobów w ramach **DSCResources** folderu.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Zdefiniuj wszystkich zasobów w ramach **DSCResources** folderu.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> W powyższych przykładach dodać dowolne pliki PSM1, w obszarze **DSCResources** do **NestedModules** kluczy w pliku PSD1.
+
 ### <a name="access-the-user-context"></a>Dostęp do kontekstu użytkownika
 
 Aby uzyskać dostęp z kontekstu użytkownika, w ramach zasobów niestandardowych, można użyć zmiennej automatyczne `$global:PsDscContext`.
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>Zobacz też
-### <a name="concepts"></a>Pojęcia
+
 [Tworzenie niestandardowych Windows PowerShell Desired State Configuration zasobów](authoringResource.md)

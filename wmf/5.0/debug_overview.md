@@ -1,54 +1,54 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9ead27fd5d4f146e9062488c1c8cc22a073b922e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 22a027ebc97e15075980bc77ce272d8ecdae0b5f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187106"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686992"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Ulepszenia debugowania skryptów programu PowerShell
 
-Wiele ulepszeń zostały wprowadzone w programie PowerShell 5.0 udoskonalenie debugowania:
+Szereg ulepszeń zostały wprowadzone w programie PowerShell 5.0, aby ulepszyć środowisko debugowania:
 
-## <a name="break-all"></a>Przerwij wszystkie
+## <a name="break-all"></a>Przerwij wszystko
 
 Konsola programu PowerShell i Windows PowerShell ISE teraz umożliwiają wkroczenia do debugera do uruchamiania skryptów. Działa to zarówno lokalnych, jak i zdalnych sesji.
 
-W konsoli, naciśnij klawisz **klawisze Ctrl + Break**.
+W konsoli, naciśnij klawisz **Ctrl + Break**.
 
-ISE, naciśnij klawisz **Ctrl + B**, lub użyj **debugowanie -> Przerwij wszystkie** polecenia menu.
+W środowisku ISE, naciśnij klawisz **Ctrl + B**, lub użyj **Debuguj -> Przerwij wszystko** polecenia menu.
 
-## <a name="remote-debugging-and-remote-file-editing-in-windows-powershell-ise"></a>Debugowanie zdalne i zdalne edytowanie plików w środowisku Windows PowerShell ISE
+## <a name="remote-debugging-and-remote-file-editing-in-windows-powershell-ise"></a>Zdalne debugowanie i zdalne edytowanie plików w środowisku Windows PowerShell ISE
 
-Windows PowerShell ISE umożliwia teraz otworzyć i edytować pliki w sesji zdalnej, uruchamiając polecenie PSEdit.
+Windows PowerShell ISE umożliwia teraz otwierać i edytować pliki w sesji zdalnej za pomocą polecenia PSEdit.
 Na przykład można otworzyć pliku do edycji z wiersza polecenia w sesji zdalnej w następujący sposób:
 
 ```powershell
 [RemoteComputer1]: PS C:\> PSEdit C:\DebugDemoScripts\Test-GetMutex.ps1
 ```
 
-Ponadto można edytować i zapisać zmiany w pliku zdalnego, który jest automatycznie otwierane w programie Windows PowerShell ISE po trafieniu punktu przerwania.
-Teraz możesz debugowania pliku skryptu, który jest uruchomiony na komputerze zdalnym, edytować plik, aby naprawić błąd, a następnie ponownie uruchom zmodyfikowanego skryptu.
+Ponadto można edytować i zapisać zmiany w pliku zdalnego, który jest automatycznie otwierany w środowisku Windows PowerShell ISE, po osiągnięciu punktu przerwania.
+Można teraz debugować plik skryptu, który jest uruchomiony na komputerze zdalnym, Edytuj plik, aby naprawić błąd, a następnie ponownie uruchom zmodyfikowany skrypt.
 
 ## <a name="advanced-script-debugging"></a>Debugowanie skryptów zaawansowane
 
-Istnieją nowe, zaawansowane funkcje debugowania, które umożliwiają dołączanie do każdy proces komputera lokalnego, który został załadowany środowiska Windows PowerShell i debugowania dowolnych obszarach działania w tym procesie.
+Istnieją nowe, zaawansowane funkcje debugowania, które umożliwiają dołączanie do każdego procesu komputer lokalny, który został załadowany programu Windows PowerShell i debugowania dowolnego obszarach działania w tym procesie.
 
-### <a name="runspace-debugging"></a>Debugowanie obszaru działania
+### <a name="runspace-debugging"></a>Debugowanie obszarem działania
 
-Nowe polecenia cmdlet dodano umożliwiające listę obszarach bieżącego działania w ramach procesu i dołączyć do tego obszaru działania do debugowania skryptów konsoli środowiska Windows PowerShell lub debugera ISE:
+Nowe polecenia cmdlet zostały dodane, umożliwiające listy obszary bieżącego działania w ramach procesu i dołączyć do tego obszaru działania dotyczące debugowania skryptów konsoli środowiska Windows PowerShell lub debugera ISE:
 
--   Get-obszaru działania
--   Obszarze działania debugowania
--   Włącz RunspaceDebug
--   Wyłącz RunspaceDebug
+-   Get-obszarem działania
+-   Obszar działania debugowania
+-   Enable-RunspaceDebug
+-   Disable-RunspaceDebug
 -   Get-RunspaceDebug
 
-### <a name="attach-to-process-hosting-powershell"></a>Dołączanie do procesu hostingu środowiska PowerShell
+### <a name="attach-to-process-hosting-powershell"></a>Dołącz do procesu hostingu programu PowerShell
 
-Teraz można dołączyć do procesu dowolnego komputera, który ma środowiska Windows PowerShell, załadować. W tym celu należy wprowadzić w sesji interaktywnej z procesem, podobnie jak wprowadzić w sesji interaktywnej zdalnego przy użyciu polecenia cmdlet Enter-PSSession:
+Teraz można dołączyć do procesu dowolnego komputera, który został załadowany w programie Windows PowerShell. Możesz to zrobić, należy wprowadzić w interaktywnej sesji z procesem, podobnie jak możesz wprowadzić do interaktywnej sesji zdalnej, uruchamiając polecenie cmdlet Enter-PSSession:
 
--   Wprowadź PSHostProcess
--   PSHostProcess zakończenia
+-   Enter-PSHostProcess
+-   Zakończ PSHostProcess

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Możliwości roli usługi JEA
 ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522946"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685494"
 ---
 # <a name="jea-role-capabilities"></a>Możliwości roli usługi JEA
 
@@ -267,7 +267,7 @@ $mergedAandB = @{
 
 
 
-**VisibleExternalCommands, ScriptsToProcess VisibleAliases, VisibleProviders,**
+**VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 
 Wszystkie pola w pliku możliwości roli, po prostu są dodawane do zbiorczego zestawu poleceń zewnętrznych dopuszczalny rozmiar, aliasy, dostawców i skrypty uruchamiania.
 Polecenia, alias, dostawca lub skryptu w jedną rolę możliwości będą dostępne dla użytkownika usługi JEA.

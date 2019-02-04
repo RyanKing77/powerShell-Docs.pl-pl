@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: DSC dla systemu Linux zasób nxGroup
+title: DSC for Linux nxGroup Resource
 ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048546"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688343"
 ---
-# <a name="dsc-for-linux-nxgroup-resource"></a>DSC dla systemu Linux zasób nxGroup
+# <a name="dsc-for-linux-nxgroup-resource"></a>DSC for Linux nxGroup Resource
 
 **NxGroup** zasobów w programie PowerShell Desired State Configuration (DSC) udostępnia mechanizm do zarządzania grupami lokalnymi w węźle systemu Linux.
 
@@ -31,7 +31,7 @@ nxGroup <string> #ResourceName
 
 |  Właściwość |  Opis |
 |---|---|
-| Nazwa grupy| Określa nazwę grupy, dla którego chcesz zapewnić określonego stanu.|
+| GroupName| Określa nazwę grupy, dla którego chcesz zapewnić określonego stanu.|
 | Upewnij się| Określa, czy należy sprawdzić, czy grupa istnieje. Ustaw tę właściwość "Present", aby upewnić się, że grupa istnieje. Ustaw ją na "Brak", aby upewnić się, że grupa nie istnieje. Wartość domyślna to "Istnieje".|
 | Elementy członkowskie| Określa elementy członkowskie, które tworzą grupy.|
 | MembersToInclude| Określa, że użytkownicy, którzy chcesz, aby upewnić się, są członkami grupy.|

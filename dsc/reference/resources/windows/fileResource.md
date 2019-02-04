@@ -2,23 +2,21 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC plików
-ms.openlocfilehash: e5f7a91e5f19c8c7bbada090804d8f29a7cfedd5
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048522"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688427"
 ---
 # <a name="dsc-file-resource"></a>Zasób DSC plików
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Zasób pliku w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania plikami i folderami w docelowym węźle.
-
->**Uwaga:** Jeśli **MatchSource** właściwość jest ustawiona na **$false** (czyli wartość domyślna), treści, które mają być kopiowane są buforowane konfiguracja jest stosowana po raz pierwszy.
->Kolejne aplikacje konfiguracji nie będzie sprawdzać zaktualizowane pliki i/lub folderów w ścieżce określonej przez **Ścieżka_źródłowa**. Jeśli chcesz sprawdzać dostępność aktualizacji do plików i/lub folderów w **Ścieżka_źródłowa** za każdym razem, gdy konfiguracja jest stosowana, ustaw **MatchSource** do **$true**.
+Zasób pliku w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania plikami i folderami w docelowym węźle. **Ścieżka_docelowa** i **Ścieżka_źródłowa** muszą być dostępne w docelowym węźle.
 
 ## <a name="syntax"></a>Składnia
+
 ```
 File [string] #ResourceName
 {
@@ -39,24 +37,48 @@ File [string] #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość  |  Opis   |
-|---|---|
-| Ścieżka_docelowa| Określa lokalizację, w którym chcesz upewnić się, stan dla pliku lub katalogu.|
-| Atrybuty| Określa żądany stan atrybutów dla pliku docelowego lub katalogu.|
-| Suma kontrolna| Wskazuje typ sumy kontrolnej, używany do określenia, czy dwa pliki są takie same. Jeśli __sumy kontrolnej__ nie jest określona, tylko nazwa pliku lub katalogu jest używana do porównania. Prawidłowe wartości to: SHA-1, SHA-256, SHA-512, createdDate, Data modyfikacji.|
-| Zawartość| Określa zawartość pliku, na przykład określonego ciągu.|
-| Poświadczenie| Określa poświadczenia, które są wymagane do dostępu do zasobów, takich jak pliki źródłowe, jeśli taki dostęp jest wymagany.|
-| Upewnij się| Wskazuje, czy istnieje plik lub katalog. Ustaw tę właściwość na "Brak", aby upewnić się, że plik lub katalog nie istnieje. Ustaw ją na "Obecny", aby upewnić się, że plik lub katalog istnieje. Wartość domyślna to "Istnieje".|
-| Force| Niektóre operacje na plikach (takich jak zastąpienie pliku lub usunięcie katalogu, który nie jest pusty) spowoduje wystąpienie błędu. Przy użyciu właściwości życie zastępuje takie błędy. Wartość domyślna to __$false__.|
-| Recurse| Wskazuje, czy podkatalogi są uwzględniane. Ustaw tę właściwość na __$true__ aby wskazać, że podkatalogi do uwzględnienia. Wartość domyślna to __$false__. **Uwaga**: Ta właściwość jest prawidłowy tylko w przypadku, gdy właściwość Type jest ustawiona do katalogu.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
-| SourcePath| Określa ścieżkę, z której można skopiować zasobu pliku lub folderu.|
-| Typ| Wskazuje, czy zasób jest skonfigurowany katalog lub plik. Ustaw tę właściwość na "Directory", aby wskazać, czy zasób jest katalogiem. Ustaw ją na "Plik", aby wskazać, czy zasób jest plik. Wartość domyślna to "File".|
-| MatchSource| Jeśli ustawiono wartość domyślną __$false__, a następnie wszystkie pliki w źródle (powiedzmy, pliki A, B i C) zostaną dodane do miejsca docelowego konfiguracja jest stosowana po raz pierwszy. Jeśli nowy plik (D) jest dodawany do źródła, go nie zostanie dodany do miejsca docelowego, nawet wtedy, gdy konfiguracja jest ponownie stosowana w dalszej części. Jeśli wartość jest __$true__, a następnie każdorazowo konfiguracja jest stosowana, nowe pliki, które okazały się dla źródła (na przykład plik D, w tym przykładzie) są dodawane do miejsca docelowego. Wartość domyślna to **$false**.|
+|Właściwość       |Opis                                                                   |Wymagana|Wartość domyślna|
+|---------------|------------------------------------------------------------------------------|--------|-------|
+|DestinationPath|Lokalizacja, w węźle docelowym, aby mieć pewność, jest `Present` lub `Absent`.|Tak|Nie|
+|Atrybuty     |Żądany stan atrybutów dla pliku docelowego lub katalogu. Prawidłowe wartości to **archiwum**, **ukryty**, **tylko do odczytu**, i **systemu**.|Nie|Brak|
+|Suma kontrolna      |Typ sumy kontrolnej używany do określenia, czy dwa pliki są takie same. Prawidłowe wartości to: SHA-1, SHA-256, SHA-512, createdDate, Data modyfikacji.|Nie|Tylko nazwę pliku lub katalogu jest porównywany.|
+|Zawartość       |Prawidłowa tylko w przypadku korzystania z `File` typu. Wskazuje zawartość, aby upewnij się, że są `Present` lub `Absent` z pliku docelowego. |Nie|Brak|
+|Poświadczenie     |Poświadczenia, które są wymagane do dostępu do zasobów, takich jak pliki źródłowe.|Nie|Konto komputera węzła docelowego. (*patrz Uwaga*)|
+|Upewnij się         |Żądany stan docelowego pliku lub katalogu. |Nie|**Obecna**|
+|Force          |Zastępuje operacji dostępu, które mogłyby spowodować błąd (np. zastąpienie pliku lub usunięcie katalogu, który nie jest pusty).|Nie|`$false`|
+|Recurse        |Prawidłowa tylko w przypadku korzystania z `Directory` typu. Wykonuje rekursywnego operacji stan do wszystkich podkatalogów.|Nie|`$false`|
+|DependsOn      |Ustawia zależność określonych zasobów. Ten zasób będzie wykonywane tylko wtedy po pomyślnym wykonaniu wszystkich zasobów zależnych. Można określić zasoby zależne, używając składni `"[ResourceType]ResourceName"`. See [about_DependsOn](../../../configurations/resource-depends-on.md)|Nie|Brak|
+|SourcePath     |Ścieżka, z którego można skopiować zasobu pliku lub folderu.|Nie|Brak|
+|Typ           |Typ zasobu jest skonfigurowany. Prawidłowe wartości to `Directory` i `File`.|Nie|`File`|
+|MatchSource    |Określa, jeśli zasób powinien monitorować nowe pliki dodane do katalogu źródłowego po kopii początkowej. Wartość `$true` wskazuje, że po kopii początkowej, wszystkie nowe pliki źródłowe zostaną skopiowane do lokalizacji docelowej. Jeśli ustawiono `$False`, zasób buforuje zawartość katalogu źródłowego i ignoruje wszelkie pliki dodane po kopii początkowej.|Nie|`$false`|
+
+> [!WARNING]
+> Jeśli nie określisz wartości `Credential` lub `PSRunAsCredential` (PS V.5), zasób będzie używał konta komputera węzła docelowego w dostęp do `SourcePath`.  Gdy `SourcePath` jest udziału UNC, może to spowodować błąd "Odmowa dostępu". Upewnij się, Twoje uprawnienia są odpowiednio ustawiane lub użyj `Credential` lub `PSRunAsCredential` właściwości, aby określić konto, które mają być używane.
+
+## <a name="present-vs-absent"></a>Przedstawia programu vs. Nieobecny
+
+Każdy zasób DSC wykonuje różne operacje, w oparciu o wartość określona dla `Ensure` właściwości. Wartości, które określisz dla powyższych właściwości określa operacji stanu wykonywane.
+
+### <a name="existence"></a>Istnienie
+
+Kiedy należy określić tylko `DestinationPath`, zasób zapewnia, że ścieżka istnieje (`Present`) lub nie istnieje (`Absent`).
+
+### <a name="copy-operations"></a>Operacje kopiowania
+
+Po określeniu `SourcePath` i `DestinationPath` z `Type` wartość **katalogu**, katalog zasobów kopii źródłowej w ścieżce docelowej. Właściwości `Recurse`, `Force`, i `MatchSource` Zmień typ operacji kopiowania wykonywania, podczas gdy `Credential` Określa konto, które umożliwia uzyskanie dostępu do katalogu źródłowego.
+
+### <a name="limitations"></a>Ograniczenia
+
+Jeśli określona wartość `ReadOnly` dla `Attributes` właściwości wraz z `DestinationPath`, `Ensure = "Present"` utworzyłoby podanej ścieżki, podczas gdy `Contents` ustawiał zawartość pliku.  `Absent` Będzie ignorować stan operacji `Attributes` właściwość całkowicie i Usuń każdy plik w określonej ścieżce.
 
 ## <a name="example"></a>Przykład
 
-Poniższy przykład pokazuje, jak na potrzeby zasobów pliku upewnij się, że katalog o ścieżce `C:\Users\Public\Documents\DSCDemo\DemoSource` w źródle komputera (na przykład serwer "pull") występuje także (oraz wszystkie podkatalogi) w docelowym węźle. Ponadto zapisuje komunikat potwierdzający dziennika po ukończeniu i zawiera instrukcję, aby upewnić się, że operacja sprawdzanie plików jest uruchamiany przed operację rejestrowania.
+Poniższy przykład kopiuje katalog i jego podkatalogach z serwera ściągania z węzłem docelowym przy użyciu pliku zasobu. Jeśli operacja się powiedzie, zasób dziennika zapisuje komunikat z potwierdzeniem w dzienniku zdarzeń.
+
+Katalog źródłowy jest ścieżką UNC (`\\PullServer\DemoSource`) udostępnionych z serwera ściągania. `Recurse` Właściwości gwarantuje, że wszystkie podkatalogi są również kopiowane.
+
+> [!IMPORTANT]
+> LCM w docelowym węźle wykonuje w kontekście lokalnego konta systemowego, domyślnie. Aby udzielić dostępu do **Ścieżka_źródłowa**, nadać kontu komputera węzła docelowego odpowiednie uprawnienia. **Poświadczeń** i **PSDSCRunAsCredential** (v5) zarówno zmienić używa kontekstu LCM, aby uzyskać dostęp do **Ścieżka_źródłowa**. Nadal musisz udzielić dostępu do konta, które będą używane do dostępu **Ścieżka_źródłowa**.
 
 ```powershell
 Configuration FileResourceDemo
@@ -65,10 +87,10 @@ Configuration FileResourceDemo
     {
         File DirectoryCopy
         {
-            Ensure = "Present"  # You can also set Ensure to "Absent"
-            Type = "Directory" # Default is "File".
-            Recurse = $true # Ensure presence of subdirectories, too
-            SourcePath = "C:\Users\Public\Documents\DSCDemo\DemoSource"
+            Ensure = "Present" # Ensure the directory is Present on the target node.
+            Type = "Directory" # The default is File.
+            Recurse = $true # Recursively copy all subdirectories.
+            SourcePath = "\\PullServer\DemoSource"
             DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"
         }
 
@@ -76,8 +98,10 @@ Configuration FileResourceDemo
         {
             # The message below gets written to the Microsoft-Windows-Desired State Configuration/Analytic log
             Message = "Finished running the file resource with ID DirectoryCopy"
-            DependsOn = "[File]DirectoryCopy" # This means run "DirectoryCopy" first.
+            DependsOn = "[File]DirectoryCopy" # Depends on successful execution of the File resource.
         }
     }
 }
 ```
+
+Więcej używania na **poświadczenia** Zobacz DSC [Uruchom jako użytkownik](../../../configurations/runAsUser.md) lub [poświadczenia dostępu do danych konfiguracji](../../../configurations/configDataCredentials.md).

@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie bieżącą lokalizacją
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405288"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686509"
 ---
 # <a name="managing-current-location"></a>Zarządzanie bieżącą lokalizacją
 

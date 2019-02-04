@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Używanie metod i klas statycznych
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
 ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405443"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687034"
 ---
 # <a name="using-static-classes-and-methods"></a>Używanie metod i klas statycznych
 Nie wszystkie klasy .NET Framework, można utworzyć za pomocą **New-Object**. Na przykład, Jeśli spróbujesz utworzyć **System.Environment** lub **System.Math** obiekt z **New-Object**, uzyskasz następujące komunikaty o błędach:

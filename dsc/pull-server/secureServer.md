@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Najlepsze rozwiązania dotyczące serwera ściągania
 ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405264"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686677"
 ---
 # <a name="pull-server-best-practices"></a>Najlepsze rozwiązania dotyczące serwera ściągania
 
-Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Serwera ściągania (funkcja Windows *usługi DSC*) jest obsługiwanych składników systemu Windows Server jednak nie jest planowane oferują nowe funkcje lub możliwości osobno. Zaleca się rozpocząć przechodzenie zarządzanych klientom [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (w tym funkcje poza serwera ściągania w systemie Windows Server) lub jeden z członków społeczności na liście [tutaj](pullserver.md#community-solutions-for-pull-service).
@@ -21,7 +21,7 @@ Podsumowanie: Ten dokument jest przeznaczony do uwzględnienia procesów i rozsz
 | |Informacje o dokumencie|
 |:---|:---|
 Autor | Michael Greene
-Recenzenci | Ben Gelens, Ravikanth Chaganti Aleksandar Nikolic
+Recenzenci | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
 Opublikowane | Kwietnia 2015 r.
 
 ## <a name="abstract"></a>Abstrakcyjny
@@ -104,7 +104,7 @@ Czy masz dostęp do plików instalacyjnych systemu Windows Server, które już z
 
 Wdrożenia serwera ściągania są obsługiwane na serwerach fizycznych i wirtualnych. Wymagania w zakresie rozmiaru na serwerze ściągania dostosowanie wymagania dotyczące systemu Windows Server 2012 R2.
 
-Procesor: 1.4 GHz 64-bitowy procesor pamięci: 512 MB miejsca na dysku: Sieć 32 GB: Dwie karty Ethernet
+Procesor: 1.4 GHz 64-bitowy procesor pamięci: 512 MB miejsca na dysku: 32 GB Network: Dwie karty Ethernet
 
 Planowanie zadań|
 ---|

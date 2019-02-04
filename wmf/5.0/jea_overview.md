@@ -1,20 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: da603fda4499129b415477f627842fe10abefe06
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0bc085588190f134c4a687c952509aa256b5f840
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188500"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687153"
 ---
 # <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
-Po prostu wystarczająco administracji jest nową funkcją w programie WMF 5.0, który umożliwia administracji opartej na rolach, za pośrednictwem usługi zdalne środowiska PowerShell.  Rozszerza istniejącą infrastrukturę ograniczonego punktu końcowego, zezwalając z systemem innym niż Administratorzy na uruchamianie określonych poleceń, skrypty i pliki wykonywalne jako administrator.  Dzięki temu można zmniejszyć liczbę administratorów pełna w danym środowisku i zwiększyć bezpieczeństwo.  JEA działa dla wszystkich, którymi można zarządzać za pomocą programu PowerShell; Jeśli można zarządzać za pomocą programu PowerShell, JEA można to robić, więc bezpieczniejsze.  Aby uzyskać szczegółowy widok tylko tyle administracji, zapoznaj się z [wystąpić przewodnik](http://aka.ms/JEA).
+Just Enough Administration to nowa funkcja programu WMF 5.0, która umożliwia administracji opartej na rolach za pomocą komunikacji zdalnej programu PowerShell.  Rozszerza istniejącą infrastrukturę ograniczone punktu końcowego, umożliwiając użytkowników niebędących administratorami uruchamiać odpowiednie polecenia, skrypty i pliki wykonywalne jako administrator.  Dzięki temu można zmniejszyć liczbę administratorów pełnego w danym środowisku i zwiększenia poziomu bezpieczeństwa.  JEA działa w przypadku wszystkie elementy, którymi można zarządzać za pomocą programu PowerShell; Jeśli zarządzasz za pomocą programu PowerShell, usługi JEA pomóc więc bezpieczniejsze.  Aby uzyskać szczegółowy widok Just Enough Administration, zapoznaj się [środowisko przewodnik](http://aka.ms/JEA).
 
-W odróżnieniu od starego ograniczonego punktów końcowych JEA jest zaawansowaną i łatwa do skonfigurowania.  Możliwości użytkowników w ramach zasad JEA można częściami kontrolować, dół ograniczanie zestawów parametrów i wartości, które mogą być dostarczane do określonego polecenia. Akcje użytkownika są uruchamiane w kontekście jednorazowe konta wirtualnych, które ma prawa do wykonania czynności wykonywane przez administratorów.  Polecenia wywoływane przez użytkownika mogą być rejestrowane dla inspekcji zabezpieczeń.
+W przeciwieństwie do starego ograniczone punktów końcowych JEA jest zaawansowane i łatwa do skonfigurowania.  Możliwości użytkownika w JEA mogą być precyzyjne kontrolowane, dół ograniczenie zestawów parametrów i wartości, które mogą być dostarczane do określonego polecenia. Akcje użytkownika są uruchamiane w kontekście konta wirtualnego jednorazowego, które ma uprawnienia do wykonywania akcji administratora.  Polecenia wywołany przez użytkownika mogą być rejestrowane dla inspekcji zabezpieczeń.
 
-JEA działa, umożliwiając tworzenie specjalnie skonfigurować ograniczone punktów końcowych.  Te punkty końcowe mają kilka najważniejsze czynniki:
+JEA działa, umożliwiając tworzenie specjalnie skonfigurowanym ograniczone punktów końcowych.  Te punkty końcowe mają kilka istotne cechy:
 
-1. Użytkowników łączących się z nimi "Uruchom jako" uprzywilejowanego konta wirtualnego, który istnieje tylko na czas tej sesji zdalnej.  Domyślnie to wirtualny konto jest członkiem grupy Administratorzy domeny, na kontrolerach domeny, a także wbudowanej grupy administratorów (Uwaga: te uprawnienia są konfigurowalne). Łącząc jako jednego użytkownika i uruchamiając jako inny użytkownik uprzywilejowanego, umożliwiają użytkownikom bez uprawnień do wykonywania określonych zadań administracyjnych bez udzielania uprawnień administracyjnych na systemy.
-2. Punkt końcowy jest zablokowana.  Oznacza to, programu PowerShell działa w trybie bez języka.  Tylko polecenia specyficzne, skrypty i pliki wykonywalne są widoczne dla użytkownika.
-3. Różnych użytkowników łączących się są prezentowane z innym zestawem funkcji na podstawie przynależności do grupy.  Musisz podać różne role różnych funkcji w tym samym punkcie końcowym.
+1. Użytkowników łączących się do nich "Uruchom jako" uprzywilejowanego konta wirtualnego, który istnieje tylko na czas tej sesji zdalnej.  Domyślnie to wirtualne konto jest członkiem wbudowanej grupy Administratorzy, Administratorzy domeny, na kontrolerach domeny (Uwaga: te uprawnienia są konfigurowalne). Łączenie się jako jeden z użytkowników, a następnie uruchamiając jako użytkownik inny, uprzywilejowanego, możesz zezwolić użytkownikom bez uprawnień wykonywanie określonych zadań administracyjnych bez nadawania im praw administracyjnych na systemy.
+2. Punkt końcowy został zablokowany.  Oznacza to, programu PowerShell działa w trybie bez języka.  Tylko polecenia specyficzne, skrypty i pliki wykonywalne są widoczne dla użytkownika.
+3. Różni użytkownicy łączenie są prezentowane z innym zestawem funkcji na podstawie przynależności do grupy.  Możesz podać różne role w różne możliwości, w tym samym punkcie końcowym.

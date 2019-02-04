@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Klucz rejestru DSCAutomationHostEnabled
-ms.openlocfilehash: 38e3189323c39a522b2ccad89f5cfcadf5e45616
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2bccd2738b9f61efd656fdf0f98cf71affdbe781
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404711"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684801"
 ---
 >Dotyczy: Windows PowerShell 5.0
 
 # <a name="dscautomationhostenabled-registry-key"></a>Klucz rejestru DSCAutomationHostEnabled
 
-Zastosowań DSC **DSCAutomationHostEnabled** klucza rejestru w **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** umożliwiające konfigurację maszyny podczas początkowego rozruchu.
-DSCAutomationHostEnabled obsługuje trzy tryby:
+Zastosowań DSC **DSCAutomationHostEnabled** klucza rejestru w **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** umożliwiające konfigurację na komputerze pod adresem początkowym rozruchu.
+**DSCAutomationHostEnabled** obsługuje trzy tryby:
 
 |  Wartość DSCAutomationHostEnabled  |  Opis   |
 |---|---|

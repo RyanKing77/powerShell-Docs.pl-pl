@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Instrukcje warunkowe i pętle w konfiguracji
+title: Instrukcje warunkowe i pętle w konfiguracjach
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404771"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689050"
 ---
-# <a name="conditional-statements-and-loops-in-configurations"></a>Instrukcje warunkowe i pętle w konfiguracji
+# <a name="conditional-statements-and-loops-in-configurations"></a>Instrukcje warunkowe i pętle w konfiguracjach
 
 Możesz wprowadzić swoje [konfiguracje](configurations.md) bardziej dynamiczne, przy użyciu słów kluczowych sterowanie przepływem programu PowerShell. W tym artykule opisano, jak można użyć instrukcje warunkowe i pętle się bardziej dynamiczne konfiguracje. Połączenie warunkowe i pętle z [parametry](add-parameters-to-a-configuration.md) i [dane konfiguracyjne](configData.md) umożliwia większą elastyczność i kontrolę podczas kompilowania konfiguracji.
 

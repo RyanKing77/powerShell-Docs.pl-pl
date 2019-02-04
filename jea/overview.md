@@ -1,54 +1,54 @@
 ---
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
-title: Omówienie wystarczającego administracji
-ms.openlocfilehash: 3dae8b31d4d13ff9033803035c870c02fc7c38ca
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Omówienie wystarczający zakres administracji
+ms.openlocfilehash: c097838fb25a63d42502eebf751c64c537bdd077
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222092"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686082"
 ---
 # <a name="just-enough-administration"></a>Narzędzia Just Enough Administration
 
-Po prostu wystarczająco administracyjnej (JEA) jest to technologia zabezpieczeń, która umożliwia delegowane administracji dla wszystkich elementów, którymi można zarządzać za pomocą programu PowerShell.
-JEA można:
+Tylko tyle administracji (JEA) to technologia zabezpieczeń, która umożliwia delegowane administracji dla każdego elementu, którymi można zarządzać za pomocą programu PowerShell.
+Za pomocą technologii JEA możesz wykonywać następujące czynności:
 
-- **Zmniejsz liczbę administratorów na maszynach** kont wirtualnych korzystanie z usług lub grupy zarządzane konta usług, które wykonania uprzywilejowanych akcji w imieniu użytkowników regularne.
-- **Ograniczenia, które mogą wykonywać użytkownicy** przez określenie, które polecenia cmdlet, funkcji i poleceń zewnętrznych, które mogą uruchamiać.
-- **Lepiej zrozumieć, co robią użytkownicy** z dzienników i zapisy który opisano dokładnie które polecenia wykonywane podczas sesji użytkownika.
+- **Zmniejsz liczbę administratorów na maszynach** wykorzystaniem kont wirtualnych lub grup zarządzanych kont usług, które wykonania uprzywilejowanych akcji w imieniu użytkowników regularne.
+- **Ograniczenia, które mogą wykonywać użytkownicy** , określając, który poleceń cmdlet, funkcji i poleceń zewnętrznych mogą uruchamiać.
+- **Lepiej zrozumieć, co robią użytkownicy** przy użyciu transkrypcji i dzienniki, dowiesz się dokładnie, które polecenia wykonywane podczas ich sesji użytkownika.
 
 **Dlaczego jest to istotne?**
 
-Kont z wysokimi uprawnieniami do administrowania serwerami stwarzać poważne zagrożenie bezpieczeństwa.
-Należy osoba atakująca naruszenia zabezpieczeń jeden z tych kont, one będą mogły uruchamiać [penetracji ataków](http://aka.ms/pth) całej organizacji.
-Każde konto, które wykraczają może umożliwić im dostępu do nawet więcej kont i zasobów, wprowadzenie ich bliższe kradzież kluczy tajnych firmy, uruchamianie ataku typu "odmowa usługi" i inne.
+Wysoce uprzywilejowanych kont używane do administrowania serwerami stwarzać poważne zagrożenie bezpieczeństwa.
+Należy osobie atakującej naruszenie jednego z tych kont, ich można uruchomić [poprzecznego ataków](http://aka.ms/pth) całej organizacji.
+Każde konto, które mogą naruszyć można nadały im dostęp nawet więcej kont i zasobów, umieszczając je o krok bliżej kradzież firmy wpisów tajnych oraz ich uruchamianie ataku typu "odmowa usługi" i nie tylko.
 
 Nie zawsze jest łatwo albo Usuń uprawnienia administracyjne.
-Należy wziąć pod uwagę typowy scenariusz, w którym jest zainstalowana rola DNS na tym samym komputerze co kontrolerze domeny usługi Active Directory.
-Administratorzy powinni DNS wymagają uprawnień administratora lokalnego, aby rozwiązać problemy z serwerem DNS, ale aby zrobić, należy je wysoko uprzywilejowane grupy zabezpieczeń "Administratorzy domeny".
-Takie podejście skutecznie zapewnia kontrolę administratorów DNS w całej domenie i dostęp do wszystkich zasobów na tym komputerze.
+Należy rozważyć typowy scenariusz, w którym rola DNS jest zainstalowany na tym samym komputerze jako kontrolera domeny usługi Active Directory.
+Administratorzy usługi DNS wymagają uprawnień administratora lokalnego, aby rozwiązać problemy z serwerem DNS, ale aby to zrobić, więc trzeba były wysoko uprzywilejowane grupy zabezpieczeń "Administratorzy domeny".
+Takie podejście zapewnia efektywne Administratorzy DNS kontroli nad całej domeny i dostęp do wszystkich zasobów na tym komputerze.
 
-JEA pomaga rozwiązać ten problem, pomagając przyjmuje zasady *najniższych uprawnień*.
-Punkt końcowy zarządzania JEA, można skonfigurować dla administratorów DNS, które umożliwi im dostęp do wszystkich poleceń programu PowerShell, które są niezbędne do ich pracy get, ale nic więcej.
-Oznacza to zapewnienia odpowiedniego dostępu do naprawy skażone pamięć podręczna DNS lub uruchom ponownie serwer DNS nie przypadkowo nadanie im prawa do usługi Active Directory lub przeglądać systemu plików lub uruchamianie skryptów potencjalnie niebezpieczne.
-Jeszcze lepiej, gdy sesja JEA jest skonfigurowany do używania tymczasowego uprzywilejowanych kont wirtualnych, administratorami DNS mogą łączyć się z serwera przy użyciu *bez uprawnień administratora* poświadczenia i nadal będzie można uruchamiać polecenia, które zwykle wymagają uprawnienia administratora.
-Ta funkcja umożliwia usunąć użytkowników z ról administratora domenę lokalną powszechnie uprzywilejowanych i zamiast tego ścisła kontrola, jakie są można wykonać na każdym komputerze.
+JEA pomaga rozwiązać ten problem, która ułatwia przyjęcie zasady *najniższych uprawnień*.
+Za pomocą technologii JEA można skonfigurować punktu końcowego zarządzania dla administratorów DNS, które umożliwia im dostęp do wszystkich potrzebnych im uzyskać ich gotowe poleceń programu PowerShell, ale nic więcej.
+Oznacza to zapewnić odpowiedni dostęp, aby naprawić uszkodzone kolejką pamięci podręcznej DNS lub uruchom ponownie serwer DNS bez przypadkowo nadawania im praw do usługi Active Directory lub Przeglądaj system plików lub uruchamianie skryptów potencjalnie niebezpieczne.
+Jeszcze lepiej, gdy sesja JEA jest skonfigurowany do używania tymczasowe uprzywilejowanych kont wirtualnych, administratorów DNS można nawiązać połączenie serwera za pomocą *nieadministracyjna* poświadczeń i nadal mieć możliwość uruchamiania poleceń, które zwykle wymagają uprawnienia administratora.
+Ta funkcja pozwala na usuwanie użytkowników z ról administratora domenę lokalną powszechnie uprzywilejowanego i zamiast tego dokładnie kontrolować co to są w stanie wykonać na każdym komputerze.
 
-## <a name="get-started-with-jea"></a>Rozpoczynanie pracy z JEA
+## <a name="get-started-with-jea"></a>Wprowadzenie do usługi JEA
 
-Możesz rozpocząć używać JEA dzisiaj na dowolnym komputerze z systemem Windows Server 2016 lub Windows 10.
-Można również uruchomić JEA w starszych systemach operacyjnych w aktualizacji Windows Management Framework.
-Aby dowiedzieć się więcej o wymaganiach dotyczących używania JEA i informacje na temat tworzenia, użyć i inspekcji punktu końcowego JEA, zobacz następujące tematy:
+Możesz rozpocząć korzystanie z usługi JEA już dziś na dowolnym komputerze z systemem Windows Server 2016 lub Windows 10.
+Można również uruchomić JEA w starszych systemach operacyjnych z aktualizacją systemu Windows Management Framework.
+Aby dowiedzieć się więcej o wymaganiach dotyczących do używania usługi JEA i Dowiedz się, jak tworzyć, używać i inspekcji punktu końcowego JEA, zapoznaj się z następujących tematów:
 
-- [Wymagania wstępne](prerequisites.md) -opisano sposób konfigurowania środowiska, aby użyć JEA.
-- [Możliwości roli](role-capabilities.md) -wyjaśniono, jak tworzyć role, które określają, co użytkownik może wykonywać w sesji JEA.
-- [Konfiguracje sesji](session-configurations.md) -opisano sposób konfigurowania punktów końcowych JEA, które mapowanie użytkowników do ról i ustaw tożsamość JEA
-- [Rejestrowanie JEA](register-jea.md) — Tworzenie punktu końcowego JEA i udostępnić użytkownikom łączenie się z.
-- [Przy użyciu JEA](using-jea.md) -informacje dotyczące różnych sposobów korzystania JEA.
-- [Zagadnienia dotyczące zabezpieczeń](security-considerations.md) — Przegląd najlepszych rozwiązań dotyczących zabezpieczeń i wpływ JEA opcji konfiguracji.
-- [Inspekcja i raport dotyczący JEA](audit-and-report.md) — Dowiedz się, jak inspekcji i raport dotyczący JEA punktów końcowych.
+- [Wymagania wstępne](prerequisites.md) — wyjaśnia, jak skonfigurować środowisko do używania usługi JEA.
+- [Możliwości roli](role-capabilities.md) — wyjaśnia, jak tworzyć role, które określają, co użytkownik może wykonywać w ramach sesji usługi JEA.
+- [Konfiguracje sesji](session-configurations.md) — objaśnienie sposobu konfigurowania punktów końcowych JEA mapowanie użytkowników do ról, które ustawienia tożsamości usługi JEA
+- [Rejestrowanie usługi JEA](register-jea.md) — Tworzenie punktu końcowego JEA i udostępnić użytkownikom łączenie się z.
+- [Korzystanie z usługi JEA](using-jea.md) -informacje dotyczące różnych sposobów, można użyć technologii JEA.
+- [Zagadnienia dotyczące zabezpieczeń](security-considerations.md) — Przejrzyj najlepsze rozwiązania dotyczące zabezpieczeń i zagadnień dotyczących opcji konfiguracji technologii JEA.
+- [Inspekcja i raportowanie dotyczące technologii JEA](audit-and-report.md) — Dowiedz się, jak Inspekcja i raportowanie dla punktów końcowych JEA.
 
-## <a name="samples-and-dsc-resource"></a>Przykłady i zasobów usługi Konfiguracja DSC
+## <a name="samples-and-dsc-resource"></a>Przykłady i zasobów DSC
 
-Przykładowe konfiguracje JEA i zasobów JEA DSC znajdują się w [repozytorium JEA GitHub](https://github.com/PowerShell/JEA).
+Przykładowe JEA konfiguracji i zasobów DSC JEA znajdują się w [repozytorium GitHub usługi JEA](https://github.com/PowerShell/JEA).

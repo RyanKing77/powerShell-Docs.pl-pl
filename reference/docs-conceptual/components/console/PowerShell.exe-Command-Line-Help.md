@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: PowerShell.exe — pomoc wiersza polecenia
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404879"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688826"
 ---
 # <a name="powershellexe-command-line-help"></a>Pomoc w wierszu polecenia PowerShell.exe
 
@@ -72,7 +72,7 @@ Nie zakończyć działanie po uruchomieniu polecenia uruchamiania.
 
 Ukrywa praw autorskich transparentu podczas uruchamiania.
 
-### <a name="-noninteractive"></a>-Nieinterakcyjnym
+### <a name="-noninteractive"></a>-NonInteractive
 
 Użytkownik nie widzi monitu interakcyjnego.
 
@@ -80,7 +80,7 @@ Użytkownik nie widzi monitu interakcyjnego.
 
 Nie jest ładowana profilu programu PowerShell.
 
-### <a name="-outputformat-text--xml"></a>-OutputFormat {tekstu | XML}
+### <a name="-outputformat-text--xml"></a>-OutputFormat {Text | XML}
 
 Określa sposób formatowania danych wyjściowych za pomocą programu PowerShell. Prawidłowe wartości to "Text" (ciągi tekstowe) lub "XML" (w formacie CLIXML serializacji).
 
@@ -88,7 +88,7 @@ Określa sposób formatowania danych wyjściowych za pomocą programu PowerShell
 
 Ładuje określony plik konsoli programu PowerShell. Wprowadź ścieżkę i nazwę pliku konsoli. Aby utworzyć plik konsoli, należy użyć [ `Export-Console` ](/powershell/module/Microsoft.PowerShell.Core/Export-Console) polecenia cmdlet programu PowerShell.
 
-### <a name="-sta"></a>-STA.
+### <a name="-sta"></a>-Sta
 
 Uruchamia programu PowerShell przy użyciu apartamentem jednowątkowym. W środowisku PowerShell 3.0 apartamentem jednowątkowym (przedziale STA) jest ustawieniem domyślnym. W programie PowerShell 2.0 wielowątkowej (MTA) jest ustawieniem domyślnym.
 
@@ -100,7 +100,7 @@ Jeśli program PowerShell 3.0 nie jest zainstalowany, jedyna prawidłowa wartoś
 
 Aby uzyskać więcej informacji, zobacz [Instalowanie programu Windows PowerShell](../../setup/installing-windows-powershell.md).
 
-### <a name="-windowstyle-window-style"></a>-Nazwa_okna <Window style>
+### <a name="-windowstyle-window-style"></a>-WindowStyle <Window style>
 
 Ustawia styl okna sesji. Prawidłowe wartości to: Normalny, zminimalizowany, Maximized i ukryty.
 

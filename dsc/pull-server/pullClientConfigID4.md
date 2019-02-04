@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie klienta ściągania przy użyciu identyfikatorów konfiguracji w programie PowerShell 4.0
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405276"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685480"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Konfigurowanie klienta ściągania przy użyciu identyfikatorów konfiguracji w programie PowerShell 4.0
 
->Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+>Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Serwera ściągania (funkcja Windows *usługi DSC*) jest obsługiwanych składników systemu Windows Server jednak nie jest planowane oferują nowe funkcje lub możliwości osobno. Zaleca się rozpocząć przechodzenie zarządzanych klientom [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (w tym funkcje poza serwera ściągania w systemie Windows Server) lub jeden z członków społeczności na liście [tutaj](pullserver.md#community-solutions-for-pull-service).

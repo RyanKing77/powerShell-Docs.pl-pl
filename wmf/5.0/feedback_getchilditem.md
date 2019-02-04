@@ -1,52 +1,52 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d9f1ca10c948b06b234e17f688b8f899ed41c5d6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cc5d2d799c1292f68de5fb2360fcba220c2c010b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221905"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687916"
 ---
-# <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem ma - parametr głębokość
-**Get-ChildItem** ma teraz **— głębokość** korzystasz z parametru **— Recurse** ograniczenie rekursji:
+# <a name="get-childitem-has--depth-parameter"></a>Polecenie GET-ChildItem ma parametr - Depth
+**Polecenie GET-ChildItem** ma teraz **— głębokość** korzystasz z parametru **— Recurse** ograniczyć rekursji:
 
-PS C:\\użytkowników\\slee\\pobiera\\przykład&gt; Get-ChildItem-Recurse - głębokość 0
+PS C:\\użytkowników\\slee\\pliki do pobrania\\przykład&gt; Get-ChildItem-Recurse - głębokość 0
 
-Katalog: C:\\użytkowników\\slee\\pobiera\\przykład
+Katalog: C:\\użytkowników\\slee\\pliki do pobrania\\przykład
 
-Nazwa trybu LastWriteTime długość
-
----- ------------- ------ ----
-
-d---4/14/2015 Depth0 17:36:00
-
-----2015-4-14 13:19 będzie więc Plik1.txt 0
-
-----2015-4-14:19 godz Plik2.txt 0
-
-----2015-4-14:19 godz 0 File3.txt
-
-PS C:\\użytkowników\\slee\\pobiera\\przykład&gt; Get-ChildItem-Recurse - głębokość 1
-
-Katalog: C:\\użytkowników\\slee\\pobiera\\przykład
-
-Nazwa trybu LastWriteTime długość
+Tryb LastWriteTime długość nazwy
 
 ---- ------------- ------ ----
 
-d---4/14/2015 Depth0 17:36:00
+d---Depth0 o godzinie 17:36 4/14/2015
 
-----2015-4-14 13:19 będzie więc Plik1.txt 0
+----4/14/2015 r. 13:19:00 więc Plik1.txt 0
 
-----2015-4-14:19 godz Plik2.txt 0
+----4/14/2015 r. 13:19:00 Plik2.txt 0
 
-----2015-4-14:19 godz 0 File3.txt
+----4/14/2015 r. 13:19:00 0 File3.txt
 
-Katalog: C:\\użytkowników\\slee\\pobiera\\przykład\\Depth0
+PS C:\\użytkowników\\slee\\pliki do pobrania\\przykład&gt; Get-ChildItem-Recurse - 1 głębokości
 
-Nazwa trybu LastWriteTime długość
+Katalog: C:\\użytkowników\\slee\\pliki do pobrania\\przykład
+
+Tryb LastWriteTime długość nazwy
 
 ---- ------------- ------ ----
 
-d---Depth1 5:33 PM 4/14/2015
+d---Depth0 o godzinie 17:36 4/14/2015
+
+----4/14/2015 r. 13:19:00 więc Plik1.txt 0
+
+----4/14/2015 r. 13:19:00 Plik2.txt 0
+
+----4/14/2015 r. 13:19:00 0 File3.txt
+
+Katalog: C:\\użytkowników\\slee\\pliki do pobrania\\przykład\\Depth0
+
+Tryb LastWriteTime długość nazwy
+
+---- ------------- ------ ----
+
+d---Depth1 o godzinie 17:33 4/14/2015

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie programu Local Configuration Manager
-ms.openlocfilehash: c3ced2376c7d99477c40ae078dcecd775538b350
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405029"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686740"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurowanie programu Local Configuration Manager
 
@@ -80,13 +80,24 @@ Następujące właściwości są dostępne w **ustawienia** bloku.
 | ConfigurationMode| ciąg | Określa, jak LCM faktycznie ma zastosowanie do konfiguracji do węzłów docelowych. Możliwe wartości to __"ApplyOnly"__,__"ApplyAndMonitor"__, i __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__: Ma zastosowanie do konfiguracji DSC, a nie robi nic więcej, chyba że nowa konfiguracja zostanie przypisany do węzła docelowego lub nowej konfiguracji są pobierane z usługi. Po początkowej stosowania nowej konfiguracji DSC nie sprawdza odejście od stanu wcześniej skonfigurowany. Należy pamiętać, że DSC podejmie próbę zastosowania konfiguracji, dopóki nie zostanie pomyślnie przed __ApplyOnly__ staje się skuteczny. </li><li> __ApplyAndMonitor__: Jest to wartość domyślna. LCM stosuje wszystkie nowe konfiguracje. Po początkowym aplikacji nowej konfiguracji Jeśli węzeł docelowy drifts z żądanego stanu DSC raporty niezgodności w dziennikach. Należy pamiętać, że DSC podejmie próbę zastosowania konfiguracji, dopóki nie zostanie pomyślnie przed __ApplyAndMonitor__ staje się skuteczny.</li><li>__ApplyAndAutoCorrect__: DSC stosuje wszystkie nowe konfiguracje. Po początkowym aplikacji nowej konfiguracji Jeśli węzeł docelowy drifts z żądanego stanu DSC raporty niezgodności w dziennikach, a następnie ponownie stosuje bieżącej konfiguracji.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| W ciągu kilku minut, bieżąca konfiguracja jest jak często sprawdzane i stosowane. Ta właściwość jest ignorowana, jeśli ustawiono właściwość ConfigurationMode ApplyOnly. Wartość domyślna to 15.|
 | Element DebugMode| ciąg| Możliwe wartości to __Brak__, __ForceModuleImport__, i __wszystkich__. <ul><li>Ustaw __Brak__ zasoby pamięci podręcznej. To jest ustawieniem domyślnym i powinny być używane w scenariuszach produkcyjnych.</li><li>Ustawienie __ForceModuleImport__, powoduje, że LCM załadować ponownie wszystkie moduły zasobów DSC, nawet jeśli zostały wcześniej załadowane i pamięci podręcznej. Ma to wpływ na wydajność operacji DSC, ponieważ każdy moduł jest załadowany ponownie, przy użyciu. Zazwyczaj używasz tej wartości podczas debugowania zasobu</li><li>W tej wersji __wszystkich__ jest taka sama jak __ForceModuleImport__</li></ul> |
-| RebootNodeIfNeeded| wartość logiczna| Ustaw tę opcję na __$true__ na Automatyczny ponowny rozruch węzła po przeprowadzeniu konfiguracji, która wymaga ponownego uruchomienia jest stosowany. W przeciwnym razie trzeba będzie ręcznie wykonać ponowne uruchomienie węzła dla żadnej konfiguracji, który go wymaga. Wartość domyślna to __$false__. Aby użyć tego ustawienia, jeśli warunek jest ponowny rozruch jest wprowadzany przez coś innego niż DSC (np. Instalator Windows), należy połączyć to ustawienie za pomocą [xPendingReboot](https://github.com/powershell/xpendingreboot) modułu.|
+| RebootNodeIfNeeded| wartość logiczna| Ustaw tę opcję na `$true` umożliwia zasobów do ponownego rozruchu przy użyciu węzła `$global:DSCMachineStatus` flagi. W przeciwnym razie trzeba będzie ręcznie wykonać ponowne uruchomienie węzła dla żadnej konfiguracji, który go wymaga. Wartość domyślna to `$false`. Aby użyć tego ustawienia, jeśli warunek jest ponowny rozruch jest wprowadzany przez coś innego niż DSC (np. Instalator Windows), należy połączyć to ustawienie za pomocą [xPendingReboot](https://github.com/powershell/xpendingreboot) modułu.|
 | Trybów RefreshMode| ciąg| Określa, jak LCM pobiera konfiguracje. Możliwe wartości to __"Wyłączone"__, __"Push"__, i __"Ściągania"__. <ul><li>__Wyłączone__: Konfiguracje DSC są wyłączone dla tego węzła.</li><li> __Wypychanie__: Konfiguracje są inicjowane przez wywołanie metody [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) polecenia cmdlet. Konfiguracja jest stosowana od razu do węzła. Jest to wartość domyślna.</li><li>__Ściągnij:__ Węzeł jest skonfigurowany do regularne sprawdzanie konfiguracji z usługi ściągania lub ścieżka SMB. Jeśli ta właściwość jest ustawiona __ściągnięcia__, należy określić HTTP (usługa) lub ścieżka SMB (udział) w __ConfigurationRepositoryWeb__ lub __ConfigurationRepositoryShare__ bloku.</li></ul>|
 | RefreshFrequencyMins| Uint32| Interwał czasu w minutach, w których LCM sprawdza, czy usługa ściągania, aby uzyskać zaktualizowane konfiguracje. Ta wartość jest ignorowana, jeśli nie skonfigurowano programu LCM w trybie ściągnięcia. Wartość domyślna to 30.|
 | ReportManagers| [] CimInstance| Nieaktualne. Użyj __ReportServerWeb__ bloków, aby zdefiniować punkt końcowy, aby wysłać dane raportowania usługi ściągania.|
 | ResourceModuleManagers| [] CimInstance| Nieaktualne. Użyj __ResourceRepositoryWeb__ i __ResourceRepositoryShare__ bloków, aby zdefiniować ściągania usługi punktów końcowych HTTP lub ścieżek protokołu SMB, odpowiednio.|
 | PartialConfigurations| CimInstance| Nie zaimplementowano. Nie używaj.|
 | StatusRetentionTimeInDays | UInt32| Liczba dni, przez które LCM śledzi stan bieżącej konfiguracji.|
+
+> [!NOTE]
+> Rozpoczyna się LCM **ConfigurationModeFrequencyMins** na podstawie cyklu:
+>
+> - Nowe metaconfig jest stosowany przy użyciu `Set-DscLocalConfigurationManager`
+> - Ponowne uruchomienie komputera
+>
+> Aby uzyskać dowolny warunek, gdzie proces czasomierza napotyka awarii, który zostanie wykryty w ciągu 30 sekund, a cykl zostanie ponownie uruchomiona.
+> Operacja współbieżna może opóźnić cyklu z pracę, jeśli czas trwania tej operacji przekracza częstotliwość cyklu skonfigurowany, następnym czasomierza nie zostanie uruchomiona.
+>
+> Przykład metaconfig jest skonfigurowany z częstotliwością co 15 min ściągania i ściąganie odbywa się T1.  Węzeł nie zakończy pracę dla 16 w ciągu kilku minut.  Pierwszy cykl 15 minut jest ignorowana, a następnego ściągania nastąpi T1 + 15 + 15.
 
 ## <a name="pull-service"></a>Usługa ściągania
 
@@ -111,7 +122,7 @@ A **ConfigurationRepositoryWeb** definiuje następujące właściwości.
 |RegistrationKey|ciąg|Identyfikator GUID, który rejestruje węzła przy użyciu usługi ściągania. Aby uzyskać więcej informacji, zobacz [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](../pull-server/pullClientConfigNames.md).|
 |ServerURL|ciąg|Adres URL usługi konfiguracji.|
 
-Przykładowy skrypt ułatwiają konfigurowanie wartość ConfigurationRepositoryWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Przykładowy skrypt ułatwiają konfigurowanie wartość ConfigurationRepositoryWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 Aby zdefiniować serwer konfiguracji opartej na protokole SMB, należy utworzyć **ConfigurationRepositoryShare** bloku.
 A **ConfigurationRepositoryShare** definiuje następujące właściwości.
@@ -133,7 +144,7 @@ A **ResourceRepositoryWeb** definiuje następujące właściwości.
 |RegistrationKey|ciąg|Identyfikator GUID, który identyfikuje węzeł, aby usługa ściągania.|
 |ServerURL|ciąg|Adres URL serwera konfiguracji.|
 
-Przykładowy skrypt ułatwiają konfigurowanie wartość ResourceRepositoryWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Przykładowy skrypt ułatwiają konfigurowanie wartość ResourceRepositoryWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 Aby zdefiniować serwer opartych na SMB zasobów, należy utworzyć **ResourceRepositoryShare** bloku.
 **ResourceRepositoryShare** definiuje następujące właściwości.
@@ -156,7 +167,7 @@ Rola serwera raportów nie jest zgodny z usługi ściągania opartych na SMB.
 |RegistrationKey|ciąg|Identyfikator GUID, który identyfikuje węzeł, aby usługa ściągania.|
 |ServerURL|ciąg|Adres URL serwera konfiguracji.|
 
-Przykładowy skrypt ułatwiają konfigurowanie wartość ReportServerWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Przykładowy skrypt ułatwiają konfigurowanie wartość ReportServerWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## <a name="partial-configurations"></a>Konfiguracje częściowe
 
@@ -170,7 +181,7 @@ Aby uzyskać więcej informacji na temat konfiguracje częściowe zobacz [konfig
 |DependsOn|Ciąg{}|Lista nazw inne konfiguracje, które należy wykonać przed zastosowaniem tej konfiguracji częściowe.|
 |Opis|ciąg|Tekst opisujący częściowe konfiguracji.|
 |ExclusiveResources|ciąg]|Tablica zasobów dotyczących wyłącznie tej konfiguracji częściowe.|
-|Trybów RefreshMode|ciąg|Określa, jak LCM pobiera tę konfigurację częściowe. Możliwe wartości to __"Wyłączone"__, __"Push"__, i __"Ściągania"__. <ul><li>__Wyłączone__: Ta konfiguracja częściowe jest wyłączona.</li><li> __Wypychanie__: Częściowe konfiguracji zostanie przypisany do węzła, wywołując [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) polecenia cmdlet. Po skopiowaniu wszystkie konfiguracje częściowe dla węzła, są wypychane lub pobierane z usługi, konfiguracji mogą być uruchamiane przez wywołanie `Start-DscConfiguration –UseExisting`. Jest to wartość domyślna.</li><li>__Ściągnij:__ Węzeł jest skonfigurowany do regularne sprawdzanie częściowe konfiguracji przy użyciu usługi ściągania. Jeśli ta właściwość jest ustawiona __ściągnięcia__, należy określić usługę ściągania __ConfigurationSource__ właściwości. Aby uzyskać więcej informacji na temat usługi ściągania usługi Azure Automation, zobacz [Omówienie usługi Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview).</li></ul>|
+|Trybów RefreshMode|ciąg|Określa, jak LCM pobiera tę konfigurację częściowe. Możliwe wartości to __"Wyłączone"__, __"Push"__, i __"Ściągania"__. <ul><li>__Wyłączone__: Ta konfiguracja częściowe jest wyłączona.</li><li> __Wypychanie__: Częściowe konfiguracji zostanie przypisany do węzła, wywołując [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) polecenia cmdlet. Po skopiowaniu wszystkie konfiguracje częściowe dla węzła, są wypychane lub pobierane z usługi, konfiguracji mogą być uruchamiane przez wywołanie `Start-DscConfiguration –UseExisting`. Jest to wartość domyślna.</li><li>__Ściągnij:__ Węzeł jest skonfigurowany do regularne sprawdzanie częściowe konfiguracji przy użyciu usługi ściągania. Jeśli ta właściwość jest ustawiona __ściągnięcia__, należy określić usługę ściągania __ConfigurationSource__ właściwości. Aby uzyskać więcej informacji na temat usługi ściągania usługi Azure Automation, zobacz [Omówienie usługi Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|ciąg]|Tablica nazw zasobów serwerów do pobrania wymaganych zasobów dla tej konfiguracji częściowe. Te nazwy muszą odwoływać się do punktów końcowych usługi wcześniej zdefiniowanej w **ResourceRepositoryWeb** i **ResourceRepositoryShare** bloków.|
 
 __Uwaga:__ konfiguracje częściowe są obsługiwane za pomocą usługi Azure Automation DSC, ale tylko w jednej konfiguracji mogą być ściągane z każdego konta usługi automation w każdym węźle.
@@ -180,7 +191,7 @@ __Uwaga:__ konfiguracje częściowe są obsługiwane za pomocą usługi Azure Au
 ### <a name="concepts"></a>Pojęcia
 [Desired State Configuration — omówienie](../overview/overview.md)
 
-[Wprowadzenie do usługi Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
+[Wprowadzenie do usługi Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Inne zasoby
 

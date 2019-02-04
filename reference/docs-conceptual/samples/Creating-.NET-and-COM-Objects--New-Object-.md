@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Tworzenie obiektów .NET i COM nowego obiektu
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405597"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684129"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Tworzenie obiektów .NET i COM (New-Object)
 

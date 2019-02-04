@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 64a29aa87507e65a182837df538c5e695c420cb3
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 385bb7223b19c8ace8088ba469e543721a527b99
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222058"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688525"
 ---
 # <a name="uninstallation-instructions"></a>Instrukcje dotyczące odinstalowywania
 
 ## <a name="using-command-prompt"></a>Przy użyciu wiersza polecenia
 1.  Otwórz **wiersza polecenia.**
-2.  Uruchom [uruchamianie autonomicznej usługi Windows Update](https://support.microsoft.com/en-us/kb/934307) w sposób przedstawiony poniżej:
+2.  Uruchom [Windows Update autonomicznego uruchamiania](https://support.microsoft.com/en-us/kb/934307) jak pokazano poniżej:
 
 W systemie Windows Server 2012 R2 i Windows 8.1:
 ```powershell
@@ -29,6 +29,6 @@ wusa /uninstall /kb:3134760
 
 ## <a name="using-control-panel"></a>Za pomocą Panelu sterowania
 1.  Otwórz **w Panelu sterowania.**
-2.  Otwórz **programy**, następnie otwórz **Odinstaluj program.**
+2.  Otwórz **programy**, a następnie otwórz **Odinstaluj program.**
 3.  Kliknij przycisk **Wyświetl zainstalowane aktualizacje.**
 4.  Wybierz **Windows Management Framework 5.0** z listy zainstalowanych aktualizacji. Odpowiada to *KB3134758*, *KB3134759*, lub *KB3134760*. Kliknij przycisk **odinstalować.**

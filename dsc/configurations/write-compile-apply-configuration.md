@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, usługi, Instalator
-title: Zapis, skompilowania i zastosowania konfiguracji
+title: Zapisywanie, kompilowanie i stosowanie konfiguracji
 ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404795"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684416"
 ---
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-# <a name="write-compile-and-apply-a-configuration"></a>Zapis, skompilowania i zastosowania konfiguracji
+# <a name="write-compile-and-apply-a-configuration"></a>Zapisywanie, kompilowanie i stosowanie konfiguracji
 
 To ćwiczenie zawiera opis sposobu tworzenia i stosowania konfiguracji Desired State Configuration (DSC), od początku do końca.
 W poniższym przykładzie dowiesz się, jak pisać i Zastosuj konfigurację bardzo proste. Konfiguracja będzie upewnij się, że plik "HelloWorld.txt" istnieje na komputerze lokalnym. Jeśli usuniesz plik, DSC ponownie utworzy go następnym razem, który aktualizuje.

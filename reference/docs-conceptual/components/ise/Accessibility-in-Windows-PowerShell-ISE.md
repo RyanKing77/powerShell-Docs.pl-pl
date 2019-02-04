@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Ułatwienia dostępu w środowisku Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404928"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686719"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Ułatwienia dostępu w środowisku Windows PowerShell ISE
 
@@ -68,7 +68,7 @@ Podczas edytowania tekstu, można użyć następujących skrótów klawiaturowyc
 |**Znajdź następny w skrypcie**|F3|Okienko skryptu|
 |**Znajdź poprzedni w skrypcie**|SHIFT+F3|Okienko skryptu|
 |**Wklej**|CTRL + V|Okienku skryptów i okienku konsoli|
-|**Wykonaj ponownie**|CTRL+Y|Okienku skryptów i okienku konsoli|
+|**Redo**|CTRL+Y|Okienku skryptów i okienku konsoli|
 |**Zastąp w skrypcie**|CTRL+H|Okienko skryptu|
 |**Zapisywanie**|CTRL+S|Okienko skryptu|
 |**Zaznacz wszystko**|CTRL + A|Okienku skryptów i okienku konsoli|
@@ -81,7 +81,7 @@ Podczas uruchamiania skryptów w okienku skryptu, można użyć następujących 
 |Akcja|Skróty klawiaturowe|
 |----------|---------------------|
 |**Nowy**|CTRL+N|
-|**Otwórz**|CTRL+O|
+|**Open**|CTRL+O|
 |**Run**|F5|
 |**Uruchom zaznaczone**|F8|
 |**Zatrzymaj wykonywanie**|CTRL+BREAK. CTRL + C, mogą służyć podczas kontekstu jest jednoznaczna, (gdy nie ma żadnego tekstu, zaznaczona).|

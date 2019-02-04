@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Hierarchia modeli obiektów środowiska ISE
 ms.openlocfilehash: 0159707b1050c412a74da3d3ca02a46cea982556
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405383"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683772"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>Hierarchia modeli obiektów środowiska ISE
 
@@ -15,7 +15,7 @@ W tym temacie przedstawiono hierarchię obiektów, które są dostępne w ramach
 Windows PowerShell ISE i jest dołączone w środowisku Windows PowerShell 3.0 w programie Windows PowerShell 4.0.
 Kliknij obiekt, aby przejść do dokumentacji dla klasy, która definiuje obiekt.
 
-## <a name="psise-object"></a>Obiekt $psISE
+## <a name="psise-object"></a>$psISE Object
 
 **$PsISE** obiekt jest [główny obiekt](The-ObjectModelRoot-Object.md) hierarchii obiektów programu Windows PowerShell ISE.
 Znajduje się na najwyższym poziomie, zapewnia następujące obiekty dostępne dla skryptów:

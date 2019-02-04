@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Zasób Windowsoptionalfeatureset DSC
+title: DSC WindowsOptionalFeatureSet Resource
 ms.openlocfilehash: c27d026e01bbb443a82112e37f1d199fb3482e49
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048413"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683947"
 ---
-# <a name="dsc-windowsoptionalfeatureset-resource"></a>Zasób Windowsoptionalfeatureset DSC
+# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet Resource
 
 > Dotyczy: Windows PowerShell 5.0
 

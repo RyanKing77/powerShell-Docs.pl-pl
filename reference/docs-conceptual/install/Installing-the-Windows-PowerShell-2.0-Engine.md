@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Instalowanie aparatu programu Windows PowerShell 2.0
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 ms.openlocfilehash: b625b61b4e191402074f57ea2e942f800dbbcd53
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405150"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684073"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Instalowanie aparatu programu Windows PowerShell 2.0
 W tym temacie wyjaśniono, jak instalowanie aparatu programu Windows PowerShell 2.0.

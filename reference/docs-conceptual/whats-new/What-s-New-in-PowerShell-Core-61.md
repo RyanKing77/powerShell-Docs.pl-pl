@@ -2,12 +2,12 @@
 title: Co nowego w programie PowerShell Core 6.1
 description: Nowe funkcje i zmiany w programie PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851311"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687895"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Co nowego w programie PowerShell Core 6.1
 
@@ -18,7 +18,7 @@ Aby uzyskać pełną listę zmian, zapoznaj się z naszym [dziennika zmian w wit
 
 I gdy czy powinniśmy zwołać kilka nazw poniżej, aby [wszystkie uczestnicy społeczności](https://github.com/PowerShell/PowerShell/graphs/contributors) , wprowadzonych w tej wersji możliwe.
 
-## <a name="net-core-21"></a>.NET core 2.1
+## <a name="net-core-21"></a>.NET Core 2.1
 
 PowerShell Core 6.1 przeniesione do platformy .NET Core 2.1, po [wydane w maju](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/), dając w efekcie w szereg ulepszeń w programie PowerShell, w tym:
 
@@ -37,7 +37,7 @@ Pakiet Windows umożliwia programu PowerShell Core do użycia **więcej niż 190
 
 ## <a name="support-for-application-whitelisting"></a>Obsługa listy dozwolonych aplikacji
 
-PowerShell Core 6.1 ma parzystości przy użyciu programu Windows PowerShell 5.1 obsługi [funkcji AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) i [funkcji Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) listy dozwolonych aplikacji.
+PowerShell Core 6.1 ma parzystości przy użyciu programu Windows PowerShell 5.1 obsługi [funkcji AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) i [funkcji Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) listy dozwolonych aplikacji.
 Listy dozwolonych aplikacji umożliwia szczegółową kontrolę, z których plików binarnych mogą być wykonywane używany przy użyciu programu PowerShell [Tryb ograniczonego języka](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/).
 
 ## <a name="performance-improvements"></a>Ulepszenia wydajności
@@ -51,7 +51,7 @@ Na przykład `Group-Object` przyspieszyło o 66%:
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Program Windows PowerShell 5.1 | Program PowerShell Core 6.0 | Program PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Czas (s)   | 25.178                 | 19.653              | 6.641               |
 | Przyspiesz (%) | Brak                    | 21.9%               | 66.2%               |
@@ -62,7 +62,7 @@ Podobnie przez więcej niż 15% ulepszyła scenariusze sortowania podobny do pon
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Program Windows PowerShell 5.1 | Program PowerShell Core 6.0 | Program PowerShell Core 6.1 |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | Czas (s)   | 12.170                 | 8.493               | 7.08                |
 | Przyspiesz (%) | Brak                    | 30.2%               | 16.6%               |
@@ -74,7 +74,7 @@ W poniższym przykładzie użyto testu CSV z 26,616 wierszami i kolumnami sześ�
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Program Windows PowerShell 5.1 | Program PowerShell Core 6.0 | Program PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | Czas (s)   | 0.441                  | 1.069               | 0.268                  |
 | Przyspiesz (%) | Brak                    | -142.4%             | 74.9% (% 39.2 z WPS) |
@@ -86,9 +86,9 @@ W poniższym przykładzie użyto pliku JSON testu ~ 2MB:
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Program Windows PowerShell 5.1 | Program PowerShell Core 6.0 | Program PowerShell Core 6.1    |
+|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
-| Czas (s)   | 0.259                  | 0.577               | 0,125                  |
+| Czas (s)   | 0.259                  | 0.577               | 0.125                  |
 | Przyspiesz (%) | Brak                    | -122.8%             | 78.3% (% 51.7 z WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Sprawdź `system32` zgodne modułów skrzynkach odbiorczych na Windows
@@ -209,7 +209,7 @@ Jeśli `pwsh.exe` nie jest dostępna, programu PowerShell Direct powraca do uży
 
 `Enable-PSRemoting` teraz tworzy dwie konfiguracje sesji komunikacji zdalnej:
 
-- Jeden dla wersji głównej programu PowerShell. Na przykład`PowerShell.6`. Ten punkt końcowy, które mogą być powoływane między aktualizacjami wersji pomocniczej konfiguracji sesji programu PowerShell 6 "systemowe"
+- Jeden dla wersji głównej programu PowerShell. Na przykład `PowerShell.6`. Ten punkt końcowy, które mogą być powoływane między aktualizacjami wersji pomocniczej konfiguracji sesji programu PowerShell 6 "systemowe"
 - Jedna konfiguracja sesji specyficzny dla wersji, na przykład: `PowerShell.6.1.0`
 
 To zachowanie jest przydatne, jeśli chcesz mieć wiele wersji programu PowerShell 6 zainstalowana i jest dostępna na tym samym komputerze.
@@ -422,7 +422,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 W przeszłości, programu PowerShell dostarczanych funkcja na Windows o nazwie `more` który opakowany `more.com`.
 Ta funkcja została usunięta.
 
-Również `help` zmienione, aby używać funkcji `more.com` Windows lub systemu domyślne pagera, określony przez `$env:PAGER` na platformach innych niż Windows.
+Ponadto `help` zmienione, aby używać funkcji `more.com` Windows lub systemu domyślne pagera, określony przez `$env:PAGER` na platformach innych niż Windows.
 
 ### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` teraz zwraca użytkowników do bieżącego katalogu roboczego na tym dysku
 

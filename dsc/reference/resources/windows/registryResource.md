@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Zasób rejestru DSC
+title: DSC Registry Resource
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048493"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687811"
 ---
-# <a name="dsc-registry-resource"></a>Zasób rejestru DSC
+# <a name="dsc-registry-resource"></a>DSC Registry Resource
 
-_Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0_
+_Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 **Rejestru** zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania kluczy rejestru i wartości w węźle docelowym.
 
@@ -36,12 +36,12 @@ Registry [string] #ResourceName
 | Właściwość | Opis |
 | --- | --- |
 | Klawisz| Wskazuje ścieżkę klucza rejestru, dla którego chcesz zapewnić określonego stanu. Ta ścieżka musi zawierać gałęzi.|
-| valueName| Wskazuje nazwę wartości rejestru. Aby dodać lub usunąć klucz rejestru, należy określić tę właściwość jako ciąg pusty, bez wcześniejszego określania ValueType lub Dane_wartości. Aby zmodyfikować lub usunąć domyślną wartością klucza rejestru, należy określić tę właściwość jako ciąg pusty podczas również określenie ValueType lub Dane_wartości.|
+| ValueName| Wskazuje nazwę wartości rejestru. Aby dodać lub usunąć klucz rejestru, należy określić tę właściwość jako ciąg pusty, bez wcześniejszego określania ValueType lub Dane_wartości. Aby zmodyfikować lub usunąć domyślną wartością klucza rejestru, należy określić tę właściwość jako ciąg pusty podczas również określenie ValueType lub Dane_wartości.|
 | Upewnij się| Wskazuje, czy istnieją kluczy i wartości. Aby upewnić się, że tak, należy ustawić tę właściwość na "Obecny". Aby upewnić się, że nie istnieją, należy ustawić właściwość na "Brak". Wartość domyślna to "Istnieje".|
 | Force| Jeśli określony klucz rejestru jest obecny, **życie** zastępowane nową wartością. Jeśli usuwanie klucza rejestru za pomocą podkluczy, musi to być **$true** |
 | Hex| Wskazuje, jeśli dane są wyrażane w formacie szesnastkowym. Jeśli zostanie określony, dane wartość DWORD/QWORD są prezentowane w formacie szesnastkowym. Nie jest prawidłowy dla innych typów. Wartość domyślna to **$false**.|
 | DependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
-| Dane_wartości| Dane wartości rejestru.|
+| ValueData| Dane wartości rejestru.|
 | ValueType| Wskazuje typ wartości. Obsługiwane typy to: W ciągu (REG_SZ), plik binarny (dane BINARNE REG), Dword 32-bitowych (REG_DWORD), Qword 64-bitowych (REG_QWORD), ciągu wielokrotnego (REG_MULTI_SZ), ciągu rozwijalnego (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Przykład

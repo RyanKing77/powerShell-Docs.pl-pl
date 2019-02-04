@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Obiekt ISESnippetCollection
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
 ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405560"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684612"
 ---
 # <a name="the-isesnippetcollection-object"></a>Obiekt ISESnippetCollection
 
@@ -16,7 +16,7 @@ ms.locfileid: "53405560"
 
 ## <a name="methods"></a>Metody
 
-### <a name="load-filepathname-"></a>Obciążenia\( FilePathName \)
+### <a name="load-filepathname-"></a>Load\( FilePathName \)
 
 Obsługiwane w środowisku Windows PowerShell ISE 3.0 i nowszych, a nie znajduje się w starszych wersjach.
 
@@ -31,6 +31,6 @@ $SnipFile = Join-Path ( Split-Path $profile) 'Snippets\MySnips.snippets.ps1xml' 
 
 ## <a name="see-also"></a>Zobacz też
 
-- [ISESnippetObject](The-ISESnippetObject.md)
+- [The ISESnippetObject](The-ISESnippetObject.md)
 - [Cel modelu obiektów skryptowych środowiska Windows PowerShell ISE](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Hierarchia modeli obiektów środowiska ISE](The-ISE-Object-Model-Hierarchy.md)

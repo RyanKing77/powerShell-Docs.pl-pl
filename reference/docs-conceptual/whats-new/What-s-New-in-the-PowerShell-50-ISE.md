@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Jakie s Nowość w programie PowerShell 50 środowiska ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320588"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687930"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Co&#39;s Nowość w środowisku Windows PowerShell ISE
 W tym temacie opisano nowe i zaktualizowane funkcje, które zostały wprowadzone w wersjach programu Windows PowerShell zintegrowane Scripting Environment (ISE).
@@ -28,13 +28,13 @@ W poniższej tabeli wymieniono nowe i zmienione funkcje w tej wersji programu Wi
 |**[Dodatkowe narzędzia](#add-on-tools)**|X|X||
 |**[Menedżera ponownego uruchamiania i automatycznego zapisywania](#restart-manager-and-auto-save)**|X|X||
 |**[Listy ostatnio używanych](#most-recently-used-list)**|X|X||
-|**[W okienku konsoli](#console-pane)**|X|X||
+|**[Console Pane](#console-pane)**|X|X||
 |**[Przełączniki wiersza polecenia](#command-line-switches)**|X|X||
 |**[Nowe funkcje edytora](#new-editor-features)**|X|X||
 |**[Nowe okno podglądu pomocy](#new-help-viewer-window)**|X|X||
 |**[Pokaż polecenia cmdlet](#show-command-cmdlet)**|X|X||
 
-### <a name="intellisense"></a>Funkcja IntelliSense
+### <a name="intellisense"></a>IntelliSense
 **Dodane w środowisku ISE 3.0**
 
 Funkcja IntelliSense jest to funkcja automatycznego uzupełniania, pomoc, która jest częścią środowiska Windows PowerShell ISE. Funkcja IntelliSense wyświetla aktywne menu potencjalnie zgodnych poleceń cmdlet, parametry, wartości parametrów, pliki lub foldery, podczas wpisywania.
@@ -112,7 +112,7 @@ Osobne polecenie i okienka danych wyjściowych, które były dostępne w pierwsz
 
 - Kolorowanie składni dla tekstu wejściowego (nie tekst danych wyjściowych), w tym składni XML
 
-- Funkcja IntelliSense
+- IntelliSense
 
 - Parowanie nawiasów klamrowych
 
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 zawiera osobne polecenie i okienka danych wyjściowyc
 
 Jeśli program Windows PowerShell ISE można uruchomić z wiersza polecenia (przez wpisanie **powershell_ise.exe**), można dodać następujących nowych przełączników wiersza polecenia.
 
-- *-NoProfile*: uruchamia Windows PowerShell ISE bez uruchamiania **$profile**
+- *-NoProfile*: Uruchamia program Windows PowerShell ISE bez uruchamiania **$profile**
 
 - *-Help*: Wyświetla okno pomocy
 
-- *-mta*: uruchamia Windows PowerShell ISE w trybie apartamentu wielowątkowych. Domyślny tryb działania w środowisku Windows PowerShell ISE jest w trybie jednowątkowego apartamentu lub *- sta*.
+- *-mta*: Windows PowerShell ISE jest uruchamiany w trybie apartamentu wielowątkowych. Domyślny tryb działania w środowisku Windows PowerShell ISE jest w trybie jednowątkowego apartamentu lub *- sta*.
 
 **Jakie korzyści zapewnia ta zmiana?**
 
@@ -176,7 +176,7 @@ Inne funkcje edycji programu Windows PowerShell ISE:
 
 - **Analizowanie błędów** błędy analizy są wskazane czerwonym podkreśleniem. Po umieszczeniu wskazany błąd tekst etykietki narzędzia wyświetla ten problem, który został znaleziony w kodzie.
 
-- **Powiększenie** powiększenia konsoli "™ s zawartość można ustawić za pomocą suwaka powiększenia (w prawym dolnym rogu okna środowiska Windows PowerShell ISE) lub przez wprowadzenie polecenia **$psise.options.Zoom** w okienku konsoli.
+- **Powiększenie** procent powiększenia zawartości konsoli można ustawić za pomocą suwaka powiększenia (w prawym dolnym rogu okna środowiska Windows PowerShell ISE) lub przez wprowadzenie polecenia **$psise.options.Zoom** w okienku konsoli.
 
 - **Kopiuj tekst sformatowany i Wklej** kopiowania do Schowka w środowisku Windows PowerShell ISE zachowuje czcionkę, rozmiar i kolor informacji oryginalnego zaznaczenia.
 

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co nowego w programie Windows PowerShell 5.0
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978899"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688637"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Co nowego w programie Windows PowerShell 5.0
 Windows PowerShell 5.0 zawiera istotne nowe funkcje, które rozszerzają zakres jego zastosowań, zwiększyć jego użyteczność i umożliwiają kontrolowanie i zarządzanie komputerami z systemem Windows, łatwiejsze i bardziej kompleksowe.
@@ -38,9 +38,9 @@ Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration
   - [Nowe DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) obsługuje teraz ścieżki UNC.
 
 - Nowe polecenia cmdlet w [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) modułu
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): wykonuje sprawdzenie, czy serwer na żądanie ściągnięcia.
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): Zatrzymuje konfiguracji, który jest już uruchomiony.
-  - [Usuń DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): umożliwia usuwanie dokumentów konfiguracji poszczególnych etapów (oczekujące poprzedniej i bieżącej).
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx):  Wykonuje sprawdzenie, czy serwer na żądanie ściągnięcia.
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx):  Zatrzymuje konfiguracji, który jest już uruchomiony.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx):  Umożliwia usuwanie dokumentów konfiguracji poszczególnych etapów (oczekujące poprzedniej i bieżącej).
 
 - Ulepszenia języka
   - DependsOn obsługuje teraz zasoby złożone.
@@ -64,10 +64,10 @@ Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration
 
 - Ulepszenia elastyczność
   - Zasób LocalConfigurationManager ma nową właściwość **ActionAfterReboot**.
-    - ContinueConfiguration (wartość domyślna): zostanie automatycznie przywrócona konfiguracja po ponownym uruchomieniu węzła docelowego.
-    - StopConfiguration: Nie automatycznie wznowić konfigurację, po ponownym uruchomieniu węzła.
+    - ContinueConfiguration (wartość domyślna): Automatycznie wznowi konfigurację po ponownym uruchomieniu węzła docelowego.
+    - StopConfiguration: Automatycznie wznawia konfigurację po ponownym uruchomieniu węzła.
   - Uruchom spójności może teraz częściej niż operacja ŚCIĄGNIĘCIA lub na odwrót.
-  - Obsługa wersjonowania: DSC można teraz rozpoznania dokumentu, który został wygenerowany nowszego klienta (dołączone do [WMF 5.0](https://aka.ms/wmf5download)).
+  - Obsługa wersji:  DSC można teraz rozpoznania dokumentu, który został wygenerowany nowszego klienta (dołączone do [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Ulepszenia zapobiegania błąd
   - Wersja modułu jest teraz wymuszane przed zastosowaniem konfiguracji.
@@ -117,7 +117,7 @@ Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration
 - Transkrypcja programu Windows PowerShell został ulepszony, aby dotyczyć wszystkich aplikacji hostingu (np. Windows PowerShell ISE) oprócz host konsoli (**powershell.exe**). Po włączeniu można skonfigurować opcje transkrypcji (w tym włączenie transkrypcji systemowe) **włączyć transkrypcji PowerShell** znaleziono szablony/Windows w administracyjnej części/Windows ustawienia zasad grupy Program PowerShell.
 - Nowa funkcja śledzenia szczegółowy skrypt umożliwia szczegółowe śledzenie i analizy użycia skryptów programu Windows PowerShell w systemie. Włączenie śledzenia szczegółowy skrypt programu Windows PowerShell dzienników wszystkich blokach skryptu w dzienniku zdarzeń śledzenie zdarzeń dla Windows (ETW) **Microsoft-Windows-PowerShell/Operational**.
 - Począwszy od programu Windows PowerShell 5.0, nowe polecenia cmdlet składnię komunikatów kryptograficznych obsługują szyfrowanie i odszyfrowywanie zawartości przy użyciu formatu standardowego IETF kryptograficznie ochrony wiadomości, zgodnie z opisem w [RFC5652](https://tools.ietf.org/html/rfc5652). Dodano polecenia cmdlet Get-CmsMessage, Chroń CmsMessage i Unprotect CmsMessage [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) modułu.
-- Nowe polecenia cmdlet w [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modułu, obszarem działania Get, obszarem działania debugowania, Get-RunspaceDebug, Enable RunspaceDebug i Disable-RunspaceDebug pozwalają na ustawienie opcji debugowania na obszarze działania i uruchamianie i zatrzymywanie debugowanie w obszarze działania. Debugowanie obszary dowolnego działania "oznacza to, że obszary działania nie są obszarem działania domyślne dla konsoli programu Windows PowerShell lub w sesji środowiska Windows PowerShell ISE" "środowiska Windows PowerShell umożliwia ustawianie punktów przerwania w skrypcie i dodać punkty przerwania zatrzymać skrypt z uruchomione, dopóki nie można dołączyć debugera do debugowania skryptu w obszarze działania. Zagnieżdżone debugowania dla dowolnych obszarach działania dodano obsługę do debugera skryptów programu Windows PowerShell dla obszary działania.
+- Nowe polecenia cmdlet w [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modułu, obszarem działania Get, obszarem działania debugowania, Get-RunspaceDebug, Enable RunspaceDebug i Disable-RunspaceDebug pozwalają na ustawienie opcji debugowania na obszarze działania i uruchamianie i zatrzymywanie debugowanie w obszarze działania. Do debugowania na dowolnych obszarach działania (czyli obszary działania nie są obszarem działania domyślne dla konsoli programu Windows PowerShell lub w sesji środowiska Windows PowerShell ISE) programu Windows PowerShell umożliwia ustawianie punktów przerwania w skrypcie i dodano zatrzymywanie punktów przerwania skryptu uruchomione, dopóki nie można dołączyć debugera do debugowania skryptu w obszarze działania. Zagnieżdżone debugowania dla dowolnych obszarach działania dodano obsługę do debugera skryptów programu Windows PowerShell dla obszary działania.
 - Dodano nowe polecenie cmdlet Format szesnastkowy [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modułu. Format szesnastkowy umożliwia wyświetlanie danych tekstowych lub binarnych w formacie szesnastkowym.
 - Dodano polecenia cmdlet Schowka GET i Set-Schowka [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) modułu; mogą ułatwić transferem zawartości do i z sesji środowiska Windows PowerShell. Polecenia cmdlet Schowka obsługuje obrazy, pliki audio, listy plików i tekst.
 - Dodano nowe polecenie cmdlet Clear-RecycleBin [Microsoft.PowerShell.Management](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) moduł; pustych elementów tego polecenia cmdlet, Recycle Bin dla stałych dysków zawiera zewnętrzne stacje dysków. Domyślnie monit o potwierdzenie polecenia Clear-RecycleBin, ponieważ ConfirmImpact.High ustawiono właściwość ConfirmImpact polecenia cmdlet.
@@ -134,16 +134,17 @@ Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration
 - Będzie można wykonywać sprawdzanie poprawności wersji modułu, uruchamiając polecenie cmdlet Test-ModuleManifest.
 - Wyniki polecenia cmdlet Get-Command są teraz wyświetlane kolumny wersji; nowe właściwość wersja została dodana do klasy CommandInfo. Get-Command przedstawiono polecenia z wielu wersji tego samego modułu. Właściwości wersji jest również częścią klasy pochodne CmdletInfo: CmdletInfo i ApplicationInfo.
 - Get-Command ma nowy parametr - ShowCommandInfo, która zwraca informacje ShowCommand jako PSObjects. Jest to szczególnie przydatne funkcje podczas uruchamiania polecenia Show w środowisku Windows PowerShell ISE, przy użyciu komunikacji zdalnej programu Windows PowerShell. Parametr - ShowCommandInfo zastępuje istniejącą funkcję Get SerializedCommand modułu Microsoft.PowerShell.Utility skryptu Get SerializedCommand jest jednak nadal dostępne do obsługi skryptów niskiego poziomu.
-- Nowe polecenie cmdlet Get-ItemPropertyValue pozwala uzyskać wartość właściwości bez przy użyciu notacji z kropką. Na przykład w starszych wersjach programu Windows PowerShell, można uruchomić następujące polecenie, aby pobrać wartości właściwości podstawy aplikacji PowerShellEngine klucza rejestru: **(Get-zmieniona właściwość elementu-HKLM ścieżki:\\oprogramowania\\ Microsoft\\PowerShell\\3\\PowerShellEngine — nazwa ApplicationBase). ApplicationBase**. Począwszy od programu Windows PowerShell 5.0, możesz uruchomić **Get ItemPropertyValue-HKLM ścieżki:\\oprogramowania\\Microsoft\\PowerShell\\3\\PowerShellEngine — ApplicationBase nazwy** .
+- Nowe polecenie cmdlet Get-ItemPropertyValue pozwala uzyskać wartość właściwości bez przy użyciu notacji z kropką. Na przykład w starszych wersjach programu Windows PowerShell, można uruchomić następujące polecenie, aby pobrać wartości właściwości podstawy aplikacji PowerShellEngine klucza rejestru: **(Get-zmieniona właściwość elementu — ścieżka HKLM:\\oprogramowania\\Microsoft\\PowerShell\\3\\PowerShellEngine — nazwa ApplicationBase). ApplicationBase**. Począwszy od programu Windows PowerShell 5.0, możesz uruchomić **Get ItemPropertyValue-HKLM ścieżki:\\oprogramowania\\Microsoft\\PowerShell\\3\\PowerShellEngine — ApplicationBase nazwy** .
 - Konsolę programu Windows PowerShell używa teraz kolorowania, podobnie jak w przypadku środowiska Windows PowerShell ISE.
 - Nowy moduł NetworkSwitch zawiera polecenia cmdlet, które umożliwiają zastosowanie przełącznika, wirtualnej sieci LAN (VLAN) i podstawowa konfiguracja portu przełącznika sieci warstwy 2 do przełączników sieciowych z certyfikatem logo systemu Windows Server 2012 R2.
 - Dodano parametr element FullyQualifiedName do poleceń cmdlet Import-Module i Remove-Module, do obsługi, przechowywania wielu wersji pojedynczy moduł.
 - Save-Help, Update-Help, Import-PSSession, Export-PSSession i Get-Command ma nowy parametr FullyQualifiedModule typu ModuleSpecification. Dodaj ten parametr, aby określić modułu w jego w pełni kwalifikowanej nazwy.
 - Wartość **$PSVersionTable.PSVersion** został zaktualizowany do wersji 5.0.
-
+- Program WMF 5.0 (PowerShell 5.0) zawiera **usług Pester** modułu.  Pester jest testowania jednostkowego dla programu PowerShell. Zapewnia kilka słów kluczowych prosty w obsłudze, które pozwalają na tworzenie testów dla skryptów. 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nowe funkcje programu Windows PowerShell Desired State Configuration
 
-- Ulepszenia języka programu Windows PowerShell umożliwiają definiowanie zasobów Windows PowerShell Desired State Configuration (DSC) przy użyciu klas. Import-DscResource jest teraz dynamiczne słowo kluczowe true; Program Windows PowerShell analizuje określony moduł "™ s głównego modułu Wyszukiwanie klas, które zawierają atrybut DscResource. Klasy umożliwia teraz zdefiniować zasoby DSC, w których nie jest wymagany plik MOF, ani podfolderu DSCResource w folderze modułu. Plik modułu programu Windows PowerShell może zawierać wielu klas zasobów DSC.
+- Ulepszenia języka programu Windows PowerShell umożliwiają definiowanie zasobów Windows PowerShell Desired State Configuration (DSC) przy użyciu klas. Import-DscResource jest teraz dynamiczne słowo kluczowe true; Program Windows PowerShell analizuje modułu głównego określonego modułu, Wyszukiwanie klas, które zawierają atrybut DscResource. Klasy umożliwia teraz zdefiniować zasoby DSC, w których nie jest wymagany plik MOF, ani podfolderu DSCResource w folderze modułu. Plik modułu programu Windows PowerShell może zawierać wielu klas zasobów DSC.
 - Nowy parametr ThrottleLimit, dołączonym do następujących poleceń cmdlet w PSDesiredStateConfiguration module. Dodaj parametr ThrottleLimit, aby określić liczbę komputerów docelowych lub urządzeń, na których ma zostać polecenia do pracy w tym samym czasie.
   - Get-DscConfiguration
   - Get-DscConfigurationStatus
@@ -165,8 +166,8 @@ Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration
 - Dodano obsługę (w oparciu o x86) 32-bitową **konfiguracji** — słowo kluczowe.
 - Program Windows PowerShell teraz obejmuje obsługę niestandardowej pomocy dla konfiguracji DSC, określonych przez dodanie \[CmdletBinding()] funkcji wygenerowaną konfigurację.
 - Nowy **DscLocalConfigurationManager** atrybut określa blok konfiguracji meta-konfiguracji, który jest używany do konfigurowania DSC Local Configuration Manager. Ten atrybut ogranicza konfiguracji zawierającego tylko elementy, co powoduje ich skonfigurowanie DSC Local Configuration Manager. Podczas przetwarzania tej konfiguracji generuje \*. plik meta.mof, który jest następnie wysyłana do węzłów odpowiedniego obiektu docelowego, uruchamiając polecenie cmdlet Set-DscLocalConfigurationManager.
-- Konfiguracje częściowe są teraz dozwolone w programie Windows PowerShell 5.0. Konfiguracja dokumentów można dostarczyć do węzła we fragmentach. Dla węzła do odbierania wielu fragmentów dokumentu konfiguracji węzła "™ s Local Configuration Manager należy najpierw ustawić do określenia oczekiwanych fragmentów
-- Synchronizacja między komputerami jest nowa w DSC w programie Windows PowerShell 5.0. Za pomocą wbudowanych WaitFor\* zasobów (**WaitForAll**, **WaitForAny**, i **WaitForSome**), możesz teraz określić zależności na komputerach podczas konfiguracji jest uruchamiana, bez zewnętrznych aranżacji. Te zasoby zawierają synchronizacji węzła do węzła przy użyciu połączenia modelu wspólnych informacji za pośrednictwem protokołu WS-Man. Konfiguracja poczekać, aż inny komputer "™ zmianę stanu określonego zasobu s.
+- Konfiguracje częściowe są teraz dozwolone w programie Windows PowerShell 5.0. Konfiguracja dokumentów można dostarczyć do węzła we fragmentach. W przypadku węzła do odbierania wielu fragmentów dokumentu konfiguracji węzła Local Configuration Manager musisz wybrać opcję do określenia oczekiwanych fragmentów
+- Synchronizacja między komputerami jest nowa w DSC w programie Windows PowerShell 5.0. Za pomocą wbudowanych WaitFor\* zasobów (**WaitForAll**, **WaitForAny**, i **WaitForSome**), możesz teraz określić zależności na komputerach podczas konfiguracji jest uruchamiana, bez zewnętrznych aranżacji. Te zasoby zawierają synchronizacji węzła do węzła przy użyciu połączenia modelu wspólnych informacji za pośrednictwem protokołu WS-Man. Konfiguracja poczekać, aż zmianę stanu określonego zasobu innego komputera.
 - Po prostu wystarczająco administracji (JEA), nowa funkcja zabezpieczeń delegowanie, korzysta z DSC i programu Windows PowerShell ograniczone obszary działania ułatwiające przedsiębiorstwom bezpieczne od utraty danych lub naruszenie przez pracowników, czy zamierzone lub przypadkowe. Aby uzyskać więcej informacji na temat technologii JEA, w tym, gdzie można pobrać zasobu xJEA DSC, zobacz [Just Enough Administration, krok po kroku](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx).
 - Dodano następujące nowe polecenia cmdlet modułu PSDesiredStateConfiguration.
   - Nowe polecenie cmdlet Get-DscConfigurationStatus pobiera ogólne informacje o stanie konfiguracji z węzła docelowego. Można uzyskać stanu ostatniego lub wszystkie konfiguracje.
@@ -177,7 +178,7 @@ Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nowe funkcje w środowisku Windows PowerShell ISE
 
-- Teraz możesz edytować zdalnego skryptów programu Windows PowerShell i plikami w lokalnej kopii środowiska Windows PowerShell ISE, uruchamiając Enter-PSSession, aby rozpocząć sesję zdalną na komputerze, który "™ s przechowywania plików, który chcesz edytować, a następnie uruchomienia **PSEdit <path and file name on the remote computer>**. Ta funkcja ułatwia edycji plików programu Windows PowerShell, które są przechowywane w opcji instalacji Server Core systemu Windows Server, których nie można uruchomić program Windows PowerShell ISE.
+- Teraz możesz edytować zdalnego skryptów programu Windows PowerShell i plikami w lokalnej kopii środowiska Windows PowerShell ISE systemem Enter-PSSession, aby rozpocząć sesję zdalną na komputerze, który zapisuje pliki, które chcesz edytować, a następnie uruchamiając **PSEdit \<ścieżkę i nazwę pliku na komputerze zdalnym\>**. Ta funkcja ułatwia edycji plików programu Windows PowerShell, które są przechowywane w opcji instalacji Server Core systemu Windows Server, których nie można uruchomić program Windows PowerShell ISE.
 - Polecenie cmdlet Start-zapis jest teraz obsługiwany w środowisku Windows PowerShell ISE.
 - Można teraz debugować skrypty zdalnego w środowisku Windows PowerShell ISE.
 - Nowe polecenie menu, **Przerwij wszystko** (Ctrl + B) przerywa debugowanie lokalne i zdalne uruchamianie skryptów.
@@ -221,7 +222,7 @@ Windows PowerShell 4.0 obejmuje następujące nowe funkcje.
 - A **Passthru** parametr został dodany do **Enable-JobTrigger** i **Disable-JobTrigger** polecenia cmdlet. Z parametru Passthru Wyświetla wszystkie obiekty, które są tworzone lub modyfikowane przez polecenie.
 - Nazwy parametrów do określania grupy roboczej w **Add-Computer** i **Remove-Computer** poleceń cmdlet teraz są spójne. Oba polecenia cmdlet teraz użyć parametru **Nazwa_grupy_roboczej**.
 - Nowy parametr typowe **PipelineVariable**, został dodany. PipelineVariable pozwala zapisać wyniki gazociągami polecenie (lub część polecenia gazociągami) jako zmienną, który może być przekazywany przez resztę potoku.
-- Filtrowanie przy użyciu składni metody kolekcji jest teraz obsługiwane. Oznacza to, czy można teraz filtrować zbiór obiektów przy użyciu uproszczoną składnię, podobnie jak w przypadku Where() lub Where-Object, sformatowane jako wywołania metody. Oto przykład: .where (Get-Process) ({$_. Nazwa — dopasowania "powershell"})
+- Filtrowanie przy użyciu składni metody kolekcji jest teraz obsługiwane. Oznacza to, czy można teraz filtrować zbiór obiektów przy użyciu uproszczoną składnię, podobnie jak w przypadku Where() lub Where-Object, sformatowane jako wywołania metody. Oto przykład: .Where (get-Process) ({$_. Nazwa — dopasowania "powershell"})
 - **Get-Process** polecenie cmdlet ma nowy parametr przełącznika **IncludeUserName**.
 - Nowe polecenie cmdlet **Get FileHash**, która zwraca wartość skrótu pliku w jednym z kilku formatów dla określonego pliku, został dodany.
 - W programu Windows PowerShell 4.0, jeśli moduł **DefaultCommandPrefix** klucza w swoim manifeście lub jeśli użytkownik importuje moduł o **prefiksu** parametru **ExportedCommands**właściwość modułu zawiera polecenia w module z prefiksem. Po uruchomieniu polecenia przy użyciu składni kwalifikowana modułu ModuleName\\CommandName, nazwy poleceń musi zawierać prefiks.
@@ -237,7 +238,7 @@ Windows PowerShell 4.0 obejmuje następujące nowe funkcje.
 
 - Dodano obsługę nowej **PipelineVariable** typowego parametru w kontekście iteracyjne potoki, takich jak te używane przez System Center Orchestrator; oznacza to, Uruchom polecenia, po prostu od lewej do prawej, w przeciwieństwie do potoków przeplatane uruchomiona przy użyciu przesyłania strumieniowego.
 - Wiązanie parametru został znacząco udoskonalony w celu pracować poza kartę uzupełniania scenariuszy, takich jak polecenia, które nie istnieją w bieżącym obszarze działania.
-- Obsługa kontenerów niestandardowych działań dołączonym do przepływu pracy środowiska Windows PowerShell. W przypadku parametru działania typów **działania**, **działania\[]**""lub jest kolekcją ogólną działania "i dostarczone przez użytkownika bloku skryptu jako argument, a następnie Windows Przepływ pracy programu PowerShell konwertuje blok skryptu XAML, podobnie jak w przypadku normalnej kompilacji pracy skryptu programu Windows PowerShell.
+- Obsługa kontenerów niestandardowych działań dołączonym do przepływu pracy środowiska Windows PowerShell. W przypadku parametru działania typów **działania**, **działania\[]** (lub jest kolekcją ogólną działania) i dostarczone przez użytkownika bloku skryptu jako argument, a następnie programu Windows PowerShell Przepływ pracy konwertuje blok skryptu XAML, podobnie jak w przypadku normalnej kompilacji pracy skryptu programu Windows PowerShell.
 - Po awarii programu Windows PowerShell Workflow automatycznie połączy się ponownie na węzłach zarządzanych.
 - Teraz możesz ograniczyć **Foreach-równoległe** instrukcji działania przy użyciu **ThrottleLimit** właściwości.
 - **ErrorAction** typowego parametru ma nową prawidłową wartość **Wstrzymaj**, która jest przeznaczona wyłącznie dla przepływów pracy.
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 zawiera następujące nowe funkcje.
 
 ### <a name="windows-powershell-workflow"></a>Przepływ pracy programu Windows PowerShell
 
-Przepływ pracy programu Windows PowerShell oferuje funkcje programu Windows Workflow Foundation dla programu Windows PowerShell. Można pisanie przepływów pracy w XAML lub w języku środowiska Windows PowerShell i uruchom je tak, jak należy uruchomić polecenie cmdlet. [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenie cmdlet pobiera workflw poleceń i [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) polecenie cmdlet pobiera tematy Pomocy dotyczące przepływów pracy.
+Przepływ pracy programu Windows PowerShell oferuje funkcje programu Windows Workflow Foundation dla programu Windows PowerShell. Można pisanie przepływów pracy w XAML lub w języku środowiska Windows PowerShell i uruchom je tak, jak należy uruchomić polecenie cmdlet. [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) polecenie cmdlet pobiera poleceń przepływu pracy i [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) polecenie cmdlet pobiera tematy Pomocy dotyczące przepływów pracy.
 
 Przepływy pracy są sekwencji działań związanych z zarządzaniem multicomputer, które są długotrwałych, powtarzalne, często powtarzane, równoległego, przerywania, suspendable i ponownego uruchamiania. Przepływy pracy, może zostać wznowiona od zamierzonych lub przypadkowych przerwy w usługach, takich jak awaria sieci, ponowne uruchomienie Windows lub awarii zasilania.
 
@@ -328,7 +329,7 @@ Poniżej przedstawiono zalety przepływu pracy środowiska Windows PowerShell
 - **Zarządzanie multicomputer.** Jednocześnie uruchamiać zadania jako przepływy pracy na tysięcy węzłów zarządzanych. Przepływu pracy środowiska Windows PowerShell zawiera wbudowane bibliotekę typowych parametrów zarządzania, takich jak **PSComputerName**, która umożliwia zarządzanie wieloma komputerami scenariuszy.
 - **Pojedyncze zadanie wykonywania złożonych procesów.** Możesz łączyć pokrewne skrypty, które implementują cały scenariusz end-to-end w jednym przepływie pracy.
 - **Trwałość.** : przepływ pracy jest zapisany (lub wskazywany przez sprawdzenie) w określonych punktach definiowane przez jego autora wznowienia przepływu pracy od ostatniego utrwalonego zadania (lub punktu kontrolnego), zamiast ponownego uruchamiania przepływu pracy od samego początku.
-- **Niezawodność.** Automatyczne odzyskiwanie po awarii. Przepływy pracy poradzą sobie planowanych i nieplanowanych ponownego uruchomienia. Można wstrzymać wykonywania przepływu pracy i wznowienie przepływu pracy od ostatniego punktu stanu trwałego. Autorzy przepływu pracy można wyznaczyć konkretne działania, ponowne uruchamianie w razie awarii na jeden lub więcej węzłów zarządzanych.
+- **Robustness.** Automatyczne odzyskiwanie po awarii. Przepływy pracy poradzą sobie planowanych i nieplanowanych ponownego uruchomienia. Można wstrzymać wykonywania przepływu pracy i wznowienie przepływu pracy od ostatniego punktu stanu trwałego. Autorzy przepływu pracy można wyznaczyć konkretne działania, ponowne uruchamianie w razie awarii na jeden lub więcej węzłów zarządzanych.
 - **Możliwość odłączyć, połącz się ponownie i uruchamiać w odłączonej sesji.** Użytkownicy mogą połączyć i odłączyć się od serwera przepływu pracy, ale przepływ pracy działa w sposób ciągły. Możesz wylogować się z komputera klienckiego lub uruchom ponownie komputer i Monitoruj wykonywanie przepływu pracy z innego komputera bez przerywania przepływu pracy.
 - **Podczas planowania.** Podobnie jak wszystkie polecenia cmdlet programu Windows PowerShell lub skryptu można zaplanować zadania przepływu pracy.
 - **Przepływ pracy i ograniczania przepustowości połączenia.** Połączenia z węzłami i wykonywanie przepływu pracy mogą być ograniczone, umożliwiając w ten sposób scenariusze dotyczące skalowalności i wysokiej dostępności.
@@ -453,35 +454,35 @@ Nowe polecenia cmdlet zostały dodane do instalacji programu Windows PowerShell 
 |||
 |-|-|
 |Dodaj JobTrigger|Nowe z JobTrigger|
-|Connect-PSSession|Nowe PSSessionConfigurationFile|
+|Connect-PSSession|New-PSSessionConfigurationFile|
 |ConvertFrom-Json|New-PSTransportOption|
-|ConvertTo Json|Nowe PSWorkflowExecutionOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
 |Disable-JobTrigger|New-PSWorkflowSession|
-|Disable-ScheduledJob|Nowe ScheduledJobOption|
+|Disable-ScheduledJob|New-ScheduledJobOption|
 |Odłącz PSSession|Nowy WinEvent|
 |Enable-JobTrigger|Odbieranie PSSession|
-|Enable-ScheduledJob|Zarejestruj CimIndicationEvent|
+|Enable-ScheduledJob|Register-CimIndicationEvent|
 |Get-CimAssociatedInstance|Register-ScheduledJob|
 |Get-CimClass|Remove-CimInstance|
 |Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Usuń TypeData|
+|Get-CimSession|Remove-TypeData|
 |Get-ControlPanelItem|Rename-Computer|
 |Get-IseSnippet|Resume-Job|
 |Get-JobTrigger|Save-Help|
 |Get-ScheduledJob|Set-CimInstance|
 |Get-ScheduledJobOption|Set-JobTrigger|
 |Get-TypeData|Set-ScheduledJob|
-|Importuj IseSnippet|Zestaw ScheduledJobOption|
-|Wywoływanie AsWorkflow|Polecenia Show|
-|Invoke-CimMethod|Pokaż ControlPanelItem|
-|Wywoływanie RestMethod|Wstrzymywanie zadania|
-|Invoke-WebRequest|PSSessionConfigurationFile testu|
-|Nowy CimInstance|Odblokuj plik|
+|Import-IseSnippet|Set-ScheduledJobOption|
+|Invoke-AsWorkflow|Polecenia Show|
+|Invoke-CimMethod|Show-ControlPanelItem|
+|Invoke-RestMethod|Suspend-Job|
+|Invoke-WebRequest|Test-PSSessionConfigurationFile|
+|New-CimInstance|Odblokuj plik|
 |Nowy CimSession|Unregister-ScheduledJob|
-|Nowe CimSessionOption|Update-Help|
-|Nowe IseSnippet||
+|New-CimSessionOption|Update-Help|
+|New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Ulepszenia istniejących podstawowych poleceń cmdlet i ProvidersWindows program PowerShell 3.0 zawiera nowe funkcje dla istniejących poleceń cmdlet, łącznie z uproszczoną składnię i nowe parametry dla następujących poleceń cmdlet: polecenia cmdlet komputera służące, CSV poleceń cmdlet Get-ChildItem Get-Command Get-Content, Get-historii — obiekt miary, polecenia cmdlet zabezpieczeń, Select-Object, wybierz parametry, Split-Path, Rozpocznij proces, program Tee-Object, Test-Connection Dodawanie elementu członkowskiego i polecenia cmdlet usługi WMI.
+### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Ulepszenia istniejących podstawowych poleceń cmdlet i ProvidersWindows program PowerShell 3.0 zawiera nowe funkcje dla istniejących poleceń cmdlet, łącznie z uproszczoną składnię i nowe parametry dla następujących poleceń cmdlet: Polecenia cmdlet komputera służące, CSV poleceń cmdlet Get-ChildItem Get-Command Get-Content, Get-historii — obiekt miary, polecenia cmdlet zabezpieczeń, Select-Object, wybierz parametry, Split-Path, Rozpocznij proces, program Tee-Object, Test-Connection Dodawanie elementu członkowskiego i polecenia cmdlet usługi WMI.
 
 Dostawcy programu Windows PowerShell zostały również znacznie poprawiony, łącznie z obsługą dostawcy certyfikatu zarządzania certyfikatami Secure Socket Layer (SSL) dla hosta sieci web, obsługa poświadczeń, dyski sieciowe trwałe i alternatywne strumienie danych w system plików, dysków.
 
@@ -564,4 +565,4 @@ Aby zwiększyć możliwości programu Windows PowerShell 3.0 do interpretacji i 
 ## <a name="see-also"></a>Zobacz też
 
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Program Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
+- [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)

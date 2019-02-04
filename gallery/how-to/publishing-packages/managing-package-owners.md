@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Zarządzanie właścicielami pakietu
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004124"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685977"
 ---
 # <a name="managing-package-owners"></a>Zarządzanie właścicielami pakietu
 
@@ -34,7 +34,7 @@ Gdy pakiet został opublikowany w galerii programu PowerShell, jest łatwo zapro
 5. Wiadomość e-mail zostanie przesłany do nowego współwłaściciel jako zaproszenie, aby stać się właścicielem pakietu.
 6. Po użytkownik kliknie łącze, są one pełne współwłaściciel z pełną kontrolą nad pakietu, w tym możliwość usuwania innych użytkowników, jako właścicieli.
 
-**Uwaga**: aż nowego właściciela potwierdzi własność, ich *nie będzie* wymieniony jako właściciel pakietu.
+**UWAGA**: Do momentu nowego właściciela potwierdzi własność, ich *nie będzie* wymieniony jako właściciel pakietu.
 Podczas wyświetlania **zarządzania właścicielami** stronie zostanie wyświetlony wpis "oczekuje na zatwierdzenie" w bieżącym właścicieli.
 Czy można usunąć zaproszenia; tak samo, jak można usuwać innych właścicieli.
 Ten proces zaproszenia uniemożliwia użytkownikom błędnie dodawania innych użytkowników jako właścicieli swoich pakietów.

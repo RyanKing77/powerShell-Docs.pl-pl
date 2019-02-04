@@ -3,15 +3,15 @@ ms.date: 10/31/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zabezpieczanie pliku MOF
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405149"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688329"
 ---
 # <a name="securing-the-mof-file"></a>Zabezpieczanie pliku MOF
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC zarządza konfiguracją węzły serwera, stosując informacje przechowywane w pliku MOF, w przypadku, gdy lokalne Configuration Manager (LCM) wykonuje stanu końcowego żądaną.
 Ponieważ ten plik zawiera szczegółowe informacje o konfiguracji, należy Przechowuj w bezpiecznym miejscu.

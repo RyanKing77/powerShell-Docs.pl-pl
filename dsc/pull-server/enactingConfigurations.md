@@ -2,16 +2,16 @@
 ms.date: 10/16/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Realizacja konfiguracji
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405425"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684178"
 ---
 # <a name="enacting-configurations"></a>Realizacja konfiguracji
 
->Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+>Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Istnieją dwa sposoby wprowadzenie konfiguracje programu PowerShell Desired State Configuration (DSC): wypychanie trybu ani ściągnięcia.
 
@@ -48,6 +48,6 @@ Dowiedz się, że ta implementacja ma ograniczone funkcje i wymagają do działa
 
 W poniższych tematach opisano usługi ściągania i klientami:
 
-- [Omówienie DSC usługi Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Omówienie DSC usługi Azure Automation](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Konfigurowanie serwera ściągania SMB](pullServerSMB.md)
 - [Konfigurowanie klienta ściągania](pullClientConfigID.md)

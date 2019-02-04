@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 14208e3b5d5c2fef80fa42a87cc00aeee81bd042
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8940ded189d822a5a2cd40773ef5146353611cc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189911"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686208"
 ---
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Kryptograficznych składni wiadomości (CMS) polecenia cmdlet.
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Kryptograficznych polecenia cmdlet składni wiadomości (CMS)
 
-Polecenia cmdlet składni wiadomości kryptograficznych obsługuje szyfrowanie i odszyfrowywanie zawartości przy użyciu standardowego formatu IETF kryptograficznie ochrony wiadomości w [RFC5652](https://tools.ietf.org/html/rfc5652).
+Polecenia cmdlet składnię komunikatów kryptograficznych obsługują szyfrowanie i odszyfrowywanie zawartości przy użyciu formatu standardowego IETF kryptograficznie ochrony wiadomości, zgodnie z opisem przez [RFC5652](https://tools.ietf.org/html/rfc5652).
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -25,13 +25,13 @@ Unprotect-CmsMessage [-Path] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeC
 Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeContext]
 ```
 
-Standardowa szyfrowania CMS implementuje kryptografii klucza publicznego, w której klucze używany do szyfrowania zawartości ( *klucz publiczny*) i klucze używane do odszyfrowywania zawartości ( *klucza prywatnego*) są oddzielone.
+Standardowa szyfrowania CMS implementuje kryptografii klucza publicznego, w którym klucze używane do szyfrowania zawartości ( *klucza publicznego*) i klucze używane do odszyfrowywania zawartości ( *klucza prywatnego*) są oddzielone.
 
-Klucz publiczny można udostępniać powszechnie i nie jest poufnych danych. Jeśli zawartość jest zaszyfrowany przy użyciu tego klucza publicznego, może odszyfrować tylko klucz prywatny. Aby uzyskać więcej informacji, zobacz [kryptografii klucza publicznego](https://en.wikipedia.org/wiki/Public-key_cryptography).
+Klucz publiczny może być powszechnie udostępniony i nie jest poufnych danych. Jeśli zawartość jest zaszyfrowany przy użyciu tego klucza publicznego, może odszyfrować tylko klucz prywatny. Aby uzyskać więcej informacji, zobacz [kryptografii klucza publicznego](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
-Zostać rozpoznany w programie PowerShell, certyfikaty szyfrowania wymagają identyfikator unikatowy użycie klucza (EKU), aby zidentyfikować ich jako certyfikaty szyfrowania danych (np. identyfikatory "Podpisywanie kodu", "Szyfrowane poczty").
+Rozpoznawany w programie PowerShell, certyfikaty szyfrowania wymagają identyfikator unikatowy użycia klucza (EKU), aby je zidentyfikować jako certyfikaty szyfrowania danych (np. identyfikatory "Podpisywanie kodu", "Zaszyfrowanych wiadomości E-mail").
 
-Poniżej przedstawiono przykład tworzenia certyfikatu, który wystarcza w przypadku szyfrowania dokumentu:
+Oto przykład tworzenia certyfikatu, który jest dobra dla szyfrowania dokumentu:
 
 ```powershell
 (Change the text in **Subject** to your name, email, or other identifier), and put in a file (i.e.: DocumentEncryption.inf):
@@ -60,7 +60,7 @@ Następnie uruchom polecenie:
 certreq -new DocumentEncryption.inf DocumentEncryption.cer
 ```
 
-I można teraz szyfrowania i odszyfrowywania zawartości:
+A teraz szyfrowanie i odszyfrowywanie zawartości:
 
 ```powershell
 $protected = "Hello World" | Protect-CmsMessage -To "\*me@somewhere.com\*[](mailto:*leeholm@microsoft.com*)"
@@ -80,14 +80,14 @@ $protected | Unprotect-CmsMessage
 Hello World
 ```
 
-Żadnego parametru typu **CMSMessageRecipient** obsługuje identyfikatory w następujących formatach:
-- Rzeczywiste certyfikatu (jako pobrany od dostawcy certyfikatu)
+Każdego parametru typu **CMSMessageRecipient** obsługuje identyfikatorów w następujących formatach:
+- Certyfikat rzeczywiste (jako pobrany z dostawcą certyfikatów)
 - Ścieżka do pliku zawierającego certyfikat
-- Ścieżka do katalogu zawierającego certyfikatu
-- Odcisk palca certyfikatu (używane do wyszukiwania w magazynie certyfikatów)
-- Nazwa podmiotu certyfikatu (używane do wyszukiwania w magazynie certyfikatów)
+- Ścieżka do katalogu zawierającego certyfikat
+- Odcisk palca certyfikatu (używany do wyszukania w magazynie certyfikatów)
+- Nazwa podmiotu certyfikatu (używany do wyszukania w magazynie certyfikatów)
 
-Aby wyświetlić certyfikaty szyfrowania dokumentu dostawcę certyfikatów, można użyć **- DocumentEncryptionCert** parametru dynamicznego:
+Aby wyświetlić certyfikaty szyfrowania dokumentu dostawcę certyfikatów, można użyć **- DocumentEncryptionCert** parametrów dynamicznych:
 
 ```powershell
 dir -DocumentEncryptionCert

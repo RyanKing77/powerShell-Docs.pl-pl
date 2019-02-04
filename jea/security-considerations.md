@@ -1,92 +1,92 @@
 ---
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
-title: Zagadnienia dotyczące zabezpieczeń JEA
-ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+title: Zagadnienia dotyczące zabezpieczeń usługi JEA
+ms.openlocfilehash: ede727f0f30412d520712d6ba855ba2008375d9a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190183"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687244"
 ---
-# <a name="jea-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń JEA
+# <a name="jea-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń usługi JEA
 
-> Dotyczy: środowiska Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 5.0
 
-JEA pomaga zwiększyć strukturę bezpieczeństwa, zmniejszając liczbę administratorów trwałych na maszynach.
+JEA pomaga zwiększyć poziom bezpieczeństwa dzięki zmniejszeniu liczby administratorów trwałych na maszynach.
 Robi to przez utworzenie nowego punktu wejścia dla użytkowników do zarządzania systemem (Konfiguracja sesji programu PowerShell), który jest ściśle zablokowana domyślnie, aby uniemożliwić nadużycia.
-Użytkownicy, którzy potrzebują niektórych, ale nie nieograniczony dostęp do komputera, aby wykonywać zadania administracyjne można udzielić dostępu do punktu końcowego JEA.
-Ponieważ JEA pozwala na uruchamianie polecenia administratora bezpośrednio, bez dostępu administratora, możesz usunąć tych użytkowników z grup zabezpieczeń wysoko uprzywilejowane (były użytkownicy standardowi).
+Użytkownicy, którzy muszą niektóre, ale nie nieograniczony dostęp do komputera, aby wykonywać zadania administracyjne można udzielić dostępu do punktu końcowego JEA.
+Ponieważ JEA umożliwia ich wykonywania polecenia administratora bezpośrednio, bez dostępu administratora, możesz usunąć tych użytkowników z grup zabezpieczeń o wysokim poziomie uprawnień (były użytkownicy standardowi).
 
-W tym temacie opisano model zabezpieczeń JEA i najlepszych rozwiązań bardziej szczegółowo.
+W tym temacie opisano model zabezpieczeń usługi JEA i najlepsze rozwiązania, które bardziej szczegółowo.
 
 ## <a name="run-as-account"></a>Konto Uruchom jako
 
-Każdy punkt końcowy JEA ma konto wyznaczonych "Uruchom jako", czyli konta, na którym użytkownik nawiązujący połączenie czynności.
-To konto jest konfigurować w [pliku konfiguracji sesji](session-configurations.md), a konto, możesz wybrać ma znaczący wpływ na zabezpieczenia punktu końcowego.
+Każdy punkt końcowy usługi JEA ma konto wyznaczonym "Uruchom jako", czyli konta, w którym użytkownik nawiązujący połączenie czynności.
+To konto jest konfigurowane w [plik konfiguracji sesji](session-configurations.md), i konta, możesz wybrać ma istotny wpływ na zabezpieczenia punktu końcowego usługi.
 
 **Kont wirtualnych** to zalecany sposób konfigurowania opcji Uruchom jako konta.
-Konta wirtualne są jednorazowe, tymczasowy kont lokalnych, które są tworzone dla użytkownik nawiązujący połączenie do użycia w okresie ich JEA sesji.
-Natychmiast po ich sesja została przerwana, konta wirtualnego zostaną usunięte i nie można już używać.
-Użytkownik nawiązujący połączenie nie może określić poświadczenia dla konta wirtualnego i nie można użyć konta wirtualnego do uzyskania dostępu do systemu za pomocą innych środków, takich jak Pulpit zdalny lub nieograniczonego punktu końcowego programu PowerShell.
+Kont wirtualnych są jednorazowe, tymczasowy kont lokalnych, które są tworzone dla użytkownik nawiązujący połączenie do użycia w czasie trwania sesji JEA.
+Zaraz po ich sesja została przerwana, wirtualnego konta zostaną usunięte i nie można już używać.
+Użytkownik nawiązujący połączenie nie może określić poświadczenia dla konta wirtualnego i nie można używać konta wirtualnej dostęp do systemu za pomocą innych środków, takich jak pulpitu zdalnego lub nieograniczonego punktu końcowego programu PowerShell.
 
-Domyślnie kont wirtualnych należy do lokalnej grupy administratorów na komputerze.
-Dzięki temu ich pełnych praw do żadnych czynności w systemie zarządzania, jednak żadne prawa do zarządzania zasobami w sieci.
-Podczas uwierzytelniania z innych komputerów, z kontekstu użytkownika będzie konta komputera lokalnego, a nie konta wirtualnego.
+Domyślnie kont wirtualnych należeć do lokalnej grupy administratorów na komputerze.
+To daje im pełne prawa do niczego w systemie zarządzania, ale żadnych praw do zarządzania zasobami w sieci.
+Podczas uwierzytelniania z innymi maszynami, kontekst użytkownika będzie z konta komputera lokalnego konta wirtualnego.
 
-Kontrolery domeny są szczególnych przypadkach, ponieważ nie istnieje pojęcie grupy administratorów lokalnych.
-Zamiast tego konta wirtualne należą do administratorów domen i mogą zarządzać usługami katalogu na kontrolerze domeny.
-Tożsamość domeny jest nadal ograniczone do na kontrolerze domeny, w którym wystąpienia sesji JEA i dostępu do żadnych sieci pojawią się pochodzą z obiektu komputera kontrolera domeny, zamiast tego użyć.
+Kontrolery domeny są szczególny przypadek, ponieważ nie obowiązuje koncepcja lokalnej grupy administratorów.
+Zamiast kont wirtualnych należą administratorzy domeny i zarządzać usługi katalogowe na kontrolerze domeny.
+Tożsamość domeny jest nadal ograniczona do użycia na kontrolerze domeny, której wystąpienia sesji JEA i dostępu do żadnych sieci pojawią się pochodzić z obiektu komputera kontrolera domeny, zamiast tego.
 
-W obu przypadkach można również jawnie definiować które konta wirtualnego powinna należeć do grupy zabezpieczeń.
-Jest dobrym rozwiązaniem, gdy zadanie, które są wykonywane mogą być przeprowadzane bez uprawnień administratora lokalnego/domeny.
-Jeśli masz już grupę zabezpieczeń zdefiniowane dla administratorów, po prostu można przyznać wirtualnego konto do tej grupy, aby nadać mu uprawnienia, których potrzebuje.
-Wirtualne członkostwa grupy konta jest ograniczona do grupy zabezpieczeń lokalnych na stacji roboczej lub na serwerze członkowskim, ale na kontrolerze domeny mogą być tylko członkami grupy zabezpieczeń domeny.
-Po określeniu jednej lub więcej grup zabezpieczeń dla konta wirtualnego należy do już będą należeć do grupy domyślne (administratora lokalnego lub administratora domeny).
+W obu przypadkach można także jawnie zdefiniować grupy zabezpieczeń, które konta wirtualnej powinny należeć do.
+Jest dobrą praktyką, gdy zadanie, które wykonujesz, możesz zrobić bez uprawnień administratora lokalnego/domeny.
+Jeśli masz już grupę zabezpieczeń zdefiniowane dla administratorów, można po prostu udzielić członkostwa wirtualnego konta do tej grupy w celu nadania mu uprawnień, których potrzebuje.
+Wirtualny, członkostwo w grupie kont jest ograniczona do lokalnych grup zabezpieczeń na stacji roboczej i elementów członkowskich serwerach, ale na kontrolerze domeny mogą być tylko członkowie grupy zabezpieczeń domeny.
+Po określeniu jednego lub więcej grup zabezpieczeń dla konta wirtualnej należy do, już nie będą należeć do grup domyślnych (administratora lokalnego lub administratora domeny).
 
-Poniższa tabela zawiera podsumowanie opcji konfiguracji możliwe i wynikowy uprawnienia dla kont wirtualnych
+W poniższej tabeli podsumowano możliwych opcji konfiguracji i wynikowy uprawnienia dla kont wirtualnych
 
-Typ komputera                | Konfiguracja grupy Konto wirtualne | Kontekst użytkownika lokalnego                                      | Kontekst użytkownika sieci
+Typ komputera                | Konfiguracja grupy konta wirtualnego | Kontekst użytkownika lokalnego                                      | Kontekst użytkownika sieci
 -----------------------------|-------------------------------------|---------------------------------------------------------|--------------------------------------------------
-Kontroler domeny            | Wartość domyślna                             | Użytkownik domeny, element członkowski "*domeny*\Domain         | Konto komputera
-Kontroler domeny            | Grupy w domenie A i B               | Użytkownik domeny, element członkowski "*domeny*\A","*domeny*\B"       | Konto komputera
-Serwer członkowski lub stacji roboczej | Wartość domyślna                             | Użytkownika lokalnego, element członkowski "*WBUDOWANE*\Administrators        | Konto komputera
-Serwer członkowski lub stacji roboczej | Grupy lokalne C i D                | Użytkownika lokalnego, element członkowski "*komputera*\C" i "*komputera*\D" | Konto komputera
+Kontroler domeny            | Wartość domyślna                             | Użytkownik domeny, członek "*domeny*\Domain         | Konto komputera
+Kontroler domeny            | Grupy w domenie A i B               | Użytkownik domeny, członek "*domeny*\A","*domeny*\B"       | Konto komputera
+Serwera członkowskiego lub stacji roboczej | Wartość domyślna                             | Użytkownik lokalny, członek "*BUILTIN*\Administrators        | Konto komputera
+Serwera członkowskiego lub stacji roboczej | Grupy lokalne, C i D                | Użytkownik lokalny, członek "*komputera*\C" i "*komputera*\D" | Konto komputera
 
-Po wyświetleniu zdarzenia inspekcji zabezpieczeń i dzienniki zdarzeń aplikacji, zobaczysz, że każdej sesji użytkownika JEA ma unikatowe konto wirtualnego.
-Ułatwia to śledzenie działań użytkownika w punkt końcowy JEA dla oryginalnego użytkownika, który uruchomił polecenie.
-Konto wirtualne nazwy zgodne format "Użytkownicy usługi WinRM wirtualnej\\WinRM\_VA\_*ACCOUNTNUMBER*\_*domeny* \_ *sAMAccountName*"na przykład, jeśli użytkownika"Alicja"w domenie"Contoso"ponowne uruchomienie usługi w punkt końcowy JEA, nazwę użytkownika skojarzoną z żadnych zdarzeń z Menedżera kontroli usług będzie" Użytkownicy wirtualnej WinRM\\WinRM\_ VA\_1\_contoso\_Alicja ".
+Jeśli przyjrzymy się zdarzenia inspekcji zabezpieczeń i dzienniki zdarzeń aplikacji, zobaczysz, czy każdej sesji użytkownika JEA ma unikatowe konto wirtualne.
+Dzięki temu można śledzić akcje użytkownika w punkcie końcowym usługi JEA dla oryginalnego użytkownika, który uruchomił polecenie.
+Konta wirtualnej nazwy zgodne z formatem "Użytkownicy usługi WinRM wirtualnej\\WinRM\_oceny luk w zabezpieczeniach\_*ACCOUNTNUMBER*\_*domeny* \_ *sAMAccountName*"na przykład, jeśli użytkownik"Alicja"w domenie"Contoso"ponowne uruchomienie usługi w punktu końcowego JEA, nazwę użytkownika skojarzoną z dowolnego zdarzenia Menedżera sterowania usługami będzie" użytkowników wirtualnych WinRM\\WinRM\_ Oceny luk w zabezpieczeniach\_1\_contoso\_Alicja ".
 
 
-**Grupa kont usług zarządzanych (Gmsa)** są przydatne, gdy serwer członkowski musi mieć dostęp do zasobów sieciowych w sesji JEA.
-Przykład przypadek użycia tego jest JEA punktu końcowego, który służy do kontrolowania dostępu do interfejsu API REST hostowany na innym komputerze.
-Jest łatwy do zapisania tożsamości sieciowej potrzebne funkcje wprowadzić odpowiednie wywołania na interfejsu API REST, ale w celu uwierzytelnienia przy użyciu interfejsu API.
-Za pomocą konta usługi zarządzane przez grupę pozwala "drugi przeskok" przy zachowaniu kontroli nad którym komputery mogą używać konta.
-Czynnych uprawnień przez grupę są definiowane przez grup zabezpieczeń (lokalnego lub domeny), do której należy konto usługi zarządzane przez grupę.
+**Grupa kont usług zarządzanych (kont Gmsa)** są przydatne, gdy serwer członkowski musi mieć dostęp do zasobów sieciowych w sesji JEA.
+Przykład przypadek użycia to jest JEA punktu końcowego, który służy do kontrolowania dostępu do interfejsu API REST hostowany na innym komputerze.
+To ułatwia pisanie funkcji dzięki żądaną wywołań interfejsu API REST, ale w celu uwierzytelnienia przy użyciu interfejsu API potrzebne tożsamości sieciowej.
+Za pomocą konta usługi zarządzanych przez grupę pozwala "drugiego przeskoku" przy zachowaniu kontroli nad tym, którzy komputery można używać tego konta.
+Czynne uprawnienia opcją gMSA są definiowane przez grupy zabezpieczeń (lokalnego lub domeny) do którego należy dane konta gMSA.
 
-Gdy punkt końcowy JEA jest skonfigurowany do używania konta gMSA, akcje wszyscy użytkownicy JEA pojawi się pochodzą z tej samej grupy zarządzane konto usługi.
-Jedynym sposobem można śledzić akcje do określonego użytkownika jest ustalenie zestaw poleceń, uruchom w wykazie sesji programu PowerShell.
+Gdy punkt końcowy usługi JEA jest skonfigurowany do używania konta gMSA, akcje dla wszystkich użytkowników usługi JEA pojawi się pochodzić z tej samej grupy zarządzane konto usługi.
+Jest to jedyny sposób, można śledzić akcje do określonego użytkownika do identyfikowania zestawów polecenia uruchamiane w wykazie sesji programu PowerShell.
 
-**Do przekazywania poświadczeń** są używane, gdy nie określać Uruchom jako konta i chcesz programu PowerShell na potrzeby uruchamiania poleceń na serwerze zdalnym poświadczeń użytkownik nawiązujący połączenie.
-Ta konfiguracja jest *nie* zalecane dla JEA, ponieważ wymagałoby przyznania łączącego bezpośredni dostęp użytkownika do grupy zarządzania uprzywilejowanym.
-Jeśli użytkownik nawiązujący połączenie ma już uprawnień administratora, mogą uniknąć JEA całkowicie i zarządzanie systemu za pośrednictwem innych nieograniczonego oznaczają.
-Zobacz poniższą sekcję na temat [JEA nie chroni przed Administratorzy](#jea-does-not-protect-against-admins) Aby uzyskać więcej informacji.
+**Przekaż do poświadczeń** są używane, gdy nie określaj Uruchom jako konto się i nie ma programu PowerShell, Uruchom polecenia na serwerze zdalnym za pomocą poświadczeń użytkownik nawiązujący połączenie.
+Ta konfiguracja jest *nie* zalecane dla usługi JEA, ponieważ wymagałoby przyznania łączące bezpośredni dostęp użytkowników do grup uprzywilejowanych zarządzania.
+Jeśli użytkownik nawiązujący połączenie ma już uprawnienia administratora, są całkowicie uniknąć JEA i zarządzania systemem za pośrednictwem oznacza, że inne, nieograniczone.
+Zobacz w poniższym rozdziale na temat [JEA nie chroni przed Administratorzy](#jea-does-not-protect-against-admins) Aby uzyskać więcej informacji.
 
-**Standardowa Uruchom jako konta** umożliwiają określenie dowolnego konta użytkownika, na którym będzie uruchamiana całej sesji programu PowerShell.
-Jest to ważna różnica, ponieważ zestaw konfiguracyjny sesji do użycia jako konto Uruchom stałego (z `-RunAsCredential` parametru) nie jest JEA-aware.
-Oznacza to, czy definicje ról przestaną działać zgodnie z oczekiwaniami i każdego użytkownika uprawnień dostępu punkt końcowy będzie można przypisać tego samego elementu role.
+**Standardowa Uruchom jako konta** pozwalają na określenie dowolnego konta użytkownika, na którym będzie uruchamiana podczas całej sesji programu PowerShell.
+Jest to ważna różnica, ponieważ konfiguracja sesji skonfigurowany do używania stały Uruchom jako konto (przy użyciu `-RunAsCredential` parametr) nie są znane JEA.
+Oznacza to, że definicje ról przestaną działać zgodnie z oczekiwaniami, a każdy użytkownik autoryzowany do dostępu do punktu końcowego zostanie przypisany tę samą rolę.
 
-Nie należy używać RunAsCredential na punkt końcowy JEA z powodu trudności w śledzeniu akcje do konkretnych użytkowników i brak obsługi mapowanie użytkowników do ról.
+Nie należy używać RunAsCredential w punkcie końcowym usługi JEA ze względu na problemy w śledzeniu akcje do konkretnych użytkowników i brak obsługi mapowanie użytkowników do ról.
 
-## <a name="winrm-endpoint-acl"></a>Listę ACL punktów końcowych usługi WinRM
+## <a name="winrm-endpoint-acl"></a>Listy ACL punktów końcowych usługi WinRM
 
-Z regularnych punktów końcowych usługi zdalne środowiska PowerShell, każdy punkt końcowy JEA ma osobne listy kontroli dostępu (ACL) w konfiguracji usługi WinRM, która kontroluje, który może uwierzytelniać z punktem końcowym JEA.
-Jeśli niepoprawnie skonfigurowany Zaufani użytkownicy nie mogą mieć możliwość dostępu JEA punktu końcowego i/lub niezaufanych użytkownicy mogą uzyskać dostęp.
-Listy ACL usługi WinRM nie dotyczy jednak mapowanie użytkowników do ról JEA.
-Który jest kontrolowany przez *RoleDefinitions* w pliku konfiguracji sesji, który został zarejestrowany w systemie.
+Za pomocą regularnego punkty końcowe komunikacji zdalnej programu PowerShell, każdego punktu końcowego JEA ma oddzielne listy kontroli dostępu (ACL) w konfiguracji usługi WinRM, który kontroluje kto może uwierzytelniać przy użyciu punktu końcowego JEA.
+Jeśli skonfigurowana niepoprawnie, zaufanych użytkownicy mogą nie mieć możliwość dostępu do punktu końcowego JEA i/lub niezaufanym użytkownikom może uzyskać dostęp.
+Listy ACL usługi WinRM nie dotyczy jednak mapowanie użytkowników do ról usługi JEA.
+Który jest kontrolowany przez *RoleDefinitions* pola w pliku konfiguracji sesji, który został zarejestrowany w systemie.
 
-Domyślnie podczas rejestrowania punktu końcowego JEA przy użyciu pliku konfiguracji sesji i jeden lub więcej możliwości roli WinRM ACL zostanie skonfigurowana w celu zezwala wszystkim użytkownikom mapowanie na co najmniej jeden dostępu ról do punktu końcowego.
-Na przykład sesji JEA skonfigurowany za pomocą następujących poleceń będzie zezwalał na dostęp do *CONTOSO\JEA\_Lev1* i *CONTOSO\JEA\_Lev2*.
+Domyślnie podczas rejestracji, punktu końcowego JEA przy użyciu pliku konfiguracji sesji i jedną lub kilkoma funkcjami roli listy ACL usługi WinRM zostaną skonfigurowane aby umożliwić wszystkim użytkownikom mapowanie na jeden lub więcej ról uprawnieniami do punktu końcowego.
+Na przykład sesję JEA skonfigurowany przy użyciu następujących poleceń spowoduje przyznanie pełnego dostępu do *CONTOSO\JEA\_Lev1* i *CONTOSO\JEA\_Lev2*.
 
 ```powershell
 $roles = @{ 'CONTOSO\JEA_Lev1' = 'Lev1Role'; 'CONTOSO\JEA_Lev2' = 'Lev2Role' }
@@ -94,7 +94,7 @@ New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteS
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
-Można przeprowadzić inspekcję uprawnienia użytkownika z [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) polecenia cmdlet.
+Można przeprowadzać ich inspekcje uprawnień użytkownika za pomocą [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) polecenia cmdlet.
 
 ```powershell
 PS C:\> Get-PSSessionConfiguration -Name 'MyJEAEndpoint' | Select-Object Permission
@@ -105,20 +105,20 @@ CONTOSO\JEA_Lev1 AccessAllowed
 CONTOSO\JEA_Lev2 AccessAllowed
 ```
 
-Aby zmienić, którzy użytkownicy mają dostęp, uruchom `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` dla monitu interakcyjnego lub `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` można zaktualizować uprawnienia.
-Użytkownicy muszą mieć co najmniej *Invoke* prawa dostępu JEA punktu końcowego.
+Aby zmienić, którzy użytkownicy mają dostęp, uruchom `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -ShowSecurityDescriptorUI` dla monitu interakcyjnego lub `Set-PSSessionConfiguration -Name 'MyJEAEndpoint' -SecurityDescriptorSddl <SDDL string>` można zaktualizować uprawnień.
+Użytkownicy muszą się przynajmniej *Invoke* praw dostępu do punktu końcowego JEA.
 
-Jeśli dodatkowym użytkownikom udzielany jest dostęp do punktu końcowego JEA, ale nie należą do żadnych ról, zdefiniowanych w pliku konfiguracji sesji, będą oni mogli rozpocząć sesję JEA, ale tylko dostęp do poleceń cmdlet programu domyślnego.
-Uprawnienia użytkownika w punkcie końcowym JEA można inspekcji, uruchamiając `Get-PSSessionCapability`.
-Zapoznaj się z [inspekcji i raportowania JEA](audit-and-report.md) artykule Aby uzyskać więcej informacji o inspekcji, które polecenia użytkownika ma dostęp do w punkt końcowy JEA.
+Jeśli dodatkowi użytkownicy uzyskują dostęp do punktu końcowego JEA, ale nie należą do żadnych ról zdefiniowane w pliku konfiguracji sesji, będą mogli rozpocząć sesję JEA, ale tylko mają dostęp do poleceń cmdlet programu domyślnego.
+Można przeprowadzać ich inspekcje uprawnienia użytkownika w punkcie końcowym usługi JEA, uruchamiając `Get-PSSessionCapability`.
+Zapoznaj się z [inspekcji i raporty dotyczące technologii JEA](audit-and-report.md) artykuł, aby uzyskać więcej informacji na temat inspekcji polecenia użytkownika, które ma dostęp do w punktu końcowego JEA.
 
-## <a name="least-privilege-roles"></a>Co najmniej uprawnień ról
+## <a name="least-privilege-roles"></a>Co najmniej role uprawnień
 
-Podczas projektowania JEA ról, jest pamiętać, że wirtualne lub grupy usługi zarządzanej konta uruchomione w tle często ma nieograniczony dostęp do zarządzania na komputerze lokalnym.
-Możliwości roli JEA ograniczyć co tego konta może służyć do dzięki ograniczeniu liczby poleceń i aplikacje, które mogą być uruchamiane przy użyciu tego kontekstu uprzywilejowanych.
-Nieprawidłowo zaprojektowane role umożliwiają niebezpiecznych polecenia do uruchomienia, które może zezwolić użytkownikowi na break poza granice JEA lub uzyskać dostępu do poufnych informacji.
+Podczas projektowania technologii JEA ról, to należy pamiętać, że wirtualny lub grupy usługi zarządzanej konta działa w tle często ma nieograniczony dostęp do funkcji zarządzania na komputerze lokalnym.
+Możliwości roli JEA pomagają ograniczyć, jakie to konto może służyć do, ograniczając polecenia i aplikacje, które mogą być uruchamiane przy użyciu tego kontekstu uprzywilejowanych.
+Nieprawidłowo zaprojektowane role można zezwolić na niebezpiecznych uruchamiania poleceń, które umożliwiają użytkownikowi zerwać granice JEA lub uzyskać dostępu do poufnych informacji.
 
-Rozważmy na przykład następujący wpis możliwości roli:
+Na przykład rozważmy następujący wpis możliwości roli:
 
 ```powershell
 @{
@@ -126,12 +126,12 @@ Rozważmy na przykład następujący wpis możliwości roli:
 }
 ```
 
-Ta możliwość roli pozwala użytkownikom na uruchamianie każdego polecenia cmdlet programu PowerShell z rzeczownik "Proces" z modułu Microsoft.PowerShell.Management.
-Użytkownicy mogą potrzebować dostępu do poleceń cmdlet, takich jak do `Get-Process` zrozumieć, jakie aplikacje są uruchomione w systemie i `Stop-Process` do żadnego kill zawiesił aplikacji.
-Jednak umożliwia też ten wpis `Start-Process`, które mogą służyć do uruchomienia dowolnego programu z uprawnieniami administratora pełnego.
-Program nie wymaga lokalnie był zainstalowany w systemie, aby Atakujący dokonuje po prostu można uruchomić programu w udziale plików, zapewniająca łączącego użytkownikowi uprawnienia administratora lokalnego, uruchamia złośliwego oprogramowania i inne. "
+Ta funkcja roli umożliwia użytkownikom uruchamianie każdego polecenia cmdlet programu PowerShell przy użyciu rzeczownik "Procesu" z modułu Microsoft.PowerShell.Management.
+Użytkownicy może być konieczne dostęp do poleceń cmdlet, takich jak `Get-Process` Aby zrozumieć, jakie aplikacje działają w systemie i `Stop-Process` kill dowolne zawiesiła się w aplikacji.
+Jednak ten wpis umożliwia także `Start-Process`, który może służyć do uruchamiania dowolnego programu z uprawnieniami administrator o pełnych uprawnieniach.
+Program nie musi być zainstalowana lokalnie w systemie, dzięki czemu osoba atakująca może po prostu uruchomić program w udziale plików, zapewniającej połączenia użytkownikowi uprawnienia administratora lokalnego, uruchomienia złośliwego oprogramowania i nie tylko. "
 
-Bezpieczniejsza wersja ta sama funkcja roli wyglądałyby tak jak:
+Bardziej bezpieczna wersja ta sama funkcja roli będzie wyglądać:
 
 ```powershell
 @{
@@ -139,16 +139,16 @@ Bezpieczniejsza wersja ta sama funkcja roli wyglądałyby tak jak:
 }
 ```
 
-Unikaj używania symboli wieloznacznych w roli możliwości i upewnij się, [inspekcji efektywne uprawnienia](audit-and-report.md#check-effective-rights-for-a-specific-user) regularnie, aby zrozumieć, które polecenia użytkownik ma dostęp do.
+Unikaj używania symboli wieloznacznych w możliwości roli i pamiętaj, aby [inspekcji uprawnienia obowiązująca nazwa użytkownika](audit-and-report.md#check-effective-rights-for-a-specific-user) regularnie, aby zrozumieć, które polecenia użytkownik ma dostęp do.
 
-## <a name="jea-does-not-protect-against-admins"></a>JEA nie chroni przed Administratorzy
+## <a name="jea-does-not-protect-against-admins"></a>JEA nie chroni przed administratorów
 
-Jeden z podstawowych zasad JEA jest możliwość z systemem innym niż administratorzy przeprowadzić *niektórych* zadania administracyjne.
+Jedną z podstawowych zasad JEA jest możliwość użytkowników innych niż administratorzy w celu wykonania *niektóre* zadań administracyjnych.
 JEA nie chroni przed tych, którzy już mają uprawnienia administratora.
-Użytkownicy należącymi "Administratorzy domeny," "Administratorzy lokalni" lub innych grup wysoce uprzywilejowane w środowisku nadal będzie uda się rozwiązać przez JEA ochrony po zalogowaniu się do komputera za pośrednictwem innymi sposobami.
-One można na przykład, zaloguj się przy użyciu protokołu RDP, Użyj zdalnego konsoli MMC lub Połącz z nieograniczonego punkty końcowe programu PowerShell.
-Administratorzy lokalni na komputerze można również zmodyfikować konfiguracje JEA umożliwia innym użytkownikom do zarządzania systemem lub zmień możliwość roli rozszerzyć zakres użytkownika czynności w ich JEA sesji.
-W związku z tym należy ocenić użytkowników JEA uprawnienia rozszerzone aby zobaczyć, czy istnieją inne sposoby ich może uzyskać uprzywilejowany dostęp do systemu.
+Użytkownicy którzy należą "Administratorzy domeny," "Administratorzy lokalni" lub innych wysoce uprzywilejowanych grup w danym środowisku nadal będzie można obejść zabezpieczenia JEA firmy, logując się do komputera za pomocą innych metod.
+One można na przykład, zaloguj się przy użyciu protokołu RDP, użyj zdalnych konsol programu MMC lub nawiązać połączenie z użyciem środowiska PowerShell punktów końcowych.
+Administratorzy lokalni w systemie można również zmodyfikować konfiguracje JEA, aby umożliwić innym użytkownikom do zarządzania systemem lub zmienić możliwości roli, aby rozszerzyć zakres co użytkownik może zrobić w ich sesji usługi JEA.
+W związku z tym jest ważne, aby ocenić użytkowników usługi JEA rozszerzone uprawnienia, aby zobaczyć, czy istnieją inne sposoby ich może uzyskać uprzywilejowany dostęp do systemu.
 
-Popularną praktyką jest JEA dla codziennej konserwacji i mieć "tylko w czasie" uprzywilejowany dostęp do rozwiązania do zarządzania umożliwiają użytkownikom tymczasowo stają się Administratorzy lokalni sytuacji awaryjnych.
-Dzięki temu użytkownicy nie są trwałe Administratorzy na komputerze, ale można uzyskać te prawa, jeśli i tylko wtedy, gdy ich zakończeniu przepływu pracy, który dokumentów ich użycie tych uprawnień.
+Powszechną praktyką jest korzystają z technologii JEA dla codziennej konserwacji i mają "dokładnie na czas" uprzywilejowany rozwiązania do zarządzania dostępem Zezwalaj użytkownikom na tymczasowo stają się administratorami lokalnymi sytuacji awaryjnych.
+Dzięki temu użytkownicy nie są trwałe Administratorzy w systemie, ale można uzyskać te prawa, jeśli i tylko wtedy, gdy ich zakończeniu przepływu pracy, która dokumentuje ich użycie tych uprawnień.

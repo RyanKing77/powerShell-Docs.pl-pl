@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Wykonywanie skryptów programu PowerShell
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405204"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685095"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Consistency
 
-Zarządzanie systemami może być złożonym zadaniem. Narzędzia, które mają spójny interfejs ułatwiają kontrolowanie zamaskować złożoność. Niestety nie są znane w celu zachowania ich spójności za pomocą skryptów obiektów COM i narzędzi wiersza polecenia.
+Zarządzanie systemami może być złożonym zadaniem. Narzędzia, które mają spójny interfejs ułatwiają kontrolowanie zamaskować złożoność. Niestety nie są znane w celu zachowania ich spójności obiektów skryptowych Component Object Model (COM) i narzędzi wiersza polecenia.
 
 Spójność programu PowerShell jest jednym z jego głównej zasoby. Na przykład, jeśli dowiesz się, jak używać `Sort-Object` polecenia cmdlet, można użyć tę wiedzę, aby posortować dane wyjściowe każdego polecenia cmdlet. Nie masz dowiedzieć się różne procedury sortowania każdego polecenia cmdlet.
 

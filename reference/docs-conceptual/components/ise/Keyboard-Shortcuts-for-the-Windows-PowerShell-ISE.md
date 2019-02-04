@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Skróty klawiaturowe w środowisku Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404730"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686712"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Skróty klawiaturowe w środowisku Windows PowerShell ISE
 
@@ -27,9 +27,9 @@ Podczas edytowania tekstu, można użyć następujących skrótów klawiaturowyc
 |**Znajdź w skrypcie**|CTRL+F|Okienko skryptu|
 |**Znajdź następny w skrypcie**|F3|Okienko skryptu|
 |**Znajdź poprzedni w skrypcie**|SHIFT+F3|Okienko skryptu|
-|**Znajdź pasujący nawias**|CTRL +]|Okienko skryptu|
+|**Znajdź pasujący nawias**|CTRL+]|Okienko skryptu|
 |**Wklej**|CTRL + V|Skrypt, okienko polecenia|
-|**Wykonaj ponownie**|CTRL+Y|Skrypt, okienko polecenia|
+|**Redo**|CTRL+Y|Skrypt, okienko polecenia|
 |**Zastąp w skrypcie**|CTRL+H|Okienko skryptu|
 |**Zapisywanie**|CTRL+S|Okienko skryptu|
 |**Zaznacz wszystko**|CTRL + A|Skrypt okienko, w okienku poleceń, okienko danych wyjściowych|
@@ -43,7 +43,7 @@ Podczas uruchamiania skryptów w okienku skryptu, można użyć następujących 
 |Akcja|Skróty klawiaturowe|
 |----------|---------------------|
 |**Nowy**|CTRL+N|
-|**Otwórz**|CTRL+O|
+|**Open**|CTRL+O|
 |**Run**|F5|
 |**Uruchom zaznaczone**|F8|
 |**Zatrzymaj wykonywanie**|CTRL+BREAK. CTRL + C, mogą służyć podczas kontekstu jest jednoznaczna, (gdy nie ma żadnego tekstu, zaznaczona).|
@@ -57,7 +57,7 @@ Aby dostosować widok, w środowisku Windows PowerShell ISE, można użyć nast�
 |Akcja|Skróty klawiaturowe|
 |----------|---------------------|
 |**Przejdź do konsoli lub polecenie (v2) (w wersji 3 i nowszych) okienko**|CTRL+D|
-|**Przejdź do okienka danych wyjściowych (tylko wersja 2)**|CTRL + SHIFT + O|
+|**Przejdź do okienka danych wyjściowych (tylko wersja 2)**|CTRL+SHIFT+O|
 |**Przejdź do okienka skryptu**|CTRL+I|
 |**Pokaż okienko skryptu**|CTRL+R|
 |**Ukryj okienko skryptu**|CTRL+R|

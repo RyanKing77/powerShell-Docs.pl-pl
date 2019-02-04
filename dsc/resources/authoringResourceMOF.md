@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Pisanie zasobu DSC niestandardowych z pliku MOF
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404712"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687566"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Pisanie zasobu DSC niestandardowych z pliku MOF
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 W tym temacie firma Microsoft będzie zdefiniowanie schematu w programie Windows PowerShell Desired State Configuration (DSC) zasobu niestandardowego pliku MOF i zaimplementować zasobu w pliku skryptu programu Windows PowerShell. Ten zasób niestandardowy jest utworzenie i utrzymywanie witryny sieci web.
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>Ponowny rozruch węzła
+
+Jeśli akcje wykonywane w Twojej `Set-TargetResource` funkcja wymaga ponownego uruchomienia systemu, można użyć flagę globalną mówić LCM o ponownym uruchomieniu węzła. Występuje, bezpośrednio po ponownym uruchomieniu `Set-TargetResource` zakończenie funkcji.
+
+Wewnątrz swojej `Set-TargetResource` funkcji, Dodaj następujący wiersz kodu.
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+Aby LCM wykonać ponowny rozruch węzła **RebootNodeIfNeeded** flagi musi być równa `$true`. **ActionAfterReboot** ustawienia należy także wybrać opcję **ContinueConfiguration**, co jest ustawieniem domyślnym. Aby uzyskać więcej informacji na temat konfigurowania programu LCM, zobacz [Konfigurowanie programu Local Configuration Manager](../managing-nodes/metaConfig.md), lub [Konfigurowanie programu Local Configuration Manager (v4)](../managing-nodes/metaConfig4.md).

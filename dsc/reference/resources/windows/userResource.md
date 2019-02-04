@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC użytkownika
 ms.openlocfilehash: 04543351df19160a2da05ccea96e5d392d8c55bf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048569"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687503"
 ---
 # <a name="dsc-user-resource"></a>Zasób DSC użytkownika
 
-Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 **Użytkownika** zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania kont użytkowników lokalnych w docelowym węźle.
 

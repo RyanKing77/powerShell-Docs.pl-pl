@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
-ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
+ms.openlocfilehash: ac845a461eef4f567b74f813621f6bfa38419afb
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271181"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687846"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>Polecenia cmdlet PowerShellGet na potrzeby zarządzania skryptami
 
-## <a name="find-script-cmdlet"></a>Polecenia cmdlet Znajdź skryptu
-Polecenie cmdlet Znajdź skrypt umożliwia odnajdowanie plików skryptów z innych kryteriów wyszukiwania z repozytoriami określonych lub wszystkich zarejestrowanych i takie jak nazwa tagu, filtrowanie, nazwa polecenia, zakres wersji, dokładnej wersji, wszystkie wersje, łącznie z jego zależności.
+## <a name="find-script-cmdlet"></a>Polecenia cmdlet Find-Script
+Polecenia cmdlet Find-Script umożliwia odnajdywanie pliki skryptów z innych kryteriów wyszukiwania takich jak nazwa tagu, filtrowanie, nazwa polecenia, zakres wersji, dokładna wersja, wszystkie wersje, łącznie z jej zależnościami i za pomocą określonych lub wszystkich zarejestrowanych repozytoriów.
 
 Przykład użycia:
 ```powershell
@@ -149,8 +149,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a>Zapisz skrypt polecenia cmdlet
-Zapisz skrypt cmdlet umożliwia przejrzenie pliku skryptu przez zapisanie go w określonej lokalizacji.
+## <a name="save-script-cmdlet"></a>Polecenie cmdlet Save-Script
+Polecenie cmdlet Save-Script umożliwia przeglądanie pliku skryptu przez zapisanie go do określonej lokalizacji.
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -162,10 +162,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a>Skrypt instalacji i Get-InstalledScript poleceń cmdlet
-Polecenia cmdlet Install-skryptu pozwala zainstalować plik określony skrypt wraz z jego zależności do określonego zakresu. Domyślnie skrypty są instalowane w zakresie AllUsers. Polecenie cmdlet Get-InstalledScript pozwala uzyskać listę plików skryptów, które zostały zainstalowane przy użyciu polecenia cmdlet Install-skryptu.
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Polecenia cmdlet Install-Script i Get-InstalledScript
+Polecenia cmdlet Install-Script pozwala zainstalować plik określony skrypt wraz z jego zależności w określonym zakresie. Domyślnie skrypty są instalowane w zakresie AllUsers. Polecenie cmdlet Get-InstalledScript pozwala uzyskać listę plików skryptów, które zostały zainstalowane za pomocą polecenia cmdlet Install-Script.
 
-Użyj Uwaga: Aby umożliwić zarządzanie i lokalizowanie skryptów, gdy są one zainstalowane, skrypt instalacji będzie Utwórz domyślny folder do przechowywania skryptów w $home\Documents\WindowsPowerShell\Scripts i Dodaj tego folderu do środowiska ścieżki. Jeśli modyfikowanie ścieżka jest istotny, zamiast skrypt instalacji skryptu Zapisz. Get-InstalledScripts i skrypt dezinstalacji skryptu może pracować tylko z skrypty umieszczane w systemie za pomocą skryptu instalacji.
+Użyj Uwaga: Aby zezwolić na zarządzanie i lokalizowania skryptów, gdy są one zainstalowane, skrypt instalacji utworzysz domyślny folder do przechowywania skryptów w $home\Documents\WindowsPowerShell\Scripts i dodawanie folderu do środowiska ścieżki. W przypadku modyfikowania ścieżki jest istotna, należy użyć Save-Script zamiast skryptu instalacji. Get-InstalledScripts i skrypt dezinstalacji może działać wyłącznie za pomocą skryptów umieszczone w systemie przy użyciu skryptu instalacji.
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -221,7 +221,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-Możesz również użyć polecenia Get — nazwa &lt;InstalledScriptFileName&gt; go. Zainstaluj dwie lokalizacje są dodawane do zmiennej środowiskowej PATH przy pierwszym użyciu określonego zakresu.
+Można również użyć polecenia Get — nazwa &lt;InstalledScriptFileName&gt; go. Zainstaluj dwie lokalizacje są dodawane do zmiennej środowiskowej PATH przy pierwszym użyciu określonego zakresu.
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -343,8 +343,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a>Polecenia cmdlet skrypt aktualizacji
-Polecenia cmdlet skryptu aktualizacji umożliwia w miejscu aktualizacji plików skryptów, które zostały zainstalowane przy użyciu polecenia cmdlet Install-skryptu.
+## <a name="update-script-cmdlet"></a>Polecenie cmdlet Update-Script
+Polecenie cmdlet Update-Script umożliwia w miejscu aktualizacji pliki skryptów, które zostały zainstalowane za pomocą polecenia cmdlet Install-Script.
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -422,8 +422,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>Polecenia cmdlet nowego ScriptFileInfo i ScriptFileInfo testu
-ScriptFileInfo nowe polecenie cmdlet pozwala utworzyć nowy plik skryptu z metadanymi, takich jak wersja, Guid, autora i opis, itp. Polecenia cmdlet test-ScriptFileInfo umożliwia sprawdzenie i pobrać metadanych pliku skryptu.
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>Polecenia cmdlet nowe ScriptFileInfo i ScriptFileInfo testu
+ScriptFileInfo nowe polecenie cmdlet pozwala utworzyć nowy plik skryptu z metadanymi, takich jak wersja, Guid, autor i opis, itp. Polecenia cmdlet test-ScriptFileInfo umożliwia weryfikowanie i Pobierz metadane pliku skryptu.
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -574,8 +574,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a>Polecenie cmdlet Update-ScriptFileInfo
-Polecenie cmdlet Update-ScriptFileInfo pozwala zaktualizować istniejące metadane pliku skryptu.
+## <a name="update-scriptfileinfo-cmdlet"></a>Update-ScriptFileInfo cmdlet
+Polecenie cmdlet Update-ScriptFileInfo pozwala zaktualizować istniejące metadanych pliku skryptu.
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -585,8 +585,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Polecenia cmdlet Register-PSRepository i zestaw PSRepository ze skryptem udostępnianie pomocy technicznej
-Umożliwia dodawanie polecenia cmdlet Register-PSRepository/Set-PSRepository **ScriptSourceLocation** i **ScriptPublishLocation** do PSRepository.
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Polecenia cmdlet Register-PSRepository i Set-PSRepository w ze skryptem udostępnianie pomocy technicznej
+Użyj polecenia cmdlet Register-PSRepository/Set-PSRepository, aby dodać **ScriptSourceLocation** i **ScriptPublishLocation** do PSRepository.
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -643,8 +643,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a>Polecenia cmdlet publikowania skryptu
-Polecenia cmdlet publikowania skryptu umożliwia opublikowany plik skryptu prawidłowe metadane, takie jak wersja, Guid, autora i opis, itp.
+## <a name="publish-script-cmdlet"></a>Polecenia cmdlet skryptów publikowania
+Polecenia cmdlet skryptów publikowania umożliwia publikowanie pliku skryptu z metadanymi prawidłowy, takie jak wersja, Guid, autor i opis, itp.
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose

@@ -3,36 +3,36 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Zasoby społeczności
-ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219372"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685088"
 ---
 # <a name="community-resources"></a>Zasoby społeczności #
-> Uwaga: Te informacje są wstępne i mogą ulec zmianie.
+> Uwaga: Niniejsze informacje mają charakter wstępny i mogą ulec zmianom.
 
-Zespołowi środowiska PowerShell zaprasza zachęca opinii klientów na produktu i obsługuje wiele metod dla użytkowników kontakt z firmą Microsoft.
-Jednej z poniższych metod pozwala przekazać nam opinię, ale zaleca się rozpoczynać łączy na stronie głównej programu PowerShell.
+Zespołu programu PowerShell zaprasza do składania zachęca opinie o produkcie i obsługuje wiele metod dla użytkowników, skontaktuj się z nami.
+Jedną z metod wymienionych poniżej umożliwi opinie, ale zalecane jest rozpoczęcie łącza na stronie głównej programu PowerShell.
 
-[Strona główna programu PowerShell](https://microsoft.com/powershell) Centrum informacje dotyczące programu PowerShell i posiada link bezpośrednio dla "Opinie" w menu u góry strony.
-Można uruchomić naszych kanały opinii szybki dostęp.
-Jest to zalecane podejście do przekazywanie opinii, będzie przechowywany aktywnie wraz z upływem czasu, i zaleci najlepsze miejsce.
+[Strona główna programu PowerShell](https://microsoft.com/powershell) to Centrum informacji na temat programu PowerShell, a link bezpośrednio do "Opinia" w menu w górnej części strony.
+Możesz rozpocząć istnieje szybki dostęp do naszego kanałami przesyłania opinii.
+Jest to zalecane podejście do opinii, będą aktywnie przechowywane wraz z upływem czasu i nastąpi bezpośrednie przekierowanie do najlepszych lokalizacji.
 
-Zarządza zespołowi środowiska PowerShell [UserVoice forum](https://windowsserver.uservoice.com/forums/301869-powershell/) przechwytywania problemy i sugestie z programu Windows PowerShell i naszych usług.
-Forum ten obsługuje dodawanie głosów do istniejących problemów, które zespół PowerShell używa priorytety pracę.
-Wprowadź słowa lub wyrażenia, które odnoszą się do problemu w funkcji wyszukiwania po prawej stronie, aby zobaczyć, jeśli jego wykryto wcześniej.
-Jeśli nic nie jest zgodny, możesz także dodać nowy element.
-Brak podpunkty wymienione po prawej stronie obszarów różnych funkcji, który zarządza zespołowi środowiska PowerShell.
-Dodaj problem w odpowiednim obszarze lub pozostawić go w katalogu głównym i zespołowi środowiska PowerShell będzie umieścić go w właściwej lokalizacji po firma Microsoft analizuje.
+Zespół programu PowerShell zarządza [UserVoice forum](https://windowsserver.uservoice.com/forums/301869-powershell/) do przechwytywania, problemy i sugestie za pomocą programu Windows PowerShell i naszych usług.
+To forum obsługuje dodawanie głosów do istniejących problemów, których używa zespół programu PowerShell do określenia priorytetów naszą pracę.
+Wprowadź wyrazy lub frazy, które odnoszą się do problemu do funkcji wyszukiwania z prawej strony, aby zobaczyć, jeśli ma zostały zidentyfikowane wcześniej.
+Jeśli nic nie jest zgodny, możesz dodać nowy element.
+Brak podsekcje wymienione po prawej stronie dla do obszarów różnych funkcji, którymi zarządza zespołu programu PowerShell.
+Możesz dodać swój problem w odpowiedni obszar lub pozostawić go w katalogu głównym i zespołu programu PowerShell będzie umieścić go w odpowiednie miejsce po zapoznaniu się go.
 
-Użytkownicy, którzy są zaznajomieni z witryny GitHub można przekazywać opinie na wiele funkcji programu PowerShell podnosząc problemy w [witryny PowerShell GitHub](https://github.com/powershell).
-Istnieje wiele repozytoria firma Microsoft i obsługiwane dla typu open source programowanie i przechwytywanie problemy dotyczące użytkowników w tej lokalizacji.
-Kilka repozytoriów klucza, aby wskazać są:
+Użytkownicy, którzy są zaznajomieni z usługi GitHub można przekazywać opinie na wiele funkcji programu PowerShell, tworząc problemy w [witryny PowerShell GitHub](https://github.com/powershell).
+Istnieje wiele repozytoriów jesteśmy Obsługa i programowania typu open source i przechwytywanie problemów użytkowników w tej lokalizacji.
+Kilka kluczowych repozytoriów, aby wspomnieć, są następujące:
 
-* [Dokumentacja programu PowerShell](https://github.com/PowerShell/powershell-docs), gdzie są przechowywane wszystkie dokumentacji (w tym tej zawartości).
-* [PowerShell](https://github.com/PowerShell/powershell) jest lokalizacja podstawowych programu PowerShell, który jest w przyszłych wersjach programu PowerShell.
-Jest to miejsce, sugerować zalecenia funkcji lub Zgłoś problemy podstawowych programu PowerShell.
-* [PowerShellGet](https://github.com/PowerShell/powershellget) repozytorium jest moduł PowerShellGet i poleceń cmdlet.
-* [DSCResources](https://github.com/PowerShell/DscResources) zawiera zestaw modułów DSC obsługiwany przez zespół środowiska PowerShell, opublikowany w galerii programu PowerShell w DSC Resource Kit.
+* [Dokumentacja programu PowerShell](https://github.com/PowerShell/powershell-docs), gdzie są przechowywane całej dokumentacji (w tym zawartości).
+* [Program PowerShell](https://github.com/PowerShell/powershell) lokalizację programu PowerShell Core, czyli w przyszłych wersjach programu PowerShell.
+Jest to miejsce, aby zasugerować rekomendowanych funkcji lub zgłaszać problemy dla programu PowerShell Core.
+* [Moduł PowerShellGet](https://github.com/PowerShell/powershellget) repozytorium jest przeznaczony dla modułu PowerShellGet oraz polecenia cmdlet.
+* [DSCResources](https://github.com/PowerShell/DscResources) zawiera zestaw modułów DSC utrzymywane przez zespół programu PowerShell i opublikowane w galerii programu PowerShell w zestawie zasobów DSC.

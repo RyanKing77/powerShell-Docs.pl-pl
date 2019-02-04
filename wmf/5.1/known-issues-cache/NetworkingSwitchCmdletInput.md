@@ -5,11 +5,11 @@ ms.topic: conceptual
 contributor: vaibch
 title: Błąd polecenia cmdlet Menedżer przełącznika sieci
 ms.openlocfilehash: a0f84c35974b6674faba4b0f19a28bd6e2490a96
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893158"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685249"
 ---
 # <a name="network-switch-manager-cmdlets-failure"></a>Błąd polecenia cmdlet Menedżer przełącznika sieci
 
@@ -22,16 +22,16 @@ Jeśli parametr "InputObject" nie jest używany, polecenia cmdlet powinny nadal 
 Poniżej przedstawiono listę poleceń cmdlet dotyczy tj tych poleceń cmdlet może akceptować wartość dla parametru "InputObject" z potoku.
 Jeśli ta wartość nie zostanie przekazany z potoku wykonywania polecenia cmdlet nie powiedzie się.
 
-- Wyłącz NetworkSwitchEthernetPort
+- Disable-NetworkSwitchEthernetPort
 - Włącz NetworkSwitchEthernetPort
-- Usuń NetworkSwitchEthernetPortIPAddress
-- Zestaw NetworkSwitchEthernetPortIPAddress
-- Zestaw NetworkSwitchPortMode
-- Zestaw NetworkSwitchPortProperty
-- Wyłącz NetworkSwitchFeature
-- Włącz NetworkSwitchFeature
-- Usuń NetworkSwitchVlan
-- Zestaw NetworkSwitchVlanProperty
+- Remove-NetworkSwitchEthernetPortIPAddress
+- Set-NetworkSwitchEthernetPortIPAddress
+- Set-NetworkSwitchPortMode
+- Set-NetworkSwitchPortProperty
+- Disable-NetworkSwitchFeature
+- Enable-NetworkSwitchFeature
+- Remove-NetworkSwitchVlan
+- Set-NetworkSwitchVlanProperty
 
 ## <a name="resolution"></a>Rozwiązanie
 

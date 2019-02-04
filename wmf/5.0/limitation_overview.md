@@ -2,17 +2,17 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892988"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687027"
 ---
 # <a name="known-issues-and-limitations"></a>Znane problemy i ograniczenia
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>Skróty programu PowerShell są otwarte w przypadku, gdy po raz pierwszy użyty
 
-**Rozwiązanie:** wykonaj jedną z następujących czynności:
+**Rozwiązanie:** Wykonaj jedną z następujących czynności:
 
 1. Kliknij prawym przyciskiem myszy skrót programu PowerShell. Wybierz pozycję "Windows PowerShell", aby uruchomić w trybie bez podniesionych uprawnień.
 2. Kliknij prawym przyciskiem myszy skrót programu PowerShell. Kliknij prawym przyciskiem myszy kliknij "Windows PowerShell" i wybierz pozycję "Uruchom jako Administrator" można uruchomić w trybie podniesionych uprawnień.
@@ -23,7 +23,7 @@ Po wykonaniu jednej z powyższych akcji skróty programu PowerShell będzie dzia
 
 Windows 7 korzystanie z modułów programu PowerShell i zasobów DSC może spowodować błędy raportowane o ExecutionPolicy.
 
-**Rozwiązanie:** ustawić ExecutionPolicy RemoteSigned, uruchamiając następujące polecenie w sesji programu PowerShell z podwyższonym poziomem uprawnień (Uruchom jako Administrator):
+**Rozwiązanie:** Ustaw ExecutionPolicy RemoteSigned, uruchamiając następujące polecenie w sesji programu PowerShell z podwyższonym poziomem uprawnień (Uruchom jako Administrator):
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -33,7 +33,7 @@ Set-ExecutionPolicy RemoteSigned
 
 Stary punkt końcowy wymiany przekierowuje do nowego punktu końcowego. Brak usterkę w logice przekierowania powstałą w awarii.
 
-**Rozwiązanie:** Połącz bezpośrednio z nowego punktu końcowego.
+**Rozwiązanie:** Połącz bezpośrednio do nowego punktu końcowego.
 
 ## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>Funkcja rejestrowania spisu oprogramowania jest błędnie zatrzymana po zakończeniu instalacji programu WMF 5.0 w systemie Windows Server 2012 R2
 
@@ -45,7 +45,7 @@ Podczas instalowania programu WMF 5.0 na Windows Server 2012 R2, który jest ju�
 
 Jeśli nazwa katalogu zawiera nieprawidłowy symbol wieloznaczny, następnie `Get-ChildItem` nie przyniesie oczekiwanych rezultatów, gdy - LiteralPath i - Recurse są używane razem.
 
-**Rozwiązanie:** nie idealnym rozwiązaniem, ale bieżące obejście polega na implementowanie rekursji w skrypcie, zamiast polegać na polecenia cmdlet.
+**Rozwiązanie:** Nie idealnym rozwiązaniem, ale bieżące obejście polega na implementowanie rekursji w skrypcie, zamiast polegać na polecenia cmdlet.
 
 ## <a name="sysprep-fails-after-wmf-50-installation"></a>Program Sysprep zakończy się niepowodzeniem po instalacji programu WMF 5.0
 

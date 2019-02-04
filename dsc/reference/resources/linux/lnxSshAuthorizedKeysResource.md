@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxSshAuthorizedKeys
 ms.openlocfilehash: d4cdb727a94a5e89e8401769f24977d49bcf4929
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048566"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687804"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC dla systemu Linux zasób nxSshAuthorizedKeys
 

@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasoby DSC
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046695"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686068"
 ---
 # <a name="dsc-resources"></a>Zasoby DSC
 
->Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+>Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Desired State Configuration, że zasoby (DSC) zawierają bloki konstrukcyjne konfiguracji DSC. Zasób udostępnia właściwości, które mogą być skonfigurowane (schemat) i zawiera funkcje skrypt programu PowerShell, które lokalne Configuration Manager (LCM) wywołuje być "tak".
 
@@ -109,7 +109,7 @@ Configuration TestConfig
 
 Oprócz zasobów społeczności istnieją wbudowane zasoby dla Windows, zasoby dla systemu Linux i zasoby dla zależności między węzłami. Skorzystaj z powyższych kroków, składni tych zasobów i sposobu ich używania. Stron, które pełnią te zasoby zostały zarchiwizowane w obszarze **odwołania**.
 
-Zasoby wbudowane Windows
+Wbudowane zasoby systemu Windows
 
 * [Zasób archiwum](../reference/resources/windows/archiveResource.md)
 * [Zasób środowiska](../reference/resources/windows/environmentResource.md)
@@ -128,7 +128,7 @@ Zasoby wbudowane Windows
 * [Zasób WindowsFeatureSet](../reference/resources/windows/windowsFeatureSetResource.md)
 * [Zasób WindowsOptionalFeature](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [Zasób WindowsOptionalFeatureSet](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource zasobów](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
 * [Zasób WindowsProcess](../reference/resources/windows/windowsProcessResource.md)
 
 [Zależności między węzłami](../configurations/crossNodeDependencies.md) zasobów
@@ -140,7 +140,7 @@ Zasoby wbudowane Windows
 Pakiet zarządzania zasobami
 
 * [Zasób funkcji PackageManagement](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource zasobów](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Zasoby systemu Linux
 

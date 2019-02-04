@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 7730912707bb14e90a9926b387fb3a859d7ca26d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 27541d903748738675917941dc6b60bc9acdc3f4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219270"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684500"
 ---
 # <a name="convert-string"></a>Convert-String
-**Konwertuj ciąg** udostępnia funkcje "należy zastąpić magic". Podaj przed i po nich przykłady sposobu tekstu, aby zobaczyć, i **przekonwertować ciągu** automatycznego formatowania tekstu. Oto pokaz - biorąc osoby na imię i nazwisko i zastąpienie go z nazwisk, przecinek, pierwszy początkowej nazwisk i kropką. Spróbuj go za pomocą regex i zobacz, jak długo trwa użytkownik.
+**Konwertuj ciąg** udostępnia funkcję "replace przez Magia". Podaj przed i po przykłady sposobu tekstu, aby zobaczyć, i **przekonwertować ciągu** automatycznego formatowania tekstu. Oto pokazowa - biorąc czyjeś imię i nazwisko i zastępując nazwisk, przecinek, pierwszy imienia swojego imienia, nazwiska i kropka. Wypróbuj aparat wyrażeń regularnych i zobacz, jak czas trwania.
 
 ```powershell
 "Lee Holmes", "Steve Lee", "Jeffrey Snover" | Convert-String -Example "Bill Gates=Gates, B.","John Smith=Smith, J."

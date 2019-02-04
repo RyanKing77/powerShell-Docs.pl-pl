@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404939"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688308"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń komunikacji zdalnej programu PowerShell
 
@@ -24,7 +24,7 @@ Komunikacja zdalna programu PowerShell nie jest taka sama jak za pomocą **Compu
 Komunikacja zdalna programu PowerShell (i usługi WinRM) nasłuchiwania następujące porty:
 
 - HTTP: 5985
-- PROTOKÓŁ HTTPS: 5986
+- HTTPS: 5986
 
 Domyślnie Komunikacja zdalna programu PowerShell tylko zezwala na połączenia z członkowie grupy Administratorzy. Sesje na rynek w kontekście użytkownika, dzięki czemu wszystkie kontroli dostępu systemu operacyjnego stosowane do poszczególnych użytkowników i grupy nadal stosować wobec nich po nawiązaniu połączenia za pośrednictwem komunikacji zdalnej programu PowerShell.
 

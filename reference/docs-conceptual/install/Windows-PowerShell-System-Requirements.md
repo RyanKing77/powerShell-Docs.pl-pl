@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Wymagania systemowe programu Windows PowerShell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 164ccefa050373064977108aaa13a3ecbeb28713
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404934"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687762"
 ---
 # <a name="windows-powershell-system-requirements"></a>Wymagania systemowe programu Windows PowerShell
 Ten temat zawiera listę wymagań systemowych dla programu Windows PowerShell 3.0, program Windows PowerShell 4.0 programu Windows PowerShell 5.0 i programu Windows PowerShell 5.1 oraz specjalne funkcje, takie jak Windows PowerShell zintegrowane Scripting Environment (ISE), poleceń CIM i przepływy pracy.
@@ -36,7 +36,7 @@ Uruchamia program Windows PowerShell 5.1 w następujących wersjach systemu Wind
 
 - Windows 7 z dodatkiem Service Pack 1, zainstaluj [Windows Management Framework 5.1](https://aka.ms/wmf5download) do uruchomienia programu Windows PowerShell 5.1
 
-Windows PowerShell 5.0 (Superceeded przez program Windows PowerShell 5.1) uruchamia się w następujących wersjach systemu Windows.
+Windows PowerShell 5.0 (zastąpione przez program Windows PowerShell 5.1) uruchamia się w następujących wersjach systemu Windows.
 
 - Windows Server 2019, nowsza wersja instalowany domyślnie
 
@@ -94,7 +94,7 @@ Aby zainstalować pełnej instalacji programu Microsoft .NET Framework 4 (dotNet
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 wymaga systemu Windows Management Framework 4.0 do być preinstalowany w systemie Windows Server 2008 R2 z dodatkiem SP1 i Windows 7 z dodatkiem SP1.
 
-## <a name="ws-management-30"></a>Usługi WS-Management 3.0
+## <a name="ws-management-30"></a>WS-Management 3.0
 Windows PowerShell 3.0 i Windows PowerShell 4.0 wymagają 3.0 protokołu WS-Management, który obsługuje usługę WinRM i protokołu usługi WS-Management. Ten program znajduje się w Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 i Windows Management Framework 3.0.
 
 ## <a name="windows-management-instrumentation-30"></a>Instrumentacja zarządzania Windows 3.0

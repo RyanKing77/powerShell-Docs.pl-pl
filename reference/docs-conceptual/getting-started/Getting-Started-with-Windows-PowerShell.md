@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Wprowadzenie do programu Windows PowerShell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320843"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685550"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Wprowadzenie do programu Windows PowerShell
 Program Windows PowerShell jest powłoką wiersza polecenia Windows przeznaczone dla administratorów systemu. Program Windows PowerShell zawiera interaktywne wiersza i środowisko obsługi skryptów, który może służyć niezależnie lub razem.

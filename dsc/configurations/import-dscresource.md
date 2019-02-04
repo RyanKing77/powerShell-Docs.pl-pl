@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Za pomocą Import-DSCResource
+title: Używanie polecenia Import-DSCResource
 ms.openlocfilehash: 6bc3c1aa1d34a05e3188666da825322235c0672e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405113"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686614"
 ---
-# <a name="using-import-dscresource"></a>Za pomocą Import-DSCResource
+# <a name="using-import-dscresource"></a>Używanie polecenia Import-DSCResource
 
 `Import-DScResource` jest dynamiczne słowo kluczowe, które można używać tylko wewnątrz bloku skryptu konfiguracji. `Import-DSCResource` — Słowo kluczowe, aby zaimportować wszystkie zasoby potrzebne w danej konfiguracji. Zasobów w ramach `$phsome` są importowane automatycznie, ale nadal jest uważany za najlepszym rozwiązaniem, aby jawnie importujesz wszelkie zasoby używane w Twojej [konfiguracji](Configurations.md).
 

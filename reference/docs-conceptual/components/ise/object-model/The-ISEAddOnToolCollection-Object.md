@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Obiekt ISEAddOnToolCollection
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 ms.openlocfilehash: ff4f19d1a85a592f2f4f09c62caa0971751bdff7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405384"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685564"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Obiekt ISEAddOnToolCollection
 
@@ -62,7 +62,7 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="remove-pstab-"></a>Usuń\( psTab \)
+### <a name="remove-pstab-"></a>Remove\( psTab \)
 
 Obsługiwane w środowisku Windows PowerShell ISE 3.0 i nowszych, a nie znajduje się w starszych wersjach.
 

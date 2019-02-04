@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Znane problemy dotyczące programu PowerShell w wersji 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451000"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686761"
 ---
 # <a name="known-issues-for-powershell-60"></a>Znane problemy dotyczące programu PowerShell w wersji 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "49451000"
 
 Alfa wersje programu PowerShell w systemie Linux i macOS są prawie funkcjonalności, ale ma pewne ograniczenia znaczące i rozwiązaliśmy szereg problemów. Wydań beta programu PowerShell w systemie Linux i macOS są bardziej funkcjonalności i stabilne, niż w wersji alfa, ale nadal może zawiera zestaw funkcji, niektóre i może zawierać błędy. W niektórych przypadkach te problemy są po prostu błędy, które nie zostały jeszcze usunięte. W innych przypadkach (tak jak domyślne aliasy ls, cp, itp.), czekamy na opinie od społeczności dotyczące możliwości wprowadzania.
 
-Uwaga: Z powodu podobieństwa wiele podstawowych podsystemów, programu PowerShell w systemie Linux i macOS zwykle na tym samym poziomie dojrzałości zarówno w przypadku funkcji, jak i błędów. Z wyjątkiem wymienionych poniżej problemów w tej sekcji dotyczą obu systemów operacyjnych.
+Uwaga: Z powodu podobieństwa wiele podstawowych podsystemów programu PowerShell w systemie Linux i macOS zwykle na tym samym poziomie dojrzałości zarówno w przypadku funkcji, jak i błędów. Z wyjątkiem wymienionych poniżej problemów w tej sekcji dotyczą obu systemów operacyjnych.
 
 ### <a name="case-sensitivity-in-powershell"></a>Uwzględnianie wielkości liter w programie PowerShell
 
@@ -107,7 +107,7 @@ Poniższa tabela zawiera listę poleceń, które są znane, nie będą działać
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Nie jest dostępna.|Te polecenia nie zostanie rozpoznana. Ten problem powinien rozwiązany w przyszłej wersji.|
 |`Get-Acl`, `Set-Acl`|Niedostępne.|Te polecenia nie zostanie rozpoznana. Ten problem powinien rozwiązany w przyszłej wersji.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Niedostępne.|Te polecenia nie zostanie rozpoznana. Ten problem powinien rozwiązany w przyszłej wersji.|
-|`Wait-Process`|Dostępne, nie działa prawidłowo. |Na przykład "Rozpocznij proces gvim - PassThru. | Nie działa oczekiwania procesu; nie jest on oczekiwania na proces.|
+|`Wait-Process`|Dostępne, nie działa prawidłowo. |Na przykład `Start-Process gvim -PassThru | Wait-Process` nie działa; nie jest on oczekiwania na proces.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Dostępne, ale nie działa.|Zapisuje komunikat o błędzie wskazujący, że nie działają polecenia. Powinny one rozwiązany w przyszłej wersji.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Dostępne są dostępne, ale żadnych źródeł zdarzeń.|Polecenia programu PowerShell obsługi zdarzeń są obecne, ale większość źródeł zdarzeń użycia z poleceniami (na przykład System.Timers.Timer) nie są dostępne w systemie Linux, co polecenia bezużyteczne w wersji Alpha.|
 |`Set-ExecutionPolicy`|Dostępne, ale nie działa.|Zwraca powiedzenie wiadomości nie jest obsługiwana na tej platformie. Zasady wykonywania jest skoncentrowane na użytkownika "pas bezpieczeństwa" ułatwiająca uniemożliwić użytkownikowi wprowadzanie błędami kosztowne. Nie jest granicy zabezpieczeń.|

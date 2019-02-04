@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Węzły aktualizacji z serwera ściągania
+title: Aktualizowanie węzłów z serwera ściągania
 ms.openlocfilehash: 4333a5bf82ef45f22a062942ebe93409433623f5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404646"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686103"
 ---
-# <a name="update-nodes-from-a-pull-server"></a>Węzły aktualizacji z serwera ściągania
+# <a name="update-nodes-from-a-pull-server"></a>Aktualizowanie węzłów z serwera ściągania
 
 W poniższych sekcjach przyjęto założenie, że już zdefiniowano serwera ściągania. Jeśli nie zdefiniowano z serwera ściągania, można użyć następujących przewodników:
 

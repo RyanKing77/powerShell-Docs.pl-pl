@@ -3,11 +3,11 @@ ms.date: 04/11/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Usługa ściągania platformy DSC
 ms.openlocfilehash: 659a8f8b2ce7d34058e789c5de336dc1f1f2abb2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404993"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687797"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Usługa ściągania Desired State Configuration
 
@@ -59,7 +59,7 @@ Wymagania dotyczące korzystania z serwera ściągania:
 - Serwer z systemem:
   - WMF/programu PowerShell w wersji 5.0 lub nowszej
   - Rola serwera IIS
-  - Usługi DSC
+  - DSC Service
 - W idealnym przypadku niektóre oznacza, że generowania certyfikatu, aby zabezpieczyć poświadczenia przekazywane do lokalnego Configuration Manager (LCM) na węzłach docelowych
 
 Najlepszym sposobem na konfigurowanie systemu Windows Server do usługi ściągania hosta jest korzysta z konfiguracji DSC.
@@ -261,7 +261,7 @@ Społeczność DSC ma utworzonych wiele rozwiązań, aby zaimplementować Protok
 W środowiskach lokalnych oferują one możliwości usługi ściągania oraz możliwość współtworzenia społeczności ulepszeń przyrostowych.
 
 - [Holownik](https://github.com/powershellorg/tug)
-- [DSC TRÆK](https://github.com/powershellorg/dsc-traek)
+- [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
 
 ## <a name="pull-client-configuration"></a>Ściąganie konfiguracji klienta
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, powershell, zasób, galerii, Instalator
-title: Dodaj parametry konfiguracji
+title: Dodawanie parametrów do konfiguracji
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404951"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685403"
 ---
-# <a name="add-parameters-to-a-configuration"></a>Dodaj parametry konfiguracji
+# <a name="add-parameters-to-a-configuration"></a>Dodawanie parametrów do konfiguracji
 
 Funkcje, takie jak [konfiguracje](configurations.md) mogą być parametryzowane, aby umożliwić bardziej dynamiczne konfiguracje oparte na danych wejściowych użytkownika. Kroki są podobne do tych opisanych w [funkcje z parametrami](/powershell/module/microsoft.powershell.core/about/about_functions).
 

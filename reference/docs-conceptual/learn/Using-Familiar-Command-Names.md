@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie znanych nazw poleceń
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405603"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688924"
 ---
 # <a name="using-familiar-command-names"></a>Używanie znanych nazw poleceń
 
@@ -22,14 +22,14 @@ Na poniższej liście przedstawiono niektóre typowe **cmd.exe** i polecenia sys
 
 |||||
 |-|-|-|-|
-|CAT|dir|instalacji|Menedżer zasobów|
-|ciągłe dostarczanie|Echo|Przenieś|rmdir|
+|CAT|dir|instalacji|rm|
+|cd|Echo|Przenieś|rmdir|
 |chdir|Wymazywanie|popd|stan uśpienia|
-|Usuń zaznaczenie|GODZ.|PS|Sortowanie|
+|Usuń zaznaczenie|h|ps|Sortowanie|
 |ze specyfikacją CLS|Historia|pushd|Program Tee|
 |Kopiuj|Zakończ|pwd|typ|
-|del|LP|r|zapis|
-|diff|Ls|ren||
+|del|lp|r|zapis|
+|diff|ls|ren||
 
 `Get-Alias` Polecenie cmdlet Pokazuje rzeczywistą nazwą polecenia programu PowerShell natywnych skojarzonych z aliasem.
 
@@ -45,7 +45,7 @@ Alias           cls -> Clear-Host
 
 ## <a name="interpreting-standard-aliases"></a>Interpretowanie standardowa aliasów
 
-Aliasy możemy opisanego w poprzedniej zostały zaprojektowane dla nazwy — zgodność z innymi powłoki poleceń.
+Aliasy, których firma Microsoft opisane wcześniej zostały zaprojektowane dla nazwy — zgodność z innymi powłoki poleceń.
 Większość aliasów utworzone w programie PowerShell są przeznaczone do skrócenia programu. Krótsze nazwy są łatwiejsze do typu, ale są trudne do odczytania, jeśli nie znasz odwołują się.
 
 Aliasy środowiska PowerShell próbować naruszyć między przejrzystości i skrócenia programu. PowerShell używa standardowy zestaw aliasy rzeczowniki typowe i zleceń.
@@ -54,11 +54,11 @@ Przykład skrótów:
 
 | Rzeczownik lub zlecenie | Skrót |
 |--------------|--------------|
-| Pobranie          | G            |
+| Pobranie          | g            |
 | Ustaw          | s            |
 | Element         | i            |
 | Lokalizacja     | l            |
-| Polecenie      | Menedżer certyfikatów           |
+| Polecenie      | cm           |
 | Alias        | Al           |
 
 Te aliasy są zrozumiałe, gdy wiadomo, skrócone nazwy.
@@ -66,11 +66,11 @@ Te aliasy są zrozumiałe, gdy wiadomo, skrócone nazwy.
 | Nazwa polecenia cmdlet    | Alias |
 |----------------|-------|
 | `Get-Item `    | GI    |
-| `Set-Item`     | SI    |
-| `Get-Location` | GL    |
-| `Set-Location` | SL    |
-| `Get-Command`  | usługi gcm   |
-| `Get-Alias`    | GAL   |
+| `Set-Item`     | si    |
+| `Get-Location` | gl    |
+| `Set-Location` | sl    |
+| `Get-Command`  | gcm   |
+| `Get-Alias`    | gal   |
 
 Po zapoznaniu się z programu PowerShell aliasów się, jest łatwe do odgadnięcia, **sal** alias odwołuje się do `Set-Alias`.
 

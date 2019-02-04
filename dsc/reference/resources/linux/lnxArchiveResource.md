@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxArchive
 ms.openlocfilehash: 800954478f149e29c22d1a88304c3be9950f109a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048475"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684871"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC dla systemu Linux zasób nxArchive
 
@@ -32,7 +32,7 @@ nxArchive <string> #ResourceName
 |  Właściwość |  Opis |
 |---|---|
 | SourcePath| Określa ścieżkę źródłową pliku archiwum. Powinno to być tar .zip, lub. plik tar.gz. |
-| Ścieżka_docelowa| Określa lokalizację, w której chcesz upewnić się, że zawartość archiwum zostały wyodrębnione.|
+| DestinationPath| Określa lokalizację, w której chcesz upewnić się, że zawartość archiwum zostały wyodrębnione.|
 | Suma kontrolna| Definiuje typ używany do określenia, czy archiwum źródła został zaktualizowany. Wartości: "ctime", "mtime" lub "md5". Wartość domyślna to "md5".|
 | Force| Niektóre operacje na plikach (takich jak zastąpienie pliku lub usunięcie katalogu, który nie jest pusty) spowoduje wystąpienie błędu. Za pomocą **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.|
 | DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Instalowanie i używanie programu windows powershell web access
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405155"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683828"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalowanie programu Windows PowerShell Web Access i korzystanie z niego
 
@@ -133,10 +133,10 @@ Domyślnie to polecenie cmdlet instaluje aplikację sieci web **pswa** (i jego p
 
    Następujące ustawienia są konfigurowane przez uruchomienie tego polecenia cmdlet. W razie potrzeby można je zmienić ręcznie w konsoli Menedżera usług IIS.
 
-   - Path: / pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Przykład**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -158,10 +158,10 @@ Domyślnie to polecenie cmdlet instaluje aplikację sieci web **pswa** (i jego p
 
    Następujące ustawienia bramy są konfigurowane przez uruchomienie tego polecenia cmdlet. W razie potrzeby można je zmienić ręcznie w konsoli Menedżera usług IIS. Można również określić wartości dla parametrów `WebsiteName` i `WebApplicationName` polecenia cmdlet `Install-PswaWebApplication`.
 
-   - Path: / pswa
+   - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Otwórz konsolę Menedżera usług IIS, wykonując jedną z następujących czynności.
 
@@ -271,7 +271,7 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
 7. W **puli aplikacji** wybierz pulę aplikacji, który został utworzony w kroku 3.
 
-8. W **ścieżkę fizyczną** pola, przejdź do lokalizacji aplikacji. Można użyć domyślnej lokalizacji `%windir%/Web/PowerShellWebAccess/wwwroot`. Kliknij przycisk **OK**.
+8. W **ścieżkę fizyczną** pola, przejdź do lokalizacji aplikacji. Można użyć domyślnej lokalizacji `$env:windir/Web/PowerShellWebAccess/wwwroot`. Kliknij przycisk **OK**.
 
 9. Wykonaj kroki opisane w procedurze [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie.
 
@@ -318,7 +318,7 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
 1. Dla nowej witryny internetowej zostanie automatycznie utworzona pula aplikacji. Aby użyć innej puli aplikacji, kliknij **wybierz** można wybrać pulę aplikacji do skojarzenia z nową witrynę sieci Web. Wybierz alternatywną pulę aplikacji w **Wybieranie puli aplikacji** okno dialogowe, a następnie kliknij przycisk **OK**.
 
-1. W **ścieżkę fizyczną** tekstu, przejdź do %*windir*% / Web/PowerShellWebAccess/wwwroot.
+1. W **ścieżkę fizyczną** tekstu, przejdź do % windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. W **typu** pole **powiązanie** wybierz opcję **https**.
 

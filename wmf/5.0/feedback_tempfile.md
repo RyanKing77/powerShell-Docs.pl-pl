@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 08f431c27cd0ee769518b5246af2fa95aa499d54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: aa2e9540af8b3d4c5de5e00377a84e0e5edd6e4a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34217995"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685116"
 ---
 # <a name="new-temporaryfile"></a>New-TemporaryFile
-Czasami w skryptach, można utworzyć pliku tymczasowego. Można łatwo to zrobić z **TemporaryFile nowy** polecenia cmdlet:
+Czasami w skryptach, można utworzyć pliku tymczasowego. Łatwo to zrobić za pomocą **New TemporaryFile** polecenia cmdlet:
 
-PS C:\\ &gt; $tempFile = New-TemporaryFile
+PS C:\\&gt; $tempFile = New-TemporaryFile
 
-PS C:\\ &gt; $tempFile.FullName
+PS C:\\&gt; $tempFile.FullName
 
 C:\\użytkowników\\slee\\AppData\\lokalnego\\Temp\\tmp375.tmp

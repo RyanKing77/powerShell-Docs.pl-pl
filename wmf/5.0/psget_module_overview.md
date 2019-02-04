@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a0b1573611c5d4232082c19ca19b4cca79d0699e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222177"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685256"
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>Odnajdywanie modułu programu PowerShell, zainstalować i spisu z PowerShellGet
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>Odnajdywanie modułu programu PowerShell, instalowanie i tworzenie spisu przy użyciu funkcji PowerShellGet
 
-PowerShellGet znajduje się w tej wersji platformy WMF:
--   Znajdź moduł można filtrować według metadanych z parametrem - Tag
--   Znajdź moduł można filtrować według języka wyszukiwania specyficznego dla repozytorium z parametrem - filtru
--   Można znaleźć modułu filtr oparty na module zawartości — polecenie - DscResource i - zawiera parametry
--   Znajdź DscResource umożliwia odnajdywania poszczególnych zasobów DSC w repozytoria
--   Obsługa instalowania z i publikowania dla udziałów plików z NuGet
+Moduł PowerShellGet znajduje się w tej wersji programu WMF:
+-   Znajdź moduł może filtrować metadane modułu z parametrem - Tag
+-   Znajdź moduł może filtrować języka specyficznego dla repozytorium wyszukiwania za pomocą parametru - Filter
+-   Można znaleźć modułu filtru opartego na module zawartości za pomocą polecenia-, - DscResource i - zawierają parametry
+-   Znajdź-DscResource umożliwia wykrywanie poszczególne zasoby DSC w repozytoriach
+-   Obsługa instalowania z i publikowania udziałami plików za pomocą NuGet
 
 ## <a name="example-commands"></a>Przykładowe polecenia
 ```powershell
@@ -52,10 +52,10 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## <a name="new-features-in-powershellget"></a>Nowe funkcje w PowerShellGet
--   Obsługa wersji Side-by-side, w programie Windows PowerShell 5.0 lub nowszej
--   Obsługa instalacji modułu zależności
+## <a name="new-features-in-powershellget"></a>Nowe funkcje w moduł PowerShellGet
+-   Obsługa wersji Side-by-side, w programie Windows PowerShell 5.0 lub nowszy
+-   Obsługa instalacji zależności modułów
 -   Trzy nowe polecenia cmdlet
     -   Get-InstalledModule
-    -   Odinstaluj moduł
-    -   Moduł zapisywania
+    -   Odinstalowanie modułu
+    -   Save-Module

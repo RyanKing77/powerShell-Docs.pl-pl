@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria programu powershell, polecenie cmdlet, galerii programu PowerShell, psget
 title: Praca z lokalnym PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619257"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688392"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Praca z lokalne repozytoria modułu PowerShellGet
 
@@ -25,7 +25,7 @@ W tym artykule opisano sposób konfigurowania lokalnego repozytorium programu Po
 
 Istnieją dwa sposoby tworzenia lokalnego PSRepository: NuGet serwer lub udział plików. Każdy typ ma zalety i wady:
 
-Serwer NuGet
+NuGet Server
 
 | Zalety| Wady |
 | --- | --- |

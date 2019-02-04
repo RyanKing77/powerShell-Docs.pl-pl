@@ -4,11 +4,11 @@ contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Uruchamianie NuGet
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002142"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683968"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Uruchomienie dostawcy NuGet i NuGet.exe
 
@@ -155,7 +155,7 @@ Jeśli polecenia cmdlet zostały wykonane jako użytkownik bez uprawnień z podw
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Drugą opcją jest pobranie NuGet.exe w witrynie NuGet.Org: [ https://dist.nuget.org/index.html ](https://www.nuget.org/downloads) po wybraniu wersji NugGet dla maszyn w środowisku produkcyjnym, upewnij się, że jest późniejsza niż 2.8.5.208 i identyfikowania wersji, które zostały oznaczone " Zaleca się". Pamiętaj, aby odblokować plik, jeśli został on pobrany przy użyciu przeglądarki. Można to wykonać za pomocą `Unblock-File` polecenia cmdlet.
+Drugą opcją jest pobrać NuGet.exe w witrynie NuGet.Org: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Po wybraniu wersji NugGet dla maszyn w środowisku produkcyjnym, upewnij się, że jest późniejsza niż 2.8.5.208 i zidentyfikować wersję, która ma została oznaczona etykietą "zalecanych". Pamiętaj, aby odblokować plik, jeśli został on pobrany przy użyciu przeglądarki. Można to wykonać za pomocą `Unblock-File` polecenia cmdlet.
 
 W obu przypadkach można skopiować do dowolnej lokalizacji w pliku NuGet.exe `$env:path`, ale standardowe lokalizacje:
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie programu Local Configuration Manager w poprzednich wersjach programu Windows PowerShell
-ms.openlocfilehash: 31ba2ecdaa5a2ff7fcfddb1791c4d00343f4b5d5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404987"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688861"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Konfigurowanie programu Local Configuration Manager w poprzednich wersjach programu Windows PowerShell
 
@@ -34,9 +34,20 @@ Poniższa lista zawiera właściwości Local Configuration Manager, które możn
 - **Poświadczenie**: Określa poświadczenia (podobnie jak w przypadku Get-Credential) wymagane do dostępu do zasobów zdalnych, takich jak skontaktować się z usługą konfiguracji.
 - **DownloadManagerCustomData**: Reprezentuje tablicę, która zawiera dane niestandardowe, które są specyficzne dla Menedżera pobierania.
 - **DownloadManagerName**: Wskazuje nazwę konfiguracji i Menedżer pobierania modułu.
-- **RebootNodeIfNeeded**: Pewne zmiany konfiguracji w węźle docelowym może wymagać, aby zastosować zmiany, należy ponownie uruchomić. Wartością **True**, tej właściwości spowoduje ponowne uruchomienie węzła, gdy tylko konfiguracja została całkowicie stosuje bez dalszego ostrzeżenia. Jeśli **False** (wartość domyślna), konfiguracja zostanie ukończona, ale węzła, należy ponownie uruchomić ręcznie zmiany zaczęły obowiązywać.
+- **RebootNodeIfNeeded**: Ustaw tę opcję na `$true` umożliwia zasobów do ponownego rozruchu przy użyciu węzła `$global:DSCMachineStatus` flagi. W przeciwnym razie trzeba będzie ręcznie wykonać ponowne uruchomienie węzła dla żadnej konfiguracji, który go wymaga. Wartość domyślna to `$false`. Aby użyć tego ustawienia, jeśli warunek jest ponowny rozruch jest wprowadzany przez coś innego niż DSC (np. Instalator Windows), należy połączyć to ustawienie za pomocą [xPendingReboot](https://github.com/powershell/xpendingreboot) modułu.
 - **RefreshFrequencyMins**: Używane podczas konfigurowania usługi ściągania. Reprezentuje częstotliwość (w minutach), w którym kontaktuje się usługi ściągania, aby pobrać bieżącą konfigurację programu Local Configuration Manager. Tę wartość można ustawić w połączeniu z ConfigurationModeFrequencyMins. Gdy trybów RefreshMode ŚCIĄGANIA węzeł docelowy kontaktuje się z usługą ściągnięcia z interwałem ustawione przez RefreshFrequencyMins i pobiera bieżącą konfigurację. Ustawione przez ConfigurationModeFrequencyMins interwałem aparatu spójności dotyczy najnowszą konfigurację, który został pobrany do węzła docelowego. Jeśli nie ustawiono RefreshFrequencyMins do liczby całkowitej wielokrotności ConfigurationModeFrequencyMins, system zaokrągli go. Wartość domyślna to 30.
 - **RefreshMode**: Możliwe wartości to **wypychania** (ustawienie domyślne) i **ściągnięcia**. W konfiguracji "wypychania" należy umieścić plik konfiguracji na każdym węźle docelowym przy użyciu dowolnego komputera klienckiego. W trybie "pull" należy skonfigurować usługę ściągania dla lokalnego programu Configuration Manager skontaktować się i uzyskać dostęp do plików konfiguracji.
+
+> [!NOTE]
+> Rozpoczyna się LCM **ConfigurationModeFrequencyMins** na podstawie cyklu:
+>
+> - Nowe metaconfig jest stosowany przy użyciu `Set-DscLocalConfigurationManager`
+> - Ponowne uruchomienie komputera
+>
+> Aby uzyskać dowolny warunek, gdzie proces czasomierza napotyka awarii, który zostanie wykryty w ciągu 30 sekund, a cykl zostanie ponownie uruchomiona.
+> Operacja współbieżna może opóźnić cyklu z pracę, jeśli czas trwania tej operacji przekracza częstotliwość cyklu skonfigurowany, następnym czasomierza nie zostanie uruchomiona.
+>
+> Przykład metaconfig jest skonfigurowany z częstotliwością co 15 min ściągania i ściąganie odbywa się T1.  Węzeł nie zakończy pracę dla 16 w ciągu kilku minut.  Pierwszy cykl 15 minut jest ignorowana, a następnego ściągania nastąpi T1 + 15 + 15.
 
 ### <a name="example-of-updating-local-configuration-manager-settings"></a>Przykład aktualizowanie ustawień Local Configuration Manager
 

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Przy użyciu narzędzia Projektant zasobów
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404940"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686656"
 ---
 # <a name="using-the-resource-designer-tool"></a>Przy użyciu narzędzia Projektant zasobów
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Narzędzie Projektant zasobów to zbiór poleceń cmdlet udostępnianych przez **xDscResourceDesigner** moduł, który w ułatwienia tworzenia zasobów Windows PowerShell Desired State Configuration (DSC). Polecenia cmdlet w tym zasobie utworzenia schematu pliku MOF, moduł skryptu i struktury katalogów dla nowego zasobu. Aby uzyskać więcej informacji na temat zasobów DSC, zobacz [kompilacji Windows PowerShell Desired State Configuration zasobów niestandardowych](authoringResource.md).
 W tym temacie utworzymy zasobu DSC, który zarządza użytkowników usługi Active Directory.
@@ -181,4 +181,4 @@ Narzędzie Projektant zasobów przedstawia jeden więcej polecenia cmdlet, któr
 [Tworzenie niestandardowych Windows PowerShell Desired State Configuration zasobów](authoringResource.md)
 
 #### <a name="other-resources"></a>Inne zasoby
-[xDscResourceDesigner modułu](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)
+[xDscResourceDesigner Module](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)

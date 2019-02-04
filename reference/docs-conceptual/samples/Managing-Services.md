@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie usługami
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
 ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405432"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687013"
 ---
 # <a name="managing-services"></a>Zarządzanie usługami
 

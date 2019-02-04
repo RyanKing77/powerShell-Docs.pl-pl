@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d4168640f67cb1dd44e91d1867e87fd7a6b7f549
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0a481fb9d4f2aab89bc448c71b01f1d541cf24bc
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218354"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687993"
 ---
-# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Obsługa wersji Side-by-Side programu PowerShell w wersji 5.0 lub nowszej
+# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Obsługa wersji Side-by-Side, w programie PowerShell 5.0 lub nowszy
 
-Teraz jest obsługa wersji modułu side-by-side (SxS) w Module instalacji aktualizacji modułu i poleceń cmdlet Publish-Module uruchamiających w programie Windows PowerShell 5.0 lub nowszej.
-Ponadto dodano parametru - RequiredVersion do polecenia cmdlet Publish-Module do określania wersji do opublikowania. Parametr Path obsługuje teraz ścieżki bazowej modułu z folderem wersji.
+Jest teraz obsługę wersji modułu side-by-side (SxS) w Install-Module modułu aktualizacji i polecenia cmdlet Publish-Module, uruchamianą w programie Windows PowerShell 5.0 lub nowszej.
+Ponadto dodaliśmy parametru - RequiredVersion do polecenia cmdlet Publish-Module do określenia wersji do opublikowania. Parametr ścieżki obsługuje teraz moduł ścieżki podstawowej z folderu wersji.
 
-**Zainstaluj moduł przykłady:**
+**Przykłady Install-Module:**
 ```powershell
 Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.1.0 -Repository PSGallery
 Get-Module -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase

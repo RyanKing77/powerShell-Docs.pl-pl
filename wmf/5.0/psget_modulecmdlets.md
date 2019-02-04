@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 1556d1e07a3a085346f2cdc48ef6888ad18687ad
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320469"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685767"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Polecenia cmdlet PowerShellGet na potrzeby zarządzania modułami
 

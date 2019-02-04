@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2d6b4e3045bc8cff90576c345d1ccb97b2487426
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 90fd26f9f27d2398da839b309c17b921bb3b8521
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225593"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685109"
 ---
 # <a name="new-guid"></a>New-Guid
-Często skryptu (lub prawdopodobnie zapisywania zasobu DSC), muszą zapewnić Unikatowy identyfikator. Identyfikatory GUID działał prawidłowo i ułatwia wywołać go wygenerować klasy identyfikatora Guid programu .NET Framework, ale po użyciu polecenia cmdlet powoduje, że to mogą szybciej odnajdywać dla użytkowników końcowych, którzy nie są już znasz klasy .NET Framework:
+Często skryptu (lub może być pisanie zasobu DSC), masz potrzebę Unikatowy identyfikator. Identyfikatory GUID działał prawidłowo i łatwo wywoływać klasę identyfikator Guid programu .NET Framework, aby wygenerować, ale o polecenie cmdlet umożliwia dotarcie do każdego dla użytkowników końcowych, którzy nie są już zaznajomieni z klasy .NET Framework:
 
-PS C:\\ &gt; nowego identyfikatora Guid
+PS C:\\&gt; New-Guid
 
 Identyfikator GUID
 

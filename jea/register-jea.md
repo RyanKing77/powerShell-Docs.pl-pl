@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Rejestrowanie usługi JEA konfiguracji
 ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002910"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689064"
 ---
 # <a name="registering-jea-configurations"></a>Rejestrowanie usługi JEA konfiguracji
 

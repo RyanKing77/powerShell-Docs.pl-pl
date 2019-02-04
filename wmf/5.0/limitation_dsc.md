@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 76aa4a372602d78e013b2138eb6409304a4dfb76
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: add6bec798713f00d4b23414b172445e38bbfa44
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190064"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55685326"
 ---
-# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Konfiguracji żądanego stanu (DSC) — znane problemy i ograniczenia
+# <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) — znane problemy i ograniczenia
 
-<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Fundamentalne zmiany: Certyfikaty używane do szyfrowania/odszyfrowywania hasła w konfiguracji DSC mogą nie działać po zainstalowaniu pakietu WMF 5.0 RTM
+<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Zmiana powodująca niezgodność: Certyfikaty używane do szyfrowania/odszyfrowywania hasła w konfiguracjach DSC może nie działać po zainstalowaniu programu WMF 5.0 RTM
 --------------------------------------------------------------------------------------------------------------------------------
 
-W wersjach WMF 4.0 i WMF 5.0 w wersji zapoznawczej usługi Konfiguracja DSC nie pozwala haseł w konfiguracji, aby mieć długość 121 więcej niż znaków. DSC został wymuszanie używanie haseł krótkie, nawet jeśli została potrzeby długich i silne hasło. Ta zmiana podziału umożliwia hasła, które mają być o dowolnej długości w konfiguracji DSC.
+W wersjach programu WMF 4.0 i program WMF 5.0 w wersji zapoznawczej DSC nie pozwala haseł w konfiguracji, aby się o długości ponad 121 znaków. DSC dążenie do używania haseł krótki, nawet jeśli została żądanego długich i silne hasło. Zezwala na tej istotnej zmiany hasła, które mają być o dowolnej długości w konfiguracji DSC.
 
-**Rozwiązanie:** ponownie utworzyć certyfikat z użycia szyfrowanie danych lub klucz szyfrowanie klucza i użycia klucza rozszerzonego szyfrowania dokumentu (1.3.6.1.4.1.311.80.1). Artykuł w witrynie TechNet <https://technet.microsoft.com/library/dn807171.aspx> zawiera więcej informacji.
+**Rozwiązanie:** Ponownie utworzyć certyfikat z użycia szyfrowanie danych lub klucz szyfrowanie klucza i użycia klucza rozszerzonego szyfrowania dokumentu (1.3.6.1.4.1.311.80.1). Artykuł w witrynie TechNet <https://technet.microsoft.com/library/dn807171.aspx> zawiera więcej informacji.
 
 
-<a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>Polecenia cmdlet DSC może zakończyć się niepowodzeniem po zainstalowaniu pakietu WMF 5.0 RTM
+<a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>Polecenia cmdlet DSC może zakończyć się niepowodzeniem po zainstalowaniu programu WMF 5.0 RTM
 ------------------------------------------------------------------------------------
-Start DscConfiguration i innych poleceń cmdlet DSC może zakończyć się niepowodzeniem po zainstalowaniu pakietu WMF 5.0 RTM z powodu następującego błędu:
+Start-DscConfiguration i inne polecenia cmdlet DSC może zakończyć się niepowodzeniem po zainstalowaniu programu WMF 5.0 RTM z następującym błędem:
 ```powershell
     LCM failed to retrieve the property PendingJobStep from the object of class dscInternalCache .
     + CategoryInfo : ObjectNotFound: (root/Microsoft/...gurationManager:String) [], CimException
@@ -28,67 +28,67 @@ Start DscConfiguration i innych poleceń cmdlet DSC może zakończyć się niepo
     + PSComputerName : localhost
 ```
 
-**Rozwiązanie:** Usuń DSCEngineCache.mof, uruchamiając następujące polecenie w sesji programu PowerShell z podwyższonym poziomem uprawnień (Uruchom jako Administrator):
+**Rozwiązanie:** Aby usunąć DSCEngineCache.mof, uruchamiając następujące polecenie w sesji programu PowerShell z podwyższonym poziomem uprawnień (Uruchom jako Administrator):
 
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
 
-<a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>Polecenia cmdlet DSC mogą nie działać, jeśli WMF 5.0 RTM jest zainstalowany na górze WMF 5.0 produkcji podglądu
+<a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>Polecenia cmdlet DSC może nie działać, jeśli program WMF 5.0 RTM jest zainstalować dla już zainstalowanego programu WMF 5.0 produkcyjnych (wersja zapoznawcza)
 ------------------------------------------------------
-**Rozwiązanie:** uruchom następujące polecenie w sesji programu PowerShell z podwyższonym poziomem uprawnień (Uruchom jako administrator):
+**Rozwiązanie:** Uruchom następujące polecenie w sesji programu PowerShell z podwyższonym poziomem uprawnień (Uruchom jako administrator):
 ```powershell
     mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
 
 
-<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM może przejść w niestabilnym stanie podczas używania Get-DscConfiguration w DebugMode
+<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>LCM przejść w niestabilnym stanie podczas korzystania z Get-DscConfiguration w element DebugMode
 -------------------------------------------------------------------------------
 
-Jeśli LCM DebugMode, naciskając klawisze CTRL + C, aby zatrzymać przetwarzanie Get-DscConfiguration może spowodować LCM przejść w niestabilnym stanie takie tego większości poleceń cmdlet DSC nie będą działać.
+Jeśli element DebugMode LCM, naciskając klawisze CTRL + C, aby zatrzymać przetwarzanie Get-DscConfiguration może spowodować LCM przejść do stanu niestabilnego. takie tego większości poleceń cmdlet DSC nie będzie działać.
 
-**Rozwiązanie:** nie naciśnij klawisze CTRL + C podczas debugowania polecenia cmdlet Get-DscConfiguration.
+**Rozwiązanie:** Nie naciśnij klawisze CTRL + C podczas debugowania polecenie cmdlet Get-DscConfiguration.
 
 
-<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration mogą wykraczać w DebugMode
+<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration mogą wykraczać w element DebugMode
 ------------------------------------------------------------------------------------------------------------------------
-Jeśli LCM DebugMode, Zatrzymaj DscConfiguration mogą wykraczać podczas próby zatrzymania operacji uruchomione przez Get DscConfiguration
+Jeśli element DebugMode LCM, Stop-DscConfiguration mogą wykraczać podczas próby zatrzymania operacji uruchomione przez Get-DscConfiguration
 
-**Rozwiązanie:** zakończyć debugowanie operacji uruchomione przez Get DscConfiguration, jak opisano w sekcji "[zasobów debugowania DSC](https://msdn.microsoft.com/powershell/dsc/debugresource)".
+**Rozwiązanie:** Zakończysz debugowanie operacji Get-DscConfiguration uruchomiona zgodnie z opisem w sekcji "[zasoby DSC debugowania](https://msdn.microsoft.com/powershell/dsc/debugresource)".
 
 
-<a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Żadne pełne komunikaty o błędach są wyświetlane w DebugMode
+<a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Żadne pełne komunikaty o błędach są wyświetlane w element DebugMode
 -----------------------------------------------------------------------------------
-Jeśli LCM DebugMode, nie pełnych komunikatów o błędach są wyświetlane od zasobów usługi Konfiguracja DSC.
+Jeśli element DebugMode LCM, żadne komunikaty o błędach pełne są wyświetlane z zasobów DSC.
 
-**Rozwiązanie:** wyłączyć *DebugMode* Aby wyświetlić komunikaty pełne z zasobu
+**Rozwiązanie:** Wyłącz *element DebugMode* aby zobaczyć pełne komunikaty z zasobu
 
 
-<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Nie można pobrać DscResource wywołania operacji przez polecenie cmdlet Get-DscConfigurationStatus
+<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Invoke-DscResource operacji nie można pobrać przy użyciu polecenia cmdlet Get-DscConfigurationStatus
 --------------------------------------------------------------------------------------
-Po użyciu polecenia cmdlet Invoke-DscResource do bezpośredniego wywoływania metod dowolnego zasobu, rekordy takich operacji nie można pobrać za pomocą Get DscConfigurationStatus w późniejszym czasie.
+Bezpośrednie wywoływanie metod dowolnego zasobu przy użyciu polecenia cmdlet Invoke-DscResource rekordów tych operacji nie można pobrać za pośrednictwem Get DscConfigurationStatus w późniejszym czasie.
 
-**Rozwiązanie:** None.
+**Rozwiązanie:** Brak.
 
 
-<a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus zwraca ściągania cyklu operacje jako typ *spójności*
+<a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus zwraca ściągnięcia cyklu operacje jako typ *spójności*
 ---------------------------------------------------------------------------------
-Gdy węzeł ma ustawioną wartość trybu odświeżania ŚCIĄGANIA, dla każdej operacji ściągania wykonywana, polecenia cmdlet Get-DscConfigurationStatus raporty typ operacji jako *spójności* zamiast *początkowej*
+Gdy węzeł ma wartość trybu odświeżania ŚCIĄGANIA, dla każdej operacji ściągania wykonywane, polecenie cmdlet Get-DscConfigurationStatus raporty typ operacji jako *spójności* zamiast *początkowej*
 
-**Rozwiązanie:** None.
+**Rozwiązanie:** Brak.
 
-<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>DscResource Wywołaj polecenie cmdlet nie zwraca komunikat w kolejności, które zostały wyprodukowane
+<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Polecenie cmdlet Invoke-DscResource nie zwróci komunikatu w kolejności, w której zostały wyprodukowane
 ---------------------------------------------------------------------------------
-Polecenie cmdlet Invoke-DscResource nie może zwracać pełne, ostrzeżenie, i komunikaty o błędach w kolejności, które zostały one utworzone przez LCM lub zasobu usługi Konfiguracja DSC.
+Polecenie cmdlet Invoke-DscResource nie może zwracać pełne, ostrzeżenie, i komunikaty o błędach w kolejności, w której zostały wyprodukowane przez LCM lub zasobu DSC.
 
-**Rozwiązanie:** None.
+**Rozwiązanie:** Brak.
 
 
-<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Zasoby DSC nie można debugować łatwo, gdy jest używany z Invoke DscResource
+<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Zasoby DSC nie można łatwo debugować, gdy jest używane z Invoke-DscResource
 -----------------------------------------------------------------------
-Gdy LCM jest uruchomiony w trybie debugowania (zobacz [zasobów debugowania DSC](https://msdn.microsoft.com/powershell/dsc/debugresource) więcej szczegółów), polecenia cmdlet Invoke-DscResource nie zapewnia informacje o obszarze działania, aby nawiązać połączenie do debugowania.
-**Rozwiązanie:** odnajdowania i dołączyć do działania za pomocą poleceń cmdlet **Get-PSHostProcessInfo**, **Enter PSHostProcess** , **obszaru działania Get** i **Obszaru działania debugowania** debugowania zasobów usługi Konfiguracja DSC.
+Gdy LCM jest uruchomiony w trybie debugowania (zobacz [zasoby DSC debugowania](https://msdn.microsoft.com/powershell/dsc/debugresource) Aby uzyskać więcej informacji), polecenia cmdlet Invoke-DscResource nie powoduje przekazania informacji o obszarze działania, aby nawiązać połączenie do debugowania.
+**Rozwiązanie:** Odnajdywanie i dołączyć do obszaru działania, za pomocą poleceń cmdlet **Get PSHostProcessInfo**, **Enter PSHostProcess** , **obszarem działania Get** i **debugowania obszarem działania** debugowanie zasobów DSC.
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -116,76 +116,76 @@ Debug-Runspace -Id 2
 ```
 
 
-<a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Różnych dokumentów częściowe konfiguracji dla tego samego węzła nie może mieć nazwy identyczne zasobów
+<a name="various-partial-configuration-documents-for-same-node-cannot-have-identical-resource-names"></a>Różne dokumenty częściowe konfiguracji dla tego samego węzła nie może mieć nazwy zasobów identyczne
 ------------------------------------------------------------------------------------------
 
-W przypadku kilku częściowe konfiguracji wdrożonych na jednym węźle identycznych nazw zasobów Przyczyna Uruchom błąd w czasie.
+W przypadku kilku częściowe konfiguracji, które zostały wdrożone na jednym węźle identyczne nazwy zasobów Przyczyna Uruchom błąd w czasie.
 
-**Rozwiązanie:** Użyj różnych nazw dla nawet tych samych zasobów w różnych konfiguracjach częściowej.
+**Rozwiązanie:** Używać różnych nazw nawet w tych samych zasobów w różnych konfiguracjach częściowe.
 
 
-<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Początek DscConfiguration — UseExisting nie działa z - Credential
+<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration — UseExisting nie działa z - Credential
 ------------------------------------------------------------------
 
-Podczas korzystania z parametrem – UseExisting Start DscConfiguration Credential parametru jest ignorowana. DSC używa domyślna tożsamość procesu, aby kontynuować operację. W przypadku różnych poświadczeń są potrzebne, aby kontynuować na węźle zdalnym powoduje błąd.
+Korzystając z parametrem – UseExisting Start-DscConfiguration Credential parametr jest ignorowany. DSC używa domyślna tożsamość procesu, można kontynuować operacji. Powoduje błąd, gdy pozwala przejść na węźle zdalnym na potrzeby innego poświadczenia.
 
-**Rozwiązanie:** Użyj modelu wspólnych informacji sesji dla operacji zdalnych DSC:
+**Rozwiązanie:** Użyj sesji CIM do operacji zdalnych DSC:
 ```powershell
 $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
 ```
 
 
-<a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>Adresy IPv6 jako nazwy węzła w konfiguracji DSC
+<a name="ipv6-addresses-as-node-names-in-dsc-configurations"></a>Adresy IPv6 jako nazwy węzła w konfiguracjach DSC
 --------------------------------------------------
-Adresy IPv6 jako nazwy węzła w skrypty do konfiguracji DSC nie są obsługiwane w tej wersji.
+Adresy IPv6 jako nazwy węzła w skrypty konfiguracji DSC nie są obsługiwane w tej wersji.
 
-**Rozwiązanie:** None.
+**Rozwiązanie:** Brak.
 
 
-<a name="debugging-of-class-based-dsc-resources"></a>Debugowanie zasobów na podstawie klasy DSC
+<a name="debugging-of-class-based-dsc-resources"></a>Debugowanie zasobów DSC oparte na klasach
 --------------------------------------
-Debugowanie zasobów opartych na klasie DSC nie jest obsługiwane w tej wersji.
+Debugowanie zasobów DSC oparte na klasach nie jest obsługiwane w tej wersji.
 
-**Rozwiązanie:** None.
+**Rozwiązanie:** Brak.
 
 
-<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Zmienne & funkcje zdefiniowane w zakresie zasobów na podstawie klasy DSC $script nie są zachowywane między wiele wywołań do zasobu usługi Konfiguracja DSC
+<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Zmienne i funkcje zdefiniowane w zakresie $script DSC oparte na klasach zasobów nie są zachowywane w wielu wywołań do zasobu DSC
 -------------------------------------------------------------------------------------------------------------------------------------
 
-Wiele kolejnych wywołań Start DSCConfiguration zakończy się niepowodzeniem, jeśli konfiguracja jest za pomocą dowolnego zasobu na podstawie klasy mającej zmiennych lub funkcje zdefiniowana w zakresie $script.
+Wiele kolejnych wywołań Start-DSCConfiguration zakończy się niepowodzeniem, jeśli konfiguracja jest za pomocą dowolnego zasobu na podstawie klasy, mającej zmiennych lub funkcje zdefiniowane w zakresie $script.
 
-**Rozwiązanie:** zdefiniować wszystkie zmienne i funkcje w samej klasy zasobu usługi Konfiguracja DSC. Zmienne zakresu No $script/funkcje.
+**Rozwiązanie:** Zdefiniuj wszystkie zmienne i funkcje w samej klasy zasobów DSC. Zmienne zakresu No $script/funkcje.
 
 
-<a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>Korzystając z zasobów jest PSDscRunAsCredential debugowanie zasobów DSC
+<a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>Korzystając z zasobem jest PSDscRunAsCredential debugowanie zasobów DSC
 ----------------------------------------------------------------------
-Debugowanie zasobów DSC używając zasobu *PSDscRunAsCredential* właściwość w konfiguracji nie jest suported w tej wersji.
+Debugowanie zasobów DSC korzystając zasób *PSDscRunAsCredential* właściwości w konfiguracji nie jest obsługiwany w tej wersji.
 
-**Rozwiązanie:** None.
+**Rozwiązanie:** Brak.
 
 
 <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential nie jest obsługiwany dla złożonego zasobów DSC
 ----------------------------------------------------------------
 
-**Rozwiązanie:** właściwości Użyj poświadczeń, jeśli jest dostępna. Przykład ServiceSet i WindowsFeatureSet
+**Rozwiązanie:** Użyj właściwości Credential, jeśli jest dostępne. Przykład ServiceSet i WindowsFeatureSet
 
 
-<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource-składni* nie odzwierciedla PsDscRunAsCredential poprawnie
+<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource — składnia* nie będzie odzwierciedlał PsDscRunAsCredential poprawnie
 -------------------------------------------------------------------------
-Get-DscResource-składni nie odzwierciedla PsDscRunAsCredential poprawnie zasobów oznacza je jako wymagane lub nie jest ona obsługiwana.
+Get-DscResource — składnia nie odzwierciedla PsDscRunAsCredential poprawnie zasobów oznacza je jako wymagane lub nie obsługuje.
 
-**Rozwiązanie:** None. Jednak tworzenia konfiguracji w ISE odzwierciedla prawidłowych metadanych dotyczących PsDscRunAsCredential właściwości, korzystając z funkcji IntelliSense.
+**Rozwiązanie:** Brak. Jednak tworzenie konfiguracji w środowisku ISE odzwierciedla prawidłowych metadanych dotyczących PsDscRunAsCredential właściwości, korzystając z funkcji IntelliSense.
 
 
-<a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature nie jest dostępna w systemie Windows 7
+<a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature nie jest dostępna w Windows 7
 -----------------------------------------------------
 
-Zasób WindowsOptionalFeature DSC nie jest dostępna w systemie Windows 7. Ten zasób wymaga modułu narzędzia DISM i poleceń cmdlet DISM, które są dostępne począwszy od systemu Windows 8 i nowszych wersjach systemu operacyjnego Windows.
+Zasób WindowsOptionalFeature DSC nie jest dostępna w Windows 7. Ten zasób wymaga modułu DISM i poleceń cmdlet DISM, które są dostępne, począwszy od systemu Windows 8 i nowszych wersjach systemu operacyjnego Windows.
 
-<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Dla zasobów na podstawie klasy DSC Import DscResource - ModuleVersion może nie działać zgodnie z oczekiwaniami
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Dla zasobów DSC oparte na klasach Import-DscResource - ModuleVersion może nie działać zgodnie z oczekiwaniami
 ------------------------------------------------------------------------------------------
-Jeśli węzeł kompilacji ma wiele wersji moduł klasy zasobu DSC `Import-DscResource -ModuleVersion` nie odbiera określonej wersji i powoduje następujący błąd kompilacji.
+Jeśli węzeł kompilacji ma wiele wersji moduł oparte na klasach zasobów DSC `Import-DscResource -ModuleVersion` nie odbiera określonej wersji i powoduje następujący błąd kompilacji.
 
 ```
 ImportClassResourcesFromModule : Exception calling "ImportClassResourcesFromModule" with "3" argument(s): "Keyword 'MyTestResource' already defined in the configuration."
@@ -196,20 +196,20 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**Rozwiązanie:** zaimportować wymaganą wersję, definiując *ModuleSpecification* do obiektu `-ModuleName` z `RequiredVersion` klucz określony w następujący sposób:
+**Rozwiązanie:** Importowanie wymaganą wersję, definiując *ModuleSpecification* obiekt `-ModuleName` z `RequiredVersion` klucza określonego w następujący sposób:
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
 
-<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Niektórych zasobów DSC, takich jak rejestru zasobu rozpoczęcie może zająć dużo czasu przetwarzania żądania.
+<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Niektóre zasoby DSC, takich jak zasób rejestru może zacząć zająć dużo czasu, aby przetworzyć żądanie.
 --------------------------------------------------------------------------------------------------------------------------------
 
-**Resolution1:** Tworzenie zadania harmonogramu czyści folderu Okresowo.
+**Resolution1:** Tworzenie zadania harmonogramu Okresowo czyści następujący folder.
 ``` PowerShell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**Resolution2:** zmiany konfiguracji DSC, aby wyczyścić *CommandAnalysis* folder po zakończeniu konfiguracji.
+**Resolution2:** Zmień konfigurację DSC, aby wyczyścić *CommandAnalysis* folder po zakończeniu konfiguracji.
 ``` PowerShell
 Configuration $configName
 {

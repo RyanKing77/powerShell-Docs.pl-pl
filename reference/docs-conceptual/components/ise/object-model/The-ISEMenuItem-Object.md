@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Obiekt ISEMenuItem
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
 ms.openlocfilehash: 556f88117c07100b1734c8ffd8956dce6efe6fb1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405531"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688770"
 ---
 # <a name="the-isemenuitem-object"></a>Obiekt ISEMenuItem
 
@@ -58,7 +58,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-### <a name="submenus"></a>Podmenu
+### <a name="submenus"></a>Submenus
 
 Obsługiwane w programie Windows PowerShell ISE 2.0 i nowszych.
 

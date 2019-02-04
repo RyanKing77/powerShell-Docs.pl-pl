@@ -4,11 +4,11 @@ ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extension
 title: Historia wersji rozszerzenie DSC usługi Azure
 ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405233"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688126"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Historia wersji rozszerzenia Azure Desired State Configuration
 
@@ -27,11 +27,11 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
   - Windows Server 2012 R2
   - Windows Server 2012
   - Windows Server 2008 R2 z dodatkiem SP1
-  - Klient Windows 7/8.1/10
+  - Windows Client 7/8.1/10
   - Serwer Nano Server
 - **Pomoc techniczna platformy WMF:**
   - WMF 5.1
-  - PROGRAM WMF 5.0 RTM
+  - WMF 5.0 RTM
   - Aktualizacja programu WMF 4.0
   - WMF 4.0
 - **Środowisko:**
@@ -51,7 +51,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 - **Data wydania:** 5 marca 2018 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Windows klienta 7/8.1/10 systemu Nano Server
-- **Pomoc techniczna platformy WMF:** WMF 5.1 program WMF 5.0 RTM programu WMF 4.0 Update, programu WMF 4.0
+- **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (Instalowanie programu WMF wymaga ponownego uruchomienia). Dla serwera Nano Server DSC rola jest instalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
@@ -88,7 +88,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 - **Data wydania:** 13 listopada 2017 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Windows klienta 7/8.1/10 systemu Nano Server
-- **Pomoc techniczna platformy WMF:** WMF 5.1 program WMF 5.0 RTM programu WMF 4.0 Update, programu WMF 4.0
+- **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (Instalowanie programu WMF wymaga ponownego uruchomienia). Dla serwera Nano Server DSC rola jest instalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
@@ -98,7 +98,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 - **Data wydania:** 9 czerwca 2017 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Windows klienta 7/8.1/10 systemu Nano Server
-- **Pomoc techniczna platformy WMF:** WMF 5.1 program WMF 5.0 RTM programu WMF 4.0 Update, programu WMF 4.0
+- **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (Instalowanie programu WMF wymaga ponownego uruchomienia). Dla serwera Nano Server DSC rola jest instalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
@@ -108,7 +108,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 - **Data wydania:** 2 czerwca 2017 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Windows klienta 7/8.1/10 systemu Nano Server
-- **Pomoc techniczna platformy WMF:** WMF 5.1 program WMF 5.0 RTM programu WMF 4.0 Update, programu WMF 4.0
+- **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (Instalowanie programu WMF wymaga ponownego uruchomienia). Dla serwera Nano Server DSC rola jest instalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
@@ -118,7 +118,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 - **Data wydania:** 13 kwietnia 2017 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Nano Server
-- **Pomoc techniczna platformy WMF:** WMF 5.1 program WMF 5.0 RTM programu WMF 4.0 Update, programu WMF 4.0
+- **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (Instalowanie programu WMF wymaga ponownego uruchomienia). Dla serwera Nano Server DSC rola jest instalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
@@ -128,7 +128,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 - **Data wydania:** 15 marca 2017 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Nano Server
-- **Pomoc techniczna platformy WMF:** WMF 5.1 program WMF 5.0 RTM programu WMF 4.0 Update, programu WMF 4.0
+- **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (Instalowanie programu WMF wymaga ponownego uruchomienia). Dla serwera Nano Server DSC rola jest instalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
@@ -138,7 +138,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 - **Data wydania:** 8 lutego 2017 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Nano Server
-- **Pomoc techniczna platformy WMF:** WMF 5.1 program WMF 5.0 RTM programu WMF 4.0 Update, programu WMF 4.0
+- **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (Instalowanie programu WMF wymaga ponownego uruchomienia). Dla serwera Nano Server DSC rola jest instalowana na maszynie Wirtualnej.
 - **Nowe funkcje:**
@@ -159,7 +159,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 ### <a name="version-220"></a>Wersja 2,20
 
 - **Data wydania:** 2 sierpnia 2016 r.
-- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1
+- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
 - **Pomoc techniczna platformy WMF:** WMF 5.1 (wersja zapoznawcza), program WMF 5.0 RTM, WMF 4.0 Update, programu WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
@@ -170,8 +170,8 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 ### <a name="version--219"></a>Wersja 2.19
 
 - **Data wydania:** 3 czerwca 2016 r.
-- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1
-- **Pomoc techniczna platformy WMF:** Program WMF 5.0 RTM, WMF 4.0 Update, programu WMF 4.0
+- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **Pomoc techniczna platformy WMF:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure, chińska wersja platformy Azure, platforma Azure Government
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
 - **Nowe funkcje:**
@@ -180,8 +180,8 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 ### <a name="version-218"></a>Wersja 2.18
 
 - **Data wydania:** 3 czerwca 2016 r.
-- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1
-- **Pomoc techniczna platformy WMF:** Program WMF 5.0 RTM, WMF 4.0 Update, programu WMF 4.0
+- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **Pomoc techniczna platformy WMF:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
 - **Nowe funkcje:**
@@ -192,8 +192,8 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 ### <a name="version-217"></a>Wersja 2.17
 
 - **Data wydania:** 26 kwietnia 2016 r.
-- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1
-- **Pomoc techniczna platformy WMF:** Program WMF 5.0 RTM, WMF 4.0 Update, programu WMF 4.0
+- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **Pomoc techniczna platformy WMF:** WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
 - **Nowe funkcje:**
@@ -203,8 +203,8 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 ### <a name="version-216"></a>Wersja 2,16
 
 - **Data wydania:** 21 kwietnia 2016 r.
-- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1
-- **Pomoc techniczna platformy WMF:** PROGRAM WMF 5.0 RTM PROGRAMU WMF 4.0
+- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **Pomoc techniczna platformy WMF:** WMF 5.0 RTM, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
 - **Nowe funkcje:**
@@ -214,8 +214,8 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 ### <a name="version-215"></a>Wersja 2.15
 
 - **Data wydania:** 14 marca 2016 r.
-- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1
-- **Pomoc techniczna platformy WMF:** PROGRAM WMF 5.0 RTM PROGRAMU WMF 4.0
+- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **Pomoc techniczna platformy WMF:** WMF 5.0 RTM, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
 - **Nowe funkcje:**
@@ -227,8 +227,8 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 ### <a name="version-214"></a>Wersja 2.14
 
 - **Data wydania:** 25 lutego 2016 r.
-- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1
-- **Pomoc techniczna platformy WMF:** PROGRAM WMF 5.0 RTM PROGRAMU WMF 4.0
+- **Obsługa systemu operacyjnego:** Windows Server 2016 Technical Preview, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 SP1
+- **Pomoc techniczna platformy WMF:** WMF 5.0 RTM, WMF 4.0
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
 - **Nowe funkcje:**

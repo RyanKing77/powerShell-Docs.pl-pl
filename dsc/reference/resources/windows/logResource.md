@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC dziennika
 ms.openlocfilehash: 1f94a2d847a4ef63f81e2fb83d1a0f76f5677b09
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048428"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684241"
 ---
 # <a name="dsc-log-resource"></a>Zasób DSC dziennika
 
-> _Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0_
+> _Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 __Dziennika__ zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm aby zapisywać komunikaty w dzienniku zdarzeń Microsoft-Windows-Desired State Configuration / analityczne.
 

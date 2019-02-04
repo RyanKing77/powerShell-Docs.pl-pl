@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Rozwiązywanie problemów z dostępem w programie windows powershell web access
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404933"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688119"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Rozwiązywanie problemów z programem Windows PowerShell Web Access
 
@@ -93,9 +93,9 @@ Nie należy używać pojedynczego znaku kropki (.) przez siebie do reprezentowan
 
 Parametr | Wartość
 -- | --
-UserName | Serwer\_nazwa\\użytkownika\_nazwy<br/>Localhost\\użytkownika\_nazwy<br/>. \\użytkownika\_nazwy
-UserGroup | Serwer\_nazwa\\użytkownika\_grupy<br/>Localhost\\użytkownika\_grupy<br/>. \\użytkownika\_grupy
-ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\komputera\_grupy<br/>. \\komputera\_grupy
+UserName | Serwer\_nazwa\\użytkownika\_nazwy<br/>Localhost\\user\_name<br/>. \\użytkownika\_nazwy
+UserGroup | Serwer\_nazwa\\użytkownika\_grupy<br/>Localhost\\user\_group<br/>. \\użytkownika\_grupy
+ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/>. \\komputera\_grupy
 
 #### <a name="gateway-server-is-in-a-domain"></a>Serwer bramy znajduje się w domenie
 
@@ -114,14 +114,14 @@ ComputerName | Nazwa serwera
 Zaloguj się do serwera bramy jako komputera docelowego przy użyciu poświadczeń sformatowanych w jeden z następujących sposobów.
 
 - Serwer\_nazwa\\użytkownika\_nazwy
-- Localhost\\użytkownika\_nazwy
+- Localhost\\user\_name
 - . \\użytkownika\_nazwy
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Identyfikator zabezpieczeń (SID) jest wyświetlana w regule autoryzacji
 
 Identyfikator zabezpieczeń (SID) jest wyświetlana w regule autoryzacji zamiast składni użytkownika\_nazwa, komputer\_nazwy.
 
-Reguła nie jest już prawidłowa lub zapytanie usług domenowych Active Directory nie powiodło się.
+Reguła nie jest już prawidłowa lub zapytanie usług Active Directory Domain Services nie powiodło się.
 Zazwyczaj reguły autoryzacji nie jest prawidłowa w sytuacji, gdy serwer bramy należał do grupy roboczej, ale później został przyłączony do domeny
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>Nie można zarejestrować się przy użyciu reguły jako adres IPv6 z domeną
@@ -139,4 +139,4 @@ Aby uzyskać więcej informacji na temat adresów IPv6, zobacz [jak działa prot
 
 - [Reguły autoryzacji i funkcje zabezpieczeń programu Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [Za pomocą konsoli programu PowerShell Windows opartej na sieci Web](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

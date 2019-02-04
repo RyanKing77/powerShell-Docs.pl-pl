@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Użyj poświadczeń przy użyciu zasobów DSC
+title: Używanie poświadczeń z zasobami DSC
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405209"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686852"
 ---
-# <a name="use-credentials-with-dsc-resources"></a>Użyj poświadczeń przy użyciu zasobów DSC
+# <a name="use-credentials-with-dsc-resources"></a>Używanie poświadczeń z zasobami DSC
 
-> Dotyczy: Program Windows PowerShell 5.0, programu Windows PowerShell 5.1
+> Dotyczy: Windows PowerShell 5.0, Windows PowerShell 5.1
 
 Zasób DSC określony zestaw poświadczeń, można uruchomić za pomocą automatycznego **PsDscRunAsCredential** właściwości w konfiguracji.
 Domyślnie DSC jest uruchamiane poszczególne zasoby za pomocą konta system.

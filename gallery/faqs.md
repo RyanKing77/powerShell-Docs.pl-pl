@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Galeria programu PowerShell — często zadawane pytania
 ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002876"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688014"
 ---
 # <a name="frequently-asked-questions"></a>Często zadawane pytania
 
@@ -35,7 +35,7 @@ Po zarejestrowaniu się w galerii, użyj [Publish-Module](https://go.microsoft.c
 
 **Nie musisz zarejestrować się lub zaloguj się do galerii, aby zainstalować lub zapisać pakietów.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Został wyświetlony "nie można przetworzyć żądania. "Określony klucz interfejsu API jest nieprawidłowa lub nie ma uprawnień do dostępu do określonego pakietu.". Serwer zdalny zwrócił błąd: (403) zabroniony. " Wystąpił błąd podczas próby opublikowania pakietu w galerii programu PowerShell. Co to oznacza?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Został wyświetlony "nie można przetworzyć żądania. "Określony klucz interfejsu API jest nieprawidłowa lub nie ma uprawnień do dostępu do określonego pakietu.". Serwer zdalny zwrócił błąd: (403) zabroniony." Wystąpił błąd podczas próby opublikowania pakietu w galerii programu PowerShell. Co to oznacza?
 
 Ten błąd może wystąpić z następujących powodów:
 
@@ -138,7 +138,7 @@ W warstwie dostawcy PackageManagement pakietu Dostawca pakietu PSModule rzeczywi
 
 ![Architektura modułu PowerShellGet](Images/powershellgetArchitecture.png)
 
-Rysunek 1: Architektura modułu PowerShellGet
+Rysunek 1. Architektura modułu PowerShellGet
 
 ## <a name="what-is-required-to-run-powershellget"></a>Co to jest wymagane do uruchamiania modułu PowerShellGet?
 
@@ -148,10 +148,10 @@ Ogólnie rzecz biorąc zalecamy pobranie najnowszej wersji modułu PowerShellGet
 
 W związku z tym **PowerShellGet** wymaga jednej z następujących systemów operacyjnych:
 
-- 10 systemu Windows
+- Windows 10
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
-- Windows 7 z dodatkiem SP1
+- Windows 7 SP1
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 z dodatkiem SP1

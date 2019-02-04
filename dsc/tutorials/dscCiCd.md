@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Tworzenie potoku ciągłej integracji i ciągłego wdrażania za pomocą DSC
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405246"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687265"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Tworzenie potoku ciągłej integracji i ciągłego wdrażania za pomocą DSC
 
@@ -37,7 +37,7 @@ Jest to komputer, na którym odbywa się na wszystkie zadania konfigurowania i u
 
 Komputer kliencki musi być komputerem Windows za pomocą zainstalowane następujące oprogramowanie:
 
-- [usługi git](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 - sklonowany z repozytorium lokalnego narzędzia git https://github.com/PowerShell/Demo_CI
 - Edytor tekstu, takie jak [programu Visual Studio Code](https://code.visualstudio.com/)
 
@@ -388,7 +388,7 @@ Utwórzmy definicji wydania, tak aby projekt został wdrożony do środowiska de
 
 Aby to zrobić, Dodaj nowe definicja wydania skojarzona z `InfraDNS` wcześniej utworzoną definicję kompilacji.
 Pamiętaj o wybraniu **ciągłe wdrażanie** tak, aby nowe wydanie zostaną wyzwolone za każdym zakończeniu nowej kompilacji.
-([Jak: Praca z definicji wersji](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) i skonfiguruj ją w następujący sposób:
+([Co to są potoki wydań? ](/azure/devops/pipelines/release/what-is-release-management)) i skonfiguruj ją w następujący sposób:
 
 Z definicją wydania, należy dodać następujące kroki:
 

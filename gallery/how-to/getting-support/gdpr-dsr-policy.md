@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: Galeria programu powershell, galerii programu PowerShell, RODO
 title: Zgodność z RODO galerii programu PowerShell
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002654"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687818"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>Zgodność z RODO galerii programu PowerShell
 
-## <a name="overview"></a>Przegląd
+## <a name="overview"></a>Omówienie
 
 W maju 2018 europejskie prawo ochrony prywatności, ogólne danych (GDPR Protection Regulation), weszło w życie.
 Rozporządzenie GDPR nakłada nowe zasady dotyczące firm, agencji rządowych, non-profit i innych organizacji oferty towary i usługi osobom w Unii Europejskiej (UE) lub że zbieranie i analizujących dane związane z osobami mieszkającymi w UE.
@@ -53,7 +53,7 @@ Wiadomości e-mail wysyłane przez lub w galerii programu PowerShell trzeba zasa
 Wiadomości e-mail zostaną usunięte przez zasady po upływie 90 dni.
 
 Może żądać kopiuje wszystkie wiadomości e-mail wysyłane do i z adresu e-mail i galerii programu PowerShell w ciągu ostatnich 90 dni.
-Aby zażądać tej korespondencji, Wyślij wiadomość e-mail do [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), o tytule: "Żądanie praw podmiotu danych dla wiadomości e-mail, odnoszące się do tego konta".
+Aby zażądać tej korespondencji, Wyślij wiadomość e-mail do [ cgadmin@microsoft.com ](mailto:cgadmin@microsoft.com), z tytułem: "DSR"żądania dla wiadomości e-mail, odnoszące się do tego konta.
 W treści komunikatu o stanie informacjach żądasz (na przykład: Wyślij wszystkie wiadomości e-mail wysyłane do lub odebrane z tego adresu e-mail.) Wszystkie wiadomości e-mail, obejmujących adres e-mail w ciągu 90 dni żądanie zostanie wysłane w ciągu 7 dni roboczych.
 
 ### <a name="powershell-gallery-account-information"></a>Informacje o koncie w galerii programu PowerShell
@@ -92,7 +92,7 @@ Zostanie wyświetlony monit podanie autora i folder w systemie, w którego pakie
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Usuwanie danych osobowych z galerii programu PowerShell
 
-Aby usunąć konto z galerii programu PowerShell lub dowolnego pakietu, jesteś właścicielem w galerii programu PowerShell, Wyślij wiadomość e-mail do cgadmin@microsoft.com o tytule: "Żądanie RODO elementów odnoszących się do tego konta".
+Aby usunąć konto z galerii programu PowerShell lub dowolnego pakietu, jesteś właścicielem w galerii programu PowerShell, Wyślij wiadomość e-mail do cgadmin@microsoft.com o tytule: "RODO"żądania dla elementów odnoszących się do tego konta.
 W treści komunikatu o stanie, jakie informacje mają być usunięte. Przykład:
 
 - Usuń wersję x.y.z Mój pakiet "pakiet name"

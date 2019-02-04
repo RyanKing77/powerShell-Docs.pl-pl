@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 description: Udostępnia mechanizm do zarządzania grupami lokalnymi w docelowym węźle.
-title: Zasób Groupset DSC
+title: DSC GroupSet Resource
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048482"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684927"
 ---
-# <a name="dsc-groupset-resource"></a>Zasób Groupset DSC
+# <a name="dsc-groupset-resource"></a>DSC GroupSet Resource
 
 > Dotyczy: Windows PowerShell 5.0
 
@@ -36,7 +36,7 @@ Group [string] #ResourceName
 
 |  Właściwość  |  Opis   |
 |---|---|
-| Nazwa grupy| Nazwy grup, dla których chcesz mieć pewność określonego stanu.|
+| GroupName| Nazwy grup, dla których chcesz mieć pewność określonego stanu.|
 | MembersToExclude| Ta właściwość służy do usuwania członków z istniejących członkostwa w grupach. Wartość tej właściwości jest tablicą ciągów formularza *domeny*\\*UserName*. Jeśli ustawisz tę właściwość w ramach konfiguracji należy używać **członków** właściwości. Ten sposób spowoduje wygenerowanie błędu.|
 | Poświadczenie| Poświadczenia wymagane do dostępu do zasobów zdalnych. **Uwaga**: To konto musi mieć odpowiednie uprawnienia usługi Active Directory, aby dodać wszystkie konta innego niż lokalne grupy; w przeciwnym razie wystąpi błąd.
 | Upewnij się| Wskazuje, czy istnieją grupy. Ustaw tę właściwość na "Brak", aby upewnić się, że nie istnieją grupy. Ustawienie "Przedstawia" (wartość domyślna) gwarantuje, że istnieją grupy.|

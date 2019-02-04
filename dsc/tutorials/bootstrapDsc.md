@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie maszyny wirtualnej podczas początkowego rozruchu — za pomocą DSC
-ms.openlocfilehash: 7b9ebc6c818aa39365759945667426c8976997e5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405270"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686908"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurowanie maszyny wirtualnej podczas początkowego rozruchu — za pomocą DSC
 
@@ -18,16 +18,17 @@ ms.locfileid: "53405270"
 
 > [!NOTE]
 > **DSCAutomationHostEnabled** klucz rejestru opisany w tym temacie nie jest dostępna w programie PowerShell 4.0.
-> Aby uzyskać informacje na temat konfigurowania nowych maszyn wirtualnych podczas początkowego rozruchu w programie PowerShell 4.0 zobacz [chcesz automatycznie skonfigurować swój maszyn za pomocą DSC podczas rozruchu początkowego?] > ()https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+> Aby uzyskać informacje na temat konfigurowania nowych maszyn wirtualnych podczas początkowego rozruchu w programie PowerShell 4.0, zobacz [chcesz automatycznie skonfigurować swój maszyn za pomocą DSC podczas rozruchu początkowego?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
 Aby uruchomić te przykłady, są potrzebne:
 
-- Rozruchowy wirtualny dysk twardy chcesz pracować. Możesz pobrać obrazu ISO z kopię ewaluacyjną systemu Windows Server 2016 na [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016). Instrukcje można znaleźć na temat sposobu tworzenia dysku VHD z obrazu ISO w [tworzenie rozruchowych wirtualnych dysków twardych](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
+- Rozruchowy wirtualny dysk twardy chcesz pracować. Możesz pobrać obrazu ISO z kopię ewaluacyjną systemu Windows Server 2016 na [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016).
+  Instrukcje można znaleźć na temat sposobu tworzenia dysku VHD z obrazu ISO w [tworzenie rozruchowych wirtualnych dysków twardych](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)).
 - Komputer hosta, który ma włączoną funkcją Hyper-V. Aby uzyskać informacje, zobacz [omówienie funkcji Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
   Za pomocą DSC, możesz zautomatyzować instalację oprogramowania i konfiguracji na komputerze podczas początkowego rozruchu.
   Można to zrobić, należy albo wstrzykiwania dokument MOF konfiguracji lub metaconfiguration do nośnika rozruchowego (np. dysk VHD), dzięki czemu są uruchamiane podczas początkowego procesu rozruchu.
-  To zachowanie jest określony przez [klucz rejestru DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) klucza rejestru w `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies`.
+  To zachowanie jest określony przez [klucz rejestru DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) klucza rejestru w `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`.
   Domyślnie wartość tego klucza jest 2, co pozwala DSC w czasie rozruchu.
 
   Jeśli użytkownik nie chce DSC w czasie rozruchu, ustaw wartość [klucz rejestru DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) klucz rejestru na 0.
@@ -172,7 +173,7 @@ Można to sprawdzić przez wywołanie metody [Get-WindowsFeature](/powershell/mo
 
 ## <a name="disable-dsc-at-boot-time"></a>Wyłącz DSC w czasie rozruchu
 
-Domyślnie wartość `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` klucza jest równa 2, co pozwala konfiguracji DSC do uruchomienia, jeśli komputer jest w stanie Oczekujące na zatwierdzenie lub bieżącego. Jeśli nie mają konfiguracji do uruchomienia podczas początkowego rozruchu, należy więc ustawić wartość tego klucza na 0:
+Domyślnie wartość `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` klucza jest równa 2, co pozwala konfiguracji DSC do uruchomienia, jeśli komputer jest w stanie Oczekujące na zatwierdzenie lub bieżącego. Jeśli nie mają konfiguracji do uruchomienia podczas początkowego rozruchu, należy więc ustawić wartość tego klucza na 0:
 
 1. Zainstalować dysk VHD, wywołując [Instalowanie wirtualnego dysku twardego](/powershell/module/hyper-v/mount-vhd) polecenia cmdlet. Przykład:
 
@@ -186,10 +187,10 @@ Domyślnie wartość `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersi
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. Przejdź do `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` przy użyciu dostawcy rejestru programu PowerShell.
+3. Przejdź do `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` przy użyciu dostawcy rejestru programu PowerShell.
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. Zmień wartość właściwości `DSCAutomationHostEnabled` na 0.

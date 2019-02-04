@@ -2,12 +2,12 @@
 title: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 description: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404723"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686698"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 
@@ -63,6 +63,24 @@ Na przykład, aby utworzyć nowy plik, kliknij przycisk **Plik -> Nowy**.
 Aby zapisać go, kliknij przycisk **Plik -> Zapisz** a następnie podaj nazwę pliku, teraz załóżmy, że `HelloWorld.ps1`.
 Aby zamknąć plik, kliknij symbol "x" obok nazwy pliku.
 Aby zakończyć działanie programu Visual Studio Code, **Plik -> Zakończ**.
+
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Instalowanie rozszerzenia programu PowerShell w systemach z ograniczeniami
+
+Niektóre systemy są konfigurowane w sposób, który wymaga wszystkie podpisy kod do kontroli, a zatem Edytor programu PowerShell usługi ręcznie zatwierdzić do uruchomienia w systemie.
+Aktualizacji zasad grupy, który zmienia zasady wykonywania jest prawdopodobną przyczyną, jeśli zainstalowano rozszerzenie programu PowerShell, ale zbliżają się błąd, taki jak:
+
+```
+Language server startup failed.
+```
+
+Aby ręcznie zatwierdzić usług Edytor programu PowerShell, a tym samym rozszerzenie programu PowerShell dla programu VSCode Otwórz program PowerShell, wiersz polecenia:
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+Zostanie wyświetlony monit z "Czy chcesz uruchamiać oprogramowania z tego wydawcy niezaufanych?"
+Typ `R` do uruchomienia pliku. Następnie otwórz w programie Visual Studio Code i sprawdź, czy rozszerzenia programu PowerShell działa prawidłowo. Jeśli nadal masz problemy, wprowadzenie, Daj nam znać na [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Przy użyciu określonych zainstalowanej wersji programu PowerShell
 

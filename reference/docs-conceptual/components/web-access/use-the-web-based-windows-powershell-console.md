@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: za pomocą konsoli programu powershell systemu windows oparte na sieci web
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405354"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55686488"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Korzystanie z konsoli internetowej programu Windows PowerShell
 

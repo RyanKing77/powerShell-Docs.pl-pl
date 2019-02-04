@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Eksplorowanie środowiska Windows PowerShell ISE
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405371"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684479"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Eksplorowanie środowiska Windows PowerShell ISE
 
@@ -24,7 +24,7 @@ Na pasku menu znajdują **pliku**, **Edytuj**, **widoku**, **narzędzia**, **deb
 > [!NOTE]
 > W programie Windows PowerShell ISE 2.0 **narzędzia** i **dodatki** menu nie był obecny.
 
-## <a name="windows-powershell-tabs"></a>Windows PowerShell karty
+## <a name="windows-powershell-tabs"></a>Windows PowerShell Tabs
 
 Na karcie programu Windows PowerShell to środowisko, w którym jest uruchamiany skrypt programu Windows PowerShell. W środowisku Windows PowerShell ISE, aby utworzyć oddzielne środowiska, na komputerze lokalnym lub na komputerach zdalnych, możesz otworzyć nowe karty programu Windows PowerShell. Może mieć maksymalnie osiem PowerShell jednocześnie Otwórz karty.
 
@@ -35,14 +35,14 @@ Następujące przyciski znajdują się na pasku narzędzi.
 |Przycisk|Funkcja|
 |----------|------------|
 |**Nowy**|Zostanie otwarty nowy skrypt.|
-|**Otwórz**|Otwiera istniejący skrypt lub plik.|
+|**Open**|Otwiera istniejący skrypt lub plik.|
 |**Zapisywanie**|Zapisuje skryptu lub pliku.|
 |**Cut**|Wycina zaznaczony tekst i kopiuje go do Schowka.|
 |**Kopiuj**|Kopiuje zaznaczony tekst do Schowka.|
 |**Wklej**|Wkleja zawartość Schowka w lokalizacji kursora.|
 |**Wyczyść okienko danych wyjściowych**|Czyści całą zawartość w okienku danych wyjściowych.|
 |**Cofnij**|Odwraca akcję, która właśnie została wykonana.|
-|**Wykonaj ponownie**|Wykonuje akcję, która została właśnie cofnięte.|
+|**Redo**|Wykonuje akcję, która została właśnie cofnięte.|
 |**Uruchom skrypt**|Uruchamia skrypt.|
 |**Uruchom zaznaczone**|Uruchamia wybrane części skryptu.|
 |**Zatrzymaj wykonywanie**|Zatrzymuje skrypt, który jest uruchomiony.|

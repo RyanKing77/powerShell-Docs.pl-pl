@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Profil zasady ScriptAnalyzer dla galerii
 ms.openlocfilehash: d91a88981cc2f3269a1f8b6ee864f8333a2f097c
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002500"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683856"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>Profil zasady ScriptAnalyzer dla galerii
 

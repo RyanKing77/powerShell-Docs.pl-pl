@@ -2,16 +2,16 @@
 title: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 description: Komunikacji zdalnej w programie PowerShell Core przy użyciu protokołu SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655297"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687132"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 
-## <a name="overview"></a>Przegląd
+## <a name="overview"></a>Omówienie
 
 Komunikacja zdalna programu PowerShell zwykle używa funkcji WinRM do negocjowania połączenia i transport danych. Protokół SSH jest teraz dostępny dla platform Linux i Windows i zezwala na wartość true dla wielu platform komunikacji zdalnej programu PowerShell.
 
@@ -47,7 +47,7 @@ SSH musi być zainstalowany na wszystkich komputerach. Zainstaluj klienta SSH (`
    ```
 
 2. Zainstaluj najnowsze Win32 OpenSSH. Aby uzyskać instrukcje dotyczące instalacji, zobacz [instalacji OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Edytuj `sshd_config` znajdujący się w pliku `%ProgramData%\ssh`.
+3. Edytuj `sshd_config` znajdujący się w pliku `$env:ProgramData\ssh`.
 
    - Upewnij się, że włączone jest uwierzytelnianie przy użyciu hasła
 

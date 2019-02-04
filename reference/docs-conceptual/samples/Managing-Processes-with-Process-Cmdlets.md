@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie procesami przy użyciu poleceń cmdlet procesu
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
 ms.openlocfilehash: 741a3464bce6284c4933384398c4e9ddcca2572c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404717"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55689015"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Zarządzanie procesami przy użyciu poleceń cmdlet procesu
 
@@ -183,6 +183,6 @@ Programu Windows PowerShell jest dostarczany za pomocą poleceń cmdlet, aby uru
 - [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
 - [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
 - [Rozpocznij proces](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
-- [Proces oczekiwania](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
-- [Proces debugowania](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
+- [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
+- [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)

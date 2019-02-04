@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 63c3b8237a9883b147380dfe9cb173107cea9aa9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5280ef5ff95679dc8721be8f5f81031a4ffe796f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225644"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687069"
 ---
 # <a name="updates-to-fileinfo-object"></a>Aktualizacje obiektu FileInfo
-Informacje o wersji pliku mogą mylące, szczególnie w przypadkach, w którym plik został poprawkami. Ta wersja platformy WMF 5.0 dodaje nowe **FileVersionRaw** i **ProductVersionRaw** skryptu właściwości FileInfo obiektów. Oto właściwości wyświetlane powershell.exe (przy założeniu, że identyfikator procesu programu PowerShell jest $pid):
+Informacje o wersji pliku mogą mylące, zwłaszcza w przypadkach, w którym plik został poprawek. Ta wersja programu WMF 5.0 dodaje nowe **FileVersionRaw** i **ProductVersionRaw** właściwości do obiektów FileInfo skryptu. Oto właściwości wyświetlane powershell.exe (przy założeniu, że $pid jest identyfikator procesu programu PowerShell):
 
 ```powershell
 PS C:\> Get-Process -Id $pid -FileVersionInfo | fl *version* -Force
