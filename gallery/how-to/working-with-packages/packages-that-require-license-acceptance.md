@@ -4,28 +4,28 @@ contributor: Farehar
 keywords: Galeria programu powershell, galerii programu PowerShell
 title: Wymaganie akceptacji licencji
 ms.openlocfilehash: eaed248895d14bd455d2d8d3c2222d8848eeccae
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004085"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55684136"
 ---
-# <a name="require-license-acceptance"></a><span data-ttu-id="52994-103">Wymaganie akceptacji licencji</span><span class="sxs-lookup"><span data-stu-id="52994-103">Require license acceptance</span></span>
+# <a name="require-license-acceptance"></a><span data-ttu-id="9a625-103">Wymaganie akceptacji licencji</span><span class="sxs-lookup"><span data-stu-id="9a625-103">Require license acceptance</span></span>
 
-<span data-ttu-id="52994-104">Wymaga zaakceptowania licencji tekst pojawia się na stronie szczegółów elementu dla modułów, które wymagają akceptacji licencji.</span><span class="sxs-lookup"><span data-stu-id="52994-104">Require License Acceptance text shows up on item details page for modules that require license acceptance.</span></span> <span data-ttu-id="52994-105">Licencja dla modułu mogą zostać przejrzane przez kliknięcie linku "Wyświetl License.txt".</span><span class="sxs-lookup"><span data-stu-id="52994-105">License for module can be viewed by clicking on 'View License.txt' link.</span></span>
+<span data-ttu-id="9a625-104">Wymaga zaakceptowania licencji tekst pojawia się na stronie szczegółów elementu dla modułów, które wymagają akceptacji licencji.</span><span class="sxs-lookup"><span data-stu-id="9a625-104">Require License Acceptance text shows up on item details page for modules that require license acceptance.</span></span> <span data-ttu-id="9a625-105">Licencja dla modułu mogą zostać przejrzane przez kliknięcie linku "Wyświetl License.txt".</span><span class="sxs-lookup"><span data-stu-id="9a625-105">License for module can be viewed by clicking on 'View License.txt' link.</span></span>
 
 ![Wymaganie akceptacji licencji](../../Images/RequireLicenseAcceptance.png)
 
-<span data-ttu-id="52994-107">Użytkownicy otrzymują monit o zaakceptowanie licencji podczas instalowania, zapisywanie lub aktualizowania modułu PowerShellGet lub, w przypadku wdrażania usługi Azure Automation.</span><span class="sxs-lookup"><span data-stu-id="52994-107">Users will be prompted to accept the license when installing, saving or updating the module through PowerShellGet or when deploying to Azure Automation.</span></span>
+<span data-ttu-id="9a625-107">Użytkownicy otrzymują monit o zaakceptowanie licencji podczas instalowania, zapisywanie lub aktualizowania modułu PowerShellGet lub, w przypadku wdrażania usługi Azure Automation.</span><span class="sxs-lookup"><span data-stu-id="9a625-107">Users will be prompted to accept the license when installing, saving or updating the module through PowerShellGet or when deploying to Azure Automation.</span></span>
 
-## <a name="require-license-acceptance-on-deploy-to-azure-automation"></a><span data-ttu-id="52994-108">Wymaganie akceptacji licencji na potrzeby wdrażania w usłudze Azure Automation</span><span class="sxs-lookup"><span data-stu-id="52994-108">Require License Acceptance on Deploy to Azure Automation</span></span>
+## <a name="require-license-acceptance-on-deploy-to-azure-automation"></a><span data-ttu-id="9a625-108">Wymaganie akceptacji licencji na potrzeby wdrażania w usłudze Azure Automation</span><span class="sxs-lookup"><span data-stu-id="9a625-108">Require License Acceptance on Deploy to Azure Automation</span></span>
 
-<span data-ttu-id="52994-109">Jeśli moduł jego wdrażanie w usłudze Azure Automation wymaga zaakceptowania licencji, interfejsu użytkownika portalu zostaną wyświetlone powiedzenie zastrzeżenie "ten moduł wymaga zaakceptowania licencji.</span><span class="sxs-lookup"><span data-stu-id="52994-109">If the module being deployed to Azure Automation requires license acceptance, portal UI will show a disclaimer saying 'This module requires license acceptance.</span></span> <span data-ttu-id="52994-110">Klikając przycisk OK, akceptujesz postanowienia licencyjne. "</span><span class="sxs-lookup"><span data-stu-id="52994-110">By clicking OK, you are accepting license terms.'</span></span>
+<span data-ttu-id="9a625-109">Jeśli moduł jego wdrażanie w usłudze Azure Automation wymaga zaakceptowania licencji, interfejsu użytkownika portalu zostaną wyświetlone powiedzenie zastrzeżenie "ten moduł wymaga zaakceptowania licencji.</span><span class="sxs-lookup"><span data-stu-id="9a625-109">If the module being deployed to Azure Automation requires license acceptance, portal UI will show a disclaimer saying 'This module requires license acceptance.</span></span> <span data-ttu-id="9a625-110">Klikając przycisk OK, akceptujesz postanowienia licencyjne. "</span><span class="sxs-lookup"><span data-stu-id="9a625-110">By clicking OK, you are accepting license terms.'</span></span>
 
 ![Wdrażanie na platformie Azure Automation, wymaga akceptacji licencji](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a><span data-ttu-id="52994-112">Więcej szczegółów</span><span class="sxs-lookup"><span data-stu-id="52994-112">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="9a625-112">Więcej szczegółów</span><span class="sxs-lookup"><span data-stu-id="9a625-112">More details</span></span>
 
-<span data-ttu-id="52994-113">[Wymaganie akceptacji licencji w PowerShellGet](../../concepts/module-license-acceptance.md)
-[witryny sieci Web usługi Azure Automation](/azure/automation)</span><span class="sxs-lookup"><span data-stu-id="52994-113">[Require License Acceptance in PowerShellGet](../../concepts/module-license-acceptance.md)
+<span data-ttu-id="9a625-113">[Wymaganie akceptacji licencji w PowerShellGet](../../concepts/module-license-acceptance.md)
+[witryny sieci Web usługi Azure Automation](/azure/automation)</span><span class="sxs-lookup"><span data-stu-id="9a625-113">[Require License Acceptance in PowerShellGet](../../concepts/module-license-acceptance.md)
 [Azure Automation website](/azure/automation)</span></span>

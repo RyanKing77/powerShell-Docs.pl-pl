@@ -4,19 +4,19 @@ keywords: polecenia cmdlet programu PowerShell
 title: Tworzenie niestandardowego pola wejściowego
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
 ms.openlocfilehash: 2d04ad6df65cdb4ff13d136dea47bbba6a01f3a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404705"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55687321"
 ---
-# <a name="creating-a-custom-input-box"></a><span data-ttu-id="c8111-103">Tworzenie niestandardowego pola wejściowego</span><span class="sxs-lookup"><span data-stu-id="c8111-103">Creating a Custom Input Box</span></span>
+# <a name="creating-a-custom-input-box"></a><span data-ttu-id="2bcd8-103">Tworzenie niestandardowego pola wejściowego</span><span class="sxs-lookup"><span data-stu-id="2bcd8-103">Creating a Custom Input Box</span></span>
 
-<span data-ttu-id="c8111-104">Skrypt graficzny niestandardowego pola wejściowego, korzystając z funkcji tworzenia formularzy programu Microsoft .NET Framework w programie Windows PowerShell 3.0 i nowszych wersjach.</span><span class="sxs-lookup"><span data-stu-id="c8111-104">Script a graphical custom input box by using Microsoft .NET Framework form-building features in Windows PowerShell 3.0 and later releases.</span></span>
+<span data-ttu-id="2bcd8-104">Skrypt graficzny niestandardowego pola wejściowego, korzystając z funkcji tworzenia formularzy programu Microsoft .NET Framework w programie Windows PowerShell 3.0 i nowszych wersjach.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-104">Script a graphical custom input box by using Microsoft .NET Framework form-building features in Windows PowerShell 3.0 and later releases.</span></span>
 
-## <a name="create-a-custom-graphical-input-box"></a><span data-ttu-id="c8111-105">Tworzenie niestandardowych, graficzne pola wejściowego</span><span class="sxs-lookup"><span data-stu-id="c8111-105">Create a custom, graphical input box</span></span>
+## <a name="create-a-custom-graphical-input-box"></a><span data-ttu-id="2bcd8-105">Tworzenie niestandardowych, graficzne pola wejściowego</span><span class="sxs-lookup"><span data-stu-id="2bcd8-105">Create a custom, graphical input box</span></span>
 
-<span data-ttu-id="c8111-106">Skopiuj i następnie wklej poniższą zawartość do programu Windows PowerShell ISE, a następnie zapisz go jako skrypt programu Windows PowerShell (ps1).</span><span class="sxs-lookup"><span data-stu-id="c8111-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
+<span data-ttu-id="2bcd8-106">Skopiuj i następnie wklej poniższą zawartość do programu Windows PowerShell ISE, a następnie zapisz go jako skrypt programu Windows PowerShell (ps1).</span><span class="sxs-lookup"><span data-stu-id="2bcd8-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -66,19 +66,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-<span data-ttu-id="c8111-107">Skrypt rozpoczyna się od ładowania dwóch klas .NET Framework: **System.Drawing** i **System.Windows.Forms**.</span><span class="sxs-lookup"><span data-stu-id="c8111-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span> <span data-ttu-id="c8111-108">Następnie uruchom nowe wystąpienie klasy .NET Framework **System.Windows.Forms.Form**; zapewniający pustego formularza lub okna, do którego można rozpocząć dodawanie kontrolki.</span><span class="sxs-lookup"><span data-stu-id="c8111-108">You then start a new instance of the .NET Framework class **System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
+<span data-ttu-id="2bcd8-107">Skrypt rozpoczyna się od ładowania dwóch klas .NET Framework: **System.Drawing** i **System.Windows.Forms**.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span> <span data-ttu-id="2bcd8-108">Następnie uruchom nowe wystąpienie klasy .NET Framework **System.Windows.Forms.Form**; zapewniający pustego formularza lub okna, do którego można rozpocząć dodawanie kontrolki.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-108">You then start a new instance of the .NET Framework class **System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
 ```
 
-<span data-ttu-id="c8111-109">Po utworzeniu wystąpienia klasy formularza, należy przypisać wartości do trzech właściwości tej klasy.</span><span class="sxs-lookup"><span data-stu-id="c8111-109">After you create an instance of the Form class, assign values to three properties of this class.</span></span>
+<span data-ttu-id="2bcd8-109">Po utworzeniu wystąpienia klasy formularza, należy przypisać wartości do trzech właściwości tej klasy.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-109">After you create an instance of the Form class, assign values to three properties of this class.</span></span>
 
-- <span data-ttu-id="c8111-110">**Tekst.**</span><span class="sxs-lookup"><span data-stu-id="c8111-110">**Text.**</span></span> <span data-ttu-id="c8111-111">Staje się on tytuł okna.</span><span class="sxs-lookup"><span data-stu-id="c8111-111">This becomes the title of the window.</span></span>
+- <span data-ttu-id="2bcd8-110">**Tekst.**</span><span class="sxs-lookup"><span data-stu-id="2bcd8-110">**Text.**</span></span> <span data-ttu-id="2bcd8-111">Staje się on tytuł okna.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-111">This becomes the title of the window.</span></span>
 
-- <span data-ttu-id="c8111-112">**Rozmiar.**</span><span class="sxs-lookup"><span data-stu-id="c8111-112">**Size.**</span></span> <span data-ttu-id="c8111-113">Jest to rozmiar formularza, w pikselach.</span><span class="sxs-lookup"><span data-stu-id="c8111-113">This is the size of the form, in pixels.</span></span> <span data-ttu-id="c8111-114">Powyższy skrypt tworzy formularz, który jest 300 pikseli szerokości i wysokości 200 pikseli.</span><span class="sxs-lookup"><span data-stu-id="c8111-114">The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.</span></span>
+- <span data-ttu-id="2bcd8-112">**Rozmiar.**</span><span class="sxs-lookup"><span data-stu-id="2bcd8-112">**Size.**</span></span> <span data-ttu-id="2bcd8-113">Jest to rozmiar formularza, w pikselach.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-113">This is the size of the form, in pixels.</span></span> <span data-ttu-id="2bcd8-114">Powyższy skrypt tworzy formularz, który jest 300 pikseli szerokości i wysokości 200 pikseli.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-114">The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.</span></span>
 
-- <span data-ttu-id="c8111-115">**Pozycjapoczątkowa.**</span><span class="sxs-lookup"><span data-stu-id="c8111-115">**StartingPosition.**</span></span> <span data-ttu-id="c8111-116">Tej opcjonalnej właściwości jest równa **CenterScreen** w poprzednim skrypcie.</span><span class="sxs-lookup"><span data-stu-id="c8111-116">This optional property is set to **CenterScreen** in the preceding script.</span></span> <span data-ttu-id="c8111-117">Jeśli nie dodasz tę właściwość, Windows wybiera lokalizację, gdy formularz jest otwarty.</span><span class="sxs-lookup"><span data-stu-id="c8111-117">If you don’t add this property, Windows selects a location when the form is opened.</span></span> <span data-ttu-id="c8111-118">Ustawiając **Pozycjapoczątkowa** do **CenterScreen**, automatycznie wyświetlasz formularza w środku ekranu każdorazowo ładuje.</span><span class="sxs-lookup"><span data-stu-id="c8111-118">By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
+- <span data-ttu-id="2bcd8-115">**Pozycjapoczątkowa.**</span><span class="sxs-lookup"><span data-stu-id="2bcd8-115">**StartingPosition.**</span></span> <span data-ttu-id="2bcd8-116">Tej opcjonalnej właściwości jest równa **CenterScreen** w poprzednim skrypcie.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-116">This optional property is set to **CenterScreen** in the preceding script.</span></span> <span data-ttu-id="2bcd8-117">Jeśli nie dodasz tę właściwość, Windows wybiera lokalizację, gdy formularz jest otwarty.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-117">If you don’t add this property, Windows selects a location when the form is opened.</span></span> <span data-ttu-id="2bcd8-118">Ustawiając **Pozycjapoczątkowa** do **CenterScreen**, automatycznie wyświetlasz formularza w środku ekranu każdorazowo ładuje.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-118">By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -86,7 +86,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-<span data-ttu-id="c8111-119">Następnie należy utworzyć **OK** przycisk dla formularza użytkownika.</span><span class="sxs-lookup"><span data-stu-id="c8111-119">Next, create an **OK** button for your form.</span></span> <span data-ttu-id="c8111-120">Określ rozmiar i zachowanie **OK** przycisku.</span><span class="sxs-lookup"><span data-stu-id="c8111-120">Specify the size and behavior of the **OK** button.</span></span> <span data-ttu-id="c8111-121">W tym przykładzie położenie przycisku jest 120 pikseli od górnej krawędzi formularza i 75 pikseli od lewej krawędzi.</span><span class="sxs-lookup"><span data-stu-id="c8111-121">In this example, the button position is 120 pixels from the form’s top edge, and 75 pixels from the left edge.</span></span> <span data-ttu-id="c8111-122">Wysokość przycisku jest 23 pikseli, podczas gdy długość przycisk wynosi 75 pikseli.</span><span class="sxs-lookup"><span data-stu-id="c8111-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span> <span data-ttu-id="c8111-123">Skrypt używa wstępnie zdefiniowanych typów Windows Forms do określenia zachowania przycisku.</span><span class="sxs-lookup"><span data-stu-id="c8111-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
+<span data-ttu-id="2bcd8-119">Następnie należy utworzyć **OK** przycisk dla formularza użytkownika.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-119">Next, create an **OK** button for your form.</span></span> <span data-ttu-id="2bcd8-120">Określ rozmiar i zachowanie **OK** przycisku.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-120">Specify the size and behavior of the **OK** button.</span></span> <span data-ttu-id="2bcd8-121">W tym przykładzie położenie przycisku jest 120 pikseli od górnej krawędzi formularza i 75 pikseli od lewej krawędzi.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-121">In this example, the button position is 120 pixels from the form’s top edge, and 75 pixels from the left edge.</span></span> <span data-ttu-id="2bcd8-122">Wysokość przycisku jest 23 pikseli, podczas gdy długość przycisk wynosi 75 pikseli.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span> <span data-ttu-id="2bcd8-123">Skrypt używa wstępnie zdefiniowanych typów Windows Forms do określenia zachowania przycisku.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -98,7 +98,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-<span data-ttu-id="c8111-124">Podobnie można utworzyć **anulować** przycisku.</span><span class="sxs-lookup"><span data-stu-id="c8111-124">Similarly, you create a **Cancel** button.</span></span> <span data-ttu-id="c8111-125">**Anulować** przycisk jest 120 pikseli od górnej, ale 150 pikseli od lewej krawędzi okna.</span><span class="sxs-lookup"><span data-stu-id="c8111-125">The **Cancel** button is 120 pixels from the top, but 150 pixels from the left edge of the window.</span></span>
+<span data-ttu-id="2bcd8-124">Podobnie można utworzyć **anulować** przycisku.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-124">Similarly, you create a **Cancel** button.</span></span> <span data-ttu-id="2bcd8-125">**Anulować** przycisk jest 120 pikseli od górnej, ale 150 pikseli od lewej krawędzi okna.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-125">The **Cancel** button is 120 pixels from the top, but 150 pixels from the left edge of the window.</span></span>
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -110,7 +110,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-<span data-ttu-id="c8111-126">Następnie należy podać tekst etykiety na okno, w tym artykule opisano informacje, które mają być zapewniają użytkownikom.</span><span class="sxs-lookup"><span data-stu-id="c8111-126">Next, provide label text on your window that describes the information you want users to provide.</span></span>
+<span data-ttu-id="2bcd8-126">Następnie należy podać tekst etykiety na okno, w tym artykule opisano informacje, które mają być zapewniają użytkownikom.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-126">Next, provide label text on your window that describes the information you want users to provide.</span></span>
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -120,7 +120,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-<span data-ttu-id="c8111-127">Dodawanie kontrolki (w tym przypadku pole tekstowe), która umożliwia użytkownikom, podaj informacje, które zostały opisane w tekście etykiet.</span><span class="sxs-lookup"><span data-stu-id="c8111-127">Add the control (in this case, a text box) that lets users provide the information you’ve described in your label text.</span></span> <span data-ttu-id="c8111-128">Istnieje wiele formantów, które można zastosować, oprócz pól tekstowych; Aby uzyskać więcej kontrolek, zobacz [Namespace System.Windows.Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) w witrynie MSDN.</span><span class="sxs-lookup"><span data-stu-id="c8111-128">There are many other controls you can apply besides text boxes; for more controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.</span></span>
+<span data-ttu-id="2bcd8-127">Dodawanie kontrolki (w tym przypadku pole tekstowe), która umożliwia użytkownikom, podaj informacje, które zostały opisane w tekście etykiet.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-127">Add the control (in this case, a text box) that lets users provide the information you’ve described in your label text.</span></span> <span data-ttu-id="2bcd8-128">Istnieje wiele formantów, które można zastosować, oprócz pól tekstowych; Aby uzyskać więcej kontrolek, zobacz [Namespace System.Windows.Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) w witrynie MSDN.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-128">There are many other controls you can apply besides text boxes; for more controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.</span></span>
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -129,25 +129,25 @@ $textBox.Size = New-Object System.Drawing.Size(260,20)
 $form.Controls.Add($textBox)
 ```
 
-<span data-ttu-id="c8111-129">Ustaw **Topmost** właściwości **$true** wymusić okna, aby otworzyć na jego podstawie innych okien i okien dialogowych.</span><span class="sxs-lookup"><span data-stu-id="c8111-129">Set the **Topmost** property to **$true** to force the window to open atop other open windows and dialog boxes.</span></span>
+<span data-ttu-id="2bcd8-129">Ustaw **Topmost** właściwości **$true** wymusić okna, aby otworzyć na jego podstawie innych okien i okien dialogowych.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-129">Set the **Topmost** property to **$true** to force the window to open atop other open windows and dialog boxes.</span></span>
 
 ```powershell
 $form.Topmost = $true
 ```
 
-<span data-ttu-id="c8111-130">Następnie dodaj następujący wiersz kodu, aby aktywować formularza i ustawić fokus do pola tekstowego, który został utworzony.</span><span class="sxs-lookup"><span data-stu-id="c8111-130">Next, add this line of code to activate the form, and set the focus to the text box that you created.</span></span>
+<span data-ttu-id="2bcd8-130">Następnie dodaj następujący wiersz kodu, aby aktywować formularza i ustawić fokus do pola tekstowego, który został utworzony.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-130">Next, add this line of code to activate the form, and set the focus to the text box that you created.</span></span>
 
 ```powershell
 $form.Add_Shown({$textBox.Select()})
 ```
 
-<span data-ttu-id="c8111-131">Dodaj następujący wiersz kodu w celu wyświetlenia formularza w Windows.</span><span class="sxs-lookup"><span data-stu-id="c8111-131">Add the following line of code to display the form in Windows.</span></span>
+<span data-ttu-id="2bcd8-131">Dodaj następujący wiersz kodu w celu wyświetlenia formularza w Windows.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-131">Add the following line of code to display the form in Windows.</span></span>
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-<span data-ttu-id="c8111-132">Na koniec kod wewnątrz **Jeśli** bloku powoduje, że Windows co należy zrobić z formularzem, po użytkowników w polu tekstowym, a następnie kliknij przycisk **OK** przycisk lub naciśnij klawisz **Enter** klucz.</span><span class="sxs-lookup"><span data-stu-id="c8111-132">Finally, the code inside the **If** block instructs Windows what to do with the form after users provide text in the text box, and then click the **OK** button or press the **Enter** key.</span></span>
+<span data-ttu-id="2bcd8-132">Na koniec kod wewnątrz **Jeśli** bloku powoduje, że Windows co należy zrobić z formularzem, po użytkowników w polu tekstowym, a następnie kliknij przycisk **OK** przycisk lub naciśnij klawisz **Enter** klucz.</span><span class="sxs-lookup"><span data-stu-id="2bcd8-132">Finally, the code inside the **If** block instructs Windows what to do with the form after users provide text in the text box, and then click the **OK** button or press the **Enter** key.</span></span>
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -157,8 +157,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c8111-133">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="c8111-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2bcd8-133">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="2bcd8-133">See Also</span></span>
 
-- [<span data-ttu-id="c8111-134">Witaj twórco skryptów:  Dlaczego nie działają te przykłady programu PowerShell graficznego interfejsu użytkownika</span><span class="sxs-lookup"><span data-stu-id="c8111-134">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [<span data-ttu-id="c8111-135">GitHub: Dave Wyatt WinFormsExampleUpdates</span><span class="sxs-lookup"><span data-stu-id="c8111-135">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [<span data-ttu-id="c8111-136">Windows PowerShell porada tygodnia:  Tworzenie niestandardowego pola wejściowego</span><span class="sxs-lookup"><span data-stu-id="c8111-136">Windows PowerShell Tip of the Week:  Creating a Custom Input Box</span></span>](https://technet.microsoft.com/library/ff730941.aspx)
+- [<span data-ttu-id="2bcd8-134">Witaj twórco skryptów:  Dlaczego nie działają te przykłady programu PowerShell graficznego interfejsu użytkownika</span><span class="sxs-lookup"><span data-stu-id="2bcd8-134">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [<span data-ttu-id="2bcd8-135">GitHub: Dave Wyatt WinFormsExampleUpdates</span><span class="sxs-lookup"><span data-stu-id="2bcd8-135">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [<span data-ttu-id="2bcd8-136">Windows PowerShell porada tygodnia:  Tworzenie niestandardowego pola wejściowego</span><span class="sxs-lookup"><span data-stu-id="2bcd8-136">Windows PowerShell Tip of the Week:  Creating a Custom Input Box</span></span>](https://technet.microsoft.com/library/ff730941.aspx)

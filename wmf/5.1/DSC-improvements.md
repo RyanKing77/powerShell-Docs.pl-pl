@@ -4,47 +4,47 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Ulepszenia DSC w programie WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523046"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683800"
 ---
-# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a><span data-ttu-id="c68b0-103">Ulepszenia w Desired State Configuration (DSC) w programie WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="c68b0-103">Improvements in Desired State Configuration (DSC) in WMF 5.1</span></span>
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a><span data-ttu-id="99036-103">Ulepszenia w Desired State Configuration (DSC) w programie WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="99036-103">Improvements in Desired State Configuration (DSC) in WMF 5.1</span></span>
 
-## <a name="dsc-class-resource-improvements"></a><span data-ttu-id="c68b0-104">Ulepszenia zasobów klasy DSC</span><span class="sxs-lookup"><span data-stu-id="c68b0-104">DSC class resource improvements</span></span>
+## <a name="dsc-class-resource-improvements"></a><span data-ttu-id="99036-104">Ulepszenia zasobów klasy DSC</span><span class="sxs-lookup"><span data-stu-id="99036-104">DSC class resource improvements</span></span>
 
-<span data-ttu-id="c68b0-105">W program WMF 5.1 usunęliśmy następujące znane problemy:</span><span class="sxs-lookup"><span data-stu-id="c68b0-105">In WMF 5.1, we have fixed the following known issues:</span></span>
+<span data-ttu-id="99036-105">W program WMF 5.1 usunęliśmy następujące znane problemy:</span><span class="sxs-lookup"><span data-stu-id="99036-105">In WMF 5.1, we have fixed the following known issues:</span></span>
 
-- <span data-ttu-id="c68b0-106">Get-DscConfiguration może zwracać wartości puste (null) lub błędy, jeśli typ tabeli złożone i skrótu jest zwracana przez funkcję Get() zasobu DSC oparte na klasach.</span><span class="sxs-lookup"><span data-stu-id="c68b0-106">Get-DscConfiguration may return empty values (null) or errors if a complex/hash table type is returned by Get() function of a class-based DSC resource.</span></span>
-- <span data-ttu-id="c68b0-107">Get-DscConfiguration zwraca błąd, jeśli poświadczeń Uruchom jako jest używany w konfiguracji DSC.</span><span class="sxs-lookup"><span data-stu-id="c68b0-107">Get-DscConfiguration returns error if RunAs credential is used in DSC configuration.</span></span>
-- <span data-ttu-id="c68b0-108">Nie można używać zasobów na podstawie klasy złożonej konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="c68b0-108">Class-based resource cannot be used in a composite configuration.</span></span>
-- <span data-ttu-id="c68b0-109">Start-DscConfiguration zawiesza się, jeśli właściwość swój własny typ oparte na klasach zasobów.</span><span class="sxs-lookup"><span data-stu-id="c68b0-109">Start-DscConfiguration hangs if class-based resource has a property of its own type.</span></span>
-- <span data-ttu-id="c68b0-110">Oparte na klasach zasobów nie można użyć jako zasób wyłączności.</span><span class="sxs-lookup"><span data-stu-id="c68b0-110">Class-based resource cannot be used as an exclusive resource.</span></span>
+- <span data-ttu-id="99036-106">Get-DscConfiguration może zwracać wartości puste (null) lub błędy, jeśli typ tabeli złożone i skrótu jest zwracana przez funkcję Get() zasobu DSC oparte na klasach.</span><span class="sxs-lookup"><span data-stu-id="99036-106">Get-DscConfiguration may return empty values (null) or errors if a complex/hash table type is returned by Get() function of a class-based DSC resource.</span></span>
+- <span data-ttu-id="99036-107">Get-DscConfiguration zwraca błąd, jeśli poświadczeń Uruchom jako jest używany w konfiguracji DSC.</span><span class="sxs-lookup"><span data-stu-id="99036-107">Get-DscConfiguration returns error if RunAs credential is used in DSC configuration.</span></span>
+- <span data-ttu-id="99036-108">Nie można używać zasobów na podstawie klasy złożonej konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="99036-108">Class-based resource cannot be used in a composite configuration.</span></span>
+- <span data-ttu-id="99036-109">Start-DscConfiguration zawiesza się, jeśli właściwość swój własny typ oparte na klasach zasobów.</span><span class="sxs-lookup"><span data-stu-id="99036-109">Start-DscConfiguration hangs if class-based resource has a property of its own type.</span></span>
+- <span data-ttu-id="99036-110">Oparte na klasach zasobów nie można użyć jako zasób wyłączności.</span><span class="sxs-lookup"><span data-stu-id="99036-110">Class-based resource cannot be used as an exclusive resource.</span></span>
 
-## <a name="dsc-resource-debugging-improvements"></a><span data-ttu-id="c68b0-111">Zasób DSC ulepszenia debugowania</span><span class="sxs-lookup"><span data-stu-id="c68b0-111">DSC resource debugging improvements</span></span>
+## <a name="dsc-resource-debugging-improvements"></a><span data-ttu-id="99036-111">Zasób DSC ulepszenia debugowania</span><span class="sxs-lookup"><span data-stu-id="99036-111">DSC resource debugging improvements</span></span>
 
-<span data-ttu-id="c68b0-112">W programie WMF 5.0 debuger programu PowerShell nie zatrzymają w metodzie oparte na klasach zasobów (Get/Set/Test) bezpośrednio.</span><span class="sxs-lookup"><span data-stu-id="c68b0-112">In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly.</span></span>
-<span data-ttu-id="c68b0-113">W program WMF 5.1 debuger zatrzymuje się na metody oparte na klasach zasobów w taki sam sposób jak w przypadku metod zasoby oparte na pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="c68b0-113">In WMF 5.1, the debugger stops at the class-based resource method in the same way as for MOF-based resources methods.</span></span>
+<span data-ttu-id="99036-112">W programie WMF 5.0 debuger programu PowerShell nie zatrzymają w metodzie oparte na klasach zasobów (Get/Set/Test) bezpośrednio.</span><span class="sxs-lookup"><span data-stu-id="99036-112">In WMF 5.0, the PowerShell debugger did not stop at the class-based resource method (Get/Set/Test) directly.</span></span>
+<span data-ttu-id="99036-113">W program WMF 5.1 debuger zatrzymuje się na metody oparte na klasach zasobów w taki sam sposób jak w przypadku metod zasoby oparte na pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="99036-113">In WMF 5.1, the debugger stops at the class-based resource method in the same way as for MOF-based resources methods.</span></span>
 
-## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a><span data-ttu-id="c68b0-114">DSC pull klient obsługuje protokół TLS 1.1 i TLS 1.2</span><span class="sxs-lookup"><span data-stu-id="c68b0-114">DSC pull client supports TLS 1.1 and TLS 1.2</span></span>
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a><span data-ttu-id="99036-114">DSC pull klient obsługuje protokół TLS 1.1 i TLS 1.2</span><span class="sxs-lookup"><span data-stu-id="99036-114">DSC pull client supports TLS 1.1 and TLS 1.2</span></span>
 
-<span data-ttu-id="c68b0-115">Wcześniej klienta ściągania DSC obsługiwane tylko SSL3.0 lub TLS1.0 za pośrednictwem połączenia HTTPS.</span><span class="sxs-lookup"><span data-stu-id="c68b0-115">Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS connections.</span></span>
-<span data-ttu-id="c68b0-116">Przy wymuszonego, aby użyć bardziej bezpieczne protokoły, klienta ściągania może przestać działać.</span><span class="sxs-lookup"><span data-stu-id="c68b0-116">When forced to use more secure protocols, the pull client would stop functioning.</span></span>
-<span data-ttu-id="c68b0-117">W program WMF 5.1 klienta ściągania DSC nie są już obsługuje protokół SSL 3.0 i dodaje obsługę bardziej bezpieczne protokoły TLS 1.1 i TLS 1.2.</span><span class="sxs-lookup"><span data-stu-id="c68b0-117">In WMF 5.1, the DSC pull client no longer supports SSL 3.0 and adds support for the more secure TLS 1.1 and TLS 1.2 protocols.</span></span>
+<span data-ttu-id="99036-115">Wcześniej klienta ściągania DSC obsługiwane tylko SSL3.0 lub TLS1.0 za pośrednictwem połączenia HTTPS.</span><span class="sxs-lookup"><span data-stu-id="99036-115">Previously, the DSC pull client only supported SSL3.0 and TLS1.0 over HTTPS connections.</span></span>
+<span data-ttu-id="99036-116">Przy wymuszonego, aby użyć bardziej bezpieczne protokoły, klienta ściągania może przestać działać.</span><span class="sxs-lookup"><span data-stu-id="99036-116">When forced to use more secure protocols, the pull client would stop functioning.</span></span>
+<span data-ttu-id="99036-117">W program WMF 5.1 klienta ściągania DSC nie są już obsługuje protokół SSL 3.0 i dodaje obsługę bardziej bezpieczne protokoły TLS 1.1 i TLS 1.2.</span><span class="sxs-lookup"><span data-stu-id="99036-117">In WMF 5.1, the DSC pull client no longer supports SSL 3.0 and adds support for the more secure TLS 1.1 and TLS 1.2 protocols.</span></span>
 
-## <a name="improved-pull-server-registration"></a><span data-ttu-id="c68b0-118">Rejestracja serwera ściągania ulepszone</span><span class="sxs-lookup"><span data-stu-id="c68b0-118">Improved pull server registration</span></span>
+## <a name="improved-pull-server-registration"></a><span data-ttu-id="99036-118">Rejestracja serwera ściągania ulepszone</span><span class="sxs-lookup"><span data-stu-id="99036-118">Improved pull server registration</span></span>
 
-<span data-ttu-id="c68b0-119">We wcześniejszych wersjach programu WMF równoczesnych rejestracji/zgłoszenie żądania do serwera ściągania DSC podczas korzystania z bazy danych ESENT doprowadziłoby do LCM, których nie można zarejestrować i/lub raportu.</span><span class="sxs-lookup"><span data-stu-id="c68b0-119">In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report.</span></span>
-<span data-ttu-id="c68b0-120">W takiej sytuacji dzienniki zdarzeń na serwerze ściągania występuje błąd "Nazwa wystąpienia już w użyciu".</span><span class="sxs-lookup"><span data-stu-id="c68b0-120">In such cases, the event logs on the pull server has the error "Instance Name already in use."</span></span>
-<span data-ttu-id="c68b0-121">Jest to spowodowane nieprawidłowy wzorzec używany do uzyskiwania ESENT bazy danych w scenariuszu wielowątkowych.</span><span class="sxs-lookup"><span data-stu-id="c68b0-121">This was due to an incorrect pattern being used to access the ESENT database in a multi-threaded scenario.</span></span>
-<span data-ttu-id="c68b0-122">Ten problem został rozwiązany w program WMF 5.1.</span><span class="sxs-lookup"><span data-stu-id="c68b0-122">In WMF 5.1, this issue has been fixed.</span></span>
-<span data-ttu-id="c68b0-123">Jednoczesnych rejestracji lub raportowania (obejmujące ESENT bazy danych) działa poprawnie WMF 5.1.</span><span class="sxs-lookup"><span data-stu-id="c68b0-123">Concurrent registrations or reporting (involving ESENT database) works fine in WMF 5.1.</span></span>
-<span data-ttu-id="c68b0-124">Ten problem ma zastosowanie tylko do bazy danych ESENT i nie ma zastosowania do bazy danych OLE DB.</span><span class="sxs-lookup"><span data-stu-id="c68b0-124">This issue is applicable only to the ESENT database and does not apply to the OLEDB database.</span></span>
+<span data-ttu-id="99036-119">We wcześniejszych wersjach programu WMF równoczesnych rejestracji/zgłoszenie żądania do serwera ściągania DSC podczas korzystania z bazy danych ESENT doprowadziłoby do LCM, których nie można zarejestrować i/lub raportu.</span><span class="sxs-lookup"><span data-stu-id="99036-119">In the earlier versions of WMF, simultaneous registrations/reporting requests to a DSC pull server while using the ESENT database would lead to LCM failing to register and/or report.</span></span>
+<span data-ttu-id="99036-120">W takiej sytuacji dzienniki zdarzeń na serwerze ściągania występuje błąd "Nazwa wystąpienia już w użyciu".</span><span class="sxs-lookup"><span data-stu-id="99036-120">In such cases, the event logs on the pull server has the error "Instance Name already in use."</span></span>
+<span data-ttu-id="99036-121">Jest to spowodowane nieprawidłowy wzorzec używany do uzyskiwania ESENT bazy danych w scenariuszu wielowątkowych.</span><span class="sxs-lookup"><span data-stu-id="99036-121">This was due to an incorrect pattern being used to access the ESENT database in a multi-threaded scenario.</span></span>
+<span data-ttu-id="99036-122">Ten problem został rozwiązany w program WMF 5.1.</span><span class="sxs-lookup"><span data-stu-id="99036-122">In WMF 5.1, this issue has been fixed.</span></span>
+<span data-ttu-id="99036-123">Jednoczesnych rejestracji lub raportowania (obejmujące ESENT bazy danych) działa poprawnie WMF 5.1.</span><span class="sxs-lookup"><span data-stu-id="99036-123">Concurrent registrations or reporting (involving ESENT database) works fine in WMF 5.1.</span></span>
+<span data-ttu-id="99036-124">Ten problem ma zastosowanie tylko do bazy danych ESENT i nie ma zastosowania do bazy danych OLE DB.</span><span class="sxs-lookup"><span data-stu-id="99036-124">This issue is applicable only to the ESENT database and does not apply to the OLEDB database.</span></span>
 
-## <a name="enable-circular-log-on-esent-database-instance"></a><span data-ttu-id="c68b0-125">Włącz dziennik cykliczne w wystąpieniu bazy danych ESENT</span><span class="sxs-lookup"><span data-stu-id="c68b0-125">Enable Circular log on ESENT database instance</span></span>
+## <a name="enable-circular-log-on-esent-database-instance"></a><span data-ttu-id="99036-125">Włącz dziennik cykliczne w wystąpieniu bazy danych ESENT</span><span class="sxs-lookup"><span data-stu-id="99036-125">Enable Circular log on ESENT database instance</span></span>
 
-<span data-ttu-id="c68b0-126">W wersji eariler DSC PullServer pliki dziennika bazy danych ESENT zostały zapełnia się miejsca na dysku becouse pullserver, utworzenia wystąpienia bazy danych jest bez logowanie cykliczne.</span><span class="sxs-lookup"><span data-stu-id="c68b0-126">In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging.</span></span> <span data-ttu-id="c68b0-127">W tej wersji masz możliwość sterowania zachowaniem tego wystąpienia przy użyciu pliku web.config pullserver logowanie cykliczne.</span><span class="sxs-lookup"><span data-stu-id="c68b0-127">In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver.</span></span> <span data-ttu-id="c68b0-128">Domyślnie CircularLogging jest ustawiona na wartość TRUE.</span><span class="sxs-lookup"><span data-stu-id="c68b0-128">By default CircularLogging is set to TRUE.</span></span>
+<span data-ttu-id="99036-126">W wersji eariler DSC PullServer pliki dziennika bazy danych ESENT zostały zapełnia się miejsca na dysku becouse pullserver, utworzenia wystąpienia bazy danych jest bez logowanie cykliczne.</span><span class="sxs-lookup"><span data-stu-id="99036-126">In eariler version of DSC-PullServer, the ESENT database log files were filling up the disk space of the pullserver becouse the database instance was being created without circular logging.</span></span> <span data-ttu-id="99036-127">W tej wersji masz możliwość sterowania zachowaniem tego wystąpienia przy użyciu pliku web.config pullserver logowanie cykliczne.</span><span class="sxs-lookup"><span data-stu-id="99036-127">In this release, you have the option to control the circular logging behavior of the instance using the web.config of the pullserver.</span></span> <span data-ttu-id="99036-128">Domyślnie CircularLogging jest ustawiona na wartość TRUE.</span><span class="sxs-lookup"><span data-stu-id="99036-128">By default CircularLogging is set to TRUE.</span></span>
 
 ```
 <appSettings>
@@ -55,17 +55,17 @@ ms.locfileid: "45523046"
   </appSettings>
 ```
 
-## <a name="pull-partial-configuration-naming-convention"></a><span data-ttu-id="c68b0-129">Ściągnij konwencji nazewnictwa częściowe konfiguracji</span><span class="sxs-lookup"><span data-stu-id="c68b0-129">Pull partial configuration naming convention</span></span>
+## <a name="pull-partial-configuration-naming-convention"></a><span data-ttu-id="99036-129">Ściągnij konwencji nazewnictwa częściowe konfiguracji</span><span class="sxs-lookup"><span data-stu-id="99036-129">Pull partial configuration naming convention</span></span>
 
-<span data-ttu-id="c68b0-130">W poprzedniej wersji konwencji nazewnictwa częściowe konfiguracji został, czy nazwa pliku MOF usługi ściągania serwer/powinna odpowiadać nazwie częściowe konfiguracji, w określonego w ustawieniach Menedżera konfiguracji lokalnej, które z kolei muszą być zgodne Nazwa konfiguracji jest osadzony w pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="c68b0-130">In the previous release, the naming convention for a partial configuration was that the MOF file name in the pull server/service should match the partial configuration name specified in the local configuration manager settings that in turn must match the configuration name embedded in the MOF file.</span></span>
+<span data-ttu-id="99036-130">W poprzedniej wersji konwencji nazewnictwa częściowe konfiguracji został, czy nazwa pliku MOF usługi ściągania serwer/powinna odpowiadać nazwie częściowe konfiguracji, w określonego w ustawieniach Menedżera konfiguracji lokalnej, które z kolei muszą być zgodne Nazwa konfiguracji jest osadzony w pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="99036-130">In the previous release, the naming convention for a partial configuration was that the MOF file name in the pull server/service should match the partial configuration name specified in the local configuration manager settings that in turn must match the configuration name embedded in the MOF file.</span></span>
 
-<span data-ttu-id="c68b0-131">Zobacz poniższe migawki:</span><span class="sxs-lookup"><span data-stu-id="c68b0-131">See the snapshots below:</span></span>
+<span data-ttu-id="99036-131">Zobacz poniższe migawki:</span><span class="sxs-lookup"><span data-stu-id="99036-131">See the snapshots below:</span></span>
 
-- <span data-ttu-id="c68b0-132">Ustawienia konfiguracji lokalnej, które definiuje częściowe konfiguracji, który węzeł może odbierać.</span><span class="sxs-lookup"><span data-stu-id="c68b0-132">Local configuration settings which defines a partial configuration that a node is allowed to receive.</span></span>
+- <span data-ttu-id="99036-132">Ustawienia konfiguracji lokalnej, które definiuje częściowe konfiguracji, który węzeł może odbierać.</span><span class="sxs-lookup"><span data-stu-id="99036-132">Local configuration settings which defines a partial configuration that a node is allowed to receive.</span></span>
 
 ![Przykładowe metaconfiguration](../images/MetaConfigPartialOne.png)
 
-- <span data-ttu-id="c68b0-134">Przykładowa definicja częściowe konfiguracji</span><span class="sxs-lookup"><span data-stu-id="c68b0-134">Sample partial configuration definition</span></span>
+- <span data-ttu-id="99036-134">Przykładowa definicja częściowe konfiguracji</span><span class="sxs-lookup"><span data-stu-id="99036-134">Sample partial configuration definition</span></span>
 
 ```powershell
 Configuration PartialOne
@@ -82,18 +82,18 @@ Configuration PartialOne
 PartialOne
 ```
 
-- <span data-ttu-id="c68b0-135">"ConfigurationName" osadzona w wygenerowanym pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="c68b0-135">'ConfigurationName' embedded in the generated MOF file.</span></span>
+- <span data-ttu-id="99036-135">"ConfigurationName" osadzona w wygenerowanym pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="99036-135">'ConfigurationName' embedded in the generated MOF file.</span></span>
 
 ![Przykładowy plik mof wygenerowany](../images/PartialGeneratedMof.png)
 
-- <span data-ttu-id="c68b0-137">Nazwa pliku w repozytorium konfiguracji ściągania</span><span class="sxs-lookup"><span data-stu-id="c68b0-137">FileName in the pull configuration repository</span></span>
+- <span data-ttu-id="99036-137">Nazwa pliku w repozytorium konfiguracji ściągania</span><span class="sxs-lookup"><span data-stu-id="99036-137">FileName in the pull configuration repository</span></span>
 
 ![Nazwa pliku w repozytorium konfiguracji](../images/PartialInConfigRepository.png)
 
-<span data-ttu-id="c68b0-139">Nazwa usługi w usłudze Azure Automation wygenerowanych plików MOF jako `<ConfigurationName>.<NodeName>.mof`.</span><span class="sxs-lookup"><span data-stu-id="c68b0-139">Azure Automation service name generated MOF files as `<ConfigurationName>.<NodeName>.mof`.</span></span>
-<span data-ttu-id="c68b0-140">Dlatego konfiguracji poniżej kompiluje, aby PartialOne.localhost.mof.</span><span class="sxs-lookup"><span data-stu-id="c68b0-140">So the configuration below compiles to PartialOne.localhost.mof.</span></span>
+<span data-ttu-id="99036-139">Nazwa usługi w usłudze Azure Automation wygenerowanych plików MOF jako `<ConfigurationName>.<NodeName>.mof`.</span><span class="sxs-lookup"><span data-stu-id="99036-139">Azure Automation service name generated MOF files as `<ConfigurationName>.<NodeName>.mof`.</span></span>
+<span data-ttu-id="99036-140">Dlatego konfiguracji poniżej kompiluje, aby PartialOne.localhost.mof.</span><span class="sxs-lookup"><span data-stu-id="99036-140">So the configuration below compiles to PartialOne.localhost.mof.</span></span>
 
-<span data-ttu-id="c68b0-141">To uniemożliwił do ściągnięcia jeden częściowe konfiguracji z usługi Azure Automation.</span><span class="sxs-lookup"><span data-stu-id="c68b0-141">This made it impossible to pull one of your partial configuration from Azure Automation service.</span></span>
+<span data-ttu-id="99036-141">To uniemożliwił do ściągnięcia jeden częściowe konfiguracji z usługi Azure Automation.</span><span class="sxs-lookup"><span data-stu-id="99036-141">This made it impossible to pull one of your partial configuration from Azure Automation service.</span></span>
 
 ```powershell
 Configuration PartialOne
@@ -110,11 +110,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-<span data-ttu-id="c68b0-142">W program WMF 5.1 częściowe konfiguracji w pull server/service może mieć nazwę jako `<ConfigurationName>.<NodeName>.mof`.</span><span class="sxs-lookup"><span data-stu-id="c68b0-142">In WMF 5.1, a partial configuration in the pull server/service can be named as `<ConfigurationName>.<NodeName>.mof`.</span></span>
-<span data-ttu-id="c68b0-143">Ponadto jeśli maszyna jest ściąganie konfiguracji jednego z ściąganie usługa następnie plik konfiguracji do repozytorium konfiguracji serwera ściągania mogą mieć dowolną nazwę pliku.</span><span class="sxs-lookup"><span data-stu-id="c68b0-143">Moreover, if a machine is pulling a single configuration from a pull server/service then the configuration file on the pull server configuration repository can have any file name.</span></span>
-<span data-ttu-id="c68b0-144">Ta elastyczność nazewnictwa pozwala na zarządzanie węzły częściowo przez usługę Azure Automation, gdzie niektóre konfiguracji dla węzła pochodzi z usługi Azure Automation DSC i częściowe konfiguracji, który można zarządzać lokalnie.</span><span class="sxs-lookup"><span data-stu-id="c68b0-144">This naming flexibility allows you to manage your nodes partially by Azure Automation service, where some configuration for your node is coming from Azure Automation DSC and with a partial configuration that you manage locally.</span></span>
+<span data-ttu-id="99036-142">W program WMF 5.1 częściowe konfiguracji w pull server/service może mieć nazwę jako `<ConfigurationName>.<NodeName>.mof`.</span><span class="sxs-lookup"><span data-stu-id="99036-142">In WMF 5.1, a partial configuration in the pull server/service can be named as `<ConfigurationName>.<NodeName>.mof`.</span></span>
+<span data-ttu-id="99036-143">Ponadto jeśli maszyna jest ściąganie konfiguracji jednego z ściąganie usługa następnie plik konfiguracji do repozytorium konfiguracji serwera ściągania mogą mieć dowolną nazwę pliku.</span><span class="sxs-lookup"><span data-stu-id="99036-143">Moreover, if a machine is pulling a single configuration from a pull server/service then the configuration file on the pull server configuration repository can have any file name.</span></span>
+<span data-ttu-id="99036-144">Ta elastyczność nazewnictwa pozwala na zarządzanie węzły częściowo przez usługę Azure Automation, gdzie niektóre konfiguracji dla węzła pochodzi z usługi Azure Automation DSC i częściowe konfiguracji, który można zarządzać lokalnie.</span><span class="sxs-lookup"><span data-stu-id="99036-144">This naming flexibility allows you to manage your nodes partially by Azure Automation service, where some configuration for your node is coming from Azure Automation DSC and with a partial configuration that you manage locally.</span></span>
 
-<span data-ttu-id="c68b0-145">Metaconfiguration poniżej skonfigurowanie węzła jako zarządzane, zarówno lokalnie, jak również przez usługę Azure Automation do usługi.</span><span class="sxs-lookup"><span data-stu-id="c68b0-145">The metaconfiguration below sets up a node to be managed both locally as well as by Azure Automation service.</span></span>
+<span data-ttu-id="99036-145">Metaconfiguration poniżej skonfigurowanie węzła jako zarządzane, zarówno lokalnie, jak również przez usługę Azure Automation do usługi.</span><span class="sxs-lookup"><span data-stu-id="99036-145">The metaconfiguration below sets up a node to be managed both locally as well as by Azure Automation service.</span></span>
 
 ```powershell
 [DscLocalConfigurationManager()]
@@ -152,17 +152,17 @@ RegistrationMetaConfig
 Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 ```
 
-## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a><span data-ttu-id="c68b0-146">Za pomocą PsDscRunAsCredential za pomocą DSC zasoby złożone</span><span class="sxs-lookup"><span data-stu-id="c68b0-146">Using PsDscRunAsCredential with DSC composite resources</span></span>
+## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a><span data-ttu-id="99036-146">Za pomocą PsDscRunAsCredential za pomocą DSC zasoby złożone</span><span class="sxs-lookup"><span data-stu-id="99036-146">Using PsDscRunAsCredential with DSC composite resources</span></span>
 
-<span data-ttu-id="c68b0-147">Dodaliśmy obsługę [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) za pomocą DSC [złożonego](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) zasobów.</span><span class="sxs-lookup"><span data-stu-id="c68b0-147">We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) resources.</span></span>
+<span data-ttu-id="99036-147">Dodaliśmy obsługę [ *PsDscRunAsCredential* ](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) za pomocą DSC [złożonego](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) zasobów.</span><span class="sxs-lookup"><span data-stu-id="99036-147">We have added support for using [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) with DSC [Composite](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) resources.</span></span>
 
-<span data-ttu-id="c68b0-148">Teraz można określić wartość dla PsDscRunAsCredential, korzystając z zasoby złożone w konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="c68b0-148">You can now specify a value for PsDscRunAsCredential when using composite resources inside configurations.</span></span>
-<span data-ttu-id="c68b0-149">Jeśli zostanie określony, wszystkie zasoby są uruchamiane wewnątrz złożonego zasobów w jako użytkownika Uruchom jako.</span><span class="sxs-lookup"><span data-stu-id="c68b0-149">When specified, all resources run inside a composite resource as a RunAs user.</span></span>
-<span data-ttu-id="c68b0-150">Złożone zasobów wywołuje inny zasób złożonego, wszystkie jej zasoby są również wykonywane jako użytkownika Uruchom jako.</span><span class="sxs-lookup"><span data-stu-id="c68b0-150">If a composite resource calls another composite resource, all of its resources are also executed as RunAs user.</span></span>
-<span data-ttu-id="c68b0-151">Poświadczenia programu RunAs są propagowane do dowolnego poziomu hierarchii złożonego zasobów.</span><span class="sxs-lookup"><span data-stu-id="c68b0-151">RunAs credentials are propagated to any level of the composite resource hierarchy.</span></span>
-<span data-ttu-id="c68b0-152">Jeśli dowolny zasób wewnątrz złożonego zasobu określa jego własnej wartości dla PsDscRunAsCredential, powoduje błąd scalania, podczas kompilacji konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="c68b0-152">If any resource inside a composite resource specifies its own value for PsDscRunAsCredential, a merge error results during configuration compilation.</span></span>
+<span data-ttu-id="99036-148">Teraz można określić wartość dla PsDscRunAsCredential, korzystając z zasoby złożone w konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="99036-148">You can now specify a value for PsDscRunAsCredential when using composite resources inside configurations.</span></span>
+<span data-ttu-id="99036-149">Jeśli zostanie określony, wszystkie zasoby są uruchamiane wewnątrz złożonego zasobów w jako użytkownika Uruchom jako.</span><span class="sxs-lookup"><span data-stu-id="99036-149">When specified, all resources run inside a composite resource as a RunAs user.</span></span>
+<span data-ttu-id="99036-150">Złożone zasobów wywołuje inny zasób złożonego, wszystkie jej zasoby są również wykonywane jako użytkownika Uruchom jako.</span><span class="sxs-lookup"><span data-stu-id="99036-150">If a composite resource calls another composite resource, all of its resources are also executed as RunAs user.</span></span>
+<span data-ttu-id="99036-151">Poświadczenia programu RunAs są propagowane do dowolnego poziomu hierarchii złożonego zasobów.</span><span class="sxs-lookup"><span data-stu-id="99036-151">RunAs credentials are propagated to any level of the composite resource hierarchy.</span></span>
+<span data-ttu-id="99036-152">Jeśli dowolny zasób wewnątrz złożonego zasobu określa jego własnej wartości dla PsDscRunAsCredential, powoduje błąd scalania, podczas kompilacji konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="99036-152">If any resource inside a composite resource specifies its own value for PsDscRunAsCredential, a merge error results during configuration compilation.</span></span>
 
-<span data-ttu-id="c68b0-153">W tym przykładzie przedstawiono sposób użycia za pomocą [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) złożonego zasobów zawartych w PSDesiredStateConfiguration module.</span><span class="sxs-lookup"><span data-stu-id="c68b0-153">This example shows usage with [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) composite resource included in PSDesiredStateConfiguration module.</span></span>
+<span data-ttu-id="99036-153">W tym przykładzie przedstawiono sposób użycia za pomocą [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) złożonego zasobów zawartych w PSDesiredStateConfiguration module.</span><span class="sxs-lookup"><span data-stu-id="99036-153">This example shows usage with [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) composite resource included in PSDesiredStateConfiguration module.</span></span>
 
 ```powershell
 Configuration InstallWindowsFeature
@@ -195,33 +195,33 @@ $configData = @{
 InstallWindowsFeature -ConfigurationData $configData
 ```
 
-## <a name="dsc-module-and-configuration-signing-validations"></a><span data-ttu-id="c68b0-154">Moduł DSC i podpisywania operacji sprawdzania poprawności konfiguracji</span><span class="sxs-lookup"><span data-stu-id="c68b0-154">DSC module and configuration signing validations</span></span>
+## <a name="dsc-module-and-configuration-signing-validations"></a><span data-ttu-id="99036-154">Moduł DSC i podpisywania operacji sprawdzania poprawności konfiguracji</span><span class="sxs-lookup"><span data-stu-id="99036-154">DSC module and configuration signing validations</span></span>
 
-<span data-ttu-id="c68b0-155">W DSC konfiguracji i modułów są dystrybuowane do komputerów zarządzanych z serwera ściągania.</span><span class="sxs-lookup"><span data-stu-id="c68b0-155">In DSC, configurations and modules are distributed to managed computers from the pull server.</span></span>
-<span data-ttu-id="c68b0-156">W przypadku naruszenia zabezpieczeń serwera ściągania osoba atakująca może potencjalnie modyfikowania konfiguracji i modułów na serwerze ściągania i jest dystrybuowane do wszystkich zarządzanych węzłów, wszystkich z nich naruszenie.</span><span class="sxs-lookup"><span data-stu-id="c68b0-156">If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes, compromising all of them.</span></span>
+<span data-ttu-id="99036-155">W DSC konfiguracji i modułów są dystrybuowane do komputerów zarządzanych z serwera ściągania.</span><span class="sxs-lookup"><span data-stu-id="99036-155">In DSC, configurations and modules are distributed to managed computers from the pull server.</span></span>
+<span data-ttu-id="99036-156">W przypadku naruszenia zabezpieczeń serwera ściągania osoba atakująca może potencjalnie modyfikowania konfiguracji i modułów na serwerze ściągania i jest dystrybuowane do wszystkich zarządzanych węzłów, wszystkich z nich naruszenie.</span><span class="sxs-lookup"><span data-stu-id="99036-156">If the pull server is compromised, an attacker can potentially modify the configurations and modules on the pull server and have it distributed to all managed nodes, compromising all of them.</span></span>
 
-<span data-ttu-id="c68b0-157">Program WMF 5.1 DSC obsługuje sprawdzanie podpisów cyfrowych w katalogu i konfiguracji (. Pliki MOF).</span><span class="sxs-lookup"><span data-stu-id="c68b0-157">In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files.</span></span>
-<span data-ttu-id="c68b0-158">Ta funkcja zapobiega wykonywania konfiguracji lub plikach modułów, które nie są podpisane przez zaufane osoby podpisującej lub które zostały naruszone po zostały podpisane przez zaufane osoby podpisującej węzłów.</span><span class="sxs-lookup"><span data-stu-id="c68b0-158">This feature prevents nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer.</span></span>
+<span data-ttu-id="99036-157">Program WMF 5.1 DSC obsługuje sprawdzanie podpisów cyfrowych w katalogu i konfiguracji (. Pliki MOF).</span><span class="sxs-lookup"><span data-stu-id="99036-157">In WMF 5.1, DSC supports validating the digital signatures on catalog and configuration (.MOF) files.</span></span>
+<span data-ttu-id="99036-158">Ta funkcja zapobiega wykonywania konfiguracji lub plikach modułów, które nie są podpisane przez zaufane osoby podpisującej lub które zostały naruszone po zostały podpisane przez zaufane osoby podpisującej węzłów.</span><span class="sxs-lookup"><span data-stu-id="99036-158">This feature prevents nodes from executing configurations or module files which are not signed by a trusted signer or which have been tampered with after they have been signed by trusted signer.</span></span>
 
-### <a name="how-to-sign-configuration-and-module"></a><span data-ttu-id="c68b0-159">Jak zarejestrować konfiguracji i modułów</span><span class="sxs-lookup"><span data-stu-id="c68b0-159">How to sign configuration and module</span></span>
+### <a name="how-to-sign-configuration-and-module"></a><span data-ttu-id="99036-159">Jak zarejestrować konfiguracji i modułów</span><span class="sxs-lookup"><span data-stu-id="99036-159">How to sign configuration and module</span></span>
 
 ***
-* <span data-ttu-id="c68b0-160">Pliki konfiguracji (. Pliki MOF): istniejące polecenia cmdlet programu PowerShell [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) jest rozszerzona na potrzeby obsługi podpisywania plików MOF.</span><span class="sxs-lookup"><span data-stu-id="c68b0-160">Configuration Files (.MOFs): The existing PowerShell cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) is extended to support signing of MOF files.</span></span>
-* <span data-ttu-id="c68b0-161">Moduły: Podpisywania modułów można to zrobić, rejestrując odpowiedniego katalogu modułu wykonując następujące czynności:</span><span class="sxs-lookup"><span data-stu-id="c68b0-161">Modules: Signing of modules is done by signing the corresponding module catalog using the following steps:</span></span>
-    1. <span data-ttu-id="c68b0-162">Utwórz plik wykazu: plik wykazu zawiera zbiór skróty kryptograficzne lub odciski palców.</span><span class="sxs-lookup"><span data-stu-id="c68b0-162">Create a catalog file: A catalog file contains a collection of cryptographic hashes or thumbprints.</span></span>
-       <span data-ttu-id="c68b0-163">Każdy odcisk palca odnosi się do pliku, który znajduje się w module.</span><span class="sxs-lookup"><span data-stu-id="c68b0-163">Each thumbprint corresponds to a file that is included in the module.</span></span>
-       <span data-ttu-id="c68b0-164">Nowe polecenie cmdlet [New FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), została dodana do Zezwól użytkownikom na tworzenie plik katalogu dla swojego modułu.</span><span class="sxs-lookup"><span data-stu-id="c68b0-164">The new cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), has been added to enable users to create a catalog file for their module.</span></span>
-    2. <span data-ttu-id="c68b0-165">Utwórz plik wykazu: Użyj [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) do podpisania pliku wykazu.</span><span class="sxs-lookup"><span data-stu-id="c68b0-165">Sign the catalog file: Use [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) to sign the catalog file.</span></span>
-    3. <span data-ttu-id="c68b0-166">Umieść plik wykazu znajdujące się w folderze modułu.</span><span class="sxs-lookup"><span data-stu-id="c68b0-166">Place the catalog file inside the module folder.</span></span>
-<span data-ttu-id="c68b0-167">Zgodnie z Konwencją plik do katalogu modułu powinna zostać umieszczona w folderze modułu o nazwie identycznej z nazwą modułu.</span><span class="sxs-lookup"><span data-stu-id="c68b0-167">By convention, module catalog file should be placed under the module folder with the same name as the module.</span></span>
+* <span data-ttu-id="99036-160">Pliki konfiguracji (. Pliki MOF): Istniejące polecenia cmdlet programu PowerShell [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) jest rozszerzona na potrzeby obsługi podpisywania plików MOF.</span><span class="sxs-lookup"><span data-stu-id="99036-160">Configuration Files (.MOFs): The existing PowerShell cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) is extended to support signing of MOF files.</span></span>
+* <span data-ttu-id="99036-161">Moduły: Podpisywanie modułów można to zrobić, rejestrując odpowiedniego katalogu modułu wykonując następujące czynności:</span><span class="sxs-lookup"><span data-stu-id="99036-161">Modules: Signing of modules is done by signing the corresponding module catalog using the following steps:</span></span>
+    1. <span data-ttu-id="99036-162">Utwórz plik w katalogu: Plik wykazu zawiera zbiór skróty kryptograficzne lub odciski palców.</span><span class="sxs-lookup"><span data-stu-id="99036-162">Create a catalog file: A catalog file contains a collection of cryptographic hashes or thumbprints.</span></span>
+       <span data-ttu-id="99036-163">Każdy odcisk palca odnosi się do pliku, który znajduje się w module.</span><span class="sxs-lookup"><span data-stu-id="99036-163">Each thumbprint corresponds to a file that is included in the module.</span></span>
+       <span data-ttu-id="99036-164">Nowe polecenie cmdlet [New FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), została dodana do Zezwól użytkownikom na tworzenie plik katalogu dla swojego modułu.</span><span class="sxs-lookup"><span data-stu-id="99036-164">The new cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx), has been added to enable users to create a catalog file for their module.</span></span>
+    2. <span data-ttu-id="99036-165">Utwórz plik w katalogu: Użyj [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) do podpisania pliku wykazu.</span><span class="sxs-lookup"><span data-stu-id="99036-165">Sign the catalog file: Use [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) to sign the catalog file.</span></span>
+    3. <span data-ttu-id="99036-166">Umieść plik wykazu znajdujące się w folderze modułu.</span><span class="sxs-lookup"><span data-stu-id="99036-166">Place the catalog file inside the module folder.</span></span>
+<span data-ttu-id="99036-167">Zgodnie z Konwencją plik do katalogu modułu powinna zostać umieszczona w folderze modułu o nazwie identycznej z nazwą modułu.</span><span class="sxs-lookup"><span data-stu-id="99036-167">By convention, module catalog file should be placed under the module folder with the same name as the module.</span></span>
 
-### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a><span data-ttu-id="c68b0-168">Ustawienia LocalConfigurationManager, aby umożliwić sprawdzanie poprawności podpisywania</span><span class="sxs-lookup"><span data-stu-id="c68b0-168">LocalConfigurationManager settings to enable signing validations</span></span>
+### <a name="localconfigurationmanager-settings-to-enable-signing-validations"></a><span data-ttu-id="99036-168">Ustawienia LocalConfigurationManager, aby umożliwić sprawdzanie poprawności podpisywania</span><span class="sxs-lookup"><span data-stu-id="99036-168">LocalConfigurationManager settings to enable signing validations</span></span>
 
-#### <a name="pull"></a><span data-ttu-id="c68b0-169">Ściągnij</span><span class="sxs-lookup"><span data-stu-id="c68b0-169">Pull</span></span>
+#### <a name="pull"></a><span data-ttu-id="99036-169">Ściągnij</span><span class="sxs-lookup"><span data-stu-id="99036-169">Pull</span></span>
 
-<span data-ttu-id="c68b0-170">LocalConfigurationManager węzła przeprowadza weryfikację podpisywania modułów i konfiguracji, w oparciu o bieżące ustawienia.</span><span class="sxs-lookup"><span data-stu-id="c68b0-170">The LocalConfigurationManager of a node performs signing validation of modules and configurations based on its current settings.</span></span>
-<span data-ttu-id="c68b0-171">Domyślnie Weryfikacja podpisu jest wyłączona.</span><span class="sxs-lookup"><span data-stu-id="c68b0-171">By default, signature validation is disabled.</span></span>
-<span data-ttu-id="c68b0-172">Weryfikacja podpisu można włączyć poprzez dodanie bloku "SignatureValidation" do definicji metadanych konfiguracji węzła jak pokazano poniżej:</span><span class="sxs-lookup"><span data-stu-id="c68b0-172">Signature validation can enabled by adding the ‘SignatureValidation’ block to the meta-configuration definition of the node as shown below:</span></span>
+<span data-ttu-id="99036-170">LocalConfigurationManager węzła przeprowadza weryfikację podpisywania modułów i konfiguracji, w oparciu o bieżące ustawienia.</span><span class="sxs-lookup"><span data-stu-id="99036-170">The LocalConfigurationManager of a node performs signing validation of modules and configurations based on its current settings.</span></span>
+<span data-ttu-id="99036-171">Domyślnie Weryfikacja podpisu jest wyłączona.</span><span class="sxs-lookup"><span data-stu-id="99036-171">By default, signature validation is disabled.</span></span>
+<span data-ttu-id="99036-172">Weryfikacja podpisu można włączyć poprzez dodanie bloku "SignatureValidation" do definicji metadanych konfiguracji węzła jak pokazano poniżej:</span><span class="sxs-lookup"><span data-stu-id="99036-172">Signature validation can enabled by adding the ‘SignatureValidation’ block to the meta-configuration definition of the node as shown below:</span></span>
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -249,37 +249,37 @@ EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
 
-<span data-ttu-id="c68b0-173">Ustawienie metaconfiguration powyżej w węźle umożliwia weryfikację podpisu na konfiguracje pobrane i modułów.</span><span class="sxs-lookup"><span data-stu-id="c68b0-173">Setting the above metaconfiguration on a node enables signature validation on downloaded configurations and modules.</span></span>
-<span data-ttu-id="c68b0-174">Local Configuration Manager wykonuje następujące kroki, aby sprawdzanie podpisów cyfrowych.</span><span class="sxs-lookup"><span data-stu-id="c68b0-174">The Local Configuration Manager performs the following steps to verify the digital signatures.</span></span>
+<span data-ttu-id="99036-173">Ustawienie metaconfiguration powyżej w węźle umożliwia weryfikację podpisu na konfiguracje pobrane i modułów.</span><span class="sxs-lookup"><span data-stu-id="99036-173">Setting the above metaconfiguration on a node enables signature validation on downloaded configurations and modules.</span></span>
+<span data-ttu-id="99036-174">Local Configuration Manager wykonuje następujące kroki, aby sprawdzanie podpisów cyfrowych.</span><span class="sxs-lookup"><span data-stu-id="99036-174">The Local Configuration Manager performs the following steps to verify the digital signatures.</span></span>
 
-1. <span data-ttu-id="c68b0-175">Weryfikuje podpis w pliku konfiguracji (. MOF) jest nieprawidłowy.</span><span class="sxs-lookup"><span data-stu-id="c68b0-175">Verify the signature on a configuration file (.MOF) is valid.</span></span>
-   <span data-ttu-id="c68b0-176">Używa polecenia cmdlet programu PowerShell [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), który jest rozszerzony w 5.1 do obsługi sprawdzania poprawności podpisu pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="c68b0-176">It uses the PowerShell cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), which is extended in 5.1 to support MOF signature validation.</span></span>
-2. <span data-ttu-id="c68b0-177">Sprawdź, czy urząd certyfikacji, który autoryzowane osoby podpisującej jest zaufany.</span><span class="sxs-lookup"><span data-stu-id="c68b0-177">Verify the certificate authority that authorized the signer is trusted.</span></span>
-3. <span data-ttu-id="c68b0-178">Pobierz moduł lub zasobu zależności w konfiguracji w tymczasowej lokalizacji.</span><span class="sxs-lookup"><span data-stu-id="c68b0-178">Download module/resource dependencies of the configuration to a temp location.</span></span>
-4. <span data-ttu-id="c68b0-179">Zweryfikować podpisu wykazu zawarte wewnątrz modułu.</span><span class="sxs-lookup"><span data-stu-id="c68b0-179">Verify the signature of the catalog included inside the module.</span></span>
-    * <span data-ttu-id="c68b0-180">Znajdź `<moduleName>.cat` i sprawdzić jego podpisu, używając polecenia cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).</span><span class="sxs-lookup"><span data-stu-id="c68b0-180">Find a `<moduleName>.cat` file and verify its signature using the cmdlet  [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).</span></span>
-    * <span data-ttu-id="c68b0-181">Sprawdź, czy urząd certyfikacji, który uwierzytelnił podpisującego jest zaufany.</span><span class="sxs-lookup"><span data-stu-id="c68b0-181">Verify the certification authority that authenticated the signer is trusted.</span></span>
-    * <span data-ttu-id="c68b0-182">Sprawdź, nie został zmodyfikowany zawartość modułów za pomocą nowego polecenia cmdlet [FileCatalog testu](https://technet.microsoft.com/library/cc732148.aspx).</span><span class="sxs-lookup"><span data-stu-id="c68b0-182">Verify the content of the modules has not been tampered using the new cmdlet [Test-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx).</span></span>
-5. <span data-ttu-id="c68b0-183">Install-Module do $env: ProgramFiles\WindowsPowerShell\Modules\\</span><span class="sxs-lookup"><span data-stu-id="c68b0-183">Install-Module to $env:ProgramFiles\WindowsPowerShell\Modules\\</span></span>
-6. <span data-ttu-id="c68b0-184">Konfiguracja procesu</span><span class="sxs-lookup"><span data-stu-id="c68b0-184">Process configuration</span></span>
+1. <span data-ttu-id="99036-175">Weryfikuje podpis w pliku konfiguracji (. MOF) jest nieprawidłowy.</span><span class="sxs-lookup"><span data-stu-id="99036-175">Verify the signature on a configuration file (.MOF) is valid.</span></span>
+   <span data-ttu-id="99036-176">Używa polecenia cmdlet programu PowerShell [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), który jest rozszerzony w 5.1 do obsługi sprawdzania poprawności podpisu pliku MOF.</span><span class="sxs-lookup"><span data-stu-id="99036-176">It uses the PowerShell cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), which is extended in 5.1 to support MOF signature validation.</span></span>
+2. <span data-ttu-id="99036-177">Sprawdź, czy urząd certyfikacji, który autoryzowane osoby podpisującej jest zaufany.</span><span class="sxs-lookup"><span data-stu-id="99036-177">Verify the certificate authority that authorized the signer is trusted.</span></span>
+3. <span data-ttu-id="99036-178">Pobierz moduł lub zasobu zależności w konfiguracji w tymczasowej lokalizacji.</span><span class="sxs-lookup"><span data-stu-id="99036-178">Download module/resource dependencies of the configuration to a temp location.</span></span>
+4. <span data-ttu-id="99036-179">Zweryfikować podpisu wykazu zawarte wewnątrz modułu.</span><span class="sxs-lookup"><span data-stu-id="99036-179">Verify the signature of the catalog included inside the module.</span></span>
+    * <span data-ttu-id="99036-180">Znajdź `<moduleName>.cat` i sprawdzić jego podpisu, używając polecenia cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).</span><span class="sxs-lookup"><span data-stu-id="99036-180">Find a `<moduleName>.cat` file and verify its signature using the cmdlet  [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).</span></span>
+    * <span data-ttu-id="99036-181">Sprawdź, czy urząd certyfikacji, który uwierzytelnił podpisującego jest zaufany.</span><span class="sxs-lookup"><span data-stu-id="99036-181">Verify the certification authority that authenticated the signer is trusted.</span></span>
+    * <span data-ttu-id="99036-182">Sprawdź, nie został zmodyfikowany zawartość modułów za pomocą nowego polecenia cmdlet [FileCatalog testu](https://technet.microsoft.com/library/cc732148.aspx).</span><span class="sxs-lookup"><span data-stu-id="99036-182">Verify the content of the modules has not been tampered using the new cmdlet [Test-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx).</span></span>
+5. <span data-ttu-id="99036-183">Install-Module do $env: ProgramFiles\WindowsPowerShell\Modules\\</span><span class="sxs-lookup"><span data-stu-id="99036-183">Install-Module to $env:ProgramFiles\WindowsPowerShell\Modules\\</span></span>
+6. <span data-ttu-id="99036-184">Konfiguracja procesu</span><span class="sxs-lookup"><span data-stu-id="99036-184">Process configuration</span></span>
 
-> <span data-ttu-id="c68b0-185">Uwaga: Weryfikacja podpisu na katalog modułu i konfiguracji jest realizowane wyłącznie podczas stosowania konfiguracji systemu, po raz pierwszy lub w przypadku, gdy moduł jest pobierane i instalowane.</span><span class="sxs-lookup"><span data-stu-id="c68b0-185">Note: Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed.</span></span>
-<span data-ttu-id="c68b0-186">Przebiegi spójności nie weryfikują podpisu Current.mof lub jego zależności modułu.</span><span class="sxs-lookup"><span data-stu-id="c68b0-186">Consistency runs do not validate the signature of Current.mof or its module dependencies.</span></span>
-<span data-ttu-id="c68b0-187">Jeśli weryfikacja nie powiodła się na każdym etapie, na przykład jeśli konfiguracji są pobierane z serwera ściągania jest podpisany, a następnie przetwarzania konfiguracji kończy się błędem pokazany poniżej i zostaną usunięte wszystkie pliki tymczasowe.</span><span class="sxs-lookup"><span data-stu-id="c68b0-187">If verification has failed at any stage, for instance, if the configuration pulled from the pull server is unsigned, then processing of the configuration terminates with the error shown below and all temporary files are deleted.</span></span>
+> <span data-ttu-id="99036-185">Uwaga: Weryfikacja podpisu na katalog modułu i konfiguracji jest realizowane wyłącznie, gdy po raz pierwszy lub w przypadku, gdy moduł jest pobierany i instalowany, konfiguracja jest stosowana do systemu.</span><span class="sxs-lookup"><span data-stu-id="99036-185">Note: Signature validation on module-catalog and configuration is only performed when the configuration is applied to the system for the first time or when the module is downloaded and installed.</span></span>
+<span data-ttu-id="99036-186">Przebiegi spójności nie weryfikują podpisu Current.mof lub jego zależności modułu.</span><span class="sxs-lookup"><span data-stu-id="99036-186">Consistency runs do not validate the signature of Current.mof or its module dependencies.</span></span>
+<span data-ttu-id="99036-187">Jeśli weryfikacja nie powiodła się na każdym etapie, na przykład jeśli konfiguracji są pobierane z serwera ściągania jest podpisany, a następnie przetwarzania konfiguracji kończy się błędem pokazany poniżej i zostaną usunięte wszystkie pliki tymczasowe.</span><span class="sxs-lookup"><span data-stu-id="99036-187">If verification has failed at any stage, for instance, if the configuration pulled from the pull server is unsigned, then processing of the configuration terminates with the error shown below and all temporary files are deleted.</span></span>
 
 ![Przykładowa konfiguracja danych wyjściowych błędu](../images/PullUnsignedConfigFail.png)
 
-<span data-ttu-id="c68b0-189">Podobnie ściąganie modułu, którego katalog nie jest podpisany wyniki w następujący błąd:</span><span class="sxs-lookup"><span data-stu-id="c68b0-189">Similarly, pulling a module whose catalog is not signed results in the following error:</span></span>
+<span data-ttu-id="99036-189">Podobnie ściąganie modułu, którego katalog nie jest podpisany wyniki w następujący błąd:</span><span class="sxs-lookup"><span data-stu-id="99036-189">Similarly, pulling a module whose catalog is not signed results in the following error:</span></span>
 
 ![Przykładowe błąd danych wyjściowych modułu](../images/PullUnisgnedCatalog.png)
 
-#### <a name="push"></a><span data-ttu-id="c68b0-191">wypychania</span><span class="sxs-lookup"><span data-stu-id="c68b0-191">Push</span></span>
+#### <a name="push"></a><span data-ttu-id="99036-191">wypychania</span><span class="sxs-lookup"><span data-stu-id="99036-191">Push</span></span>
 
-<span data-ttu-id="c68b0-192">Konfiguracja dostarczane za pomocą instalacji wypychanej może dało się w ich źródle przed dostarczeniem jej do węzła.</span><span class="sxs-lookup"><span data-stu-id="c68b0-192">A configuration delivered by using push might be tampered with at its source before it delivered to the node.</span></span>
-<span data-ttu-id="c68b0-193">Local Configuration Manager wykonuje podobne kroki weryfikacji podpisu konfiguracje nastąpiło wypychanie oraz opublikowane.</span><span class="sxs-lookup"><span data-stu-id="c68b0-193">The Local Configuration Manager performs similar signature validation steps for pushed or published configuration(s).</span></span>
-<span data-ttu-id="c68b0-194">Poniżej znajduje się pełny przykład Weryfikacja podpisu do wypychania.</span><span class="sxs-lookup"><span data-stu-id="c68b0-194">Below is a complete example of signature validation for push.</span></span>
+<span data-ttu-id="99036-192">Konfiguracja dostarczane za pomocą instalacji wypychanej może dało się w ich źródle przed dostarczeniem jej do węzła.</span><span class="sxs-lookup"><span data-stu-id="99036-192">A configuration delivered by using push might be tampered with at its source before it delivered to the node.</span></span>
+<span data-ttu-id="99036-193">Local Configuration Manager wykonuje podobne kroki weryfikacji podpisu konfiguracje nastąpiło wypychanie oraz opublikowane.</span><span class="sxs-lookup"><span data-stu-id="99036-193">The Local Configuration Manager performs similar signature validation steps for pushed or published configuration(s).</span></span>
+<span data-ttu-id="99036-194">Poniżej znajduje się pełny przykład Weryfikacja podpisu do wypychania.</span><span class="sxs-lookup"><span data-stu-id="99036-194">Below is a complete example of signature validation for push.</span></span>
 
-- <span data-ttu-id="c68b0-195">Włącz weryfikację podpisu na węźle.</span><span class="sxs-lookup"><span data-stu-id="c68b0-195">Enable signature validation on the node.</span></span>
+- <span data-ttu-id="99036-195">Włącz weryfikację podpisu na węźle.</span><span class="sxs-lookup"><span data-stu-id="99036-195">Enable signature validation on the node.</span></span>
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -299,7 +299,7 @@ EnableSignatureValidation
 Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ```
 
-- <span data-ttu-id="c68b0-196">Utwórz przykładowy plik konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="c68b0-196">Create a sample configuration file.</span></span>
+- <span data-ttu-id="99036-196">Utwórz przykładowy plik konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="99036-196">Create a sample configuration file.</span></span>
 
 ```powershell
 # Sample configuration
@@ -315,7 +315,7 @@ Configuration Test
 Test
 ```
 
-- <span data-ttu-id="c68b0-197">Spróbuj wypychaniu można znaleźć pliku konfiguracji bez znaku w do węzła.</span><span class="sxs-lookup"><span data-stu-id="c68b0-197">Try pushing the unsigned configuration file in to the node.</span></span>
+- <span data-ttu-id="99036-197">Spróbuj wypychaniu można znaleźć pliku konfiguracji bez znaku w do węzła.</span><span class="sxs-lookup"><span data-stu-id="99036-197">Try pushing the unsigned configuration file in to the node.</span></span>
 
 ```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
@@ -323,10 +323,10 @@ Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
-- <span data-ttu-id="c68b0-199">Zaloguj się przy użyciu certyfikatu podpisywania kodu pliku konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="c68b0-199">Sign the configuration file using code-signing certificate.</span></span>
+- <span data-ttu-id="99036-199">Zaloguj się przy użyciu certyfikatu podpisywania kodu pliku konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="99036-199">Sign the configuration file using code-signing certificate.</span></span>
 
 ![SignMofFile](../images/SignMofFile.png)
 
-- <span data-ttu-id="c68b0-201">Spróbuj wypychanie podpisany plik MOF.</span><span class="sxs-lookup"><span data-stu-id="c68b0-201">Try pushing the signed MOF file.</span></span>
+- <span data-ttu-id="99036-201">Spróbuj wypychanie podpisany plik MOF.</span><span class="sxs-lookup"><span data-stu-id="99036-201">Try pushing the signed MOF file.</span></span>
 
 ![SignMofFile](../images/PushSignedMof.png)

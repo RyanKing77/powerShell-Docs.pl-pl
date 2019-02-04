@@ -1,22 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1c4a7ad30b04d138ba8a840968a6bf1763448ac6
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222008"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55688266"
 ---
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="24d15-102">Interakcje z łącza symbolicznego przy użyciu ulepszone elementu poleceń cmdlet</span><span class="sxs-lookup"><span data-stu-id="24d15-102">Interact with Symbolic links using improved Item cmdlets</span></span>
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="efee3-102">Interakcja z symboliczne linki korzystające z poleceń cmdlet elementów ulepszone</span><span class="sxs-lookup"><span data-stu-id="efee3-102">Interact with Symbolic links using improved Item cmdlets</span></span>
 
-<span data-ttu-id="24d15-103">Do obsługi łączy symbolicznych,  **\*— element** i zostały rozszerzone kilka pokrewne polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="24d15-103">To support symbolic links, **\*-Item** and a few related cmdlets have been extended.</span></span> <span data-ttu-id="24d15-104">Teraz możesz utworzyć łącza symbolicznego w jednej, prosty wiersz z **nowy element**.</span><span class="sxs-lookup"><span data-stu-id="24d15-104">Now you can create symbolic links in a single, simple line with **New-Item**.</span></span> <span data-ttu-id="24d15-105">Można zauważyć, że polecenia cmdlet związane z elementu (**Remove-Item, Get-ChildItem**) działają bardzo podobnie do wcześniej.</span><span class="sxs-lookup"><span data-stu-id="24d15-105">You’ll notice that the Item-related cmdlets (**Remove-Item, Get-ChildItem**) behave very similarly to before.</span></span>
+<span data-ttu-id="efee3-103">Do obsługi łącza symbolicznego,  **\*— element** i kilka powiązane polecenia cmdlet zostały rozszerzone.</span><span class="sxs-lookup"><span data-stu-id="efee3-103">To support symbolic links, **\*-Item** and a few related cmdlets have been extended.</span></span> <span data-ttu-id="efee3-104">Teraz możesz utworzyć łącza symbolicznego, w wierszu pojedynczy, proste **nowy element**.</span><span class="sxs-lookup"><span data-stu-id="efee3-104">Now you can create symbolic links in a single, simple line with **New-Item**.</span></span> <span data-ttu-id="efee3-105">Należy zauważyć, że polecenia cmdlet związane z elementu (**Remove-Item, Get-ChildItem**) działają bardzo podobnie do wcześniej.</span><span class="sxs-lookup"><span data-stu-id="efee3-105">You’ll notice that the Item-related cmdlets (**Remove-Item, Get-ChildItem**) behave very similarly to before.</span></span>
 
-<span data-ttu-id="24d15-106">Poniżej zamieszczono niektóre zastosowań nowe możliwości:</span><span class="sxs-lookup"><span data-stu-id="24d15-106">The following shows some use cases of the new capabilities:</span></span>
+<span data-ttu-id="efee3-106">Poniżej przedstawiono, że niektóre zastosowań nowych możliwości:</span><span class="sxs-lookup"><span data-stu-id="efee3-106">The following shows some use cases of the new capabilities:</span></span>
 
-## <a name="new-item"></a><span data-ttu-id="24d15-107">NOWY ELEMENT</span><span class="sxs-lookup"><span data-stu-id="24d15-107">NEW-ITEM</span></span>
+## <a name="new-item"></a><span data-ttu-id="efee3-107">NOWY ELEMENT</span><span class="sxs-lookup"><span data-stu-id="efee3-107">NEW-ITEM</span></span>
 
-### <a name="symbolic-link-files"></a><span data-ttu-id="24d15-108">ŁĄCZE SYMBOLICZNE PLIKÓW</span><span class="sxs-lookup"><span data-stu-id="24d15-108">SYMBOLIC LINK FILES</span></span>
+### <a name="symbolic-link-files"></a><span data-ttu-id="efee3-108">ŁĄCZA SYMBOLICZNEGO, PLIKI</span><span class="sxs-lookup"><span data-stu-id="efee3-108">SYMBOLIC LINK FILES</span></span>
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -30,7 +30,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### <a name="symbolic-link-directories"></a><span data-ttu-id="24d15-109">ŁĄCZE SYMBOLICZNE KATALOGÓW</span><span class="sxs-lookup"><span data-stu-id="24d15-109">SYMBOLIC LINK DIRECTORIES</span></span>
+### <a name="symbolic-link-directories"></a><span data-ttu-id="efee3-109">ŁĄCZE SYMBOLICZNE KATALOGÓW</span><span class="sxs-lookup"><span data-stu-id="efee3-109">SYMBOLIC LINK DIRECTORIES</span></span>
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -45,21 +45,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### <a name="hard-links"></a><span data-ttu-id="24d15-110">TWARDE ŁĄCZA</span><span class="sxs-lookup"><span data-stu-id="24d15-110">HARD LINKS</span></span>
+### <a name="hard-links"></a><span data-ttu-id="efee3-110">TWARDE LINKI</span><span class="sxs-lookup"><span data-stu-id="efee3-110">HARD LINKS</span></span>
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a><span data-ttu-id="24d15-111">SKRZYŻOWANIACH KATALOGU</span><span class="sxs-lookup"><span data-stu-id="24d15-111">DIRECTORY JUNCTIONS</span></span>
+### <a name="directory-junctions"></a><span data-ttu-id="efee3-111">KATALOG W PUNKTACH TRANSFERU</span><span class="sxs-lookup"><span data-stu-id="efee3-111">DIRECTORY JUNCTIONS</span></span>
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## <a name="get-childitem"></a><span data-ttu-id="24d15-112">GET-CHILDITEM</span><span class="sxs-lookup"><span data-stu-id="24d15-112">GET-CHILDITEM</span></span>
+## <a name="get-childitem"></a><span data-ttu-id="efee3-112">POLECENIE GET-CHILDITEM</span><span class="sxs-lookup"><span data-stu-id="efee3-112">GET-CHILDITEM</span></span>
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -110,7 +110,7 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a><span data-ttu-id="24d15-113">USUŃ ELEMENT</span><span class="sxs-lookup"><span data-stu-id="24d15-113">REMOVE-ITEM</span></span>
+## <a name="remove-item"></a><span data-ttu-id="efee3-113">USUŃ ELEMENT</span><span class="sxs-lookup"><span data-stu-id="efee3-113">REMOVE-ITEM</span></span>
 
 ```powershell
 # Works like any other item type
