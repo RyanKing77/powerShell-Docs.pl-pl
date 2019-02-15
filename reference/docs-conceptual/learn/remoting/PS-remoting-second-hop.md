@@ -2,100 +2,101 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Wykonywanie drugiego przeskoku w komunikacji zdalnej programu PowerShell
-ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404981"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265590"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Wykonywanie drugiego przeskoku w komunikacji zdalnej programu PowerShell
 
-"Drugi problem przeskoku" odwołuje się do sytuacji, jak pokazano poniżej:
+"Drugi problem przeskoku" odwołuje się do sytuacji podobne do poniższych:
 
 1. Użytkownik jest zalogowany do _Serwer_a_.
-2. Z _Serwer_a_, rozpocząć zdalną sesję programu PowerShell, aby nawiązać połączenie _ServerB_.
-3. Polecenie uruchamiane na _ServerB_ za pośrednictwem usługi komunikacji zdalnej programu PowerShell sesji próbuje uzyskać dostęp do zasobu na _ServerC_.
+2. Z _Serwer_a_, Uruchom sesję zdalną programu PowerShell do nawiązania połączenia _ServerB_.
+3. Polecenie jest uruchamiane na _ServerB_ za pośrednictwem komunikacji zdalnej programu PowerShell sesji podejmie próbę uzyskania dostępu do zasobu na _ServerC_.
 4. Dostęp do zasobu na _ServerC_ odmowa, ponieważ poświadczenia użyte do utworzenia sesji komunikacji zdalnej programu PowerShell nie są przekazywane z _ServerB_ do _ServerC_.
 
-Istnieje kilka sposobów, aby rozwiązać ten problem. W tym temacie omówimy kilka najbardziej popularne rozwiązania do drugiego przeskoku problemu.
+Istnieje kilka sposobów, aby rozwiązać ten problem. W tym temacie wyjaśniono, kilka najbardziej popularnych rozwiązań problemu drugiego przeskoku.
 
 ## <a name="credssp"></a>Protokół CredSSP
 
-Możesz użyć [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) do uwierzytelniania. Protokół CredSSP buforuje poświadczeń na serwerze zdalnym (_ServerB_), więc za jego pomocą zostanie otwarty do ataków z kradzieżą poświadczeń. Jeśli komputer zdalny zostanie naruszony, osoba atakująca ma dostęp do poświadczeń użytkownika. Protokół CredSSP jest domyślnie wyłączona, na komputerach klienta i serwera. Tylko w środowiskach najbardziej zaufaną, należy włączyć uwierzytelnianie CredSSP. Na przykład administrator domeny połączeniem z kontrolerem domeny, ponieważ kontroler domeny jest wysoce zaufanym.
+Można użyć [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) do uwierzytelniania. CredSSP buforuje poświadczeń na serwerze zdalnym (_ServerB_), aby za jej pomocą otwiera do ataków kradzieży poświadczeń. W przypadku naruszenia zabezpieczeń komputera zdalnego atakujący ma dostęp do poświadczeń użytkownika. Domyślnie na komputerach klienta i serwera jest wyłączone uwierzytelnianie CredSSP. Tylko w środowiskach najbardziej zaufany, należy włączyć uwierzytelnianie CredSSP. Na przykład administrator domeny połączeniem z kontrolerem domeny, ponieważ kontroler domeny jest wysoce zaufanych.
 
-Aby uzyskać więcej informacji na temat obawy związane z bezpieczeństwem w przypadku używania protokołu CredSSP dla komunikacji zdalnej programu PowerShell, zobacz [przypadkowym sabotażu: Uwaga, protokół CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
+Aby uzyskać więcej informacji na temat problemy z zabezpieczeniami w przypadku używania protokołu CredSSP dla komunikacji zdalnej programu PowerShell, zobacz [przypadkowemu sabotażu: Uważaj CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
-Aby uzyskać więcej informacji dotyczących ataków z kradzieżą poświadczeń, zobacz [ataków Mitigating Pass--Hash (PtH) i inne kradzieży poświadczeń](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
+Aby uzyskać więcej informacji dotyczących ataków kradzieży poświadczeń, zobacz [ataków Podręcznik Mitigating Pass--Hash (PtH) i inne kradzieży poświadczeń](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
-Na przykład sposobu włączania i protokół CredSSP na użytek komunikacji zdalnej programu PowerShell, zobacz [za pomocą protokołu CredSSP, aby rozwiązać problem drugiego przeskoku](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
+Na przykład sposobu włączania i użyć protokołu CredSSP do komunikacji zdalnej programu PowerShell, zobacz [przy użyciu protokołu CredSSP, aby rozwiązać problem drugiego przeskoku](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/).
 
 ### <a name="pros"></a>Zalety
 
-- Działa na wszystkich serwerach z systemem Windows Server 2008 lub nowszym.
+- Działa dla wszystkich serwerów z systemem Windows Server 2008 lub nowszym.
 
 ### <a name="cons"></a>Wady
 
 - Ma luki w zabezpieczeniach.
-- Wymaga konfiguracji klienta i serwera ról.
+- Wymaga konfiguracji ról klienta i serwera.
 
 ## <a name="kerberos-delegation-unconstrained"></a>Delegowanie protokołu Kerberos (nieograniczonego)
 
-Delegowanie protokołu Kerberos, nieograniczone mogą być również używane się drugiego przeskoku. Jednak ta metoda zapewnia nie kontroli nad którym delegowane poświadczenia są używane.
+Delegowanie protokołu Kerberos nieograniczonego można również używać do utworzyć drugi przeskok. Jednak ta metoda sterowanie nie jest dostępne, z którym delegowane poświadczenia są używane.
 
->**Uwaga:** Konta usługi Active Directory, które mają **konto jest poufne i nie może być delegowane** ustawioną właściwość nie może być delegowane. Aby uzyskać więcej informacji, zobacz [fokus zabezpieczeń: Analizowanie "Konto jest poufne i nie może być delegowane" dla kont uprzywilejowanych](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) i [narzędzia uwierzytelniania Kerberos i ustawienia](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**Uwaga:** Konta usługi Active Directory mających **konto jest poufne i nie może być delegowane** zestaw właściwości nie może być delegowane. Aby uzyskać więcej informacji, zobacz [fokus zabezpieczeń: Analizowanie "Konto jest poufne i nie może być delegowane" dla kont uprzywilejowanych](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) i [narzędzia uwierzytelniania Kerberos i ustawienia](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>Zalety
 
-- Wymaga bez kodowania.
+- Wymaga nie kodowania.
 
 ### <a name="cons"></a>Wady
 
-- Nie obsługuje drugiego przeskoku w przypadku usługi WinRM.
-- Zapewnia kontrolę której są używane poświadczenia, tworząc luki w zabezpieczeniach.
+- Nie obsługuje drugi przeskok usługi WinRM.
+- Umożliwia sterowanie gdy używane są poświadczenia, tworząc luki w zabezpieczeniach.
 
 ## <a name="kerberos-constrained-delegation"></a>Ograniczone delegowanie protokołu Kerberos
 
-Zapewnienie drugiego przeskoku, można użyć starszego ograniczonego delegowania (nie opartego na zasobach).
+Starsze ograniczonego delegowania (nie opartych na zasobach) umożliwia utworzyć drugi przeskok. Skonfiguruj ograniczone delegowanie protokołu Kerberos z opcją "Użyj dowolnego protokołu uwierzytelniania" Aby umożliwić przejścia protokołu.
 
->**Uwaga:** Konta usługi Active Directory, które mają **konto jest poufne i nie może być delegowane** ustawioną właściwość nie może być delegowane. Aby uzyskać więcej informacji, zobacz [fokus zabezpieczeń: Analizowanie "Konto jest poufne i nie może być delegowane" dla kont uprzywilejowanych](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) i [narzędzia uwierzytelniania Kerberos i ustawienia](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+> [!NOTE]
+> Konta usługi Active Directory mających **konto jest poufne i nie może być delegowane** zestaw właściwości nie może być delegowane. Aby uzyskać więcej informacji, zobacz [fokus zabezpieczeń: Analizowanie "Konto jest poufne i nie może być delegowane" dla kont uprzywilejowanych](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) i [narzędzia uwierzytelniania Kerberos i ustawienia](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>Zalety
 
-- Wymaga bez kodowania
+- Wymaga nie kodowania
 
 ### <a name="cons"></a>Wady
 
-- Nie obsługuje drugiego przeskoku w przypadku usługi WinRM.
+- Nie obsługuje drugi przeskok usługi WinRM.
 - Musi być skonfigurowany w obiekcie Active Directory serwera zdalnego (_ServerB_).
-- Ograniczone do jednej domeny. Nie może przekraczać domen i lasów.
+- Ograniczone do jednej domeny. Nie można dla wielu domen i lasów.
 - Wymaga uprawnień do aktualizowania obiektów oraz główne nazwy usług (SPN).
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>Oparte na zasobach ograniczonego delegowania protokołu Kerberos
 
-Przy użyciu protokołu Kerberos z opartego na zasobach ograniczonego delegowania (wprowadzona w systemie Windows Server 2012), skonfigurować delegowanie poświadczeń na obiekt serwera, gdzie znajdują się zasoby.
-W drugim scenariuszu przeskoku opisanych powyżej, można skonfigurować _ServerC_ do określenia, z której będzie akceptować delegowane poświadczenia.
+Przy użyciu Kerberos oparte na zasobach ograniczonego delegowania (wprowadzona w systemie Windows Server 2012), należy skonfigurować delegowanie poświadczeń na obiekt serwera, gdzie znajdują się zasoby.
+W drugi przeskok opisane powyżej, należy skonfigurować _ServerC_ Aby określić, z której będzie akceptować delegowane poświadczenia.
 
->**Uwaga:** Konta usługi Active Directory, które mają **konto jest poufne i nie może być delegowane** ustawioną właściwość nie może być delegowane. Aby uzyskać więcej informacji, zobacz [fokus zabezpieczeń: Analizowanie "Konto jest poufne i nie może być delegowane" dla kont uprzywilejowanych](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) i [narzędzia uwierzytelniania Kerberos i ustawienia](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**Uwaga:** Konta usługi Active Directory mających **konto jest poufne i nie może być delegowane** zestaw właściwości nie może być delegowane. Aby uzyskać więcej informacji, zobacz [fokus zabezpieczeń: Analizowanie "Konto jest poufne i nie może być delegowane" dla kont uprzywilejowanych](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) i [narzędzia uwierzytelniania Kerberos i ustawienia](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>Zalety
 
 - Poświadczenia nie są przechowywane.
-- Stosunkowo łatwa do skonfigurowania za pomocą poleceń cmdlet programu PowerShell — nie specjalne jest wymagane tworzenie kodu.
-- Brak dostępu specjalnego domeny jest wymagana.
-- Działa na różnych domen i lasów.
+- Stosunkowo łatwa do skonfigurowania za pomocą poleceń cmdlet programu PowerShell — nie kodowania specjalne wymagane.
+- Brak dostępu specjalnego domeny jest wymagany.
+- Sprawdza się w domenach i lasach.
 - Kod programu PowerShell.
 
 ### <a name="cons"></a>Wady
 
-- Wymaga systemu Windows Server 2012 lub nowszy.
-- Nie obsługuje drugiego przeskoku w przypadku usługi WinRM.
+- Wymaga systemu Windows Server 2012 lub nowszym.
+- Nie obsługuje drugi przeskok usługi WinRM.
 - Wymaga uprawnień do aktualizowania obiektów oraz główne nazwy usług (SPN).
 
 ### <a name="example"></a>Przykład
 
-Przyjrzyjmy się programu PowerShell, na przykład, który umożliwia skonfigurowanie zasobów na podstawie ograniczonego delegowania _ServerC_ umożliwia delegowane poświadczenia z _ServerB_.
-W tym przykładzie założono, że wszystkie serwery działają Windows Server 2012 lub nowszy, i że istnieje co najmniej jeden kontroler domeny systemu Windows Server 2012 każdej domeny, które dowolnego z serwerów należą.
+Przyjrzyjmy się PowerShell, na przykład, który konfiguruje zasobów na podstawie delegowania ograniczonego _ServerC_ umożliwia delegowane poświadczenia z _ServerB_.
+W tym przykładzie założono, że wszystkie serwery działają systemu Windows Server 2012 lub nowszym, i że istnieje co najmniej jeden kontroler domeny systemu Windows Server 2012 każdej domeny, do których serwerów należą.
 
 Aby można było skonfigurować delegowanie ograniczone, należy dodać `RSAT-AD-PowerShell` funkcji do zainstalowania modułu środowiska PowerShell usługi Active Directory, a następnie zaimportuj ten moduł do sesji:
 
@@ -104,7 +105,7 @@ PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
 
 PS C:\> Import-Module ActiveDirectory
 ```
-Teraz masz kilka dostępnych poleceń cmdlet **PrincipalsAllowedToDelegateToAccount** parametru:
+Kilka poleceń cmdlet dostępnych już **PrincipalsAllowedToDelegateToAccount** parametru:
 
 ```powershell
 PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
@@ -119,7 +120,7 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-**PrincipalsAllowedToDelegateToAccount** parametr ustawia atrybut obiektu usługi Active Directory **msDS-AllowedToActOnBehalfOfOtherIdentity**, który zawiera listy kontroli dostępu (ACL), Określa, które konta mają uprawnienia do delegowania poświadczeń do skojarzonego konta (w naszym przykładzie będzie konto komputera dla _serwera_).
+**PrincipalsAllowedToDelegateToAccount** parametr ustawia atrybut obiektu usługi Active Directory **msDS-AllowedToActOnBehalfOfOtherIdentity**, który zawiera listy kontroli dostępu (ACL) który Określa konta, które ma uprawnienia do delegowania poświadczeń do skojarzonego konta (w tym przykładzie będzie konto komputera dla _serwera_).
 
 Teraz Skonfigurujmy zmienne będą używane do reprezentowania serwerów:
 
@@ -130,7 +131,7 @@ $ServerB = Get-ADComputer -Identity ServerB
 $ServerC = Get-ADComputer -Identity ServerC
 ```
 
-Usługa WinRM (i w związku z tym komunikacji zdalnej programu PowerShell) jest domyślnie uruchamiany jako konto komputera. Można to zobaczyć, analizując **StartName** właściwość `winrm` usługi:
+Usługa WinRM (i w związku z tym obsługę zdalną środowiska PowerShell) domyślnie działa jako konto komputera. Zobacz ten analizując **StartName** właściwość `winrm` usługi:
 
 ```powershell
 PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartName
@@ -138,7 +139,7 @@ PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartNa
 StartName : NT AUTHORITY\NetworkService
 ```
 
-Dla _ServerC_ aby umożliwić delegowanie sesji komunikacji zdalnej programu PowerShell na _ServerB_, firma Microsoft spowoduje przyznanie dostępu przez ustawienie **PrincipalsAllowedToDelegateToAccount** Parametr _ServerC_ do obiektu komputera _ServerB_:
+Aby uzyskać _ServerC_ aby umożliwić delegowanie w sesji komunikacji zdalnej programu PowerShell na _ServerB_, firma Microsoft będzie zezwalał na dostęp przez ustawienie **PrincipalsAllowedToDelegateToAccount** Parametr _ServerC_ do obiektu komputera z _ServerB_:
 
 ```powershell
 # Grant resource-based Kerberos constrained delegation
@@ -152,7 +153,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Kerberos [Centrum dystrybucji kluczy (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) pamięci podręcznych odmowa prób dostępu (negatywna pamięć podręczna) przez 15 minut. Jeśli _ServerB_ wcześniej próbowało uzyskać dostęp do _ServerC_, należy wyczyścić pamięć podręczną na _ServerB_ za pomocą następującego polecenia:
+Kerberos [Centrum dystrybucji kluczy (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) pamięci podręcznych odmowa prób dostępu (negatywną pamięć podręczną) przez 15 minut. Jeśli _ServerB_ wcześniej próbowało uzyskać dostęp do _ServerC_, należy wyczyścić pamięć podręczną na _ServerB_ za pomocą następującego polecenia:
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -160,7 +161,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-Można również ponowne uruchomienie komputera lub poczekaj co najmniej 15 minut, aby wyczyścić pamięć podręczną.
+Można także ponownie uruchom komputer lub zaczekaj co najmniej 15 minut, aby wyczyścić pamięć podręczną.
 
 Po wyczyszczeniu pamięci podręcznej, można pomyślnie uruchomić kod z _Serwer_a_ za pośrednictwem _ServerB_ do _ServerC_:
 
@@ -176,9 +177,9 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-W tym przykładzie `$using` zmienna jest używane do obliczania `$ServerC` widoczne dla zmiennej _ServerB_. Aby uzyskać więcej informacji na temat `$using` zmiennych, zobacz [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
+W tym przykładzie `$using` zmiennej jest używane do obliczania `$ServerC` widoczne dla zmiennej _ServerB_. Aby uzyskać więcej informacji na temat `$using` zmiennych, zobacz [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx).
 
-Aby zezwolić na wiele serwerów delegować poświadczenia, aby _ServerC_, ustaw wartość **PrincipalsAllowedToDelegateToAccount** parametru _ServerC_ do tablicy:
+Aby umożliwić delegowanie poświadczeń w celu na wielu serwerach _ServerC_, ustaw wartość **PrincipalsAllowedToDelegateToAccount** parametru na _ServerC_ do tablicy:
 
 ```powershell
 # Set up variables for each server
@@ -192,7 +193,7 @@ Set-ADComputer -Identity $ServerC `
     -PrincipalsAllowedToDelegateToAccount @($ServerB1,$ServerB2,$ServerB3)
 ```
 
-Jeśli chcesz utworzyć drugiego przeskoku w domenach, Dodaj w pełni kwalifikowana nazwa domeny (FQDN) kontrolera domeny, domeny, do którego _ServerB_ należy:
+Jeśli chcesz utworzyć drugi przeskok między domenami, Dodaj pełni kwalifikowaną nazwę domeny (FQDN) z kontrolerem domeny w domenie do której _ServerB_ należy:
 
 ```powershell
 # For ServerC in Contoso domain and ServerB in other domain
@@ -207,50 +208,50 @@ Aby usunąć możliwość delegowania poświadczeń do ServerC, ustaw wartość 
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 ```
 
-### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>Informacji na temat opartego na zasobach ograniczonego delegowania protokołu Kerberos
+### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>Informacje o oparte na zasobach ograniczonego delegowania protokołu Kerberos
 
-- [What's New in uwierzytelnianie Kerberos](https://technet.microsoft.com/library/hh831747.aspx)
-- [W jaki sposób system Windows Server 2012 ułatwia ból Kerberos ograniczone delegowanie, część 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [Jak system Windows Server 2012 ułatwia ból Kerberos ograniczone delegowanie, część 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
-- [Opis protokołu Kerberos ograniczone delegowanie dla wdrożenia serwera Proxy aplikacji usługi Azure Active Directory przy użyciu uwierzytelniania zintegrowanego Windows](https://aka.ms/kcdpaper)
+- [Nowości w uwierzytelnianiu Kerberos](https://technet.microsoft.com/library/hh831747.aspx)
+- [Jak Windows Server 2012 ułatwia słabe z protokołu Kerberos ograniczonego delegowania, część 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
+- [Jak Windows Server 2012 ułatwia słabe z protokołu Kerberos ograniczonego delegowania, część 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
+- [Opis protokołu Kerberos ograniczonego delegowania dla wdrożenia serwera Proxy aplikacji usługi Azure Active Directory przy użyciu zintegrowanego uwierzytelniania systemu Windows](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory schematu atrybutów M2.210 atrybutu msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU]: Rozszerzenia protokołu Kerberos: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
-- [Zasób na podstawie protokołu Kerberos ograniczone delegowanie](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
-- [Administracja zdalna bez ograniczone delegowanie przy użyciu PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
+- [Zasobów na podstawie protokołu Kerberos ograniczonego delegowania](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
+- [Administracja zdalna bez delegowania ograniczonego przy użyciu PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
 ## <a name="pssessionconfiguration-using-runas"></a>PSSessionConfiguration przy użyciu funkcji RunAs
 
-Można utworzyć konfiguracji sesji na _ServerB_ i ustaw jego **RunAsCredential** parametru.
+Możesz utworzyć konfigurację sesji na _ServerB_ i ustawić jej **RunAsCredential** parametru.
 
-Aby dowiedzieć się, jak przy użyciu PSSessionConfiguration i Uruchom jako, aby rozwiązać drugi problem przeskoków, zobacz [kolejnego rozwiązania do komunikacji zdalnej programu PowerShell z wieloma przeskokami](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
+Aby dowiedzieć się, jak za pomocą PSSessionConfiguration i RunAs rozwiązać drugi przeskok, zobacz [innego rozwiązania do komunikacji zdalnej programu PowerShell z wieloma przeskokami](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/).
 
 ### <a name="pros"></a>Zalety
 
-- Działa z każdym serwerem przy użyciu programu WMF 3.0 lub nowszej.
+- Działa z dowolnym serwerem z WMF 3.0 lub nowszej.
 
 ### <a name="cons"></a>Wady
 
-- Wymaga konfiguracji **PSSessionConfiguration** i **RunAs** na każdym serwerze pośredni (_ServerB_).
-- Wymaga obsługi haseł, podczas korzystania z domeny **RunAs** konta
+- Wymaga konfiguracji **PSSessionConfiguration** i **RunAs** na każdym serwerze pośredniego (_ServerB_).
+- Wymaga obsługi haseł, korzystając z domeny **RunAs** konta
 
 ## <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 
-JEA pozwala ograniczyć jakie polecenia, które administrator może być uruchomiony w sesji programu PowerShell. Może służyć do problemu drugiego przeskoku.
+JEA pozwala ograniczyć poleceń, jakie administrator można uruchomić sesji programu PowerShell. Można go rozwiązać drugi przeskok.
 
-Aby uzyskać informacji na temat technologii JEA, zobacz [Just Enough Administration](https://docs.microsoft.com/powershell/jea/overview).
+Aby uzyskać informacje o JEA, zobacz [tylko tyle administracji](https://docs.microsoft.com/powershell/jea/overview).
 
 ### <a name="pros"></a>Zalety
 
-- Nie obsługi haseł podczas korzystania z wirtualnego konta.
+- Nie obsługi hasła korzystając z konta wirtualnego.
 
 ### <a name="cons"></a>Wady
 
-- Wymaga programu WMF 5.0 lub nowszy.
-- Wymaga konfiguracji na każdym serwerze pośredni (_ServerB_).
+- Wymaga WMF 5.0 lub nowszej.
+- Wymaga konfiguracji na każdym serwerze pośredniego (_ServerB_).
 
-## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Przekazywania poświadczeń wewnątrz bloku skryptu Invoke-Command
+## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Przekazywanie poświadczeń wewnątrz bloku skryptu Invoke-Command
 
-Można przekazać poświadczenia wewnątrz **ScriptBlock** parametr wywołania [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) polecenia cmdlet.
+Można przekazać poświadczenia wewnątrz **ScriptBlock** parametru wywołania [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) polecenia cmdlet.
 
 ### <a name="pros"></a>Zalety
 
@@ -259,12 +260,12 @@ Można przekazać poświadczenia wewnątrz **ScriptBlock** parametr wywołania [
 
 ### <a name="cons"></a>Wady
 
-- Wymaga technikę niewygodna kodu.
-- Jeśli z programem WMF 2.0, wymaga innej składni dotyczących przekazywania argumentów do sesji zdalnej.
+- Wymaga technikę nieodpowiednich kodu.
+- Jeśli uruchomiona WMF 2.0, wymaga innej składni przekazywanie argumentów do sesji zdalnej.
 
 ### <a name="example"></a>Przykład
 
-Poniższy przykład przedstawia sposób przekazywania poświadczeń w **Invoke-Command** blok skryptu:
+Poniższy przykład przedstawia sposób przekazywania poświadczeń w **Invoke-Command** bloku skryptu:
 
 ```powershell
 # This works without delegation, passing fresh creds
