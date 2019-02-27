@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Zaawansowane tworzenie zawartości DSC na potrzeby składania i współpracy
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: Opis roli firmy DSC w potoku ciągłej integracji/ciągłego wdrażania
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687174"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803382"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>Zaawansowane tworzenie zawartości DSC na potrzeby składania i współpracy
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Opis roli firmy DSC w potoku ciągłej integracji/ciągłego wdrażania
 
 W tym artykule opisano rodzaje metody łączenia konfiguracjami i zasobami.
 Celem dla każdego scenariusza jest takie same, aby ograniczyć złożoność przy konfiguracji z wieloma są preferowane nawiązać połączenie z serwerem stanu końcowego wdrożenia.
@@ -22,7 +22,7 @@ Szczegóły skutecznego każde podejście, w tym korzyści i zagrożeń są szcz
 
 Istnieją dwa rozwiązania wbudowane Local Configuration Manager, aby włączyć tę koncepcję:
 
-| Pojęcia | Szczegółowe informacje
+| Pojęcie | Szczegółowe informacje
 |-|-
 | Konfiguracje częściowe | [Dokumentacja](../pull-server/partialConfigs.md)
 | Zasoby złożone | [Dokumentacja](../resources/authoringResourceComposite.md)
