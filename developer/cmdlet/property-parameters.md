@@ -8,89 +8,41 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
 caps.latest.revision: 6
-ms.openlocfilehash: 431ed002fdcf682072552e8b64134f130503dfbb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc0742b86a7a36e5712707c077fd1952691f3f4b
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849994"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251425"
 ---
-# <a name="property-parameters"></a><span data-ttu-id="ea857-102">Parametry właściwości</span><span class="sxs-lookup"><span data-stu-id="ea857-102">Property Parameters</span></span>
+# <a name="property-parameters"></a><span data-ttu-id="127a8-102">Parametry właściwości</span><span class="sxs-lookup"><span data-stu-id="127a8-102">Property Parameters</span></span>
 
-<span data-ttu-id="ea857-103">W poniższej tabeli wymieniono nazwy zalecane i funkcje dotyczące parametrów właściwości.</span><span class="sxs-lookup"><span data-stu-id="ea857-103">The following table lists the recommended names and functionality for property parameters.</span></span>
+<span data-ttu-id="127a8-103">W poniższej tabeli wymieniono nazwy zalecane i funkcje dotyczące parametrów właściwości.</span><span class="sxs-lookup"><span data-stu-id="127a8-103">The following table lists the recommended names and functionality for property parameters.</span></span>
 
-<span data-ttu-id="ea857-104">Typ danych liczba: Int32</span><span class="sxs-lookup"><span data-stu-id="ea857-104">Count Data type: Int32</span></span>
+|<span data-ttu-id="127a8-104">Parametr</span><span class="sxs-lookup"><span data-stu-id="127a8-104">Parameter</span></span>|<span data-ttu-id="127a8-105">Funkcja</span><span class="sxs-lookup"><span data-stu-id="127a8-105">Functionality</span></span>|
+|---|---|
+|<span data-ttu-id="127a8-106">**Liczba**</span><span class="sxs-lookup"><span data-stu-id="127a8-106">**Count**</span></span><br><span data-ttu-id="127a8-107">Typ danych: Int32</span><span class="sxs-lookup"><span data-stu-id="127a8-107">Data type: Int32</span></span>|<span data-ttu-id="127a8-108">Implementowanie tego parametru, użytkownik może określić liczbę obiektów, które mają być przetwarzane.</span><span class="sxs-lookup"><span data-stu-id="127a8-108">Implement this parameter so that the user can specify the number of objects to be processed.</span></span>|
+|<span data-ttu-id="127a8-109">**Opis**</span><span class="sxs-lookup"><span data-stu-id="127a8-109">**Description**</span></span><br><span data-ttu-id="127a8-110">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-110">Data type: String</span></span>|<span data-ttu-id="127a8-111">Implementowanie tego parametru, użytkownik może określić opis dla zasobu.</span><span class="sxs-lookup"><span data-stu-id="127a8-111">Implement this parameter so that the user can specify a description for a resource.</span></span>|
+|<span data-ttu-id="127a8-112">**From**</span><span class="sxs-lookup"><span data-stu-id="127a8-112">**From**</span></span><br><span data-ttu-id="127a8-113">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-113">Data type: String</span></span>|<span data-ttu-id="127a8-114">Implementowanie tego parametru, użytkownik może określić obiekt odwołania, aby uzyskać informacji o.</span><span class="sxs-lookup"><span data-stu-id="127a8-114">Implement this parameter so that the user can specify the reference object to get information from.</span></span>|
+|<span data-ttu-id="127a8-115">**Identyfikator**</span><span class="sxs-lookup"><span data-stu-id="127a8-115">**Id**</span></span><br><span data-ttu-id="127a8-116">Typ danych: Zasób zależny</span><span class="sxs-lookup"><span data-stu-id="127a8-116">Data type: Resource dependent</span></span>|<span data-ttu-id="127a8-117">Implementowanie tego parametru, użytkownik może określić identyfikator zasobu.</span><span class="sxs-lookup"><span data-stu-id="127a8-117">Implement this parameter so that the user can specify the identifier of a resource.</span></span>|
+|<span data-ttu-id="127a8-118">**Dane wejściowe**</span><span class="sxs-lookup"><span data-stu-id="127a8-118">**Input**</span></span><br><span data-ttu-id="127a8-119">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-119">Data type: String</span></span>|<span data-ttu-id="127a8-120">Implementowanie tego parametru, użytkownik może określić specyfikacji pliku wejściowego.</span><span class="sxs-lookup"><span data-stu-id="127a8-120">Implement this parameter so that the user can specify the input file specification.</span></span>|
+|<span data-ttu-id="127a8-121">**Lokalizacja**</span><span class="sxs-lookup"><span data-stu-id="127a8-121">**Location**</span></span><br><span data-ttu-id="127a8-122">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-122">Data type: String</span></span>|<span data-ttu-id="127a8-123">Implementowanie tego parametru, użytkownik może określić lokalizację zasobu.</span><span class="sxs-lookup"><span data-stu-id="127a8-123">Implement this parameter so that the user can specify the location of the resource.</span></span>|
+|<span data-ttu-id="127a8-124">**LogName**</span><span class="sxs-lookup"><span data-stu-id="127a8-124">**LogName**</span></span><br><span data-ttu-id="127a8-125">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-125">Data type: String</span></span>|<span data-ttu-id="127a8-126">Implementowanie tego parametru, użytkownik może określić nazwę pliku dziennika, aby przetworzyć lub użycia.</span><span class="sxs-lookup"><span data-stu-id="127a8-126">Implement this parameter so that the user can specify the name of the log file to process or use.</span></span>|
+|<span data-ttu-id="127a8-127">**Nazwa**</span><span class="sxs-lookup"><span data-stu-id="127a8-127">**Name**</span></span><br><span data-ttu-id="127a8-128">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-128">Data type: String</span></span>|<span data-ttu-id="127a8-129">Implementowanie tego parametru, użytkownik może określić nazwę zasobu.</span><span class="sxs-lookup"><span data-stu-id="127a8-129">Implement this parameter so that the user can specify the name of the resource.</span></span>|
+|<span data-ttu-id="127a8-130">**Dane wyjściowe**</span><span class="sxs-lookup"><span data-stu-id="127a8-130">**Output**</span></span><br><span data-ttu-id="127a8-131">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-131">Data type: String</span></span>|<span data-ttu-id="127a8-132">Implementowanie tego parametru, użytkownik może określić pliku wyjściowego.</span><span class="sxs-lookup"><span data-stu-id="127a8-132">Implement this parameter so that the user can specify the output file.</span></span>|
+|<span data-ttu-id="127a8-133">**Właściciel**</span><span class="sxs-lookup"><span data-stu-id="127a8-133">**Owner**</span></span><br><span data-ttu-id="127a8-134">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-134">Data type: String</span></span>|<span data-ttu-id="127a8-135">Implementowanie tego parametru, użytkownik może określić nazwę właściciela zasobu.</span><span class="sxs-lookup"><span data-stu-id="127a8-135">Implement this parameter so that the user can specify the name of the owner of the resource.</span></span>|
+|<span data-ttu-id="127a8-136">**Property**</span><span class="sxs-lookup"><span data-stu-id="127a8-136">**Property**</span></span><br><span data-ttu-id="127a8-137">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-137">Data type: String</span></span>|<span data-ttu-id="127a8-138">Implementowanie tego parametru, użytkownik może określić nazwę lub nazwy właściwości do użycia.</span><span class="sxs-lookup"><span data-stu-id="127a8-138">Implement this parameter so that the user can specify the name or the names of the properties to use.</span></span>|
+|<span data-ttu-id="127a8-139">**Przyczyna**</span><span class="sxs-lookup"><span data-stu-id="127a8-139">**Reason**</span></span><br><span data-ttu-id="127a8-140">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-140">Data type: String</span></span>|<span data-ttu-id="127a8-141">Implementowanie tego parametru, użytkownik może określić, dlaczego to polecenie cmdlet jest wywoływana.</span><span class="sxs-lookup"><span data-stu-id="127a8-141">Implement this parameter so that the user can specify why this cmdlet is being invoked.</span></span>|
+|<span data-ttu-id="127a8-142">**Regex**</span><span class="sxs-lookup"><span data-stu-id="127a8-142">**Regex**</span></span><br><span data-ttu-id="127a8-143">Typ danych: SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="127a8-143">Data type: SwitchParameter</span></span>|<span data-ttu-id="127a8-144">Implementowanie tego parametru, wyrażenia regularne są używane, gdy określono parametr.</span><span class="sxs-lookup"><span data-stu-id="127a8-144">Implement this parameter so that regular expressions are used when the parameter is specified.</span></span> <span data-ttu-id="127a8-145">Jeśli ten parametr jest określony, symbole wieloznaczne nie są rozpoznawane.</span><span class="sxs-lookup"><span data-stu-id="127a8-145">When this parameter is specified, wildcard characters are not resolved.</span></span>|
+|<span data-ttu-id="127a8-146">**szybkość**</span><span class="sxs-lookup"><span data-stu-id="127a8-146">**Speed**</span></span><br><span data-ttu-id="127a8-147">Typ danych: Int32</span><span class="sxs-lookup"><span data-stu-id="127a8-147">Data type: Int32</span></span>|<span data-ttu-id="127a8-148">Implementowanie tego parametru, użytkownik może określić szybkość transmisji.</span><span class="sxs-lookup"><span data-stu-id="127a8-148">Implement this parameter so that the user can specify the baud rate.</span></span> <span data-ttu-id="127a8-149">Użytkownik ustawia szybkość zasobu tego parametru.</span><span class="sxs-lookup"><span data-stu-id="127a8-149">The user sets this parameter to the speed of the resource.</span></span>|
+|<span data-ttu-id="127a8-150">**State**</span><span class="sxs-lookup"><span data-stu-id="127a8-150">**State**</span></span><br><span data-ttu-id="127a8-151">Typ danych: Array — słowo kluczowe</span><span class="sxs-lookup"><span data-stu-id="127a8-151">Data type: Keyword array</span></span>|<span data-ttu-id="127a8-152">Implementowanie tego parametru, użytkownik może określić nazwy stanów, takich jak KEYDOWN.</span><span class="sxs-lookup"><span data-stu-id="127a8-152">Implement this parameter so that the user can specify the names of states, such as KEYDOWN.</span></span>|
+|<span data-ttu-id="127a8-153">**Wartość**</span><span class="sxs-lookup"><span data-stu-id="127a8-153">**Value**</span></span><br><span data-ttu-id="127a8-154">Typ danych: Obiekt</span><span class="sxs-lookup"><span data-stu-id="127a8-154">Data type: Object</span></span>|<span data-ttu-id="127a8-155">Implementowanie tego parametru, użytkownik może określić wartość, aby zapewnić do polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="127a8-155">Implement this parameter so that the user can  specify a value to provide to the cmdlet.</span></span>|
+|<span data-ttu-id="127a8-156">**Wersja**</span><span class="sxs-lookup"><span data-stu-id="127a8-156">**Version**</span></span><br><span data-ttu-id="127a8-157">Typ danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="127a8-157">Data type: String</span></span>|<span data-ttu-id="127a8-158">Implementowanie tego parametru, użytkownik może określić wersji właściwości.</span><span class="sxs-lookup"><span data-stu-id="127a8-158">Implement this parameter so that the user can specify the version of the property.</span></span>|
 
-<span data-ttu-id="ea857-105">Implementowanie tego parametru, użytkownik może określić liczbę obiektów, które mają być przetwarzane.</span><span class="sxs-lookup"><span data-stu-id="ea857-105">Implement this parameter so that the user can specify the number of objects to be processed.</span></span>
+## <a name="see-also"></a><span data-ttu-id="127a8-159">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="127a8-159">See Also</span></span>
 
-<span data-ttu-id="ea857-106">Opis typu danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-106">Description Data type: String</span></span>
+[<span data-ttu-id="127a8-160">Parametry polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="127a8-160">Cmdlet Parameters</span></span>](./cmdlet-parameters.md)
 
-<span data-ttu-id="ea857-107">Implementowanie tego parametru, użytkownik może określić opis dla zasobu.</span><span class="sxs-lookup"><span data-stu-id="ea857-107">Implement this parameter so that the user can specify a description for a resource.</span></span>
+[<span data-ttu-id="127a8-161">Zapisywanie polecenia Cmdlet programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="127a8-161">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
 
-<span data-ttu-id="ea857-108">Z typem danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-108">From Data type: String</span></span>
-
-<span data-ttu-id="ea857-109">Implementowanie tego parametru, użytkownik może określić obiekt odwołania, aby uzyskać informacji o.</span><span class="sxs-lookup"><span data-stu-id="ea857-109">Implement this parameter so that the user can specify the reference object to get information from.</span></span>
-
-<span data-ttu-id="ea857-110">Typ danych dla identyfikatora:</span><span class="sxs-lookup"><span data-stu-id="ea857-110">Id Data type:</span></span>
-
-<span data-ttu-id="ea857-111">Implementowanie tego parametru, użytkownik może określić identyfikator zasobu.</span><span class="sxs-lookup"><span data-stu-id="ea857-111">Implement this parameter so that the user can specify the identifier of a resource.</span></span>
-
-<span data-ttu-id="ea857-112">Typ danych wejściowych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-112">Input Data type: String</span></span>
-
-<span data-ttu-id="ea857-113">Implementowanie tego parametru, użytkownik może określić specyfikacji pliku wejściowego.</span><span class="sxs-lookup"><span data-stu-id="ea857-113">Implement this parameter so that the user can specify the input file specification.</span></span>
-
-<span data-ttu-id="ea857-114">Dane lokalizacji, wpisz: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-114">Location Data type: String</span></span>
-
-<span data-ttu-id="ea857-115">Implementowanie tego parametru, użytkownik może określić lokalizację zasobu.</span><span class="sxs-lookup"><span data-stu-id="ea857-115">Implement this parameter so that the user can specify the location of the resource.</span></span>
-
-<span data-ttu-id="ea857-116">Typ danych Nazwa_dziennika: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-116">LogName Data type: String</span></span>
-
-<span data-ttu-id="ea857-117">Implementowanie tego parametru, użytkownik może określić nazwę pliku dziennika, aby przetworzyć lub użycia.</span><span class="sxs-lookup"><span data-stu-id="ea857-117">Implement this parameter so that the user can specify the name of the log file to process or use.</span></span>
-
-<span data-ttu-id="ea857-118">Nazwa typu danych: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-118">Name Data type: String</span></span>
-
-<span data-ttu-id="ea857-119">Implementowanie tego parametru, użytkownik może określić nazwę zasobu.</span><span class="sxs-lookup"><span data-stu-id="ea857-119">Implement this parameter so that the user can specify the name of the resource.</span></span>
-
-<span data-ttu-id="ea857-120">Dane wyjściowe, wpisz: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-120">Output Data type: String</span></span>
-
-<span data-ttu-id="ea857-121">Implementowanie tego parametru, użytkownik może określić pliku wyjściowego.</span><span class="sxs-lookup"><span data-stu-id="ea857-121">Implement this parameter so that the user can specify the output file.</span></span>
-
-<span data-ttu-id="ea857-122">Typ danych właściciela: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-122">Owner Data type: String</span></span>
-
-<span data-ttu-id="ea857-123">Implementowanie tego parametru, użytkownik może określić nazwę właściciela zasobu.</span><span class="sxs-lookup"><span data-stu-id="ea857-123">Implement this parameter so that the user can specify the name of the owner of the resource.</span></span>
-
-<span data-ttu-id="ea857-124">Typ danych właściwości: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-124">Property Data type: String</span></span>
-
-<span data-ttu-id="ea857-125">Implementowanie tego parametru, użytkownik może określić nazwę lub nazwy właściwości do użycia.</span><span class="sxs-lookup"><span data-stu-id="ea857-125">Implement this parameter so that the user can specify the name or the names of the properties to use.</span></span>
-
-<span data-ttu-id="ea857-126">Typ danych Przyczyna: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-126">Reason Data type: String</span></span>
-
-<span data-ttu-id="ea857-127">Implementowanie tego parametru, użytkownik może określić, dlaczego to polecenie cmdlet jest wywoływana.</span><span class="sxs-lookup"><span data-stu-id="ea857-127">Implement this parameter so that the user can specify why this cmdlet is being invoked.</span></span>
-
-<span data-ttu-id="ea857-128">Typ danych wyrażenia regularnego: SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="ea857-128">Regex Data type: SwitchParameter</span></span>
-
-<span data-ttu-id="ea857-129">Implementowanie tego parametru, wyrażenia regularne są używane, gdy określono parametr.</span><span class="sxs-lookup"><span data-stu-id="ea857-129">Implement this parameter so that regular expressions are used when the parameter is specified.</span></span> <span data-ttu-id="ea857-130">Jeśli ten parametr jest określony, symbole wieloznaczne nie są rozpoznawane.</span><span class="sxs-lookup"><span data-stu-id="ea857-130">When this parameter is specified, wildcard characters are not resolved.</span></span>
-
-<span data-ttu-id="ea857-131">Szybkość danych, wpisz: Int32</span><span class="sxs-lookup"><span data-stu-id="ea857-131">Speed Data type: Int32</span></span>
-
-<span data-ttu-id="ea857-132">Implementowanie tego parametru, użytkownik może określić szybkość transmisji.</span><span class="sxs-lookup"><span data-stu-id="ea857-132">Implement this parameter so that the user can specify the baud rate.</span></span> <span data-ttu-id="ea857-133">Użytkownik ustawia szybkość zasobu tego parametru.</span><span class="sxs-lookup"><span data-stu-id="ea857-133">The user sets this parameter to the speed of the resource.</span></span>
-
-<span data-ttu-id="ea857-134">Stan: typ danych: Array — słowo kluczowe</span><span class="sxs-lookup"><span data-stu-id="ea857-134">State Data type: Keyword array</span></span>
-
-<span data-ttu-id="ea857-135">Implementowanie tego parametru, użytkownik może określić nazwy stanów, takich jak KEYDOWN.</span><span class="sxs-lookup"><span data-stu-id="ea857-135">Implement this parameter so that the user can specify the names of states, such as KEYDOWN.</span></span>
-
-<span data-ttu-id="ea857-136">Typ danych wartości: Obiekt</span><span class="sxs-lookup"><span data-stu-id="ea857-136">Value Data type: Object</span></span>
-
-<span data-ttu-id="ea857-137">Implementowanie tego parametru, użytkownik może określić wartość, aby zapewnić do polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ea857-137">Implement this parameter so that the user can  specify a value to provide to the cmdlet.</span></span>
-
-<span data-ttu-id="ea857-138">Typ danych w wersji: Ciąg</span><span class="sxs-lookup"><span data-stu-id="ea857-138">Version Data type: String</span></span>
-
-<span data-ttu-id="ea857-139">Implementowanie tego parametru, użytkownik może określić wersji właściwości.</span><span class="sxs-lookup"><span data-stu-id="ea857-139">Implement this parameter so that the user can specify the version of the property.</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="ea857-140">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="ea857-140">See Also</span></span>
-
-[<span data-ttu-id="ea857-141">Parametry polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="ea857-141">Cmdlet Parameters</span></span>](./cmdlet-parameters.md)
-
-[<span data-ttu-id="ea857-142">Zapisywanie polecenia Cmdlet programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea857-142">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
-
-[<span data-ttu-id="ea857-143">Zestaw SDK programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea857-143">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="127a8-162">Zestaw SDK programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="127a8-162">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
