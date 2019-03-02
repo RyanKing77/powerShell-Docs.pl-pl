@@ -8,36 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8c0bd8a9-1749-4885-ab24-38c0a4d9f2cb
 caps.latest.revision: 6
-ms.openlocfilehash: 6a7c66eb94f69029b5abea85c421a0c8db646851
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7a3efc60fcc8729d833f6de070016cfd08cc9b88
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847964"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251374"
 ---
 # <a name="quantity-parameters"></a>Parametry ilości
 
 W poniższej tabeli wymieniono nazwy zalecane i funkcje dotyczące parametrów ilość.
 
-Wszystkie dane, wpisz: Wartość logiczna
-
-Implementowanie tego parametru, aby `true` wskazuje, że wszystkie zasoby powinny zostać podjęte zamiast domyślnego podzestawu zasobów. Implementowanie tego parametru, aby `false` wskazuje podzestaw zasobów.
-
-Typ danych przydziału: Int32
-
-Implementowanie tego parametru, użytkownik może określić liczbę elementów do przydzielenia.
-
-Typ danych BlockCount: Int64
-
-Implementowanie tego parametru, użytkownik może określić liczba bloków.
-
-Typ danych liczba: Int64
-
-Implementowanie tego parametru, użytkownik może określić liczbę.
-
-Typ danych w zakresie: Słowo kluczowe
-
-Implementowanie tego parametru, użytkownik może określić zakresu do wykonywania operacji.
+|Parametr|Funkcja|
+|---|---|
+|**Wszystkie**<br>Typ danych: Wartość logiczna|Implementowanie tego parametru, aby `true` wskazuje, że wszystkie zasoby powinny zostać podjęte zamiast domyślnego podzestawu zasobów. Implementowanie tego parametru, aby `false` wskazuje podzestaw zasobów.|
+|**Alokacja**<br>Typ danych: Int32|Implementowanie tego parametru, użytkownik może określić liczbę elementów do przydzielenia.|
+|**BlockCount**<br>Typ danych: Int64|Implementowanie tego parametru, użytkownik może określić liczba bloków.|
+|**Liczba**<br>Typ danych: Int64|Implementowanie tego parametru, użytkownik może określić liczbę.|
+|**Zakres**<br>Typ danych: Słowo kluczowe|Implementowanie tego parametru, użytkownik może określić zakresu do wykonywania operacji.|
 
 ## <a name="see-also"></a>Zobacz też
 

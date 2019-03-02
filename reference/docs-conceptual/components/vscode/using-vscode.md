@@ -2,12 +2,12 @@
 title: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 description: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 03f370d0906790b573ea42290b9ccdec2cf84f2e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686698"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251391"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 
@@ -116,17 +116,28 @@ Zalecamy następujące ustawienia konfiguracji dla programu Visual Studio Code:
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+Jeśli nie chcesz, aby te ustawienia mają wpływ na wszystkie typy plików, programu VSCode umożliwia także konfiguracje między językami. Utwórz ustawienie określonego języka, umieszczając ustawienia `[<language-name>]` pola. Przykład:
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+Aby uzyskać więcej informacji o pliku kodowania w programie VS Code, zobacz [zrozumienie kodowanie pliku](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Debugowanie za pomocą programu Visual Studio Code
 
 ### <a name="no-workspace-debugging"></a>Obszar roboczy bez debugowania
 
-Począwszy od wersji programu Visual Studio Code 1.9 można debugować skrypty programu PowerShell, bez konieczności otwierania folderu zawierającego skrypt programu PowerShell.
-Po prostu otwórz pliku skryptu programu PowerShell, za pomocą **Plik -> Otwórz plik...** , ustaw punkt przerwania w wierszu (naciśnij klawisz F9), a następnie naciśnij klawisz F5, aby rozpocząć debugowanie.
-Powinien zostać wyświetlony w okienku Akcje debugowania są wyświetlane, co pozwala na przerwanie w debugerze, krok, wznowienie i zatrzymać debugowanie.
+Począwszy od wersji programu Visual Studio Code 1.9 można debugować skrypty programu PowerShell, bez konieczności otwierania folderu zawierającego skrypt programu PowerShell. Otwórz plik skryptu programu PowerShell przy użyciu **Plik -> Otwórz plik...** , ustaw punkt przerwania w wierszu (naciśnij klawisz F9), a następnie naciśnij klawisz F5, aby rozpocząć debugowanie. Powinien zostać wyświetlony w okienku Akcje debugowania są wyświetlane, co pozwala na przerwanie w debugerze, krok, wznowienie i zatrzymać debugowanie.
 
 ### <a name="workspace-debugging"></a>Debugowanie obszaru roboczego
 
