@@ -1,17 +1,15 @@
 ---
-ms.date: 04/11/2018
+ms.date: 03/04/2019
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Usługa ściągania platformy DSC
-ms.openlocfilehash: 659a8f8b2ce7d34058e789c5de336dc1f1f2abb2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687797"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429962"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Usługa ściągania Desired State Configuration
-
-> Dotyczy: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Serwera ściągania (funkcja Windows *usługi DSC*) jest obsługiwanych składników systemu Windows Server jednak nie jest planowane oferują nowe funkcje lub możliwości osobno. Zaleca się rozpocząć przechodzenie zarządzanych klientom [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (w tym funkcje poza serwera ściągania w systemie Windows Server) lub jeden z członków społeczności na liście [tutaj](pullserver.md#community-solutions-for-pull-service).
@@ -35,6 +33,7 @@ Usługi platformy Azure można zarządzać węzłów lokalnych w centrach danych
 Prywatne środowiska, w której serwery bezpośrednio nie może połączyć się z Internetem, należy rozważyć ograniczenie ruchu wychodzącego do tylko opublikowane zakres adresów IP platformy Azure (zobacz [zakresów adresów IP centrum danych Azure](https://www.microsoft.com/en-us/download/details.aspx?id=41653)).
 
 Funkcje usługi online, które nie są obecnie dostępne w usługi ściągania w systemie Windows Server:
+
 - Wszystkie dane są szyfrowane podczas przesyłania i magazynowanych
 - Certyfikaty klienta są tworzone i zarządzane automatycznie
 - Wpisy tajne przechowywane centralnie zarządzanie [haseł lub poświadczeń](/azure/automation/automation-credentials), lub [zmienne](/azure/automation/automation-variables) takich jak nazwy serwera lub parametry połączenia
@@ -57,7 +56,7 @@ Usługa ściągania oferowanych w systemie Windows Server jest usługi sieci web
 Wymagania dotyczące korzystania z serwera ściągania:
 
 - Serwer z systemem:
-  - WMF/programu PowerShell w wersji 5.0 lub nowszej
+  - WMF/PowerShell 4.0 lub nowszej
   - Rola serwera IIS
   - DSC Service
 - W idealnym przypadku niektóre oznacza, że generowania certyfikatu, aby zabezpieczyć poświadczenia przekazywane do lokalnego Configuration Manager (LCM) na węzłach docelowych
@@ -71,11 +70,11 @@ Przykładowy skrypt znajduje się poniżej.
 |---------|---------|---------|---------|
 |MDB     |ESENT (ustawienie domyślne), MDB |ESENT (ustawienie domyślne), MDB|ESENT (ustawienie domyślne), programu SQL Server MDB
 
-Począwszy od wersji 17090 z [systemu Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server jest obsługiwaną opcją dla usługi ściągania (funkcja Windows *usługi DSC*).  Zapewnia to nowa opcja skalowania dużych środowiskach DSC, które nie zostały przeniesione do [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+Począwszy od wersji 17090 z [systemu Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver), SQL Server jest obsługiwaną opcją dla usługi ściągania (funkcja Windows *usługi DSC*). Zapewnia to nowa opcja skalowania dużych środowiskach DSC, które nie zostały przeniesione do [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > **Uwaga**: Obsługa programu SQL Server nie zostanie dodany do poprzednich wersji programu WMF 5.1 (lub starszy) i jest on dostępny w wersjach systemu Windows Server, większa niż lub równa 17090 tylko.
 
-Aby skonfigurować serwer ściągania używać programu SQL Server, należy ustawić **SqlProvider** do `$true` i **SqlConnectionString** na prawidłowe parametry połączenia programu SQL Server.  Aby uzyskać więcej informacji, zobacz [ciągi połączeń klient SQL](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
+Aby skonfigurować serwer ściągania używać programu SQL Server, należy ustawić **SqlProvider** do `$true` i **SqlConnectionString** na prawidłowe parametry połączenia programu SQL Server. Aby uzyskać więcej informacji, zobacz [ciągi połączeń klient SQL](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 Przykład konfiguracji programu SQL Server za pomocą **xDscWebService**, najpierw przeczytać artykuł [przy użyciu zasobów xDscWebService](#using-the-xdscwebservice-resource) a następnie przejrzyj [Sample_xDscWebServiceRegistration_ UseSQLProvider.ps1 w serwisie GitHub](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### <a name="using-the-xdscwebservice-resource"></a>Przy użyciu zasobów xDscWebService
@@ -83,10 +82,14 @@ Przykład konfiguracji programu SQL Server za pomocą **xDscWebService**, najpie
 Najprostszym sposobem skonfigurowania internetowego serwera ściągania jest użycie **xDscWebService** zasobu, objęte **xPSDesiredStateConfiguration** modułu.
 Poniższe kroki wyjaśniają jak używać zasobów w konfiguracji, który konfiguruje usługę sieci web.
 
-1. Wywołaj [Install-Module](/powershell/module/PowershellGet/Install-Module) polecenia cmdlet, aby zainstalować **xPSDesiredStateConfiguration** modułu. **Uwaga**: **Install-Module** znajduje się w **PowerShellGet** moduł, który znajduje się w programie PowerShell 5.0. Możesz pobrać **PowerShellGet** modułu PowerShell 3.0 i 4.0 w [Podgląd modułów programu PowerShell PackageManagement](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
-1. Pobieranie certyfikatu SSL dla serwera ściągania DSC od zaufanego urzędu certyfikacji, albo w ramach organizacji lub publicznego urzędu. Certyfikat odebrany od urzędu zwykle jest w formacie PFX. Zainstaluj certyfikat w węźle, który będzie serwerem ściągania DSC w lokalizacji domyślnej, która powinna być CERT: \LocalMachine\My. Zanotuj odcisk palca certyfikatu.
-1. Wybierz identyfikator GUID, który ma być używany jako klucz rejestracji. Aby wygenerować za pomocą programu PowerShell wprowadź następujące polecenie w wierszu PS, a następnie naciśnij klawisz enter: "``` [guid]::newGuid()```"lub"```New-Guid```". Ten klucz będzie używany przez węzły klienta jako klucza wstępnego, do uwierzytelniania podczas rejestracji. Aby uzyskać więcej informacji zobacz poniżej sekcję klucza rejestracji.
-1. W środowisku PowerShell ISE Uruchom (F5) poniższy skrypt konfiguracji (zawarte w folderze przykłady **xPSDesiredStateConfiguration** modułu jako Sample_xDscWebServiceRegistration.ps1). Ten skrypt konfiguruje serwera ściągania.
+1. Wywołaj [Install-Module](/powershell/module/PowershellGet/Install-Module) polecenia cmdlet, aby zainstalować **xPSDesiredStateConfiguration** modułu.
+   > [!NOTE]
+   > **Install-Module** znajduje się w **PowerShellGet** moduł, który znajduje się w programie PowerShell 5.0. Możesz pobrać **PowerShellGet** modułu PowerShell 3.0 i 4.0 w [Podgląd modułów programu PowerShell PackageManagement](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+2. Pobieranie certyfikatu SSL dla serwera ściągania DSC od zaufanego urzędu certyfikacji, albo w ramach organizacji lub publicznego urzędu. Certyfikat odebrany od urzędu zwykle jest w formacie PFX.
+3. Zainstaluj certyfikat na węzeł, który będzie serwerem ściągania DSC w lokalizacji domyślnej, która powinna być `CERT:\LocalMachine\My`.
+   - Zanotuj odcisk palca certyfikatu.
+4. Wybierz identyfikator GUID, który ma być używany jako klucz rejestracji. Aby wygenerować za pomocą programu PowerShell wprowadź następujące polecenie w wierszu PS, a następnie naciśnij klawisz enter: ` [guid]::newGuid()` lub `New-Guid`. Ten klucz będzie używany przez węzły klienta jako klucza wstępnego, do uwierzytelniania podczas rejestracji. Aby uzyskać więcej informacji zobacz poniżej sekcję klucza rejestracji.
+5. W środowisku PowerShell ISE Uruchom (F5) poniższy skrypt konfiguracji (zawarte w folderze przykłady **xPSDesiredStateConfiguration** modułu jako `Sample_xDscWebServiceRegistration.ps1`). Ten skrypt konfiguruje serwera ściągania.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -103,6 +106,7 @@ Poniższe kroki wyjaśniają jak używać zasobów w konfiguracji, który konfig
             [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
         )
 
+        Import-DSCResource -ModuleName PSDesiredStateConfiguration
         Import-DSCResource -ModuleName xPSDesiredStateConfiguration
 
         Node $NodeName
@@ -126,6 +130,7 @@ Poniższe kroki wyjaśniają jak używać zasobów w konfiguracji, który konfig
                 DependsOn               = "[WindowsFeature]DSCServiceFeature"
                 RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
                 AcceptSelfSignedCertificates = $true
+                UseSecurityBestPractices     = $true
                 Enable32BitAppOnWin64   = $false
             }
 
@@ -140,7 +145,7 @@ Poniższe kroki wyjaśniają jak używać zasobów w konfiguracji, który konfig
     }
     ```
 
-1. Uruchom konfigurację, przekazując odcisk palca certyfikatu SSL jako **certificateThumbPrint** parametr i rejestracji identyfikator GUID klucza jako **RegistrationKey** parametru:
+6. Uruchom konfigurację, przekazując odcisk palca certyfikatu SSL jako **certificateThumbPrint** parametr i rejestracji identyfikator GUID klucza jako **RegistrationKey** parametru:
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -157,9 +162,11 @@ Poniższe kroki wyjaśniają jak używać zasobów w konfiguracji, który konfig
 #### <a name="registration-key"></a>Klucz rejestracji
 
 Aby zezwolić na węzły, które można zarejestrować na serwerze, tak aby używały nazwy konfiguracji zamiast Identyfikatora konfiguracji klienta, klucza rejestracji, który został utworzony za pomocą powyższych konfiguracji jest zapisywany w pliku o nazwie `RegistrationKeys.txt` w `C:\Program Files\WindowsPowerShell\DscService`. Klucz rejestracji działa jako wspólny klucz tajny, używane podczas wstępnej rejestracji przez klienta z serwera ściągania. Klient wygeneruje certyfikat z podpisem własnym, który jest używany do jednoznacznego uwierzytelniania na serwerze ściągania po pomyślnym zakończeniu rejestracji. Odcisk palca certyfikatu jest przechowywana lokalnie i skojarzone z adresem URL serwera ściągania.
-> **Uwaga**: Klucze rejestracji nie są obsługiwane w programie PowerShell 4.0.
 
-W celu skonfigurowania węzła do uwierzytelniania za pomocą serwera ściągania, klucz rejestracji musi być w metaconfiguration dla dowolnego węzła docelowego, który będzie zarejestrowanie z tym serwerem ściągania. Należy pamiętać, że **RegistrationKey** w metaconfiguration poniżej zostanie usunięty po pomyślnie zarejestrowała maszynie docelowej, a wartość "140a952b-b9d6-406b-b416-e0f759c9c0e4" musi być zgodna wartość przechowywaną w Plik RegistrationKeys.txt na serwerze ściągania. Jest zawsze traktowany wartość klucza rejestracji bezpieczne, ponieważ wiedząc o tym pozwala na dowolnej maszynie docelowej, można zarejestrować za pomocą serwera ściągania.
+> [!NOTE]
+> Klucze rejestracji nie są obsługiwane w programie PowerShell 4.0.
+
+W celu skonfigurowania węzła do uwierzytelniania za pomocą serwera ściągania, klucz rejestracji musi być w metaconfiguration dla dowolnego węzła docelowego, który będzie zarejestrowanie z tym serwerem ściągania. Należy pamiętać, że **RegistrationKey** w metaconfiguration poniżej zostanie usunięty po pomyślnie zarejestrowała maszynie docelowej, a wartość musi być zgodna wartość przechowywaną w `RegistrationKeys.txt` pliku na serwerze ściągania (" 140a952b-b9d6-406b-b416-e0f759c9c0e4 "w tym przykładzie). Jest zawsze traktowany wartość klucza rejestracji bezpieczne, ponieważ wiedząc o tym pozwala na dowolnej maszynie docelowej, można zarejestrować za pomocą serwera ściągania.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -202,12 +209,14 @@ configuration Sample_MetaConfigurationToRegisterWithLessSecurePullServer
 Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $RegistrationKey -OutputPath c:\Configs\TargetNodes
 ```
 
-> **Uwaga**: **ReportServerWeb** sekcja umożliwia raportowanie danych, które mają być wysyłane do serwera ściągania.
+> [!NOTE]
+> **ReportServerWeb** sekcja umożliwia raportowanie danych, które mają być wysyłane do serwera ściągania.
 
 Brak **ConfigurationID** właściwości w pliku metaconfiguration niejawnie oznacza, że tego serwera ściągania obsługuje protokół serwera ściągania w wersji V2, więc wstępnej rejestracji jest wymagana.
 Z kolei obecność **ConfigurationID** oznacza, że jest używany protokół serwera ściągania w wersji V1 jest nie przetwarzania rejestracji.
 
->**Uwaga**: W przypadku scenariusza WYPYCHANIA usterkę istnieje w bieżącej wersji, która sprawia, że konieczne jest określenie właściwości ConfigurationID w pliku metaconfiguration dla węzłów, które nigdy nie zostały zarejestrowane przy użyciu serwera ściągania. Spowoduje to wymusić protokołu serwera ściągania V1 i uniknąć komunikaty o błędach rejestracji.
+> [!NOTE]
+> W przypadku scenariusza WYPYCHANIA usterkę istnieje w bieżącej wersji, która sprawia, że konieczne jest określenie właściwości ConfigurationID w pliku metaconfiguration dla węzłów, które nigdy nie zostały zarejestrowane przy użyciu serwera ściągania. Spowoduje to wymusić protokołu serwera ściągania V1 i uniknąć komunikaty o błędach rejestracji.
 
 ## <a name="placing-configurations-and-resources"></a>Wprowadzenie do konfiguracji i zasobów
 
@@ -217,12 +226,13 @@ Te pliki muszą znajdować się w określonym formacie w kolejności dla serwera
 ### <a name="dsc-resource-module-package-format"></a>Format pakietu modułu zasobów DSC
 
 Każdy moduł zasobów musi być spakowane i nazwanych zgodnie z następującym wzorcem `{Module Name}_{Module Version}.zip`.
-Na przykład moduł o nazwie xWebAdminstration przy użyciu wersji modułu 3.1.2.0 będzie można o nazwie "xWebAdministration_3.2.1.0.zip".
+
+Na przykład, czy nazwany moduł o nazwie xWebAdminstration przy użyciu wersji modułu 3.1.2.0 `xWebAdministration_3.2.1.0.zip`.
 Każda wersja modułu musi być zawarty w pliku zip jednego.
 Ponieważ istnieje tylko jedną wersję zasobu w każdym pliku zip, format modułu, dodane w programie WMF 5.0 z obsługą wielu wersji modułu w pojedynczym katalogu nie jest obsługiwany.
 Oznacza to, że przed pakowaniu modułów zasoby DSC do użytku z serwera ściągania należy wprowadź niewielką zmianę do struktury katalogu.
-Domyślny format modułów zawierających zasobów DSC w programie WMF 5.0 jest "{Folder modułu}\{wersja modułu} \DscResources\{Folder zasobów DSC}\'.
-Przed pakowania dla serwera ściągania, Usuń **{wersja modułu}** folderu, tak aby stał się ścieżkę "{Folder modułu} \DscResources\{Folder zasobów DSC}\'.
+Domyślny format modułów zawierających zasobów DSC w programie WMF 5.0 jest `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
+Przed pakowania dla serwera ściągania, Usuń **{wersja modułu}** folderu, tak aby stał się ścieżkę `{Module Folder}\DscResources\{DSC Resource Folder}\`.
 Dzięki tej zmianie folder zip zgodnie z powyższym opisem i umieścić te pliki zip w **ModulePath** folderu.
 
 Użyj `New-DscChecksum {module zip file}` utworzyć sumy kontrolnej pliku dla nowo dodanym modułem.
@@ -236,13 +246,16 @@ Polecenie cmdlet tworzy sumy kontrolnej pliku o nazwie `ConfigurationMOFName.mof
 Jeśli istnieje więcej niż jedną konfigurację pliki MOF we wskazanym folderze, suma kontrolna jest tworzony dla każdej konfiguracji w folderze.
 Umieść pliki MOF i skojarzone sumy kontrolnej plików w **ConfigurationPath** folderu.
 
->**Uwaga**: Jeśli zmienisz pliku MOF konfiguracji w jakikolwiek sposób, należy odtworzyć pliku sumy kontrolnej.
+> [!NOTE]
+> Jeśli zmienisz pliku MOF konfiguracji w jakikolwiek sposób, należy odtworzyć pliku sumy kontrolnej.
 
 ### <a name="tooling"></a>Narzędzia
 
 Aby uzupełnić ustawienie, sprawdzanie poprawności i zarządzanie nimi było prostsze, serwerze ściągania następujące narzędzia są dołączone jako przykłady w najnowszej wersji modułu xPSDesiredStateConfiguration:
 
-1. Moduł, który pomoże pakowanie modułów zasoby DSC oraz pliki konfiguracji do użycia na serwerze ściągania. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Poniższe przykłady:
+1. Moduł, który pomoże pakowanie modułów zasoby DSC oraz pliki konfiguracji do użycia na serwerze ściągania.
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+   Poniższe przykłady:
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot

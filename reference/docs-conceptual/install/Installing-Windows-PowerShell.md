@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: programu PowerShell, polecenia cmdlet, pobierania, instalacji, konfiguracji, systemu windows 10, systemu windows 8.1, systemu windows 8.0, windows 7
 title: Instalowanie programu Windows PowerShell
-ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687328"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429877"
 ---
 # <a name="installing-windows-powershell"></a>Instalowanie programu Windows PowerShell
 
@@ -17,7 +17,7 @@ Jeśli interesuje Cię w programie PowerShell 6 lub nowszej, musisz zainstalowa�
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Znajdowanie programu PowerShell w systemie Windows 10, 8.1, 8.0 i 7
 
-Czasami lokalizowanie środowiska PowerShell ISE (zintegrowane środowisko obsługi skryptów) w Windows lub konsoli może być trudne, przemieszcza się w jej lokalizację używaną wersję systemu Windows do następnego.
+Czasami lokalizowanie środowiska PowerShell ISE (zintegrowane środowisko obsługi skryptów) w Windows lub konsoli może być trudne, przemieszcza się w lokalizacji z jednej wersji systemu Windows do następnego.
 
 Poniższe tabele powinien pomóc programu PowerShell w wersji Windows.
 Wszystkie wersje wymienione w tym miejscu są oryginalnej wersji udostępniona żadnych aktualizacji.
@@ -70,9 +70,9 @@ Jeśli musisz zaktualizować istniejącej wersji programu PowerShell, w Windows,
 
 Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
-System Windows 10 (zobacz Note1)<br/>Windows Server 2016 | - | - | - | zainstalowany
-Windows 8.1<br/>Windows Server 2012 R2 | - | zainstalowany | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 8<br/>Windows Server 2012 | zainstalowany | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+System Windows 10 (zobacz Note1)<br/>Windows Server 2016 | - | - | - | Zainstalowany
+Windows 8.1<br/>Windows Server 2012 R2 | - | Zainstalowany | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | Zainstalowany | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 z dodatkiem SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
 > [!NOTE]
@@ -85,7 +85,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 z dodatkiem SP1 | [WMF 3.0](https://www
 
 Jeśli szukasz **programu Azure PowerShell**, możesz rozpocząć [Omówienie programu Azure PowerShell](/powershell/azure/overview).
 
-W przeciwnym razie może być konieczne jest [Instalowanie i konfigurowanie programu Azure PowerShell](/powershell/azure/install-azurerm-ps)
+W przeciwnym razie może być konieczne jest [Instalowanie i konfigurowanie programu Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="see-also"></a>Zobacz też
 

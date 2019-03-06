@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846326"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429979"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Tworzenie dostawcy zawartości programu Windows PowerShell
 
 W tym temacie opisano sposób tworzenia dostawcy środowiska Windows PowerShell, który umożliwia użytkownikowi manipulować zawartością elementów w magazynie danych. W konsekwencji dostawcę, który będzie obsługiwał zawartość elementów jest określane jako dostawcy zawartości programu Windows PowerShell.
 
 > [!NOTE]
-> Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider06.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider06.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
@@ -233,11 +232,9 @@ Aby uzyskać kompletny przykładowy kod, zobacz [przykładowy kod AccessDbProvid
 ## <a name="defining-object-types-and-formatting"></a>Definiowanie typów obiektów i formatowanie
 
 Podczas zapisywania dostawcy, może być konieczne dodawać członków do istniejących obiektów lub zdefiniuj nowe obiekty. Po zakończeniu tej operacji należy utworzyć plik typów, można użyć programu Windows PowerShell, aby zidentyfikować członków obiektu i plik formatu, który definiuje sposób wyświetlania obiektu. Aby uzyskać więcej informacji, zobacz [rozszerzanie typów obiektów i formatowanie](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Podczas zapisywania dostawcy, może być konieczne dodawać członków do istniejących obiektów lub zdefiniuj nowe obiekty. Po zakończeniu tej operacji należy utworzyć plik typów, można użyć programu Windows PowerShell, aby zidentyfikować członków obiektu i plik formatu, który definiuje sposób wyświetlania obiektu. Aby uzyskać więcej informacji, zobacz [rozszerzanie typów obiektów i formatowanie](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Tworzenie dostawcy programu Windows PowerShell
 
-Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testowanie dostawcy programu Windows PowerShell
@@ -285,11 +282,7 @@ Country   : USA
 
 [Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implementowanie dostawcy nawigacji Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md)
-
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

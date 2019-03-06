@@ -1,15 +1,15 @@
 ---
-title: Opis kodowania pliku w VSCode i programu PowerShell
+title: Opis kodowania pliku w programie VSCode i PowerShell
 description: Skonfiguruj kodowanie pliku VSCode i programu PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251727"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429809"
 ---
-# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Opis kodowania pliku w VSCode i programu PowerShell
+# <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Opis kodowania pliku w programie VSCode i PowerShell
 
 Używając programu VS Code do tworzenia i edytowania skryptów programu PowerShell, jest ważne, czy pliki są zapisywane w formacie kodowania znaków jest prawidłowa.
 
@@ -68,7 +68,7 @@ Przydatne w tym [odwołania](https://www.i18nqa.com/debug/utf8-debug.html) zawie
 Rozszerzenie PowerShell wchodzi w interakcję z skrypty na kilka sposobów:
 
 1. Podczas edytowania skryptów w VSCode, zawartość są wysyłane przez VSCode do rozszerzenia. [Language Server Protocol][] określającemu, że ta zawartość jest przesyłany w formacie UTF-8. W związku z tym nie jest możliwe dla rozszerzenia Aby pobrać błędne szyfrowanie.
-2. Gdy skryptów są wykonywane bezpośrednio w konsoli programu zintegrowanego, są odczytywane z pliku programu PowerShell, bezpośrednio. Kodowanie TF PowerShell różni się od firmy VSCode, coś tutaj można wprowadzić problem.
+2. Gdy skryptów są wykonywane bezpośrednio w konsoli programu zintegrowanego, są odczytywane z pliku programu PowerShell, bezpośrednio. Jeśli kodowanie programu PowerShell różni się od firmy VSCode, coś tutaj można wprowadzić problem.
 3. Gdy skrypt, który jest otwarty w VSCode odwołuje się do innego skryptu, który nie jest otwarty w VSCode, rozszerzenie przechodzi do ładowania zawartości tego skryptu z systemu plików. Rozszerzenie programu PowerShell, wartością domyślną jest kodowanie UTF-8, ale używa [znacznika kolejności bajtów][], lub znak BOM, wykrywania, aby wybrać poprawne kodowanie.
 
 Ten problem występuje, gdy przy założeniu kodowanie formatów bez znaku BOM (takich jak [UTF-8][] z znak BOM nie i [Windows-1252][]).

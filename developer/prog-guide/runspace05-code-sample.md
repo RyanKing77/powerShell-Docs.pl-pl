@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9688cd69-07ea-4ea0-8822-0a4850bcf86c
 caps.latest.revision: 7
-ms.openlocfilehash: 2b5ac097e8a52832b0f8cfb93b84eef56fc64858
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b16ee45383059c52ce3433699c6b8d2120992431
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845829"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429571"
 ---
 # <a name="runspace05-code-sample"></a>Przykładowy kod RunSpace05
 
 Poniżej przedstawiono kod źródłowy przykładowej Runspace05 opisaną w [konfigurowania obszaru działania przy użyciu RunspaceConfiguration](http://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2). W tym przykładzie przedstawiono sposób tworzenia informacji o konfiguracji obszaru działania, Utwórz obszar działania, tworzenie potoku za pomocą jednego polecenia, a następnie wykonywania potoku. Polecenia, który jest wykonywany jest `Get-Process` polecenia cmdlet.
 
 > [!NOTE]
-> Możesz pobrać C# pliku źródłowego (runspace05.cs) przy użyciu programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska wykonawczego programu Microsoft .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Możesz pobrać C# pliku źródłowego (runspace05.cs) przy użyciu programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska wykonawczego programu Microsoft .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.

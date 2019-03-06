@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848839"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430013"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Tworzenie dostawcy właściwości programu Windows PowerShell
 
 W tym temacie opisano, jak utworzyć dostawcę, który umożliwia użytkownikowi do manipulowania właściwości elementów w magazynie danych. W konsekwencji ten typ dostawcy jest określone jako dostawca właściwości programu Windows PowerShell. Na przykład dostawca rejestru udostępniane przez wartości klucza rejestru programu Windows PowerShell obsługuje jako właściwości elementu klucza rejestru. Należy dodać ten typ dostawcy [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interfejs do implementacji klasy .NET.
 
 > [!NOTE]
-> Program Windows PowerShell zawiera plik szablonu używanego do tworzenia dostawcy środowiska Windows PowerShell. Plik TemplateProvider.cs jest dostępny na Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Program Windows PowerShell zawiera plik szablonu używanego do tworzenia dostawcy środowiska Windows PowerShell. Plik TemplateProvider.cs jest dostępny na Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Szablon pobrany jest dostępna w  **\<przykłady programu PowerShell >** katalogu. Należy utworzyć kopię tego pliku i kopia jest używana do tworzenia nowego dostawcę programu Windows PowerShell żadnej funkcji, która nie ma potrzeby usuwania.
@@ -150,7 +149,6 @@ W tym miejscu jest domyślna Implementacja klasy [System.Management.Automation.P
 ## <a name="building-the-windows-powershell-provider"></a>Tworzenie dostawcy środowiska Windows PowerShell
 
 Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="see-also"></a>Zobacz też
 
@@ -159,9 +157,5 @@ Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji
 [Dostawca usługi Windows PowerShell projektu](./designing-your-windows-powershell-provider.md)
 
 [Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

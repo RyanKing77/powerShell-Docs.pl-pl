@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 30b4dbcd281f712bba8d8e3540d2282d527388e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851058"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429996"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Tworzenie dostawcy elementów programu Windows PowerShell
 
 W tym temacie opisano sposób tworzenia dostawcy środowiska Windows PowerShell, który można manipulować danymi w magazynie danych. W tym temacie są określane jako "elementy" dane magazyn elementów danych w magazynie. W konsekwencji dostawcę, który można manipulować danymi w magazynie jest określany jako dostawca elementu programu Windows PowerShell.
 
 > [!NOTE]
-> Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider03.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider03.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
@@ -88,7 +87,6 @@ Zanim dostawcę elementów programu Windows PowerShell można manipulować eleme
 
 ## <a name="checking-for-path-validity"></a>Sprawdzanie poprawności ścieżki
 
-Podczas wyszukiwania elementu danych, środowisko wykonawcze programu Windows PowerShell przedstawia ścieżki programu Windows PowerShell do dostawcy, zgodnie z definicją w sekcji "PSPath pojęcia" [sposób działania programu Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Dostawcy elementu programu Windows PowerShell należy sprawdzić ważność syntaktyczna i semantyczna dowolną ścieżkę przekazany przez zaimplementowanie [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metody. Ta metoda zwraca `true` Jeśli ścieżka jest prawidłowa, i `false` inaczej. Należy pamiętać, że implementacja tej metody powinna nie sprawdzał, czy elementu w ścieżce, ale tylko wtedy, czy ścieżka jest składniowo i semantycznie prawidłowe.
 Podczas wyszukiwania elementu danych, środowisko wykonawcze programu Windows PowerShell przedstawia ścieżki programu Windows PowerShell do dostawcy, zgodnie z definicją w sekcji "PSPath pojęcia" [sposób działania programu Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Dostawcy elementu programu Windows PowerShell należy sprawdzić ważność syntaktyczna i semantyczna dowolną ścieżkę przekazany przez zaimplementowanie [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metody. Ta metoda zwraca `true` Jeśli ścieżka jest prawidłowa, i `false` inaczej. Należy pamiętać, że implementacja tej metody powinna nie sprawdzał, czy elementu w ścieżce, ale tylko wtedy, czy ścieżka jest składniowo i semantycznie prawidłowe.
 
 Oto implementacja [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) metody dla tego dostawcy. Należy pamiętać, że ta implementacja wywołuje metodę pomocnika NormalizePath można przekonwertować wszystkie separatorach w ścieżce jednolitego niż ten, który.
@@ -266,11 +264,9 @@ Aby uzyskać kompletny przykładowy kod, zobacz [przykładowy kod AccessDbProvid
 ## <a name="defining-object-types-and-formatting"></a>Definiowanie typów obiektów i formatowanie
 
 Podczas zapisywania dostawcy, może być konieczne dodawać członków do istniejących obiektów lub zdefiniuj nowe obiekty. Po zakończeniu tworzenia pliku typów, można użyć programu Windows PowerShell, aby zidentyfikować członków obiektu i plik formatu, który definiuje sposób wyświetlania obiektu. Aby uzyskać więcej informacji na temat, zobacz [rozszerzanie typów obiektów i formatowanie](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Podczas zapisywania dostawcy, może być konieczne dodawać członków do istniejących obiektów lub zdefiniuj nowe obiekty. Po zakończeniu tworzenia pliku typów, można użyć programu Windows PowerShell, aby zidentyfikować członków obiektu i plik formatu, który definiuje sposób wyświetlania obiektu. Aby uzyskać więcej informacji na temat, zobacz [rozszerzanie typów obiektów i formatowanie](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Tworzenie dostawcy środowiska Windows PowerShell
 
-Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testowanie dostawcy środowiska Windows PowerShell
@@ -289,16 +285,10 @@ Gdy tego dostawcę elementów programu Windows PowerShell zostanie zarejestrowan
 
 [Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Jak działa program Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [Jak działa program Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Tworzenie dostawcy kontenera Windows PowerShell](./creating-a-windows-powershell-container-provider.md)
 
 [Tworzenie dostawcy dysk programu Windows PowerShell](./creating-a-windows-powershell-drive-provider.md)
-
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

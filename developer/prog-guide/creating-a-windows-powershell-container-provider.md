@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851828"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430044"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Tworzenie dostawcy kontenerów programu Windows PowerShell
 
@@ -25,7 +25,6 @@ W tym temacie opisano sposób tworzenia dostawcy środowiska Windows PowerShell,
 Dostawców, którzy mogą pracować na magazyny danych wielopoziomowe są określane jako dostawcy kontenera programu Windows PowerShell. Należy jednak pamiętać, że dostawcy kontenera programu Windows PowerShell, mogą być używane tylko wtedy, gdy jeden kontener (nie zagnieżdżone kontenery) przy użyciu elementów. W przypadku zagnieżdżone kontenery należy zaimplementować dostawcę nawigacji programu Windows PowerShell. Aby uzyskać więcej informacji na temat implementowania dostawcy nawigacji programu Windows PowerShell, zobacz [tworzenia dostawcy usługi Windows PowerShell nawigacji](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
-> Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider04.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider04.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
@@ -418,7 +417,6 @@ Aby uzyskać kompletny przykładowy kod, zobacz [przykładowy kod AccessDbProvid
 ## <a name="building-the-windows-powershell-provider"></a>Tworzenie dostawcy programu Windows PowerShell
 
 Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Zobacz [sposobu rejestrowania poleceń cmdlet, dostawców i hostowanie aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testowanie dostawcy programu Windows PowerShell
 
@@ -537,8 +535,6 @@ Jeśli Twój dostawca programu Windows PowerShell został zarejestrowany za pomo
 [Implementowanie dostawcy elementu Windows PowerShell](./creating-a-windows-powershell-item-provider.md)
 
 [Implementowanie dostawcy nawigacji Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md)
-
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

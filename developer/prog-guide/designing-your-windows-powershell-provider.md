@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: 518040df4df7260a974bfda252c606a051cc35ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 711a85e9b2eade7b9095d7560f53610e709e380a
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847411"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429945"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Projektowanie dostawcy programu Windows PowerShell
 
@@ -163,8 +163,6 @@ Oprócz pochodząca z jednej z klas podstawowych programu Windows PowerShell, Tw
 ## <a name="see-also"></a>Zobacz też
 
 [Tworzenie programu Windows PowerShell dostawców](./how-to-create-a-windows-powershell-provider.md)
-
-[Jak działa program Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Jak działa program Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

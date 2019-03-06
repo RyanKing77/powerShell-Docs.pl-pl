@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: fbc90a6736d841fe184b86ab143809ad23c7977a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846851"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429775"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Przykładowy kod Runspace01 (VB.NET)
 
-Poniżej przedstawiono przykłady kodu dla obszaru działania opisane w [tworzenia działa konsola aplikacji czy określone polecenie](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Aby to zrobić, aplikacja wywołuje obszarem działania, a następnie wywołuje polecenie. (Zwróć uwagę, że ta aplikacja nie określa informacje o konfiguracji obszaru działania ani go jawnie tworzy potok). Polecenie, które jest wywoływane jest `Get-Process` polecenia cmdlet.
 Poniżej przedstawiono przykłady kodu dla obszaru działania opisane w [tworzenia działa konsola aplikacji czy określone polecenie](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Aby to zrobić, aplikacja wywołuje obszarem działania, a następnie wywołuje polecenie. (Zwróć uwagę, że ta aplikacja nie określa informacje o konfiguracji obszaru działania ani go jawnie tworzy potok). Polecenie, które jest wywoływane jest `Get-Process` polecenia cmdlet.
 
 ## <a name="code-sample"></a>Przykładowy kod

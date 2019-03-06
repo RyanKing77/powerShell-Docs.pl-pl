@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 066aa188d5d7dfde5af424a3bb8f15ff51c1e936
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847481"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430040"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Tworzenie dostawcy nawigacji programu Windows PowerShell
 
 W tym temacie opisano sposób tworzenia dostawcy nawigacji programu Windows PowerShell, który można przejść do magazynu danych. Ten typ dostawcy obsługuje cykliczne poleceń, zagnieżdżone kontenery i ścieżek względnych.
 
 > [!NOTE]
-> Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider05.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Możesz pobrać C# pliku źródłowego (AccessDBSampleProvider05.cs) dla tego dostawcy, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
@@ -186,11 +185,9 @@ Aby uzyskać kompletny przykładowy kod, zobacz [przykładowy kod AccessDbProvid
 ## <a name="defining-object-types-and-formatting"></a>Definiowanie typów obiektów i formatowanie
 
 Istnieje możliwość dla dostawcy dodać członków do istniejących obiektów lub zdefiniuj nowe obiekty. Aby uzyskać więcej informacji, zobacz[rozszerzanie typów obiektów i formatowanie](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Istnieje możliwość dla dostawcy dodać członków do istniejących obiektów lub zdefiniuj nowe obiekty. Aby uzyskać więcej informacji, zobacz[rozszerzanie typów obiektów i formatowanie](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Tworzenie dostawcy środowiska Windows PowerShell
 
-Aby uzyskać więcej informacji, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Aby uzyskać więcej informacji, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testowanie dostawcy środowiska Windows PowerShell
@@ -323,11 +320,7 @@ Jeśli Twój dostawca programu Windows PowerShell został zarejestrowany za pomo
 
 [Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Formatowanie i rozszerzanie typy obiektów](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implementowanie dostawcy kontenera Windows PowerShell](./creating-a-windows-powershell-container-provider.md)
-
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

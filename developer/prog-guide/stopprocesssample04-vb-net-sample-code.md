@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
 caps.latest.revision: 5
-ms.openlocfilehash: 616fb571caa4b6830a7cfe9794d0334ee8108653
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c3d8b4670d32a70ddac121e64488e7756d95449a
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845479"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430064"
 ---
 # <a name="stopprocesssample04-vbnet-sample-code"></a>Przykładowy kod StopProcessSample04 (VB.NET)
 
 Oto kompletny VB.NET przykładowego kodu na potrzeby przykładowe polecenie cmdlet StopProc04. Jest to kod `Stop-Process` polecenia cmdlet opisane w [dodanie zestawów parametrów do polecenia Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). `Stop-Process` Polecenia cmdlet zaprojektowano w celu zatrzymania procesów, które są pobierane za pomocą polecenia cmdlet Get-Proc (opisanego w [tworzenia Your pierwsze polecenie Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
-> Możesz pobrać plik źródłowy VB.NET (stopprocesssample04.vb) dla tego polecenia cmdlet Stop-Proc, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Możesz pobrać plik źródłowy VB.NET (stopprocesssample04.vb) dla tego polecenia cmdlet Stop-Proc, za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska uruchomieniowego programu .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
