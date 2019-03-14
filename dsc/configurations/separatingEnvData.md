@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Oddzielanie danych konfiguracji i środowiska
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687517"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794930"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Oddzielanie danych konfiguracji i środowiska
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Przyjrzyjmy się pełny przykład, który używa jednej konfiguracji do konfigurowania środowisk deweloperskich i produkcyjnych środowisk witryny sieci Web. W środowisku deweloperskim usługi IIS i SQL Server są instalowane na pojedyncze węzły. W środowisku produkcyjnym usług IIS i programu SQL Server są zainstalowane na osobnych węzłach. Użyjemy pliku psd1 danych konfiguracji do określania danych do dwóch różnych środowisk.
 
- ### <a name="configuration-data-file"></a>Plik danych konfiguracji
+### <a name="configuration-data-file"></a>Plik danych konfiguracji
 
 Firma Microsoft zdefiniuje dane środowisku deweloperskim i produkcyjnym w pliku o nazwie `DevProdEnvData.psd1` w następujący sposób:
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
-ms.openlocfilehash: 3c70296cb22c325ace10dc04c8b1fd941742857b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 29f1be6a1215219ddd16367a31f528a4f0dbc2e3
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851709"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795134"
 ---
 # <a name="creating-a-constrained-runspace"></a>Tworzenie ograniczonego obszaru działania
 
@@ -110,7 +110,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 ## <a name="making-commands-private"></a>Tworzenie poleceń prywatnych
 
  Można także wprowadzić polecenie prywatne, ustawiając dla niej firmy [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) właściwości [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private) . Aplikacja hosta i innych poleceniach, można wywołać tego polecenia, ale nie użytkownik tej aplikacji. W poniższym przykładzie [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) polecenia jest prywatny.
-Można także wprowadzić polecenie prywatne, ustawiając dla niej firmy [System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) właściwości [System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private) . Aplikacja hosta i innych poleceniach, można wywołać tego polecenia, ale nie użytkownik tej aplikacji. W poniższym przykładzie [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) polecenia jest prywatny.
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

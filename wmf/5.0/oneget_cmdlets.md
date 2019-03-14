@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2f05fe96ec792a31fabf3aff0f9e18b40178316c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 042e9a30068d32dc5860255bdec960371121d866
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685312"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795100"
 ---
 # <a name="packagemanagement-cmdlets"></a>Polecenia cmdlet funkcji PackageManagement
 
@@ -130,7 +130,7 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-## <a name="-install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[ Polecenia Cmdlet Install-Package](/powershell/module/PackageManagement/Install-Package)
+## <a name="install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[Polecenia Cmdlet Install-Package](/powershell/module/PackageManagement/Install-Package)
 
 To polecenie cmdlet umożliwia instalację pakietów oprogramowania w źródłach pakiet przy użyciu załadować dostawców pakietu.
 

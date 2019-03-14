@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Zasoby społeczności
-ms.openlocfilehash: 2bd006b1b873f475e04ebb00cc89d593e114cafc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685088"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794879"
 ---
-# <a name="community-resources"></a>Zasoby społeczności #
+# <a name="community-resources"></a>Zasoby społeczności
 > Uwaga: Niniejsze informacje mają charakter wstępny i mogą ulec zmianom.
 
 Zespołu programu PowerShell zaprasza do składania zachęca opinie o produkcie i obsługuje wiele metod dla użytkowników, skontaktuj się z nami.

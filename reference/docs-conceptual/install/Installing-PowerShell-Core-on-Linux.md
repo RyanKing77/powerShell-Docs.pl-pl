@@ -2,12 +2,12 @@
 title: Instalowanie programu PowerShell Core w systemie Linux
 description: Informacje o instalowaniu programu PowerShell Core w różnych dystrybucjach systemu Linux
 ms.date: 08/06/2018
-ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 718be0f03f136d6eb7d78fff51abdc36f6a8f0c2
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405035"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795729"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Instalowanie programu PowerShell Core w systemie Linux
 
@@ -16,7 +16,7 @@ Obsługuje [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [U
 Dystrybucje systemu Linux, które nie są oficjalnie obsługiwane, spróbuj użyć [pakiet przyciąganie PowerShell][snap].
 Możesz też spróbować wdrażania plików binarnych programu PowerShell bezpośrednio przy użyciu systemu Linux [ `tar.gz` archiwum][tar], ale należy skonfigurować niezbędne zależności, w oparciu o system operacyjny w oddzielne kroki.
 
-Wszystkie pakiety są dostępne w usłudze GitHub [zwalnia][] strony.
+Wszystkie pakiety są dostępne w usłudze GitHub [Wersje][] strony.
 Po zainstalowaniu pakietu Uruchom `pwsh` z poziomu terminalu.
 
 [u14]: #ubuntu-1404
@@ -77,7 +77,7 @@ Od tego momentu, po prostu musisz użyć `sudo apt-get upgrade powershell` do ak
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Instalację za pomocą bezpośredniego pobierania — Ubuntu 14.04
 
 Pobierz pakiet Debian `powershell_6.1.0-1.ubuntu.14.04_amd64.deb`
-z [zwalnia][] strony na komputerze Ubuntu.
+z [Wersje][] strony na komputerze Ubuntu.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -125,7 +125,7 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, od teg
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Instalację za pomocą bezpośredniego pobierania — Ubuntu 16.04
 
 Pobierz pakiet Debian `powershell_6.1.0-1.ubuntu.16.04_amd64.deb`
-z [zwalnia][] strony na komputerze Ubuntu.
+z [Wersje][] strony na komputerze Ubuntu.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -145,9 +145,6 @@ sudo apt-get remove powershell
 ```
 
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
-
-> [!NOTE]
-> Dodano obsługę systemu Ubuntu 18.04 po `6.1.0-preview.2`
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>Instalację przy użyciu repozytorium pakietów — Ubuntu 18.04
 
@@ -176,7 +173,7 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, od teg
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Instalację za pomocą bezpośredniego pobierania — Ubuntu 18.04
 
 Pobierz pakiet Debian `powershell_6.1.0-1.ubuntu.18.04_amd64.deb`
-z [zwalnia][] strony na komputerze Ubuntu.
+z [Wersje][] strony na komputerze Ubuntu.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -198,8 +195,7 @@ sudo apt-get remove powershell
 ## <a name="ubuntu-1810"></a>Ubuntu 18.10
 
 > [!NOTE]
-> Dodano obsługę systemu Ubuntu 18.10 po `6.1.0-preview.3`.
-> Podobnie jak 18.10 dzienną kompilacją, jest tylko społeczności obsługiwane.
+> Ponieważ 18.10 [tymczasowe wersji](https://www.ubuntu.com/about/release-cycle), jest on tylko [wspieranym przez społeczność](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
 Instalowanie na 18.10 jest świadczona za pośrednictwem `snapd`. Zobacz [przyciąganie pakietu] [ snap] pełne instrukcje;
 
@@ -236,7 +232,7 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, od teg
 ### <a name="installation-via-direct-download---debian-8"></a>Instalację za pomocą bezpośredniego pobierania — Debian 8
 
 Pobierz pakiet Debian `powershell_6.1.0-1.debian.8_amd64.deb`
-z [zwalnia][] strony na komputerze Debian.
+z [Wersje][] strony na komputerze Debian.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -288,7 +284,7 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, od teg
 ### <a name="installation-via-direct-download---debian-9"></a>Instalację za pomocą bezpośredniego pobierania - Debian 9
 
 Pobierz pakiet Debian `powershell_6.1.0-1.debian.9_amd64.deb`
-z [zwalnia][] strony na komputerze Debian.
+z [Wersje][] strony na komputerze Debian.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -328,7 +324,7 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, po pro
 ### <a name="installation-via-direct-download---centos-7"></a>Instalację za pomocą bezpośredniego pobierania - CentOS 7
 
 Za pomocą [CentOS 7][], Pobierz pakiet obr. / min `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-z [zwalnia][] strony na komputerze CentOS.
+z [Wersje][] strony na komputerze CentOS.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -372,7 +368,7 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, po pro
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Instalację za pomocą bezpośredniego pobierania - Red Hat Enterprise Linux (RHEL) 7
 
 Pobierz pakiet obr. / min `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-z [zwalnia][] strony na komputerze Red Hat Enterprise Linux.
+z [Wersje][] strony na komputerze Red Hat Enterprise Linux.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -392,7 +388,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a>OpenSUSE
+## <a name="opensuse"></a>openSUSE
 
 ### <a name="installation---opensuse-423"></a>Instalacja — openSUSE 42.3
 
@@ -482,7 +478,7 @@ pwsh
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Instalację za pomocą bezpośredniego pobierania - Fedora 27, Fedora 28
 
 Pobierz pakiet obr. / min `powershell-6.1.0-1.rhel.7.x86_64.rpm`
-z [zwalnia][] strony na komputerze Fedora.
+z [Wersje][] strony na komputerze Fedora.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -509,7 +505,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Obsługa architektury jest eksperymentalne.
 
-Program PowerShell jest dostępny z [Arch Linux][] użytkownika repozytorium (AUR).
+Program PowerShell jest dostępny z [Arch systemu Linux][] użytkownika repozytorium (AUR).
 
 * Może być skompilowana przy użyciu [najnowsze tagiem wydania][arch-release]
 * Może być kompilowane z [najnowsze zatwierdzenie do wzorca][arch-git]
@@ -519,7 +515,7 @@ Pakiety w AUR są utrzymywane społeczności — Brak obsługi oficjalnych.
 
 Aby uzyskać więcej informacji na temat instalowania pakietów z AUR, zobacz [wiki Arch Linux](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) lub społeczności [pliku DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arch Linux]: https://www.archlinux.org/download/
+[Arch systemu Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
@@ -659,21 +655,21 @@ Poniższej tabeli przedstawiono zależności platformy .NET Core 2.0, które są
 
 | System operacyjny                 | Zależności |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Ubuntu 16.04       | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
-| Ubuntu 17.10       | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
-| Ubuntu 18.04       | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3 libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
-| Debian 8 (Jessie)  | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
-| Debian 9 (Stretch) | libc6, liblttng libgssapi-krb5-2, libgcc1,-ust0, libstdc ++ 6 <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, biblioteki openssl, libicu |
-| OpenSUSE 42.3 | libcurl4 libopenssl1_0_0, libicu52_1 |
-| openSUSE Leap 15 | libcurl4 libopenssl1_0_0, libicu60_2 |
+| Ubuntu 14.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Ubuntu 16.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55 |
+| Ubuntu 17.10       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
+| Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
+| Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
+| Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind, libcurl, openssl-libs, libicu |
+| openSUSE 42.3 | libcurl4 libopenssl1_0_0, libicu52_1 |
+| openSUSE Leap 15 | libcurl4, libopenssl1_0_0, libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 Aby wdrożyć pliki binarne programu PowerShell, w dystrybucjach systemu Linux, które nie są oficjalnie obsługiwane, należy zainstalować wymagane zależności dla docelowego systemu operacyjnego w oddzielne kroki.
 Na przykład naszym [dockerfile Amazon Linux] [ amazon-dockerfile] najpierw zainstalowanie zależności, a następnie wyodrębnia systemu Linux `tar.gz` archiwum.
 
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
+[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
 ### <a name="installation---binary-archives"></a>Instalacja — archiwum binarne
 
@@ -716,5 +712,5 @@ Profile przestrzegają konfiguracji dla hosta programu PowerShell, więc domyśl
 
 Stosuje się do programu PowerShell [specyfikację katalogu Base XDG] [ xdg-bds] w systemie Linux.
 
-[zwalnia]: https://github.com/PowerShell/PowerShell/releases/latest
+[Wersje]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

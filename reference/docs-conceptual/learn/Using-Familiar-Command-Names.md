@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie znanych nazw poleceń
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 3d2c681623086e061e237f08603d65150d2b1947
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688924"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795678"
 ---
 # <a name="using-familiar-command-names"></a>Używanie znanych nazw poleceń
 
@@ -22,14 +22,14 @@ Na poniższej liście przedstawiono niektóre typowe **cmd.exe** i polecenia sys
 
 |||||
 |-|-|-|-|
-|CAT|dir|instalacji|rm|
+|CAT|dir|Instalacji|rm|
 |cd|Echo|Przenieś|rmdir|
-|chdir|Wymazywanie|popd|stan uśpienia|
+|chdir|wymazywanie|popd|Stan uśpienia|
 |Usuń zaznaczenie|h|ps|Sortowanie|
 |ze specyfikacją CLS|Historia|pushd|Program Tee|
 |Kopiuj|Zakończ|pwd|typ|
-|del|lp|r|zapis|
-|diff|ls|ren||
+|del|lp|r|Zapis|
+|Diff|ls|ren||
 
 `Get-Alias` Polecenie cmdlet Pokazuje rzeczywistą nazwą polecenia programu PowerShell natywnych skojarzonych z aliasem.
 
@@ -65,7 +65,7 @@ Te aliasy są zrozumiałe, gdy wiadomo, skrócone nazwy.
 
 | Nazwa polecenia cmdlet    | Alias |
 |----------------|-------|
-| `Get-Item `    | GI    |
+| `Get-Item`     | GI    |
 | `Set-Item`     | si    |
 | `Get-Location` | gl    |
 | `Set-Location` | sl    |

@@ -4,15 +4,14 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: keithb
 title: Zainstaluj i skonfiguruj program WMF 5.1
-ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685060"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795576"
 ---
-# <a name="install-and-configure-wmf-51"></a>Instalowanie i konfigurowanie programu WMF 5.1 #
-
+# <a name="install-and-configure-wmf-51"></a>Instalowanie i konfigurowanie programu WMF 5.1
 
 ## <a name="download-and-install-the-wmf-51-package"></a>Pobierz i zainstaluj pakiet WMF 5.1
 
@@ -67,8 +66,8 @@ Windows PowerShell Desired State Configuration (DSC) jest zależna od usługi Wi
 Domyślnie w systemie Windows Server 2008 R2 i Windows 7 nie jest włączona usługa WinRM.
 Uruchom `Set-WSManQuickConfig`, programu Windows PowerShell z podwyższonym poziomem uprawnień sesji, aby włączyć usługę WinRM.
 
-
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Zainstaluj program WMF 5.1 dla systemu Windows Server 2012 R2, Windows Server 2012 i Windows 8.1
+
 **Zainstaluj z Eksploratora Windows (lub Eksploratora plików w systemie Windows Server 2012 R2 lub Windows 8.1)**
 
 1. Przejdź do folderu, do którego został pobrany plik MSU.

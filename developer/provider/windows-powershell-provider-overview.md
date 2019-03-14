@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 31ee7222c35e82ee58d6d56f710792dbc5cb24d7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848650"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795627"
 ---
 # <a name="windows-powershell-provider-overview"></a>Omówienie dostawcy programu Windows PowerShell
 
-Dostawca programu Windows PowerShell umożliwia dowolnego magazynu danych ujawnianie takich jak system plików, tak jakby był zainstalowany dysk. Na przykład, wbudowanego dostawcy rejestru pozwala przechodzić w rejestrze, jak należy przejść `c` dysku komputera. Dostawcę można też przesłonić `Item` polecenia cmdlet (na przykład `Get-Item`, `Set-Item`itd) tak, aby dane w magazynie danych może być traktowana tak, takich jak pliki i katalogi są traktowane podczas przechodzenia do systemu plików. Aby uzyskać więcej informacji o dostawcy i dyski i dostawców wbudowanych w programie Windows PowerShell, zobacz [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 Dostawca programu Windows PowerShell umożliwia dowolnego magazynu danych ujawnianie takich jak system plików, tak jakby był zainstalowany dysk. Na przykład, wbudowanego dostawcy rejestru pozwala przechodzić w rejestrze, jak należy przejść `c` dysku komputera. Dostawcę można też przesłonić `Item` polecenia cmdlet (na przykład `Get-Item`, `Set-Item`itd) tak, aby dane w magazynie danych może być traktowana tak, takich jak pliki i katalogi są traktowane podczas przechodzenia do systemu plików. Aby uzyskać więcej informacji o dostawcy i dyski i dostawców wbudowanych w programie Windows PowerShell, zobacz [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## <a name="providers-and-drives"></a>Dostawcy i dyski

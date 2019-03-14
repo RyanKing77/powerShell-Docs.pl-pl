@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
-ms.openlocfilehash: 35efd36fd70c209e3cbeb9eff0ddf978615fffd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845598"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794641"
 ---
 # <a name="windows-powershell-formatting-files"></a>Pliki formatujące programu Windows PowerShell
 
@@ -26,13 +26,10 @@ DotNetTypes.Format.ps1xml Określa wyświetlanie różnych obiektów platformy .
 FileSystem.Format.ps1xml definiuje wyświetlanie obiektów systemu plików, takich jak obiekty plików i katalogów.
 
 Definiuje Help.Format.ps1xml posługują się różne widoki [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) polecenia cmdlet, takich jak szczegółowe widoki pełnej, parametry oraz przykład.
-Definiuje różne widoki, które są używane przez [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) polecenia cmdlet, takich jak szczegółowe widoki pełnej, parametry oraz przykład.
 
 PowerShellCore.Format.ps1xml Określa wyświetlanie obiektów wygenerowanych przez polecenia cmdlet z podstawowych programu Windows PowerShell, takie jak obiekty zwrócone przez [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) i [historii Get](/powershell/module/Microsoft.PowerShell.Core/Get-History) polecenia cmdlet.
-Określa wyświetlanie obiektów wygenerowanych przez polecenia cmdlet z podstawowych programu Windows PowerShell, takie jak obiekty zwrócone przez [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) i [historii Get](/powershell/module/Microsoft.PowerShell.Core/Get-History) polecenia cmdlet.
 
 PowerShellTrace.Format.ps1xml Określa wyświetlanie obiektów śledzenia, np. tych generowanych przez [polecenia Trace](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) polecenia cmdlet.
-Określa wyświetlanie obiektów śledzenia, np. tych generowanych przez [polecenia Trace](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) polecenia cmdlet.
 
 Registry.Format.ps1xml definiuje wyświetlanie rejestru obiekty, takie jak obiekty klucza i wpisu.
 

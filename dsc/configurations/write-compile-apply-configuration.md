@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, usługi, Instalator
 title: Zapisywanie, kompilowanie i stosowanie konfiguracji
-ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684416"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795423"
 ---
 > Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -60,7 +60,9 @@ Uruchamianie konfiguracji, takich jak funkcja zostanie skompilowany jeden plik "
 Aby uruchomić konfigurację, trzeba *źródła z dot* skryptu "HelloWorld.ps1" w bieżącym zakresie.
 Aby uzyskać więcej informacji, zobacz [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
+<!-- markdownlint-disable MD038 -->
 *Źródło z dot* skryptu "HelloWorld.ps1", wpisując w polu Ścieżka, w której przechowywane, po `. ` (kropka, miejsca). Następnie możesz uruchomić konfigurację wywołując takich jak funkcja.
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1

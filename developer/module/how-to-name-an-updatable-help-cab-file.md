@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: de302da0-c17a-4d31-a8ef-14a626738993
 caps.latest.revision: 7
-ms.openlocfilehash: 23303489372cfe7e036fdea842ae75f7e47503c8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0b58d5ee19a85bed26bc6549ced48b890cd62f64
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850512"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794761"
 ---
 # <a name="how-to-name-an-updatable-help-cab-file"></a>Jak nazwać plik CAB aktualizowalnej pomocy
 
@@ -28,7 +28,6 @@ Można zaktualizować pliku cabinet (. Plik CAB) musi mieć nazwę w następują
 Dostępne są następujące elementy o tej nazwie.
 
 Modulename: wartość z **nazwa** właściwość **ModuleInfo** obiekt [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) polecenie cmdlet zwraca.
-Wartość **nazwa** właściwość **ModuleInfo** obiekt [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) polecenie cmdlet zwraca.
 
 ModuleGUID wartość z **GUID** klucza w manifeście modułu.
 

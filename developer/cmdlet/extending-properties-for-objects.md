@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845780"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795440"
 ---
 # <a name="extending-properties-for-objects"></a>Rozszerzanie właściwości dla obiektów
 
@@ -101,7 +101,6 @@ W poniższym przykładzie `VersionInfo` właściwość została dodana do [Syste
 
 ## <a name="property-sets"></a>Zestawy właściwości
 
-Zestaw właściwości definiuje grupę rozszerzone właściwości, które mogą być przywoływane przez nazwę zestawu. Na przykład `Property` parametru [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) polecenia cmdlet można określić określoną właściwość, aby były wyświetlane. Jeśli jest określony zestaw właściwości, są wyświetlane tylko te właściwości, które należą do zestawu.
 Zestaw właściwości definiuje grupę rozszerzone właściwości, które mogą być przywoływane przez nazwę zestawu. Na przykład `Property` parametru [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) polecenia cmdlet można określić określoną właściwość, aby były wyświetlane. Jeśli jest określony zestaw właściwości, są wyświetlane tylko te właściwości, które należą do zestawu.
 
 Nie ma żadnych ograniczeń liczby zestawów właściwości, które mogą być definiowane dla obiektu. Jednak zestawy właściwości, używany do definiowania właściwości wyświetlania domyślnego obiektu muszą być określone w PSStandardMembers zestaw elementów członkowskich. W pliku typy Types.ps1xml domyślne nazwy zestawu właściwości obejmują DefaultDisplayProperty DefaultDisplayPropertySet i DefaultKeyPropertySet. Wszystkie zestawy dodatkowe właściwości, dodawane do zestawu elementów członkowskich PSStandardMembers są ignorowane.

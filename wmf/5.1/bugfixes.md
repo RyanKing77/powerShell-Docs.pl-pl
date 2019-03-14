@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Poprawki błędów w programie WMF 5.1
-ms.openlocfilehash: d2cf44753a7cb54897e76cf914a8fef0f4aecf1e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f53fc40b79a3906ac2025b0eff342c0705b82655
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684150"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795372"
 ---
-# <a name="bug-fixes-in-wmf-51"></a>Poprawki błędów w programie WMF 5.1#
+# <a name="bug-fixes-in-wmf-51"></a>Poprawki błędów w programie WMF 5.1
 
-## <a name="bug-fixes"></a>Poprawki błędów ##
+## <a name="bug-fixes"></a>Poprawki błędów
 
 Następujące istotne błędy zostały usunięte w program WMF 5.1:
 
-### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>W pełni honoruje Autowykrywanie modułu `$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>W pełni honoruje Autowykrywanie modułu `$env:PSModulePath`
 
 Funkcja autowykrywania modułu (ładowanie modułów automatycznie bez jawnego Import-Module podczas wywoływania polecenia) została wprowadzona w 3 programu WMF.
 Kiedy wprowadzony, program PowerShell sprawdzane pod kątem poleceń w `$PSHome\Modules` przed użyciem `$env:PSModulePath`.
@@ -24,43 +24,43 @@ Kiedy wprowadzony, program PowerShell sprawdzane pod kątem poleceń w `$PSHome\
 Program WMF 5.1 zmienia to zachowanie, aby uwzględnić `$env:PSModulePath` całkowicie.
 Dzięki temu dla modułu utworzonych przez użytkownika, który definiuje poleceń programu PowerShell (np. `Get-ChildItem`) mają być automatycznie załadowane i poprawnie zastępowaniem wbudowanego polecenia.
 
-### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Przekierowywanie plików nie dłużej twardych kodów `-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>Przekierowywanie plików nie dłużej twardych kodów `-Encoding Unicode`
 
 We wszystkich poprzednich wersjach programu PowerShell, było niemożliwe do kontrolowania kodowanie pliku używany przez operatora przekierowania pliku, np. `Get-ChildItem > out.txt` PowerShell dodane `-Encoding Unicode`.
 
 Począwszy od programu WMF 5.1 można teraz zmienić kodowanie pliku przekierowania, ustawiając `$PSDefaultParameterValues`:
 
-```
+```powershell
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Naprawiono regresję podczas uzyskiwania dostępu do elementów członkowskich `System.Reflection.TypeInfo` ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Naprawiono regresję podczas uzyskiwania dostępu do elementów członkowskich `System.Reflection.TypeInfo`
 
 Regresja wprowadzone w programie WMF 5.0 Przerwano uzyskiwania dostępu do elementów członkowskich `System.Reflection.RuntimeType`, np. `[int].ImplementedInterfaces`.
 Ten błąd został naprawiony w WMF 5.1.
 
 
-### <a name="fixed-some-issues-with-com-objects"></a>Rozwiązano niektóre problemy z obiektami COM ###
+### <a name="fixed-some-issues-with-com-objects"></a>Rozwiązano niektóre problemy z obiektami COM
 
 Program WMF 5.0 wprowadzono nowe integratora modelu COM dla wywołania metod obiektów COM i uzyskiwania dostępu do właściwości obiektów COM.
 Ten nowy obiekt wiążący znacznie zwiększona wydajność, ale również wprowadzone pewne błędy, które usunięto w programie WMF 5.1.
 
-#### <a name="argument-conversions-were-not-always-performed-correctly"></a>Konwersje argumentów nie zawsze wykonano poprawnie ####
+#### <a name="argument-conversions-were-not-always-performed-correctly"></a>Konwersje argumentów nie zawsze wykonano poprawnie
 
 W poniższym przykładzie:
 
-```
+```powershell
 $obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
 Metoda WyślijKlawisze oczekuje ciągu, ale program PowerShell nie zostały przekonwertowane char na ciąg odkładania konwersji uwzględniając, który używa VariantChangeType do wykonywania konwersji, co w tym przykładzie spowodowało zamiast wysyłania kluczy '1', '7' i '3' Oczekiwano klucza Volume.Mute.
 
-#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>Wyliczalne obiektów COM nie zawsze obsługiwane poprawnie ####
+#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>Wyliczalne obiektów COM nie zawsze obsługiwane poprawnie
 
 PowerShell zwykle wylicza większość obiektów wyliczalny, ale regresji, wprowadzone w programie WMF 5.0 uniemożliwił wyliczenie obiektów COM, które implementują interfejs IEnumerable.  Przykład:
 
-```
+```powershell
 function Get-COMDictionary
 {
     $d = New-Object -ComObject Scripting.Dictionary
@@ -76,13 +76,13 @@ W powyższym przykładzie WMF 5.0 niepoprawnie napisany Scripting.Dictionary do 
 
 Zmiany adresów [wystawiać 1752224 w witrynie Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
-### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` był niedozwolony wewnątrz klasy ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` był niedozwolony wewnątrz klasy
 
 Program WMF 5.0 wprowadzono klasy z weryfikacją literałów typu, używany w klasach.
 `[ordered]` wygląda jak literał typu, ale nie jest to wartość true, typ platformy .NET.
 Program WMF 5.0 niepoprawnie zgłosił błąd na `[ordered]` wewnątrz klasy:
 
-```
+```powershell
 class CThing
 {
     [object] foo($i)
@@ -93,7 +93,7 @@ class CThing
 ```
 
 
-### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>Pomoc na temat tematów z wieloma wersjami nie działa. ###
+### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>Pomoc na temat tematów z wieloma wersjami nie działa.
 
 Zanim program WMF 5.1, jeśli masz wiele wersji zainstalować moduł, a wszystkie one udostępnione tematu pomocy, na przykład about_PSReadline, `help about_PSReadline` zwróci wiele tematów w oczywisty sposób wyświetlenia rzeczywiste pomocy.
 

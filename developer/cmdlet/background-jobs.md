@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847628"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794709"
 ---
 # <a name="background-jobs"></a>Zadania w tle
 
@@ -21,7 +21,6 @@ Polecenia cmdlet akcję można wykonać ich wewnętrznie lub programu Windows Po
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Zadania w tle i zadań podrzędnych, repozytorium zadania
 
-Obiekt zadania, który jest zwracany przez polecenia cmdlet używane do obsługi zadań w tle definiuje zadania. ( [Zadanie rozpoczęcia](/powershell/module/Microsoft.PowerShell.Core/Start-Job) polecenie cmdlet zwraca również wartość obiektu zadania.) Nazwa zadania, identyfikator, który jest używany do określenia zadania, informacje o stanie i zadania podrzędne znajdują się w tej definicji. Zadanie nie powoduje wykonania żadnej pracy. Każde zadanie w tle ma co najmniej jedno zadanie podrzędne, ponieważ zadanie podrzędne wykonuje rzeczywistą pracę. Po uruchomieniu polecenia cmdlet, aby praca jest wykonywana w tle, polecenia cmdlet należy dodać zadanie i zadania podrzędne do wspólnego repozytorium, nazywane *repozytorium zadania*.
 Obiekt zadania, który jest zwracany przez polecenia cmdlet używane do obsługi zadań w tle definiuje zadania. ( [Zadanie rozpoczęcia](/powershell/module/Microsoft.PowerShell.Core/Start-Job) polecenie cmdlet zwraca również wartość obiektu zadania.) Nazwa zadania, identyfikator, który jest używany do określenia zadania, informacje o stanie i zadania podrzędne znajdują się w tej definicji. Zadanie nie powoduje wykonania żadnej pracy. Każde zadanie w tle ma co najmniej jedno zadanie podrzędne, ponieważ zadanie podrzędne wykonuje rzeczywistą pracę. Po uruchomieniu polecenia cmdlet, aby praca jest wykonywana w tle, polecenia cmdlet należy dodać zadanie i zadania podrzędne do wspólnego repozytorium, nazywane *repozytorium zadania*.
 
 Aby uzyskać więcej informacji na temat obsługi zadania w tle w wierszu polecenia zobacz następujące tematy:

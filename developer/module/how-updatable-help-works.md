@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850225"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794386"
 ---
 # <a name="how-updatable-help-works"></a>Jaki działa pomoc aktualizowalna
 
@@ -21,7 +21,6 @@ W tym temacie wyjaśniono, jak aktualizowalnej pomocy procesy plik HelpInfo XML 
 
 ## <a name="the-update-help-process"></a>Proces Update-Help
 
-Na poniższej liście opisano akcje [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) polecenia cmdlet, gdy użytkownik uruchamia polecenie, aby zaktualizować pliki pomocy dla modułu w danej kultury interfejsu użytkownika.
 Na poniższej liście opisano akcje [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) polecenia cmdlet, gdy użytkownik uruchamia polecenie, aby zaktualizować pliki pomocy dla modułu w danej kultury interfejsu użytkownika.
 
 1. `Update-Help` pobiera zdalny plik HelpInfo XML w lokalizacji określonej przez wartość **HelpInfoURI** klucza w manifeście modułu i sprawdza poprawność pliku względem schematu. (Aby wyświetlić schemat, zobacz [schematu XML HelpInfo](./helpinfo-xml-schema.md).) Następnie `Update-Help` szuka lokalnego pliku HelpInfo XML modułu w katalogu modułu na komputerze użytkownika.
@@ -36,7 +35,6 @@ Na poniższej liście opisano akcje [Update-Help](/powershell/module/Microsoft.P
 
 ## <a name="the-save-help-process"></a>Proces Save-Help
 
-Na poniższej liście opisano akcje [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) i [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) poleceń cmdlet, gdy użytkownik uruchamia polecenia, aby zaktualizować pliki pomocy w udziale plików, a następnie użyć tych plików, aby zaktualizować pliki pomocy na na komputerze użytkownika.
 Na poniższej liście opisano akcje [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) i [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) poleceń cmdlet, gdy użytkownik uruchamia polecenia, aby zaktualizować pliki pomocy w udziale plików, a następnie użyć tych plików, aby zaktualizować pliki pomocy na na komputerze użytkownika.
 
 `Save-Help` Polecenia cmdlet wykonuje następujące akcje w odpowiedzi na polecenie, aby zapisać pliki pomocy dla modułu w udziale plików, który jest określony przez **Ścieżka_docelowa** parametru.

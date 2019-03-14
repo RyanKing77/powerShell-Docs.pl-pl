@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Istotne zmiany dotyczące programu PowerShell w wersji 6.0
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655450"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795695"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Istotne zmiany dotyczące programu PowerShell w wersji 6.0
 
@@ -65,6 +65,10 @@ Ze względu na użycie nieobsługiwanego interfejsów API `Microsoft.PowerShell.
 ### <a name="-counter-cmdlets"></a>Polecenia cmdlet środowiska `*-Counter`
 
 Ze względu na użycie nieobsługiwanego interfejsów API `*-Counter` została usunięta z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
+
+### <a name="-eventlog-cmdlets"></a>Polecenia cmdlet środowiska `*-EventLog`
+
+Ze względu na użycie nieobsługiwanego interfejsów API `*-EventLog` została usunięta z programu PowerShell Core. aż do znalezienia lepszym rozwiązaniem. `Get-WinEvent` i `Create-WinEvent` są dostępne na pobieranie i tworzenie zdarzeń na Windows.
 
 ## <a name="enginelanguage-changes"></a>Aparat/języka ustawionego zmiany
 
@@ -179,9 +183,9 @@ Zmień kody zakończenia z `pwsh.exe` aby było zgodne z konwencjami systemu Uni
 
 Z powodu nieobsługiwanego interfejsów API `LocalAccounts` modułu i `Counter` polecenia cmdlet w `Diagnostics` modułu zostały usunięte, aż do znalezienia lepszym rozwiązaniem.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Wykonywanie skryptu programu powershell z parametrem bool działa [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Wykonywanie skryptu programu PowerShell z parametrem bool działa [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Wcześniej przy użyciu powershell.exe (teraz `pwsh.exe`) można wykonać skryptu środowiska PowerShell przy użyciu `-File` podać sposób przekazywania $true/$false jako wartości parametrów. Obsługa $true/dodano $false jako przeanalizowaną wartości parametrów. Przełącznik wartości również są obsługiwane, ponieważ obecnie udokumentowanego składni nie działa.
+Wcześniej przy użyciu **powershell.exe** (teraz **pwsh.exe**) można wykonać skryptu środowiska PowerShell przy użyciu `-File` podany sposób przekazania `$true` / `$false` jako parametr wartości. Obsługa `$true` / `$false` został dodany jako przeanalizowaną wartości parametrów. Przełącznik wartości również są obsługiwane, ponieważ obecnie udokumentowanego składni nie działa.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Usuń `ClrVersion` właściwość `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ Włącz shebang użycie programu PowerShell na platformach innych niż Windows. 
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implementowanie analizy ucieczki Unicode [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` lub `` `u{####} `` jest konwertowana do odpowiedniego znaku Unicode. W danych wyjściowych literału `` `u ``, ucieczki początkowych: ``` ``u ```.
+`` `u####`` lub `` `u{####}`` jest konwertowana do odpowiedniego znaku Unicode. W danych wyjściowych literału `` `u``, ucieczki początkowych: ``` ``u```.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Zmiana `New-ModuleManifest` kodowanie `UTF8NoBOM` na platformach innych niż Windows [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
@@ -215,7 +219,7 @@ Wcześniej, dane wyjściowe podczas korzystania z `Get-Content -Delimiter` niesp
 
 W systemie Unix, jest Konwencji powłoki zaakceptować `-i` dla interakcyjnej powłoki oraz wielu narzędzi oczekiwało tego zachowania (`script` na przykład i ustawienie środowiska PowerShell jako domyślnej powłoki) i wywołuje shell przy użyciu `-i` przełącznika. Ta zmiana jest istotne, w tym `-i` wcześniej można było używać jako krótki ręcznie do dopasowania `-inputformat`, które jest teraz musi być `-in`.
 
-### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Napraw błąd pisowni w nazwie właściwości Get-ComputerInfo [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
+### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Typo fix in Get-ComputerInfo property name [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
 `BiosSerialNumber` została błędnie napisana jako `BiosSeralNumber` i został zmieniony na prawidłowo.
 

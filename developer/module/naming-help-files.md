@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847278"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795355"
 ---
 # <a name="naming-help-files"></a>Nadawanie nazw plikom pomocy
 
-W tym temacie wyjaśniono, jak nazwa pliku pomocy opartych na języku XML, aby [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) polecenia cmdlet, mogą ją odnaleźć. Wymagania dotyczące nazw różnią się dla każdego typu polecenia.
 W tym temacie wyjaśniono, jak nazwa pliku pomocy opartych na języku XML, aby [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) polecenia cmdlet, mogą ją odnaleźć. Wymagania dotyczące nazw różnią się dla każdego typu polecenia.
 
 ## <a name="cmdlet-help-files"></a>Pliki pomocy dotyczącej poleceń cmdlet
@@ -30,7 +29,6 @@ W pliku Pomocy C# polecenia cmdlet, musi nosić nazwę zestawu, w którym zdefin
 
 Format nazwy zestawu jest wymagana, nawet wtedy, gdy zestaw jest zagnieżdżony moduł.
 
-Na przykład [polecenia Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) polecenia cmdlet jest zdefiniowany w zestawie Microsoft.PowerShell.Diagnostics.dll. `Get-Help` Polecenie cmdlet wyszukuje utworzenia tematu Pomocy dotyczącego `Get-WinEvent` polecenia cmdlet tylko w pliku Microsoft.PowerShell.Diagnostics.dll help.xml w katalogu modułu.
 Na przykład [polecenia Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) polecenia cmdlet jest zdefiniowany w zestawie Microsoft.PowerShell.Diagnostics.dll. `Get-Help` Polecenie cmdlet wyszukuje utworzenia tematu Pomocy dotyczącego `Get-WinEvent` polecenia cmdlet tylko w pliku Microsoft.PowerShell.Diagnostics.dll help.xml w katalogu modułu.
 
 ## <a name="provider-help-files"></a>Pliki pomocy dostawcy
@@ -47,7 +45,6 @@ Na przykład dostawca certyfikatów jest zdefiniowany w zestawie Microsoft.Power
 
 ## <a name="function-help-files"></a>Pliki Pomocy — funkcja
 
-Funkcje mogą być udokumentowane przy użyciu [Pomoc oparta na komentarzach](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) lub zamieszczone w pliku pomocy XML. Gdy funkcja jest udokumentowany w pliku XML, funkcja musi mieć `.ExternalHelp` komentarz — słowo kluczowe, które kojarzy funkcji z pliku XML. W przeciwnym razie `Get-Help` polecenie cmdlet nie można odnaleźć pliku pomocy.
 Funkcje mogą być udokumentowane przy użyciu [Pomoc oparta na komentarzach](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) lub zamieszczone w pliku pomocy XML. Gdy funkcja jest udokumentowany w pliku XML, funkcja musi mieć `.ExternalHelp` komentarz — słowo kluczowe, które kojarzy funkcji z pliku XML. W przeciwnym razie `Get-Help` polecenie cmdlet nie można odnaleźć pliku pomocy.
 
 Nie istnieją wymagania techniczne dla nazwy pliku pomocy funkcji. Jednak najlepszym rozwiązaniem jest nazwa pliku pomocy dla modułu skryptów, w którym zdefiniowano funkcji. Na przykład następująca funkcja jest zdefiniowana w pliku Mójmoduł.psm1.

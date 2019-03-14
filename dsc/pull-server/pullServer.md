@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Usługa ściągania platformy DSC
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 27effe0cd3b9d90dcfaaf1bd4e38edf3c04c9cfb
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429962"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794726"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Usługa ściągania Desired State Configuration
 
@@ -88,7 +88,7 @@ Poniższe kroki wyjaśniają jak używać zasobów w konfiguracji, który konfig
 2. Pobieranie certyfikatu SSL dla serwera ściągania DSC od zaufanego urzędu certyfikacji, albo w ramach organizacji lub publicznego urzędu. Certyfikat odebrany od urzędu zwykle jest w formacie PFX.
 3. Zainstaluj certyfikat na węzeł, który będzie serwerem ściągania DSC w lokalizacji domyślnej, która powinna być `CERT:\LocalMachine\My`.
    - Zanotuj odcisk palca certyfikatu.
-4. Wybierz identyfikator GUID, który ma być używany jako klucz rejestracji. Aby wygenerować za pomocą programu PowerShell wprowadź następujące polecenie w wierszu PS, a następnie naciśnij klawisz enter: ` [guid]::newGuid()` lub `New-Guid`. Ten klucz będzie używany przez węzły klienta jako klucza wstępnego, do uwierzytelniania podczas rejestracji. Aby uzyskać więcej informacji zobacz poniżej sekcję klucza rejestracji.
+4. Wybierz identyfikator GUID, który ma być używany jako klucz rejestracji. Aby wygenerować za pomocą programu PowerShell wprowadź następujące polecenie w wierszu PS, a następnie naciśnij klawisz enter: `[guid]::newGuid()` lub `New-Guid`. Ten klucz będzie używany przez węzły klienta jako klucza wstępnego, do uwierzytelniania podczas rejestracji. Aby uzyskać więcej informacji zobacz poniżej sekcję klucza rejestracji.
 5. W środowisku PowerShell ISE Uruchom (F5) poniższy skrypt konfiguracji (zawarte w folderze przykłady **xPSDesiredStateConfiguration** modułu jako `Sample_xDscWebServiceRegistration.ps1`). Ten skrypt konfiguruje serwera ściągania.
 
     ```powershell

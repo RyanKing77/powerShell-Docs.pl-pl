@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.topic: conceptual
 title: Przykładowy szablon znanych writeup problem lub ograniczenie
-ms.openlocfilehash: ed7ae3de392c8902917e5b98fd4fc9d5138ccaed
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 8c1004e16f78913174af2e519e451f6fd9f30ff7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688679"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794499"
 ---
->Uwaga: Podaj proponowaną opisowy tytuł i krótki opis
+ >Uwaga: Podaj proponowaną opisowy tytuł i krótki opis
 
-## <a name="example-erroneous-executionpolicy-errors"></a>Przykład: Błędne błędy ExecutionPolicy ##
+## <a name="example-erroneous-executionpolicy-errors"></a>Przykład: Błędne błędy ExecutionPolicy
 Windows 7 korzystanie z modułów programu PowerShell i zasobów DSC może spowodować błędy raportowane o ExecutionPolicy.
 
 ### <a name="resolution"></a>Rozwiązanie

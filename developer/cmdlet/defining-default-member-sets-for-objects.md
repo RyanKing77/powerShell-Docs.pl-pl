@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
-ms.openlocfilehash: e8185eb7221a3be0445eddc537dbca89478c74f2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849469"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794913"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Definiowanie domyślnych zestawów elementów członkowskich dla obiektów
 
@@ -21,7 +21,6 @@ Zestaw elementów członkowskich PSStandardMembers jest używana przez środowis
 
 ## <a name="member-set-for-systemdiagnosticsprocess"></a>Zestaw elementów członkowskich dla System.Diagnostics.Process
 
-W poniższym przykładzie zestaw elementów członkowskich PSStandardMembers definiuje ustawienie właściwości DefaultDisplayPropertySet [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) obiektów. Ten zestaw właściwość jest używana przez [Format-Lista](/powershell/module/Microsoft.PowerShell.Utility/Format-List) polecenia cmdlet.
 W poniższym przykładzie zestaw elementów członkowskich PSStandardMembers definiuje ustawienie właściwości DefaultDisplayPropertySet [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) obiektów. Ten zestaw właściwość jest używana przez [Format-Lista](/powershell/module/Microsoft.PowerShell.Utility/Format-List) polecenia cmdlet.
 
 ```xml
@@ -44,7 +43,6 @@ W poniższym przykładzie zestaw elementów członkowskich PSStandardMembers def
   </MemberSet>
 ```
 
-Następujące dane wyjściowe pokazują domyślne właściwości zwrócony przez [Format-Lista](/powershell/module/Microsoft.PowerShell.Utility/Format-List) polecenia cmdlet. Tylko `Id`, `Handles`, `CPU`, i `Name` właściwości są zwracane dla każdego obiektu procesu.
 Następujące dane wyjściowe pokazują domyślne właściwości zwrócony przez [Format-Lista](/powershell/module/Microsoft.PowerShell.Utility/Format-List) polecenia cmdlet. Tylko `Id`, `Handles`, `CPU`, i `Name` właściwości są zwracane dla każdego obiektu procesu.
 
 ```powershell

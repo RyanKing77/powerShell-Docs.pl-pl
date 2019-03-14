@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
-ms.openlocfilehash: 3d9edb9d2af8ab15764d97256f49f674255e7ee7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 63bcdc6b273b47f8eb743928d2eaa5ef91470df5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852269"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794420"
 ---
 # <a name="host05-sample"></a>Przykład Host05
 
-Niniejszy przykład pokazuje sposób tworzenia aplikacji interaktywnych hosta opartego na konsoli, która odczytuje poleceń w wierszu polecenia, wykonuje polecenia, a następnie wyświetla wyniki w konsoli. Ta aplikacja hosta obsługuje również połączenia z komputerami zdalnymi przy użyciu [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) i [PsSession zakończenia](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) polecenia cmdlet.
 Niniejszy przykład pokazuje sposób tworzenia aplikacji interaktywnych hosta opartego na konsoli, która odczytuje poleceń w wierszu polecenia, wykonuje polecenia, a następnie wyświetla wyniki w konsoli. Ta aplikacja hosta obsługuje również połączenia z komputerami zdalnymi przy użyciu [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) i [PsSession zakończenia](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) polecenia cmdlet.
 
 ## <a name="requirements"></a>Wymagania
@@ -44,7 +43,6 @@ Niniejszy przykład pokazuje sposób tworzenia aplikacji interaktywnych hosta op
 
 - Implementowanie [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interfejsu.
 
-- Implementowanie [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interfejsu do obsługi interaktywnych wywołaniem funkcji zdalnych przy użyciu [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) i [ PsSession zakończenia](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) polecenia cmdlet.
 - Implementowanie [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interfejsu do obsługi interaktywnych wywołaniem funkcji zdalnych przy użyciu [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) i [ PsSession zakończenia](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) polecenia cmdlet.
 
 ## <a name="example"></a>Przykład

@@ -4,16 +4,17 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: jianyunt, quoctruong
 title: Ulepszenia zarządzania pakietami w programie WMF 5.1
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688238"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794284"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>Ulepszenia zarządzania pakietami w programie WMF 5.1#
+# <a name="improvements-to-package-management-in-wmf-51"></a>Ulepszenia zarządzania pakietami w programie WMF 5.1
 
-## <a name="improvements-in-packagemanagement"></a>Ulepszenia funkcji PackageManagement ##
+## <a name="improvements-in-packagemanagement"></a>Ulepszenia funkcji PackageManagement
+
 Poprawki wprowadzone w program WMF 5.1 są następujące:
 
 ### <a name="version-alias"></a>Alias wersji
@@ -61,6 +62,7 @@ Program WMF 5.1 PackageManagement obsługuje wyszukiwanie i instalowanie pakiet�
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Obsługa za pomocą modułu PackageManagement za serwerem proxy
 
 W program WMF 5.1 PackageManagement przyjmuje teraz nowe parametry serwera proxy `-ProxyCredential` i `-Proxy`. Korzystając z tych parametrów, można określić adres URL serwera proxy i poświadczeń do polecenia cmdlet funkcji PackageManagement. Domyślnie są używane ustawienia serwera proxy systemu. Przykład:
