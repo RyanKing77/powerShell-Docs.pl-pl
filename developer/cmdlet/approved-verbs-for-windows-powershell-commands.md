@@ -117,7 +117,7 @@ W poniższej tabeli wymieniono najbardziej zdefiniowanych czasowników.
 |[Krok](/dotnet/api/System.Management.Automation.VerbsCommon.Step) (st)|Przechodzi do następnego punktu lub zasobów w sekwencji.||
 |[Przełącznik](/dotnet/api/System.Management.Automation.VerbsCommon.Switch) (sw)|Określa akcję, która przełącza między dwa zasoby, takie jak między dwiema lokalizacjami, obowiązki lub stanów.||
 |[Cofnij](/dotnet/api/System.Management.Automation.VerbsCommon.Undo) (NZ)|Określa zasób do jego poprzedniego stanu.||
-|[Odblokuj](/dotnet/api/System.Management.Automation.VerbsCommon.Unlock) (Wielka Brytania)|Zwalnia z zasobem, który został zablokowany. To polecenie jest powiązany z `Lock`.|Dla tej akcji nie należy używać czasowników, takie jak wersja, Unrestrict lub niezabezpieczony.|
+|[Odblokuj](/dotnet/api/System.Management.Automation.VerbsCommon.Unlock) (Zjednoczone Królestwo)|Zwalnia z zasobem, który został zablokowany. To polecenie jest powiązany z `Lock`.|Dla tej akcji nie należy używać czasowników, takie jak wersja, Unrestrict lub niezabezpieczony.|
 |[Obejrzyj](/dotnet/api/System.Management.Automation.VerbsCommon.Watch) (wc)|Stale bada lub monitoruje zasób dla zmian.||
 
 ## <a name="communications-verbs"></a>Komunikacja zlecenia
