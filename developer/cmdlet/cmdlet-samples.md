@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851968"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058049"
 ---
 # <a name="cmdlet-samples"></a>Przykłady poleceń cmdlet
 
@@ -39,7 +39,7 @@ W tej sekcji opisano przykładowy kod, który jest podawany jako zestawu SDK pro
 
 [Przykładowe StopProcessSample04](./stopprocesssample04-sample.md) ten przykład przedstawia sposób zapisania polecenia cmdlet, który deklaruje zestawów parametrów, określa domyślnego parametru zestawu i może akceptować wejściowego obiektu.
 
-[Przykładowe Events01](./events01-sample.md) w tym przykładzie przedstawiono sposób tworzenia polecenia cmdlet, które umożliwia użytkownikowi zarejestrowanie zdarzenia wygenerowane przez [Klasa System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Za pomocą tego polecenia cmdlet użytkowników na przykład zarejestrować akcję do wykonania po utworzeniu pliku w określonym katalogu. W tym przykładzie pochodzi z [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasy bazowej.
+[Przykładowe Events01](./events01-sample.md) w tym przykładzie przedstawiono sposób tworzenia polecenia cmdlet, które umożliwia użytkownikowi zarejestrowanie zdarzenia wygenerowane przez [Klasa System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Za pomocą tego polecenia cmdlet użytkowników na przykład zarejestrować akcję do wykonania po utworzeniu pliku w określonym katalogu. W tym przykładzie pochodzi z [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasy bazowej.
 
 ## <a name="see-also"></a>Zobacz też
 

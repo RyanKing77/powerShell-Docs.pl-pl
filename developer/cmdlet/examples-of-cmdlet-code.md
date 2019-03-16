@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851800"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056264"
 ---
 # <a name="examples-of-cmdlet-code"></a>Przykłady kodu poleceń cmdlet
 
@@ -38,7 +38,7 @@ Ta sekcja zawiera przykłady kodu polecenie cmdlet, których można użyć do ro
 
 [Sposób przesłonięcia metody przetwarzania danych wejściowych](./how-to-override-input-processing-methods.md) podstawowa struktura służy do zastępowania metod BeginProcessing, ProcessRecord i EndProcessing w tych przykładach.
 
-[Jak ShouldProcess telefonów](./how-to-request-confirmations.md) ten przykład przedstawia sposób, w jaki [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)metody powinien zostać wywołany z poziomu polecenia cmdlet.
+[Jak ShouldProcess telefonów](./how-to-request-confirmations.md) ten przykład przedstawia sposób, w jaki [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metody powinna być wywoływana z w ramach polecenia cmdlet.
 
 [Sposób obsługi transakcji](./how-to-support-transactions.md) ten przykład przedstawia sposób wskazać, że polecenie cmdlet obsługuje transakcje i jak implementować akcję, która zostanie podjęta, gdy polecenie cmdlet jest używane w obrębie transakcji.
 

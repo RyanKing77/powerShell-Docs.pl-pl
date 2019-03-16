@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851016"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056060"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Dodawanie raportowania błędów niepowodujących zakończenia działania do polecenia cmdlet
 
-Polecenia cmdlet mogą raportować błędy niekończące, wywołując [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody i nadal będzie mogła działać na bieżący obiekt danych wejściowych lub dalsze przychodzące potoku obiektów. W tej sekcji opisano sposób tworzenia polecenia cmdlet, który zgłasza błędy niekończące z jego metody przetwarzania danych wejściowych.
+Polecenia cmdlet mogą raportować błędy niekończące, wywołując [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody i nadal będzie mogła działać na bieżący obiekt danych wejściowych lub dalsze przychodzące potoku obiektów. W tej sekcji opisano sposób tworzenia polecenia cmdlet, który zgłasza błędy niekończące z jego metody przetwarzania danych wejściowych.
 
-Błędy niekończące (a także błędy kończący), należy przekazać polecenie cmdlet [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu zidentyfikować błąd. Każdy rekord błędu jest identyfikowane za pomocą unikatowego ciągu o nazwie "Identyfikator błędu." Oprócz identyfikatora kategorii każdego błędu jest określona przez stałe zdefiniowane przez [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) wyliczenia. Użytkownik może wyświetlić błędy na podstawie ich kategorii, ustawiając `$ErrorView` zmienną "CategoryView".
+Błędy niekończące (a także błędy kończący), należy przekazać polecenie cmdlet [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu zidentyfikować błąd. Każdy rekord błędu jest identyfikowane za pomocą unikatowego ciągu o nazwie "Identyfikator błędu." Oprócz identyfikatora kategorii każdego błędu jest określona przez stałe zdefiniowane przez [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) wyliczenia. Użytkownik może wyświetlić błędy na podstawie ich kategorii, ustawiając `$ErrorView` zmienną "CategoryView".
 
 Aby uzyskać więcej informacji na temat rekordów błędów, zobacz [rekordów błędów programu Windows PowerShell](./windows-powershell-error-records.md).
 
@@ -101,11 +101,11 @@ Wszystkie polecenia cmdlet muszą przesłaniać co najmniej jedną z metod dosta
 > [!NOTE]
 > Twojego polecenia cmdlet powinny obsługiwać każdego wybranego rekordu jako niezależne, jak to możliwe.
 
-To polecenie cmdlet Get-Proc zastępuje [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody, aby obsłużyć `Name` parametr dla danych wejściowych dostarczonych przez użytkownika lub skryptu. Ta metoda zostanie wyświetlony procesy dla każdej nazwy żądanej procesu lub wszystkich procesów, jeśli podano żadnej nazwy. Szczegóły to zastąpienie są podane w [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md).
+To polecenie cmdlet Get-Proc zastępuje [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody, aby obsłużyć `Name` parametr dla danych wejściowych dostarczonych przez użytkownika lub skryptu. Ta metoda zostanie wyświetlony procesy dla każdej nazwy żądanej procesu lub wszystkich procesów, jeśli podano żadnej nazwy. Szczegóły to zastąpienie są podane w [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
 #### <a name="things-to-remember-when-reporting-errors"></a>Warto zapamiętać, gdy raportowanie błędów
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu, że polecenia cmdlet przekazuje podczas pisania błąd wymaga wyjątek podstawą. Podczas określania wyjątek do użycia, postępuj zgodnie z wytycznymi dla platformy .NET. Zasadniczo Jeśli błąd semantycznie jest taka sama jak istniejące wyjątek, polecenia cmdlet należy użyć lub pochodzić od tego wyjątku. W przeciwnym razie powinien pochodzić, nowy wyjątek lub hierarchia wyjątków bezpośrednio z [System.Exception](/dotnet/api/System.Exception) klasy.
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu, że polecenia cmdlet przekazuje podczas pisania błąd wymaga wyjątek podstawą. Podczas określania wyjątek do użycia, postępuj zgodnie z wytycznymi dla platformy .NET. Zasadniczo Jeśli błąd semantycznie jest taka sama jak istniejące wyjątek, polecenia cmdlet należy użyć lub pochodzić od tego wyjątku. W przeciwnym razie powinien pochodzić, nowy wyjątek lub hierarchia wyjątków bezpośrednio z [System.Exception](/dotnet/api/System.Exception) klasy.
 
 Podczas tworzenia identyfikatorów błędu (dostępne za pośrednictwem właściwości FullyQualifiedErrorId klasy rekord błędu) pamiętać o następujących.
 
@@ -135,7 +135,7 @@ Nieobsługiwane wyjątki nie są objęte programu Windows PowerShell w następuj
 
 ## <a name="reporting-nonterminating-errors"></a>Błędy niekończące raportowania
 
-Jeden z metody przetwarzania danych wejściowych zgłosić błąd niekończące do strumienia wyjściowego przy użyciu [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody. Poniżej przedstawiono przykładowy kod z tego polecenia cmdlet Get-Proc, który ilustruje wywołanie [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) z w ramach zastępowania metody [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody. W tym przypadku jest nawiązywane połączenie, jeśli polecenie cmdlet nie można odnaleźć procesu dla identyfikatora określonego procesu.
+Jeden z metody przetwarzania danych wejściowych zgłosić błąd niekończące do strumienia wyjściowego przy użyciu [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody. Poniżej przedstawiono przykładowy kod z tego polecenia cmdlet Get-Proc, który ilustruje wywołanie [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) z w ramach zastępowania metody [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody. W tym przypadku jest nawiązywane połączenie, jeśli polecenie cmdlet nie można odnaleźć procesu dla identyfikatora określonego procesu.
 
 ```csharp
 protected override void ProcessRecord()

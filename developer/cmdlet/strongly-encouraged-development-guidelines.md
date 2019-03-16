@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794981"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057726"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Wskazówki dotyczące projektowania — użycie zdecydowanie zalecane
 
@@ -101,7 +101,7 @@ Podczas tego samego parametru jest używany przez wielu poleceń cmdlet, należy
 
 #### <a name="parameters-that-take-true-and-false"></a>Parametry, które przyjmują wartość PRAWDA i FAŁSZ
 
-Jeśli Twój Parametr przyjmuje tylko `true` i `false`, zdefiniuj parametr jako typ [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Parametr przełącznika jest traktowany jako `true` gdy określono za pomocą polecenia. Jeśli parametr nie jest uwzględniony w poleceniu, programu Windows PowerShell uwzględnia wartość parametru jako `false`. Nie należy definiować parametrów Boolean.
+Jeśli Twój Parametr przyjmuje tylko `true` i `false`, zdefiniuj parametr jako typ [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Parametr przełącznika jest traktowany jako `true` gdy określono za pomocą polecenia. Jeśli parametr nie jest uwzględniony w poleceniu, programu Windows PowerShell uwzględnia wartość parametru jako `false`. Nie należy definiować parametrów Boolean.
 
 Jeśli Twój parametr potrzebuje do rozróżnienia między wartościami 3: $true $false i "nieokreślone", a następnie zdefiniuj parametr typu Nullable\<bool >.  Potrzebę 3 "nieokreślone" zazwyczaj występuje, gdy polecenia cmdlet można zmodyfikować właściwość logiczna obiektu. W tym przypadku "nieokreślone" oznacza, że nie zmienia bieżącą wartość właściwości.
 
@@ -111,7 +111,7 @@ Często użytkownicy muszą wykonywać tej samej operacji względem wielu argume
 
 #### <a name="support-the-passthru-parameter"></a>Obsługa parametru PassThru
 
-Domyślnie wiele poleceń cmdlet, które modyfikują systemu, takie jak [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) polecenia cmdlet pełnić funkcję "sink" dla obiektów i zwraca wynik. Te polecenia cmdlet powinny implementować `PassThru` parametru, aby wymusić polecenia cmdlet, aby zwrócić obiekt. Gdy `PassThru` parametr jest określony, polecenie cmdlet zwraca obiekt, za pomocą wywołania [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metody. Na przykład następujące polecenie zatrzymuje proces obliczenie i przekazuje wynikowe procesu do potoku.
+Domyślnie wiele poleceń cmdlet, które modyfikują systemu, takie jak [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) polecenia cmdlet pełnić funkcję "sink" dla obiektów i zwraca wynik. Te polecenia cmdlet powinny implementować `PassThru` parametru, aby wymusić polecenia cmdlet, aby zwrócić obiekt. Gdy `PassThru` parametr jest określony, polecenie cmdlet zwraca obiekt, za pomocą wywołania [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metody. Na przykład następujące polecenie zatrzymuje proces obliczenie i przekazuje wynikowe procesu do potoku.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ Użyj wytycznych w tej sekcji Opinie użytkownika. Opinia ta umożliwia użytkow
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Obsługuje WriteWarning WriteVerbose i metod WriteDebug
 
-Polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metody, gdy polecenie cmdlet ma wykonywać operacji, która może mieć niezamierzone wynik. Na przykład polecenia cmdlet powinna wywołać tę metodę, jeśli polecenie cmdlet ma zastąpić plik tylko do odczytu.
+Polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metody, gdy polecenie cmdlet ma wykonywać operacji, która może mieć niezamierzone wynik. Na przykład polecenia cmdlet powinna wywołać tę metodę, jeśli polecenie cmdlet ma zastąpić plik tylko do odczytu.
 
-Polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metody, gdy użytkownik wymaga niektóre informacje na temat działania polecenia cmdlet. Na przykład polecenia cmdlet powinny wywoływać te informacje, jeśli autor polecenia cmdlet czuje, że istnieją scenariusze, które mogą wymagać więcej informacji na temat działania polecenia cmdlet.
+Polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metody, gdy użytkownik wymaga niektóre informacje na temat działania polecenia cmdlet. Na przykład polecenia cmdlet powinny wywoływać te informacje, jeśli autor polecenia cmdlet czuje, że istnieją scenariusze, które mogą wymagać więcej informacji na temat działania polecenia cmdlet.
 
-Polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody, gdy inżynier pomocy technicznej developer lub produktów należy zrozumieć, jakie zawiera uszkodzone działania polecenia cmdlet. Nie jest konieczne dla polecenia cmdlet do wywołania [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody w ten sam kod, który wywołuje [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Metoda ponieważ `Debug` parametru przedstawiono oba zestawy danych.
+Polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody, gdy inżynier pomocy technicznej developer lub produktów należy zrozumieć, jakie zawiera uszkodzone działania polecenia cmdlet. Nie jest konieczne dla polecenia cmdlet do wywołania [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody w ten sam kod, który wywołuje [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) — metoda Ponieważ `Debug` parametru przedstawiono oba zestawy danych.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Obsługa WriteProgress operacje, które zająć dużo czasu
 
-Polecenia cmdlet operacje które trwają długo i że nie można uruchomić w tle powinien obsługiwać raportowanie za pośrednictwem wywołania okresowe postępu [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metody.
+Polecenia cmdlet operacje które trwają długo i że nie można uruchomić w tle powinien obsługiwać raportowanie za pośrednictwem wywołania okresowe postępu [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metody.
 
 #### <a name="use-the-host-interfaces"></a>Użyj interfejsów hosta
 
-Od czasu do czasu, polecenie cmdlet musi komunikować się bezpośrednio z użytkownika, a nie przy użyciu różnych zapisu lub powinien metod obsługiwanych przez [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasy. W takim przypadku polecenia cmdlet powinien pochodzić od [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy i użyć [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) właściwości. Ta właściwość obsługuje różne poziomy typu komunikacji, w tym typy PromptForChoice wiersza i WriteLine/ReadLine. Najbardziej określonego poziomu, udostępnia również sposoby do odczytu i zapisu poszczególnych kluczy i radzenia sobie z buforów.
+Od czasu do czasu, polecenie cmdlet musi komunikować się bezpośrednio z użytkownika, a nie przy użyciu różnych zapisu lub powinien metod obsługiwanych przez [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasy. W takim przypadku polecenia cmdlet powinien pochodzić od [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy i użyć [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) właściwości. Ta właściwość obsługuje różne poziomy typu komunikacji, w tym typy PromptForChoice wiersza i WriteLine/ReadLine. Najbardziej określonego poziomu, udostępnia również sposoby do odczytu i zapisu poszczególnych kluczy i radzenia sobie z buforów.
 
-Chyba że polecenie cmdlet jest specjalnie przeznaczona do generowania graficznego interfejsu użytkownika (GUI), go nie należy wykluczać hosta za pomocą [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) właściwości. Na przykład polecenia cmdlet, które jest przeznaczona do generowania interfejsu graficznego [GridView poza](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) polecenia cmdlet.
+Chyba że polecenie cmdlet jest specjalnie przeznaczona do generowania graficznego interfejsu użytkownika (GUI), go nie należy wykluczać hosta za pomocą [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) właściwości. Na przykład polecenia cmdlet, które jest przeznaczona do generowania interfejsu graficznego [GridView poza](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) polecenia cmdlet.
 
 > [!NOTE]
 > Nie należy używać poleceń cmdlet [System.Console](/dotnet/api/System.Console) interfejsu API.
@@ -174,15 +174,15 @@ Jeśli Twoje polecenie cmdlet pozwala użytkownikowi na określenie pliku lub ź
 
 Jeśli polecenie cmdlet operacja odczytu lub zapisu danych musi być plikiem, polecenia cmdlet, należy zaakceptować danych wejściowych ścieżka środowiska Windows PowerShell i polecenia cmdlet należy używać [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) właściwości do translacji Windows Ścieżki programu PowerShell do ścieżki, które rozpoznaje systemu plików. Określone mechanizmy to m.in. następujących metod:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Jeśli dane polecenie cmdlet operacja odczytu lub zapisu jest tylko zestaw ciągów, a nie plikiem polecenia cmdlet należy używać dostawcy informacji o zawartości (`Content` elementu członkowskiego) do odczytu i zapisu. Te informacje są uzyskiwane z [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) właściwości. Te mechanizmy zezwala na inne magazyny danych uczestniczyć w do odczytywania i zapisywania danych.
+Jeśli dane polecenie cmdlet operacja odczytu lub zapisu jest tylko zestaw ciągów, a nie plikiem polecenia cmdlet należy używać dostawcy informacji o zawartości (`Content` elementu członkowskiego) do odczytu i zapisu. Te informacje są uzyskiwane z [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) właściwości. Te mechanizmy zezwala na inne magazyny danych uczestniczyć w do odczytywania i zapisywania danych.
 
 #### <a name="support-wildcard-characters"></a>Obsługa symboli wieloznacznych
 
@@ -206,11 +206,11 @@ W przypadku projektowania obiekt do polecenia cmdlet upewnij się, że jego czł
 
 Istniejących obiektów .NET Framework, które są zwracane przez polecenia cmdlet często brakuje niektórych członków ważne lub wygodne, które są wymagane przez użytkownika lub dewelopera skryptu. Te brakujące elementy Członkowskie mogą być szczególnie ważne, do wyświetlania i tworzenia nazw poprawny element członkowski, tak, aby obiekt może być poprawnie przekazywane do potoku. Utwórz niestandardowy plik Types.ps1xml do dokumentowania tych wymaganych elementów. Podczas tworzenia tego pliku, firma Microsoft zaleca następującą Konwencję nazewnictwa: *< Your_Product_Name >*. Types.ps1xml.
 
-Na przykład można dodać `Mode` skryptu właściwość [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) wpisz, aby wyświetlić atrybuty pliku wyraźniej. Ponadto można dodać `Count` właściwość alias [System.Array](/dotnet/api/System.Array) typu umożliwia spójne stosowanie tej nazwy właściwości (zamiast `Length`).
+Na przykład można dodać `Mode` skryptu właściwość [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) wpisz, aby wyświetlić atrybuty pliku wyraźniej. Ponadto można dodać `Count` właściwość alias [System.Array](/dotnet/api/System.Array) typu umożliwia spójne stosowanie tej nazwy właściwości (zamiast `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementuj interfejs IComparable
 
-Implementowanie [System.Icomparable](/dotnet/api/System.IComparable) interfejsu na wszystkich obiektach danych wyjściowych. Dzięki temu obiektów danych wyjściowych można łatwo go przesyłać potokiem do różnych poleceń cmdlet sortowania i analizy.
+Implementowanie [System.IComparable](/dotnet/api/System.IComparable) interfejsu na wszystkich obiektach danych wyjściowych. Dzięki temu obiektów danych wyjściowych można łatwo go przesyłać potokiem do różnych poleceń cmdlet sortowania i analizy.
 
 ##### <a name="update-display-information"></a>Aktualizowanie wyświetlanych informacji
 
@@ -230,11 +230,11 @@ Parametr akceptuje dane wejściowe z potoku, jeśli **parametru** atrybut zawier
 
 #### <a name="support-the-processrecord-method"></a>Obsługuje metody ProcessRecord
 
-Aby zaakceptować wszystkie rekordy z poprzedniego polecenia cmdlet w potoku, musi implementować Twojego polecenia cmdlet [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody. Program Windows PowerShell wywołuje tę metodę wielokrotnie, jeden raz dla każdego rekordu, który jest wysyłany do Twojego polecenia cmdlet.
+Aby zaakceptować wszystkie rekordy z poprzedniego polecenia cmdlet w potoku, musi implementować Twojego polecenia cmdlet [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody. Program Windows PowerShell wywołuje tę metodę wielokrotnie, jeden raz dla każdego rekordu, który jest wysyłany do Twojego polecenia cmdlet.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Zapisz rekordy w jednym potoku (SC03)
 
-Gdy polecenie cmdlet zwraca obiekty, polecenia cmdlet należy zapisać obiekty natychmiast po ich wygenerowaniu. Polecenie cmdlet nie powinno zawierać ich w celu buforowania je do tablicy połączone. Polecenia cmdlet używane do odbierania obiektów jako dane wejściowe będą w stanie do przetworzenia, wyświetlać, lub przetwarzać i wyświetlać obiekty dane wyjściowe bez opóźnień. Polecenia cmdlet, które generuje dane wyjściowe obiekty pojedynczo powinny wywoływać [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metody. Polecenia cmdlet, które generuje danych wyjściowych obiektów w partiach (na przykład, ponieważ interfejs API zwraca tablicę obiektów w danych wyjściowych) powinny wywoływać [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) Ustaw metody z drugim parametrem Aby `true`.
+Gdy polecenie cmdlet zwraca obiekty, polecenia cmdlet należy zapisać obiekty natychmiast po ich wygenerowaniu. Polecenie cmdlet nie powinno zawierać ich w celu buforowania je do tablicy połączone. Polecenia cmdlet używane do odbierania obiektów jako dane wejściowe będą w stanie do przetworzenia, wyświetlać, lub przetwarzać i wyświetlać obiekty dane wyjściowe bez opóźnień. Polecenia cmdlet, które generuje dane wyjściowe obiekty pojedynczo powinny wywoływać [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metody. Polecenia cmdlet, które generuje danych wyjściowych obiektów w partiach (na przykład, ponieważ interfejs API zwraca tablicę obiektów w danych wyjściowych) powinny wywoływać [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Ustaw metody z drugim parametrem Aby `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Wprowadź polecenia cmdlet bez uwzględniania wielkości liter i zachowywanie (SC04)
 

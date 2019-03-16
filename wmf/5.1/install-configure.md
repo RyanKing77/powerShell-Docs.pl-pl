@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: keithb
 title: Zainstaluj i skonfiguruj program WMF 5.1
-ms.openlocfilehash: e5590d48d467506270ccef4089513e1afade07be
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795576"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055990"
 ---
 # <a name="install-and-configure-wmf-51"></a>Instalowanie i konfigurowanie programu WMF 5.1
 
@@ -34,7 +34,8 @@ Pobierz program WMF 5.1 dla systemu operacyjnego i architekturę, którą chcesz
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Zainstaluj program WMF 5.1 dla systemu Windows Server 2008 R2 i Windows 7
 
-> **Uwaga:** Instrukcje dotyczące instalacji systemu Windows Server 2008 R2 i Windows 7 uległy zmianie, a różnią się od instrukcji dla innych pakietów. Instrukcje dotyczące instalacji dla systemu Windows Server 2012 R2, Windows Server 2012 i Windows 8.1 są poniżej.
+> [!NOTE]
+> Instrukcje dotyczące instalacji systemu Windows Server 2008 R2 i Windows 7 uległy zmianie, a różnią się od instrukcji dla innych pakietów. Instrukcje dotyczące instalacji dla systemu Windows Server 2012 R2, Windows Server 2012 i Windows 8.1 są poniżej.
 
 **Instalowanie programu WMF 5.1 w systemie Windows Server 2008 R2 i Windows 7**
 

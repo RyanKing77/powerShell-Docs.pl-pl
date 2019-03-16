@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Rejestrowanie usługi JEA konfiguracji
-ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689064"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059443"
 ---
 # <a name="registering-jea-configurations"></a>Rejestrowanie usługi JEA konfiguracji
 
@@ -113,7 +113,7 @@ Configuration JEAMaintenance
 Tę konfigurację można następnie zastosować funkcje w systemie przez [bezpośrednie wywołanie programu Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig) lub aktualizowania [konfiguracji serwera ściągania](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 Zasób DSC pozwala również zastąpić domyślny punkt końcowy komunikacji zdalnej Microsoft.PowerShell.
-Jeśli to zrobisz, zasobu powoduje automatyczne zarejestrowanie punktu końcowego unconstrainted kopii zapasowych o nazwie "Microsoft.PowerShell.Restricted", który ma wartości domyślnej listy ACL usługi WinRM (dzięki czemu użytkownicy zarządzania zdalnego i Administratorzy lokalni członkowie grupy mogli uzyskać do niego dostęp).
+Jeśli to zrobisz, zasobu powoduje automatyczne zarejestrowanie kopii zapasowej nieograniczonego punktu końcowego o nazwie "Microsoft.PowerShell.Restricted", który ma wartości domyślnej listy ACL usługi WinRM (dzięki czemu użytkownicy zarządzania zdalnego i Administratorzy lokalni członkowie grupy mogli uzyskać do niego dostęp).
 
 ## <a name="unregistering-jea-configurations"></a>Wyrejestrowywanie konfiguracje usługi JEA
 

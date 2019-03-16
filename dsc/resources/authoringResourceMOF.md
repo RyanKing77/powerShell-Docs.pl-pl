@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Pisanie zasobu DSC niestandardowych z pliku MOF
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687566"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059732"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Pisanie zasobu DSC niestandardowych z pliku MOF
 
@@ -69,7 +69,8 @@ Należy pamiętać o następujących dotyczących poprzedniego kodu:
 
 Skrypt zasobu implementuje logikę zasobu. W tym module musi zawierać trzy funkcje wywoływane **Get TargetResource**, **TargetResource zestaw**, i **TargetResource testu**. Wszystkie trzy funkcje należy przełączyć zestaw parametrów, która jest taka sama jak zestaw właściwości zdefiniowane w schemacie MOF, który został utworzony dla zasobu. W tym dokumencie to zbiór właściwości nazywa się "właściwości zasobów." Te trzy funkcje w pliku o nazwie Store <ResourceName>psm1. W poniższym przykładzie funkcje są przechowywane w pliku o nazwie Demo_IISWebsite.psm1.
 
-> **Uwaga**: Po uruchomieniu tego samego skryptu konfiguracji zasobu więcej niż jeden raz, powinna pojawić się bez błędów i zasobu może pozostawać w tym samym stanie jako po uruchomieniu skryptu. Aby to osiągnąć, upewnij się, że Twoje **Get TargetResource** i **TargetResource testu** funkcje Pozostaw bez zmian zasobu i wywoływanie tej **Set-TargetResource**działać więcej niż jeden raz w sekwencji z tego samego parametru wartości jest zawsze równoważne wywołanie go jeden raz.
+> [!NOTE]
+> Po uruchomieniu tego samego skryptu konfiguracji zasobu więcej niż jeden raz, powinna pojawić się bez błędów i zasobu może pozostawać w tym samym stanie jako po uruchomieniu skryptu. Aby to osiągnąć, upewnij się, że Twoje **Get TargetResource** i **TargetResource testu** funkcje Pozostaw bez zmian zasobu i wywoływanie tej **Set-TargetResource**działać więcej niż jeden raz w sekwencji z tego samego parametru wartości jest zawsze równoważne wywołanie go jeden raz.
 
 W **Get TargetResource** funkcji implementacji, użyj wartości właściwości klucza zasobu, które są dostarczane jako parametry, aby sprawdzić stan wystąpienia określonego zasobu. Ta funkcja musi zwracać tabelę mieszania, która zawiera wszystkie właściwości zasobu jako klucze i rzeczywiste wartości tych właściwości, jak odpowiadające im wartości. Poniższy kod zawiera przykład.
 

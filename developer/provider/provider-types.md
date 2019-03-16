@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848496"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057964"
 ---
 # <a name="provider-types"></a>Typy dostawców
 
@@ -65,7 +65,7 @@ Włączone kontenera dostawców Zezwalaj użytkownikowi na zarządzanie elementy
 
 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasy definiuje następujące metody wykonywania polecenia cmdlet określonego dostawcy. W większości przypadków do obsługi polecenia cmdlet dostawcy użytkownik musi zastąpić metodę, która wywołuje aparatu programu Windows PowerShell w celu wywołania polecenia cmdlet, takich jak `CopyItem` metodę `Copy-Item` polecenia cmdlet, na które opcjonalnie można zastąpić drugiej metody, takie jak `CopyItemDynamicParameters`, dodawania parametrów dynamicznych do polecenia cmdlet.
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) i [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) Definiowanie metody, jak dostawca obsługuje `Copy-Item` polecenia cmdlet dostawcy. To polecenie cmdlet umożliwia użytkownikowi kopiowanie elementu z jednej lokalizacji do innej.
+- [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) i [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) Definiowanie metody, jak dostawca obsługuje `Copy-Item` polecenia cmdlet dostawcy. To polecenie cmdlet umożliwia użytkownikowi kopiowanie elementu z jednej lokalizacji do innej.
 
 - [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) i [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) metod Określa, jak dostawca obsługuje `Get-ChildItem` polecenia cmdlet dostawcy. To polecenie cmdlet umożliwia użytkownikom pobieranie elementów podrzędnych elementu nadrzędnego.
 

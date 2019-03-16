@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 1556d1e07a3a085346f2cdc48ef6888ad18687ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7ad95f288e2eb7cb68341a4932500a20e7740236
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685767"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055805"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Polecenia cmdlet PowerShellGet na potrzeby zarządzania modułami
 
@@ -35,6 +35,7 @@ ms.locfileid: "55685767"
 - [Unregister-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Obsługa instalacji zależności modułu, Get-InstalledModule i polecenia cmdlet Uninstall-Module
+
 - Dodano moduł wypełniania zależności w poleceniu cmdlet Publish-Module. RequiredModules lub NestedModules list PSModuleInfo są używane w ramach przygotowywania listy zależności modułu do opublikowania.
 - Obsługa instalacji dodano zależności w poleceniach cmdlet Install-Module i Update-Module. Moduł zależności są zainstalowane i zaktualizować domyślnie.
 - Dodano parametr - IncludeDependencies do polecenia cmdlet Find-Module, aby uwzględnić zależności modułów w wynikach.
@@ -44,6 +45,7 @@ ms.locfileid: "55685767"
 ## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>Pokaz polecenia cmdlet PowerShellGet z zależności modułów pomocy technicznej:
 
 ### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Upewnij się, że moduł zależności są dostępne w repozytorium:
+
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -58,6 +60,7 @@ Version    Name                     Repository    Des
 ```
 
 ### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Utwórz moduł z zależnościami, które są określone we właściwościach RequiredModules i NestedModules w manifeście modułu.
+
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -71,12 +74,14 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Publikowanie dwie wersje (**"1.0"** i **"w wersji 2.0"**) modułu TestDepWithNestedRequiredModules1 z zależnościami do repozytorium.
+### <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Publikowanie dwie wersje (**"1.0"** i **"w wersji 2.0"**) modułu TestDepWithNestedRequiredModules1 z zależnościami do repozytorium.
+
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>Znajdź moduł TestDepWithNestedRequiredModules1 z jego zależności, określając - IncludeDependencies.
+### <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>Znajdź moduł TestDepWithNestedRequiredModules1 z jego zależności, określając - IncludeDependencies.
+
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -92,6 +97,7 @@ Version    Name                               
 ```
 
 ### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Aby znaleźć zależności modułów, użyj Find-Module metadanych.
+
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -130,7 +136,8 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zainstaluj moduł TestDepWithNestedRequiredModules1 z zależnościami.
+### <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zainstaluj moduł TestDepWithNestedRequiredModules1 z zależnościami.
+
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -146,7 +153,8 @@ Version    Name                    Repository   Descrip
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zaktualizuj moduł TestDepWithNestedRequiredModules1 z zależnościami.
+### <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Zaktualizuj moduł TestDepWithNestedRequiredModules1 z zależnościami.
+
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -172,8 +180,10 @@ Version    Name                               
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Uruchom polecenie cmdlet Uninstall-Module, aby odinstalować moduł, który został zainstalowany przy użyciu funkcji PowerShellGet.
+### <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Uruchom polecenie cmdlet Uninstall-Module, aby odinstalować moduł, który został zainstalowany przy użyciu funkcji PowerShellGet.
+
 Jeśli inne modułu zależy od moduł, który chcesz usunąć, PowerShellGet zgłasza błąd.
+
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -186,6 +196,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 ```
 
 ## <a name="save-module-cmdlet"></a>Polecenie cmdlet Save-Module
+
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -204,11 +215,13 @@ d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
 ## <a name="update-modulemanifest-cmdlet"></a>Polecenie cmdlet Update-ModuleManifest
+
 To nowe polecenie cmdlet służy do aktualizacji pliku z wartościami właściwości wejściowej manifestu. Trwa wszystkie parametry, które obsługuje ModuleManifest testu.
 
 Zauważymy, że wiele autorzy modułów czy chcesz określić "\*" w wartości eksportowanych, takich jak FunctionsToExport, CmdletsToExport, itp. Podczas publikowania modułu do galerii programu PowerShell, funkcje nieokreślone i polecenia będą niewypełnione, prawidłowo na galerii. Dlatego zalecamy aktualizowanie autorzy modułu swoich manifestach z odpowiednimi wartościami.
 
 W przypadku modułów, które zostały wyeksportowane właściwości ModuleManifest aktualizacji spowoduje wypełnienie wybranego pliku manifestu przy użyciu informacji z eksportowanych funkcji, poleceń cmdlet, zmienne itp.:
+
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -233,6 +246,7 @@ AliasesToExport = '*'
 ```
 
 Po ModuleManifest aktualizacji:
+
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -258,10 +272,13 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 ```
 
 Dla każdego modułu są również pola metadanych skojarzonych z nim. Aby można było poprawnie wyświetlić metadane w galerii programu PowerShell, można użyć ModuleManifest aktualizacji do wypełniania tych pól w obszarze PrivateData.
+
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
+
 Hashtable PrivateData z pliku manifestu szablonu ma następujące właściwości:
+
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -286,4 +303,6 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***Uwaga:*** DscResourcesToExport jest obsługiwana tylko na najnowszą wersję programu PowerShell w wersji 5.0. Firma Microsoft nie będzie można zaktualizować pola, jeśli używasz poprzedniej wersji programu PowerShell.
+
+> [!NOTE]
+> DscResourcesToExport jest obsługiwana tylko na najnowszą wersję programu PowerShell w wersji 5.0. Firma Microsoft nie będzie można zaktualizować pola, jeśli używasz poprzedniej wersji programu PowerShell.

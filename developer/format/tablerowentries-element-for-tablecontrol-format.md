@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
-ms.openlocfilehash: d93750f919c1075f173dc9ac70324cc003e36879
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851142"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055737"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableRowEntries, element — TableControl (format)
 
@@ -41,7 +41,7 @@ Brak.
 
 |Element|Opis|
 |-------------|-----------------|
-|[Element TableRowEntry TableRowEntries dla tablecontrol — (w formacie)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Element wymagany.<br /><br /> Definiuje dane, które są wyświetlane w wierszu tabeli.|
+|[Element TableRowEntry TableRowEntries dla tablecontrol — (w formacie)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Element wymagany.<br /><br /> Definiuje dane, które są wyświetlane w wierszu tabeli.|
 
 ### <a name="parent-elements"></a>Elementy nadrzędne
 
@@ -84,6 +84,6 @@ W poniższym przykładzie przedstawiono `TableRowEntries` element, który defini
 
 [Tablecontrol — Element (Format)](./tablecontrol-element-format.md)
 
-[Element TableRowEntry (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[Element TableRowEntry (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Pisanie programu PowerShell, formatowanie pliku](./writing-a-powershell-formatting-file.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: 2c6a4bca03ee7f62371cbc296f854464167e5a62
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847789"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059681"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Przewodnik Szybki start dotyczący hosta programu Windows PowerShell
 
@@ -112,7 +112,7 @@ Podczas działania domyślne używane w poprzednich przykładach ładuje wszystk
 
 ### <a name="creating-an-initialsessionstate-object"></a>Tworzenie obiektu InitialSessionState
 
-Aby utworzyć niestandardowe obszar działania, należy najpierw utworzyć [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu. W poniższym przykładzie użyto [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) utworzyć ruspace po utworzeniu domyślny [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu.
+Aby utworzyć niestandardowe obszar działania, należy najpierw utworzyć [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu. W poniższym przykładzie użyto [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) do utworzenia obszaru działania po utworzeniu domyślny [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,7 +126,7 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Ograniczając obszarze działania
 
-W poprzednim przykładzie utworzyliśmy domyślny [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiekt, który ładuje wszystkie wbudowane podstawowych programu Windows PowerShell. Firma Microsoft może mieć jest określana skrótem [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metodę, aby utworzyć obiekt InitialSessionState, który będzie załadować tylko polecenia Mirosoft.PowerShell.Core przystawki. Aby utworzyć bardziej ograniczonego obszaru działania, należy utworzyć pusty [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu przez wywołanie metody [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metody, a następnie dodać polecenia do InitialSessionState.
+W poprzednim przykładzie utworzyliśmy domyślny [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiekt, który ładuje wszystkie wbudowane podstawowych programu Windows PowerShell. Firma Microsoft może mieć jest określana skrótem [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metodę, aby utworzyć obiekt InitialSessionState, który będzie załadować tylko polecenia Microsoft.PowerShell.Core przystawki. Aby utworzyć bardziej ograniczonego obszaru działania, należy utworzyć pusty [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu przez wywołanie metody [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metody, a następnie dodać polecenia do InitialSessionState.
 
 Za pomocą obszaru działania, który ładuje tylko polecenia, które określisz zapewnia znacznie lepszą wydajność.
 

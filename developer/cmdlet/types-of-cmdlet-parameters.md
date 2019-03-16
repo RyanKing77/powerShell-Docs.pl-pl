@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849518"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059579"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Typy parametrów poleceń cmdlet
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Parametry przełączników
 
-Program Windows PowerShell udostępnia [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) typ, który pozwala na zdefiniowanie parametru którego wartość jest automatycznie ustawiana na `false` Jeśli parametr nie zostanie określony, gdy polecenie cmdlet jest wywoływana. Zawsze, gdy jest to możliwe, należy użyć parametrów przełącznika zamiast logiczna parametrów.
+Program Windows PowerShell udostępnia [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) typ, który pozwala na zdefiniowanie parametru którego wartość jest automatycznie ustawiana na `false` Jeśli parametr nie zostanie określony, gdy polecenie cmdlet jest wywoływana. Zawsze, gdy jest to możliwe, należy użyć parametrów przełącznika zamiast logiczna parametrów.
 
 Należy wziąć pod uwagę poniższego przykładu. Domyślnie kilka poleceń cmdlet programu Windows PowerShell nie przekazuj obiekt danych wyjściowych w dół do potoku. Jednak te polecenia cmdlet mają `PassThru` Przełącz parametr, który zastępuje domyślne zachowanie. Jeśli `PassThru` parametr jest określony, wywołanego tych poleceń cmdlet, polecenie cmdlet zwraca obiekt danych wyjściowych do potoku.
 
-Jeśli potrzebujesz parametr ma wartość domyślną `true` gdy parametr nie jest określony w wywołaniu, należy wziąć pod uwagę wycofywanie sense parametru. Dla przykładu, zamiast ustawiać atrybutu parametru na wartość logiczną `true`, zadeklarować właściwości jako [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) typu, a następnie ustaw wartość domyślna parametru `false`.
+Jeśli potrzebujesz parametr ma wartość domyślną `true` gdy parametr nie jest określony w wywołaniu, należy wziąć pod uwagę wycofywanie sense parametru. Dla przykładu, zamiast ustawiać atrybutu parametru na wartość logiczną `true`, zadeklarować właściwości jako [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) typu, a następnie ustaw wartość domyślna parametru `false`.
 
-Aby zdefiniować parametr przełącznika, należy zadeklarować właściwości jako [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) typ, jak pokazano w następującym przykładzie.
+Aby zdefiniować parametr przełącznika, należy zadeklarować właściwości jako [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) typ, jak pokazano w następującym przykładzie.
 
 ```csharp
 [Parameter(Position = 1)]

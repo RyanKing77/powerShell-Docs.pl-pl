@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
-ms.openlocfilehash: faa9ba78397e713400f6072df9915f20d966bb37
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849224"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056910"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableColumnItems, element — TableRowEntry, TableControl (format)
 
@@ -47,7 +47,7 @@ Brak.
 
 |Element|Opis|
 |-------------|-----------------|
-|[Element TableRowEntry TableRowEntries dla tablecontrol — (w formacie)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Definiuje dane, które są wyświetlane w wierszu tabeli.|
+|[Element TableRowEntry TableRowEntries dla tablecontrol — (w formacie)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Definiuje dane, które są wyświetlane w wierszu tabeli.|
 
 ## <a name="remarks"></a>Uwagi
 
@@ -80,6 +80,6 @@ W poniższym przykładzie przedstawiono `TableColumnItems` element, który defin
 
 [Element TableColumnItem (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
-[Element TableRowEntry (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[Element TableRowEntry (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Pisanie programu PowerShell, formatowanie pliku](./writing-a-powershell-formatting-file.md)

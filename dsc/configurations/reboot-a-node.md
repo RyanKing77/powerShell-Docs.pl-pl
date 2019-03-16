@@ -2,12 +2,12 @@
 ms.date: 1/17/2019
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Ponowny rozruch węzła
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685690"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054734"
 ---
 # <a name="reboot-a-node"></a>Ponowny rozruch węzła
 
@@ -54,9 +54,9 @@ xPendingReboot [String] #ResourceName
 | SkipWindowsUpdate | Pomiń ponowne uruchamianie wyzwalane przez usługę Windows Update.|
 | SkipPendingFileRename | Pomiń plik oczekujące zmiany nazwy jest uruchamiany ponownie. |
 | SkipCcmClientSDK | Pomiń ponowne uruchamianie wyzwalane przez klienta programu ConfigMgr. |
-| SkipComputerRename | Pomiń ponowny rozruch wyzwolone przez zmienia nazwę komputera. |
+| SkipComputerRename | Pomiń ponowne uruchamianie wyzwalane przez zmienia nazwę komputera. |
 | PSDSCRunAsCredential | Obsługiwane w wersji 5. Wykonuje zasobu jako określony użytkownik. |
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`. Aby uzyskać więcej informacji, zobacz [DependsOn przy użyciu](resource-depends-on.md)|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`. Aby uzyskać więcej informacji, zobacz [DependsOn przy użyciu](resource-depends-on.md)|
 
 ## <a name="example"></a>Przykład
 

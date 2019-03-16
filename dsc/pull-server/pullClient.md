@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie klienta ściągania DSC
-ms.openlocfilehash: b7cd6dc0087eb8368c5467df4c3c7266ed704451
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687258"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054258"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>Konfigurowanie klienta ściągania DSC
 
@@ -23,4 +23,5 @@ W poniższych tematach opisano sposób konfigurowania klientów ściągnięcia:
 * [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](pullClientConfigNames.md)
 * [Konfigurowanie klienta ściągania przy użyciu identyfikatora konfiguracji](pullClientConfigID.md)
 
-> **Uwaga**: Następujące tematy dotyczą PowerShell 5.0. Aby skonfigurować klienta ściągania w programie PowerShell 4.0, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji w programie PowerShell 4.0](pullClientConfigID4.md).
+> [!NOTE]
+> Następujące tematy dotyczą PowerShell 5.0. Aby skonfigurować klienta ściągania w programie PowerShell 4.0, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji w programie PowerShell 4.0](pullClientConfigID4.md).

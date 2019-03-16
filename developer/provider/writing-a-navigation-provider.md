@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: a789b392bddd344ad583c93a1a55302329df9917
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56852087"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056597"
 ---
 # <a name="writing-a-navigation-provider"></a>Pisanie dostawcy nawigacji
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implementowanie makepath —
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metoda dołącza ścieżka określonego elementu nadrzędnego i określony podrzędny można utworzyć ścieżkę wewnętrzna dostawcy (informacje o ścieżce typy, które dostawców może obsługiwać, zobacz [Przegląd dostawcy programu Windows PowerShell](./windows-powershell-provider-overview.md). Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [ścieżki Microsoft.Powershell.Commands.Join](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) polecenia cmdlet.
+[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) metoda dołącza ścieżka określonego elementu nadrzędnego i określony podrzędny można utworzyć ścieżkę wewnętrzna dostawcy (informacje o ścieżce typy, które dostawców może obsługiwać, zobacz [Przegląd dostawcy programu Windows PowerShell](./windows-powershell-provider-overview.md). Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [ścieżki Microsoft.PowerShell.Commands.Join](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) polecenia cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implementowanie MoveItem
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoda przenosi elementu z określonej ścieżki do określona ścieżka docelowa. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [elementu Microsoft.Powershell.Commands.Move](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) polecenia cmdlet.
+[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) metoda przenosi elementu z określonej ścieżki do określona ścieżka docelowa. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [elementu Microsoft.PowerShell.Commands.Move](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) polecenia cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

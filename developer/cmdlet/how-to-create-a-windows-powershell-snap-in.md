@@ -10,12 +10,12 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], examples
 ms.assetid: 71bd9b2c-5f2e-4aa8-b5fe-08c956540d37
 caps.latest.revision: 10
-ms.openlocfilehash: 73834cea1d90943cf954728d6295d8eb33e14f57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 43199544dc02ccae4b61053c30d6ed36576adfcf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849441"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055941"
 ---
 # <a name="how-to-create-a-windows-powershell-snap-in"></a>Jak utworzyć przystawkę programu Windows PowerShell
 
@@ -25,7 +25,7 @@ Zestawy w przystawce należy zainstalować w chronionym katalogu, tak, jak je z 
 
 ## <a name="windows-powershell-snap-in-classes"></a>Windows PowerShell w przystawce klas
 
-Wszystkie klasy przystawkę programu Windows PowerShell pochodzić od [System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) lub [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) klasy.
+Wszystkie klasy przystawkę programu Windows PowerShell pochodzić od [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) lub [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) klasy.
 
 ## <a name="examples"></a>Przykłady
 
@@ -35,7 +35,7 @@ Wszystkie klasy przystawkę programu Windows PowerShell pochodzić od [System.Ma
 
 ## <a name="see-also"></a>Zobacz też
 
-[System.Management.Automation.Pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn)
+[System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)
 
 [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852164"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059664"
 ---
 # <a name="common-parameter-names"></a>Typowe nazwy parametrów
 
@@ -30,7 +30,7 @@ Następujące parametry są dodawane do wszystkich poleceń cmdlet i można uzys
 
 Typ danych: SwitchParameter
 
-Ten parametr określa, czy debugowanie na poziomie programisty wiadomości, które mogą być wyświetlane w wierszu polecenia. Te komunikaty są przeznaczone do rozwiązywania problemów dla działania polecenia cmdlet i są generowane przez wywołania [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody. Komunikaty debugowania musi być lokalizowany.
+Ten parametr określa, czy debugowanie na poziomie programisty wiadomości, które mogą być wyświetlane w wierszu polecenia. Te komunikaty są przeznaczone do rozwiązywania problemów dla działania polecenia cmdlet i są generowane przez wywołania [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody. Komunikaty debugowania musi być lokalizowany.
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (alias: atrybutów rozszerzonych)
 
@@ -60,7 +60,7 @@ Ten parametr określa liczbę obiektów do przechowywania w buforze danych wyjś
 
 Typ danych: SwitchParameter
 
-Ten parametr określa, czy polecenie cmdlet zapisuje objaśnienia komunikatów, które mogą być wyświetlane w wierszu polecenia. Te komunikaty są przeznaczone do zapewnienia dodatkowej pomocy dla użytkownika i są generowane przez wywołania [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metody.
+Ten parametr określa, czy polecenie cmdlet zapisuje objaśnienia komunikatów, które mogą być wyświetlane w wierszu polecenia. Te komunikaty są przeznaczone do zapewnienia dodatkowej pomocy dla użytkownika i są generowane przez wywołania [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metody.
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (alias: wa)
 

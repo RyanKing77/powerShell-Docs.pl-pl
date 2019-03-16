@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847488"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057607"
 ---
 # <a name="updatable-help-overview"></a>Omówienie aktualizowalnej pomocy
 
@@ -31,7 +31,9 @@ Aktualizowalnej pomocy jest w pełni obsługiwana przez wszystkie moduły progra
 
 Aktualizowalnej pomocy zawiera następujące funkcje.
 
-- [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) polecenia cmdlet, który określa, czy użytkownicy mają najnowszą Pomoc pliki modułu i, jeśli nie, pliki do pobrania najnowszych plików pomocy z Internetu, wypakowuje je i instaluje je w podkatalogach do modułu na komputerze użytkownika. Użytkownicy mogą używać [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) polecenia cmdlet, aby natychmiast wyświetlić tematy pomocy nowo zainstalowany. One nie trzeba ponownie uruchamiać programu Windows PowerShell.
+- [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) polecenia cmdlet, który określa, czy użytkownicy mają najnowszą Pomoc pliki modułu i, jeśli nie, pliki do pobrania najnowszych plików pomocy z Internetu, wypakowuje je i instaluje je w podkatalogach do modułu na komputerze użytkownika.
+  Użytkownicy mogą używać [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) polecenia cmdlet, aby natychmiast wyświetlić tematy pomocy nowo zainstalowany.
+  One nie trzeba ponownie uruchamiać programu PowerShell.
 
 - [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) polecenia cmdlet, który pobiera najnowszą Pomoc plików z Internetu i zapisuje je w katalogu w systemie plików. Użytkownicy mogą używać `Update-Help` polecenia cmdlet, aby pobrać pliki pomocy z katalogu system plików i Rozpakowywanie i zainstalować je w podkatalogach modułu na komputerze użytkownika. `Save-Help` Polecenia cmdlet jest przeznaczona dla użytkowników, którzy mają ograniczoną lub Brak dostępu do Internetu i w przedsiębiorstwach, którzy wolą, aby ograniczyć dostęp do Internetu.
 

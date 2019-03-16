@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794199"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054190"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Ładowanie i eksportowanie danych formatowania
 
@@ -27,7 +27,7 @@ Pliki formatowania mogą zostać załadowane do bieżącej sesji przy użyciu na
 
 - Można utworzyć manifestu modułu, który odwołuje się do pliku formatowania. Moduły umożliwiają możesz formatowanie plików do dystrybucji pakietu. Użyj [New ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) polecenia cmdlet, aby utworzyć manifest, a [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) polecenia cmdlet, aby załadować moduł do bieżącej sesji. Aby uzyskać więcej informacji na temat modułów, zobacz [pisanie modułu programu Windows PowerShell](../module/writing-a-windows-powershell-module.md).
 
-- Można utworzyć przystawki, który odwołuje się do pliku formatowania. Użyj [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) k odkazu formatowania plików. Jest to zdecydowanie zaleca się korzystanie z modułów, poleceń cmdlet pakietu i formatowanie skojarzone oraz typy plików do dystrybucji. Aby uzyskać więcej informacji na temat modułów, zobacz [pisanie modułu programu Windows PowerShell](../module/writing-a-windows-powershell-module.md).
+- Można utworzyć przystawki, który odwołuje się do pliku formatowania. Użyj [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) k odkazu formatowania plików. Jest to zdecydowanie zaleca się korzystanie z modułów, poleceń cmdlet pakietu i formatowanie skojarzone oraz typy plików do dystrybucji. Aby uzyskać więcej informacji na temat modułów, zobacz [pisanie modułu programu Windows PowerShell](../module/writing-a-windows-powershell-module.md).
 
 - Jeśli są programowane wywoływania poleceń, możesz dodać formatowania wpis pliku, aby stan sesji początkowej obszaru działania, w której polecenia są uruchamiane. Aby uzyskać więcej informacji o typ architektury .NET umożliwia dodanie formatowaniu pliku, zobacz [System.Management.Automation.Runspaces.Sessionstateformatentry? Displayproperty = imię i nazwisko](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) klasy.
 

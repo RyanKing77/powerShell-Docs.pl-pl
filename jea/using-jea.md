@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Korzystanie z usługi JEA
-ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686859"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054683"
 ---
 # <a name="using-jea"></a>Korzystanie z usługi JEA
 
@@ -108,7 +108,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 Można również utrwalić serwerem proxy poleceń cmdlet z przy użyciu komunikacji zdalnej niejawne [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
 Aby uzyskać więcej informacji na temat niejawne komunikacji zdalnej Sprawdź w dokumentacji pomocy [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) i [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).
 
-## <a name="using-jea-programatically"></a>Programowo przy użyciu usługi JEA
+## <a name="using-jea-programmatically"></a>Programowe korzystanie z usługi JEA
 
 JEA umożliwia także w systemach automatyzacji oraz w aplikacji użytkownika, takich jak witryny sieci web i aplikacji wewnętrznej pomocy technicznej.
 To podejście jest taki sam, jak w przypadku tworzenia aplikacji komunikować się z nieograniczonego punkty końcowe programu PowerShell, ale należy pamiętać, że program należy pamiętać, że JEA jest ograniczenie poleceń, które mogą być uruchamiane w sesji zdalnej.
@@ -126,10 +126,9 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-Jeśli kompilujesz aplikację C#, można utworzyć obszaru działania programu PowerShell, który nawiązuje połączenie z sesją usługi JEA, określając nazwę konfiguracji w [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) obiektu.
+Jeśli tworzysz C# aplikacji, można utworzyć obszaru działania programu PowerShell, który nawiązuje połączenie z sesją usługi JEA, określając nazwę konfiguracji w [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) obiektu.
 
 ```csharp
-
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";

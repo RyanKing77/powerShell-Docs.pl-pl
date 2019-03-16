@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
-ms.openlocfilehash: 85c165475bd67c378557c12820e450fbf8cb186e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849889"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058797"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>RightIndent, element — Frame, CustomControl, View (format)
 
 Określa liczbę znaków od prawego marginesu zostanie przesunięty w danych. Ten element jest używany podczas definiowania widoku formantu niestandardowego.
 
-— Element (w formacie) elementu ViewDefinitions (Format) widoku elementu (w formacie) formant niestandardowy, Element (Format) CustomEntries Element konfiguracji dla formant niestandardowy widok (w formacie) elementu CustomEntry CustomEntries elementu CustomItem widoku (Format) CustomEntry CutomControlView (Format) elementu ramki CustomItem dla formant niestandardowy do elementu RightIndent widoku (Format)
+— Element (w formacie) elementu ViewDefinitions (Format) widoku elementu (w formacie) formant niestandardowy, Element (Format) CustomEntries Element konfiguracji dla formant niestandardowy widok (w formacie) elementu CustomEntry CustomEntries elementu CustomItem widoku (Format) CustomEntry CustomControlView (Format) elementu ramki CustomItem dla formant niestandardowy do elementu RightIndent widoku (Format)
 
 ## <a name="syntax"></a>Składnia
 

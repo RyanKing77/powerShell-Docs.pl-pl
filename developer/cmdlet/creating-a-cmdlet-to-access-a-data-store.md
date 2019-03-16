@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849182"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059528"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Tworzenie polecenia cmdlet w celu uzyskania dostępu do magazynu danych
 
-W tej sekcji opisano sposób tworzenia polecenia cmdlet, który uzyskuje dostęp do przechowywanych danych za pomocą dostawcy środowiska Windows PowerShell. Ten typ polecenia cmdlet używa infrastruktury dostawcy środowiska Windows PowerShell, środowiska uruchomieniowego programu Windows PowerShell, a także, w związku z tym, klasa polecenia cmdlet muszą pochodzić od [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy bazowej.
+W tej sekcji opisano sposób tworzenia polecenia cmdlet, który uzyskuje dostęp do przechowywanych danych za pomocą dostawcy środowiska Windows PowerShell. Ten typ polecenia cmdlet używa infrastruktury dostawcy środowiska Windows PowerShell, środowiska uruchomieniowego programu Windows PowerShell, a także, w związku z tym, klasa polecenia cmdlet muszą pochodzić od [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy bazowej.
 
 Polecenia cmdlet Select Str opisane w tym miejscu można Znajdź i zaznacz ciągów w pliku lub obiektu. Wzorce używany do identyfikowania ciąg może być określony jawnie za pomocą `Path` parametru polecenia cmdlet lub niejawnie za pomocą `Script` parametru.
 
@@ -45,7 +45,7 @@ Tematy w tej sekcji są następujące:
 
 Pierwszym krokiem w procesie tworzenia polecenia cmdlet jest zawsze nazewnictwa polecenia cmdlet i deklarowanie klasy .NET, która implementuje polecenia cmdlet. To polecenie cmdlet wykrywa niektóre ciągi, więc nazwa zlecenie wybrane w tym miejscu jest "Wybierz" zdefiniowany przez [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) klasy. Nazwa rzeczownik "Str" jest używana, ponieważ polecenie cmdlet działa na ciągi. W poniższej deklaracji należy pamiętać, że nazwa polecenia cmdlet czasownik i rzeczownik są odzwierciedlane na nazwę klasy polecenia cmdlet. Aby uzyskać więcej informacji na temat polecenia cmdlet zatwierdzonych czasowników, zobacz [nazwy zlecenie poleceń Cmdlet](./approved-verbs-for-windows-powershell-commands.md).
 
-Klasa platformy .NET dla tego polecenia cmdlet muszą pochodzić od [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) podstawowej klasy, ponieważ zapewnia obsługę wymagane przez środowisko wykonawcze programu Windows PowerShell do udostępnienia dostawcy programu Windows PowerShell infrastruktura. Należy zauważyć, że to polecenie cmdlet powoduje użycie klas wyrażeniach regularnych programu .NET Framework, takich jak [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+Klasa platformy .NET dla tego polecenia cmdlet muszą pochodzić od [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) podstawowej klasy, ponieważ zapewnia obsługę wymagane przez środowisko wykonawcze programu Windows PowerShell do udostępnienia dostawcy programu Windows PowerShell infrastruktura. Należy zauważyć, że to polecenie cmdlet powoduje użycie klas wyrażeniach regularnych programu .NET Framework, takich jak [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
 Poniższy kod jest w definicji klasy dla tego polecenia cmdlet Select Str.
 
@@ -117,7 +117,7 @@ Jeśli ten parametr jest określony, polecenie cmdlet używa domyślnego zestawu
 
 To polecenie cmdlet definiuje następujące parametry pomocy technicznej, które mogą służyć do modyfikowania możliwości wyszukiwania, polecenia cmdlet.
 
-`Script` Parametr określa Blok skryptu, który może służyć do zapewnienia mechanizm alternatywny wyszukiwania do polecenia cmdlet. Skrypt musi zawierać wzorców użyty do dopasowania i zwracać [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) obiektu. Należy pamiętać, że ten parametr jest również unikatowy parametr, który identyfikuje `ScriptParameterSet` zestaw parametrów. Środowisko wykonawcze programu Windows PowerShell będzie widział ten parametr, używa tylko te parametry, które należą do `ScriptParameterSet` zestaw parametrów.
+`Script` Parametr określa Blok skryptu, który może służyć do zapewnienia mechanizm alternatywny wyszukiwania do polecenia cmdlet. Skrypt musi zawierać wzorców użyty do dopasowania i zwracać [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) obiektu. Należy pamiętać, że ten parametr jest również unikatowy parametr, który identyfikuje `ScriptParameterSet` zestaw parametrów. Środowisko wykonawcze programu Windows PowerShell będzie widział ten parametr, używa tylko te parametry, które należą do `ScriptParameterSet` zestaw parametrów.
 
 ```csharp
 [Parameter(
@@ -195,13 +195,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Deklarowanie zestawy parametrów
 
-To polecenie cmdlet używa dwóch zestawów parametrów (`ScriptParameterSet` i `PatternParameterSet`, czyli thedefault) jako nazwy dwóch zestawów parametrów używanych w dostęp do danych. `PatternParameterSet` domyślny zestaw parametrów i są używane podczas `Pattern` określono parametr. `ScriptParameterSet` jest używany, gdy użytkownik określi wyszukiwania alternatywny mechanizm, za pomocą `Script` parametru. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [Dodawanie Ustawia parametr do polecenia Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+To polecenie cmdlet używa dwóch zestawów parametrów (`ScriptParameterSet` i `PatternParameterSet`, co jest ustawieniem domyślnym) jako nazwy dwóch zestawów parametrów używanych w dostęp do danych. `PatternParameterSet` domyślny zestaw parametrów i są używane podczas `Pattern` określono parametr. `ScriptParameterSet` jest używany, gdy użytkownik określi wyszukiwania alternatywny mechanizm, za pomocą `Script` parametru. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [Dodawanie Ustawia parametr do polecenia Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Zastępowanie metody przetwarzania danych wejściowych
 
-Polecenia cmdlet należy zastąpić przynajmniej jednej metody do przetwarzania danych wejściowych [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy. Aby uzyskać więcej informacji na temat metody przetwarzania danych wejściowych, zobacz [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Polecenia cmdlet należy zastąpić przynajmniej jednej metody do przetwarzania danych wejściowych [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy. Aby uzyskać więcej informacji na temat metody przetwarzania danych wejściowych, zobacz [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-To polecenie cmdlet zastępuje [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoda tworzenia tablicy skompilowanych wyrażeń regularnych podczas uruchamiania. Powoduje to zwiększenie wydajności podczas wyszukiwania, które nie korzystają z prostego dopasowywania.
+To polecenie cmdlet zastępuje [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoda tworzenia tablicy skompilowanych wyrażeń regularnych podczas uruchamiania. Powoduje to zwiększenie wydajności podczas wyszukiwania, które nie korzystają z prostego dopasowywania.
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-To polecenie cmdlet zastępuje również [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody w celu przetworzenia wyborów ciągów, które użytkownik wprowadza w wierszu polecenia. Zapisuje wyniki zaznaczenia ciąg w formie niestandardowego obiektu przez wywołanie metody prywatnej **MatchString** metody.
+To polecenie cmdlet zastępuje również [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody w celu przetworzenia wyborów ciągów, które użytkownik wprowadza w wierszu polecenia. Zapisuje wyniki zaznaczenia ciąg w formie niestandardowego obiektu przez wywołanie metody prywatnej **MatchString** metody.
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -391,7 +391,7 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>Dostęp do zawartości
 
-Twojego polecenia cmdlet, należy otworzyć dostawcy wskazane przy użyciu ścieżki środowiska Windows PowerShell, aby go mogą uzyskać dostęp do danych. [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) obiekt obszaru działania jest używany do uzyskiwania dostępu do dostawcy, podczas gdy [System.Management.Automation.Pscmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) właściwość polecenie cmdlet jest używany do otwierania dostawcy. Dostęp do zawartości jest zapewniany przez pobieranie [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) otworzyć obiektu dla dostawcy.
+Twojego polecenia cmdlet, należy otworzyć dostawcy wskazane przy użyciu ścieżki środowiska Windows PowerShell, aby go mogą uzyskać dostęp do danych. [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) obiekt obszaru działania jest używany do uzyskiwania dostępu do dostawcy, podczas gdy [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) właściwość polecenie cmdlet jest używany do otwierania dostawcy. Dostęp do zawartości jest zapewniany przez pobieranie [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) otworzyć obiektu dla dostawcy.
 
 To polecenie cmdlet Str wybierz przykładowy używa [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) właściwości, aby udostępnić zawartość do skanowania. Następnie można wywołać [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) jest metoda wymagana ścieżka programu Windows PowerShell.
 
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {

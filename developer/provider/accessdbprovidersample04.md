@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
-ms.openlocfilehash: fd013384a4b588bcdb397d7771425fe5c031c48f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847299"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057624"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -30,7 +30,7 @@ W tym przykładzie pokazano poniżej:
 
 - Definiowanie klasy dostawcy, która pochodzi od klasy [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasy.
 
-- Zastępowanie [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metodę, aby zmienić zachowanie `Copy-Item` polecenia cmdlet, który umożliwia użytkownikowi kopiowanie elementów z jednej lokalizacji do innej. (Ten przykład pokazuje, jak dodać parametry dynamiczne `Copy-Item` polecenia cmdlet.)
+- Zastępowanie [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) metodę, aby zmienić zachowanie `Copy-Item` polecenia cmdlet, który umożliwia użytkownikowi kopiowanie elementów z jednej lokalizacji do innej. (Ten przykład pokazuje, jak dodać parametry dynamiczne `Copy-Item` polecenia cmdlet.)
 
 - Zastępowanie [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metodę, aby zmienić zachowanie polecenia cmdlet Get-ChildItems, który umożliwia użytkownikom pobieranie elementów podrzędnych elementu nadrzędnego . (Ten przykład pokazuje, jak dodawanie parametrów dynamicznych do polecenia cmdlet Get-ChildItems.)
 

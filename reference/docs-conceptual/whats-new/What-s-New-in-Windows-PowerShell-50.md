@@ -2,19 +2,21 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co nowego w programie Windows PowerShell 5.0
-ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688637"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055108"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Co nowego w programie Windows PowerShell 5.0
+
 Windows PowerShell 5.0 zawiera istotne nowe funkcje, które rozszerzają zakres jego zastosowań, zwiększyć jego użyteczność i umożliwiają kontrolowanie i zarządzanie komputerami z systemem Windows, łatwiejsze i bardziej kompleksowe.
 
 Windows PowerShell 5.0 jest zgodne z poprzednimi wersjami. Polecenia cmdlet, dostawców, moduły, przystawki, skrypty, funkcje i profile, które zostały zaprojektowane dla programu Windows PowerShell 4.0, Windows PowerShell 3.0 i Windows PowerShell 2.0 jest ogólnie pracy w programie Windows PowerShell 5.0, bez konieczności wprowadzania zmian.
 
 ## <a name="installing-windows-powershell"></a>Instalowanie programu Windows PowerShell
+
 Windows PowerShell 5.0 jest instalowany domyślnie w systemie Windows Server 2016 Technical Preview i Windows 10.
 
 Aby zainstalować program Windows PowerShell 5.0 w systemie Windows Server 2012 R2, Windows 8.1 Enterprise lub Windows 8.1 Pro, Pobierz i zainstaluj [Windows Management Framework 5.0](https://aka.ms/wmf5download). Pamiętaj odczytać szczegółów pobierania i spełniać wszystkie wymagania systemowe, przed zainstalowaniem programu Windows Management Framework 5.0.
@@ -27,6 +29,7 @@ Aby zainstalować program Windows PowerShell 5.0 w systemie Windows Server 2012 
 - [Nowe funkcje w środowisku Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Aktualizacje programu Windows PowerShell 4.0 w listopadzie 2014 r. pakiet zbiorczy (KB 3000850)
+
 Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration (DSC) w wersji 4.0 programu Windows PowerShell są dostępne w [listopada 2014 r. pakiet zbiorczy aktualizacji dla systemu Windows RT 8.1, Windows 8.1 i Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850 ). Można określić, jeśli KB 3000850 jest zainstalowany w systemie, uruchamiając `Get-Hotfix -Id KB3000850` w programie Windows PowerShell.
 
 - Aktualizacje istniejących poleceń cmdlet w [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) modułu
@@ -140,8 +143,8 @@ Wiele aktualizacji i ulepszeń do Windows PowerShell Desired State Configuration
 - Dodano parametr element FullyQualifiedName do poleceń cmdlet Import-Module i Remove-Module, do obsługi, przechowywania wielu wersji pojedynczy moduł.
 - Save-Help, Update-Help, Import-PSSession, Export-PSSession i Get-Command ma nowy parametr FullyQualifiedModule typu ModuleSpecification. Dodaj ten parametr, aby określić modułu w jego w pełni kwalifikowanej nazwy.
 - Wartość **$PSVersionTable.PSVersion** został zaktualizowany do wersji 5.0.
-- Program WMF 5.0 (PowerShell 5.0) zawiera **usług Pester** modułu.  Pester jest testowania jednostkowego dla programu PowerShell. Zapewnia kilka słów kluczowych prosty w obsłudze, które pozwalają na tworzenie testów dla skryptów. 
- 
+- Program WMF 5.0 (PowerShell 5.0) zawiera **usług Pester** modułu.  Pester jest testowania jednostkowego dla programu PowerShell. Zapewnia kilka słów kluczowych prosty w obsłudze, które pozwalają na tworzenie testów dla skryptów.
+
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nowe funkcje programu Windows PowerShell Desired State Configuration
 
 - Ulepszenia języka programu Windows PowerShell umożliwiają definiowanie zasobów Windows PowerShell Desired State Configuration (DSC) przy użyciu klas. Import-DscResource jest teraz dynamiczne słowo kluczowe true; Program Windows PowerShell analizuje modułu głównego określonego modułu, Wyszukiwanie klas, które zawierają atrybut DscResource. Klasy umożliwia teraz zdefiniować zasoby DSC, w których nie jest wymagany plik MOF, ani podfolderu DSCResource w folderze modułu. Plik modułu programu Windows PowerShell może zawierać wielu klas zasobów DSC.
@@ -482,7 +485,9 @@ Nowe polecenia cmdlet zostały dodane do instalacji programu Windows PowerShell 
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Ulepszenia istniejących podstawowych poleceń cmdlet i ProvidersWindows program PowerShell 3.0 zawiera nowe funkcje dla istniejących poleceń cmdlet, łącznie z uproszczoną składnię i nowe parametry dla następujących poleceń cmdlet: Polecenia cmdlet komputera służące, CSV poleceń cmdlet Get-ChildItem Get-Command Get-Content, Get-historii — obiekt miary, polecenia cmdlet zabezpieczeń, Select-Object, wybierz parametry, Split-Path, Rozpocznij proces, program Tee-Object, Test-Connection Dodawanie elementu członkowskiego i polecenia cmdlet usługi WMI.
+### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Ulepszenia istniejących podstawowych poleceń cmdlet i dostawców
+
+Windows PowerShell 3.0 zawiera nowe funkcje dla istniejących poleceń cmdlet, łącznie z uproszczoną składnię i nowe parametry dla następujących poleceń cmdlet: Polecenia cmdlet komputera służące, CSV poleceń cmdlet Get-ChildItem Get-Command Get-Content, Get-historii — obiekt miary, polecenia cmdlet zabezpieczeń, Select-Object, wybierz parametry, Split-Path, Rozpocznij proces, program Tee-Object, Test-Connection Dodawanie elementu członkowskiego i polecenia cmdlet usługi WMI.
 
 Dostawcy programu Windows PowerShell zostały również znacznie poprawiony, łącznie z obsługą dostawcy certyfikatu zarządzania certyfikatami Secure Socket Layer (SSL) dla hosta sieci web, obsługa poświadczeń, dyski sieciowe trwałe i alternatywne strumienie danych w system plików, dysków.
 

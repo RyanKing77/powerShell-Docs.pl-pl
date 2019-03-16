@@ -11,12 +11,12 @@ helpviewer_keywords:
 - attributes [PowerShell SDK], described
 ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
 caps.latest.revision: 14
-ms.openlocfilehash: b06faf7204213b383b25685837941ad63dcb225b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845353"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055176"
 ---
 # <a name="cmdlet-attributes"></a>Atrybuty poleceń cmdlet
 
@@ -32,7 +32,7 @@ Program Windows PowerShell definiuje kilka atrybutów, których można użyć, a
 
 [Polecenia cmdlet deklaracji atrybutu](./cmdlet-attribute-declaration.md) opisuje jak definiować klasy .NET Framework jako polecenia cmdlet.
 
-[Poświadczenie deklaracji atrybutu](./credential-attribute-declaration.md) zawiera opis sposobu dodawania obsługa dla konwertowania ciąg wejściowy w [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) obiektu.
+[Poświadczenie deklaracji atrybutu](./credential-attribute-declaration.md) zawiera opis sposobu dodawania obsługa dla konwertowania ciąg wejściowy w [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) obiektu.
 
 [Atrybutu OutputType deklaracji](./outputtype-attribute-declaration.md) opisuje sposób określania typów programu .NET Framework, zwracany przez polecenie cmdlet.
 

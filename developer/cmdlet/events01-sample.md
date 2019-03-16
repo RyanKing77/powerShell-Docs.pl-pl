@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851947"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057165"
 ---
 # <a name="events01-sample"></a>Przykład Events01
 
-W tym przykładzie przedstawiono sposób tworzenia polecenia cmdlet, które umożliwia użytkownikowi rejestrowania zdarzeń, które są wywoływane przez [Klasa System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Za pomocą tego polecenia cmdlet użytkownicy będą mogli zarejestrować akcję do wykonania po utworzeniu pliku w określonym katalogu. W tym przykładzie pochodzi z [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasy bazowej.
+W tym przykładzie przedstawiono sposób tworzenia polecenia cmdlet, które umożliwia użytkownikowi rejestrowania zdarzeń, które są wywoływane przez [Klasa System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Za pomocą tego polecenia cmdlet użytkownicy będą mogli zarejestrować akcję do wykonania po utworzeniu pliku w określonym katalogu. W tym przykładzie pochodzi z [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasy bazowej.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Jak skompilować przykład za pomocą programu Visual Studio.
 
@@ -78,7 +78,7 @@ Ten przykładowy skrypt wymaga programu Windows PowerShell 2.0.
 
 W przykładzie pokazano poniżej.
 
-- Jak napisać polecenie cmdlet służące do rejestrowania zdarzeń. Polecenia cmdlet jest pochodną [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasy, która zapewnia obsługę typowych parametrów do Register-* zdarzeń poleceń cmdlet. Polecenia cmdlet, które są uzyskiwane z [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) musi mieć możliwość definiowania ich poszczególnych parametrów i zastąpić `GetSourceObject` i `GetSourceObjectEventName` metody abstrakcyjne.
+- Jak napisać polecenie cmdlet służące do rejestrowania zdarzeń. Polecenia cmdlet jest pochodną [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) klasy, która zapewnia obsługę typowych parametrów do Register-* zdarzeń poleceń cmdlet. Polecenia cmdlet, które są uzyskiwane z [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) musi mieć możliwość definiowania ich poszczególnych parametrów i zastąpić `GetSourceObject` i `GetSourceObjectEventName` metody abstrakcyjne.
 
 ## <a name="example"></a>Przykład
 

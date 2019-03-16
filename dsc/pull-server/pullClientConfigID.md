@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie klienta ściągania przy użyciu identyfikatorów konfiguracji w programie PowerShell 5.0 lub nowszy
-ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685872"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055720"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Konfigurowanie klienta ściągania przy użyciu identyfikatorów konfiguracji w programie PowerShell 5.0 lub nowszy
 
@@ -23,7 +23,8 @@ Przed rozpoczęciem konfigurowania klienta ściągania, należy skonfigurować s
 
 Każdy węzeł docelowy można skonfigurować do pobrania konfiguracji, zasobów i nawet raportować jej stanu. Poniższe sekcje pokazują, jak konfigurowanie klienta ściągania przy użyciu udziału SMB lub protokołu HTTP DSC Pull Server. Podczas odświeżania LCM węzła, jej skontaktuje się skonfigurowanej lokalizacji, aby pobrać wszystkie przypisane konfiguracje. Jeśli wszystkie wymagane zasoby, które nie istnieją w węźle, zostaną automatycznie pobrane je ze skonfigurowanej lokalizacji. Jeśli węzeł jest skonfigurowana z [serwera raportów](reportServer.md), następnie zgłasza stan operacji.
 
-> **Uwaga**: Ten temat dotyczy programu PowerShell w wersji 5.0. Aby uzyskać informacje na temat konfigurowania klienta ściągania w programie PowerShell 4.0, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji w programie PowerShell 4.0](pullClientConfigID4.md)
+> [!NOTE]
+> Ten temat dotyczy programu PowerShell w wersji 5.0. Aby uzyskać informacje na temat konfigurowania klienta ściągania w programie PowerShell 4.0, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji w programie PowerShell 4.0](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Konfigurowanie klienta ściągania LCM
 

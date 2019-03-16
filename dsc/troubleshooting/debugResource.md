@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Debugowanie zasobów DSC
-ms.openlocfilehash: 9b2e7dd9b42332b869c4d7fabb21bd4b5a6b8800
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683954"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055584"
 ---
 # <a name="debugging-dsc-resources"></a>Debugowanie zasobów DSC
 
 > Dotyczy: Windows PowerShell 5.0
 
-W programie PowerShell 5.0 nowa funkcja została wprowadzona w żądany stan elementy (DSC) umożliwiający debugowanie zasobów DSC, ponieważ konfiguracja jest stosowana.
+W programie PowerShell 5.0 nowa funkcja została wprowadzona w Desired State Configuration (DSC) umożliwiający debugowanie zasobów DSC, ponieważ konfiguracja jest stosowana.
 
 ## <a name="enabling-dsc-debugging"></a>Włączanie debugowania DSC
 Przed można debugować zasobu, musisz włączyć debugowanie przez wywołanie metody [DscDebug Włącz](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) polecenia cmdlet.

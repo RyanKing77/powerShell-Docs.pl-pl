@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850113"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056519"
 ---
 # <a name="required-development-guidelines"></a>Wskazówki dotyczące projektowania — użycie wymagane
 
@@ -107,7 +107,7 @@ Po nadaniu nazwy poleceń cmdlet, nie należy używać żadnego z następującyc
 |%|Znak procentu|
 |+|Znak plus|
 |=|Znak równości|
-|~|tilda|
+|~|Tylda|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Nazwy parametrów, których nie można używać (RD03)
 
@@ -122,9 +122,9 @@ Aby te wywołania polecenia cmdlet należy określić obsługuje żądania potwi
 > [!NOTE]
 > Jeśli polecenie Cmdlet atrybut klasy polecenia cmdlet oznacza, że polecenie cmdlet obsługuje wywołania [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metody i polecenia cmdlet nie powiedzie się wywoływania [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metody, użytkownik może zmodyfikować system nieoczekiwanie.
 
-Użyj [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metodę żadnych modyfikacji systemu. Preferencje użytkownika i `Whatif` kontrolka parametrów [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metody. Z kolei [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) wywołanie wykonuje dodatkową kontrolę dla potencjalnie niebezpiecznych modyfikacji. Ta metoda nie są kontrolowane przez żadnych preferencji użytkownika lub `Whatif` parametru. Jeśli Twojego polecenia cmdlet wywoła [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metodę, powinny mieć `Force` parametr, który pomija wywołań do tych dwóch metod i która kontynuuje operację. Jest to ważne, ponieważ zezwala ona na Twojego polecenia cmdlet do użycia w skryptach nieinterakcyjnych i hosty.
+Użyj [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metodę żadnych modyfikacji systemu. Preferencje użytkownika i `WhatIf` kontrolka parametrów [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) metody. Z kolei [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) wywołanie wykonuje dodatkową kontrolę dla potencjalnie niebezpiecznych modyfikacji. Ta metoda nie są kontrolowane przez żadnych preferencji użytkownika lub `WhatIf` parametru. Jeśli Twojego polecenia cmdlet wywoła [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metodę, powinny mieć `Force` parametr, który pomija wywołań do tych dwóch metod i która kontynuuje operację. Jest to ważne, ponieważ zezwala ona na Twojego polecenia cmdlet do użycia w skryptach nieinterakcyjnych i hosty.
 
-W przypadku poleceń cmdlet programu obsługi tych wywołań, użytkownik można określić, czy rzeczywiście należy przeprowadzić akcji. Na przykład [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) wywołania polecenia cmdlet [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metodę, zanim przestanie zbiór krytyczne procesy, łącznie z systemem usługi Winlogon, a Spoolsrv procesów.
+W przypadku poleceń cmdlet programu obsługi tych wywołań, użytkownik można określić, czy rzeczywiście należy przeprowadzić akcji. Na przykład [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) wywołania polecenia cmdlet [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metodę, zanim przestanie zbiór krytyczne procesy, łącznie z systemem usługi Winlogon, a Programem Spoolsv procesów.
 
 Aby uzyskać więcej informacji na temat obsługi tych metod, zobacz [żądania potwierdzenia](./requesting-confirmation-from-cmdlets.md).
 
@@ -212,7 +212,7 @@ Utwórz moduł programu Windows PowerShell w pakietach i wdrażać poleceń cmdl
 
 ## <a name="see-also"></a>Zobacz też
 
-[Wytyczne dotyczące zalecamy wdrożenia](./strongly-encouraged-development-guidelines.md)
+[Wskazówki dotyczące programowania zalecamy](./strongly-encouraged-development-guidelines.md)
 
 [Wskazówki dotyczące porad dotyczących programowania](./advisory-development-guidelines.md)
 

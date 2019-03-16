@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Konfiguracje sesji usługi JEA
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55689127"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056600"
 ---
 # <a name="jea-session-configurations"></a>Konfiguracje sesji usługi JEA
 
@@ -60,7 +60,7 @@ Możesz zdecydować, tożsamość usługi JEA zostaną użyte w pliku konfigurac
 
 #### <a name="local-virtual-account"></a>Konto wirtualne
 
-Jeśli role obsługiwane przez ten punkt końcowy usługi JEA są używane do zarządzania na komputerze lokalnym, a konto administratora lokalnego jest wystarczające do uruchomienia pomyślnie poleceń, należy skonfigurować usługi JEA do używania konta lokalnego wirtualnego.
+Jeśli role obsługiwane przez ten punkt końcowy usługi JEA są używane do zarządzania na komputerze lokalnym, a konto administratora lokalnego jest wystarczająca do uruchomienia poleceń pomyślnie, należy skonfigurować usługi JEA do używania konta lokalnego wirtualnego.
 Kont wirtualnych są tymczasowego konta, które są unikatowe dla określonego użytkownika i tylko ostatni czas trwania sesji programu PowerShell.
 Na serwerze członkowskim lub stacji roboczej, kont wirtualnych należy na komputerze lokalnym **Administratorzy** grupy i mieć dostęp do większości zasobów systemowych.
 Na kontrolerze domeny usługi Active Directory kont wirtualnych należą do tej domeny **Administratorzy domeny** grupy.
@@ -80,6 +80,7 @@ Gdy określona jest co najmniej jedną grupę zabezpieczeń, konta wirtualnej ju
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
 > Kont wirtualnych tymczasowo są przyznawane logowanie w trybie usługi w zasadach zabezpieczeń serwera lokalnego.  Jeśli jeden z VirtualAccountGroups określone zostało już udzielone tego prawa w zasadach, pojedyncze konto wirtualnego nie jest już będą dodawane i usuwane z zasad.  Może to być przydatne w scenariuszach takich jak kontrolery domeny, w których poprawki, zasady zabezpieczeń kontrolera domeny są ściśle poddawane inspekcji.  To jest dostępna tylko w systemu Windows Server 2016 z listopada 2018 r lub nowszy pakiet zbiorczy i 2019 serwera systemu Windows za pomocą 2019 stycznia lub nowszej.
 
@@ -104,7 +105,6 @@ konta gMSA powinny być używane tylko podczas dostępu do zasobów sieciowych w
 
 > [!NOTE]
 > Konta usług zarządzane przez grupę tylko są dostępne w programie Windows PowerShell 5.1 lub nowszej i na komputerach przyłączonych do domeny.
-
 
 #### <a name="more-information-about-run-as-users"></a>Więcej informacji na temat uruchamiania jako użytkownicy
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Kolejność wyszukiwania możliwości roli
+
 Jak pokazano w powyższym przykładzie, możliwości roli odwołuje się płaskiej nazwy (nazwa pliku bez rozszerzenia) pliku możliwości roli.
 Jeśli wiele możliwości roli są dostępne w systemie o takiej samej nazwie prostego, programu PowerShell użyje jej kolejność wyszukiwania niejawne aby wybrać plik możliwości roli.
 Będzie ono **nie** udzielić dostępu do wszystkich plików możliwości rolę o takiej samej nazwie.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Zasady dostępu warunkowego są tylko dostępne w programie Windows PowerShell 5.1 lub nowszej.
 
 ### <a name="other-properties"></a>Inne właściwości
+
 Pliki konfiguracji sesji można robić wszystko, co można zrobić plik możliwości roli, po prostu bez możliwości daje łączącego się użytkownikom dostęp do różnych poleceń.
 Jeśli chcesz umożliwić wszystkim użytkownikom dostępu do określonych poleceń cmdlet, funkcji lub dostawców, możesz to zrobić bezpośrednio w pliku konfiguracji sesji.
 Aby uzyskać pełną listę obsługiwanych właściwości w pliku konfiguracji sesji, należy uruchomić `Get-Help New-PSSessionConfigurationFile -Full`.

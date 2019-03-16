@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC skryptu
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684843"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054760"
 ---
 # <a name="dsc-script-resource"></a>Zasób DSC skryptu
 
@@ -39,7 +39,7 @@ Script [string] #ResourceName
 |SetScript|Blok skryptu DSC są używane do wymuszania zgodności, gdy węzeł nie jest w żądanym stanie.|
 |TestScript|Blok skryptu, który określa, czy węzeł jest w żądanym stanie.|
 |Poświadczenie| Określa poświadczenia do użycia dla tego skryptu, jeśli wymagane są poświadczenia.|
-|DependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.
+|dependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.
 
 ### <a name="getscript"></a>GetScript
 
@@ -57,7 +57,7 @@ DSC nie używa danych wyjściowych `GetScript`. [Get-DscConfiguration](/powershe
 
 ### <a name="setscript"></a>SetScript
 
-`SetScript` Modyfikuje węzeł, który ma enfore żądanego stanu. Jest ona wywoływana przez DSC, jeśli `TestScript` skrypt zwraca blok `$false`. `SetScript` Powinna posiadać wartości zwrotnej.
+`SetScript` Modyfikuje węzła do wymuszenia żądanego stanu. Jest ona wywoływana przez DSC, jeśli `TestScript` skrypt zwraca blok `$false`. `SetScript` Powinna posiadać wartości zwrotnej.
 
 ## <a name="examples"></a>Przykłady
 

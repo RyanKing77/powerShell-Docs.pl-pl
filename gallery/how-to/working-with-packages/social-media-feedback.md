@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarzy
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684353"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055006"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarzy
 
-Galeria programu Powershell obsługuje dwa podejścia do użytkowników w celu zapewnienia publicznych opinii od pakietu:
+Galeria programu PowerShell obsługuje dwa podejścia do użytkowników w celu zapewnienia publicznych opinii od pakietu:
 
 - Użyj linków po lewej stronie "Udostępnianie" pakiet w witryn społecznościowych Facebook, LinkedIn i Twitter.
 - Funkcja komentarz publikować komentarze pakietu i umożliwienia autorom Obejrzyj przeznaczone do komentarzy dotyczących pakietów ich publikowania.
@@ -27,7 +27,6 @@ Użytkownicy muszą zalogować się do witryny, które wybrali w celu udostępni
 Zachęcamy użytkowników, aby to zrobić, jeśli znajdą się, że pakiet jest coś, co będzie zaleca się do innych osób.
 Galeria programu PowerShell będzie sprawdzać każdej witryny mediów społecznościowych dla "udziały" pakietu, a wyświetlana tyle razy, w których pakiet został udostępniony w każdej z witryn społecznościowych.
 Ponieważ ten przedstawia tylko liczbę razy coś został udostępniony, będzie interpretowany innym użytkownikom jako "liking" pakietu.
-
 
 ## <a name="comments"></a>Komentarze
 

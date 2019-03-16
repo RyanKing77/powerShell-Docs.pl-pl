@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bb4e1564-3fd3-4be3-b93e-ac90480e05c0
 caps.latest.revision: 6
-ms.openlocfilehash: 9ec6caedcb7cf20d4aab2216cd8a9707269d9452
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3130ecc69f7d1568bcbd392dd24e8cdcc3382905
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846081"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054853"
 ---
 # <a name="firstlineindent-element-for-frame-for-customcontrol-for-view-format"></a>FirstLineIndent, element — Frame, CustomControl, View (format)
 
 Określa liczbę znaków w pierwszym wierszu danych jest przesuwany w prawo. Ten element jest używany podczas definiowania widoku formantu niestandardowego.
 
-— Element (w formacie) elementu ViewDefinitions (Format) widoku elementu (w formacie) formant niestandardowy, Element (Format) CustomEntries Element konfiguracji dla formant niestandardowy widok (w formacie) elementu CustomEntry CustomEntries elementu CustomItem widoku (Format) CustomEntry CutomControlView (Format) elementu ramki CustomItem dla formant niestandardowy do elementu FirstLineIndent widoku (Format)
+— Element (w formacie) elementu ViewDefinitions (Format) widoku elementu (w formacie) formant niestandardowy, Element (Format) CustomEntries Element konfiguracji dla formant niestandardowy widok (w formacie) elementu CustomEntry CustomEntries elementu CustomItem widoku (Format) CustomEntry CustomControlView (Format) elementu ramki CustomItem dla formant niestandardowy do elementu FirstLineIndent widoku (Format)
 
 ## <a name="syntax"></a>Składnia
 

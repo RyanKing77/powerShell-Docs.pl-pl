@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
-ms.openlocfilehash: d4564b51b74422cdaec3878b227ffc6be7c97949
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846732"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055907"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Jak wywołać polecenie cmdlet z poziomu polecenia cmdlet
 
@@ -24,7 +24,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> Można wywołać tylko tych poleceń cmdlet, które pochodzą bezpośrednio z [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasy. Nie można wywołać polecenia cmdlet, która pochodzi od klasy [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy.
+> Można wywołać tylko tych poleceń cmdlet, które pochodzą bezpośrednio z [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasy. Nie można wywołać polecenia cmdlet, która pochodzi od klasy [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy.
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Do wywołania polecenia cmdlet w ramach polecenia cmdlet
 
@@ -36,7 +36,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. W danych wejściowych przetwarzania metody polecenia cmdlet należy utworzyć nowe wystąpienie klasy polecenia cmdlet do wywołania. W tym przykładzie obiekt typu [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) jest tworzony wraz z ciągiem, który zawiera argumenty, które są używane podczas wywoływania polecenia cmdlet.
+2. W danych wejściowych przetwarzania metody polecenia cmdlet należy utworzyć nowe wystąpienie klasy polecenia cmdlet do wywołania. W tym przykładzie obiekt typu [Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) jest tworzony wraz z ciągiem, który zawiera argumenty, które są używane podczas wywoływania polecenia cmdlet.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Przykład
 
-W tym przykładzie `Get-Process` polecenia cmdlet jest wywoływana z poziomu [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoda polecenia cmdlet.
+W tym przykładzie `Get-Process` polecenia cmdlet jest wywoływana z poziomu [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoda polecenia cmdlet.
 
 ```csharp
 using System;

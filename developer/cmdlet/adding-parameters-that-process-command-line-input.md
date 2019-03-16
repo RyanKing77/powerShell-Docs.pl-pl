@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: e010e28ec705932063bb418b260a1087fc3eef9e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846816"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055924"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Dodawanie parametrów, które przetwarzają dane wejściowe wiersza polecenia
 
@@ -147,7 +147,7 @@ public string[] Name
 
 W przypadku Twojego polecenia cmdlet do obsługi danych wejściowych wiersza polecenia, musi ono przesłonić odpowiedniej metody przetwarzania danych wejściowych. Metody podstawowe przetwarzania danych wejściowych wprowadzonych w temacie [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-**Get-Proc** polecenie cmdlet zastępuje [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody, aby obsłużyć `Name` parametr danych wejściowych dostarczonych przez użytkownika lub skryptu. Jeśli nazwa nie zostanie podany, ta metoda pobiera procesów dla każdej nazwy żądanej procesu lub wszystkich procesów. Należy zauważyć, że w [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), wywołanie [System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) znajdują się dane wyjściowe mechanizm umożliwiający wysyłanie danych wyjściowych obiektów do potoku. Drugi parametr to wywołanie `enumerateCollection`, jest równa `true` poinformować wyliczyć tablicy danych wyjściowych obiektów procesów i zapisać jeden proces naraz w wierszu polecenia środowiska uruchomieniowego programu Windows PowerShell.
+**Get-Proc** polecenie cmdlet zastępuje [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody, aby obsłużyć `Name` parametr danych wejściowych dostarczonych przez użytkownika lub skryptu. Jeśli nazwa nie zostanie podany, ta metoda pobiera procesów dla każdej nazwy żądanej procesu lub wszystkich procesów. Należy zauważyć, że w [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), wywołanie [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) znajdują się dane wyjściowe mechanizm umożliwiający wysyłanie danych wyjściowych obiektów do potoku. Drugi parametr to wywołanie `enumerateCollection`, jest równa `true` poinformować wyliczyć tablicy danych wyjściowych obiektów procesów i zapisać jeden proces naraz w wierszu polecenia środowiska uruchomieniowego programu Windows PowerShell.
 
 ```csharp
 protected override void ProcessRecord()

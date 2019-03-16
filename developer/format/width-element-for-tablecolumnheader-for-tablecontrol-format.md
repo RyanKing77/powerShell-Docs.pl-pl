@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
 caps.latest.revision: 18
-ms.openlocfilehash: a38fcbef457e69e3ea08d25ba3a9843621036f1e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844786"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055193"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Width, element — TableColumnHeader, TableControl (format)
 
@@ -43,7 +43,7 @@ Brak.
 
 |Element|Opis|
 |-------------|-----------------|
-|[Element TableColumnHeader TableHeaders dla TbleControl (Format)](./tablecolumnheader-element-format.md)|Definiuje etykietę, szerokości i wyrównania danych dla kolumny tabeli.|
+|[Element TableColumnHeader TableHeaders dla tablecontrol — (w formacie)](./tablecolumnheader-element-format.md)|Definiuje etykietę, szerokości i wyrównania danych dla kolumny tabeli.|
 
 ## <a name="text-value"></a>Wartość tekstowa
 

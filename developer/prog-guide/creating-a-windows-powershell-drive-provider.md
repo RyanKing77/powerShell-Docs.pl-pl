@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846669"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055653"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Tworzenie dostawcy dysku programu Windows PowerShell
 
@@ -61,7 +61,7 @@ Zgodnie z opisem w [projektowania Your Windows PowerShell dostawcy](./designing-
 
 Wszyscy dostawcy środowiska Windows PowerShell są traktowane jako bezstanowe, oznacza to, czy Twój dostawca dysku musi utworzyć informacje o stanie, wymaganego przez środowisko uruchomieniowe programu Windows PowerShell, wywoływanych przez nią dostawcy.
 
-Dla tego dostawcy dysku informacje o stanie obejmuje połączenie z bazą danych, która jest przechowywana jako część informacji o dysku. Oto kod, który pokazuje, jak te informacje są przechowywane w [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) obiekt, który opisuje dysku:
+Dla tego dostawcy dysku informacje o stanie obejmuje połączenie z bazą danych, która jest przechowywana jako część informacji o dysku. Oto kod, który pokazuje, jak te informacje są przechowywane w [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) obiekt, który opisuje dysku:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ Aby zezwolić na środowisko uruchomieniowe programu Windows PowerShell utworzy�
 
 Przesłonięcia tej metody należy wykonać następujące czynności:
 
-- Upewnij się, że [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) składowa istnieje i że można nawiązać połączenia z magazynem danych.
+- Upewnij się, że [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) składowa istnieje i że można nawiązać połączenia z magazynem danych.
 
 - Dysk utworzyć i wypełnić połączenia elementu członkowskiego, wspomagające `New-PSDrive` polecenia cmdlet.
 
-- Sprawdź poprawność [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) obiektu proponowane dysku.
+- Sprawdź poprawność [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) obiektu proponowane dysku.
 
-- Modyfikowanie [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) obiekt, który opisuje dysk z jakichkolwiek wymagane wydajność lub niezawodność informacji lub zapewnia dodatkowe dane dla obiektów wywołujących korzystać z tego dysku.
+- Modyfikowanie [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) obiekt, który opisuje dysk z jakichkolwiek wymagane wydajność lub niezawodność informacji lub zapewnia dodatkowe dane dla obiektów wywołujących korzystać z tego dysku.
 
-- Obsługa błędów przy użyciu [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metody, a następnie wróć `null`.
+- Obsługa błędów przy użyciu [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) metody, a następnie wróć `null`.
 
   Ta metoda zwraca albo informacje dysku, który został przekazany do metody lub wersja właściwe dla dostawcy.
 

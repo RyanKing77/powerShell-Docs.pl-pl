@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
-ms.openlocfilehash: e930e4422afd203feda6a389655ff8a355e3bec0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848678"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059222"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>EntrySelectedBy, element — CustomEntry, Controls, Configuration (format)
 
@@ -65,6 +65,6 @@ Jako minimum Każda definicja musi mieć co najmniej jeden typ .NET, zestawu wyb
 
 [Element CustomEntry formant niestandardowy dla formantów dla konfiguracji (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[Element TypeName dla EntrySelectdBy dla formantów dla konfiguracji (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[Element TypeName dla EntrySelectedBy dla formantów dla konfiguracji (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
 [Pisanie programu PowerShell, formatowanie pliku](./writing-a-powershell-formatting-file.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849098"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054989"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Dodawanie zestawu parametrów do polecenia cmdlet
 
@@ -179,7 +179,7 @@ Mimo że musi być unikatowy parametr dla każdego zestawu parametrów, parametr
 
 ## <a name="overriding-an-input-processing-method"></a>Zastępowanie metody przetwarzania danych wejściowych
 
-Każdego polecenia cmdlet jest przesłonięcie metody przetwarzania danych wejściowych, w większości przypadków będzie to [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody. W tym poleceniu cmdlet [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoda zostanie przesłonięta, tak aby polecenie cmdlet może przetwarzać dowolną liczbę procesów. Zawiera on instrukcji Select, która wywołuje inną metodę, na podstawie której zestaw parametrów użytkownika została określona.
+Każdego polecenia cmdlet jest przesłonięcie metody przetwarzania danych wejściowych, w większości przypadków będzie to [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody. W tym poleceniu cmdlet [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoda zostanie przesłonięta, tak aby polecenie cmdlet może przetwarzać dowolną liczbę procesów. Zawiera on instrukcji Select, która wywołuje inną metodę, na podstawie której zestaw parametrów użytkownika została określona.
 
 ```csharp
 protected override void ProcessRecord()

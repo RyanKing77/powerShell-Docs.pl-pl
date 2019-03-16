@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847992"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057947"
 ---
 # <a name="cmdlet-error-reporting"></a>Raportowanie błędów poleceń cmdlet
 
@@ -43,7 +43,7 @@ Poniższe wskazówki może służyć do określenia, czy warunek błędu jest b�
 
 ## <a name="reporting-nonterminating-errors"></a>Błędy niekończące raportowania
 
-Raportowania błędów niekończące, zawsze należy wykonać w ramach wykonania polecenia cmdlet [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody lub [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody. Tego rodzaju błędy są zgłaszane przez wywołanie metody [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metodę, która z kolei wysyła rekord błędu do strumienia błędów.
+Raportowania błędów niekończące, zawsze należy wykonać w ramach wykonania polecenia cmdlet [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody lub [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody. Tego rodzaju błędy są zgłaszane przez wywołanie metody [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metodę, która z kolei wysyła rekord błędu do strumienia błędów.
 
 ## <a name="reporting-terminating-errors"></a>Raportowanie błędów kończący
 
@@ -53,7 +53,7 @@ Można także zdefiniować własne wyjątki w przypadku problemów dotyczących 
 
 ## <a name="error-records"></a>Rejestruje błąd
 
-Program Windows PowerShell w tym artykule opisano niekończące błąd za pośrednictwem [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektów. Każdy [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiekt zawiera informacje o błędzie kategorii, obiekt docelowy opcjonalne i szczegółowe informacje o warunku błędu.
+Program Windows PowerShell w tym artykule opisano niekończące błąd za pośrednictwem [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektów. Każdy [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiekt zawiera informacje o błędzie kategorii, obiekt docelowy opcjonalne i szczegółowe informacje o warunku błędu.
 
 ### <a name="error-identifiers"></a>Identyfikatory błąd
 
@@ -61,7 +61,7 @@ Identyfikator błędu jest prosty ciąg, który identyfikuje błąd w ramach pol
 
 Należy przestrzegać następujących wytycznych podczas określania identyfikatorów błąd.
 
-- Identyfikatory różny, wysoce określony błąd można przypisać różne ścieżki. Każda ścieżka kodu, który wywołuje [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) lub [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) powinny mieć własny identyfikator błędu.
+- Identyfikatory różny, wysoce określony błąd można przypisać różne ścieżki. Każda ścieżka kodu, który wywołuje [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) lub [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) powinny mieć własny identyfikator błędu.
 
 - Błąd identyfikatory powinny być unikatowe dla typów wyjątków CLR błędy niekończące i kończący.
 

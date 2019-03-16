@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
-ms.openlocfilehash: dd48e82452e83f93e2e005c9db53bbc51d8b2eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848853"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054581"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl, element (format)
 
@@ -48,7 +48,7 @@ Brak.
 |[Element AutoSize tablecontrol — (w formacie)](./autosize-element-for-tablecontrol-format.md)|Element opcjonalny.<br /><br /> Określa, czy rozmiar kolumny i liczba kolumn są dostosowywane na podstawie rozmiaru danych.|
 |[Element HideTableHeaders tablecontrol — (w formacie)](./hidetableheaders-element-format.md)|Element opcjonalny.<br /><br /> Wskazuje, czy nagłówek tabeli nie jest wyświetlana.|
 |[Element TableHeaders tablecontrol — (w formacie)](./tableheaders-element-format.md)|Element wymagany.<br /><br /> Definiuje etykiety, szerokości i wyrównania danych dla kolumn w widoku tabeli.|
-|[Element TableRowEntries TableCotrol (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Element opcjonalny.<br /><br /> Zawiera definicje widoku tabeli.|
+|[Element TableRowEntries tablecontrol — (w formacie)](./tablerowentries-element-for-tablecontrol-format.md)|Element opcjonalny.<br /><br /> Zawiera definicje widoku tabeli.|
 
 ### <a name="parent-elements"></a>Elementy nadrzędne
 

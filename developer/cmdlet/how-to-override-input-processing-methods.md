@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
-ms.openlocfilehash: eff40a01b60985788ae0e21156fec7ec4e27fcf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846753"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056400"
 ---
 # <a name="how-to-override-input-processing-methods"></a>Jak przesłaniać metody przetwarzania danych wejściowych
 
 Te przykłady przedstawiają sposób zastąpienia metody w ramach polecenia cmdlet przetwarzania danych wejściowych. Te metody są używane do wykonywania następujących czynności:
 
-- [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoda jest używana do wykonywania operacji jednorazowego uruchomienia, które są prawidłowe dla wszystkich obiektów, które są przetwarzane przy użyciu polecenia cmdlet. Środowisko wykonawcze programu Windows PowerShell wywołuje tę metodę tylko raz.
+- [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoda jest używana do wykonywania operacji jednorazowego uruchomienia, które są prawidłowe dla wszystkich obiektów, które są przetwarzane przy użyciu polecenia cmdlet. Środowisko wykonawcze programu Windows PowerShell wywołuje tę metodę tylko raz.
 
-- [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoda jest używana do przetwarzania obiektów przekazywane do polecenia cmdlet. Środowisko wykonawcze programu Windows PowerShell wywołuje tę metodę dla każdego obiektu, przekazywane do polecenia cmdlet.
+- [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoda jest używana do przetwarzania obiektów przekazywane do polecenia cmdlet. Środowisko wykonawcze programu Windows PowerShell wywołuje tę metodę dla każdego obiektu, przekazywane do polecenia cmdlet.
 
-- [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoda jest używana do wykonywania operacji przetwarzania jednorazowe post. Środowisko wykonawcze programu Windows PowerShell wywołuje tę metodę tylko raz.
+- [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoda jest używana do wykonywania operacji przetwarzania jednorazowe post. Środowisko wykonawcze programu Windows PowerShell wywołuje tę metodę tylko raz.
 
 ## <a name="to-override-the-beginprocessing-method"></a>Aby przesłonić metodę BeginProcessing
 
-- Zadeklaruj chronionych zastępowania metody [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody.
+- Zadeklaruj chronionych zastępowania metody [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody.
 
-Następujące klasy drukuje przykładowy komunikat. Aby użyć tej klasy, należy zmienić czasownik i rzeczownik w atrybucie polecenia Cmdlet, zmienić nazwę klasy, aby odzwierciedlić nowe czasownik i rzeczownik, a następnie dodaj funkcji wymaganych do zastępowania metody [System.Management.Automation.Cmdlet.Beginprocessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody.
+Następujące klasy drukuje przykładowy komunikat. Aby użyć tej klasy, należy zmienić czasownik i rzeczownik w atrybucie polecenia Cmdlet, zmienić nazwę klasy, aby odzwierciedlić nowe czasownik i rzeczownik, a następnie dodaj funkcji wymaganych do zastępowania metody [System.Management.Automation.Cmdlet.BeginProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]
@@ -50,9 +50,9 @@ public class TestBeginProcessingClassTemplate : Cmdlet
 
 ## <a name="to-override-the-processrecord-method"></a>Aby przesłonić metodę ProcessRecord
 
-- Zadeklaruj chronionych zastępowania metody [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
+- Zadeklaruj chronionych zastępowania metody [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
 
-Następujące klasy drukuje przykładowy komunikat. Aby użyć tej klasy, należy zmienić czasownik i rzeczownik w atrybucie polecenia Cmdlet, zmienić nazwę klasy, aby odzwierciedlić nowe czasownik i rzeczownik, a następnie dodaj funkcji wymaganych do zastępowania metody [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
+Następujące klasy drukuje przykładowy komunikat. Aby użyć tej klasy, należy zmienić czasownik i rzeczownik w atrybucie polecenia Cmdlet, zmienić nazwę klasy, aby odzwierciedlić nowe czasownik i rzeczownik, a następnie dodaj funkcji wymaganych do zastępowania metody [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "ProcessRecordClass")]
@@ -74,9 +74,9 @@ public class TestProcessRecordClassTemplate : Cmdlet
 
 ## <a name="to-override-the-endprocessing-method"></a>Aby przesłonić metodę EndProcessing
 
-- Zadeklaruj chronionych zastępowania metody [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody.
+- Zadeklaruj chronionych zastępowania metody [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody.
 
-Następujące klasy drukuje próbkę. Aby użyć tej klasy, należy zmienić czasownik i rzeczownik w atrybucie polecenia Cmdlet, zmienić nazwę klasy, aby odzwierciedlić nowe czasownik i rzeczownik, a następnie dodaj funkcji wymaganych do zastępowania metody [System.Management.Automation.Cmdlet.Endprocessing* ](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody.
+Następujące klasy drukuje próbkę. Aby użyć tej klasy, należy zmienić czasownik i rzeczownik w atrybucie polecenia Cmdlet, zmienić nazwę klasy, aby odzwierciedlić nowe czasownik i rzeczownik, a następnie dodaj funkcji wymaganych do zastępowania metody [System.Management.Automation.Cmdlet.EndProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "EndProcessingClass")]
@@ -97,10 +97,10 @@ public class TestEndProcessingClassTemplate : Cmdlet
 
 ## <a name="see-also"></a>Zobacz też
 
-[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
 [Zapisywanie polecenia Cmdlet programu Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

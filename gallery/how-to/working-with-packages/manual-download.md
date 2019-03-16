@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Galeria programu powershell, galerii programu PowerShell
 title: Ręczne pobieranie pakietów
-ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687699"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054882"
 ---
 # <a name="manual-package-download"></a>Ręczne pobieranie pakietów
 
-Galeria programu Powershell obsługuje pobieranie pakietu z witryny sieci Web bezpośrednio, bez korzystania z polecenia cmdlet PowerShellGet. Możesz pobrać dowolny pakiet jako plik (.nupkg) pakietu NuGet, który można następnie skopiować do wewnętrznego repozytorium.
+Galeria programu PowerShell obsługuje pobieranie pakietu z witryny sieci Web bezpośrednio, bez korzystania z polecenia cmdlet PowerShellGet. Możesz pobrać dowolny pakiet jako plik (.nupkg) pakietu NuGet, który można następnie skopiować do wewnętrznego repozytorium.
 
 > [!NOTE]
 > Pobieranie pakietu ręczne jest **nie** przeznaczony jako zamiennika dla polecenia cmdlet Install-Module.

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Możliwości roli usługi JEA
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685494"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055057"
 ---
 # <a name="jea-role-capabilities"></a>Możliwości roli usługi JEA
 
@@ -58,7 +58,7 @@ Dokumentacja pomocy programu PowerShell zawiera kilka przykładów sposobu konfi
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>Polecenia cmdlet programu PowerShell i funkcji
 
-Aby autoryzować użytkowników o uruchomienie polecenia cmdlet programu PowerShell lub funkcje, należy dodać nazwę polecenia cmdlet lub funkcji do VisbibleCmdlets lub VisibleFunctions pól.
+Aby autoryzować użytkowników o uruchomienie polecenia cmdlet programu PowerShell lub funkcje, należy dodać nazwę polecenia cmdlet lub funkcji do VisibleCmdlets lub VisibleFunctions pól.
 Jeśli nie masz pewności, czy polecenie jest polecenie cmdlet lub funkcji, możesz uruchomić `Get-Command <name>` i sprawdź właściwość "CommandType" w danych wyjściowych.
 
 ```powershell
@@ -101,7 +101,6 @@ Przykład                                                                       
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Zezwala użytkownikowi na uruchamianie `My-Func` z `Param1` parametru. Tylko "Wartość1" i "Wartość2" mogą być dostarczane do parametru.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Zezwala użytkownikowi na uruchamianie `My-Func` z `Param1` parametru. Żadnej wartości, zaczynając od "contoso" mogą być dostarczane do parametru.
 
-
 > [!WARNING]
 > Aby uzyskać najlepsze rozwiązania w zakresie zabezpieczeń nie zaleca się używać symboli wieloznacznych, podczas definiowania widoczne dla poleceń cmdlet lub funkcji.
 > Zamiast tego należy jawnie listę każdego zaufanych polecenia, aby upewnić się, że żadne polecenia, które współużytkują ten sam schemat nazewnictwa przypadkowo uprawnienia.
@@ -129,7 +128,7 @@ Jednym ze sposobów, aby sprawdzić, jest użycie `net share`.
 Jednakże, dzięki czemu net.exe jest bardzo niebezpieczny, ponieważ administrator może równie łatwo polecenie służy do uzyskania uprawnień administratora za pomocą `net group Administrators unprivilegedjeauser /add`.
 Lepszym rozwiązaniem jest umożliwienie [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) które osiąga ten sam wynik, ale ma bardziej ograniczony zakres.
 
-Podczas wprowadzania poleceń zewnętrznych dostępnych dla użytkowników w ramach sesji usługi JEA, zawsze należy określić pełną ścieżkę do pliku wykonywalnego, aby upewnić się, program o podobnej nazwie (i potencjalnie malicous) umieszczone w innym miejscu w systemie nie są wykonywane zamiast tego.
+Podczas wprowadzania poleceń zewnętrznych dostępnych dla użytkowników w ramach sesji usługi JEA, zawsze należy określić pełną ścieżkę do pliku wykonywalnego, aby upewnić się, program o podobnej nazwie (i potencjalnie złośliwych) umieszczone w innym miejscu w systemie nie są wykonywane zamiast tego.
 
 ### <a name="allowing-access-to-powershell-providers"></a>Zezwalanie na dostęp do dostawcy programu PowerShell
 
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Nie zapomnij dodać nazwę Twojej funkcji niestandardowych do **VisibleFunctions** pola, aby mogły być uruchamiane przez użytkowników usługi JEA.
 
-
 Treść funkcji niestandardowych (blok skryptu) działa w trybie język domyślny dla systemu i nie jest przedmiotem ograniczeń języka firmy JEA.
 Oznacza to, czy funkcje można uzyskać dostęp do systemu plików i rejestru i uruchamiania poleceń, które zostały utworzone widoczny w pliku możliwości roli.
 Pamiętaj, aby uniknąć, dzięki czemu dowolny kod ma być uruchamiany przy użyciu parametrów i uniknąć dane wejściowe użytkownika potokowanie bezpośrednio do polecenia cmdlet, takich jak `Invoke-Expression`.
@@ -211,14 +209,12 @@ Zobacz [opis modułu programu PowerShell](https://msdn.microsoft.com/library/dd8
 
 ## <a name="updating-role-capabilities"></a>Aktualizowanie możliwości roli
 
-
 Aby zaktualizować plik możliwości roli w dowolnym momencie, po prostu zapisywanie zmian w pliku możliwości roli.
 Wszystkie nowe sesje JEA pracę po zaktualizowaniu możliwości roli będą odzwierciedlać poprawione możliwości.
 
 Jest to, dlaczego kontrola dostępu do folderu możliwości roli jest tak ważny.
 Tylko wysoce zaufanych administratorów powinno być możliwe na zmianę plików możliwości roli.
 Niezaufanego użytkownika mogą zmieniać pliki możliwości roli, łatwo udzielenie się dostępu do poleceń cmdlet, co pozwala je do podniesienia swoich uprawnień.
-
 
 Dla administratorów chcących blokowanie dostępu do możliwości roli upewnij się, że System lokalny ma dostęp do odczytu do plików funkcji roli i zawierającego moduły.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

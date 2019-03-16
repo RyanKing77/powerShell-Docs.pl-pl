@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
-ms.openlocfilehash: d6613889ebd2ba139ce0b3de1b8d24e4aec37d2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850589"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059171"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Jak zadeklarować parametry polecenia cmdlet
 
@@ -83,7 +83,7 @@ Aby uzyskać więcej informacji na temat atrybut Parameter, zobacz [deklaracji a
 
 ## <a name="how-to-declare-a-switch-parameter"></a>Jak zadeklarować parametr przełącznika
 
-- Zdefiniuj właściwość publiczną typu [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter), a następnie deklarować atrybutu parametru.
+- Zdefiniuj właściwość publiczną typu [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter), a następnie deklarować atrybutu parametru.
 
     ```csharp
     [Parameter(Position = 1)]
@@ -116,7 +116,7 @@ Aby uzyskać więcej informacji o atrybucie Alias, zobacz [deklaracji atrybutu A
 
 ## <a name="see-also"></a>Zobacz też
 
-[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)
+[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
 [Deklaracji atrybutu parametru](./parameter-attribute-declaration.md)
 

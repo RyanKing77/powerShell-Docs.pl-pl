@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Używanie serwera raportów platformy DSC
-ms.openlocfilehash: 8647f80c311ee49a5cc4d57360472386e01b044e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686579"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059273"
 ---
 # <a name="using-a-dsc-report-server"></a>Używanie serwera raportów platformy DSC
 
@@ -16,7 +16,8 @@ Dotyczy: Windows PowerShell 5.0
 > [!IMPORTANT]
 > Serwera ściągania (funkcja Windows *usługi DSC*) jest obsługiwanych składników systemu Windows Server jednak nie jest planowane oferują nowe funkcje lub możliwości osobno. Zaleca się rozpocząć przechodzenie zarządzanych klientom [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (w tym funkcje poza serwera ściągania w systemie Windows Server) lub jeden z członków społeczności na liście [tutaj](pullserver.md#community-solutions-for-pull-service).
 >
-> **Uwaga** serwera raportów, opisanych w tym temacie nie jest dostępna w programie PowerShell 4.0.
+> [!NOTE]
+> Serwer raportów, opisanych w tym temacie nie jest dostępny w programie PowerShell 4.0.
 
 Lokalne Configuration Manager (LCM) węzeł można skonfigurować do wysyłania raportów o jego stanie konfiguracji na serwerze ściągania, następnie można odpytywać do pobrania tych danych. Każdorazowo, sprawdza, czy węzeł i powoduje zastosowanie konfiguracji, wysyła raport na serwerze raportów. Te raporty są przechowywane w bazie danych na serwerze i może być pobierany przez wywołanie usługi sieci web raportowania. Każdy raport zawiera informacje, takie jak konfiguracje, które zostały zastosowane i czy ich zakończyło się pomyślnie, zasoby używane wszystkie błędy, które zostały zgłoszone i rozpoczęcia i czasu zakończenia.
 

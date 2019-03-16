@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 33c7345c-b808-4c1e-bd54-cb870b407432
 caps.latest.revision: 14
-ms.openlocfilehash: 3f0c0ba1fe85d70557e67a30b3a9a59a33043475
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0f7216d4dcc0380bceb47ea7c15b3d4a7e5ceeb2
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846886"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059698"
 ---
 # <a name="typename-element-for-entryselectedby-for-listcontrol-format"></a>TypeName, element — EntrySelectedBy, ListControl (format)
 
@@ -74,6 +74,6 @@ Poniższy przykład pokazuje, jak określić wejścia widok listy wyboru.
 
 [Element EntrySelectedBy ListEntry (Format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[Element SelectionSetName EnrtySelectedBy dla ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[Element SelectionSetName EntrySelectedBy dla ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [Pisanie programu PowerShell, formatowanie pliku](./writing-a-powershell-formatting-file.md)

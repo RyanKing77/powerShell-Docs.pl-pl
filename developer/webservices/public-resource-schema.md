@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849294"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057250"
 ---
 # <a name="public-resource-schema"></a>Schemat zasobów publicznych
 
@@ -21,7 +21,7 @@ Zarządzanie OData używa pliku MOF w celu zdefiniowania zasobów i ich właści
 
 ## <a name="defining-a-resource"></a>Definiowanie zasobu
 
-Każdy zasób odnosi się do obiektu zwróconego przez polecenie cmdlet programu Windows PowerShell. W pliku MOF publc zasobów należy zdefiniować od zadeklarowania klasy zasobem. Klasa składa się z właściwościami, które odpowiadają właściwości obiektu. Na przykład w poniższym przykładzie [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) klasy jest reprezentowany przez następujące MOF.
+Każdy zasób odnosi się do obiektu zwróconego przez polecenie cmdlet programu Windows PowerShell. W zasobie publicznego pliku MOF należy zdefiniować od zadeklarowania klasy zasobem. Klasa składa się z właściwościami, które odpowiadają właściwości obiektu. Na przykład w poniższym przykładzie [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) klasy jest reprezentowany przez następujące MOF.
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Aby zadeklarować właściwość jednostek jako typ złożony, Zadeklaruj go jako `string` to typ `EmbeddedInstance` kwalifikatora, łącznie z nazwą typu złożonego. Następujące hshows przykład deklaracja właściwości z `PswsTest_ProcessModule` typ zadeklarowany w poprzednim przykładzie.
+Aby zadeklarować właściwość jednostek jako typ złożony, Zadeklaruj go jako `string` to typ `EmbeddedInstance` kwalifikatora, łącznie z nazwą typu złożonego. W poniższym przykładzie pokazano deklaracji z właściwością `PswsTest_ProcessModule` typ zadeklarowany w poprzednim przykładzie.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ Aby zadeklarować właściwość jednostek jako typ złożony, Zadeklaruj go jak
 
 ### <a name="associating-entities"></a>Kojarzenie jednostki
 
-Dwie jednostki można skojarzyć za pomocą kwalifikatorów AssocationClass i skojarzenia. Aby uzyskać więcej informacji, zobacz [kojarzenie jednostek OData zarządzania](./associating-management-odata-entities.md).
+Dwie jednostki można skojarzyć za pomocą kwalifikatorów AssociationClass i skojarzenia. Aby uzyskać więcej informacji, zobacz [kojarzenie jednostek OData zarządzania](./associating-management-odata-entities.md).
 
 ### <a name="derived-types"></a>Typy pochodne
 
@@ -72,17 +72,16 @@ Typ może pochodzić z innego typu. Typ pochodny dziedziczy wszystkich właściw
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

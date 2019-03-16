@@ -2,12 +2,12 @@
 title: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 description: Komunikacji zdalnej w programie PowerShell Core przy użyciu protokołu SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687132"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056536"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 
@@ -62,7 +62,7 @@ SSH musi być zainstalowany na wszystkich komputerach. Zainstaluj klienta SSH (`
      > [!NOTE]
      > Brak usterkę w OpenSSH dla Windows uniemożliwiający pracujących w ścieżki pliku wykonywalnego podsystemu miejsc do magazynowania. Aby uzyskać więcej informacji, zobacz [problem w usłudze GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Rozwiązanie polega na Utwórz Link symboliczny do katalogu instalacyjnego programu Powershell, który nie ma miejsca do magazynowania:
+     Rozwiązanie polega na Utwórz Link symboliczny do katalogu instalacyjnego programu PowerShell, który nie ma miejsca do magazynowania:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"

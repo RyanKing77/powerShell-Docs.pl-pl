@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie maszyny wirtualnej podczas początkowego rozruchu — za pomocą DSC
-ms.openlocfilehash: 2ae6f7a85af3d08bad9e97b90efaefb2ff8410ca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686908"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059426"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurowanie maszyny wirtualnej podczas początkowego rozruchu — za pomocą DSC
 
@@ -98,12 +98,12 @@ Configuration SampleIISInstall
 
 7. Tworzenie maszyny Wirtualnej przy użyciu dysku VHD, w którym zainstalowano dokument DSC MOF.
 
-Po wstępnej rozruchu i instalacji systemu operacyjnego zostaną zainstalowane usługi IIS.
+Po początkowej rozruchu i instalacji systemu operacyjnego zostaną zainstalowane usługi IIS.
 Można to sprawdzić przez wywołanie metody [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) polecenia cmdlet.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Wstrzyknięcie DSC metaconfiguration do wirtualnego dysku twardego
 
-Możesz również skonfigurować komputer w celu ściągania konfiguracji podczas wstępnej rozruchu przez iniekcję metaconfiguration (zobacz [Konfigurowanie lokalnego Configuration Manager (LCM)](../managing-nodes/metaConfig.md)) do wirtualnego dysku twardego jako jego `MetaConfig.mof` pliku.
+Możesz również skonfigurować komputer w celu ściągania konfiguracji podczas początkowego rozruchu przez iniekcję metaconfiguration (zobacz [Konfigurowanie lokalnego Configuration Manager (LCM)](../managing-nodes/metaConfig.md)) do wirtualnego dysku twardego jako jego `MetaConfig.mof` pliku.
 Jeśli **DSCAutomationHostEnabled** klucz rejestru jest ustawiony na 2 (wartość domyślna), DSC zastosuje metaconfiguration definicją `MetaConfig.mof` do LCM, gdy komputer uruchamia się potrzeby po raz pierwszy.
 Jeśli metaconfiguration Określa, że LCM należy ściągnąć konfiguracji z serwera ściągania, komputer będzie podejmować próby ściągania konfiguracji z tego serwera ściągania podczas początkowego rozruchu.
 Aby uzyskać informacje o konfigurowaniu serwera ściągania DSC, zobacz [Konfigurowanie internetowego serwera ściągania DSC](../pull-server/pullServer.md).
@@ -140,7 +140,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [Konfigurowanie internetowego serwera ściągania DSC](../pull-server/pullServer.md)i Zapisz **SampleIISInistall** konfiguracji do odpowiedniego folderu.
+2. [Konfigurowanie internetowego serwera ściągania DSC](../pull-server/pullServer.md)i Zapisz **SampleIISInstall** konfiguracji do odpowiedniego folderu.
 
 3. Na komputerze z uruchomionym PowerShell 5.0 lub nowszy, Zapisz metaconfiguration powyżej (**PullClientBootstrap**) jako plik skryptu (ps1) programu PowerShell.
 
@@ -168,7 +168,7 @@ configuration PullClientBootstrap
 
 8. Tworzenie maszyny Wirtualnej przy użyciu dysku VHD, w którym zainstalowano dokument DSC MOF.
 
-Po wstępnej rozruchu i instalacji systemu operacyjnego DSC będzie pobierać konfiguracji z serwera ściągania oraz zostaną zainstalowane usługi IIS.
+Po początkowej rozruchu i instalacji systemu operacyjnego DSC będzie pobierać konfiguracji z serwera ściągania i zostaną zainstalowane usługi IIS.
 Można to sprawdzić przez wywołanie metody [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) polecenia cmdlet.
 
 ## <a name="disable-dsc-at-boot-time"></a>Wyłącz DSC w czasie rozruchu

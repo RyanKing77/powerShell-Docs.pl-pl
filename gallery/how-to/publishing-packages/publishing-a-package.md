@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Tworzenie i publikowanie elementu
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012538"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055482"
 ---
 # <a name="creating-and-publishing-an-item"></a>Tworzenie i publikowanie elementu
 
@@ -75,7 +75,7 @@ Istnieje kilka narzędzi, które są potrzebne w celu uruchomienia kodu przed op
 Jeśli nie można odczytać informacji o manifeście w przedmiot przez infrastrukturę galerii programu PowerShell, nie można opublikować.
 [Test ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) będzie przechwytywać typowe problemy, które mogłoby spowodować modułu nie będzie można używać podczas instalacji. Musi być uruchamiane dla każdego modułu, przed jej opublikowaniem w galerii programu PowerShell.
 
-Podobnie [ScriptFileInfo testu](/powershell/module/PowerShellGet/test-scriptfileinfo) weryfikuje metadanych w skrypcie i muszą zostać uruchomione na każdy skrypt (opublikowanych oddzielonym od modułu) przed jej opublikowaniem w galerii programu Powershell.
+Podobnie [ScriptFileInfo testu](/powershell/module/PowerShellGet/test-scriptfileinfo) weryfikuje metadanych w skrypcie i muszą zostać uruchomione na każdy skrypt (opublikowanych oddzielonym od modułu) przed jej opublikowaniem w galerii programu PowerShell.
 
 
 ## <a name="publishing-items"></a>Publikowanie elementów
@@ -87,14 +87,14 @@ Należy użyć [Publish-Script](/powershell/module/PowerShellGet/publish-script)
 
 Większość innych opcji wiersza polecenia powinny być manifestu danych dla elementu, który jest publikowany, więc nie należy je określić w poleceniu.
 
-Aby uniknąć błędów, zalecane jest, spróbuj poleceń przy użyciu - Whatif-Verbose, przed opublikowaniem. Spowoduje to zapisanie znaczną ilość czasu od momentu za każdym razem, gdy opublikujesz w galerii programu PowerShell, należy zaktualizować numer wersji w sekcji manifestu elementu.
+Aby uniknąć błędów, zalecane jest, spróbuj poleceń przy użyciu - WhatIf-Verbose, przed opublikowaniem. Spowoduje to zapisanie znaczną ilość czasu od momentu za każdym razem, gdy opublikujesz w galerii programu PowerShell, należy zaktualizować numer wersji w sekcji manifestu elementu.
 
 Przykładami mogą być następujące:
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-Uważnie przejrzyj dane wyjściowe, a Jeśli widzisz nie ostrzeżeń ani błędów, powtórz polecenie bez - Whatif.
+Uważnie przejrzyj dane wyjściowe, a Jeśli widzisz nie ostrzeżeń ani błędów, powtórz polecenie bez - WhatIf.
 
 Wszystkie elementy, które są publikowane w galerii programu PowerShell ma zostać przeprowadzone skanowanie w poszukiwaniu wirusów i będą analizowane za pomocą analizatora skryptu programu PowerShell. Wszelkie problemy, które pojawiły się w tym czasie zostanie odesłana do wydawcy, do rozpoznania.
 

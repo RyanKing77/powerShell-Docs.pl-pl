@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: e3289e9336b863b5e0998a2beb29353c82a31f79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847306"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058197"
 ---
 # <a name="writing-an-item-provider"></a>Pisanie dostawcy elementów
 
@@ -46,7 +46,7 @@ Zadeklaruj dostawcę aby dziedziczyć [System.Management.Automation.Provider.Ite
 
 ### <a name="implementing-getitem"></a>Implementowanie GetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [Microsoft.Powershell.Commands.Get elementu](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) polecenie cmdlet na użytkownika Dostawca. Metoda ta zwraca element w określonej ścieżce. W tym przykładzie bazy danych programu Access metoda sprawdza, czy element jest dysk i tabelę w bazie danych lub wiersz w bazie danych. Metoda wysyła elementu do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metody.
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.Get elementu](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) polecenie cmdlet na użytkownika Dostawca. Metoda ta zwraca element w określonej ścieżce. W tym przykładzie bazy danych programu Access metoda sprawdza, czy element jest dysk i tabelę w bazie danych lub wiersz w bazie danych. Metoda wysyła elementu do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metody.
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,7 +85,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>Implementowanie SetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoda jest wywoływana przez wywołania aparatu programu PowerShell, gdy użytkownik wywołuje [elementu Microsoft.Powershell.Commands.Set](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) polecenia cmdlet . Ustawia wartość elementu w określonej ścieżce.
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoda jest wywoływana przez wywołania aparatu programu PowerShell, gdy użytkownik wywołuje [elementu Microsoft.PowerShell.Commands.Set](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) polecenia cmdlet . Ustawia wartość elementu w określonej ścieżce.
 
 W tym przykładzie dostęp do bazy danych warto ustawić wartość elementu tylko wtedy, gdy dany element wiersz, więc metoda zgłasza [wyjątek NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) Jeśli element nie jest wiersz.
 
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>Implementowanie ItemExists
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metoda jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [ścieżki Microsoft.Powershell.Commands.Test](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) polecenia cmdlet. Metoda określa, czy istnieje element w określonej ścieżce. Jeśli element istnieje, metoda przekazuje ją do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metoda jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [ścieżki Microsoft.PowerShell.Commands.Test](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) polecenia cmdlet. Metoda określa, czy istnieje element w określonej ścieżce. Jeśli element istnieje, metoda przekazuje ją do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)

@@ -13,18 +13,18 @@ helpviewer_keywords:
 - errors [PowerShell SDK]
 ms.assetid: 0dce97c0-bd9a-4691-8ca3-e8d5dea902c5
 caps.latest.revision: 11
-ms.openlocfilehash: aac6b7b6ac8a0fad15194b6d3f92c434524fabdb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2f185e415e3effc2cf09a282ca1167e3bcfb7d6a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846165"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054411"
 ---
 # <a name="error-reporting-concepts"></a>Pojęcia dotyczące raportowania błędów
 
 Windows PowerShell udostępnia dwa mechanizmy zgłaszania błędów: jeden mechanizm *przerywa błędy* i inny mechanizm *błędy niepowodujące*. Ważne jest dla Twojego polecenia cmdlet, aby włączyć raportowanie błędów poprawnie tak, aby aplikacji hosta, która jest uruchomiona poleceń cmdlet pozwala reagować w odpowiedni sposób.
 
-Twojego polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metody, gdy wystąpi błąd, który nie jest lub nie powinien zezwalać na polecenia cmdlet kontynuować przetwarzanie jej danych wejściowych obiektów. Twojego polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metodę, aby zgłaszać błędy niepowodujące w przypadku polecenia cmdlet można kontynuować przetwarzanie danych wejściowych obiektów. Obie metody zapewniają rekord błędu, używanego przez aplikację hosta można zbadać przyczynę błędu.
+Twojego polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metody, gdy wystąpi błąd, który nie jest lub nie powinien zezwalać na polecenia cmdlet kontynuować przetwarzanie jej danych wejściowych obiektów. Twojego polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metodę, aby zgłaszać błędy niepowodujące w przypadku polecenia cmdlet można kontynuować przetwarzanie danych wejściowych obiektów. Obie metody zapewniają rekord błędu, używanego przez aplikację hosta można zbadać przyczynę błędu.
 
 Skorzystaj z poniższych wskazówek, aby określić, czy błąd jest kończącym lub błąd niepowodujący.
 
@@ -42,7 +42,7 @@ Skorzystaj z poniższych wskazówek, aby określić, czy błąd jest kończącym
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [Windows PowerShell błąd rekordów](./windows-powershell-error-records.md)
 

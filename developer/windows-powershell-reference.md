@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851086"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055499"
 ---
 # <a name="windows-powershell-reference"></a>Dokumentacja programu Windows PowerShell
 
@@ -47,10 +47,10 @@ Oprócz zestawu SDK Windows PowerShell poniższe zasoby przedstawiają więcej i
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) ta przestrzeń nazw zawiera klasy, wyliczenia i połączeń wymaganych do implementowania dostawcy środowiska Windows PowerShell. W szczególności [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) klasa to klasa bazowa, z których wszystkie środowiska Windows PowerShell musi pochodzić klasy dostawcy.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) ta przestrzeń nazw zawiera klasy dla poleceń cmdlet i dostawców implementowane przez środowisko Windows PowerShell. Podobnie, zalecane jest, że utworzono *twojanazwa*. Polecenia te polecenia cmdlet, które należy zaimplementować w obszarze nazw.
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) ta przestrzeń nazw zawiera klasy dla poleceń cmdlet i dostawców implementowane przez środowisko Windows PowerShell. Podobnie, zalecane jest, że utworzono *twojanazwa*. Polecenia te polecenia cmdlet, które należy zaimplementować w obszarze nazw.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host) ta przestrzeń nazw zawiera klasy, wyliczenia i interfejsy, które używa polecenia cmdlet w celu zdefiniowania interakcji między użytkownikiem i programu Windows PowerShell.
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) ta przestrzeń nazw zawiera klasy bazowe, używane przez inne klasy w przestrzeni nazw. Na przykład [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klasa jest klasą bazową dla [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klasy.
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) ta przestrzeń nazw zawiera klasy bazowe, używane przez inne klasy w przestrzeni nazw. Na przykład [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) klasa jest klasą bazową dla [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) klasy.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) ta przestrzeń nazw zawiera klasy, wyliczenia i interfejsy, używany do tworzenia działania programu Windows PowerShell. W tym kontekście obszaru działania programu Windows PowerShell jest kontekst, w którym jeden lub wiele potoków programu Windows PowerShell wywoływanie polecenia cmdlet. Oznacza to, że polecenia cmdlet działają w kontekście działania programu Windows PowerShell. Aby uzyskać więcej informacji o aboutWindows obszary działania programu PowerShell, zobacz [obszary działania programu Windows PowerShell](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 947d0c0188df5bba3a9fb617fe5abf0b3b28eb51
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848209"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054615"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Jak dodać składnię do tematu pomocy dotyczącego polecenia cmdlet
 
@@ -112,7 +112,7 @@ Zazwyczaj wymaganych wartości parametrów, które są symbolami zastępczymi, a
 
    Tak długo, jak ich znaczenie jest jasna, takie jak "string", aby uzyskać System.String i "int", aby uzyskać System.Int32, skrócić typów.
 
-   Lista wszystkich wartości wyliczenia, takie jak typ parametru - w poprzednim przykładzie, którą można ustawić "podstawowa" lub "zaawansowany".
+   Lista wszystkich wartości wyliczenia, takich jak — parametr typu w poprzednim przykładzie, który może być ustawiony na "podstawowa" lub "zaawansowany".
 
    Przełącz parametry, takie jak - listy w poprzednim przykładzie, nie ma wartości.
 

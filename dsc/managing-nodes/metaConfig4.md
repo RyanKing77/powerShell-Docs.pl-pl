@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie programu Local Configuration Manager w poprzednich wersjach programu Windows PowerShell
-ms.openlocfilehash: 945d2dc95304a347ec26f2f66f5a17bfefb90997
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cea32c9aa8144bc52f3d44f2ad852f577f6a5e6d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688861"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055312"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Konfigurowanie programu Local Configuration Manager w poprzednich wersjach programu Windows PowerShell
 
@@ -87,7 +87,8 @@ Aby zastosować ustawienia, można użyć **Set-DscLocalConfigurationManager** p
 Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 ```
 
-> **Uwaga**: Dla **ścieżki** parametr należy określić taką samą ścieżkę, który został określony dla **OutputPath** parametru po wywołaniu konfiguracji w poprzednim przykładzie.
+> [!NOTE]
+> Dla **ścieżki** parametr należy określić taką samą ścieżkę, który został określony dla **OutputPath** parametru po wywołaniu konfiguracji w poprzednim przykładzie.
 
 Aby wyświetlić bieżące ustawienia Local Configuration Manager, można użyć **Get-DscLocalConfigurationManager** polecenia cmdlet.
 Jeśli wywołujesz tego polecenia cmdlet bez parametrów, domyślnie go otrzyma ustawienia Local Configuration Manager dla węzła, na którym zostanie uruchomiona.

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251306"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057133"
 ---
 # <a name="security-parameters"></a>Parametry zabezpieczeń
 
@@ -29,7 +29,7 @@ W poniższej tabeli wymieniono nazwy zalecane i funkcje dotyczące parametrów m
 |**CertStoreLocation**<br>Typ danych: Ciąg|Implementowanie tego parametru, użytkownik może określić lokalizację magazynu certyfikatów. Lokalizacja jest zwykle ścieżki do pliku.|
 |**CertSubjectName**<br>Typ danych: Ciąg|Ten parametr należy zaimplementować tak, aby użytkownik może określić wystawca certyfikatu, lub tak, aby użytkownik może określić podciąg.|
 |**CertUsage**<br>Typ danych: Ciąg|Implementuje ten parametr, aby określić użycia klucza lub rozszerzone użycie klucza. Klucz może być reprezentowany jako bit maski, nieco, identyfikator obiektu (OID) lub ciąg.|
-|**Poświadczenie**<br>Typ danych: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementowanie tego parametru polecenia cmdlet zostanie automatycznie wyświetlony monit o nazwę użytkownika lub hasło. Jeśli nie podano bezpośrednio pełne poświadczenia, zostanie wyświetlony monit dla obu.|
+|**Poświadczenie**<br>Typ danych: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementowanie tego parametru polecenia cmdlet zostanie automatycznie wyświetlony monit o nazwę użytkownika lub hasło. Jeśli nie podano bezpośrednio pełne poświadczenia, zostanie wyświetlony monit dla obu.|
 |**CSPName**<br>Typ danych: Ciąg|Implementowanie tego parametru, użytkownik może określić nazwę dostawcy usług certyfikatów (CSP).|
 |**CSPType**<br>Typ danych: Liczba całkowita|Implementowanie tego parametru, użytkownik może określić typu dostawcy usług Kryptograficznych.|
 |**Grupa**<br>Typ danych: Ciąg|Implementowanie tego parametru, użytkownik może określić zbiór jednostek, aby uzyskać dostęp. Aby uzyskać więcej informacji, zobacz opis **jednostki** parametru.|

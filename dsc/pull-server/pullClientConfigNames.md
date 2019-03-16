@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji w programie PowerShell 5.0 lub nowszy
-ms.openlocfilehash: fd038a105da7a83ecad9b571e611b65c8ec847b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688077"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058196"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji w programie PowerShell 5.0 lub nowszy
 
@@ -23,8 +23,9 @@ Przed rozpoczęciem konfigurowania klienta ściągania, należy skonfigurować s
 
 Każdy węzeł docelowy można skonfigurować do pobrania konfiguracji, zasobów i nawet raportować jej stanu. Poniższe sekcje pokazują, jak konfigurowanie klienta ściągania przy użyciu udziału SMB lub protokołu HTTP DSC Pull Server. Podczas odświeżania LCM węzła, jej skontaktuje się skonfigurowanej lokalizacji, aby pobrać wszystkie przypisane konfiguracje. Jeśli wszystkie wymagane zasoby, które nie istnieją w węźle, zostaną automatycznie pobrane je ze skonfigurowanej lokalizacji. Jeśli węzeł jest skonfigurowana z [serwera raportów](reportServer.md), następnie zgłasza stan operacji.
 
-> **Uwaga**: Ten temat dotyczy programu PowerShell w wersji 5.0.
-Aby uzyskać informacje na temat konfigurowania klienta ściągania w programie PowerShell 4.0, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji w programie PowerShell 4.0](pullClientConfigID4.md)
+> [!NOTE]
+> Ten temat dotyczy programu PowerShell w wersji 5.0.
+> Aby uzyskać informacje na temat konfigurowania klienta ściągania w programie PowerShell 4.0, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji w programie PowerShell 4.0](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>Konfigurowanie klienta ściągania LCM
 
@@ -49,7 +50,8 @@ Poniższy skrypt konfiguruje LCM ściągania konfiguracje z serwerem o nazwie "C
 - W skrypcie **ConfigurationRepositoryWeb** bloku definiuje serwera ściągania. **ServerURL** właściwość określa punkt końcowy serwera ściągania.
 
 - **RegistrationKey** właściwość jest klucz współużytkowany między wszystkie węzły serwera ściągania klienta i że serwera ściągania. Tej samej wartości są przechowywane w pliku na serwerze ściągania.
-  > **Uwaga**: Klucze rejestracji działają tylko z **web** pobierania serwerów. Nadal należy użyć **ConfigurationID** z **SMB** serwera ściągania.
+  > [!NOTE]
+  > Klucze rejestracji działają tylko z **web** pobierania serwerów. Nadal należy użyć **ConfigurationID** z **SMB** serwera ściągania.
   > Aby uzyskać informacje o konfigurowaniu serwera ściągania przy użyciu **ConfigurationID**, zobacz [Konfigurowanie klienta ściągania przy użyciu Identyfikatora konfiguracji](pullClientConfigId.md)
 
 - **ConfigurationNames** właściwość jest tablicą, który określa nazwę konfiguracji przeznaczonych dla węzła klienta.

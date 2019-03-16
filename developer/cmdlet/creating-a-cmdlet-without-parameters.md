@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850064"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054700"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Tworzenie polecenia cmdlet bez parametrów
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Należy zauważyć, że przed definicją klasy [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atrybutu przy użyciu składni `[Cmdlet(verb, noun, ...)]`, jest używany do identyfikowania tej klasy jako polecenia cmdlet. Jest to jedyny atrybut wymagane dla wszystkich poleceń cmdlet i pozwala wywoływać je poprawnie środowiska uruchomieniowego programu Windows PowerShell. Można ustawić atrybutu słów kluczowych, aby dodatkowo zadeklarować klasy, jeśli to konieczne. Należy pamiętać, że deklaracji atrybutu dla klasy GetProcCommand nasze przykładowe deklaruje tylko nazwy polecenia cmdlet Get-Proc rzeczownika i zlecenie.
+Należy zauważyć, że przed definicją klasy [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atrybutu przy użyciu składni `[Cmdlet(verb, noun, ...)]`, jest używany do identyfikowania tej klasy jako polecenia cmdlet. Jest to jedyny atrybut wymagane dla wszystkich poleceń cmdlet i pozwala wywoływać je poprawnie środowiska uruchomieniowego programu Windows PowerShell. Można ustawić atrybutu słów kluczowych, aby dodatkowo zadeklarować klasy, jeśli to konieczne. Należy pamiętać, że deklaracji atrybutu dla klasy GetProcCommand nasze przykładowe deklaruje tylko nazwy polecenia cmdlet Get-Proc rzeczownika i zlecenie.
 
 > [!NOTE]
 > Dla wszystkich klas atrybutów programu Windows PowerShell słowa kluczowe, które można ustawić odnoszą się do właściwości klasy atrybutu.
@@ -78,27 +78,27 @@ Należy zauważyć, że przed definicją klasy [System.Management.Automation.Cmd
 Podczas określania nazwy klasy polecenia cmdlet, jest dobrym rozwiązaniem, aby odzwierciedlić nazwę polecenia cmdlet w nazwie klasy. W tym celu należy użyć formy "VerbNounCommand" i zastąp "Czasownik" i "Rzeczownik" czasownik i rzeczownik nazwa polecenia cmdlet. Jak pokazano w poprzednim definicji klasy, przykładowe polecenie cmdlet Get-Proc definiuje klasę o nazwie GetProcCommand, która jest pochodną [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasy bazowej.
 
 > [!IMPORTANT]
-> Jeśli chcesz zdefiniować polecenia cmdlet, który uzyskuje dostęp do środowiska wykonawczego programu Windows PowerShell bezpośrednio klasy .NET powinien pochodzić od [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy bazowej. Aby uzyskać więcej informacji na temat tej klasy, zobacz [tworzenia tego definiuje zestawy parametrów polecenia Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+> Jeśli chcesz zdefiniować polecenia cmdlet, który uzyskuje dostęp do środowiska wykonawczego programu Windows PowerShell bezpośrednio klasy .NET powinien pochodzić od [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy bazowej. Aby uzyskać więcej informacji na temat tej klasy, zobacz [tworzenia tego definiuje zestawy parametrów polecenia Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
 > Klasy związane z poleceniem cmdlet musi być jawnie oznaczone jako publiczne. Klasy, które nie zostały oznaczone jako publiczne będą domyślnie wewnętrznego i nie zostanie znaleziony w czasie wykonywania programu Windows PowerShell.
 
-Używa programu Windows PowerShell [Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) przestrzeń nazw dla swojej klasy polecenia cmdlet. Zalecane jest umieszczenie Twoich zajęciach polecenia cmdlet w przestrzeni nazw poleceń przestrzeni nazw interfejsu API, na przykład xxx.PS.Commands.
+Używa programu Windows PowerShell [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) przestrzeń nazw dla swojej klasy polecenia cmdlet. Zalecane jest umieszczenie Twoich zajęciach polecenia cmdlet w przestrzeni nazw poleceń przestrzeni nazw interfejsu API, na przykład xxx.PS.Commands.
 
 ## <a name="overriding-an-input-processing-method"></a>Zastępowanie metody przetwarzania danych wejściowych
 
 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasa udostępnia trzy metody głównej przetwarzania danych wejściowych, co najmniej jeden z nich muszą przesłaniać Twojego polecenia cmdlet. Aby uzyskać więcej informacji o przetwarzaniu rekordy w programie Windows PowerShell, zobacz [sposób działania programu Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
-Dla wszystkich typów danych wejściowych, środowisko wykonawcze programu Windows PowerShell wywołuje [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) umożliwiające przetwarzania. Jeśli Twojego polecenia cmdlet należy wykonać niektóre wstępne przetwarzanie lub Instalator, go to zrobić przez zastąpienie tej metody.
+Dla wszystkich typów danych wejściowych, środowisko wykonawcze programu Windows PowerShell wywołuje [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) umożliwiające przetwarzania. Jeśli Twojego polecenia cmdlet należy wykonać niektóre wstępne przetwarzanie lub Instalator, go to zrobić przez zastąpienie tej metody.
 
 > [!NOTE]
 > Do opisania zestawem wartości parametrów, które podano podczas wywoływania polecenia cmdlet, programu Windows PowerShell używa termin "record".
 
-Jeśli Twojego polecenia cmdlet akceptuje dane wejściowe w potoku, musi ono przesłonić [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metodę i opcjonalnie [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)metody. Na przykład polecenia cmdlet mogą zastąpić obie metody, jeśli zbiera wszystkie dane wejściowe, używając [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , a następnie dane wejściowe jako całości, a nie jeden element w czasie, jako `Sort-Object` wykonuje polecenie cmdlet.
+Jeśli Twojego polecenia cmdlet akceptuje dane wejściowe w potoku, musi ono przesłonić [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metodę i opcjonalnie [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)metody. Na przykład polecenia cmdlet mogą zastąpić obie metody, jeśli zbiera wszystkie dane wejściowe, używając [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , a następnie dane wejściowe jako całości, a nie jeden element w czasie, jako `Sort-Object` wykonuje polecenie cmdlet.
 
-Jeśli Twojego polecenia cmdlet nie przyjmuje dane wejściowe w potoku, należy zastąpić [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody. Należy pamiętać, że ta metoda jest często używana zamiast [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) gdy polecenie cmdlet nie może działać na jeden element w czasie, tak jak w przypadku sortowania polecenia cmdlet.
+Jeśli Twojego polecenia cmdlet nie przyjmuje dane wejściowe w potoku, należy zastąpić [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody. Należy pamiętać, że ta metoda jest często używana zamiast [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) gdy polecenie cmdlet nie może działać na jeden element w czasie, tak jak w przypadku sortowania polecenia cmdlet.
 
-Ponieważ to przykładowe polecenie cmdlet Get-Proc musi otrzymać bit wejście potokowe, zastępuje ona [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody i używa domyślnej implementacji dla [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) i [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) zastąpienie pobiera procesy i zapisuje je w wiersza polecenia przy użyciu [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Metoda.
+Ponieważ to przykładowe polecenie cmdlet Get-Proc musi otrzymać bit wejście potokowe, zastępuje ona [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody i używa domyślnej implementacji dla [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) i [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) zastąpienie pobiera procesy i zapisuje je w wiersza polecenia przy użyciu [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metody.
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - Metoda przetwarzania danych wejściowych może również odbierać dane wejściowe z danych wyjściowych obiektu nadrzędnego polecenia cmdlet do potoku. Aby uzyskać więcej informacji, zobacz [tworzenia polecenia Cmdlet, aby proces wejście potokowe](./adding-parameters-that-process-pipeline-input.md). Należy pamiętać, że Twojego polecenia cmdlet mogą odbierać dane wejściowe z kombinacji wiersza polecenia i potoku źródła.
 
-- Polecenia cmdlet podrzędne mogą nie zwracać przez długi czas lub wcale. Z tego powodu, dane wejściowe przetwarzania metody w Twojego polecenia cmdlet powinno zawierać nie blokad podczas wywołania [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), szczególnie blokad, dla których zakres wykracza poza wystąpieniem polecenia cmdlet.
+- Polecenia cmdlet podrzędne mogą nie zwracać przez długi czas lub wcale. Z tego powodu, dane wejściowe przetwarzania metody w Twojego polecenia cmdlet powinno zawierać nie blokad podczas wywołania [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), szczególnie blokad, dla których zakres wykracza poza wystąpieniem polecenia cmdlet.
 
 > [!IMPORTANT]
 > Polecenia cmdlet nigdy nie powinien wywoływać [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) lub równoważnym.
 
-- Środowiska może mieć obiektu zmienne, aby wyczyścić po zakończeniu przetwarzania (na przykład, jeśli zostanie on otwarty dojście do pliku w [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody i przechowuje dojście Otwórz do użytku przez [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Należy pamiętać, że środowisko wykonawcze programu Windows PowerShell nie zawsze wywołuje [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody, która powinna wykonać oczyszczania obiektu.
+- Środowiska może mieć obiektu zmienne, aby wyczyścić po zakończeniu przetwarzania (na przykład, jeśli zostanie on otwarty dojście do pliku w [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody i przechowuje dojście Otwórz do użytku przez [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Należy pamiętać, że środowisko wykonawcze programu Windows PowerShell nie zawsze wywołuje [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody, która powinna wykonać oczyszczania obiektu.
 
-Na przykład [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) nie może być wywoływana, jeśli polecenia cmdlet zostanie anulowane w środku lub gdy kończącym błędu w jakichkolwiek pracach związanych z polecenia cmdlet. W związku z tym, polecenia cmdlet, które wymaga czyszczenia obiektu powinny implementować pełne [System.Idisposable](/dotnet/api/System.IDisposable) wzorca, w tym finalizator, dzięki czemu środowisko uruchomieniowe może wywołać zarówno [ System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) i [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) po zakończeniu przetwarzania.
+Na przykład [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) nie może być wywoływana, jeśli polecenia cmdlet zostanie anulowane w środku lub gdy kończącym błędu w jakichkolwiek pracach związanych z polecenia cmdlet. W związku z tym, polecenia cmdlet, które wymaga czyszczenia obiektu powinny implementować pełne [System.IDisposable](/dotnet/api/System.IDisposable) wzorca, w tym finalizator, dzięki czemu środowisko uruchomieniowe może wywołać zarówno [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) i [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) po zakończeniu przetwarzania.
 
 ## <a name="code-sample"></a>Przykładowy kod
 

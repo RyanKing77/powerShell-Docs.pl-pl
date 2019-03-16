@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Instalowanie i używanie programu windows powershell web access
-ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683828"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056723"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Instalowanie programu Windows PowerShell Web Access i korzystanie z niego
 
@@ -97,7 +97,7 @@ Bramę programu Windows PowerShell Web Access można zainstalować na serwerze, 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
-   > Instalowanie programu Windows PowerShell Web Access za pomocą poleceń cmdlet programu Windows PowerShell nie powoduje dodania narzędzi do zarządzania serwerem sieci Web (IIS) domyślnie. Jeśli chcesz zainstalować narzędzia do zarządzania na tym samym serwerze co brama programu Windows PowerShell Web Access, należy dodać `-IncludeManagementTools` do polecenia instalacji (co zostało opisane w tym kroku). Jeśli zarządzasz witryny sieci Web programu Windows PowerShell Web Access z komputera zdalnego, zainstaluj przystawkę Menedżer usług IIS, instalując [zdalnego serwera Administracja Toolsfor Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) lub [administracji zdalnej serwera Narzędzia dla systemu Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) na komputerze, z którego chcesz do zarządzania bramą.
+   > Instalowanie programu Windows PowerShell Web Access za pomocą poleceń cmdlet programu Windows PowerShell nie powoduje dodania narzędzi do zarządzania serwerem sieci Web (IIS) domyślnie. Jeśli chcesz zainstalować narzędzia do zarządzania na tym samym serwerze co brama programu Windows PowerShell Web Access, należy dodać `-IncludeManagementTools` do polecenia instalacji (co zostało opisane w tym kroku). Jeśli zarządzasz witryny sieci Web programu Windows PowerShell Web Access z komputera zdalnego, zainstaluj przystawkę Menedżer usług IIS, instalując [zdalnego serwera Administracja narzędzia dla Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) lub [administracji zdalnej serwera Narzędzia dla systemu Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) na komputerze, z którego chcesz do zarządzania bramą.
 
    Aby zainstalować role i funkcje na dysku VHD trybu offline, należy dodać parametr `-ComputerName` i parametr `-VHD`. Parametr `-ComputerName` zawiera nazwę serwera, na którym należy zainstalować dysk VHD, a parametr `-VHD` zawiera ścieżkę do pliku dysku VHD na określonym serwerze.
 
@@ -178,7 +178,7 @@ Domyślnie to polecenie cmdlet instaluje aplikację sieci web **pswa** (i jego p
 7. W **Dodawanie powiązania witryny** dialogowym **typu** pól, zaznacz **https**.
 
 8. W **certyfikat SSL** wybierz Twój podpisany certyfikat z menu rozwijanego.
-   Kliknij przycisk **OK**. Zobacz [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie, aby uzyskać więcej informacji o sposobie uzyskiwania certyfikatu.
+   Kliknij przycisk **OK**. Zobacz [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-manager) w tym temacie, aby uzyskać więcej informacji o sposobie uzyskiwania certyfikatu.
 
    Aplikacja sieci web programu Windows PowerShell Web Access jest skonfigurowany do korzystania z podpisanego certyfikatu SSL.
 
@@ -273,7 +273,7 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
 8. W **ścieżkę fizyczną** pola, przejdź do lokalizacji aplikacji. Można użyć domyślnej lokalizacji `$env:windir/Web/PowerShellWebAccess/wwwroot`. Kliknij przycisk **OK**.
 
-9. Wykonaj kroki opisane w procedurze [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie.
+9. Wykonaj kroki opisane w procedurze [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-manager) w tym temacie.
 
 10. ![](images/SecurityNote.jpeg) Opcjonalny krok dotyczący zabezpieczeń:
 
@@ -329,7 +329,7 @@ Instrukcje w tej sekcji dotyczą instalowania aplikacji sieci web programu Windo
 
 1. Opcjonalnie, w razie potrzeby w swojej organizacji, określ nazwę hosta pasującą do organizacji i użytkowników, takie jak **`www.contoso.com`**. Kliknij przycisk **OK**.
 
-1. Aby zwiększyć bezpieczeństwo środowiska produkcyjnego, zdecydowanie zaleca się użycie prawidłowego certyfikatu, który został podpisany przez urząd certyfikacji. Musisz podać certyfikat SSL, ponieważ użytkownicy mogą łączyć się tylko z programu Windows PowerShell Web Access za pośrednictwem witryny internetowej HTTPS. Zobacz [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-Manager) w tym temacie, aby uzyskać więcej informacji o sposobie uzyskiwania certyfikatu.
+1. Aby zwiększyć bezpieczeństwo środowiska produkcyjnego, zdecydowanie zaleca się użycie prawidłowego certyfikatu, który został podpisany przez urząd certyfikacji. Musisz podać certyfikat SSL, ponieważ użytkownicy mogą łączyć się tylko z programu Windows PowerShell Web Access za pośrednictwem witryny internetowej HTTPS. Zobacz [skonfigurować certyfikat SSL w Menedżerze usług IIS](#to-configure-an-ssl-certificate-in-iis-manager) w tym temacie, aby uzyskać więcej informacji o sposobie uzyskiwania certyfikatu.
 
 1. Kliknij przycisk **OK** zamknąć **Dodawanie witryny sieci Web** okno dialogowe.
 

@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: Program PowerShell
 title: Wartości manifestu pakietu, które mają wpływ na interfejs użytkownika galerii programu PowerShell
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655349"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058219"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Wartości manifestu pakietu, które mają wpływ na interfejs użytkownika galerii programu PowerShell
 
@@ -40,9 +40,9 @@ W poniższej tabeli przedstawiono elementy strony pakietu galerii programu Power
 | **Możliwości roli** | To będzie wyświetlane, gdy moduł, który został opublikowany w galerii programu PowerShell plikami przynajmniej jednej roli możliwości (.psrc), które są używane przez usługi JEA. Znajdują się w dokumentacji usługi JEA, aby uzyskać więcej informacji na [możliwości roli](/powershell/jea/role-capabilities). | Tak | Nie |
 | **Wersje programu PowerShell** | To jest określona w manifeście skryptu lub modułu. Dla modułów, przeznaczony do użycia przy użyciu programu PowerShell w wersji 5.0, a poniżej, jest kontrolowany przy użyciu tagów. Dla komputerów Użyj tagu PSEdition_Desktop i core, można użyć w tagu PSEdition_Core. Dla modułów, które będą używane tylko w programie PowerShell 5.1 i nowszych istnieje klucz CompatiblePSEditions w manifeście głównego. Aby uzyskać dodatkowe szczegóły, zapoznaj się z funkcji wersji PS w [dokumentacji programu PowerShell Get](module-psedition-support.md). | Tak | Tak |
 | **Zależności** | Zależności są moduły w galerii programu PowerShell, które są zadeklarowane w module jako RequiredModules lub w manifeście skryptu jako #Requires — moduł (nazwa). | Tak | Tak |
-| **Minimalna wersja programu Powershell** | To może być określona w manifeście modułu jako PowerShellVersion | Tak | Nie |
+| **Minimalna wersja programu PowerShell** | To może być określona w manifeście modułu jako PowerShellVersion | Tak | Nie |
 | **Historia wersji** | Historia wersji odzwierciedla aktualizacje wprowadzone w module w galerii programu PowerShell. Jeśli wersja pakietu jest ukryty za pomocą funkcji usuwania, go nie pojawi się w historii wersji, z wyjątkiem do właścicieli pakietu. | Nie | Nie |
-| **Witryny projektu** | Moduły w sekcji Privatedata\PSData manifestu modułu umowy witryny projektu, określając ProjectURI. W manifeście skryptu jest kontrolowana przez określenie. PROJECTURI. | Tak | Tak |
+| **Project Site** | Moduły w sekcji Privatedata\PSData manifestu modułu umowy witryny projektu, określając ProjectURI. W manifeście skryptu jest kontrolowana przez określenie. PROJECTURI. | Tak | Tak |
 | **Licencja** | Link licencji umowy modułów w sekcji Privatedata\PSData manifestu modułu, określając LicenseURI. W manifeście skryptu jest kontrolowana przez określenie. LICENSEURI. Należy zauważyć, że jeśli licencji nie jest oferowana w ramach LicenseURI lub w module warunków użytkowania dla galerii programu PowerShell Określ warunki użytkowania dla pakietu. Zobacz warunki użytkowania, aby uzyskać szczegółowe informacje. | Tak | Tak |
 | **Ikona** | Ikona można określić dla dowolnego pakietu w galerii programu PowerShell, podając wartość IconURI Flaga w manifeście skryptów lub w sekcji Privatedata PSData manifestu modułu. Wartość IconURI powinien wskazywać obraz 32 x 32, przezroczystość tła. Identyfikator URI **musi** być adresem URL obrazu bezpośrednie i **nie** przejdź do strony sieci web zawierającej obraz lub plików w pakiecie galerii programu PowerShell. | Tak | Tak |
 
@@ -79,7 +79,7 @@ Odwołanie poniżej przedstawiono niektóre najczęściej używanych tagi, pocz�
 | --- | --- |
 | Azure |  |
 | DSC | DesiredStateConfiguration jest mniej pożądana, jest za długa |
-| Menedżer zasobów | Służy do opisywania grupy procesorów ARM i nie powinny być używane dla usługi Azure Resource Manager |
+| ResourceManager | Służy do opisywania grupy procesorów ARM i nie powinny być używane dla usługi Azure Resource Manager |
 | DSCResourceKit |  |
 | SQL |  |
 | AWS |  |
@@ -91,51 +91,51 @@ Odwołanie poniżej przedstawiono niektóre najczęściej używanych tagi, pocz�
 | DBA |  |
 | Bezpieczeństwo | Ochrona jest mniej dokładny |
 | Baza danych | Bazy danych (liczba mnoga) jest mniej pożądana |
-| Metodyka DevOps |  |
+| DevOps |  |
 | Windows |  |
 | Kompilacja |  |
 | Wdrażanie | Wdrażanie jest nieco mniej często używane |
 | Chmura |  |
-| USŁUGI GIT |  |
+| GIT |  |
 | Test | Testowanie jest mniej pożądana |
-| Kontrola wersji | Wersja jest mniej dokładne, mimo że częściej używane  |
+| VersionControl | Wersja jest mniej dokładne, mimo że częściej używane  |
 | Rejestrowanie | Użyj preferowanych rejestrowania akcji |
 | Dziennik | Preferowany korzystanie z dziennika jako rzeczy |
-| Zapasowy |  |
+| Kopia zapasowa |  |
 | IaaS |  |
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
 | Magazyn |  |
 | GitHub |  |
-| JSON |  |
+| Json |  |
 | Exchange |  |
 | Sieć | Sieć jest podobny, rzadziej używane |
 | Program SharePoint |  |
 | Raportowanie | Raportowanie jest akcja, jest to raport |
 | Raport | Jest to raport |
-| Usługa WinRM |  |
+| WinRM |  |
 | Monitorowanie |  |
-| USŁUGA VSTS |  |
+| VSTS |  |
 | Excel |  |
 | Google |  |
 | Kolor |  |
 | DNS |  |
-| Usługi Office 365 | Preferowane jest pisownia się pakietu Office. Usługi Office 365 jest rzadko używane, ale krótszy |
+| Office365 | Preferowane jest pisownia się pakietu Office. Usługi Office 365 jest rzadko używane, ale krótszy |
 | Gitlab |  |
 | Pester |  |
-| Usługi Azure AD |  |
+| AzureAD |  |
 | HTML |  |
 | Funkcja Hyper-V | Funkcji Hyper-v jest mniej typowe jako tag |
 | Konfiguracja |  |
 | ChatOps |  |
-| Funkcja PackageManagement |  |
+| PackageManagement |  |
 | WMI |  |
 | Zapora |  |
-| Platformy docker |  |
+| Docker |  |
 | Appveyor |  |
 | AzureRm | Zazwyczaj używany do modułów AzureRM |
 | ZIP |  |
-| TOŻSAMOŚCI USŁUGI ZARZĄDZANEJ |  |
-| z systemem macOS |  |
+| MSI |  |
+| MacOS |  |
 | PoshBot |  |

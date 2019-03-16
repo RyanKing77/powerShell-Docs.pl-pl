@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 1bccbfab55f4ba4476678b130bd9db91eed7df80
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795321"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056638"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Tworzenie dostawcy zawartości programu Windows PowerShell
 
@@ -206,9 +206,9 @@ Następujące warunki mogą dotyczyć wykonania [System.Management.Automation.Pr
 
 - Domyślnie przesłonięcia tej metody nie należy wyczyścić zawartość obiektów, które są ukryte przed użytkownikiem, chyba że [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) właściwość jest ustawiona na `true`. Błąd powinny być zapisywane, jeśli ścieżka reprezentuje element, który jest ukryty przez użytkownika i [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ustawiono `false`.
 
-- Implementacja [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) powinny wywoływać metodę [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess* ](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) i sprawdź wartość zwracaną przed wprowadzeniem jakichkolwiek zmian w magazynie danych. Ta metoda jest używana do wykonywania operacji upewnij się, gdy dokonywane są zmiany w magazynie danych, takich jak czyszczenie zawartości. [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) metoda wysyła nazwę zasobu był zmieniany na użytkownika, ze środowiskiem uruchomieniowym programu Windows PowerShell, obsługa wszelkie ustawienia wiersza polecenia lub preferencji zmienne w określaniu, co powinno być wyświetlane.
+- Implementacja [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) powinny wywoływać metodę [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) i sprawdź wartość zwracaną przed wprowadzeniem jakichkolwiek zmian w magazynie danych. Ta metoda jest używana do wykonywania operacji upewnij się, gdy dokonywane są zmiany w magazynie danych, takich jak czyszczenie zawartości. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) metoda wysyła nazwę zasobu był zmieniany na użytkownika, ze środowiskiem uruchomieniowym programu Windows PowerShell, obsługa wszelkie ustawienia wiersza polecenia lub preferencji zmienne w określaniu, co powinno być wyświetlane.
 
-  Po wywołaniu [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) zwraca `true`, [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent* ](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) powinny wywoływać metodę [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metody. Ta metoda wysyła wiadomość do użytkownika o zezwolenie opinię, aby sprawdzić, jeśli operacja powinna być kontynuowana. Wywołanie [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) zezwala na dodatkowe sprawdzenie modyfikacji potencjalnie niebezpiecznych systemu.
+  Po wywołaniu [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) zwraca `true`, [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) powinny wywoływać metodę [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metody. Ta metoda wysyła wiadomość do użytkownika o zezwolenie opinię, aby sprawdzić, jeśli operacja powinna być kontynuowana. Wywołanie [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) zezwala na dodatkowe sprawdzenie modyfikacji potencjalnie niebezpiecznych systemu.
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Dołączanie parametrów dynamicznych do polecenia cmdlet Wyczyść zawartość
 

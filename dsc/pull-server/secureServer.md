@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Najlepsze rozwiązania dotyczące serwera ściągania
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686677"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057709"
 ---
 # <a name="pull-server-best-practices"></a>Najlepsze rozwiązania dotyczące serwera ściągania
 
@@ -260,7 +260,7 @@ Polecenie będzie monitować użytkownika o zgodę przed pobraniem modułu.
 
 Najlepszą metodą wdrażania serwera ściągania DSC jest użyć skryptu konfiguracji DSC. W tym dokumencie spowoduje wyświetlenie skryptów, w tym zarówno podstawowe ustawienia, które będzie skonfigurować usługi sieci web DSC i zaawansowanych ustawień skonfigurowanych systemu Windows Server end-to-end tym DSC usługi sieci web.
 
-Uwaga:  Obecnie `xPSDesiredStateConfiguation` DSC moduł wymaga serwera, aby był ustawień regionalnych EN-US.
+Uwaga:  Obecnie `xPSDesiredStateConfiguration` DSC moduł wymaga serwera, aby był ustawień regionalnych EN-US.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Podstawowa konfiguracja systemu Windows Server 2012
 

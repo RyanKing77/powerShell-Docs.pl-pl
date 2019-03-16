@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Instalowanie menedżera pakietów PowerShellGet
-ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683877"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054834"
 ---
 # <a name="installing-powershellget"></a>Instalowanie menedżera pakietów PowerShellGet
 
@@ -57,7 +57,7 @@ ms.locfileid: "55683877"
   Exit
   ```
 
-- Upewnij się, modułu PowerShellGet oraz spełnione PackageManagment modułów nie są ładowane w żadnych innych procesów.
+- Upewnij się, moduły PackageManagement modułu PowerShellGet oraz spełnione nie są ładowane w żadnych innych procesów.
 - Usuń zawartość `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` i `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` folderów.
 - Ponownie otwórz konsolę PS z podwyższonym poziomem uprawnień, a następnie uruchom następujące polecenia.
 

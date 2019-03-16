@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846578"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059069"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings, element (format)
 
@@ -45,7 +45,7 @@ Brak.
 
 |Element|Opis|
 |-------------|-----------------|
-|[Element DisplayError (Frmat)](./displayerror-element-format.md)|Element opcjonalny.<br /><br /> Określa, czy ciąg #ERR są wyświetlane, gdy wystąpi błąd podczas wyświetlania elementu danych.|
+|[Element DisplayError (Format)](./displayerror-element-format.md)|Element opcjonalny.<br /><br /> Określa, czy ciąg #ERR są wyświetlane, gdy wystąpi błąd podczas wyświetlania elementu danych.|
 |[Element EnumerableExpansions (Format)](./enumerableexpansions-element-format.md)|Element opcjonalny.<br /><br /> Definiuje różne sposoby, które .NET obiekty zostaną rozwinięte, gdy są one wyświetlane w widoku.|
 |[PropertyCountForTable (Format)](./propertycountfortable-element-format.md)|Element opcjonalny.<br /><br /> Określa minimalną liczbę właściwości, które musi zawierać obiekt, aby wyświetlić obiekt w widoku tabeli.|
 |[Element ShowError (Format)](./showerror-element-format.md)|Element opcjonalny.<br /><br /> Określa, czy rekord pełny komunikat o błędzie jest wyświetlany, gdy wystąpi błąd podczas wyświetlania elementu danych.|
@@ -63,7 +63,7 @@ Brak.
 
 [Element konfiguracji](./configuration-element-format.md)
 
-[Element DisplayError (Frmat)](./displayerror-element-format.md)
+[Element DisplayError (Format)](./displayerror-element-format.md)
 
 [Element EnumerableExpansions (Format)](./enumerableexpansions-element-format.md)
 

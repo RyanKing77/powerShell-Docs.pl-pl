@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: ec75945c5517c02fa001f0a38573c045ffcdbfd3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847852"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058968"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>SelectionCondition, element — EntrySelectedBy, ListControl (format)
 
@@ -44,7 +44,7 @@ Brak.
 
 |Element|Opis|
 |-------------|-----------------|
-|[Element PropertyName SelectionCondition dla EmtrySelectedBy dla ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Element opcjonalny.<br /><br /> Określa właściwości platformy .NET, która wyzwala warunku.|
+|[Element PropertyName SelectionCondition dla EntrySelectedBy dla ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Element opcjonalny.<br /><br /> Określa właściwości platformy .NET, która wyzwala warunku.|
 |[Element ScriptBlock SelectionCondition dla EntrySelectedBy dla ListEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Element opcjonalny.<br /><br /> Określa skrypt, który wyzwala warunku.|
 |[Element SelectionSetName SelectionCondition dla EntrySelectedBy dla ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Element opcjonalny.<br /><br /> Określa zestaw typów .NET, które mogą powodować warunku.|
 |[Element TypeName dla SelectionCondition dla EntrySelectedBy dla ListEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Element opcjonalny.<br /><br /> Określa typ architektury .NET, która wyzwala warunku.|
@@ -75,7 +75,7 @@ Aby uzyskać więcej informacji o innych składnikach widoku listy, zobacz [twor
 
 [Element ListEntry (Format)](./listentry-element-for-listcontrol-format.md)
 
-[Element SelectionSetName EnrtySelectedBy dla ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[Element SelectionSetName EntrySelectedBy dla ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [Element TypeName dla EntrySelectedBy dla ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 

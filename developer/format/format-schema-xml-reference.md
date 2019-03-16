@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56848062"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056655"
 ---
 # <a name="format-schema-xml-reference"></a>Dokumentacja dotycząca formatowania kodu XML schematu
 
@@ -81,7 +81,7 @@ Tematy w tej sekcji opisano elementy XML używane przez formatowanie pliki (Form
 
 [DefaultSettings Element (Format)](./defaultsettings-element-format.md) definiuje typowe ustawienia, które są stosowane do wszystkich widoków formatowania pliku. Typowe ustawienia obejmują wyświetlanie błędów, zawijania tekstu w tabelach, określające, jak kolekcje są rozwinięte i więcej.
 
-[DisplayError Element (Frmat)](./displayerror-element-format.md) Określa, czy ciąg #ERR są wyświetlane, gdy wystąpi błąd wyświetlania elementu danych.
+[DisplayError Element (Format)](./displayerror-element-format.md) Określa, czy ciąg #ERR są wyświetlane, gdy wystąpi błąd wyświetlania elementu danych.
 
 [EntrySelectedBy Element CustomEntry dla formantów dla konfiguracji (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md) Określa typy .NET, korzystających z definicji formantu typowego lub warunek, który musi istnieć dla tej kontrolki ma być używany. Ten element jest używany podczas definiowania wspólnej formant, który może być używany przez wszystkie widoki w formatowaniu pliku.
 
@@ -235,7 +235,7 @@ Tematy w tej sekcji opisano elementy XML używane przez formatowanie pliki (Form
 
 [PropertyName Element SelectionCondition dla grupowania (w formacie)](./propertyname-element-for-selectioncondition-for-groupby-format.md) określa właściwości platformy .NET, która wyzwala warunku. Gdy ta właściwość jest obecny, lub jeśli wynikiem jego obliczenia `true`, warunek jest spełniony, i jest używany przez definicję. Ten element jest używany podczas definiowania sposobu wyświetlania nowej grupy obiektów.
 
-[PropertyName Element SelectionCondition dla EmtrySelectedBy dla ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) określa właściwości platformy .NET, która wyzwala warunku. Gdy ta właściwość jest obecny, lub jeśli wynikiem jego obliczenia `true`, warunek jest spełniony, i wpis na liście jest używany.
+[PropertyName Element SelectionCondition dla EntrySelectedBy dla ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) określa właściwości platformy .NET, która wyzwala warunku. Gdy ta właściwość jest obecny, lub jeśli wynikiem jego obliczenia `true`, warunek jest spełniony, i wpis na liście jest używany.
 
 [PropertyName Element SelectionCondition dla EntrySelectedBy dla TableRowEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) określa właściwości platformy .NET, która wyzwala warunku. Gdy ta właściwość jest obecny, lub jeśli wynikiem jego obliczenia `true`, warunek jest spełniony, i służy wpisu tabeli.
 
@@ -363,7 +363,7 @@ Tematy w tej sekcji opisano elementy XML używane przez formatowanie pliki (Form
 
 [TableRowEntries Element (Format)](./tablerowentries-element-for-tablecontrol-format.md) definiuje wiersze w tabeli.
 
-[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) definiuje dane, które są wyświetlane w wierszu tabeli.
+[TableRowEntry Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) definiuje dane, które są wyświetlane w wierszu tabeli.
 
 [Tekst elementu CustomItem dla formantów dla konfiguracji (Format)](./text-element-for-customitem-for-controls-for-configuration-format.md) Określa tekst, który jest dodawany do danych, które jest wyświetlane według kontrolki, takie jak etykiety, nawiasy kwadratowe, należy ująć danych i miejsca do magazynowania, aby wciąć danych. Ten element jest używany podczas definiowania wspólnej formant, który może być używany przez wszystkie widoki w formatowaniu pliku.
 
@@ -427,7 +427,7 @@ Tematy w tej sekcji opisano elementy XML używane przez formatowanie pliki (Form
 
 [Szerokość elementu (w formacie)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) definiuje szerokość (w znakach) kolumny.
 
-[OPAKOWYWANIE elementu (w formacie)](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) Określa, że tekst przekraczający szerokość kolumny są wyświetlane w następnym wierszu.
+[OPAKOWYWANIE elementu (w formacie)](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) Określa, że tekst przekraczający szerokość kolumny są wyświetlane w następnym wierszu.
 
 [WrapTables Element (Format)](./wraptables-element-format.md) Określa, czy dane w komórce tabeli jest przenoszone do następnego wiersza, jeśli danych jest dłuższa niż szerokość kolumny.
 

@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846802"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055040"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Dodawanie wiadomości użytkownika do polecenia cmdlet
 
@@ -82,7 +82,7 @@ Tematy w tej sekcji są następujące:
 
 Pierwszym krokiem w procesie tworzenia polecenia cmdlet jest zawsze nazewnictwa polecenia cmdlet i deklarowanie klasy .NET, która implementuje polecenia cmdlet. Dowolny rodzaj polecenia cmdlet można napisać powiadomienia użytkownika z metody; przetwarzania danych wejściowych tak ogólnie rzecz biorąc, możesz nazwać tego polecenia cmdlet przy użyciu dowolnej zlecenie, która wskazuje, jakie modyfikacje system wykonuje polecenie cmdlet. Aby uzyskać więcej informacji na temat polecenia cmdlet zatwierdzonych czasowników, zobacz [nazwy zlecenie poleceń Cmdlet](./approved-verbs-for-windows-powershell-commands.md).
 
-Polecenia cmdlet Stop-Proc jest przeznaczony do modyfikacji systemu; w związku z tym [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) deklaracja klasy .NET musi zawierać `SupportsShouldProcess` atrybutu — słowo kluczowe i można ustawić `true`.
+Polecenia cmdlet Stop-Proc jest przeznaczony do modyfikacji systemu; w związku z tym [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) deklaracja klasy .NET musi zawierać `SupportsShouldProcess` atrybutu — słowo kluczowe i można ustawić `true`.
 
 Poniższy kod jest definicji dla tej klasy polecenia cmdlet Stop-Proc. Aby uzyskać więcej informacji na temat tej definicji, zobacz [Tworzenie polecenia Cmdlet, który modyfikuje System](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Zastępowanie metody przetwarzania danych wejściowych
 
-Twojego polecenia cmdlet jest przesłonięcie metody przetwarzania danych wejściowych, w większości przypadków będzie [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). To polecenie cmdlet Stop-Proc zastępuje [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) przetwarzania metody wejściowej. W tej implementacji polecenia cmdlet Stop-Proc wywołań do zapisania pełne komunikaty wyjściowe komunikaty debugowania i komunikaty ostrzegawcze.
+Twojego polecenia cmdlet jest przesłonięcie metody przetwarzania danych wejściowych, w większości przypadków będzie [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). To polecenie cmdlet Stop-Proc zastępuje [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) przetwarzania metody wejściowej. W tej implementacji polecenia cmdlet Stop-Proc wywołań do zapisania pełne komunikaty wyjściowe komunikaty debugowania i komunikaty ostrzegawcze.
 
 > [!NOTE]
-> Aby uzyskać więcej informacji na temat jak ta metoda wywołuje [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metod, zobacz [Tworzenie polecenia Cmdlet, który modyfikuje System](./creating-a-cmdlet-that-modifies-the-system.md).
+> Aby uzyskać więcej informacji na temat jak ta metoda wywołuje [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metod, zobacz [Tworzenie polecenia Cmdlet, który modyfikuje System](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="writing-a-verbose-message"></a>Zapisywanie komunikat trybu informacji pełnej
 
-[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metoda służy do zapisywania ogólne informacje na poziomie użytkownika, która nie ma wpływu na określone warunki błędów. Administrator systemu może następnie używać tych informacji, aby kontynuować przetwarzania innych poleceń. Ponadto powinien być zlokalizowany wszelkie informacje napisane przy użyciu tej metody, stosownie do potrzeb.
+[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metoda służy do zapisywania ogólne informacje na poziomie użytkownika, która nie ma wpływu na określone warunki błędów. Administrator systemu może następnie używać tych informacji, aby kontynuować przetwarzania innych poleceń. Ponadto powinien być zlokalizowany wszelkie informacje napisane przy użyciu tej metody, stosownie do potrzeb.
 
-Poniższy kod z tego polecenia cmdlet Stop-Proc przedstawia dwa wywołania [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metody z zastępowania metody [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
+Poniższy kod z tego polecenia cmdlet Stop-Proc przedstawia dwa wywołania [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) metody z zastępowania metody [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>Zapisywanie komunikatów debugowania
 
-[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metoda służy do zapisywania komunikatów debugowania, które mogą służyć do rozwiązywania problemów z polecenia cmdlet. Wykonano wywołanie z metody przetwarzania danych wejściowych.
+[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metoda służy do zapisywania komunikatów debugowania, które mogą służyć do rozwiązywania problemów z polecenia cmdlet. Wykonano wywołanie z metody przetwarzania danych wejściowych.
 
 > [!NOTE]
-> Definiuje również środowiska Windows PowerShell `Debug` parametr, który przedstawia zarówno pełne i informacje o debugowaniu. Jeśli Twoje polecenie cmdlet obsługuje ten parametr, nie trzeba wywoływać [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) w ten sam kod, który wywołuje [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Definiuje również środowiska Windows PowerShell `Debug` parametr, który przedstawia zarówno pełne i informacje o debugowaniu. Jeśli Twoje polecenie cmdlet obsługuje ten parametr, nie trzeba wywoływać [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) w ten sam kod, który wywołuje [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) .
 
-Następujące dwie sekcje kodu z przykładowe polecenie cmdlet Stop-Proc Pokaż wywołania [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody z zastępowania metody [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
+Następujące dwie sekcje kodu z przykładowe polecenie cmdlet Stop-Proc Pokaż wywołania [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) metody z zastępowania metody [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
 
-Ten komunikat debugowania są zapisywane bezpośrednio przed [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) jest wywoływana.
+Ten komunikat debugowania są zapisywane bezpośrednio przed [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) jest wywoływana.
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-Ten komunikat debugowania są zapisywane bezpośrednio przed [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) jest wywoływana.
+Ten komunikat debugowania są zapisywane bezpośrednio przed [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) jest wywoływana.
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell automatycznie kieruje dowolnego [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) wywołania śledzenia infrastruktury i polecenia cmdlet. Dzięki temu wywołania metody do śledzenia do hostowania aplikacji, plik lub debugera bez konieczności ponownego wykonać pracę dodatkowe rozwoju w ramach polecenia cmdlet. Następujący wpis wiersza polecenia implementuje operacji śledzenia.
+Windows PowerShell automatycznie kieruje dowolnego [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) wywołania śledzenia infrastruktury i polecenia cmdlet. Dzięki temu wywołania metody do śledzenia do hostowania aplikacji, plik lub debugera bez konieczności ponownego wykonać pracę dodatkowe rozwoju w ramach polecenia cmdlet. Następujący wpis wiersza polecenia implementuje operacji śledzenia.
 
 **PS > wyrażenie śledzenia stop-proc — plik proc.log — polecenia stop-proc Notatnik**
 
 ## <a name="writing-a-warning-message"></a>Zapisywanie komunikatu ostrzegawczego
 
-[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metoda służy do zapisywania ostrzeżenia, gdy polecenie cmdlet ma wykonać operacji, która może mieć nieoczekiwany wynik, na przykład zastąpienia pliku tylko do odczytu.
+[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metoda służy do zapisywania ostrzeżenia, gdy polecenie cmdlet ma wykonać operacji, która może mieć nieoczekiwany wynik, na przykład zastąpienia pliku tylko do odczytu.
 
-Poniższy kod z polecenia cmdlet Stop-Proc przykładowy pokazuje wywołanie [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metody z zastępowania metody [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
+Poniższy kod z polecenia cmdlet Stop-Proc przykładowy pokazuje wywołanie [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) metody z zastępowania metody [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody.
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ Poniższy kod z polecenia cmdlet Stop-Proc przykładowy pokazuje wywołanie [Sys
 
 ## <a name="writing-a-progress-message"></a>Zapisywanie komunikatu o postępie
 
-[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) używany do zapisywania wiadomości dotyczące postępu podczas operacji polecenia cmdlet zająć dużo czasu wykonania. Wywołanie [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) przekazuje [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) obiekt, który jest wysyłany do hostowania aplikacji w celu renderowania dla użytkownika.
+[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) używany do zapisywania wiadomości dotyczące postępu podczas operacji polecenia cmdlet zająć dużo czasu wykonania. Wywołanie [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) przekazuje [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) obiekt, który jest wysyłany do hostowania aplikacji w celu renderowania dla użytkownika.
 
 > [!NOTE]
-> To polecenie cmdlet Stop-Proc nie zawiera wywołanie [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metody.
+> To polecenie cmdlet Stop-Proc nie zawiera wywołanie [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) metody.
 
 Poniższy kod jest przykładem komunikat o postępie napisane przez polecenia cmdlet, które próbuje skopiować element.
 

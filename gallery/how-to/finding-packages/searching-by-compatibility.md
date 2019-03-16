@@ -3,19 +3,20 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Pakiety z zgodne wersje programu PowerShell lub systemu operacyjnego
-ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685956"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057182"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakiety z zgodne wersje programu PowerShell lub systemów operacyjnych
 
 Począwszy od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które charakteryzują się różnymi zestawami funkcji i możliwości platformy.
 
-## <a name="searching-by-powershell-edition"></a>Wyszukiwanie według wersji programu PowerShell 
-Dwie wersje programu Powershell są:
+## <a name="searching-by-powershell-edition"></a>Wyszukiwanie według wersji programu PowerShell
+
+Dwie wersje programu PowerShell są:
 - **Wersja Desktop:** Oparta na programie .NET Framework i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w pełnych wersjach systemu Windows, takich jak instalacja Server Core i Windows Desktop.
 - **Wersja Core:** Oparta na module .NET Core i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w ograniczonych wersjach systemu Windows, takich jak Nano Server i Windows IoT.
 
@@ -39,7 +40,8 @@ Za pomocą tagów: "PSEdition_Desktop" i tagów: "PSEdition_Core" do filtrów pa
 ![Wyniki wyszukiwania dla elementów, spełniając Desktop PSEdition](../../Images/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Wyszukaj pakiety, aby znaleźć zgodne wersje przy użyciu programu PowerShell
-Można określić znaczniki, aby filtrować przy użyciu wersji programu PowerShell i systemu operacyjnego. Możesz użyć `Find-Package` polecenia cmdlet, określając `-Tag` parametru do określenia wersji (i systemu operacyjnego) przeznaczonych do pracy.
+Można określić znaczniki, aby filtrować przy użyciu wersji programu PowerShell i systemu operacyjnego.
+Możesz użyć `Find-Package` polecenia cmdlet, określając `-Tag` parametru do określenia wersji (i systemu operacyjnego) przeznaczonych do pracy.
 Jak to:
 
 ```powershell
@@ -50,13 +52,13 @@ Find-Module -Tag PSEdition_Core
 Find-Module -Tag PSEdition_Core, Linux
 ```
 
-## <a name="searching-by-operating-system"></a>Wyszukiwanie według systemu operacyjnego 
+## <a name="searching-by-operating-system"></a>Wyszukiwanie według systemu operacyjnego
 
 Ponieważ program PowerShell Core jest dostępna dla Windows, Linux i MacOS, pakietów w galerii, mogą być przeznaczone dla dowolnej kombinacji tych systemów operacyjnych. W galerii interfejsu użytkownika za pomocą następujących znaczników searchs wyszukiwać pakiety oznaczone przez system operacyjny:
 
 - Tagi: "Windows"
 - Tagi: "Linux"
-- Tagi: "MacOS" 
+- Tagi: "MacOS"
 
 Można określić te znaczniki `Find-Module` (i inne polecenia cmdlet w PowerShellGet module), podobnie do następującego:
 
@@ -67,17 +69,17 @@ Find-Module -Tag Linux
 
 ## <a name="searching-for-multiple-compatibilities"></a>Wyszukiwanie wiele możliwości
 
-Można wyszukać pakiet, który ma wiele możliwości przy użyciu składni: 
+Można wyszukać pakiet, który ma wiele możliwości przy użyciu składni:
 
-Tagi: "Compatibility1" "Compatibility2" 
+Tagi: "Compatibility1" "Compatibility2"
 
 Na przykład jeśli szukasz pakietu przy użyciu programu PowerShell Core zgodności, który działa na maszynach Moje Windows i Linux, należy użyć tagów wyszukiwania:
 
-Tagi: "PSEdition_Core" "Windows" "Linux" 
+Tagi: "PSEdition_Core" "Windows" "Linux"
 
 Aby przeprowadzić wyszukiwanie, przy użyciu programu PowerShell, można użyć `Find-Module` i inne polecenia cmdlet modułu PowerShellGet, podobnie do następującego:
 
-```powewrshell
+```powershell
 # Find scripts compatible with PowerShell Core, Windows, and Linux
 Find-Script -Tag PSEdition_Core,Linux,Windows
 

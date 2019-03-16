@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845794"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056570"
 ---
 # <a name="advisory-development-guidelines"></a>Pomocnicze wskazówki dotyczące projektowania
 
@@ -61,7 +61,7 @@ Na przykład [Remove-Item](/powershell/module/microsoft.powershell.management/re
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Obsługa poświadczeń za pomocą programu Windows PowerShell (AD03)
 
-Polecenia cmdlet należy zdefiniować `Credential` parametr do reprezentowania poświadczeń. Ten parametr musi być typu [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) i muszą być zdefiniowane przy użyciu deklaracji atrybutu poświadczeń. Ta obsługa automatycznie monituje użytkownika dla nazwy użytkownika, hasła lub dla obu, gdy pełna poświadczenia nie są dostarczane bezpośrednio. Aby uzyskać więcej informacji o atrybucie poświadczeń, zobacz [deklaracji atrybutu poświadczeń](./credential-attribute-declaration.md).
+Polecenia cmdlet należy zdefiniować `Credential` parametr do reprezentowania poświadczeń. Ten parametr musi być typu [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) i muszą być zdefiniowane przy użyciu deklaracji atrybutu poświadczeń. Ta obsługa automatycznie monituje użytkownika dla nazwy użytkownika, hasła lub dla obu, gdy pełna poświadczenia nie są dostarczane bezpośrednio. Aby uzyskać więcej informacji o atrybucie poświadczeń, zobacz [deklaracji atrybutu poświadczeń](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Obsługuje kodowanie parametrów (AD04)
 
@@ -89,17 +89,17 @@ Nazwa klasy .NET Framework, która implementuje polecenia cmdlet nazwę klasy "*
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Jeśli nie wejście potokowe przesłonić metodę BeginProcessing (AC02)
 
-Jeśli Twojego polecenia cmdlet nie akceptuje dane wejściowe z potoku, przetwarzanie powinny być zrealizowane w [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody. Użyj tej metody umożliwia programu Windows PowerShell, aby zachować kolejność między poleceniami cmdlet. Pierwsze polecenie cmdlet w potoku zawsze zwraca jej obiektów, zanim pozostałe polecenia cmdlet w potoku uzyskać szansę na start ich przetwarzania.
+Jeśli Twojego polecenia cmdlet nie akceptuje dane wejściowe z potoku, przetwarzanie powinny być zrealizowane w [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody. Użyj tej metody umożliwia programu Windows PowerShell, aby zachować kolejność między poleceniami cmdlet. Pierwsze polecenie cmdlet w potoku zawsze zwraca jej obiektów, zanim pozostałe polecenia cmdlet w potoku uzyskać szansę na start ich przetwarzania.
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>Aby obsłużyć żądania zatrzymania przesłonić metodę StopProcessing (AC03)
 
-Zastąp [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metody, aby Twoje polecenie cmdlet może obsłużyć sygnał zatrzymania. Niektóre polecenia cmdlet zająć dużo czasu do wykonania ich operacji i umożliwiają one przez długi czas przekazania między wywołaniami do środowiska wykonawczego programu Windows PowerShell, np. gdy polecenia cmdlet blokuje wątek w długim wywołania RPC. Obejmuje to polecenia cmdlet, które są wybierane [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metody do [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody i inne opinie mechanizmy, które może potrwać bardzo długo. W tych przypadkach użytkownik może być konieczne wysyłać sygnał zatrzymania tych poleceń cmdlet.
+Zastąp [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metody, aby Twoje polecenie cmdlet może obsłużyć sygnał zatrzymania. Niektóre polecenia cmdlet zająć dużo czasu do wykonania ich operacji i umożliwiają one przez długi czas przekazania między wywołaniami do środowiska wykonawczego programu Windows PowerShell, np. gdy polecenia cmdlet blokuje wątek w długim wywołania RPC. Obejmuje to polecenia cmdlet, które są wybierane [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) metody do [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody i inne opinie mechanizmy, które może potrwać bardzo długo. W tych przypadkach użytkownik może być konieczne wysyłać sygnał zatrzymania tych poleceń cmdlet.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>Zaimplementuj interfejs IDisposable (AC04)
 
-Jeśli Twojego polecenia cmdlet zawiera obiekty, które nie są usuwane z (zapisany w potoku) [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody Twojego polecenia cmdlet mogą wymagać usunięcia obiektów dodatkowych. Na przykład Twoje polecenie cmdlet otwiera dojście do pliku w jego [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody i przechowuje dojście Otwórz do użytku przez [System.Management.Automation.Cmdlet.Processrecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody tego dojścia musi być zamknięty po zakończeniu przetwarzania.
+Jeśli Twojego polecenia cmdlet zawiera obiekty, które nie są usuwane z (zapisany w potoku) [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody Twojego polecenia cmdlet mogą wymagać usunięcia obiektów dodatkowych. Na przykład Twoje polecenie cmdlet otwiera dojście do pliku w jego [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody i przechowuje dojście Otwórz do użytku przez [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody tego dojścia musi być zamknięty po zakończeniu przetwarzania.
 
-Środowisko wykonawcze programu Windows PowerShell, nie zawsze wywołuje [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody. Na przykład [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoda nie może być wywoływana, jeśli polecenie cmdlet zostanie anulowana w środku za pośrednictwem jego działania lub gdy kończącym błędu w jakichkolwiek pracach związanych z polecenia cmdlet. W związku z tym, powinny implementować pełne klasy .NET Framework dla polecenia cmdlet, które wymaga czyszczenia obiektu [System.Idisposable](/dotnet/api/System.IDisposable) wzorzec interfejsu, w tym finalizatora, dzięki czemu można wywołać w czasie wykonywania programu Windows PowerShell [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) i [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) metody po zakończeniu przetwarzania.
+Środowisko wykonawcze programu Windows PowerShell, nie zawsze wywołuje [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody. Na przykład [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metoda nie może być wywoływana, jeśli polecenie cmdlet zostanie anulowana w środku za pośrednictwem jego działania lub gdy kończącym błędu w jakichkolwiek pracach związanych z polecenia cmdlet. W związku z tym, powinny implementować pełne klasy .NET Framework dla polecenia cmdlet, które wymaga czyszczenia obiektu [System.IDisposable](/dotnet/api/System.IDisposable) wzorzec interfejsu, w tym finalizatora, dzięki czemu można wywołać w czasie wykonywania programu Windows PowerShell [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) i [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) metody po zakończeniu przetwarzania.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Użyj parametru przyjaznego dla serializacji typów (AC05)
 
@@ -117,7 +117,7 @@ Typy wbudowane rehydratable:
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

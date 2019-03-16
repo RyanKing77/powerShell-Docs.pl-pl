@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 0f025213087e6f308adf8e597fc01c1320251f76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849140"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054883"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Dodawanie aliasów, rozszerzenia symboli wieloznacznych i pomocy do parametrów polecenia cmdlet
 
@@ -110,7 +110,7 @@ Poniższy kod z tego polecenia cmdlet Stop-Proc definiuje `HelpMessage` atrybutu
 
 ## <a name="overriding-an-input-processing-method"></a>Zastępowanie metody przetwarzania danych wejściowych
 
-Twojego polecenia cmdlet jest przesłonięcie metody przetwarzania danych wejściowych, w większości przypadków będzie to [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Podczas modyfikowania systemu, polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metody umożliwiające Użytkownik, aby przekazać opinię, zanim zostanie zmienione. Aby uzyskać więcej informacji o tych metodach, zobacz [Tworzenie polecenia Cmdlet, który modyfikuje System](./creating-a-cmdlet-that-modifies-the-system.md).
+Twojego polecenia cmdlet jest przesłonięcie metody przetwarzania danych wejściowych, w większości przypadków będzie to [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). Podczas modyfikowania systemu, polecenia cmdlet powinny wywoływać [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metody, aby umożliwić użytkownikowi Aby przekazać opinię, zanim zostanie zmienione. Aby uzyskać więcej informacji o tych metodach, zobacz [Tworzenie polecenia Cmdlet, który modyfikuje System](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="supporting-wildcard-expansion"></a>Obsługa rozszerzenia symboli wieloznacznych
 

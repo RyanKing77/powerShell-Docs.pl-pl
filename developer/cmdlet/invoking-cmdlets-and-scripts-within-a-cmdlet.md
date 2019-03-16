@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e7040a5c-4a47-42df-a2ea-96b134a4ed9b
 caps.latest.revision: 10
-ms.openlocfilehash: e5dc525a6c80ce135d6d68e12968613056d447e8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f20708ff41d9a6de90090997a875ba5371eccd74
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846242"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058882"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>Wywoływanie poleceń cmdlet i skryptów w ramach polecenia cmdlet
 
@@ -21,7 +21,7 @@ Polecenia cmdlet można wywoływać innych poleceń cmdlet i skryptów na dane w
 
 ## <a name="the-invoke-method"></a>Invoke — metoda
 
-Wszystkie polecenia cmdlet istniejące polecenia cmdlet mogą być wywoływane przez wywołanie metody [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metodę z wejściem przetwarzania metody, takie jak [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), która zostaje zastąpiona przez polecenie cmdlet. Jednak można wywoływać tylko tych poleceń cmdlet, które pochodzą bezpośrednio z [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasy. Nie można wywołać polecenia cmdlet, która pochodzi od klasy [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy.
+Wszystkie polecenia cmdlet istniejące polecenia cmdlet mogą być wywoływane przez wywołanie metody [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metodę z wejściem przetwarzania metody, takie jak [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), która zostaje zastąpiona przez polecenie cmdlet. Jednak można wywoływać tylko tych poleceń cmdlet, które pochodzą bezpośrednio z [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasy. Nie można wywołać polecenia cmdlet, która pochodzi od klasy [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy.
 
 [System.Management.Automation.Cmdlet.Invoke*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) metoda ma następujących wariantów.
 

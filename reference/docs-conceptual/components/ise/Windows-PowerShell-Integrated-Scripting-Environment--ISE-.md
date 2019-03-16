@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Windows PowerShell Integrated Scripting Environment środowiska ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683835"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054717"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -34,7 +34,7 @@ Te narzędzia można wyświetlić formanty do okienka z zakładkami lub działa�
 
 **Większość listy ostatnio używanych** jest teraz częścią menu Otwórz plik, aby ułatwić uzyskać dostęp do plików, o których najczęściej używane.
 
-**Scalone okienku konsoli**. W poprzednich wersjach środowiska ISE wystąpiły oddzielne polecenie z danymi wyjściowymi okienka. Są teraz połączone w jeden czy więcej bezpośrednio naśladuje zostanie wyświetlony w konsoli programu Windows Powershell.
+**Scalone okienku konsoli**. W poprzednich wersjach środowiska ISE wystąpiły oddzielne polecenie z danymi wyjściowymi okienka. Są teraz połączone w jeden czy więcej bezpośrednio naśladuje zostanie wyświetlony w konsoli programu Windows PowerShell.
 
 **Przełączniki wiersza polecenia**. Kilka nowych przełączników wiersza polecenia umożliwiają większą kontrolę nad sposobem działania środowiska ISE. -NoProfile uruchamia środowiska ISE bez konieczności uruchamiania skryptu profilu. -Help otwiera okno pomocy przy użyciu środowiska ISE. -mta uruchamia środowiska ISE w "trybie wielowątkowej". Wartość domyślna to apartamentem.
 
