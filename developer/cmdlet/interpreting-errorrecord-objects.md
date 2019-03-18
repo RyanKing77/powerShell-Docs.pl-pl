@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
-ms.openlocfilehash: d77e4daf25bfcd5e76c184f6dbdb619368627bfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56847670"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058780"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Interpretowanie obiektów ErrorRecord
 
-W większości przypadków [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiekt reprezentuje błąd niepowodujący generowanych przez polecenia lub skryptu. Kończenie błędy można również określić dodatkowe informacje w rekord błędu za pomocą [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) interfejsu.
+W większości przypadków [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiekt reprezentuje błąd niepowodujący generowanych przez polecenia lub skryptu. Kończenie błędy można również określić dodatkowe informacje w rekord błędu za pomocą [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) interfejsu.
 
-Jeśli chcesz napisać procedurę obsługi błędów w skrypcie lub hosta, aby obsługiwać błędy, które występują podczas wykonywania polecenia lub skryptu, należy interpretować [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu, aby określić, czy go reprezentuje klasę błędu, który chcesz obsługiwać.
+Jeśli chcesz napisać procedurę obsługi błędów w skrypcie lub hosta, aby obsługiwać błędy, które występują podczas wykonywania polecenia lub skryptu, należy interpretować [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu, aby określić, czy go reprezentuje klasę błędu, który chcesz obsługiwać.
 
 Gdy polecenie cmdlet napotka kończącym lub błąd niepowodujący, należy utworzyć rekord błędu, który opisuje warunku błędu. Aplikacja hosta należy zbadać te rekordy błąd i wykonać dowolną akcję ograniczą błędu. Aplikacja hosta musi również badanie rekordów błędów błędy niekończące, nie można przetworzyć rekordu, ale mogły kontynuować i należy zbadać, rekordy błąd powodujący zakończenie błędów, które spowodowało potoku zatrzymać.
 
 > [!NOTE]
-> Trwa przerywanie działania błędy wywołuje polecenie cmdlet [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metody. W przypadku błędy niepowodujące wywołuje polecenie cmdlet [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody.
+> Trwa przerywanie działania błędy wywołuje polecenie cmdlet [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) metody. W przypadku błędy niepowodujące wywołuje polecenie cmdlet [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) metody.
 
 ## <a name="error-record-design"></a>Błąd projektu rekordów
 
@@ -44,13 +44,13 @@ Możesz przejrzeć kilka części rekordu błędu, aby zidentyfikować ten błą
 
 ### <a name="the-error-category"></a>Kategoria błędu
 
-Kategoria błędu rekordu błędu jest jednym ze wstępnie zdefiniowanych stałych, które są dostarczane przez [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) wyliczenia. Te informacje są dostępne za pośrednictwem [System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) właściwość [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu.
+Kategoria błędu rekordu błędu jest jednym ze wstępnie zdefiniowanych stałych, które są dostarczane przez [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) wyliczenia. Te informacje są dostępne za pośrednictwem [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) właściwość [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu.
 
 Polecenia cmdlet można określić kategorie CloseError OpenError, InvalidType, błąd odczytu i WriteError i innych kategorii błędów. Aplikacja hosta można użyć kategorii błędów do przechwycenia grupy błędów.
 
 ### <a name="the-exception"></a>Wyjątek
 
-Wyjątek objęte rekordu błędu jest świadczona przez polecenie cmdlet i jest możliwy za pośrednictwem [System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) właściwość [ System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu.
+Wyjątek objęte rekordu błędu jest świadczona przez polecenie cmdlet i jest możliwy za pośrednictwem [System.Management.Automation.ErrorRecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) właściwość [ System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiektu.
 
 Aplikacje hosta mogą używać `is` słowo kluczowe, aby ustalić, czy wyjątek jest określonej klasy lub klasy pochodnej. Zaleca się gałęzi na typ wyjątku, jak pokazano w poniższym przykładzie.
 
@@ -70,23 +70,23 @@ W poprzednim przykładzie pierwszy token jest identyfikator błędu, który nast
 
 ### <a name="other-information"></a>Inne informacje
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiekt może być udostępniają informacje opisujące środowisko, w którym wystąpił błąd. Informacje te obejmują elementy, takie jak Szczegóły błędu, informacje wywołania i obiekt docelowy, który był przetwarzany, gdy wystąpił błąd. Mimo że te informacje mogą być przydatne do aplikacji hosta, nie zazwyczaj służy do Zidentyfikuj ten błąd. Te informacje są dostępne za pośrednictwem następujących właściwości:
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) obiekt może być udostępniają informacje opisujące środowisko, w którym wystąpił błąd. Informacje te obejmują elementy, takie jak Szczegóły błędu, informacje wywołania i obiekt docelowy, który był przetwarzany, gdy wystąpił błąd. Mimo że te informacje mogą być przydatne do aplikacji hosta, nie zazwyczaj służy do Zidentyfikuj ten błąd. Te informacje są dostępne za pośrednictwem następujących właściwości:
 
-[System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
+[System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
 
-[System.Management.Automation.Errorrecord.Invocationinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
+[System.Management.Automation.ErrorRecord.InvocationInfo](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
 
-[System.Management.Automation.Errorrecord.Targetobject*](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
+[System.Management.Automation.ErrorRecord.TargetObject](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
 
 ## <a name="see-also"></a>Zobacz też
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 

@@ -2,16 +2,16 @@
 ms.date: 10/30/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Rozwiązywanie problemów z platformą DSC
-ms.openlocfilehash: e1f36bbc97569ac0d65f003ee08f52ec174a4520
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405222"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059749"
 ---
 # <a name="troubleshooting-dsc"></a>Rozwiązywanie problemów z platformą DSC
 
-_Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0_
+_Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 W tym temacie opisano sposoby rozwiązywania DSC w przypadku wystąpienia problemów.
 
@@ -74,7 +74,7 @@ InDesiredState        :    False
 InitialState          :
 InstanceName          :    ServiceDll
 RebootRequested       :    False
-ReosurceName          :    File
+ResourceName          :    File
 StartDate             :    11/24/2015  3:44:56
 PSComputerName        :
 ```
@@ -219,7 +219,7 @@ Count Name                      Group
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
 ```
 
-### <a name="3-messages-from-the-latest-operation"></a>3. Komunikaty z najnowszą operacji
+### <a name="3-messages-from-the-latest-operation"></a>3: Komunikaty z najnowszą operacji
 
 Najnowsze działania są przechowywane w pierwszy indeks grupy tablic `$SeparateDscOperations`.
 Wykonywanie zapytań grupowanie komunikatów dla indeksu 0 zwraca wszystkie komunikaty dotyczące najnowszych operacji:

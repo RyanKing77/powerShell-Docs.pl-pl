@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687027"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054378"
 ---
 # <a name="known-issues-and-limitations"></a>Znane problemy i ograniczenia
 
@@ -54,7 +54,7 @@ Istnieją dwa obejścia tego problemu, w zależności od wersji systemu Windows 
 **Rozwiązanie:**
 
 - Dla komputerów z systemami **systemu Windows Server 2008 R2**
-  1. Otwórz program Powershell jako administrator
+  1. Otwórz program PowerShell jako administrator
   2. Uruchom następujące polecenie
 
      ```powershell

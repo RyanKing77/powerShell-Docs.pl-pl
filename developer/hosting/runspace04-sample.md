@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 9e8123e9b1068e0fd6efec8508eacf594ff22301
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56845934"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054904"
 ---
 # <a name="runspace04-sample"></a>Przykład Runspace04
 
@@ -35,7 +35,7 @@ W przykładzie pokazano poniżej.
 
 - Wywoływanie polecenia synchronicznie.
 
-- Za pomocą [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) obiektów, aby wyodrębnić i wyświetlić właściwości z obiektów zwróconych przez polecenia.
+- Za pomocą [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) obiektów, aby wyodrębnić i wyświetlić właściwości z obiektów zwróconych przez polecenia.
 
 - Pobieranie i wyświetlanie rekordów błędów, które zostały wygenerowane podczas wykonywania polecenia.
 
