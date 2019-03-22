@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686453"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320425"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
 
@@ -49,10 +49,20 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 
 #### <a name="controlling-format-wide-display-with-column"></a>Kontrolowanie wyświetlanie całej Format za pomocą kolumny
 
-Za pomocą **całej Format** polecenia cmdlet, możesz wyświetlić tylko jedną właściwość w danym momencie. Dzięki temu przydatne do wyświetlania listy prosty, które zawierają tylko jeden element w każdym wierszu. Aby uzyskać listę prosty, ustaw wartość **kolumny** parametru na wartość 1, wpisując:
+Za pomocą `Format-Wide` polecenia cmdlet, możesz wyświetlić tylko jedną właściwość w danym momencie.
+Dzięki temu przydatne do wyświetlania listy prosty, które zawierają tylko jeden element w każdym wierszu.
+Aby uzyskać listę prosty, ustaw wartość **kolumny** parametru na wartość 1, wpisując:
 
 ```powershell
-Get-Command Format-Wide -Property Name -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+```
+
+```output
+Custom
+Hex
+List
+Table
+Wide
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>Za pomocą listy formatów dla widoku listy

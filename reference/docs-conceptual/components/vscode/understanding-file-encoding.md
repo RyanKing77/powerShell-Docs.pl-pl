@@ -2,12 +2,12 @@
 title: Opis kodowania pliku w programie VSCode i PowerShell
 description: Skonfiguruj kodowanie pliku VSCode i programu PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795126"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320408"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Opis kodowania pliku w programie VSCode i PowerShell
 
@@ -102,7 +102,7 @@ BOM są opcjonalne i ich wdrażania nie jest tak popularne w środowisku systemu
 
 Dla programu VSCode domyślnym kodowaniem jest UTF-8 bez BOM.
 
-Aby ustawić [Kodowanie dla programu VSCode][], przejdź do ustawień programu VSCode (<kbd>Ctrl<kbd>+</kbd>,</kbd>) i ustaw `"files.encoding"` ustawienia:
+Aby ustawić [kodowanie VSCode][], przejdź do ustawień programu VSCode (<kbd>Ctrl<kbd>+</kbd>,</kbd>) i ustaw `"files.encoding"` ustawienia:
 
 ```json
 "files.encoding": "utf8bom"
@@ -138,7 +138,7 @@ Jeśli nie chcesz, aby te ustawienia mają wpływ na wszystkie typy plików, pro
 W programie PowerShell domyślne kodowanie różni się zależnie od wersji:
 
 - W programie PowerShell 6 + kodowanie domyślne to UTF-8 bez BOM na wszystkich platformach.
-- W programie Windows PowerShell, domyślnym kodowaniem jest zwykle Windows-1252, rozszerzenie [latin 1][], znanego również jako ISO 8859-1.
+- W programie Windows PowerShell, domyślnym kodowaniem jest zwykle Windows-1252, rozszerzenie [latin-1][], znanego również jako ISO 8859-1.
 
 W programie PowerShell 5 + można znaleźć domyślnego kodowania w tym:
 
@@ -194,7 +194,7 @@ Nie jest możliwe wymusić programu PowerShell do korzystania z określonego kod
 
 ### <a name="existing-scripts"></a>Istniejące skrypty
 
-Skrypty już w systemie plików może być konieczne do zakodowania ponownie wybrany nowy kodowania. W dolnym pasku VSCode będzie wyświetlana etykieta UTF-8. Kliknij go, aby otworzyć pasek akcji, a następnie wybierz pozycję **Zapisz z kodowaniem**. Teraz możesz wybrać nowe kodowanie dla tego pliku. Zobacz [Kodowanie dla programu VSCode][] pełne instrukcje.
+Skrypty już w systemie plików może być konieczne do zakodowania ponownie wybrany nowy kodowania. W dolnym pasku VSCode będzie wyświetlana etykieta UTF-8. Kliknij go, aby otworzyć pasek akcji, a następnie wybierz pozycję **Zapisz z kodowaniem**. Teraz możesz wybrać nowe kodowanie dla tego pliku. Zobacz [kodowanie VSCode][] pełne instrukcje.
 
 Jeśli potrzebujesz ponownie zakodować wiele plików, można użyć następującego skryptu:
 
@@ -215,7 +215,7 @@ Należy pamiętać o tym, czy nie byłoby to utrwalone między startupy.
 ### <a name="source-control-software"></a>Oprogramowanie do kontroli źródła
 
 Niektóre narzędzia do kontroli źródła, takich jak git, ignorowanie kodowania; System git śledzi tylko bajtów.
-Inne, takie jak TFS lub Mercurial, nie. Nawet z niektórych narzędzi opartych o git zależy od tego, dekodowanie tekstu.
+Inne, takie jak DevOps platformy Azure lub Mercurial, nie. Nawet z niektórych narzędzi opartych o git zależy od tego, dekodowanie tekstu.
 
 Gdy jest to możliwe, upewnij się, że:
 
@@ -269,9 +269,9 @@ Istnieje kilka innych nieuprzywilejowany wpisy na kodowanie i konfigurowanie kod
 [@mklement0]: https://github.com/mklement0
 [@rkeithhill]: https://github.com/rkeithhill
 [Windows-1252]: https://wikipedia.org/wiki/Windows-1252
-[latin 1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
+[latin-1]: https://wikipedia.org/wiki/ISO/IEC_8859-1
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
 [znacznika kolejności bajtów]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Language Server Protocol]: https://microsoft.github.io/language-server-protocol/
-[Kodowanie dla programu VSCode]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[kodowanie VSCode]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
