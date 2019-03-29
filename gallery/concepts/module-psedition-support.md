@@ -1,47 +1,30 @@
 ---
-ms.date: 06/12/2017
+ms.date: 03/28/2019
 contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Moduły z niezgodne wersje programu PowerShell
-ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684997"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623844"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Moduły z niezgodne wersje programu PowerShell
 
 Od wersji 5.1 program PowerShell jest dostępny w różnych wersjach, które charakteryzują się różnymi zestawami funkcji i zgodnością z różnymi platformami.
 
-- **Wersja Desktop:** Oparta na programie .NET Framework i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w pełnych wersjach systemu Windows, takich jak instalacja Server Core i Windows Desktop.
-- **Wersja Core:** Oparta na module .NET Core i zapewnia zgodność ze skryptami i modułami przeznaczonymi dla wersji programu PowerShell działających w ograniczonych wersjach systemu Windows, takich jak Nano Server i Windows IoT.
+- **Wersja Desktop:** Oparta na programie .NET Framework, dotyczy programu Windows PowerShell w wersji 4.0, a poniżej, a także program Windows PowerShell 5.1 w Windows Desktop, Windows Server, Windows Server Core i większości innych wersji Windows.
+- **Wersja Core:** Oparta na module .NET Core, stosuje się do programu PowerShell Core 6.0 i nowszych oraz systemu Windows PowerShell 5.1 w ograniczonych wersjach Windows, takich jak Windows Nanoserver i Windows IoT.
 
-Uruchomiona wersja programu PowerShell jest wyświetlany we właściwości PSEdition `$PSVersionTable`.
-
-```powershell
-$PSVersionTable
-```
-
-```output
-Name                           Value
-----                           -----
-PSVersion                      5.1.14300.1000
-PSEdition                      Desktop
-PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-CLRVersion                     4.0.30319.42000
-BuildVersion                   10.0.14300.1000
-WSManStackVersion              3.0
-PSRemotingProtocolVersion      2.3
-SerializationVersion           1.1.0.1
-```
+Aby uzyskać więcej informacji na temat wersji programu PowerShell, zobacz [about_PowerShell_Editions][].
 
 ## <a name="declaring-compatible-editions"></a>Deklarowanie zgodne wersje
 
 Autorzy modułów mogą zadeklarować zgodność swoich modułów z jedną lub kilkoma wersjami programu PowerShell przy użyciu klucza manifestu modułu CompatiblePSEditions. Ten klucz jest obsługiwany tylko w programie PowerShell 5.1 i w nowszych wersjach.
 
 > [!NOTE]
-> Po określeniu manifestu modułu CompatiblePSEditions kluczem, nie mogą być importowane w niższych wersjach programu PowerShell.
+> Po określeniu manifestu modułu CompatiblePSEditions kluczem, nie mogą być importowane w programie PowerShell w wersji 4 i poniżej.
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -49,7 +32,7 @@ $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -58,7 +41,7 @@ Core
 $ModuleInfo | Get-Member CompatiblePSEditions
 ```
 
-```output
+```Output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
@@ -72,7 +55,7 @@ Podczas pobierania listy dostępnych modułów można filtrować tę listę wed�
 Get-Module -ListAvailable -PSEdition Desktop
 ```
 
-```output
+```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
@@ -85,7 +68,7 @@ Manifest   1.0        ModuleWithPSEditions
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
 ```
 
-```output
+```Output
 Desktop
 Core
 ```
@@ -96,7 +79,7 @@ Autorzy modułów mogą publikować moduł pojedynczego celem lub obie te wersje
 
 Pojedynczy moduł może pracować na komputerach stacjonarnych, jak i Core wersje, w tym module Autor ma dodać logikę wymagane w obu polach RootModule, lub w manifeście modułu przy użyciu zmiennej $PSEdition. Moduły mogą mieć dwa zestawy skompilowane pliki dll przeznaczonych dla programów CoreCLR i FullCLR. Poniżej przedstawiono kilka opcji, aby pakiet modułu z logiką ładowania odpowiednie biblioteki dll.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Opcja 1: Pakowanie modułu dla przeznaczone dla wielu wersji i wiele wersji programu PowerShell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Option 1: Pakowanie modułu dla przeznaczone dla wielu wersji i wiele wersji programu PowerShell
 
 Zawartość folderu modułu
 
@@ -218,7 +201,7 @@ Przykładowy plik manifestu modułu przy użyciu klucza CompatiblePSEditions
 dir -Recurse
 ```
 
-```output
+```Output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode           LastWriteTime   Length Name
@@ -263,3 +246,7 @@ Find-Module -Tag PSEdition_Core
 [Obsługa elementami Psedition w galerii PowerShellGallery](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Aktualizowanie manifestu modułu](/powershell/module/powershellget/update-modulemanifest)
+
+[about_PowerShell_Editions][]
+
+[about_PowerShell_Editions]: /powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_Editions

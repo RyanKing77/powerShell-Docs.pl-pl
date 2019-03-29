@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Usługa ściągania platformy DSC
-ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056774"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623946"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Usługa ściągania Desired State Configuration
 
@@ -47,7 +47,7 @@ Funkcje usługi online, które nie są obecnie dostępne w usługi ściągania w
 
 ## <a name="dsc-pull-service-in-windows-server"></a>Usługa ściągania DSC w systemie Windows Server
 
-Istnieje możliwość konfigurowania usługi ściągania, aby uruchomić w systemie Windows Server.
+Istnieje możliwość skonfigurować usługę ściągania do uruchomienia w systemie Windows Server.
 Należy pamiętać, że rozwiązania usługi ściągania, które są zawarte w systemie Windows Server zawiera tylko możliwości przechowywania konfiguracje/modules do pobrania i przechwytywania danych raportu w bazie danych.
 Nie obejmuje wiele możliwości oferowanych przez usługę w systemie Azure, a zatem nie jest dobrym narzędziem do oceny, jak usługa będzie używana.
 

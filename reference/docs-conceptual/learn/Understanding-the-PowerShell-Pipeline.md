@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Opis potoki PowerShell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686194"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623963"
 ---
 # <a name="understanding-pipelines"></a>Opis potoków
 
@@ -63,6 +63,18 @@ Stronicowanie także ogranicza wykorzystanie Procesora, ponieważ przetwarzanie 
 
 Możesz zobaczyć różnicę Menedżera zadań Windows do monitorowania procesora CPU i użycie pamięci przez program PowerShell. Uruchom następujące polecenie: `Get-ChildItem C:\Windows -Recurse`. Porównaj użycie Procesora i pamięci do tego polecenia: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
+> [!NOTE]
+> **Stronicowania** parametr nie jest obsługiwany przez wszystkie hosty programu PowerShell. Na przykład podczas próby użycia **stronicowania** parametru w środowisku PowerShell ISE, zostanie wyświetlony następujący błąd:
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## <a name="objects-in-the-pipeline"></a>Obiekty w potoku
 
 Po uruchomieniu polecenia cmdlet programu PowerShell, zostaną wyświetlone dane wyjściowe tekstu, ponieważ jest on wymagany do reprezentowania obiektów jako tekst w oknie konsoli. Tekst wyjściowy może nie wyświetlać wszystkich właściwości obiektu są dane wyjściowe.
@@ -82,7 +94,7 @@ Tekst wyjściowy znajduje się podsumowanie informacji, nie pełną reprezentacj
 Gdy przekazać dane wyjściowe do `Get-Member` polecenia cmdlet, możesz uzyskać informacje na temat obiektu zwróconego przez `Get-Location`.
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output

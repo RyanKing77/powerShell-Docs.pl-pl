@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Istotne zmiany dotyczące programu PowerShell w wersji 6.0
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795695"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623929"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Istotne zmiany dotyczące programu PowerShell w wersji 6.0
 
@@ -61,6 +61,15 @@ Zamiast tego zaleca się, że użytkownik, użyj polecenia cmdlet CIM (zwane ró
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 Ze względu na użycie nieobsługiwanego interfejsów API `Microsoft.PowerShell.LocalAccounts` została usunięta z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
+
+### <a name="-computer-cmdlets"></a>Polecenia cmdlet środowiska `*-Computer`
+
+Ze względu na użycie nieobsługiwanego interfejsy API zostały usunięte następujące polecenia cmdlet z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Przywracanie komputera
 
 ### <a name="-counter-cmdlets"></a>Polecenia cmdlet środowiska `*-Counter`
 

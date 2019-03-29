@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 description: Wytyczne dotyczące wydawców
 title: Galeria programu PowerShell publikowania wskazówki i najlepsze rozwiązania
-ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056502"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623912"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Galerii PowerShellGallery publikowania wskazówki i najlepsze rozwiązania
 
@@ -145,6 +145,9 @@ Aby zademonstrować dla użytkowników, które pakiety będą dobrze współprac
 - Windows: Pakiety, które są zgodne z systemu operacyjnego Windows
 - Linux: Pakiety, które są zgodne z systemem operacyjnym Linux
 - MacOS : Pakiety, które są zgodne z systemu operacyjnego Mac
+
+Oznaczając pakietu przy użyciu zgodnych missing będą uwzględniane w filtry wyszukiwania galerii w okienku po lewej stronie wyników wyszukiwania. Jeśli hostujesz pakietu w serwisie GitHub, gdy oznaczysz pakiet, możesz również korzystać z zalet naszej [osłony niezgodności galerii programu PowerShell](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![shield zgodności](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
 ## <a name="include-tests"></a>Uwzględnić testy
 

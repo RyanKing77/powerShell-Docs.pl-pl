@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarzy
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055006"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623895"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarzy
 
@@ -29,6 +29,10 @@ Galeria programu PowerShell będzie sprawdzać każdej witryny mediów społeczn
 Ponieważ ten przedstawia tylko liczbę razy coś został udostępniony, będzie interpretowany innym użytkownikom jako "liking" pakietu.
 
 ## <a name="comments"></a>Komentarze
+
+> [!IMPORTANT]
+> Dodawanie komentarza do Livefyre są dostarczane przez dostawców i nie jest już obsługiwana.
+> Dodawanie komentarza do Livefyre nie będzie już dostępny w galerii programu PowerShell, uruchamianie 05/01/2019 r. 
 
 Galerii programu PowerShell korzysta z usługi LiveFyre, aby użytkownicy mogli dodać komentarz dotyczący pakietów.
 Użytkownicy, którzy mają zaleceń lub opinii można użyć tej funkcji Aby przekazać opinię, która jest widoczna dla wszystkich osób odwiedzających stronę pakietu.

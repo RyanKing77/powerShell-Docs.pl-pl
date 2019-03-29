@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Poznawanie nazw poleceń programu PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688938"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623725"
 ---
 # <a name="learning-powershell-command-names"></a>Poznawanie nazw poleceń programu PowerShell
 
@@ -25,7 +25,7 @@ Ponadto tych poleceń obowiązują specyfikacje nieregularne parametru. Nie moż
 Do listy podzadań uruchomionych w centrum danych DC01, użyj **/S** parametr i nazwę komputera bez ukośników odwrotnych. Na przykład `tasklist /S DC01`.
 
 > [!NOTE]
-> Przed programu PowerShell w wersji 6 `sc` alias został `Set-Content` polecenia cmdlet. Aby uruchomić **sc.exe** polecenia, musi zawierać rozszerzenie pliku.
+> Przed programu PowerShell w wersji 6 `sc` alias został `Set-Content` polecenia cmdlet. W związku z tym aby uruchomić **sc.exe** polecenia w wersji programu PowerShell przed IPv6, należy uwzględnić Pełna nazwa pliku **sc.exe** łącznie z rozszerzeniem pliku **exe**.
 
 Usługi i procesy są przykładami elementy zarządzane na komputerze, które mają dobrze zdefiniowanego cyklu. Może rozpocząć lub zatrzymać usług i procesów lub Uzyskaj listę wszystkich aktualnie uruchomionych usług lub procesów. Mimo że istnieją ważne różnice techniczne między nimi, akcje, które można wykonać na usług i procesów są koncepcyjnie takie same. Ponadto wyborów, których możemy wprowadzić dostosować akcję określania parametrów może być zachowuje się podobnie jak również.
 
