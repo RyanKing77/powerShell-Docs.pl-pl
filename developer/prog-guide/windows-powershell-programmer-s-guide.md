@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849644"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920394"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programisty&#39;przewodnik s
 
@@ -57,7 +57,7 @@ Jeśli należy udostępnić magazyn danych, który użytkownik będzie musiał u
 
 Środowisko Windows PowerShell zawiera domyślne powershell.exe aplikacji hosta, czyli aplikację konsolową która wchodzi w interakcję z użytkownikiem i hostuje środowisko wykonawcze programu Windows PowerShell, za pomocą okna konsoli.
 
-Tylko rzadko będzie należy napisać własną aplikację hosta dla środowiska Windows PowerShell, mimo że Dostosowywanie jest obsługiwane. Jeden przypadek, w którym może być konieczne jego własnej aplikacji jest, gdy interfejs graficzny interfejs użytkownika, który jest bogatszy niż interfejs dostarczony przez aplikację hosta domyślnego. Możesz również niestandardowych aplikacji, gdy będzie tworzony interfejs graficzny w wierszu polecenia. Aby uzyskać więcej informacji, zobacz[jak utworzyć aplikację hosta programu Windows PowerShell](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Tylko rzadko będzie należy napisać własną aplikację hosta dla środowiska Windows PowerShell, mimo że Dostosowywanie jest obsługiwane. Jeden przypadek, w którym może być konieczne jego własnej aplikacji jest, gdy interfejs graficzny interfejs użytkownika, który jest bogatszy niż interfejs dostarczony przez aplikację hosta domyślnego. Możesz również niestandardowych aplikacji, gdy będzie tworzony interfejs graficzny w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [jak utworzyć aplikację hosta programu Windows PowerShell](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### <a name="windows-powershell-runtime"></a>Środowisko uruchomieniowe programu Windows PowerShell
 
@@ -99,12 +99,12 @@ Aby uzyskać więcej informacji na temat korzystania z powłoki programu Windows
 
 |Temat|Definicja|
 |-----------|----------------|
-|[Jak utworzyć dostawcę Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Ta sekcja zawiera opis sposobu tworzenia dostawcy środowiska Windows PowerShell dla programu Windows PowerShell.|
+|[Jak utworzyć dostawcę programu Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Ta sekcja zawiera opis sposobu tworzenia dostawcy środowiska Windows PowerShell dla programu Windows PowerShell.|
 |[Jak utworzyć aplikację hosta programu PowerShell Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|W tej sekcji opisano sposób pisania aplikacji hosta, która manipuluje obszarem działania oraz sposobu pisania aplikacji hosta, który implementuje własnego niestandardowego hosta.|
-|[Jak utworzyć przystawki Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|W tej sekcji opisano sposób tworzenia przystawki, który służy do rejestrowania wszystkich poleceń cmdlet i dostawców w zestawie oraz jak utworzyć niestandardowe przystawki.|
-|[Jak utworzyć powłoki konsoli](./how-to-create-a-console-shell.md)|Ta sekcja zawiera opis sposobu tworzenia powłoki konsoli, który nie jest rozszerzalny.|
-|[Pojęcia dotyczące programu Windows PowerShell](./windows-powershell-concepts.md)|Ta sekcja zawiera ogólne informacje, które pomoże Ci zrozumieć programu Windows PowerShell z punktu widzenia dewelopera.|
+|[Jak utworzyć przystawkę programu Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|W tej sekcji opisano sposób tworzenia przystawki, który służy do rejestrowania wszystkich poleceń cmdlet i dostawców w zestawie oraz jak utworzyć niestandardowe przystawki.|
+|[Jak utworzyć powłokę konsoli](./how-to-create-a-console-shell.md)|Ta sekcja zawiera opis sposobu tworzenia powłoki konsoli, który nie jest rozszerzalny.|
+|[Zagadnienia dotyczące programu Windows PowerShell](./windows-powershell-concepts.md)|Ta sekcja zawiera ogólne informacje, które pomoże Ci zrozumieć programu Windows PowerShell z punktu widzenia dewelopera.|
 
 ## <a name="see-also"></a>Zobacz też
 
-[Zestaw SDK programu Windows PowerShell](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)
