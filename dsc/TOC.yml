@@ -122,8 +122,9 @@ items:
       - name: Konfigurowanie serwera ściągania HTTP platformy DSC
         href: pull-server/pullServer.md
     - name: Rejestrowanie węzła przy użyciu serwera ściągania
-      href: pull-server/pullClient.md
       items:
+      - name: Konfigurowanie klienta ściągania platformy DSC
+        href: pull-server/pullClient.md
       - name: Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji (wersja 5)
         href: pull-server/pullClientConfigNames.md
       - name: Konfigurowanie klienta ściągania przy użyciu identyfikatorów konfiguracji (wersja 5)
@@ -165,7 +166,6 @@ items:
 - name: Dokumentacja
   items:
   - name: Wbudowane zasoby systemu Windows
-    href: reference/resources/windows/builtInResource.md
     items:
     - name: Zasób archiwum
       href: reference/resources/windows/archiveResource.md
@@ -212,7 +212,6 @@ items:
     - name: Zasób WindowsProcess
       href: reference/resources/windows/windowsProcessResource.md
   - name: Wbudowane zasoby systemu Linux
-    href: reference/resources/linux/lnxBuiltInResources.md
     items:
     - name: Zasób nxArchive
       href: reference/resources/linux/lnxArchiveResource.md
@@ -241,8 +240,9 @@ items:
     - name: Zasób PackageManagementSourceDsc
       href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
   - name: Klasa MSFT_DSCLocalConfigurationManager
-    href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     items:
+    - name: Omówienie
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     - name: Metoda ApplyConfiguration klasy MSFT_DSCLocalConfigurationManager
       href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
     - name: Metoda DisableDebugConfiguration klasy MSFT_DSCLocalConfigurationManager
@@ -285,9 +285,9 @@ items:
   items:
   - name: Oficjalne dokumenty
     href: further-reading/whitepapers.md
-ms.openlocfilehash: 177dc88e4a2a92104f6f2c2d4db118531274fcc4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 68096f26178d4c33fd78e6051a3cc071bd749210
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057199"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920343"
