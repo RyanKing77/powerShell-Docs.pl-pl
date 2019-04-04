@@ -1,10 +1,15 @@
 ---
 ms.date: 08/12/2017
 ms.topic: conceptual
-keywords: 'wmf,powershell,setup'
+keywords: wmf,powershell,setup
 title: Informacje o wersji programu WMF 5.1
+ms.openlocfilehash: dd68f101e6f21256f966f7472dabc273a475a25e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795338"
 ---
-
 # <a name="windows-management-framework-wmf-51"></a>Windows Management Framework (WMF) 5.1
 
 Program WMF umożliwia użytkownikom aktualizowanie istniejących systemów Windows do wersji składników programu PowerShell, usługi WMI, usługi WinRM i funkcji Rejestrowanie spisu oprogramowania (SIL, Software Inventory Logging), które zostały wydane z systemem Windows Server 2016.
