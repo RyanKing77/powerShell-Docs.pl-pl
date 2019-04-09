@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Bezpośrednie manipulowanie elementami
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685193"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293269"
 ---
 # <a name="manipulating-items-directly"></a>Bezpośrednie manipulowanie elementami
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>Tworzenie nowych elementów (nowy element)
+## <a name="creating-new-items-new-item"></a>Tworzenie nowych elementów (nowy element)
 
 Aby utworzyć nowy element w systemie plików, użyj **nowy element** polecenia cmdlet. Obejmują **ścieżki** parametr ze ścieżką do elementu, a **ItemType** parametru o wartości "file" lub "directory".
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 Podczas wpisywania ścieżki rejestru, należy uwzględnić dwukropkiem (**:**) w programie Windows PowerShell dysku nazwy, HKLM: a HKCU:. Bez dwukropka programu Windows PowerShell nie może rozpoznać nazwę dysku w ścieżce.
 
-### <a name="why-registry-values-are-not-items"></a>Dlaczego wartości rejestru nie są elementami
+## <a name="why-registry-values-are-not-items"></a>Dlaczego wartości rejestru nie są elementami
 
 Kiedy używasz **Get-ChildItem** polecenia cmdlet w celu odszukania elementów w kluczu rejestru, nigdy nie zobaczysz wpisy rejestru rzeczywiste oraz ich wartości.
 
@@ -95,7 +95,7 @@ SKC  VC Name                           Property
 
 Mimo że byłoby wygodne do traktowania wpisy rejestru jako elementy, nie można określić ścieżkę do wpisu rejestru w sposób, który gwarantuje, że jest ona unikatowa. Notacji ścieżki nie rozróżnia podklucza rejestru o nazwie **Uruchom** i **(opcja domyślna)** wpisu rejestru w **Uruchom** podklucza. Ponadto ponieważ nazwy wpisów rejestru może zawierać znak ukośnika odwrotnego (**\\**), gdyby wpisy rejestru elementów, a następnie nie można użyć notacji ścieżki, aby odróżnić wpis rejestru o nazwie  **Windows\\CurrentVersion\\Uruchom** z podklucza, który znajduje się w tej ścieżce.
 
-### <a name="renaming-existing-items-rename-item"></a>Zmienianie nazw istniejących elementów (zmiana nazwy elementu)
+## <a name="renaming-existing-items-rename-item"></a>Zmienianie nazw istniejących elementów (zmiana nazwy elementu)
 
 Aby zmienić nazwę pliku lub folderu, należy użyć **Zmień nazwę elementu** polecenia cmdlet. Następujące polecenie zmienia nazwę **więc Plik1.txt** plik **fileOne.txt**.
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>Przenoszenie elementów (przenoszenie elementów)
+## <a name="moving-items-move-item"></a>Przenoszenie elementów (przenoszenie elementów)
 
 Aby przenieść plik lub folder, należy użyć **Przenieś element** polecenia cmdlet.
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>Kopiowanie elementów (Copy-Item)
+## <a name="copying-items-copy-item"></a>Kopiowanie elementów (Copy-Item)
 
 Jeśli znasz operacje kopiowania w innych powłoki zachowanie może się okazać **Copy-Item** polecenia cmdlet programu Windows PowerShell jako nietypowe. Podczas kopiowania elementu z jednej lokalizacji do innej, domyślnie Copy-Item nie kopiuje jego zawartość.
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>Usuwanie elementów (Usuń element)
+## <a name="deleting-items-remove-item"></a>Usuwanie elementów (Usuń element)
 
 Aby usunąć pliki i foldery, użyj **Remove-Item** polecenia cmdlet. Polecenia cmdlet programu Windows PowerShell, takie jak **Remove-Item**, które można wprowadzać znaczące, nieodwracalne zmiany często wyświetli monit o potwierdzenie po wprowadzeniu polecenia. Na przykład, jeśli zostanie podjęta próba usunięcia **New.Directory** folderu, użytkownik jest monitowany o potwierdzenie polecenia, ponieważ folder zawiera pliki:
 
@@ -188,7 +188,7 @@ Ponieważ **tak** jest domyślną odpowiedź, aby usunąć folder i jego pliki, 
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>Wykonywanie elementów (wywołania elementów)
+## <a name="executing-items-invoke-item"></a>Wykonywanie elementów (wywołania elementów)
 
 Używa programu Windows PowerShell **Invoke-Item** polecenia cmdlet do wykonania akcji domyślna dla pliku lub folderu. Ta akcja domyślna jest określana przez domyślny program obsługi aplikacji w rejestrze. Efekt jest taki sam, jak po dwukrotnym kliknięciu element w Eksploratorze plików.
 

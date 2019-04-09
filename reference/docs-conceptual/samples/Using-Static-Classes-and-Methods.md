@@ -3,14 +3,15 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie metod i klas statycznych
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687034"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293116"
 ---
 # <a name="using-static-classes-and-methods"></a>Używanie metod i klas statycznych
+
 Nie wszystkie klasy .NET Framework, można utworzyć za pomocą **New-Object**. Na przykład, Jeśli spróbujesz utworzyć **System.Environment** lub **System.Math** obiekt z **New-Object**, uzyskasz następujące komunikaty o błędach:
 
 ```
@@ -29,10 +30,12 @@ At line:1 char:11
 
 Te błędy, ponieważ nie istnieje żaden sposób, aby utworzyć nowy obiekt z tych klas. Te klasy są odwołanie do biblioteki, metod i właściwości, które nie zmieniają stan. Nie trzeba je utworzyć, można po prostu ich użyć. Klasy i metody, takie jak te są nazywane *klas statycznych* ponieważ nie są tworzone, zniszczone lub zmienione. Aby było jasne, firma Microsoft udostępni przykłady, które używają klas statycznych.
 
-### <a name="getting-environment-data-with-systemenvironment"></a>Pobieranie danych środowiskowych z System.Environment
+## <a name="getting-environment-data-with-systemenvironment"></a>Pobieranie danych środowiskowych z System.Environment
+
 Pierwszym krokiem w pracy z obiektu w programie Windows PowerShell jest zwykle, użyj Get-Member, aby dowiedzieć się, jakie elementy członkowskie zawiera. Przy użyciu klas statycznych proces jest nieco inny, ponieważ rzeczywista klasa nie jest obiektem.
 
-#### <a name="referring-to-the-static-systemenvironment-class"></a>Odwołujące się do klasy statycznej System.Environment
+### <a name="referring-to-the-static-systemenvironment-class"></a>Odwołujące się do klasy statycznej System.Environment
+
 Mogą odwoływać się do klasy statycznej, wpisując nazwę klasy w nawiasy kwadratowe. Na przykład, można się odwoływać do **System.Environment** , wpisując nazwę w nawiasy kwadratowe. Ten sposób są wyświetlane niektóre informacje typu ogólnego:
 
 ```
@@ -89,7 +92,7 @@ TickCount                               ExitCode
 
 Firma Microsoft można teraz wybrać właściwości, aby wyświetlić z System.Environment.
 
-#### <a name="displaying-static-properties-of-systemenvironment"></a>Wyświetlanie właściwości statycznej System.Environment
+### <a name="displaying-static-properties-of-systemenvironment"></a>Wyświetlanie właściwości statycznej System.Environment
 
 Właściwości System.Environment również są statyczne i musi być określona w inny sposób niż normalny właściwości. Używamy **::** do wskazania do programu Windows PowerShell, które chcemy pracować statycznej metody lub właściwości. Aby wyświetlić polecenia, który został użyty do uruchomienia programu Windows PowerShell, możemy sprawdzić **CommandLine** właściwość, wpisując:
 
@@ -115,7 +118,7 @@ PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-### <a name="doing-math-with-systemmath"></a>Wykonując Math z System.Math
+## <a name="doing-math-with-systemmath"></a>Wykonując Math z System.Math
 
 Klasa statyczna System.Math jest przydatne w przypadku wykonywania pewnych operacji matematycznych. Ważne elementy członkowskie **System.Math** są głównie metody, które można też wyświetlać za pomocą **Get-Member**.
 

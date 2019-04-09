@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Tworzenie obiektów .NET i COM nowego obiektu
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ef8215303aacd90536d3c2ae57bc3629e202f318
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684129"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293371"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Tworzenie obiektów .NET i COM (New-Object)
 
 Brak składników oprogramowania za pomocą środowiska .NET Framework i COM interfejsy, które umożliwiają wykonywanie wielu zadań administracyjnych. Program Windows PowerShell pozwala używać tych składników, więc nie są ograniczone do zadania, które mogą być wykonywane przy użyciu poleceń cmdlet. Wiele poleceń cmdlet w początkowym wydaniu programu Windows PowerShell nie działają na komputerach zdalnych. Przedstawiony zostanie sposób obejść to ograniczenie, gdy zarządzanie dziennikami zdarzeń za pomocą programu .NET Framework **System.Diagnostics.EventLog** klasy bezpośrednio z programu Windows PowerShell.
 
-### <a name="using-new-object-for-event-log-access"></a>Za pomocą nowego obiektu dla dostępu do dziennika zdarzeń
+## <a name="using-new-object-for-event-log-access"></a>Za pomocą nowego obiektu dla dostępu do dziennika zdarzeń
 
 Biblioteka klas programu .NET Framework zawiera klasę o nazwie **System.Diagnostics.EventLog** który może służyć do zarządzania dziennikami zdarzeń. Można utworzyć nowe wystąpienie klasy .NET Framework za pomocą **New-Object** polecenia cmdlet z **TypeName** parametru. Na przykład następujące polecenie tworzy odwołanie do dziennika zdarzeń:
 
@@ -27,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 Mimo że polecenie utworzone wystąpienie klasy w dzienniku zdarzeń, wystąpienie nie zawiera żadnych danych. To, ponieważ firma Microsoft nie określiła określonego dziennika zdarzeń. Jak uzyskać prawdziwe dziennika zdarzeń
 
-#### <a name="using-constructors-with-new-object"></a>Za pomocą nowego obiektu za pomocą konstruktorów
+### <a name="using-constructors-with-new-object"></a>Za pomocą nowego obiektu za pomocą konstruktorów
 
 Aby odwołać się do określonego dziennika zdarzeń, należy określić nazwę dziennika. **Nowy obiekt** ma **Listaargumentów** parametru. Argumenty przekazywane jako wartości tego parametru są używane przez metodę uruchamiania specjalne obiektu. Metoda jest wywoływana *Konstruktor* ponieważ jest używana do konstruowania obiektu. Na przykład aby uzyskać odwołanie do dziennika aplikacji, należy określić ciąg "Aplikacja" jako argumentu:
 
@@ -42,7 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > [!NOTE]
 > Ponieważ większość klas podstawowych platformy .NET Framework są zawarte w przestrzeni nazw systemu, programu Windows PowerShell automatycznie podejmie próbę znalezienia klas, które określisz w przestrzeni nazw systemu, jeśli nie znajdzie dopasowania dla typename, które określisz. Oznacza to, że można określić Diagnostics.EventLog zamiast System.Diagnostics.EventLog.
 
-#### <a name="storing-objects-in-variables"></a>Przechowywanie obiektów w zmiennych
+### <a name="storing-objects-in-variables"></a>Przechowywanie obiektów w zmiennych
 
 Możesz chcieć przechowywać odwołanie do obiektu, aby można było używać w bieżącej powłoce. Mimo że program Windows PowerShell umożliwia sporego nakładu pracy korzystających z potoków, zmniejszenie potrzebę zmiennych, czasem przechowywania odwołań do obiektów w zmiennych wygodniej do manipulowania tymi obiektami.
 
@@ -62,7 +62,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-new-object"></a>Dostęp do zdalnego dziennika zdarzeń za pomocą nowego obiektu
+### <a name="accessing-a-remote-event-log-with-new-object"></a>Dostęp do zdalnego dziennika zdarzeń za pomocą nowego obiektu
 
 Polecenia używane w poprzedniej sekcji docelowe komputerze lokalnym; **Get EventLog** polecenia cmdlet można to zrobić. Aby uzyskać dostęp do dzienników aplikacji na komputerze zdalnym, należy podać zarówno nazwę dziennika i nazwę komputera (lub adres IP) jako argumenty.
 
@@ -77,7 +77,7 @@ PS> $RemoteAppLog
 
 Teraz, gdy odwołanie do dziennika zdarzeń, który jest przechowywany w zmiennej $RemoteAppLog, jakie zadania można możemy wykonać na nim?
 
-#### <a name="clearing-an-event-log-with-object-methods"></a>Wyczyszczenie dziennika zdarzeń za pomocą metod obiektów
+### <a name="clearing-an-event-log-with-object-methods"></a>Wyczyszczenie dziennika zdarzeń za pomocą metod obiektów
 
 Obiekty mają często metod, które mogą być wywoływane w celu wykonywania zadań. Możesz użyć **Get-Member** do wyświetlenia metody skojarzona z obiektem. Poniższe polecenie i wybrane dane wyjściowe pokazują niektóre metody klasy w dzienniku zdarzeń:
 
@@ -118,7 +118,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-new-object"></a>Tworzenie obiektów COM za pomocą nowego obiektu
+## <a name="creating-com-objects-with-new-object"></a>Tworzenie obiektów COM za pomocą nowego obiektu
 Możesz użyć **New-Object** pracę dzięki składnikom Component Object Model (COM). Składniki z zakresu od różnych bibliotek dodane za pomocą Windows Script Host (WSH) w celu aplikacji ActiveX, takich jak program Internet Explorer, które są zainstalowane na większości systemów.
 
 **Nowy obiekt** używa otok wywoływanych w czasie wykonywania Framework .NET do tworzenia obiektów COM, dlatego ma te same ograniczenia, które .NET Framework obsługuje podczas wywoływania obiektów COM. Aby utworzyć obiekt COM, należy określić **ComObject** parametrem identyfikator programowy lub *ProgId* klasy COM, którego chcesz użyć. Wyczerpujące omówienie ograniczeń użytkowania COM i określania, jakie są dostępne w systemie ProgID jest poza zakresem niniejszego podręcznika użytkownika, ale dobrze znane obiekty ze środowisk, takich jak hosta skryptów systemu Windows mogą być używane w programie Windows PowerShell.
@@ -134,7 +134,7 @@ New-Object -ComObject Scripting.FileSystemObject
 
 Mimo że większość funkcjonalności tych klas są udostępniane w inny sposób w środowisku Windows PowerShell, nadal łatwiej zrobić za pomocą klasy funkcji jest kilka zadań, takich jak tworzenie skrótów.
 
-### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Tworzenie skrótu na pulpicie za pomocą obiektu WScript.Shell.
+## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Tworzenie skrótu na pulpicie za pomocą obiektu WScript.Shell.
 
 Jedno zadanie, które mogą być wykonywane szybko za pomocą obiektu COM jest utworzenie skrótu. Załóżmy, że chcesz utworzyć skrót na pulpicie prowadzący do folderu macierzystego dla środowiska Windows PowerShell. Najpierw należy utworzyć odwołanie do **obiektu WScript.Shell**, które będą przechowywane w zmiennej o nazwie **$WshShell**:
 
@@ -203,7 +203,7 @@ $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
-### <a name="using-internet-explorer-from-windows-powershell"></a>Za pomocą programu Internet Explorer w programie Windows PowerShell
+## <a name="using-internet-explorer-from-windows-powershell"></a>Za pomocą programu Internet Explorer w programie Windows PowerShell
 
 Wiele aplikacji (w tym aplikacji i programu Internet Explorer z rodziny Microsoft Office) można zautomatyzować za pomocą modelu COM. Program Internet Explorer przedstawiono niektóre typowe techniki i zagadnieniach dotyczących pracy z aplikacji opartych na modelu COM.
 
@@ -262,7 +262,7 @@ Remove-Variable ie
 > [!NOTE]
 > Nie istnieje dla tego, czy pliki wykonywalne ActiveX zamknąć lub będą nadal działać po usunięciu odwołanie do jednej wspólnej standard. W zależności od okoliczności, takich jak tego, czy aplikacja jest widoczna, czy zmieniony dokument jest uruchomiona w nim i nawet tego, czy program Windows PowerShell jest nadal uruchomiona aplikacja może być lub może nie zakończyć. Z tego powodu należy przetestować zachowanie po przerwaniu dla każdego pliku wykonywalnego, aby użyć w programie Windows PowerShell ActiveX.
 
-### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Wyświetlanie ostrzeżeń dotyczących obiektów COM opakowane w ramach platformy .NET
+## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Wyświetlanie ostrzeżeń dotyczących obiektów COM opakowane w ramach platformy .NET
 
 W niektórych przypadkach obiekt COM może mieć skojarzone .NET Framework *otoka wywoływana w czasie wykonywania* lub RCW i spowoduje używane przez **New-Object**. Ponieważ zachowanie RCW może różnić się od zachowania normalnego obiektu COM **New-Object** ma **Strict** parametru ostrzegania o RCW dostępu. Jeśli określisz **Strict** parametru i następnie utworzyć obiekt COM, który używa RCW, pojawi się komunikat ostrzegawczy:
 

@@ -1,14 +1,14 @@
 ---
 ms.date: 3/18/2019
-title: Tworzenie polecenia Get-WinEvent zapytań za pomocą FilterHashtable
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+title: Tworzenie zapytań polecenia Get-WinEvent za pomocą parametru FilterHashtable
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320488"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293286"
 ---
-# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Tworzenie polecenia Get-WinEvent zapytań za pomocą FilterHashtable
+# <a name="creating-get-winevent-queries-with-filterhashtable"></a>Tworzenie zapytań polecenia Get-WinEvent za pomocą parametru FilterHashtable
 
 Do odczytu, oryginalnym czerwca 3 2014 r. **Scripting Guy** blog post, zobacz [FilterHashTable korzystanie w dzienniku zdarzeń filtr przy użyciu programu PowerShell](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/).
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>Wpisy na blogu dotyczące wyliczenia
+## <a name="blog-posts-about-enumeration"></a>Wpisy na blogu dotyczące wyliczenia
 
 W tym artykule przedstawiono informacje o sposobie używania wartości wyliczane w tabeli wyznaczania wartości skrótu. Aby uzyskać więcej informacji na temat wyliczania przeczytaj **Scripting Guy** wpisów w blogu. Aby utworzyć funkcję, która zwraca wartości wyliczenia, zobacz [wyliczeń i wartości](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).
 Aby uzyskać więcej informacji, zobacz [Scripting Guy szeregu blogu wpisy dotyczące wyliczenia](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-### <a name="hash-table-keyvalue-pairs"></a>Hash, pary klucz/wartość tabeli
+## <a name="hash-table-keyvalue-pairs"></a>Hash, pary klucz/wartość tabeli
 
 Aby utworzyć wydajne zapytania, użyj `Get-WinEvent` polecenia cmdlet z **FilterHashtable** parametru.
 **FilterHashtable** jako filtr, aby uzyskać konkretne informacje z dzienników zdarzeń Windows akceptuje tabelę mieszania. Tabela skrótu używa **klucz/wartość** pary. Aby uzyskać więcej informacji o tabelach skrótów, zobacz [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
@@ -62,7 +62,7 @@ W poniższej tabeli przedstawiono nazwy kluczy, typy danych, i czy symbole wielo
 | Dane         | `<String[]>`       | Nie  |
 | *            | `<String[]>`       | Nie  |
 
-### <a name="building-a-query-with-a-hash-table"></a>Tworzenie zapytań przy użyciu tablicy skrótów
+## <a name="building-a-query-with-a-hash-table"></a>Tworzenie zapytań przy użyciu tablicy skrótów
 
 Aby zweryfikować wyniki i rozwiązywanie problemów, ułatwia tworzenie tabeli mieszania, jeden **klucz/wartość** pary w danym momencie. Zapytanie pobiera dane z **aplikacji** dziennika. Tabela skrótu jest odpowiednikiem `Get-WinEvent –LogName Application`.
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 Jeśli zapytanie musi pobrać dane z dzienników zdarzeń zarchiwizowanych, użyj **ścieżki** klucza. **Ścieżki** wartość określa pełną ścieżkę do pliku dziennika. Aby uzyskać więcej informacji, zobacz **Scripting Guy** wpis w blogu [Użyj programu PowerShell można przeanalizować zapisane dzienniki zdarzeń błędów](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>Przy użyciu wartości wyliczane w tabeli wyznaczania wartości skrótu
+## <a name="using-enumerated-values-in-a-hash-table"></a>Przy użyciu wartości wyliczane w tabeli wyznaczania wartości skrótu
 
 **Słowa kluczowe** jest kluczowi w tabeli wyznaczania wartości skrótu. **Słowa kluczowe** — typ danych jest tablicą `[long]` typ, który przechowuje dużą liczbą wartości. Użyj następującego polecenia, aby znaleźć wartość maksymalna `[long]`:
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>Wartość statyczna właściwość słowa kluczowe (opcjonalnie)
+### <a name="keywords-static-property-value-optional"></a>Wartość statyczna właściwość słowa kluczowe (opcjonalnie)
 
 **Słowa kluczowe** wyliczenia klucza, ale można użyć nazwy właściwości statycznej w zapytaniu tabeli wyznaczania wartości skrótu.
 Zamiast używania zwracanego ciągu, nazwa właściwości musi zostać skonwertowany do wartości z **Value__** właściwości.
@@ -172,7 +172,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>Filtrowanie wg identyfikatora zdarzenia
+## <a name="filtering-by-event-id"></a>Filtrowanie wg identyfikatora zdarzenia
 
 Aby uzyskać bardziej szczegółowe dane, wyniki zapytania są filtrowane według **identyfikator zdarzenia**. **Identyfikator zdarzenia** odwołuje się do tabeli mieszania jako klucz **identyfikator** , a wartość jest konkretnym **identyfikator zdarzenia**. **Podgląd zdarzeń Windows** Wyświetla **identyfikator zdarzenia**. W tym przykładzie użyto **1023 identyfikator zdarzenia**.
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>Filtrowanie według poziomu
+## <a name="filtering-by-level"></a>Filtrowanie według poziomu
 
 Aby dodatkowo doprecyzować wyniki i zawierają tylko te zdarzenia, które są błędy, należy użyć **poziom** klucza.
 **Podgląd zdarzeń Windows** Wyświetla **poziom** jako wartości ciągu, ale są one wartości wyliczenia. W tabeli wyznaczania wartości skrótu, jeśli używasz **poziom** klucza z wartością ciągu, jest wyświetlany komunikat o błędzie.
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>Poziom właściwość statyczna w wyliczeniu (opcjonalnie)
+### <a name="level-static-property-in-enumeration-optional"></a>Poziom właściwość statyczna w wyliczeniu (opcjonalnie)
 
 **Poziom** wyliczenia klucza, ale można użyć nazwy właściwości statycznej w zapytaniu tabeli wyznaczania wartości skrótu.
 Zamiast używania zwracanego ciągu, nazwa właściwości musi zostać skonwertowany do wartości z **Value__** właściwości.

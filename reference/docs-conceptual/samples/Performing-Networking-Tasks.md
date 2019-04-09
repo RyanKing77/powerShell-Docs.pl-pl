@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Wykonywanie zadań w sieci
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 64c57c95a70bc4cad4b695a59d96673ed18afdf4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688245"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293133"
 ---
 # <a name="performing-networking-tasks"></a>Wykonywanie zadań w sieci
 
 Ponieważ protokół TCP/IP jest najczęściej używany protokół sieciowy, większości zadań administracyjnych protokołu sieciowego niskiego poziomu obejmują TCP/IP. W tej sekcji używamy programu Windows PowerShell i usługi WMI do wykonywania tych zadań.
 
-### <a name="listing-ip-addresses-for-a-computer"></a>Lista adresów IP dla komputera
+## <a name="listing-ip-addresses-for-a-computer"></a>Lista adresów IP dla komputera
 
 Aby uzyskać wszystkie adresy IP używane na komputerze lokalnym, użyj następującego polecenia:
 
@@ -48,7 +48,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 Właściwość adres IP dla każdej karty sieciowej jest faktycznie tablicą. Nawiasy klamrowe w definicji wskazują, że **IPAddress** nie **System.String** wartość, ale tablica **System.String** wartości.
 
-### <a name="listing-ip-configuration-data"></a>Wyświetlanie danych konfiguracji protokołu IP
+## <a name="listing-ip-configuration-data"></a>Wyświetlanie danych konfiguracji protokołu IP
 
 Aby wyświetlić szczegółowe danych konfiguracji protokołu IP dla każdej karty sieciowej, użyj następującego polecenia:
 
@@ -66,7 +66,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 To polecenie zwraca szczegółowe informacje na temat usługi DHCP, DNS, routingu i inne drobne właściwości konfiguracji adresu IP.
 
-### <a name="pinging-computers"></a>Pingowanie komputerów
+## <a name="pinging-computers"></a>Pingowanie komputerów
 
 Można wykonywać proste polecenie ping względem komputer używa przez **Win32_PingStatus**. Poniższe polecenie wykonuje polecenie ping, ale zwraca długich danych wyjściowych:
 
@@ -106,7 +106,7 @@ Należy pamiętać, że ta technika generowania zakres adresów może służyć 
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### <a name="retrieving-network-adapter-properties"></a>Trwa pobieranie właściwości karty sieciowej
+## <a name="retrieving-network-adapter-properties"></a>Trwa pobieranie właściwości karty sieciowej
 
 Wcześniej w tym podręczniku użytkownika, wspomnieliśmy, że można pobrać właściwości ogólne konfiguracji za pomocą **Win32_NetworkAdapterConfiguration**. Chociaż nie jest właściwie informacji protokołu TCP/IP, informacje o karty sieciowej, takich jak MAC adresy i typy karty mogą być przydatne dla zrozumienia, co się dzieje z komputerem. Aby uzyskać podsumowanie tych informacji, użyj następującego polecenia:
 
@@ -114,7 +114,7 @@ Wcześniej w tym podręczniku użytkownika, wspomnieliśmy, że można pobrać w
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Przypisywanie domeny DNS dla karty sieciowej
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Przypisywanie domeny DNS dla karty sieciowej
 
 Aby przypisać domeny DNS do rozpoznawania nazw automatycznego, należy użyć **SetDNSDomain pozwala ustawić Win32_NetworkAdapterConfiguration** metody. Domeny DNS dla każdej konfiguracji karty sieciowej możesz przypisać niezależnie, dlatego musisz użyć **ForEach-Object** instrukcję, aby przypisać domeny do każdej karty sieciowej:
 
@@ -130,11 +130,11 @@ Polecenia można filtrować przy użyciu **Where-Object** zamiast przy użyciu p
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### <a name="performing-dhcp-configuration-tasks"></a>Wykonywanie zadań konfiguracyjnych DHCP
+## <a name="performing-dhcp-configuration-tasks"></a>Wykonywanie zadań konfiguracyjnych DHCP
 
 Modyfikowanie szczegóły DHCP polega na pracę z zestawem kart sieciowych, podobnie jak konfiguracji DNS. Istnieje kilka różnych akcji, które można wykonać przy użyciu usługi WMI, a firma Microsoft będzie przejść przez niektóre typowe z nich.
 
-#### <a name="determining-dhcp-enabled-adapters"></a>Określanie karty obsługujących protokół DHCP
+### <a name="determining-dhcp-enabled-adapters"></a>Określanie karty obsługujących protokół DHCP
 
 Aby znaleźć kart sieciowych obsługujących protokół DHCP na komputerze, użyj następującego polecenia:
 
@@ -148,7 +148,7 @@ Aby wykluczyć kart z problemów z konfiguracją adresów IP, możesz pobrać ty
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### <a name="retrieving-dhcp-properties"></a>Trwa pobieranie właściwości DHCP
+### <a name="retrieving-dhcp-properties"></a>Trwa pobieranie właściwości DHCP
 
 Ponieważ właściwości związanych z usługą DHCP dla karty zwykle zaczyna się od "DHCP", można użyć parametru właściwości Format-Table, aby wyświetlić tylko te właściwości:
 
@@ -156,7 +156,7 @@ Ponieważ właściwości związanych z usługą DHCP dla karty zwykle zaczyna si
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### <a name="enabling-dhcp-on-each-adapter"></a>Włączenie protokołu DHCP na poszczególnych kartach
+### <a name="enabling-dhcp-on-each-adapter"></a>Włączenie protokołu DHCP na poszczególnych kartach
 
 Aby włączyć DHCP dla wszystkich kart sieciowych, użyj następującego polecenia:
 
@@ -166,7 +166,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 Możesz użyć **filtru** instrukcji "IPEnabled = $true i DHCPEnabled = $false" w celu uniknięcia włączania protokołu DHCP, gdy jest włączony, ale pominięcie tego kroku nie będą powodować błędy.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Zwalnianie i odnawianie dzierżawy DHCP dla określonych kart
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Zwalnianie i odnawianie dzierżawy DHCP dla określonych kart
 
 **Win32_NetworkAdapterConfiguration** klasa ma **ReleaseDHCPLease** i **RenewDHCPLease** metody. Oba są używane w taki sam sposób. Ogólnie rzecz biorąc należy użyć tych metod, jeśli potrzebujesz zwolnić lub odnowić adresów dla karty w określonej podsieci. Najprostszym sposobem kart filtru w podsieci jest wybranie konfiguracji karty sieciowej, korzystających z bramy dla tej podsieci. Na przykład następujące polecenie zwalnia wszystkie dzierżawy DHCP na kartach na komputerze lokalnym, które są uzyskiwane dzierżawy DHCP z 192.168.1.254:
 
@@ -183,7 +183,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > Korzystając z tych metod na komputerze zdalnym, należy pamiętać, że można utraty dostępu do systemu zdalnego. Jeśli łączysz się je za pośrednictwem karty wydana lub odnowionej dzierżawy.
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Zwalnianie i odnawianie dzierżawy DHCP na wszystkich kartach
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Zwalnianie i odnawianie dzierżawy DHCP na wszystkich kartach
 
 Możesz wykonać globalnej wersji adres DHCP lub odnowienia na wszystkich kartach przy użyciu **Win32_NetworkAdapterConfiguration** metod **ReleaseDHCPLeaseAll** i **RenewDHCPLeaseAll** . Jednak polecenia należy zastosować do klasy usługi WMI, a nie dla określonej karty, ponieważ przy zwalnianiu i globalnie odnawianie dzierżawy jest wykonywana na tej klasy, a nie na określonej karty.
 
@@ -205,7 +205,7 @@ Można użyć tego samego formatu polecenie do wywołania **RenewDHCPLeaseAll** 
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### <a name="creating-a-network-share"></a>Utworzenie udziału sieciowego
+## <a name="creating-a-network-share"></a>Utworzenie udziału sieciowego
 
 Aby utworzyć udział sieciowy, użyj **tworzenie Win32_Share** metody:
 
@@ -219,7 +219,7 @@ Można również utworzyć przy użyciu udziału **polecenie net share** w progr
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### <a name="removing-a-network-share"></a>Usuwanie udziału sieciowego
+## <a name="removing-a-network-share"></a>Usuwanie udziału sieciowego
 
 Można usunąć udziału sieciowego przy użyciu **Win32_Share**, ale proces różni się nieco od tworzenia udziału, ponieważ trzeba pobrać określonego udziału do usunięcia, a nie **Win32_Share** Klasa. Poniższa instrukcja umożliwia usunięcie udziału "TempShare":
 
@@ -235,7 +235,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### <a name="connecting-a-windows-accessible-network-drive"></a>Łączenie z dyskiem sieciowym dostępnym Windows
+## <a name="connecting-a-windows-accessible-network-drive"></a>Łączenie z dyskiem sieciowym dostępnym Windows
 
 **New PSDrive** poleceń cmdlet tworzy dysk programu Windows PowerShell, ale dyski utworzone w ten sposób są dostępne tylko dla programu Windows PowerShell. Aby utworzyć nowego dysku sieciowym, można użyć **WScript.Network** obiektu COM. Następujące polecenie mapuje udziału \\ \\FPS01\\użytkownikom na dysku lokalnym B:
 

@@ -2,12 +2,12 @@
 title: Instalowanie programu PowerShell Core w systemie macOS
 description: Informacje o instalowaniu programu PowerShell Core w systemie macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404952"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293405"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Instalowanie programu PowerShell Core w systemie macOS
 
@@ -84,13 +84,14 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Instalację za pomocą bezpośredniego pobierania
 
-Pobierz pakiet zapisanego pakietu `powershell-6.1.0-osx-x64.pkg`
+Pobierz pakiet zapisanego pakietu
+`powershell-6.2.0-osx-x64.pkg`
 z [zwalnia][] strony na komputerze z systemem macOS.
 
 Możesz kliknij dwukrotnie plik i postępuj zgodnie z instrukcjami lub zainstalować ją z poziomu terminalu:
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Zainstaluj [OpenSSL](#install-openssl). Biblioteki OpenSSL jest wymagany dla operacji modelu wspólnych informacji i komunikacji zdalnej programu PowerShell.
@@ -103,19 +104,19 @@ Plik binarny programu PowerShell `tar.gz` archiwa są dostarczane dla platformy 
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 Zainstaluj [OpenSSL](#install-openssl). Biblioteki OpenSSL jest wymagany dla operacji modelu wspólnych informacji i komunikacji zdalnej programu PowerShell.
@@ -174,7 +175,7 @@ Aby usunąć dodatkowe ścieżki programu PowerShell, zapoznaj się [ścieżki](
 
 ## <a name="paths"></a>Ścieżki
 
-* `$PSHOME` jest `/usr/local/microsoft/powershell/6.1.0/`
+* `$PSHOME` jest `/usr/local/microsoft/powershell/6.2.0/`
 * Profile użytkowników będą odczytywane z `~/.config/powershell/profile.ps1`
 * Domyślne profile będą odczytywane z `$PSHOME/profile.ps1`
 * Moduły użytkownika zostanie odczytany z `~/.local/share/powershell/Modules`
@@ -188,17 +189,17 @@ Aby profil domyślny specyficzne dla hosta istnieje w `Microsoft.PowerShell_prof
 Stosuje się do programu PowerShell [specyfikację katalogu Base XDG] [ xdg-bds] w systemie macOS.
 
 Ponieważ system macOS jest typem pochodnym BSD, prefiks `/usr/local` jest używana zamiast `/opt`.
-Dlatego `$PSHOME` jest `/usr/local/microsoft/powershell/6.1.0/`, i łącza symbolicznego, jest umieszczany na `/usr/local/bin/pwsh`.
+Dlatego `$PSHOME` jest `/usr/local/microsoft/powershell/6.2.0/`, i łącza symbolicznego, jest umieszczany na `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>Dodatkowe zasoby
 
 * [Homebrew w sieci Web][brew]
 * [Repozytorium Github Homebrew][GitHub]
-* [Homebrew Cask][cask]
+* [Homebrew-Cask][cask]
 
 [brew]: http://brew.sh/
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[zwalnia]: https://github.com/PowerShell/PowerShell/releases/latest
+[Wersje]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

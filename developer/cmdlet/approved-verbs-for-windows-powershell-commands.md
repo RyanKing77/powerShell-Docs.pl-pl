@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56852178"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293354"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Zatwierdzone czasowniki dla poleceń programu PowerShell
 
@@ -94,7 +94,7 @@ W poniższej tabeli wymieniono najbardziej zdefiniowanych czasowników.
 |[Zakończ](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (np.)|Ustawia bieżącego środowiska lub kontekst do ostatnio używanych kontekstu. Na przykład `Exit-PSSession` polecenia cmdlet umieszcza użytkownika w sesji, który został użyty do uruchomienia sesji interakcyjnych. To polecenie jest powiązany z `Enter`.|Dla tej akcji nie należy używać czasowników, takich jak Pop lub na zewnątrz.|
 |[Znajdź](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Sprawdza, czy obiekt w kontenerze, który jest nieznany, dorozumianych, opcjonalne lub został określony.||
 |[Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|Rozmieszcza obiektów w podanym formularzu ani układu.||
-|[Pobierz](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Określa akcję, która pobiera zasób. To polecenie jest powiązany z `Set`.|Dla tej akcji nie należy używać czasowników, takich jak Odczyt, Open, Cat, typu, Dir, Uzyskaj, zrzutu, nabywania, Zbadaj, Znajdź lub wyszukiwania dla tej akcji.|
+|[Pobierz](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Określa akcję, która pobiera zasób. To polecenie jest powiązany z `Set`.|Dla tej akcji nie należy używać czasowników, takich jak Odczyt, Open, Cat, typu, Dir, Uzyskaj, zrzutu, nabywania, Zbadaj, Znajdź lub wyszukiwania.|
 |[Ukryj](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Sprawia, że zasób wykryć. Polecenia cmdlet, którego nazwa zawiera czasownik Ukryj może na przykład ukrywają usługi przez użytkownika. To polecenie jest powiązany z `Show`.|Dla tej akcji nie należy używać zlecenia, takie jak bloku.|
 |[Dołącz do](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Łączy zasoby w jeden zasób. Na przykład `Join-Path` polecenia cmdlet łączy ścieżki z jednej z jego ścieżek podrzędnych do tworzenia pojedynczej ścieżki. To polecenie jest powiązany z `Split`.|Dla tej akcji nie należy używać czasowników, takie jak łączenie, Unite, Połącz lub skojarz.|
 |[Zablokuj](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (lk)|Zabezpiecza zasobu. To polecenie jest powiązany z `Unlock`.|Dla tej akcji nie należy używać czasowników, takie jak ograniczanie lub bezpieczny.|
@@ -117,7 +117,7 @@ W poniższej tabeli wymieniono najbardziej zdefiniowanych czasowników.
 |[Krok](/dotnet/api/System.Management.Automation.VerbsCommon.Step) (st)|Przechodzi do następnego punktu lub zasobów w sekwencji.||
 |[Przełącznik](/dotnet/api/System.Management.Automation.VerbsCommon.Switch) (sw)|Określa akcję, która przełącza między dwa zasoby, takie jak między dwiema lokalizacjami, obowiązki lub stanów.||
 |[Cofnij](/dotnet/api/System.Management.Automation.VerbsCommon.Undo) (NZ)|Określa zasób do jego poprzedniego stanu.||
-|[Odblokuj](/dotnet/api/System.Management.Automation.VerbsCommon.Unlock) (Zjednoczone Królestwo)|Zwalnia z zasobem, który został zablokowany. To polecenie jest powiązany z `Lock`.|Dla tej akcji nie należy używać czasowników, takie jak wersja, Unrestrict lub niezabezpieczony.|
+|[Odblokuj](/dotnet/api/System.Management.Automation.VerbsCommon.Unlock) (Wielka Brytania)|Zwalnia z zasobem, który został zablokowany. To polecenie jest powiązany z `Lock`.|Dla tej akcji nie należy używać czasowników, takie jak wersja, Unrestrict lub niezabezpieczony.|
 |[Obejrzyj](/dotnet/api/System.Management.Automation.VerbsCommon.Watch) (wc)|Stale bada lub monitoruje zasób dla zmian.||
 
 ## <a name="communications-verbs"></a>Komunikacja zlecenia
@@ -149,7 +149,7 @@ W poniższej tabeli wymieniono najbardziej zdefiniowanych czasowników.
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (cf)|Konwertuje jeden typ podstawowy (rzeczownik polecenia cmdlet wskazuje stan danych wejściowych) w danych wejściowych co najmniej jeden typ obsługiwanych danych wyjściowych.|Dla tej akcji nie należy używać czasowników, takie jak eksportu, dane wyjściowe lub poza.|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (ct)|Konwertuje wartość w co najmniej jeden typ danych wejściowych do typu podstawowe wyjście (rzeczownik polecenia cmdlet wskazuje typ danych wyjściowych).|Dla tej akcji należy używać czasowników, takich jak importu, wprowadzania lub.|
 |[Odinstalowywanie](/dotnet/api/System.Management.Automation.VerbsData.Dismount) (dm)|Odłącza nazwanych jednostek z lokalizacji. To polecenie jest powiązany z `Mount`.|Dla tej akcji nie należy używać czasowników, np. odinstalowanie lub Odłącz od niego.|
-|[Edytuj](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Modyfikuje istniejące dane, dodając lub usuwając zawartości.|Dla tej akcji nie należy używać poleceń, takich jak zmiana, aktualizacji lub modyfikowanie dla tej akcji.|
+|[Edytuj](/dotnet/api/System.Management.Automation.VerbsData.Edit) (ed)|Modyfikuje istniejące dane, dodając lub usuwając zawartości.|Dla tej akcji nie należy używać zlecenia, takie jak zmiana, aktualizacji lub Modyfikuj.|
 |[Rozwiń](/dotnet/api/System.Management.Automation.VerbsData.Expand) (en)|Przywraca dane zasobu są kompresowane do stanu pierwotnego. To polecenie jest powiązany z `Compress`.|Dla tej akcji nie należy używać czasowników, takich jak Rozłóż lub Dekompresuj.|
 |[Eksportuj](/dotnet/api/System.Management.Automation.VerbsData.Export) (ep)|Hermetyzuje podstawowe dane wejściowe w trwałym magazynie danych, np. plik, lub do formatu wymiany. To polecenie jest powiązany z `Import`.|Dla tej akcji nie należy używać czasowników, takie jak wyodrębnianie lub kopii zapasowej.|
 |[Grupa](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)|Rozmieszcza lub kojarzy co najmniej jednego zasobu.|Dla tej akcji nie używać zleceń, takich jak skojarzyć agregacji, rozmieszczanie, lub skorelować.|
@@ -251,6 +251,6 @@ Używa programu PowerShell [System.Management.Automation.VerbsOther](/dotnet/api
 
 [Polecenia cmdlet deklaracji](./cmdlet-class-declaration.md)
 
-[Windows PowerShell przewodnik](../prog-guide/windows-powershell-programmer-s-guide.md)
+[Windows PowerShell — przewodnik programisty](../prog-guide/windows-powershell-programmer-s-guide.md)
 
 [Powłoka programu Windows PowerShell zestawu SDK](../windows-powershell-reference.md)

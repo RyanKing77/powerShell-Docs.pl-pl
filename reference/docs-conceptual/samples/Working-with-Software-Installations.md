@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z instalacjami oprogramowania
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686726"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293235"
 ---
 # <a name="working-with-software-installations"></a>Praca z instalacjami oprogramowania
 
@@ -17,7 +17,7 @@ Aplikacje, które są przeznaczone do przy użyciu Instalatora Windows jest moż
 > [!NOTE]
 > Aplikacje, które są instalowane przez skopiowanie plików aplikacji na komputerze, zwykle nie można zarządzać za pomocą techniki opisane poniżej. Te aplikacje jako plików i folderów można zarządzać przy użyciu technik opisanych w sekcji "Praca z pliki i foldery".
 
-### <a name="listing-windows-installer-applications"></a>Wyświetlanie listy aplikacji Instalatora Windows
+## <a name="listing-windows-installer-applications"></a>Wyświetlanie listy aplikacji Instalatora Windows
 
 Aby wyświetlić listę aplikacji, instalowane przy użyciu Instalatora Windows w systemie lokalnym lub zdalnym, użyj następującego prostego zapytania usługi WMI:
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Mimo, że mamy kilka sposobów Przyjrzyj się aplikacji, które są używane Instalatora Windows podczas instalacji, firma Microsoft nie ma uwzględniane innych aplikacji. Większość standardowych aplikacji zarejestrowanie ich dezinstalatora Windows, firma Microsoft może pracować z tymi znajdując je lokalnie w rejestrze systemu Windows.
 
-### <a name="listing-all-uninstallable-applications"></a>Wyświetlanie listy wszystkich do odinstalowania aplikacji
+## <a name="listing-all-uninstallable-applications"></a>Wyświetlanie listy wszystkich do odinstalowania aplikacji
 
 Mimo że nie ma gwarancji możliwości można znaleźć każdej aplikacji w systemie, istnieje możliwość znaleźć wszystkie programy z ofert wyświetlane w oknie dialogowym Dodaj lub usuń programy. Dodaj lub usuń programy znajdzie te aplikacje w następującym kluczu rejestru:
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>Instalowanie aplikacji
+## <a name="installing-applications"></a>Instalowanie aplikacji
 
 Możesz użyć **klasy Win32_Product** klasy w celu zainstalowania pakietów Instalatora Windows, lokalnie i zdalnie.
 
@@ -157,7 +157,7 @@ Podczas instalowania zdalnie, należy użyć ścieżkę sieciową Universal Nami
 
 Aplikacje, które nie korzystają z technologii Instalatora Windows może mieć metody specyficzne dla aplikacji dostępnych dla automatycznego wdrażania. Aby ustalić, czy jest to metoda wdrażania automatyzacji, zapoznaj się z dokumentacją dla aplikacji lub zapoznaj się z dostawcą aplikacji, system pomocy technicznej. W niektórych przypadkach nawet wtedy, gdy dostawca aplikacji nie specjalnie projektowania aplikacji do automatyzacji instalacji Instalator producenta oprogramowania może mieć kilka technik związane z automatyzacją.
 
-### <a name="removing-applications"></a>Usuwanie aplikacji
+## <a name="removing-applications"></a>Usuwanie aplikacji
 
 Usuwanie pakietu Instalatora Windows za pomocą programu Windows PowerShell działa w przybliżeniu taki sam sposób jak instalowania pakietu. Oto przykład, który wybiera pakiet do odinstalowania, na podstawie jego nazwy; w niektórych przypadkach może być łatwiej filtrować za pomocą **Numer_identyfikacyjny**:
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 Jednak te ciągi nie może być bezpośrednio można używać w wierszu polecenia programu Windows PowerShell bez wprowadzając pewne modyfikacje.
 
-### <a name="upgrading-windows-installer-applications"></a>Uaktualnianie aplikacji Instalatora Windows
+## <a name="upgrading-windows-installer-applications"></a>Uaktualnianie aplikacji Instalatora Windows
 
 Aby uaktualnić aplikację, musisz znać nazwę aplikacji i ścieżkę do pakietu uaktualnienia aplikacji. Dzięki tym informacjom można uaktualnić aplikacji za pomocą jednego polecenia programu Windows PowerShell:
 

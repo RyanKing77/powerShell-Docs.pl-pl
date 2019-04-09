@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zbieranie informacji dotyczących komputerów
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: 99125ef701705c20d4e955c79eaa3469ce4d58fb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688945"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293167"
 ---
 # <a name="collecting-information-about-computers"></a>Zbieranie informacji dotyczących komputerów
 
@@ -22,7 +22,7 @@ Określamy **ComputerName** parametru z wartością kropka (**.**), który repre
 Można określić nazwę lub adres IP skojarzony z dowolnego komputera, który można osiągnąć za pomocą usługi WMI.
 Aby pobrać informacje o komputerze lokalnym, można pominąć **ComputerName** parametru.
 
-### <a name="listing-desktop-settings"></a>Lista ustawień pulpitu
+## <a name="listing-desktop-settings"></a>Lista ustawień pulpitu
 
 Rozpocznie się za pomocą polecenia, które zbiera informacje o komputerach, na komputerze lokalnym.
 
@@ -44,7 +44,7 @@ Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -Exclud
 
 Aby odfiltrować metadanych, użyj operatora potoku (|) do wysłania wyniki `Get-CimInstance` polecenie `Select-Object -ExcludeProperty "CIM*"`.
 
-### <a name="listing-bios-information"></a>Wyświetlanie informacji o systemie BIOS
+## <a name="listing-bios-information"></a>Wyświetlanie informacji o systemie BIOS
 
 WMI **Win32_BIOS** Klasa zwraca stosunkowo małe i kompletne informacje o systemie BIOS komputera lokalnego:
 
@@ -52,7 +52,7 @@ WMI **Win32_BIOS** Klasa zwraca stosunkowo małe i kompletne informacje o system
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-### <a name="listing-processor-information"></a>Informacje o procesorze listy
+## <a name="listing-processor-information"></a>Informacje o procesorze listy
 
 Informacje o procesorze ogólne można pobrać za pomocą usługi WMI **Win32_Processor** klasy, chociaż prawdopodobnie będziesz filtrować informacje:
 
@@ -70,7 +70,7 @@ SystemType
 X86-based PC
 ```
 
-### <a name="listing-computer-manufacturer-and-model"></a>Lista komputerów producent i Model
+## <a name="listing-computer-manufacturer-and-model"></a>Lista komputerów producent i Model
 
 Informacje o komputerze modelu jest również dostępna z **Win32_ComputerSystem**.
 Standardowe dane wyjściowe wyświetlane nie wymaga żadnego filtrowania do dostarczania danych OEM:
@@ -88,7 +88,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 Dane wyjściowe za pomocą poleceń takich jak ta, które zwracają informacje bezpośrednio w sprzęt, jest tylko jako dane, do których masz.
 Niektóre informacje nie jest poprawnie skonfigurowana przez producentów sprzętu i dlatego może być niedostępna.
 
-### <a name="listing-installed-hotfixes"></a>Lista zainstalowanych poprawek
+## <a name="listing-installed-hotfixes"></a>Lista zainstalowanych poprawek
 
 Możesz wyświetlić listę wszystkich zainstalowanych poprawek za pomocą **Win32_QuickFixEngineering**:
 
@@ -143,7 +143,7 @@ HotFixId
 KB4048951
 ```
 
-### <a name="listing-operating-system-version-information"></a>Wyświetlanie informacji o wersji systemu operacyjnego
+## <a name="listing-operating-system-version-information"></a>Wyświetlanie informacji o wersji systemu operacyjnego
 
 **Win32_OperatingSystem** właściwości klas, które zawierają informacje o pakiecie wersji i usługi.
 Można jawnie wybrać tylko te właściwości, aby uzyskać informacje o wersji podsumowanie z **Win32_OperatingSystem**:
@@ -167,7 +167,7 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-### <a name="listing-local-users-and-owner"></a>Wyświetlanie listy lokalnych użytkowników i właściciela
+## <a name="listing-local-users-and-owner"></a>Wyświetlanie listy lokalnych użytkowników i właściciela
 
 Lokalne ogólne informacje o użytkowniku — liczbę objętych licencją użytkowników, bieżąca liczba użytkowników i nazwy właściciela — można znaleźć szereg **Win32_OperatingSystem** właściwości klasy.
 Można jawnie wybrać właściwości do wyświetlenia w następujący sposób:
@@ -182,7 +182,7 @@ Nieco bardziej zwięzłą przy użyciu symboli wieloznacznych jest:
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### <a name="getting-available-disk-space"></a>Wprowadzenie dostępnego miejsca na dysku
+## <a name="getting-available-disk-space"></a>Wprowadzenie dostępnego miejsca na dysku
 
 Aby zobaczyć miejsce na dysku i wolnego miejsca na dyskach lokalnych, można użyć klasy Win32_LogicalDisk WMI.
 Chcesz zobaczyć tylko wystąpienia z DriveType 3 — wartość WMI używa stałej dysków twardych.
@@ -203,7 +203,7 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-### <a name="getting-logon-session-information"></a>Pobieranie informacji o sesji logowania
+## <a name="getting-logon-session-information"></a>Pobieranie informacji o sesji logowania
 
 Zawiera ogólne informacje o sesjach logowania skojarzone z użytkownikami za pomocą **Win32_LogonSession** klasy usługi WMI:
 
@@ -211,7 +211,7 @@ Zawiera ogólne informacje o sesjach logowania skojarzone z użytkownikami za po
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-### <a name="getting-the-user-logged-on-to-a-computer"></a>Pobieranie użytkownika zalogowanego na komputerze
+## <a name="getting-the-user-logged-on-to-a-computer"></a>Pobieranie użytkownika zalogowanego na komputerze
 
 Użytkownik zalogowany do określonego systemu komputerowego przy użyciu Win32_ComputerSystem można wyświetlić.
 To polecenie zwraca tylko użytkownika zalogowanego na pulpicie systemu:
@@ -220,7 +220,7 @@ To polecenie zwraca tylko użytkownika zalogowanego na pulpicie systemu:
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### <a name="getting-local-time-from-a-computer"></a>Pobieranie czasu lokalnego na komputerze
+## <a name="getting-local-time-from-a-computer"></a>Pobieranie czasu lokalnego na komputerze
 
 Bieżący czas lokalny na określonym komputerze można pobrać za pomocą **Win32_LocalTime** klasy WMI.
 
@@ -240,7 +240,7 @@ Year         : 2017
 PSComputerName : .
 ```
 
-### <a name="displaying-service-status"></a>Wyświetlanie stanu usługi
+## <a name="displaying-service-status"></a>Wyświetlanie stanu usługi
 
 Aby wyświetlić stan wszystkich usług na określonym komputerze, lokalnie służy `Get-Service` polecenia cmdlet.
 W przypadku systemów zdalnych, można użyć **Win32_Service** klasy WMI.

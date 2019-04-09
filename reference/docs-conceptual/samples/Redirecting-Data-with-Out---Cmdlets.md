@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Przekierowywanie danych przy użyciu poleceń cmdlet Out
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687139"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293303"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Przekierowywanie danych przy użyciu Out-* poleceń cmdlet
 
@@ -68,7 +68,7 @@ Dotyczy to wszystkich **się** polecenia cmdlet. **Się** polecenia cmdlet powin
 > [!NOTE]
 > Wszystkie **się** poleceń cmdlet renderowania dane wyjściowe jako tekst, przy użyciu formatowania w praktyce, w oknie konsoli, w tym wierszu długość granicach.
 
-#### <a name="paging-console-output-out-host"></a>Stronicowanie danych wyjściowych konsoli (wyjściowego hosta)
+## <a name="paging-console-output-out-host"></a>Stronicowanie danych wyjściowych konsoli (wyjściowego hosta)
 
 Domyślnie środowisko Windows PowerShell wysyła dane do okna hosta, które jest dokładnie wyjściowego hosta polecenia cmdlet robi. Podstawowym zastosowaniem hostowania wyjściowego polecenia cmdlet jest stronicowanie danych, tak jak Omówiliśmy to wcześniej. Na przykład następujące zastosowania polecenia wyjściowego hostowanie strony danych wyjściowych polecenia cmdlet Get-Command:
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Odrzucanie danych wyjściowych (wyjściowego o wartości Null)
+## <a name="discarding-output-out-null"></a>Odrzucanie danych wyjściowych (wyjściowego o wartości Null)
 
 **Wyjściowego o wartości Null** polecenia cmdlet jest przeznaczona do natychmiast odrzucić wszystkie dane wejściowe odbierze. Jest to przydatne do odrzucania niepotrzebnych dane, które otrzymujesz jako efekt uboczny uruchomienia polecenia. Kiedy należy wpisać następujące polecenie, nie uzyskasz żadnych powrót z polecenia:
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Drukowanie danych (Out-drukarka)
+## <a name="printing-data-out-printer"></a>Drukowanie danych (Out-drukarka)
 
 Wydrukować dane, używając **Out-drukarki** polecenia cmdlet. **Out-drukarki** polecenia cmdlet użyje drukarki domyślnej, jeśli nie podasz nazwę drukarki. Można użyć żadnych drukarek, systemem Windows, podając jego nazwę wyświetlaną. Nie ma potrzeby dla każdego rodzaju mapowania portu drukarki lub rzeczywistego fizyczne drukarki. Na przykład jeśli narzędzia obrazowania dokumentu Microsoft Office, zainstalowane, możesz wysłać dane do pliku obrazu, wpisując:
 
@@ -119,7 +119,7 @@ Wydrukować dane, używając **Out-drukarki** polecenia cmdlet. **Out-drukarki**
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Zapisywanie danych (pliku wyjściowego)
+## <a name="saving-data-out-file"></a>Zapisywanie danych (pliku wyjściowego)
 
 Wysłać dane wyjściowe do pliku, a nie w oknie konsoli przy użyciu **out-file** polecenia cmdlet. Następujące polecenie w wierszu wysyła listę procesów do pliku **C:\\temp\\processlist.txt**:
 

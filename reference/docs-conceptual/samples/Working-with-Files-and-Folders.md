@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z plikami i folderami
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: a8d57a1c269d95e692db6c3f1ae10df49e305e4e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685053"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293224"
 ---
 # <a name="working-with-files-and-folders"></a>Praca z plikami i folderami
 
 Nawigowanie przy użyciu programu Windows PowerShell dysków i manipulowanie elementami na nich jest podobny do manipulowania plików i folderów na dyskach fizycznych Windows. W tej sekcji omówiono sposób postępowania z określonych plików i folderów zadaniach przy użyciu programu PowerShell.
 
-### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Wyświetlanie listy wszystkich plików i folderów w folderze
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Wyświetlanie listy wszystkich plików i folderów w folderze
 
 Wszystkie elementy można uzyskać bezpośrednio z poziomu folderu, za pomocą **Get-ChildItem**. Dodaj opcjonalny **życie** parametru do wyświetlania ukryte lub systemu elementów. Na przykład to polecenie wyświetla zawartość bezpośredniego programu Windows PowerShell dysku C, (która jest taka sama jak dysk fizyczny w Windows C):
 
@@ -36,7 +36,7 @@ Następujące polecenie umożliwia znalezienie wszystkich plików wykonywalnych 
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
 ```
 
-### <a name="copying-files-and-folders"></a>Kopiowanie plików i folderów
+## <a name="copying-files-and-folders"></a>Kopiowanie plików i folderów
 
 Kopiowanie odbywa się za pomocą **Copy-Item**. Następujące polecenie tworzy kopię zapasową C:\\pliku boot.ini, do C:\\boot.bak:
 
@@ -70,7 +70,7 @@ Można nadal używać innych narzędzi do wykonywania kopii systemu plików. XCO
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-### <a name="creating-files-and-folders"></a>Tworzenie plików i folderów
+## <a name="creating-files-and-folders"></a>Tworzenie plików i folderów
 
 Tworzenie nowych elementów działa tak samo na wszystkich dostawców środowiska Windows PowerShell. Jeśli dostawca programu Windows PowerShell ma więcej niż jeden typ elementu — na przykład dostawcy systemu plików Windows PowerShell rozróżnia katalogów i plików, należy określić typ elementu.
 
@@ -86,7 +86,7 @@ To polecenie tworzy nowy, pusty plik C:\\temp\\nowy Folder\\plik.txt
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-### <a name="removing-all-files-and-folders-within-a-folder"></a>Usuwanie wszystkich plików i folderów w folderze
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Usuwanie wszystkich plików i folderów w folderze
 
 Można usunąć zawartych w niej elementów przy użyciu **Remove-Item**, ale użytkownik jest monitowany o potwierdzenie usunięcia, jeśli element zawiera coś innego. Na przykład, jeśli próba usunięcia folderu C:\\temp\\DeleteMe, który zawiera inne elementy, programu Windows PowerShell wyświetli monit o potwierdzenie przed usunięciem folderu:
 
@@ -107,7 +107,7 @@ Jeśli nie chcesz monit dla każdego elementu zawarte, należy określić **Recu
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mapowanie folderu lokalnego jako dostępny dysk Windows
+## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mapowanie folderu lokalnego jako dostępny dysk Windows
 
 Można również mapować folderem lokalnym przy użyciu **subst** polecenia. Następujące polecenie tworzy dysk lokalny, w których dostęp do konta root P: w lokalnym katalogu Program Files:
 
@@ -117,7 +117,7 @@ subst p: $env:programfiles
 
 Podobnie jak w przypadku dysków sieciowych dyski mapowane w obrębie za pomocą programu Windows PowerShell **subst** są widoczne natychmiast powłoki Windows PowerShell.
 
-### <a name="reading-a-text-file-into-an-array"></a>Odczytywanie pliku tekstowego do tablicy
+## <a name="reading-a-text-file-into-an-array"></a>Odczytywanie pliku tekstowego do tablicy
 
 Jednym z bardziej powszechne formaty magazynu danych tekstowych jest w pliku przy użyciu osobnych wierszach traktowane jako elementy danych distinct. **Pobrania zawartości** polecenia cmdlet można odczytać całego pliku, w jednym kroku, jak pokazano poniżej:
 

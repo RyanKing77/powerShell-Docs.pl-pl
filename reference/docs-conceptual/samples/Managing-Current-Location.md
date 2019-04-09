@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie bieżącą lokalizacją
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686509"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293190"
 ---
 # <a name="managing-current-location"></a>Zarządzanie bieżącą lokalizacją
 
@@ -16,7 +16,7 @@ Podczas przechodzenia systemów folder w Eksploratorze plików, zwykle mają kon
 
 Windows PowerShell korzysta z rzeczownikiem **lokalizacji** do odwoływania się do katalogu roboczego i implementuje rodzinę poleceń cmdlet do badania i manipulowania Twojej lokalizacji.
 
-### <a name="getting-your-current-location-get-location"></a>Pobieranie bieżącej lokalizacji (Get lokalizacji)
+## <a name="getting-your-current-location-get-location"></a>Pobieranie bieżącej lokalizacji (Get lokalizacji)
 
 Aby określić ścieżkę swoją bieżącą lokalizację katalogu, wpisz **Get-Location** polecenia:
 
@@ -30,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > Polecenie cmdlet Get-Location jest podobny do **pwd** polecenie w powłoce BASH. Polecenia cmdlet Set-Location jest podobny do **cd** polecenia w pliku Cmd.exe.
 
-### <a name="setting-your-current-location-set-location"></a>Ustawianie bieżącej lokalizacji (zestaw lokalizacji)
+## <a name="setting-your-current-location-set-location"></a>Ustawianie bieżącej lokalizacji (zestaw lokalizacji)
 
 **Get-Location** polecenie jest używane z **Ustawianie lokalizacji** polecenia. **Ustawianie lokalizacji** polecenia można określić swoją bieżącą lokalizację katalogu.
 
@@ -96,7 +96,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Zapisywanie i ponowne wywoływanie ostatnich lokalizacji (lokalizacja wypychania i lokalizacji Pop)
+## <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Zapisywanie i ponowne wywoływanie ostatnich lokalizacji (lokalizacja wypychania i lokalizacji Pop)
 
 Zmiana lokalizacji, jest przydatne, aby śledzić, gdy zostały i aby można było powrócić do poprzedniej lokalizacji. **Lokalizacji wypychania** polecenie cmdlet w programie Windows PowerShell tworzy uporządkowane historii ("stos") ścieżek katalogów, w którym nastąpiło i możesz przejść wstecz przez historię ścieżek katalogów przy użyciu uzupełniające  **Lokalizacji POP** polecenia cmdlet.
 

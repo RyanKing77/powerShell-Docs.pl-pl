@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z folderami plików i kluczami rejestru
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685732"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293099"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Praca z plików, folderów i kluczy rejestru
 
 Windows PowerShell korzysta z rzeczownikiem **elementu** do odwoływania się do elementów na dysk programu Windows PowerShell. Podczas pracy z dostawcą programu Windows PowerShell w systemie plików **elementu** może być pliku, folderu lub dysk programu Windows PowerShell. Lista i Praca z tych elementów jest krytyczne podstawowe zadania w większości ustawień administracyjnych, chcemy omówiono te zadania szczegółowo.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Wyliczanie plików, folderów i kluczy rejestru (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Wyliczanie plików, folderów i kluczy rejestru (Get-ChildItem)
 
 Ponieważ kolekcja elementów z określonej lokalizacji jest takiego typowe zadania, **Get-ChildItem** polecenia cmdlet jest zaprojektowany specjalnie w celu zwrócenie wszystkich elementów, które można znaleźć w kontenerze, takie jak folder.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Te parametry można mieszać i dopasowane do uzyskania dopasowanego wyjściowych.
 
-#### <a name="listing-all-contained-items--recurse"></a>Wyświetlanie wszystkich elementów znajdujących się (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Wyświetlanie wszystkich elementów znajdujących się (-Recurse)
 
 Aby wyświetlić elementy znajdujące się w folderze Windows i wszystkie elementy, które są zawarte w podfolderach, użyj **Recurse** parametru **Get-ChildItem**. Listę Wyświetla wszystkie elementy w folderze Windows i elementy w jego podfolderach. Przykład:
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>Filtrując elementy według nazwy (-nazwa)
+### <a name="filtering-items-by-name--name"></a>Filtrując elementy według nazwy (-nazwa)
 
 Aby wyświetlić tylko nazwy elementów, użyj **nazwa** parametru **Get-Childitem**:
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Wymuś wyświetlanie ukrytych elementów (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Wymuś wyświetlanie ukrytych elementów (-Force)
 
 Elementy, które są zwykle niewidoczne w Eksploratorze plików lub Cmd.exe nie są wyświetlane w danych wyjściowych **Get-ChildItem** polecenia. Aby wyświetlić ukryte elementy, użyj **życie** parametru **Get-ChildItem**. Przykład:
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Ten parametr nosi życie, ponieważ wymuszono można zastąpić normalnego zachowania **Get-ChildItem** polecenia. Wymuś jest powszechnie używany parametr, który wymusza akcję, która nie wykona zazwyczaj polecenia cmdlet, mimo że nie będzie wykonywać żadnych działań, które obniża zabezpieczeń systemu.
 
-#### <a name="matching-item-names-with-wildcards"></a>Zgodne z nazwami elementów z symbolami wieloznacznymi
+### <a name="matching-item-names-with-wildcards"></a>Zgodne z nazwami elementów z symbolami wieloznacznymi
 
 **Polecenie Get-ChildItem** polecenie akceptuje symbole wieloznaczne w ścieżce elementy do listy.
 
@@ -122,7 +122,7 @@ Aby znaleźć wszystkie pliki, których nazwy zaczynają się od **x** lub **z**
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Wykluczanie elementów (— wyklucz)
+### <a name="excluding-items--exclude"></a>Wykluczanie elementów (— wyklucz)
 
 Można wykluczyć konkretne elementy za pomocą **wykluczyć** parametr Get-ChildItem. Dzięki temu można wykonywać złożone filtrowanie w pojedynczej instrukcji.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Mieszanie polecenie Get-ChildItem parametrów
+### <a name="mixing-get-childitem-parameters"></a>Mieszanie polecenie Get-ChildItem parametrów
 
 Można użyć kilku parametrów **Get-ChildItem** polecenia cmdlet w tym samym poleceniu. Zanim mieszać parametrów, upewnij się, że rozumiesz dopasowanie z symbolami wieloznacznymi. Na przykład poniższe polecenie zwraca żadnych wyników:
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293048"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
 
@@ -29,25 +29,34 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 W pozostałej części tej sekcji, przeanalizujemy sposób używania **Format** poleceń cmdlet, aby zmienić sposób wyświetlania danych wyjściowych tego polecenia.
 
-### <a name="using-format-wide-for-single-item-output"></a>Przy użyciu całej formatu dla jednego elementu danych wyjściowych
+## <a name="using-format-wide-for-single-item-output"></a>Przy użyciu całej formatu dla jednego elementu danych wyjściowych
 
-**Całej Format** polecenia cmdlet, domyślnie są wyświetlane tylko domyślne właściwości obiektu. Informacje związane z każdego obiektu, jest wyświetlany w jednej kolumnie:
+`Format-Wide` Polecenia cmdlet, domyślnie są wyświetlane tylko domyślne właściwości obiektu.
+Informacje związane z każdego obiektu, jest wyświetlany w jednej kolumnie:
 
+```powershell
+Get-Command -Verb Format | Format-Wide
 ```
-PS> Get-Process -Name powershell | Format-Wide
 
-powershell                              powershell
+```output
+Format-Custom                          Format-Hex
+Format-List                            Format-Table
+Format-Wide
 ```
 
 Można również określić właściwości inny niż domyślny:
 
-```
-PS> Get-Process -Name powershell | Format-Wide -Property Id
-
-2760                                    3448
+```powershell
+Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-#### <a name="controlling-format-wide-display-with-column"></a>Kontrolowanie wyświetlanie całej Format za pomocą kolumny
+```output
+Custom                                 Hex
+List                                   Table
+Wide
+```
+
+### <a name="controlling-format-wide-display-with-column"></a>Kontrolowanie wyświetlanie całej Format za pomocą kolumny
 
 Za pomocą `Format-Wide` polecenia cmdlet, możesz wyświetlić tylko jedną właściwość w danym momencie.
 Dzięki temu przydatne do wyświetlania listy prosty, które zawierają tylko jeden element w każdym wierszu.
@@ -65,7 +74,7 @@ Table
 Wide
 ```
 
-### <a name="using-format-list-for-a-list-view"></a>Za pomocą listy formatów dla widoku listy
+## <a name="using-format-list-for-a-list-view"></a>Za pomocą listy formatów dla widoku listy
 
 **Format-Lista** polecenie cmdlet wyświetla obiektu w postaci listy, z każda właściwość etykietą i wyświetlane w osobnym wierszu:
 
@@ -100,7 +109,7 @@ StartTime   : 2006-05-24 13:54:28
 Id          : 3448
 ```
 
-#### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Pobieranie szczegółowe informacje przy użyciu listy Format z symbolami wieloznacznymi
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Pobieranie szczegółowe informacje przy użyciu listy Format z symbolami wieloznacznymi
 
 **Format-Lista** polecenie cmdlet pozwala użyć symbolu wieloznacznego jako wartość jej **właściwość** parametru. Dzięki temu można wyświetlić szczegółowe informacje. Często obiekty zawierają więcej informacji niż jest Ci potrzebne, dlatego program Windows PowerShell nie uwzględnia wszystkie wartości właściwości domyślnie. Aby wyświetlić wszystkie właściwości obiektu, należy użyć **listy Format — właściwość \&#42;** polecenia. Następujące polecenie generuje ponad 60 wiersze danych wyjściowych dla pojedynczego procesu:
 
@@ -110,7 +119,7 @@ Get-Process -Name powershell | Format-List -Property *
 
 Mimo że **Format-Lista** polecenie jest przydatne do wyświetlania szczegółów, jeśli chcesz, aby przegląd danych wyjściowych, który zawiera wiele elementów, prostszy widok tabelaryczny jest często bardziej użyteczne.
 
-### <a name="using-format-table-for-tabular-output"></a>Przy użyciu formatu tabeli dla tabelaryczne dane wyjściowe
+## <a name="using-format-table-for-tabular-output"></a>Przy użyciu formatu tabeli dla tabelaryczne dane wyjściowe
 
 Jeśli używasz **Format-Table** określić polecenia cmdlet z nie nazw właściwości, aby sformatować dane wyjściowe **Get-Process** polecenia otrzymasz dokładnie takie same dane wyjściowe, tak jak bez przeprowadzania formatowanie. Przyczyną jest to procesy są zwykle wyświetlane w formacie tabelarycznym, ponieważ większość obiektów programu Windows PowerShell.
 
@@ -123,7 +132,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     332       9    23140        632   141     1.06   3448 powershell
 ```
 
-#### <a name="improving-format-table-output-autosize"></a>Poprawa formatowanie tabeli danych wyjściowych (AutoSize)
+### <a name="improving-format-table-output-autosize"></a>Poprawa formatowanie tabeli danych wyjściowych (AutoSize)
 
 Mimo że tabelaryczny widok jest przydatny do wyświetlania wielu informacji porównywalne, może być trudne do interpretacji, gdy ekran jest zbyt wąska, aby uzyskać dane. Na przykład jeśli zostanie podjęta próba ścieżka procesu, identyfikator, nazwę wyświetlaną i firmy, otrzymasz obcięte dane wyjściowe ścieżka procesu i kolumny firmy:
 
@@ -173,7 +182,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 
 W powyższych danych wyjściowych kolumnie identyfikator został obcięty w celu dopasowania do listy i nagłówki kolumn są ułożone w. Automatyczna zmiana rozmiaru kolumn nie zawsze są co chcesz.
 
-#### <a name="wrapping-format-table-output-in-columns-wrap"></a>Zawijanie dane wyjściowe w formacie tabeli w kolumnach (Wrap)
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Zawijanie dane wyjściowe w formacie tabeli w kolumnach (Wrap)
 
 Można wymusić długich **Format-Table** dane, aby opakować w jego kolumnie jest wyświetlana za pomocą **opakować** parametru. Za pomocą **opakować** parametru samodzielnie niekoniecznie nie będzie z oczekiwaniami, ponieważ używa ustawień domyślnych, jeśli nie określono również **AutoSize**:
 
@@ -216,7 +225,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
                                                              ion
 ```
 
-#### <a name="organizing-table-output--groupby"></a>Organizowanie danych wyjściowych tabeli (-GroupBy)
+### <a name="organizing-table-output--groupby"></a>Organizowanie danych wyjściowych tabeli (-GroupBy)
 
 Inny parametr przydatne dla formantu tabelaryczne dane wyjściowe jest **GroupBy**. W szczególności już ofert tabelarycznego może być trudne do porównania. **GroupBy** parametru grupy danych wyjściowych na podstawie wartości właściwości. Na przykład mamy grupy procesów przez firmę do kontroli łatwiejsze, pomijając wartość firmy na liście właściwości:
 

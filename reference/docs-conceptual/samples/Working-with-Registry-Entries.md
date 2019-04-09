@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z wpisami rejestru
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 8483b6f98739697b24a13055dfffbc7b5bacc2cc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686810"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293082"
 ---
 # <a name="working-with-registry-entries"></a>Praca z wpisami rejestru
 
 Ponieważ wpisy rejestru są właściwości kluczy, a w efekcie nie mogą być bezpośrednio przeglądane, musimy wykonać nieco innego podejścia, podczas pracy z nimi.
 
-### <a name="listing-registry-entries"></a>Wyświetlanie listy wpisów rejestru
+## <a name="listing-registry-entries"></a>Wyświetlanie listy wpisów rejestru
 
 Istnieje wiele różnych sposobów, aby zbadać wpisów rejestru. Najprostszym sposobem jest uzyskanie nazw właściwości skojarzone z kluczem. Na przykład, aby zobaczyć nazwy wpisów w kluczu rejestru `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, użyj `Get-Item`. Klucze rejestru mają właściwość o nazwie ogólne "Właściwości", znajduje się lista wpisów rejestru w kluczu.
 Następujące polecenie wybiera właściwość właściwości i rozwija elementów, dlatego, że są one wyświetlane na liście:
@@ -88,7 +88,7 @@ ProgramFilesDir     : C:\Program Files
 
 Ścieżka rozszerzenia działa tak samo, jak w systemie plików, dzięki czemu z tej lokalizacji można uzyskać **zmieniona właściwość elementu** dla `HKLM:\SOFTWARE\Microsoft\Windows\Help` przy użyciu `Get-ItemProperty -Path ..\Help`.
 
-### <a name="getting-a-single-registry-entry"></a>Pobieranie jednego wpisu rejestru
+## <a name="getting-a-single-registry-entry"></a>Pobieranie jednego wpisu rejestru
 
 Jeśli chcesz pobrać określonego wpisu w kluczu rejestru, można użyć jednej z kilku możliwych podejść. W tym przykładzie wyszukuje wartość **DevicePath** w `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.
 
@@ -137,7 +137,7 @@ Można również użyć **WshShell** obiekt COM, jak również znaleźć niektó
 %SystemRoot%\inf
 ```
 
-### <a name="setting-a-single-registry-entry"></a>Ustawianie jednego wpisu rejestru
+## <a name="setting-a-single-registry-entry"></a>Ustawianie jednego wpisu rejestru
 
 Jeśli chcesz zmienić określonego wpisu w kluczu rejestru, można użyć jednej z kilku możliwych podejść. Ten przykład modyfikuje **ścieżki** wpis w `HKEY_CURRENT_USER\Environment`. **Ścieżki** wejścia Określa lokalizację plików wykonywalnych.
 
@@ -170,7 +170,7 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-### <a name="creating-new-registry-entries"></a>Tworzenie nowych wpisów rejestru
+## <a name="creating-new-registry-entries"></a>Tworzenie nowych wpisów rejestru
 
 Aby dodać nowy wpis o nazwie "PowerShellPath" do **CurrentVersion** użycia klucza, `New-ItemProperty` przy użyciu ścieżki do klucza, wprowadzona nazwa i wartość wpisu. W tym przykładzie pobierzemy wartości zmiennej środowiska Windows PowerShell `$PSHome`, który przechowuje ścieżki do katalogu instalacyjnego dla środowiska Windows PowerShell.
 
@@ -197,7 +197,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 |DWord|Liczba, która jest nieprawidłowa UInt32|
 |ExpandString|Ciąg, który może zawierać zmienne środowiskowe, które są dynamicznie powiększane|
 |MultiString|Wielowierszowy ciąg|
-|Ciąg|Dowolną wartość ciągu|
+|Ciąg|dowolną wartość ciągu|
 |QWord|8 bajtów danych binarnych|
 
 > [!NOTE]
@@ -210,7 +210,7 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
 
 Można również zastąpić istniejące wartości wpisu rejestru, dodając **życie** parametru do dowolnego `New-ItemProperty` polecenia.
 
-### <a name="renaming-registry-entries"></a>Zmiana nazwy wpisów rejestru
+## <a name="renaming-registry-entries"></a>Zmiana nazwy wpisów rejestru
 
 Aby zmienić nazwę **PowerShellPath** wpis "PSHome", użyj `Rename-ItemProperty`:
 
@@ -224,7 +224,7 @@ Aby wyświetlić wartość, których nazwy zostały zmienione, należy dodać **
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### <a name="deleting-registry-entries"></a>Usuwanie wpisów rejestru
+## <a name="deleting-registry-entries"></a>Usuwanie wpisów rejestru
 
 Aby usunąć PSHome i PowerShellPath wpisy rejestru, użyj `Remove-ItemProperty`:
 

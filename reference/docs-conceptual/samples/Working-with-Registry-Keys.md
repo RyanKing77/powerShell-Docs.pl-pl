@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z kluczami rejestru
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686950"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293201"
 ---
 # <a name="working-with-registry-keys"></a>Praca z kluczami rejestru
 
 Ponieważ klucze rejestru są elementy na dyskach programu Windows PowerShell, Praca z nimi jest bardzo podobna do pracy z plikami i folderami. Jeden krytyczne różnica polega na tym, że każdy element na dysk programu Windows PowerShell opartych na rejestrze to kontener, podobnie jak folder na dysku systemu plików. Jednakże wpisy rejestru i ich skojarzone wartości są właściwości elementów, a nie odrębne elementy.
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Wyświetlanie listy wszystkich jego podkluczy klucza rejestru
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Wyświetlanie listy wszystkich jego podkluczy klucza rejestru
 
 Możesz wyświetlić wszystkie elementy bezpośrednio w ramach klucza rejestru za pomocą **Get-ChildItem**. Dodaj opcjonalny **życie** parametru do wyświetlania ukryte lub systemu elementów. Na przykład, to polecenie wyświetla elementy bezpośrednio z poziomu środowiska Windows PowerShell dysku HKCU:, która odnosi się do gałęzi rejestru HKEY_CURRENT_USER:
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Kopiowanie kluczy
+## <a name="copying-keys"></a>Kopiowanie kluczy
 
 Kopiowanie odbywa się za pomocą **Copy-Item**. Następujące polecenie kopiuje HKLM:\\oprogramowania\\Microsoft\\Windows\\CurrentVersion i wszystkich jego właściwości w celu HKCU:\\, tworząc nowy klucz o nazwie "CurrentVersion":
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 Nadal można użyć innych narzędzi, masz już dostępny, aby wykonać kopie plików. Wszystkie narzędzia do edytowania rejestru — w tym reg.exe regini.exe i regedit.exe—and obiektów COM, które obsługują edytowanie rejestru (np. Klasa StdRegProv obiektu WScript.Shell i usługi WMI) można można używać wewnątrz środowiska Windows PowerShell.
 
-### <a name="creating-keys"></a>Tworzenie kluczy
+## <a name="creating-keys"></a>Tworzenie kluczy
 
 Tworzenie nowych kluczy w rejestrze jest łatwiejsze niż Tworzenie nowego elementu w systemie plików. Wszystkie klucze rejestru są kontenerami, dlatego nie musisz określić typ elementu; Możesz po prostu podać jawna ścieżka, takich jak:
 
@@ -88,7 +88,7 @@ Aby określić klucz umożliwia także ścieżkę opartą na dostawcy:
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Usuwanie kluczy
+## <a name="deleting-keys"></a>Usuwanie kluczy
 
 Usuwanie elementów zasadniczo jest taka sama dla wszystkich dostawców. Następujące polecenia dyskretnie spowoduje usunięcie elementów:
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Usunięcie wszystkich kluczy w określonym kluczu
+## <a name="removing-all-keys-under-a-specific-key"></a>Usunięcie wszystkich kluczy w określonym kluczu
 
 Można usunąć zawartych w niej elementów przy użyciu **Remove-Item**, ale użytkownik jest monitowany o potwierdzenie usunięcia, jeśli element zawiera coś innego. Na przykład, jeśli firma Microsoft podejmie próbę usunięcia HKCU:\\podklucz CurrentVersion utworzyliśmy, zobaczymy to:
 

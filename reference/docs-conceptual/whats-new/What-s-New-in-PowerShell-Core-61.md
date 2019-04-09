@@ -2,12 +2,12 @@
 title: Co nowego w programie PowerShell Core 6.1
 description: Nowe funkcje i zmiany w programie PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687895"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293320"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Co nowego w programie PowerShell Core 6.1
 
@@ -483,7 +483,7 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Dzięki [ @kvprasoon ](https://github.com/kvprasoon), mamy teraz aliasu parametru `-lp` dla wszystkich wbudowanych poleceń cmdlet programu PowerShell, które mają `-LiteralPath` parametru.
 
-## <a name="breaking-changes"></a>Fundamentalne zmiany
+## <a name="breaking-changes"></a>Zmiany powodujące niezgodność
 
 ### <a name="msi-based-installation-paths-on-windows"></a>Instalacja wykonywana przy użyciu pliku MSI ścieżek na Windows
 
@@ -516,3 +516,10 @@ Rzadko używany Visual Basic z `Add-Type`. Firma Microsoft usunęła tę funkcj�
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Wyczyszczone zastosowań `CommandTypes.Workflow` i `WorkflowInfoCleaned`
 
 Aby uzyskać więcej informacji na temat tych zmian, zapoznaj się z [6708 # żądania Ściągnięcia](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Obiekt grupy teraz sortuje grupy
+
+Zwiększenie wydajności w ramach `Group-Object` teraz zwraca posortowaną listę grup.
+Mimo że nie należy polegać na kolejności, należy można zaburzyć przez tę zmianę jeśli chce się pierwszą grupę. Jednak firma Microsoft uznała, że ta poprawa wydajności było warte zmiany, ponieważ brakuje wpływ zależne od poprzedniego zachowania.
+
+Aby uzyskać więcej informacji na temat tej zmiany, zobacz [7409 # problem](https://github.com/PowerShell/PowerShell/issues/7409).

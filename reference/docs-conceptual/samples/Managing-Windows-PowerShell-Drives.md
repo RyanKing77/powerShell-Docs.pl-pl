@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie dyskami programu Windows PowerShell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685186"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293252"
 ---
 # <a name="managing-windows-powershell-drives"></a>Zarządzanie dyskami programu Windows PowerShell
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Dodawanie nowych Windows PowerShell dyski (nowe PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Dodawanie nowych Windows PowerShell dyski (nowe PSDrive)
 
 Można dodać dysków programu Windows PowerShell, za pomocą **New PSDrive** polecenia. Aby wyświetlić składnię dla **New PSDrive** polecenia, wprowadź **Get-Command** polecenia **składni** parametru:
 
@@ -146,7 +146,7 @@ cvkey:\
 
 Polecenie cmdlet New-PsDrive dodaje nowy dysk tylko do bieżącej sesji programu Windows PowerShell. Jeśli zamkniesz okno programu Windows PowerShell, nowego dysku zostaną utracone. Aby zapisać dysk programu Windows PowerShell, użyj polecenia cmdlet Export-konsoli można wyeksportować bieżącej sesji programu Windows PowerShell, a następnie użyj PowerShell.exe **PSConsoleFile** parametru, aby go zaimportować. Lub Dodaj nowy dysk do Twojego profilu programu Windows PowerShell.
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Usuwanie środowiska Windows PowerShell dyski (Usuń PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Usuwanie środowiska Windows PowerShell dyski (Usuń PSDrive)
 
 Dyski można usunąć za pomocą programu Windows PowerShell, za pomocą **PSDrive Usuń** polecenia cmdlet. **PSDrive Usuń** polecenia cmdlet jest łatwa w użyciu; Aby usunąć określony dysk programu Windows PowerShell, wystarczy podać nazwę dysk programu Windows PowerShell.
 
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Dodawanie i usuwanie dysków poza programem Windows PowerShell
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Dodawanie i usuwanie dysków poza programem Windows PowerShell
 
 Wykrywa, dysków z systemem plików, które są dodawane lub usuwane w Windows, w tym dyski sieciowe, które są mapowane, dyski USB, które są dołączone i dyski, które są usuwane przy użyciu programu Windows PowerShell **net użyj** polecenia lub  **WScript.NetworkMapNetworkDrive** i **RemoveNetworkDrive** metody pochodzące ze skryptu Windows Script Host (WSH).

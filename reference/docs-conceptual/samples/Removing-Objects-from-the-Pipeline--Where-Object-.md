@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Usuwanie obiektów z potoku gdzie obiektu
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685725"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293150"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Usuwanie obiektów z potoku (Where-Object)
 
@@ -16,7 +16,7 @@ W programie Windows PowerShell możesz często Generowanie i przekazują więcej
 
 Program Windows PowerShell zawiera `Where-Object` polecenia cmdlet, które umożliwia testowanie każdy obiekt w potoku i tylko przekazać go do potoku Jeśli dana jednostka spełnia warunek określonego testu. Obiekty, które nie są przekazywane do testu są usuwane z potoku. Możesz podać warunek testu jako wartość `Where-Object` **FilterScript** parametru.
 
-### <a name="performing-simple-tests-with-where-object"></a>Wykonując proste testy za pomocą Where-Object
+## <a name="performing-simple-tests-with-where-object"></a>Wykonując proste testy za pomocą Where-Object
 
 Wartość **FilterScript** jest *blok skryptu* — jedno lub kilka poleceń programu Windows PowerShell, ujęte w nawiasy klamrowe {} — która daje w wyniku wartość true lub false. Te bloki skryptu może być bardzo proste, ale są one tworzone wymaga, wiedząc o innym pojęcia programu Windows PowerShell, operatory porównania. Operator porównania porównuje elementów, które pojawiają się na każdej stronie. Operatory porównania zaczynają się od "-" znaków i są następuje nazwa. Operatory porównania podstawowe działa na prawie każdy rodzaj obiektu. Więcej informacji o zaawansowanych operatory porównania może działać wyłącznie względem tekstu lub tablic.
 
@@ -29,14 +29,14 @@ Ze względu na analizowanie zagadnienia, symbole, takie jak <>, i = nie są uży
 |-----------------------|-----------|--------------------------|
 |-eq|jest równa|1 - eq 1|
 |-ne|Nie równa się|1 - ne 2|
-|-lt|jest mniejsza niż|1 - lt 2|
-|-le|Jest mniejsze niż lub równe|1 - le 2|
+|-lt|Jest mniejsza niż|1 - lt 2|
+|-le|jest mniejsze niż lub równe|1 - le 2|
 |-gt|jest większa niż|2 - > 1|
-|-ge|Jest większe lub równe|2 -ge 1|
+|-ge|jest większe lub równe|2 -ge 1|
 |— np.|Przypomina (symbol wieloznaczny porównanie tekstu)|"file.doc" — takich jak "f\*.korzystać?"|
 |-notlike|Nie jest podobne (symbol wieloznaczny porównanie tekstu)|"file.doc"-notlike "p\*doc"|
 |-zawiera|zawiera|1,2,3 - zawiera 1|
-|-notcontains|nie zawiera|1,2,3 - notcontains 4|
+|-notcontains|Nie zawiera|1,2,3 - notcontains 4|
 
 WHERE-Object Bloki skryptu za pomocą specjalnych zmiennej `$_` do odwoływania się do bieżącego obiektu w potoku. Oto przykład sposobu działania. Jeśli masz listę liczb i tylko mają być zwracane te, które są mniej niż 3, można użyć Where-Object do filtrowania liczby, wpisując:
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>Filtrowanie oparte na właściwości obiektu
+## <a name="filtering-based-on-object-properties"></a>Filtrowanie oparte na właściwości obiektu
 
 Ponieważ `$_` odwołuje się do bieżącego obiektu potoku, firma Microsoft będą mogli jej właściwości na potrzeby testów.
 
