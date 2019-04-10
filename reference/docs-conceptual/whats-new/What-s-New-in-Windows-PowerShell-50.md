@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co nowego w programie Windows PowerShell 5.0
-ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
+ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055108"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363534"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Co nowego w programie Windows PowerShell 5.0
 
@@ -210,7 +210,7 @@ Windows PowerShell 4.0 jest zainstalowana domyślnie w systemie Windows 8.1 i Wi
 
 Windows PowerShell 4.0 obejmuje następujące nowe funkcje.
 
-### <a name="new-features-in-windows-powershell"></a>Nowe funkcje w programie Windows PowerShell
+### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Nowe funkcje w programie Windows PowerShell
 
 - **Windows PowerShell Desired State Configuration** (DSC) jest systemem zarządzania w programie Windows PowerShell 4.0, umożliwiająca wdrażanie i zarządzanie dane konfiguracyjne dla usług oprogramowania i środowiska, w którym są uruchomione te usługi. Aby uzyskać więcej informacji na temat DSC, zobacz [Rozpoczynanie pracy z usługą Windows PowerShell Desired State Configuration](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
 - **Save-Help** teraz umożliwia zapisywanie pomocy dla modułów, które są zainstalowane na komputerach zdalnych. Save-Help umożliwia pobieranie modułu pomocy z klienta podłączonej do Internetu (na którym nie wszystkie moduły, dla których ma dotyczyć pomoc są musi być zainstalowany), a następnie skopiuj zapisane pomocy do zdalnego folderu udostępnionego lub komputerze zdalnym, który nie ma Internet dostęp.
