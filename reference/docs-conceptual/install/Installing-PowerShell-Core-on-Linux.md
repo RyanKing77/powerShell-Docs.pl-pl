@@ -3,10 +3,10 @@ title: Instalowanie programu PowerShell Core w systemie Linux
 description: Informacje o instalowaniu programu PowerShell Core w różnych dystrybucjach systemu Linux
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293337"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Instalowanie programu PowerShell Core w systemie Linux
@@ -16,7 +16,7 @@ Obsługuje [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04] [ u1804], [U
 Dystrybucje systemu Linux, które nie są oficjalnie obsługiwane, spróbuj użyć [pakiet przyciąganie PowerShell][snap].
 Możesz też spróbować wdrażania plików binarnych programu PowerShell bezpośrednio przy użyciu systemu Linux [ `tar.gz` archiwum][tar], ale należy skonfigurować niezbędne zależności, w oparciu o system operacyjny w oddzielne kroki.
 
-Wszystkie pakiety są dostępne w usłudze GitHub [zwalnia][] strony.
+Wszystkie pakiety są dostępne w usłudze GitHub [Wersje][] strony.
 Po zainstalowaniu pakietu Uruchom `pwsh` z poziomu terminalu.
 
 [u14]: #ubuntu-1404
@@ -75,9 +75,8 @@ Od tego momentu, po prostu musisz użyć `sudo apt-get upgrade powershell` do ak
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Instalację za pomocą bezpośredniego pobierania — Ubuntu 14.04
 
-Pobierz pakiet Debian
-`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
-z [zwalnia][] strony na komputerze Ubuntu.
+Pobierz pakiet Debian `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+z [Wersje][] strony na komputerze Ubuntu.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -124,9 +123,8 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, od teg
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Instalację za pomocą bezpośredniego pobierania — Ubuntu 16.04
 
-Pobierz pakiet Debian
-`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
-z [zwalnia][] strony na komputerze Ubuntu.
+Pobierz pakiet Debian `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+z [Wersje][] strony na komputerze Ubuntu.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -176,9 +174,8 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, od teg
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Instalację za pomocą bezpośredniego pobierania — Ubuntu 18.04
 
-Pobierz pakiet Debian
-`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
-z [zwalnia][] strony na komputerze Ubuntu.
+Pobierz pakiet Debian `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+z [Wersje][] strony na komputerze Ubuntu.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -266,9 +263,8 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, od teg
 
 ### <a name="installation-via-direct-download---debian-9"></a>Instalację za pomocą bezpośredniego pobierania - Debian 9
 
-Pobierz pakiet Debian
-`powershell_6.2.0-1.debian.9_amd64.deb`
-z [zwalnia][] strony na komputerze Debian.
+Pobierz pakiet Debian `powershell_6.2.0-1.debian.9_amd64.deb`
+z [Wersje][] strony na komputerze Debian.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -307,9 +303,8 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, po pro
 
 ### <a name="installation-via-direct-download---centos-7"></a>Instalację za pomocą bezpośredniego pobierania - CentOS 7
 
-Za pomocą [CentOS 7][], Pobierz pakiet obr. / min
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
-z [zwalnia][] strony na komputerze CentOS.
+Za pomocą [CentOS 7][], Pobierz pakiet obr. / min `powershell-6.2.0-1.rhel.7.x86_64.rpm`
+z [Wersje][] strony na komputerze CentOS.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -352,9 +347,8 @@ Po zarejestrowaniu programu Microsoft repository raz jako administratora, po pro
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Instalację za pomocą bezpośredniego pobierania - Red Hat Enterprise Linux (RHEL) 7
 
-Pobierz pakiet obr. / min
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
-z [zwalnia][] strony na komputerze Red Hat Enterprise Linux.
+Pobierz pakiet obr. / min `powershell-6.2.0-1.rhel.7.x86_64.rpm`
+z [Wersje][] strony na komputerze Red Hat Enterprise Linux.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -463,9 +457,8 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Instalację za pomocą bezpośredniego pobierania - Fedora 27, Fedora 28
 
-Pobierz pakiet obr. / min
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
-z [zwalnia][] strony na komputerze Fedora.
+Pobierz pakiet obr. / min `powershell-6.2.0-1.rhel.7.x86_64.rpm`
+z [Wersje][] strony na komputerze Fedora.
 
 Następnie wykonaj następujące czynności w terminalu:
 
@@ -492,7 +485,7 @@ sudo dnf remove powershell
 > [!NOTE]
 > Obsługa architektury jest eksperymentalne.
 
-Program PowerShell jest dostępny z [Arch Linux][] użytkownika repozytorium (AUR).
+Program PowerShell jest dostępny z [Arch systemu Linux][] użytkownika repozytorium (AUR).
 
 * Może być skompilowana przy użyciu [najnowsze tagiem wydania][arch-release]
 * Może być kompilowane z [najnowsze zatwierdzenie do wzorca][arch-git]
@@ -502,7 +495,7 @@ Pakiety w AUR są utrzymywane społeczności — Brak obsługi oficjalnych.
 
 Aby uzyskać więcej informacji na temat instalowania pakietów z AUR, zobacz [wiki Arch Linux](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) lub społeczności [pliku DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).
 
-[Arch Linux]: https://www.archlinux.org/download/
+[Arch systemu Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/

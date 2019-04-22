@@ -3,16 +3,16 @@ title: Instalowanie programu PowerShell Core w systemie macOS
 description: Informacje o instalowaniu programu PowerShell Core w systemie macOS
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59293405"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Instalowanie programu PowerShell Core w systemie macOS
 
 Program PowerShell Core obsługuje system macOS 10.12 i wyższych.
-Wszystkie pakiety są dostępne w usłudze GitHub [zwalnia][] strony.
+Wszystkie pakiety są dostępne w usłudze GitHub [Wersje][] strony.
 Po zainstalowaniu pakietu Uruchom `pwsh` z poziomu terminalu.
 
 ## <a name="about-brew"></a>Temat Brew
@@ -84,9 +84,8 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Instalację za pomocą bezpośredniego pobierania
 
-Pobierz pakiet zapisanego pakietu
-`powershell-6.2.0-osx-x64.pkg`
-z [zwalnia][] strony na komputerze z systemem macOS.
+Pobierz pakiet zapisanego pakietu `powershell-6.2.0-osx-x64.pkg`
+z [Wersje][] strony na komputerze z systemem macOS.
 
 Możesz kliknij dwukrotnie plik i postępuj zgodnie z instrukcjami lub zainstalować ją z poziomu terminalu:
 

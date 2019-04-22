@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920394"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programisty&#39;przewodnik s
@@ -99,12 +99,12 @@ Aby uzyskać więcej informacji na temat korzystania z powłoki programu Windows
 
 |Temat|Definicja|
 |-----------|----------------|
-|[Jak utworzyć dostawcę programu Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Ta sekcja zawiera opis sposobu tworzenia dostawcy środowiska Windows PowerShell dla programu Windows PowerShell.|
+|[Jak utworzyć dostawcę Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Ta sekcja zawiera opis sposobu tworzenia dostawcy środowiska Windows PowerShell dla programu Windows PowerShell.|
 |[Jak utworzyć aplikację hosta programu PowerShell Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|W tej sekcji opisano sposób pisania aplikacji hosta, która manipuluje obszarem działania oraz sposobu pisania aplikacji hosta, który implementuje własnego niestandardowego hosta.|
-|[Jak utworzyć przystawkę programu Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|W tej sekcji opisano sposób tworzenia przystawki, który służy do rejestrowania wszystkich poleceń cmdlet i dostawców w zestawie oraz jak utworzyć niestandardowe przystawki.|
-|[Jak utworzyć powłokę konsoli](./how-to-create-a-console-shell.md)|Ta sekcja zawiera opis sposobu tworzenia powłoki konsoli, który nie jest rozszerzalny.|
-|[Zagadnienia dotyczące programu Windows PowerShell](./windows-powershell-concepts.md)|Ta sekcja zawiera ogólne informacje, które pomoże Ci zrozumieć programu Windows PowerShell z punktu widzenia dewelopera.|
+|[Jak utworzyć przystawki Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|W tej sekcji opisano sposób tworzenia przystawki, który służy do rejestrowania wszystkich poleceń cmdlet i dostawców w zestawie oraz jak utworzyć niestandardowe przystawki.|
+|[Jak utworzyć powłoki konsoli](./how-to-create-a-console-shell.md)|Ta sekcja zawiera opis sposobu tworzenia powłoki konsoli, który nie jest rozszerzalny.|
+|[Pojęcia dotyczące programu Windows PowerShell](./windows-powershell-concepts.md)|Ta sekcja zawiera ogólne informacje, które pomoże Ci zrozumieć programu Windows PowerShell z punktu widzenia dewelopera.|
 
 ## <a name="see-also"></a>Zobacz też
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Zestaw SDK programu Windows PowerShell](../windows-powershell-reference.md)
