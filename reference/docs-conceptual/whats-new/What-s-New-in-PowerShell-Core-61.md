@@ -2,12 +2,12 @@
 title: Co nowego w programie PowerShell Core 6.1
 description: Nowe funkcje i zmiany w programie PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
-ms.translationtype: MT
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293320"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984514"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Co nowego w programie PowerShell Core 6.1
 
@@ -179,8 +179,9 @@ Aby uzyskać więcej informacji na temat działania tych poleceń cmdlet zapozna
 
 ## <a name="experimental-feature-flags"></a>Flagi funkcji eksperymentalnych
 
-Flagi funkcji eksperymentalnych pozwalają użytkownikom na włączanie funkcji, które jeszcze nie został sfinalizowany.
-Funkcje eksperymentalne nie są obsługiwane i mogą mieć usterek.
+Umożliwiliśmy obsługę [funkcje eksperymentalne][]. Umożliwia to deweloperom programu PowerShell dostarczać nowe funkcje i uzyskiwanie opinii, przed zakończeniem projektu. W ten sposób, firma Microsoft należy unikać wprowadzania istotnych zmian w miarę rozwoju projektu.
+
+Użyj `Get-ExperimentalFeature` w celu uzyskania listy dostępnych funkcji eksperymentalnych. Można włączyć lub wyłączyć te funkcje przy użyciu `Enable-ExperimentalFeature` i `Disable-ExperimentalFeature`.
 
 Dowiedz się więcej na temat tej funkcji w [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -523,3 +524,6 @@ Zwiększenie wydajności w ramach `Group-Object` teraz zwraca posortowaną list�
 Mimo że nie należy polegać na kolejności, należy można zaburzyć przez tę zmianę jeśli chce się pierwszą grupę. Jednak firma Microsoft uznała, że ta poprawa wydajności było warte zmiany, ponieważ brakuje wpływ zależne od poprzedniego zachowania.
 
 Aby uzyskać więcej informacji na temat tej zmiany, zobacz [7409 # problem](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Funkcje eksperymentalne]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

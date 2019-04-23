@@ -1,259 +1,254 @@
-items:
 - name: Omówienie
   href: overview.md
 - name: Instalowanie w klastrze zarządzania systemu
   items:
-  - name: Instalowanie różnych wersji programu PowerShell
-    href: install/installing-powershell.md
-  - name: PowerShell Core
-    items:
-    - name: Instalowanie programu PowerShell Core w systemie Windows
-      href: install/installing-powershell-core-on-windows.md
-    - name: Instalowanie programu PowerShell Core w systemie Linux
-      href: install/installing-powershell-core-on-linux.md
-    - name: Instalowanie programu PowerShell Core w systemie macOS
-      href: install/installing-powershell-core-on-macos.md
-    - name: Instalowanie programu PowerShell Core w systemie ARM
-      href: install/powershell-core-on-arm.md
-  - name: Windows PowerShell
-    items:
-    - name: Instalowanie programu Windows PowerShell
-      href: install/installing-windows-powershell.md
-    - name: Instalowanie aparatu programu Windows PowerShell 2.0
-      href: install/installing-the-windows-powershell-2.0-engine.md
-    - name: Wymagania systemowe programu Windows PowerShell
-      href: install/windows-powershell-system-requirements.md
+    - name: Instalowanie różnych wersji programu PowerShell
+      href: install/installing-powershell.md
+    - name: PowerShell Core
+      items:
+        - name: Instalowanie programu PowerShell Core w systemie Windows
+          href: install/installing-powershell-core-on-windows.md
+        - name: Instalowanie programu PowerShell Core w systemie Linux
+          href: install/installing-powershell-core-on-linux.md
+        - name: Instalowanie programu PowerShell Core w systemie macOS
+          href: install/installing-powershell-core-on-macos.md
+        - name: Instalowanie programu PowerShell Core w systemie ARM
+          href: install/powershell-core-on-arm.md
+    - name: Windows PowerShell
+      items:
+        - name: Instalowanie programu Windows PowerShell
+          href: install/installing-windows-powershell.md
+        - name: Instalowanie aparatu programu Windows PowerShell 2.0
+          href: install/installing-the-windows-powershell-2.0-engine.md
+        - name: Wymagania systemowe programu Windows PowerShell
+          href: install/windows-powershell-system-requirements.md
 - name: Wprowadzenie
   items:
-  - name: Wprowadzenie do programu PowerShell
-    href: getting-started/getting-started-with-windows-powershell.md
-  - name: Uruchamianie programu Windows PowerShell
-    href: getting-started/starting-windows-powershell.md
-  - name: Uruchamianie aparatu programu Windows PowerShell 2.0
-    href: getting-started/starting-the-windows-powershell-2.0-engine.md
+    - name: Wprowadzenie do programu PowerShell
+      href: getting-started/getting-started-with-windows-powershell.md
+    - name: Uruchamianie programu Windows PowerShell
+      href: getting-started/starting-windows-powershell.md
+    - name: Uruchamianie aparatu programu Windows PowerShell 2.0
+      href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: Poznawanie programu PowerShell
   items:
-  - name: Opis ważnych pojęć związanych z programem PowerShell
-    href: learn/understanding-important-powershell-concepts.md
-  - name: Poznawanie nazw programu PowerShell
-    href: learn/learning-powershell-names.md
-  - name: Używanie znanych nazw poleceń
-    href: learn/using-familiar-command-names.md
-  - name: Uzyskiwanie szczegółowych informacji pomocy
-    href: learn/getting-detailed-help-information.md
-  - name: Uzyskiwanie informacji dotyczących poleceń
-    href: learn/getting-information-about-commands.md
-  - name: Używanie zmiennych na potrzeby przechowywania obiektów
-    href: learn/using-variables-to-store-objects.md
-  - name: Opis potoku programu PowerShell
-    href: learn/understanding-the-powershell-pipeline.md
-  - name: Dalsze zasoby szkoleniowe dotyczące programu PowerShell
-    href: learn/more-powershell-learning.md
-  - name: Pisanie przenośnych modułów
-    href: learn/writing-portable-modules.md
-  - name: Komunikacja zdalna programu PowerShell
-    items:
-    - name: Uruchamianie poleceń zdalnych
-      href: learn/remoting/running-remote-commands.md
-    - name: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
-      href: learn/remoting/ssh-remoting-in-powershell-core.md
-    - name: Obsługa zdalna usługi WS-Management (WSMan) w programie PowerShell Core
-      href: learn/remoting/wsman-remoting-in-powershell-core.md
-    - name: Zabezpieczenia usługi WinRM
-      href: learn/remoting/winrmsecurity.md
-    - name: Wykonywanie drugiego przeskoku w komunikacji zdalnej programu PowerShell
-      href: learn/remoting/ps-remoting-second-hop.md
-  - name: Słownik
-    href: learn/windows-powershell-glossary.md
+    - name: Opis ważnych pojęć związanych z programem PowerShell
+      href: learn/understanding-important-powershell-concepts.md
+    - name: Poznawanie nazw programu PowerShell
+      href: learn/learning-powershell-names.md
+    - name: Używanie znanych nazw poleceń
+      href: learn/using-familiar-command-names.md
+    - name: Uzyskiwanie szczegółowych informacji pomocy
+      href: learn/getting-detailed-help-information.md
+    - name: Uzyskiwanie informacji dotyczących poleceń
+      href: learn/getting-information-about-commands.md
+    - name: Używanie zmiennych na potrzeby przechowywania obiektów
+      href: learn/using-variables-to-store-objects.md
+    - name: Opis potoku programu PowerShell
+      href: learn/understanding-the-powershell-pipeline.md
+    - name: Dalsze zasoby szkoleniowe dotyczące programu PowerShell
+      href: learn/more-powershell-learning.md
+    - name: Pisanie przenośnych modułów
+      href: learn/writing-portable-modules.md
+    - name: Komunikacja zdalna programu PowerShell
+      items:
+        - name: Uruchamianie poleceń zdalnych
+          href: learn/remoting/running-remote-commands.md
+        - name: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
+          href: learn/remoting/ssh-remoting-in-powershell-core.md
+        - name: Obsługa zdalna usługi WS-Management (WSMan) w programie PowerShell Core
+          href: learn/remoting/wsman-remoting-in-powershell-core.md
+        - name: Zabezpieczenia usługi WinRM
+          href: learn/remoting/winrmsecurity.md
+        - name: Wykonywanie drugiego przeskoku w komunikacji zdalnej programu PowerShell
+          href: learn/remoting/ps-remoting-second-hop.md
+    - name: Słownik
+      href: learn/windows-powershell-glossary.md
 - name: Składniki
   items:
-  - name: Konsola
-    items:
-    - name: PowerShell.exe — pomoc wiersza polecenia
-      href: components/console/powershell.exe-command-line-help.md
-    - name: Używanie rozszerzenia karty
-      href: components/console/using-tab-expansion.md
-  - name: Środowisko ISE
-    items:
-    - name: Wprowadzenie do środowiska Windows PowerShell ISE
-      href: components/ise/introducing-the-windows-powershell-ise.md
-    - name: Windows PowerShell Integrated Scripting Environment (ISE)
-      href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
-    - name: Używanie środowiska Windows PowerShell ISE
+    - name: Konsola
       items:
-      - name: Eksplorowanie środowiska Windows PowerShell ISE
-        href: components/ise/exploring-the-windows-powershell-ise.md
-      - name: Jak utworzyć kartę programu PowerShell w środowisku Windows PowerShell ISE
-        href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-      - name: Jak debugować skrypty w środowisku Windows PowerShell ISE
-        href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-      - name: Jak używać profilów w środowisku Windows PowerShell ISE
-        href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-      - name: Jak używać funkcji uzupełniania po naciśnięciu klawisza TAB w okienku skryptów i okienku konsoli
-        href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-      - name: Jak używać okienka konsoli w środowisku Windows PowerShell ISE
-        href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-      - name: Jak pisać i uruchamiać skrypty w środowisku Windows PowerShell ISE
-        href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-      - name: Skróty klawiaturowe w środowisku Windows PowerShell ISE
-        href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-      - name: Ułatwienia dostępu w środowisku Windows PowerShell ISE
-        href: components/ise/accessibility-in-windows-powershell-ise.md
-    - name: Model obiektów skryptowych ISE
+        - name: PowerShell.exe — pomoc wiersza polecenia
+          href: components/console/powershell.exe-command-line-help.md
+        - name: Używanie rozszerzenia karty
+          href: components/console/using-tab-expansion.md
+    - name: Środowisko ISE
       items:
-      - name: Cel modelu obiektów skryptowych środowiska Windows PowerShell ISE
-        href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-      - name: Hierarchia modeli obiektów środowiska ISE
-        href: components/ise/object-model/the-ise-object-model-hierarchy.md
-      - name: ObjectModelRoot, obiekt
-        href: components/ise/object-model/the-objectmodelroot-object.md
-      - name: ISEAddOnToolCollection, obiekt
-        href: components/ise/object-model/the-iseaddontoolcollection-object.md
-      - name: ISEAddOnTool, obiekt
-        href: components/ise/object-model/the-iseaddontool-object.md
-      - name: ISEEditor, obiekt
-        href: components/ise/object-model/the-iseeditor-object.md
-      - name: ISEFileCollection, obiekt
-        href: components/ise/object-model/the-isefilecollection-object.md
-      - name: ISEFile, obiekt
-        href: components/ise/object-model/the-isefile-object.md
-      - name: Obiekt ISEMenuItemCollection
-        href: components/ise/object-model/the-isemenuitemcollection-object.md
-      - name: ISEMenuItem, obiekt
-        href: components/ise/object-model/the-isemenuitem-object.md
-      - name: ISEOptions, obiekt
-        href: components/ise/object-model/the-iseoptions-object.md
-      - name: ISESnippetCollection, obiekt
-        href: components/ise/object-model/the-isesnippetcollection-object.md
-      - name: ISESnippetObject
-        href: components/ise/object-model/the-isesnippetobject.md
-      - name: PowerShellTabCollection, obiekt
-        href: components/ise/object-model/the-powershelltabcollection-object.md
-      - name: PowerShellTab, obiekt
-        href: components/ise/object-model/the-powershelltab-object.md
-  - name: Visual Studio Code
-    items:
-    - name: Korzystanie z narzędzia Visual Studio Code
-      href: components/vscode/using-vscode.md
-    - name: Jak replikować obsługę środowiska ISE w programie Visual Studio Code
-      href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-    - name: Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
-      href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-    - name: Opis kodowania pliku w programie VSCode i PowerShell
-      href: components/vscode/understanding-file-encoding.md
-  - name: Dostęp w sieci Web
-    items:
-    - name: Reguły autoryzacji i funkcje zabezpieczeń
-      href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-    - name: Instalacja
-      href: components/web-access/install-and-use-windows-powershell-web-access.md
-    - name: Rozwiązywanie problemów związanych z dostępem
-      href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-    - name: Odinstalowywanie programu Windows PowerShell Web Access
-      href: components/web-access/uninstall-windows-powershell-web-access.md
-    - name: Korzystanie z konsoli internetowej programu PowerShell
-      href: components/web-access/use-the-web-based-windows-powershell-console.md
-  - name: Przewodnik dotyczący przepływów pracy
-    href: components/workflows-guide.md
+        - name: Wprowadzenie do środowiska Windows PowerShell ISE
+          href: components/ise/introducing-the-windows-powershell-ise.md
+        - name: Windows PowerShell Integrated Scripting Environment (ISE)
+          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: Używanie środowiska Windows PowerShell ISE
+          items:
+            - name: Eksplorowanie środowiska Windows PowerShell ISE
+              href: components/ise/exploring-the-windows-powershell-ise.md
+            - name: Jak utworzyć kartę programu PowerShell w środowisku Windows PowerShell ISE
+              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Jak debugować skrypty w środowisku Windows PowerShell ISE
+              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Jak używać profilów w środowisku Windows PowerShell ISE
+              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: Jak używać funkcji uzupełniania po naciśnięciu klawisza TAB w okienku skryptów i okienku konsoli
+              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Jak używać okienka konsoli w środowisku Windows PowerShell ISE
+              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Jak pisać i uruchamiać skrypty w środowisku Windows PowerShell ISE
+              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Skróty klawiaturowe w środowisku Windows PowerShell ISE
+              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Ułatwienia dostępu w środowisku Windows PowerShell ISE
+              href: components/ise/accessibility-in-windows-powershell-ise.md
+        - name: Model obiektów skryptowych ISE
+          items:
+            - name: Cel modelu obiektów skryptowych środowiska Windows PowerShell ISE
+              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: Hierarchia modeli obiektów środowiska ISE
+              href: components/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: 'ObjectModelRoot, obiekt'
+              href: components/ise/object-model/the-objectmodelroot-object.md
+            - name: 'ISEAddOnToolCollection, obiekt'
+              href: components/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: 'ISEAddOnTool, obiekt'
+              href: components/ise/object-model/the-iseaddontool-object.md
+            - name: 'ISEEditor, obiekt'
+              href: components/ise/object-model/the-iseeditor-object.md
+            - name: 'ISEFileCollection, obiekt'
+              href: components/ise/object-model/the-isefilecollection-object.md
+            - name: 'ISEFile, obiekt'
+              href: components/ise/object-model/the-isefile-object.md
+            - name: Obiekt ISEMenuItemCollection
+              href: components/ise/object-model/the-isemenuitemcollection-object.md
+            - name: 'ISEMenuItem, obiekt'
+              href: components/ise/object-model/the-isemenuitem-object.md
+            - name: 'ISEOptions, obiekt'
+              href: components/ise/object-model/the-iseoptions-object.md
+            - name: 'ISESnippetCollection, obiekt'
+              href: components/ise/object-model/the-isesnippetcollection-object.md
+            - name: ISESnippetObject
+              href: components/ise/object-model/the-isesnippetobject.md
+            - name: 'PowerShellTabCollection, obiekt'
+              href: components/ise/object-model/the-powershelltabcollection-object.md
+            - name: 'PowerShellTab, obiekt'
+              href: components/ise/object-model/the-powershelltab-object.md
+    - name: Visual Studio Code
+      items:
+        - name: Korzystanie z narzędzia Visual Studio Code
+          href: components/vscode/using-vscode.md
+        - name: Jak replikować obsługę środowiska ISE w programie Visual Studio Code
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: Opis kodowania pliku w programie VSCode i PowerShell
+          href: components/vscode/understanding-file-encoding.md
+    - name: Dostęp w sieci Web
+      items:
+        - name: Reguły autoryzacji i funkcje zabezpieczeń
+          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+        - name: Instalacja
+          href: components/web-access/install-and-use-windows-powershell-web-access.md
+        - name: Rozwiązywanie problemów związanych z dostępem
+          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
+        - name: Odinstalowywanie programu Windows PowerShell Web Access
+          href: components/web-access/uninstall-windows-powershell-web-access.md
+        - name: Korzystanie z konsoli internetowej programu PowerShell
+          href: components/web-access/use-the-web-based-windows-powershell-console.md
+    - name: Przewodnik dotyczący przepływów pracy
+      href: components/workflows-guide.md
 - name: Co nowego
   items:
-  - name: Co nowego w programie PowerShell Core 6.x
-    items:
-    - name: Co nowego w programie PowerShell Core 6.1
-      href: whats-new/what-s-new-in-powershell-core-61.md
-    - name: Co nowego w programie PowerShell Core 6.0
-      href: whats-new/what-s-new-in-powershell-core-60.md
-    - name: Zmiany powodujące niezgodność w programie PowerShell Core 6.0
-      href: whats-new/breaking-changes-ps6.md
-    - name: Znane problemy dotyczące programu PowerShell Core 6.0
-      href: whats-new/known-issues-ps6.md
-  - name: Co nowego w programie PowerShell 5.x
-    items:
-    - name: Co nowego w programie PowerShell 5.0
-      href: whats-new/what-s-new-with-powershell.md
-    - name: Co nowego w programie Windows PowerShell 5.0
-      href: whats-new/what-s-new-in-windows-powershell-50.md
-    - name: Co nowego w środowisku PowerShell 5.0 ISE
-      href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: Co nowego w programie PowerShell Core 6.x
+      items:
+        - name: Co nowego w programie PowerShell Core 6.2
+          href: whats-new/what-s-new-in-powershell-core-62.md
+        - name: Co nowego w programie PowerShell Core 6.1
+          href: whats-new/what-s-new-in-powershell-core-61.md
+        - name: Co nowego w programie PowerShell Core 6.0
+          href: whats-new/what-s-new-in-powershell-core-60.md
+        - name: Zmiany powodujące niezgodność w programie PowerShell Core 6.0
+          href: whats-new/breaking-changes-ps6.md
+        - name: Znane problemy dotyczące programu PowerShell Core 6.0
+          href: whats-new/known-issues-ps6.md
+    - name: Co nowego w programie PowerShell 5.x
+      items:
+        - name: Co nowego w programie PowerShell 5.0
+          href: whats-new/what-s-new-with-powershell.md
+        - name: Co nowego w programie Windows PowerShell 5.0
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: Co nowego w środowisku PowerShell 5.0 ISE
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: Cykl życia pomocy technicznej programu PowerShell Core
   href: powershell-support-lifecycle.md
 - name: Przykładowe skrypty
   items:
-  - name: Przykładowe skrypty do administracji
-    href: samples/sample-scripts-for-administration.md
-  - name: Zmienianie stanu komputera
-    href: samples/changing-computer-state.md
-  - name: Zbieranie informacji dotyczących komputerów
-    href: samples/collecting-information-about-computers.md
-  - name: Tworzenie zapytań polecenia Get-WinEvent za pomocą parametru FilterHashtable
-    href: samples/creating-get-winEvent-queries-with-filterhashtable.md
-  - name: Tworzenie elementów interfejsu użytkownika
-    items:
-    - name: Tworzenie niestandardowego pola wejściowego
-      href: samples/creating-a-custom-input-box.md
-    - name: Tworzenie graficznego selektora daty
-      href: samples/creating-a-graphical-date-picker.md
-    - name: Pola list z możliwością wielokrotnego wyboru
-      href: samples/multiple-selection-list-boxes.md
-    - name: Wybieranie elementów w polu listy
-      href: samples/selecting-items-from-a-list-box.md
-  - name: Dekodowanie polecenia programu PowerShell z uruchomionego procesu
-    href: samples/decode-powershell-command-from-a-running-process.md
-  - name: Zarządzanie bieżącą lokalizacją
-    href: samples/managing-current-location.md
-  - name: Zarządzanie procesami przy użyciu poleceń cmdlet procesu
-    href: samples/managing-processes-with-process-cmdlets.md
-  - name: Zarządzanie usługami
-    href: samples/managing-services.md
-  - name: Zarządzanie dyskami programu Windows PowerShell
-    href: samples/managing-windows-powershell-drives.md
-  - name: Bezpośrednie manipulowanie elementami
-    href: samples/manipulating-items-directly.md
-  - name: Wykonywanie zadań w sieci
-    href: samples/performing-networking-tasks.md
-  - name: Przekierowywanie danych przy użyciu poleceń cmdlet Out-*
-    href: samples/redirecting-data-with-out---cmdlets.md
-  - name: Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
-    href: samples/using-format-commands-to-change-output-view.md
-  - name: Praca z plikami i folderami
-    href: samples/working-with-files-and-folders.md
-  - name: Praca z folderami plików i kluczami rejestru
-    href: samples/working-with-files-folders-and-registry-keys.md
-  - name: Praca z obiektami
-    items:
-    - name: Pobieranie obiektów WMI — Get-WmiObject
-      href: samples/getting-wmi-objects--get-wmiobject-.md
-    - name: Tworzenie obiektów .NET i COM — New-Object
-      href: samples/creating-.net-and-com-objects--new-object-.md
-    - name: Usuwanie obiektów z potoku — Where-Object
-      href: samples/removing-objects-from-the-pipeline--where-object-.md
-    - name: Wybieranie części obiektów — Select-Object
-      href: samples/selecting-parts-of-objects--select-object-.md
-    - name: Sortowanie obiektów
-      href: samples/sorting-objects.md
-    - name: Powtarzanie zadania dla wielu obiektów — ForEach-Object
-      href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-    - name: Używanie metod i klas statycznych
-      href: samples/using-static-classes-and-methods.md
-    - name: Wyświetlanie struktury obiektu — Get-Member
-      href: samples/viewing-object-structure--get-member-.md
-  - name: Praca z drukarkami
-    href: samples/working-with-printers.md
-  - name: Praca z wpisami rejestru
-    href: samples/working-with-registry-entries.md
-  - name: Praca z kluczami rejestru
-    href: samples/working-with-registry-keys.md
-  - name: Praca z instalacjami oprogramowania
-    href: samples/working-with-software-installations.md
-  - name: Inne przydatne obiekty skryptowe
-    href: samples/other-useful-scripting-objects.md
-  - name: Dodatek 1 Aliasy zgodności
-    href: samples/appendix-1---compatibility-aliases.md
-  - name: Dodatek 2 Tworzenie niestandardowego skrótu programu PowerShell
-    href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920462"
+    - name: Przykładowe skrypty do administracji
+      href: samples/sample-scripts-for-administration.md
+    - name: Zmienianie stanu komputera
+      href: samples/changing-computer-state.md
+    - name: Zbieranie informacji dotyczących komputerów
+      href: samples/collecting-information-about-computers.md
+    - name: Tworzenie zapytań polecenia Get-WinEvent za pomocą parametru FilterHashtable
+      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Tworzenie elementów interfejsu użytkownika
+      items:
+        - name: Tworzenie niestandardowego pola wejściowego
+          href: samples/creating-a-custom-input-box.md
+        - name: Tworzenie graficznego selektora daty
+          href: samples/creating-a-graphical-date-picker.md
+        - name: Pola list z możliwością wielokrotnego wyboru
+          href: samples/multiple-selection-list-boxes.md
+        - name: Wybieranie elementów w polu listy
+          href: samples/selecting-items-from-a-list-box.md
+    - name: Dekodowanie polecenia programu PowerShell z uruchomionego procesu
+      href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Zarządzanie bieżącą lokalizacją
+      href: samples/managing-current-location.md
+    - name: Zarządzanie procesami przy użyciu poleceń cmdlet procesu
+      href: samples/managing-processes-with-process-cmdlets.md
+    - name: Zarządzanie usługami
+      href: samples/managing-services.md
+    - name: Zarządzanie dyskami programu Windows PowerShell
+      href: samples/managing-windows-powershell-drives.md
+    - name: Bezpośrednie manipulowanie elementami
+      href: samples/manipulating-items-directly.md
+    - name: Wykonywanie zadań w sieci
+      href: samples/performing-networking-tasks.md
+    - name: Przekierowywanie danych przy użyciu poleceń cmdlet Out-*
+      href: samples/redirecting-data-with-out---cmdlets.md
+    - name: Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
+      href: samples/using-format-commands-to-change-output-view.md
+    - name: Praca z plikami i folderami
+      href: samples/working-with-files-and-folders.md
+    - name: Praca z folderami plików i kluczami rejestru
+      href: samples/working-with-files-folders-and-registry-keys.md
+    - name: Praca z obiektami
+      items:
+        - name: Pobieranie obiektów WMI — Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: Tworzenie obiektów .NET i COM — New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Usuwanie obiektów z potoku — Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Wybieranie części obiektów — Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Sortowanie obiektów
+          href: samples/sorting-objects.md
+        - name: Powtarzanie zadania dla wielu obiektów — ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Używanie metod i klas statycznych
+          href: samples/using-static-classes-and-methods.md
+        - name: Wyświetlanie struktury obiektu — Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+    - name: Praca z drukarkami
+      href: samples/working-with-printers.md
+    - name: Praca z wpisami rejestru
+      href: samples/working-with-registry-entries.md
+    - name: Praca z kluczami rejestru
+      href: samples/working-with-registry-keys.md
+    - name: Praca z instalacjami oprogramowania
+      href: samples/working-with-software-installations.md
+    - name: Inne przydatne obiekty skryptowe
+      href: samples/other-useful-scripting-objects.md
+    - name: Dodatek 1 Aliasy zgodności
+      href: samples/appendix-1---compatibility-aliases.md
+    - name: Dodatek 2 Tworzenie niestandardowego skrótu programu PowerShell
+      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md

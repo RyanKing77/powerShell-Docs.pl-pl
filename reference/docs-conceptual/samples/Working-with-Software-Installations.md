@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Praca z instalacjami oprogramowania
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293235"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984344"
 ---
 # <a name="working-with-software-installations"></a>Praca z instalacjami oprogramowania
 

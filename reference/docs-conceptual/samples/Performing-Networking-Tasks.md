@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Wykonywanie zadań w sieci
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293133"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984265"
 ---
 # <a name="performing-networking-tasks"></a>Wykonywanie zadań w sieci
 

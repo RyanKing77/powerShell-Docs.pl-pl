@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Praca z folderami plików i kluczami rejestru
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293099"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984191"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Praca z plików, folderów i kluczy rejestru
 

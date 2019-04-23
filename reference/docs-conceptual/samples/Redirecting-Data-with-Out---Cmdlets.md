@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Przekierowywanie danych przy użyciu poleceń cmdlet Out
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
-ms.translationtype: MT
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293303"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59984412"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Przekierowywanie danych przy użyciu Out-* poleceń cmdlet
 
