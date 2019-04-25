@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
 caps.latest.revision: 4
 ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082961"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="59851-102">Tworzenie wielu obszarów działania</span><span class="sxs-lookup"><span data-stu-id="59851-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="40781-102">Tworzenie wielu obszarów działania</span><span class="sxs-lookup"><span data-stu-id="40781-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="59851-103">Jeśli tworzysz dużej liczby obszarach działania, można rozważyć tworzenie puli obszaru działania.</span><span class="sxs-lookup"><span data-stu-id="59851-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="59851-104">Za pomocą [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) obiektu, zamiast tworzenia dużej liczby poszczególnych obszarach działania za pomocą tych samych parametrach może poprawić wydajność.</span><span class="sxs-lookup"><span data-stu-id="59851-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="40781-103">Jeśli tworzysz dużej liczby obszarach działania, można rozważyć tworzenie puli obszaru działania.</span><span class="sxs-lookup"><span data-stu-id="40781-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="40781-104">Za pomocą [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) obiektu, zamiast tworzenia dużej liczby poszczególnych obszarach działania za pomocą tych samych parametrach może poprawić wydajność.</span><span class="sxs-lookup"><span data-stu-id="40781-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="59851-105">Tworzenie i używanie puli obszaru działania.</span><span class="sxs-lookup"><span data-stu-id="59851-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="40781-105">Tworzenie i używanie puli obszaru działania.</span><span class="sxs-lookup"><span data-stu-id="40781-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="59851-106">Poniższy przykład pokazuje, jak utworzyć pulę obszarem działania i jak uruchamiać polecenia asynchronicznie w obszarze działania puli.</span><span class="sxs-lookup"><span data-stu-id="59851-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="40781-106">Poniższy przykład pokazuje, jak utworzyć pulę obszarem działania i jak uruchamiać polecenia asynchronicznie w obszarze działania puli.</span><span class="sxs-lookup"><span data-stu-id="40781-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +79,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="59851-107">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="59851-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="40781-107">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="40781-107">See Also</span></span>
 
- [<span data-ttu-id="59851-108">Tworzenie InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="59851-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="40781-108">Tworzenie InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="40781-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)

@@ -9,45 +9,45 @@ ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
 ms.openlocfilehash: 9a01f948c5b474b4f9068030907601543e13cc7e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083029"
 ---
-# <a name="adding-and-invoking-commands"></a><span data-ttu-id="c5f8e-102">Dodawanie i wywoływanie poleceń</span><span class="sxs-lookup"><span data-stu-id="c5f8e-102">Adding and invoking commands</span></span>
+# <a name="adding-and-invoking-commands"></a><span data-ttu-id="86ca8-102">Dodawanie i wywoływanie poleceń</span><span class="sxs-lookup"><span data-stu-id="86ca8-102">Adding and invoking commands</span></span>
 
-<span data-ttu-id="c5f8e-103">Po utworzeniu obszaru działania, można dodawać do potoku Windows PowerShellcommands i skrypty i synchronicznie lub asynchronicznie Wywołaj potoku.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-103">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
+<span data-ttu-id="86ca8-103">Po utworzeniu obszaru działania, można dodawać do potoku Windows PowerShellcommands i skrypty i synchronicznie lub asynchronicznie Wywołaj potoku.</span><span class="sxs-lookup"><span data-stu-id="86ca8-103">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
 
-## <a name="creating-a-pipeline"></a><span data-ttu-id="c5f8e-104">Tworzenie potoku</span><span class="sxs-lookup"><span data-stu-id="c5f8e-104">Creating a pipeline</span></span>
+## <a name="creating-a-pipeline"></a><span data-ttu-id="86ca8-104">Tworzenie potoku</span><span class="sxs-lookup"><span data-stu-id="86ca8-104">Creating a pipeline</span></span>
 
- <span data-ttu-id="c5f8e-105">[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) klasa udostępnia kilka metod dodawania polecenia, parametry i skrypty do potoku.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-105">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="c5f8e-106">Wywoływanie potoku synchronicznie poprzez wywołanie przeciążenia [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metody lub asynchronicznie, wywołując przeciążenie [ System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) i następnie [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) metody.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-106">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+ <span data-ttu-id="86ca8-105">[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) klasa udostępnia kilka metod dodawania polecenia, parametry i skrypty do potoku.</span><span class="sxs-lookup"><span data-stu-id="86ca8-105">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="86ca8-106">Wywoływanie potoku synchronicznie poprzez wywołanie przeciążenia [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metody lub asynchronicznie, wywołując przeciążenie [ System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) i następnie [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) metody.</span><span class="sxs-lookup"><span data-stu-id="86ca8-106">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
-### <a name="addcommand"></a><span data-ttu-id="c5f8e-107">Addcommand —</span><span class="sxs-lookup"><span data-stu-id="c5f8e-107">AddCommand</span></span>
+### <a name="addcommand"></a><span data-ttu-id="86ca8-107">Addcommand —</span><span class="sxs-lookup"><span data-stu-id="86ca8-107">AddCommand</span></span>
 
-1. <span data-ttu-id="c5f8e-108">Tworzenie [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) obiektu.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-108">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+1. <span data-ttu-id="86ca8-108">Tworzenie [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) obiektu.</span><span class="sxs-lookup"><span data-stu-id="86ca8-108">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
    ```csharp
    PowerShell ps = PowerShell.Create();
    ```
 
-2. <span data-ttu-id="c5f8e-109">Dodaj polecenie, które chcesz wykonać.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-109">Add the command that you want to execute.</span></span>
+2. <span data-ttu-id="86ca8-109">Dodaj polecenie, które chcesz wykonać.</span><span class="sxs-lookup"><span data-stu-id="86ca8-109">Add the command that you want to execute.</span></span>
 
    ```csharp
    ps.AddCommand("Get-Process");
    ```
 
-3. <span data-ttu-id="c5f8e-110">Wywołaj polecenie.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-110">Invoke the command.</span></span>
+3. <span data-ttu-id="86ca8-110">Wywołaj polecenie.</span><span class="sxs-lookup"><span data-stu-id="86ca8-110">Invoke the command.</span></span>
 
    ```csharp
    ps.Invoke();
    ```
 
- <span data-ttu-id="c5f8e-111">Jeśli wywołasz [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) więcej niż jeden raz przed wywołaniem metody [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metody, wynik pierwsze polecenie w potoku do drugiej i tak dalej.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-111">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="c5f8e-112">Jeśli nie chcesz przekazać wynik poprzedniego polecenia do polecenia, dodaj go przez wywołanie metody [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) zamiast tego.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-112">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
+ <span data-ttu-id="86ca8-111">Jeśli wywołasz [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) więcej niż jeden raz przed wywołaniem metody [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metody, wynik pierwsze polecenie w potoku do drugiej i tak dalej.</span><span class="sxs-lookup"><span data-stu-id="86ca8-111">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="86ca8-112">Jeśli nie chcesz przekazać wynik poprzedniego polecenia do polecenia, dodaj go przez wywołanie metody [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) zamiast tego.</span><span class="sxs-lookup"><span data-stu-id="86ca8-112">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
 
-### <a name="addparameter"></a><span data-ttu-id="c5f8e-113">AddParameter</span><span class="sxs-lookup"><span data-stu-id="c5f8e-113">AddParameter</span></span>
+### <a name="addparameter"></a><span data-ttu-id="86ca8-113">AddParameter</span><span class="sxs-lookup"><span data-stu-id="86ca8-113">AddParameter</span></span>
 
- <span data-ttu-id="c5f8e-114">Poprzedni przykład wykonuje jednego polecenia bez parametrów.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-114">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="c5f8e-115">Można dodać parametry do polecenia przy użyciu [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) metody na przykład, poniższy kod umożliwia pobranie listy wszystkich procesów, które są nazywane `PowerShell` systemem maszyny.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-115">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
+ <span data-ttu-id="86ca8-114">Poprzedni przykład wykonuje jednego polecenia bez parametrów.</span><span class="sxs-lookup"><span data-stu-id="86ca8-114">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="86ca8-115">Można dodać parametry do polecenia przy użyciu [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) metody na przykład, poniższy kod umożliwia pobranie listy wszystkich procesów, które są nazywane `PowerShell` systemem maszyny.</span><span class="sxs-lookup"><span data-stu-id="86ca8-115">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -55,7 +55,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="c5f8e-116">Można dodać dodatkowe parametry, wywołując [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) wielokrotnie.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-116">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
+ <span data-ttu-id="86ca8-116">Można dodać dodatkowe parametry, wywołując [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) wielokrotnie.</span><span class="sxs-lookup"><span data-stu-id="86ca8-116">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -64,7 +64,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="c5f8e-117">Możesz również dodać słownik nazw parametrów i wartości, wywołując [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) metody.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-117">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
+ <span data-ttu-id="86ca8-117">Możesz również dodać słownik nazw parametrów i wartości, wywołując [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) metody.</span><span class="sxs-lookup"><span data-stu-id="86ca8-117">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -77,9 +77,9 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ```
 
-### <a name="addstatement"></a><span data-ttu-id="c5f8e-118">AddStatement</span><span class="sxs-lookup"><span data-stu-id="c5f8e-118">AddStatement</span></span>
+### <a name="addstatement"></a><span data-ttu-id="86ca8-118">AddStatement</span><span class="sxs-lookup"><span data-stu-id="86ca8-118">AddStatement</span></span>
 
- <span data-ttu-id="c5f8e-119">Można symulować dzielenia na partie przy użyciu [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) metody, która dodaje dodatkowe oświadczenie na końcu potoku, poniższy kod umożliwia pobranie listy uruchomionych procesów o nazwie `PowerShell`, a następnie pobiera listę uruchomionych usług.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-119">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
+ <span data-ttu-id="86ca8-119">Można symulować dzielenia na partie przy użyciu [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) metody, która dodaje dodatkowe oświadczenie na końcu potoku, poniższy kod umożliwia pobranie listy uruchomionych procesów o nazwie `PowerShell`, a następnie pobiera listę uruchomionych usług.</span><span class="sxs-lookup"><span data-stu-id="86ca8-119">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -88,25 +88,25 @@ ps.AddStatement().AddCommand("Get-Service");
 ps.Invoke();
 ```
 
-### <a name="addscript"></a><span data-ttu-id="c5f8e-120">AddScript</span><span class="sxs-lookup"><span data-stu-id="c5f8e-120">AddScript</span></span>
+### <a name="addscript"></a><span data-ttu-id="86ca8-120">AddScript</span><span class="sxs-lookup"><span data-stu-id="86ca8-120">AddScript</span></span>
 
- <span data-ttu-id="c5f8e-121">Istniejący skrypt można uruchomić, wywołując [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metody.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-121">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="c5f8e-122">Poniższy przykład dodaje skrypt do potoku i uruchamia go.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-122">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="c5f8e-123">W tym przykładzie przyjęto założenie, skrypt o nazwie istnieje już `MyScript.ps1` w folderze o nazwie `D:\PSScripts`.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-123">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
+ <span data-ttu-id="86ca8-121">Istniejący skrypt można uruchomić, wywołując [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metody.</span><span class="sxs-lookup"><span data-stu-id="86ca8-121">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="86ca8-122">Poniższy przykład dodaje skrypt do potoku i uruchamia go.</span><span class="sxs-lookup"><span data-stu-id="86ca8-122">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="86ca8-123">W tym przykładzie przyjęto założenie, skrypt o nazwie istnieje już `MyScript.ps1` w folderze o nazwie `D:\PSScripts`.</span><span class="sxs-lookup"><span data-stu-id="86ca8-123">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- <span data-ttu-id="c5f8e-124">Jest również wersja [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metody, która przyjmuje parametr logiczny o nazwie `useLocalScope`.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-124">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="c5f8e-125">Jeśli ten parametr jest równa `true`, a następnie skrypt jest uruchamiany w zakresie lokalnym.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-125">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="c5f8e-126">Poniższy kod będzie uruchomić skrypt w zakresie lokalnym.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-126">The following code will run the script in the local scope.</span></span>
+ <span data-ttu-id="86ca8-124">Jest również wersja [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metody, która przyjmuje parametr logiczny o nazwie `useLocalScope`.</span><span class="sxs-lookup"><span data-stu-id="86ca8-124">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="86ca8-125">Jeśli ten parametr jest równa `true`, a następnie skrypt jest uruchamiany w zakresie lokalnym.</span><span class="sxs-lookup"><span data-stu-id="86ca8-125">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="86ca8-126">Poniższy kod będzie uruchomić skrypt w zakresie lokalnym.</span><span class="sxs-lookup"><span data-stu-id="86ca8-126">The following code will run the script in the local scope.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 ```
 
-### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="c5f8e-127">Wywoływanie potoku synchronicznie</span><span class="sxs-lookup"><span data-stu-id="c5f8e-127">Invoking a pipeline synchronously</span></span>
+### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="86ca8-127">Wywoływanie potoku synchronicznie</span><span class="sxs-lookup"><span data-stu-id="86ca8-127">Invoking a pipeline synchronously</span></span>
 
- <span data-ttu-id="c5f8e-128">Po dodaniu elementów do potoku jego wywołaniu.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-128">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="c5f8e-129">Wywoływanie potoku synchronicznie, wywołanie przeciążenia [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metody.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-129">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="c5f8e-130">Poniższy przykład pokazuje, jak synchronicznego wywoływania potoku.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-130">The following example shows how to synchronously invoke a pipeline.</span></span>
+ <span data-ttu-id="86ca8-128">Po dodaniu elementów do potoku jego wywołaniu.</span><span class="sxs-lookup"><span data-stu-id="86ca8-128">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="86ca8-129">Wywoływanie potoku synchronicznie, wywołanie przeciążenia [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metody.</span><span class="sxs-lookup"><span data-stu-id="86ca8-129">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="86ca8-130">Poniższy przykład pokazuje, jak synchronicznego wywoływania potoku.</span><span class="sxs-lookup"><span data-stu-id="86ca8-130">The following example shows how to synchronously invoke a pipeline.</span></span>
 
 ```csharp
 using System;
@@ -136,11 +136,11 @@ namespace HostPS1e
 }
 ```
 
-### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="c5f8e-131">Asynchroniczne wywoływanie potoku</span><span class="sxs-lookup"><span data-stu-id="c5f8e-131">Invoking a pipeline asynchronously</span></span>
+### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="86ca8-131">Asynchroniczne wywoływanie potoku</span><span class="sxs-lookup"><span data-stu-id="86ca8-131">Invoking a pipeline asynchronously</span></span>
 
- <span data-ttu-id="c5f8e-132">Asynchroniczne wywoływanie potoku poprzez wywołanie przeciążenia [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) utworzyć [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) obiektu, a następnie wywołując [ System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) metody.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-132">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+ <span data-ttu-id="86ca8-132">Asynchroniczne wywoływanie potoku poprzez wywołanie przeciążenia [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) utworzyć [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) obiektu, a następnie wywołując [ System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) metody.</span><span class="sxs-lookup"><span data-stu-id="86ca8-132">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
- <span data-ttu-id="c5f8e-133">Poniższy przykład pokazuje, jak asynchroniczne wywoływanie potoku.</span><span class="sxs-lookup"><span data-stu-id="c5f8e-133">The following example shows how to invoke a pipeline asynchronously.</span></span>
+ <span data-ttu-id="86ca8-133">Poniższy przykład pokazuje, jak asynchroniczne wywoływanie potoku.</span><span class="sxs-lookup"><span data-stu-id="86ca8-133">The following example shows how to invoke a pipeline asynchronously.</span></span>
 
 ```csharp
 using System;
@@ -182,8 +182,8 @@ namespace HostPS3
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c5f8e-134">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="c5f8e-134">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="86ca8-134">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="86ca8-134">See Also</span></span>
 
- [<span data-ttu-id="c5f8e-135">Tworzenie InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="c5f8e-135">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="86ca8-135">Tworzenie InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="86ca8-135">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
 
- [<span data-ttu-id="c5f8e-136">Tworzenie ograniczonego obszaru działania</span><span class="sxs-lookup"><span data-stu-id="c5f8e-136">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
+ [<span data-ttu-id="86ca8-136">Tworzenie ograniczonego obszaru działania</span><span class="sxs-lookup"><span data-stu-id="86ca8-136">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
