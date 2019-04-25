@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: a7b2cc4d-292f-4714-888b-3b81536bef5d
 caps.latest.revision: 7
 ms.openlocfilehash: 0a71167926a39c821d25228825297e924e9682bd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56851499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080564"
 ---
-# <a name="resource-mapping-schema"></a><span data-ttu-id="090e0-102">Schemat mapowania zasobów</span><span class="sxs-lookup"><span data-stu-id="090e0-102">Resource Mapping Schema</span></span>
+# <a name="resource-mapping-schema"></a><span data-ttu-id="6a841-102">Schemat mapowania zasobów</span><span class="sxs-lookup"><span data-stu-id="6a841-102">Resource Mapping Schema</span></span>
 
-<span data-ttu-id="090e0-103">Rozszerzenie usług IIS OData zarządzania używa plików XML do definiowania Mapowanie zasobów.</span><span class="sxs-lookup"><span data-stu-id="090e0-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="090e0-104">Następujące XSD definiuje Schemat używany dla tych plików.</span><span class="sxs-lookup"><span data-stu-id="090e0-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="6a841-103">Rozszerzenie usług IIS OData zarządzania używa plików XML do definiowania Mapowanie zasobów.</span><span class="sxs-lookup"><span data-stu-id="6a841-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="6a841-104">Następujące XSD definiuje Schemat używany dla tych plików.</span><span class="sxs-lookup"><span data-stu-id="6a841-104">The following XSD defines the schema used for these files.</span></span>
 
-## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="090e0-105">Plik mapowania zasobów XSD</span><span class="sxs-lookup"><span data-stu-id="090e0-105">Resource Mapping File XSD</span></span>
+## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="6a841-105">Plik mapowania zasobów XSD</span><span class="sxs-lookup"><span data-stu-id="6a841-105">Resource Mapping File XSD</span></span>
 
-<span data-ttu-id="090e0-106">Następujące XSD definiuje schemat dla plików Mapowanie zasobów rozszerzenie usług IIS do zarządzania OData.</span><span class="sxs-lookup"><span data-stu-id="090e0-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
+<span data-ttu-id="6a841-106">Następujące XSD definiuje schemat dla plików Mapowanie zasobów rozszerzenie usług IIS do zarządzania OData.</span><span class="sxs-lookup"><span data-stu-id="6a841-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
