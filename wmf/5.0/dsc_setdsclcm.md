@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: f30f43265d9daa47383e42f0f8abf4844365ea6d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057954"
 ---
 # <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Polecenie cmdlet Set-DscLocalConfigurationManager obsługuje - parametru force
 

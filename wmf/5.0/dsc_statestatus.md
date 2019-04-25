@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058985"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Ujednolicony i spójny stan oraz reprezentacja stanu
 
@@ -28,7 +28,7 @@ W poniższej tabeli przedstawiono wynikowe stanu i statusu powiązane właściwo
 | S<sub>i</sub>                   | W stanie bezczynności                 | Success    | $false        | S                            | $null                          |
 | F<sub>i</sub>                   | PendingConfiguration | Niepowodzenie    | $false        | $null                        | F                              |
 | S, F                             | PendingConfiguration | Niepowodzenie    | $false        | S                            | F                              |
-| F, S                             | PendingConfiguration | Niepowodzenie    | $false        | S                            | F                              |
+| F,S                             | PendingConfiguration | Niepowodzenie    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Niepowodzenie    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
 | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Niepowodzenie    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
 | S, r                            | PendingReboot        | Success    | $true         | S                            | r                              |
@@ -36,9 +36,9 @@ W poniższej tabeli przedstawiono wynikowe stanu i statusu powiązane właściwo
 | r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 | r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
-- S<sub>i</sub>: szeregu zasobów, które zostały zastosowane pomyślnie
-- F<sub>i</sub>: szeregu zasobów, które stosowane niepomyślnie
-- r: z zasobem, który wymaga ponownego uruchomienia
+- S<sub>i</sub>: Szeregu zasobów, które zostały zastosowane pomyślnie
+- F<sub>i</sub>: Szeregu zasobów, które stosowane niepomyślnie
+- r: Zasób, który wymaga ponownego uruchomienia
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState

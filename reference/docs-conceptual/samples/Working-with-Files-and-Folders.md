@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Praca z plikami i folderami
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058934"
 ---
 # <a name="working-with-files-and-folders"></a>Praca z plikami i folderami
 

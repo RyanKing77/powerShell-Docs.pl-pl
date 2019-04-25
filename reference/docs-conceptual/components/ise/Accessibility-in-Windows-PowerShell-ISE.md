@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Ułatwienia dostępu w środowisku Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058458"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Ułatwienia dostępu w środowisku Windows PowerShell ISE
 
@@ -68,7 +68,7 @@ Podczas edytowania tekstu, można użyć następujących skrótów klawiaturowyc
 |**Znajdź następny w skrypcie**|F3|Okienko skryptu|
 |**Znajdź poprzedni w skrypcie**|SHIFT+F3|Okienko skryptu|
 |**Wklej**|CTRL + V|Okienku skryptów i okienku konsoli|
-|**Redo**|CTRL+Y|Okienku skryptów i okienku konsoli|
+|**Wykonaj ponownie**|CTRL+Y|Okienku skryptów i okienku konsoli|
 |**Zastąp w skrypcie**|CTRL+H|Okienko skryptu|
 |**Zapisywanie**|CTRL+S|Okienko skryptu|
 |**Zaznacz wszystko**|CTRL + A|Okienku skryptów i okienku konsoli|
@@ -78,10 +78,10 @@ Podczas edytowania tekstu, można użyć następujących skrótów klawiaturowyc
 
 Podczas uruchamiania skryptów w okienku skryptu, można użyć następujących skrótów klawiaturowych.
 
-|Akcja|Skróty klawiaturowe|
+|Akcja|Skrót klawiaturowy|
 |----------|---------------------|
 |**Nowy**|CTRL+N|
-|**Open**|CTRL+O|
+|**Otwórz**|CTRL+O|
 |**Run**|F5|
 |**Uruchom zaznaczone**|F8|
 |**Zatrzymaj wykonywanie**|CTRL+BREAK. CTRL + C, mogą służyć podczas kontekstu jest jednoznaczna, (gdy nie ma żadnego tekstu, zaznaczona).|
@@ -92,7 +92,7 @@ Podczas uruchamiania skryptów w okienku skryptu, można użyć następujących 
 
 Aby dostosować widok, w środowisku Windows PowerShell ISE, można użyć następujących skrótów klawiaturowych. Są one dostępne z wszystkich okienkach w aplikacji.
 
-|Akcja|Skróty klawiaturowe|
+|Akcja|Skrót klawiaturowy|
 |----------|---------------------|
 |**Przejdź do okienka konsoli**|CTRL+D|
 |**Przejdź do okienka skryptu**|CTRL+I|
@@ -109,7 +109,7 @@ Aby dostosować widok, w środowisku Windows PowerShell ISE, można użyć nast�
 
 Podczas debugowania skryptów, można użyć następujących skrótów klawiaturowych.
 
-|Akcja|Skróty klawiaturowe|Używanie w|
+|Akcja|Skrót klawiaturowy|Używanie w|
 |----------|---------------------|----------|
 |**Uruchom/Kontynuuj**|F5|W okienku skryptu, podczas debugowania skryptu|
 |**Wkrocz**|F11|W okienku skryptu, podczas debugowania skryptu|
@@ -125,9 +125,9 @@ Podczas debugowania skryptów, można użyć następujących skrótów klawiatur
 >
 > Umożliwia także skróty klawiaturowe, zaprojektowana z myślą o konsoli programu Windows PowerShell podczas debugowania skryptów w środowisku Windows PowerShell ISE. Aby użyć tych skrótów, możesz wpisz skrót w okienku konsoli i naciśnij klawisz ENTER.
 
-|Akcja|Skróty klawiaturowe|Używanie w|
+|Akcja|Skrót klawiaturowy|Używanie w|
 |----------|---------------------|----------|
-|**Kontynuuj**|C|W okienku konsoli, podczas debugowania skryptu|
+|**Continue**|C|W okienku konsoli, podczas debugowania skryptu|
 |**Wkrocz**|S|W okienku konsoli, podczas debugowania skryptu|
 |**Przekrocz nad**|V|W okienku konsoli, podczas debugowania skryptu|
 |**Wyjdź**|O|W okienku konsoli, podczas debugowania skryptu|
@@ -141,7 +141,7 @@ Podczas debugowania skryptów, można użyć następujących skrótów klawiatur
 
 Można użyć następujących skrótów klawiatury, korzystając z karty programu Windows PowerShell.
 
-|Akcja|Skróty klawiaturowe|
+|Akcja|Skrót klawiaturowy|
 |----------|---------------------|
 |**Zamknij kartę programu PowerShell**|CTRL+W|
 |**Nowa karta programu PowerShell**|CTRL+T|
@@ -152,7 +152,7 @@ Można użyć następujących skrótów klawiatury, korzystając z karty program
 
 Można użyć następujących skrótów klawiatury, aby uruchomić konsolę programu Windows PowerShell (PowerShell.exe) lub, aby zamknąć program Windows PowerShell ISE.
 
-|Akcja|Skróty klawiaturowe|
+|Akcja|Skrót klawiaturowy|
 |----------|---------------------|
 |**Exit**|ALT+F4|
 |**Rozpocznij PowerShell.exe** (konsoli środowiska Windows PowerShell)|CTRL+SHIFT+P|

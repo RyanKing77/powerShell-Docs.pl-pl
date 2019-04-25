@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 385bb7223b19c8ace8088ba469e543721a527b99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057529"
 ---
 # <a name="uninstallation-instructions"></a>Instrukcje dotyczące odinstalowywania
 

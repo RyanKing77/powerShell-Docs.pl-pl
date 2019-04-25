@@ -2,12 +2,12 @@
 title: Obsługa zdalna usługi WS-Management (WSMan) w programie PowerShell Core
 description: Komunikacji zdalnej w programie PowerShell Core za pomocą usługi WS-Management
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058883"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>Obsługa zdalna usługi WS-Management (WSMan) w programie PowerShell Core
 
@@ -28,7 +28,7 @@ Aby uzyskać więcej informacji, zobacz problem [#1193](https://github.com/Power
 
 Skrypt
 
-1. Tworzy katalog dla wtyczki w ramach %windir%\System32\PowerShell
+1. Tworzy katalog dla wtyczki w `$env:windir\System32\PowerShell`
 1. Kopiuje pwrshplugin.dll do tej lokalizacji
 1. Generuje plik konfiguracji
 1. Rejestruje to wtyczki za pomocą usługi WinRM

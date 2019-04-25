@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Ulepszenia aparatu programu PowerShell w programie WMF 5.1
 ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055568"
 ---
 # <a name="powershell-engine-improvements"></a>Ulepszenia aparatu programu PowerShell
 
@@ -32,7 +32,7 @@ Ulepszenia przykład (Twoje wyniki mogą się różnić w zależności od sprzę
 
 > [!Note]
 > Jednej zmiany związane z uruchamiania mogą mieć wpływ na niektóre scenariusze nieobsługiwane.
-> Program PowerShell nie jest już odczytuje pliki `$pshome\*.ps1xml` — te pliki zostały przekonwertowane na C#, aby uniknąć niektórych plików i obciążenie procesora CPU przetwarzania XML plików.
+> Program PowerShell nie jest już odczytuje pliki `$pshome\*.ps1xml` — te pliki zostały przekonwertowane na C# uniknąć niektórych plików i obciążenie Procesora przetwarzania plików XML.
 > Pliki nadal istnieje do działu pomocy technicznej w wersji 2 side-by-side, więc w przypadku zmiany zawartość pliku nie będzie miała wpływu na V5, tylko w wersji 2.
 > Należy zauważyć, że zmiany zawartości tych plików, nigdy nie było to obsługiwany scenariusz.
 
