@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58059858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075328"
 ---
-# <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>Element TableRowEntry TableRowEntries dla tablecontrol — (w formacie)
+# <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableRowEntry, element — TableRowEntries, TableControl (format)
 
 Definiuje dane, które są wyświetlane w wierszu tabeli.
 

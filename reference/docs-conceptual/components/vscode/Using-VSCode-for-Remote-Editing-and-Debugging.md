@@ -1,15 +1,15 @@
 ---
-title: Edytowanie i debugowanie zdalne za pomocą programu Visual Studio Code
-description: Edytowanie i debugowanie zdalne za pomocą programu Visual Studio Code
+title: Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
+description: Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: bab1a629a7e9dafd5957cf93025abb18b8a4f326
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086679"
 ---
-# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Edytowanie i debugowanie zdalne za pomocą programu Visual Studio Code
+# <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
 
 Dla osób, które były zapoznać się z środowiska ISE może pamiętasz, że można uruchomić `psedit file.ps1` z zintegrowana Konsola umożliwia otwieranie plików — lokalnego lub zdalnego — kliknij prawym przyciskiem myszy w środowisku ISE.
 
@@ -61,7 +61,7 @@ To wyjaśnienie watered w dół, polecenia cmdlet:
 - `Enter-PSSession -ContainerId foo` i `Enter-PSSession -VmId foo` rozpocząć sesję za pomocą programu PowerShell bezpośrednio
 - `Enter-PSSession -HostName foo` Uruchamia sesję za pośrednictwem protokołu SSH
 
-Aby uzyskać więcej informacji na `Enter-PSSession`, zapoznaj się z dokumentami [tutaj](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
+Aby uzyskać więcej informacji na `Enter-PSSession`, zapoznaj się z dokumentami [tutaj](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
 
 Czy mogę używać SSH dla niego komunikację zdalną ponieważ zamierzam z systemu macOS do maszyny Wirtualnej systemu Ubuntu na platformie Azure.
 

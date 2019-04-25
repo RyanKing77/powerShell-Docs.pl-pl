@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Funkcja FileList w galerii
 ms.openlocfilehash: 5f372c943c73fa8e1014657394e40eaedef5d045
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084814"
 ---
 # <a name="filelist-feature-in-the-gallery"></a>Funkcja FileList w galerii
 

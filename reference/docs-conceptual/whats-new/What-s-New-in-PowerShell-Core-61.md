@@ -3,11 +3,11 @@ title: Co nowego w programie PowerShell Core 6.1
 description: Nowe funkcje i zmiany w programie PowerShell Core 6.1
 ms.date: 09/13/2018
 ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984514"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086136"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Co nowego w programie PowerShell Core 6.1
 

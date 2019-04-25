@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f19f12c0-82e9-42f6-a7df-76c45b733855
 caps.latest.revision: 8
 ms.openlocfilehash: d78c865b869f802c7ebe2743942b6f21681de4b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850757"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082604"
 ---
 # <a name="runspace09-sample"></a>Przykład Runspace09
 
@@ -23,7 +23,7 @@ W tym przykładzie pokazano, jak dodać skrypt do potoku [System.Management.Auto
 
 Ten przykładowy skrypt wymaga programu Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 W przykładzie pokazano poniżej.
 

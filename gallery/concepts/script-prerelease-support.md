@@ -4,11 +4,11 @@ contributor: keithb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Wersje wstępne skryptów
 ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084644"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Wersje wstępne skryptów
 

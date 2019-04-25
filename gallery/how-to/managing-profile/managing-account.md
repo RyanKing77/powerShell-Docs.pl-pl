@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Ustawienia konta galerii programu PowerShell
 ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084524"
 ---
 # <a name="powershell-gallery-account-settings"></a>Ustawienia konta galerii programu PowerShell
 

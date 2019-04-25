@@ -3,11 +3,11 @@ ms.date: 08/09/2017
 keywords: programu PowerShell, polecenia cmdlet, pobierania, instalacji, konfiguracji, systemu windows 10, systemu windows 8.1, systemu windows 8.0, windows 7
 title: Instalowanie programu Windows PowerShell
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086480"
 ---
 # <a name="installing-windows-powershell"></a>Instalowanie programu Windows PowerShell
 

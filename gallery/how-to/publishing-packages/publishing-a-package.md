@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Tworzenie i publikowanie elementu
 ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055482"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084134"
 ---
 # <a name="creating-and-publishing-an-item"></a>Tworzenie i publikowanie elementu
 
