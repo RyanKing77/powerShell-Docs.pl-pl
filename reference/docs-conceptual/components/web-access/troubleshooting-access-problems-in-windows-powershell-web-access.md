@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Rozwiązywanie problemów z dostępem w programie windows powershell web access
 ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086599"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Rozwiązywanie problemów z programem Windows PowerShell Web Access
 
@@ -47,7 +47,7 @@ Ten problem dotyczy programu Internet Explorer.
 
 Taka sytuacja może wystąpić w przypadku użytkowników, którzy zalogowali się przy użyciu nazwy domeny zawierającej znaki w języku chińskim, lub jeśli nazwa serwera bramy zawiera co najmniej jeden znak w języku chińskim.
 
-#### <a name="workaround"></a>Obejście problemu
+#### <a name="workaround"></a>Obejście
 
 1. [Zainstaluj i uruchom program Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
 1. Zmień program Internet Explorer **tryb dokumentu** ustawienie *IE10* standardy.

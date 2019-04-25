@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
 caps.latest.revision: 8
 ms.openlocfilehash: 7a36f548a3eccdf2c9cad04a8bfe28bf4e8d6dfd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083743"
 ---
 # <a name="wide-view-basic"></a>Widok szeroki (podstawowy)
 
@@ -30,7 +30,7 @@ W tym przykładzie pokazano, jak zaimplementować podstawowe szerokie wyświetla
    > [!WARNING]
    > Ten plik formatowania definiuje wyświetlanie obiektu, który jest już zdefiniowana w pliku formatowania programu Windows PowerShell. Należy użyć `prependPath` parametru po uruchomieniu polecenia cmdlet, a nie można załadować to formatowanie pliku jako moduł.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 Ten plik formatowania pokazuje następujące elementy XML:
 

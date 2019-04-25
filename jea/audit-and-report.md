@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Inspekcja i raporty dotyczące technologii JEA
 ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084083"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Inspekcja i raporty dotyczące technologii JEA
 

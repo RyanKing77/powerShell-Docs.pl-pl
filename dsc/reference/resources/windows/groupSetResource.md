@@ -4,11 +4,11 @@ keywords: DSC, powershell, konfiguracja, ustawienia
 description: Udostępnia mechanizm do zarządzania grupami lokalnymi w docelowym węźle.
 title: DSC GroupSet Resource
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077181"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet Resource
 
@@ -42,7 +42,7 @@ Group [string] #ResourceName
 | Upewnij się| Wskazuje, czy istnieją grupy. Ustaw tę właściwość na "Brak", aby upewnić się, że nie istnieją grupy. Ustawienie "Przedstawia" (wartość domyślna) gwarantuje, że istnieją grupy.|
 | Elementy członkowskie| Użyj tej właściwości, aby zamienić bieżącego członkostwa w grupie z tymi elementami. Wartość tej właściwości jest tablicą ciągów formularza *domeny*\\*UserName*. Jeśli ta właściwość jest ustawiona w konfiguracji, nie używaj albo **MembersToExclude** lub **MembersToInclude** właściwości. Ten sposób spowoduje wygenerowanie błędu.|
 | MembersToInclude| Aby dodać członków do istniejących członkostwa w grupie, należy używać tej właściwości. Wartość tej właściwości jest tablicą ciągów formularza *domeny*\\*UserName*. Jeśli ustawisz tę właściwość w ramach konfiguracji należy używać **członków** właściwości. Ten sposób spowoduje wygenerowanie błędu.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości to "DependsOn ="[ ResourceName ResourceType]"".|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości to "DependsOn ="[ ResourceName ResourceType]"".|
 
 ## <a name="example-1-ensuring-groups-are-present"></a>Przykład 1: Zapewnianie grupy są obecne
 

@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Odinstalowywanie programu windows powershell web access
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058149"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Odinstalowywanie programu Windows PowerShell Web Access
 
@@ -19,12 +19,12 @@ Kroki opisane w tym temacie Usuń witrynę sieci Web programu Windows PowerShell
 
 ## <a name="notify-users"></a>Powiadom użytkowników
 
-Przed rozpoczęciem należy powiadomić użytkowników konsoli internetowej o usunięciu witryny internetowej.
+Przed rozpoczęciem należy powiadomić użytkowników konsoli sieci web, usunięcie witryny sieci Web.
 
 Odinstalowywanie programu Windows PowerShell Web Access nie powoduje odinstalowania usług IIS lub inne funkcje, które zostały zainstalowane automatycznie, ponieważ wymaga programu Windows PowerShell Web Access, ich uruchomienie.
 Proces odinstalowywania pozostawia zainstalowane funkcje, na których był zależny; Windows PowerShell Web Access Funkcje te można odinstalować oddzielnie, jeśli to konieczne.
 
-## <a name="recommended-quick-uninstallation"></a>Zalecana (szybka) dezinstalacja
+## <a name="recommended-quick-uninstallation"></a>Zalecana (Szybka) Dezinstalacja
 
 Procedury przedstawione w tej sekcji ułatwiają odinstalowywanie zarówno:
 
@@ -42,29 +42,29 @@ za pomocą poleceń cmdlet programu Windows PowerShell.
     -   Na Windows **Start** ekranu, kliknij przycisk **programu Windows PowerShell**.
 
 2. Typ `Uninstall-PswaWebApplication`, a następnie naciśnij klawisz **Enter**.
-   1. Jeśli masz określoną własną, niestandardową nazwę witryny internetowej, możesz dodać do polecenia parametr `-WebsiteName` i określić nazwę witryny internetowej.
+   1. Jeśli określono własną, niestandardową nazwę witryny internetowej, należy dodać `-WebsiteName` parametru do polecenia i podaj nazwę witryny sieci Web.
 
         `Uninstall-PswaWebApplication -WebsiteName <web-site-name>`
    1. Jeśli używasz niestandardowej aplikacji sieci web (innej niż aplikacja domyślna, **pswa**, Dodaj `-WebApplicationName` parametru do polecenia i określ nazwę aplikacji sieci web.
 
         `Uninstall-PswaWebApplication -WebApplicationName <web-application-name>`
-   1. Jeśli używasz certyfikatu testowego, dodaj parametr `DeleteTestCertificate` do polecenia cmdlet, jak pokazano w następującym przykładzie.
+   1. Jeśli używasz certyfikatu testowego, Dodaj `DeleteTestCertificate` parametru do polecenia cmdlet, jak pokazano w poniższym przykładzie.
 
         `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>Krok 2. Odinstalowywanie za pomocą poleceń cmdlet program Windows PowerShell Web Access
 
-1. Wykonaj jedną z następujących czynności, aby otworzyć sesję środowiska Windows PowerShell z podwyższonym poziomem uprawnień użytkownika. Jeśli sesja jest już otwarta, przejdź do następnego kroku.
+1. Wykonaj jedną z następujących czynności, aby otworzyć sesję środowiska Windows PowerShell z podwyższonym poziomem uprawnień użytkownika. Jeśli sesja jest już otwarty, przejdź do następnego kroku.
 
     -   Na pulpicie systemu Windows kliknij prawym przyciskiem myszy **środowiska Windows PowerShell** na pasku zadań, a następnie kliknij przycisk **Uruchom jako Administrator**.
 
     -   Na Windows **Start** ekranu, kliknij prawym przyciskiem myszy **programu Windows PowerShell**, a następnie kliknij przycisk **Uruchom jako Administrator**.
 
-1. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**, gdzie *nazwa_komputera* reprezentuje serwer zdalny, z którego chcesz usunąć program Windows PowerShell Web Access. Parametr `-Restart` powoduje automatyczne ponowne uruchomienie serwerów docelowych, jeśli jest to wymagane w związku z usunięciem składnika.
+1. Wpisz następujące polecenie, a następnie naciśnij klawisz **Enter**, gdzie *nazwa_komputera* reprezentuje serwer zdalny, z którego chcesz usunąć program Windows PowerShell Web Access. `-Restart` Parametru spowoduje automatyczne ponowne uruchomienie serwerów docelowych w razie potrzeby przez operację usunięcia.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
-    Aby usunąć role i funkcje z dysku VHD trybu offline, należy dodać zarówno parametr `-ComputerName`, jak i parametr `-VHD`. Parametr `-ComputerName` zawiera nazwę serwera, na którym należy zainstalować dysk VHD, a parametr `-VHD` zawiera ścieżkę do pliku dysku VHD na określonym serwerze.
+    Aby usunąć role i funkcje z dysku VHD trybu offline, należy dodać `-ComputerName` parametru i `-VHD` parametru. `-ComputerName` Parametr zawiera nazwę serwera, na którym należy zainstalować dysk VHD, a `-VHD` parametr zawiera ścieżkę do pliku VHD na określonym serwerze.
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
@@ -79,7 +79,7 @@ Procedury przedstawione w tej sekcji ułatwiają odinstalowywanie zarówno aplik
 ### <a name="step-1-delete-the-web-application-using-iis-manager"></a>Krok 1. Usuwanie aplikacji sieci web za pomocą Menedżera usług IIS
 
 
-1. Otwórz konsolę Menedżera usług IIS, wykonując jedną z następujących czynności. Jeśli jest on już otwarty, przejdź do następnego kroku.
+1. Otwórz konsolę Menedżera usług IIS, wykonując jedną z następujących czynności. Jeśli jest już otwarty, przejdź do następnego kroku.
 
     -   Na pulpicie systemu Windows, uruchom Menedżera serwera, klikając **Menedżera serwera** na pasku zadań systemu Windows. Na **narzędzia** menu w Menedżerze serwera kliknij **Internet Information Services (IIS) Manager**.
 
@@ -99,7 +99,7 @@ Procedury przedstawione w tej sekcji ułatwiają odinstalowywanie zarówno aplik
 >
 > Certyfikat nie jest usuwany podczas dezinstalacji.
 >
-> Jeśli chcesz usunąć utworzony przez Ciebie certyfikat z podpisem własnym lub używany certyfikat testowy, zrób to w Menedżerze usług IIS.
+> Utworzony certyfikat z podpisem własnym lub używany certyfikat testowy, a chcesz go usunąć, należy usunąć certyfikat w Menedżerze usług IIS.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Krok 2. Odinstalowywanie za pomocą funkcji Kreator usuwania ról i program Windows PowerShell Web Access
 
@@ -111,7 +111,7 @@ Procedury przedstawione w tej sekcji ułatwiają odinstalowywanie zarówno aplik
 
 1. Na **Zarządzaj** menu, kliknij przycisk **Usuń role i funkcje**.
 
-1. Na **serwer docelowy wybierz** stronie, wybierz serwer lub dysk VHD trybu offline, z którego chcesz usunąć tę funkcję. Aby wybrać dysk VHD trybu offline, najpierw wybierz serwer, na którym należy zainstalować dysk VHD, a następnie wybierz plik dysku VHD. Po wybraniu serwera docelowego kliknij **Dalej**.
+1. Na **serwer docelowy wybierz** stronie, wybierz serwer lub dysk VHD trybu offline, z którego chcesz usunąć tę funkcję. Aby wybrać dysk VHD trybu offline, najpierw wybierz serwer, na którym chcesz zainstalować dysk VHD, a następnie wybierz plik wirtualnego dysku twardego. Po wybraniu serwera docelowego kliknij **Dalej**.
 
 1. Kliknij przycisk **dalej** ponownie, aby przejść do **usuwanie funkcji** strony.
 

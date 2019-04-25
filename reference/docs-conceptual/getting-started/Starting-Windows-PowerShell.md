@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Uruchamianie programu Windows PowerShell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688322"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058356"
 ---
 # <a name="starting-windows-powershell"></a>Uruchamianie programu Windows PowerShell
 Program PowerShell jest skryptów dll aparat, który jest osadzony na wielu hostach.  Najbardziej typowe hosta, który będzie uruchamiany są interaktywne wiersza polecenia PowerShell.exe i PowerShell_ISE.exe interaktywne środowisko obsługi skryptów.

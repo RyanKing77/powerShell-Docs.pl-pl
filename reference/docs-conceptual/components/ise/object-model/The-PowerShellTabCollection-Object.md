@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Obiekt PowerShellTabCollection
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ms.openlocfilehash: d9088b26de35360b8258d3f15924b3010a986d15
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086618"
 ---
 # <a name="the-powershelltabcollection-object"></a>Obiekt PowerShellTabCollection
 

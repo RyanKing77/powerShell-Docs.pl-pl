@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 28cd186ab3a08a0da4ff81f5a21514f239770d13
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058084"
 ---
 # <a name="script-tracing-and-logging"></a>Śledzenie i rejestrowanie skryptów
 
@@ -18,11 +18,11 @@ Dostępne są następujące zdarzenia:
 
 | Kanał | Operacyjne                                 |
 |---------|---------------------------------------------|
-| Poziom   | Verbose                                     |
+| Poziom   | Pełny                                     |
 | OpCode  | Utworzenie                                      |
 | Zadanie    | CommandStart                                |
 | Słowo kluczowe | obszar działania                                    |
-| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
+| Identyfikator zdarzenia | Engine_ScriptBlockCompiled (0x1008 = 4104)  |
 | Wiadomość | Tworzenie tekstu Scriptblock (%1 %2): </br> %3 </br> Blok skryptu, identyfikator: %4 |
 
 
@@ -32,11 +32,11 @@ Po włączeniu pełnego rejestrowania, zapisuje funkcji początku i końcu znacz
 
 | Kanał | Operacyjne                                            |
 |---------|--------------------------------------------------------|
-| Poziom   | Verbose                                                |
+| Poziom   | Pełny                                                |
 | OpCode  | Otwórz (/ zamykanie)                                         |
 | Zadanie    | CommandStart (/ CommandStop)                           |
 | Słowo kluczowe | obszar działania                                               |
-| EventId | Blok skryptu\_wywołania\_Start\_szczegółów (0x1009 = 4105) / </br> Blok skryptu\_wywołania\_pełną\_szczegółów (0x100A = 4106) |
+| Identyfikator zdarzenia | Blok skryptu\_wywołania\_Start\_szczegółów (0x1009 = 4105) / </br> Blok skryptu\_wywołania\_pełną\_szczegółów (0x100A = 4106) |
 | Wiadomość | Wprowadzenie (/ ukończone) wywołanie ScriptBlock identyfikator: %1 </br> Identyfikator działania: %2 |
 
 Identyfikator jest identyfikator GUID reprezentujący blok skryptu, (które mogą zostać skorelowane zdarzenia o identyfikatorze 0x1008) i identyfikator obszaru działania reprezentuje obszar działania, w którym uruchomiono ten blok skryptu.

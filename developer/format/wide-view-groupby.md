@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56850750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083658"
 ---
 # <a name="wide-view-groupby"></a>Widok szeroki (GroupBy)
 
@@ -30,7 +30,7 @@ W tym przykładzie pokazano, jak zaimplementować szerokie, który wyświetla gr
    > [!WARNING]
    > Ten plik formatowania definiuje wyświetlanie obiektu, który jest już zdefiniowany programu Windows PowerShell, formatowanie plików. Należy użyć `prependPath` parametru po uruchomieniu polecenia cmdlet, a nie można załadować to formatowanie pliku jako moduł.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 Ten plik formatowania pokazuje następujące elementy XML:
 

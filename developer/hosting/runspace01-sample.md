@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
 caps.latest.revision: 11
 ms.openlocfilehash: eec9c616fc6d5240db185f764a3ea2c8f9575d03
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082791"
 ---
 # <a name="runspace01-sample"></a>Przykład Runspace01
 
@@ -23,7 +23,7 @@ Ten przykład ilustruje sposób używania [System.Management.Automation.Powershe
 
  Ten przykładowy skrypt wymaga programu Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 - Tworzenie [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) obiektu, aby uruchamiać polecenia.
 

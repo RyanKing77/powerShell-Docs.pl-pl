@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Program Windows PowerShell Desired State Configuration — omówienie
 ms.openlocfilehash: 3e4f0afa17ab60bfa98f1b86b9830462a7c8e1cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079975"
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Program Windows PowerShell Desired State Configuration — omówienie
 

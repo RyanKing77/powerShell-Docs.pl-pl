@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC grupy
 ms.openlocfilehash: 123e09b54a923af942a15f80fa7291c555b4235f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077351"
 ---
 # <a name="dsc-group-resource"></a>Zasób DSC grupy
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux nxScript zasobów
 ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077827"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>DSC dla systemu Linux nxScript zasobów
 
@@ -37,7 +37,7 @@ nxScript <string> #ResourceName
 | TestScript| Zawiera skrypt. Gdy wywołujesz [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) polecenia cmdlet, ten skrypt jest uruchamiany. Jeśli zwróci ona kod zakończenia różny od 0, SetScript zostanie uruchomiony. Jeśli zwróci ona kod zakończenia 0, **SetScript** nie będzie działać. **TestScript** również jest uruchamiany, gdy wywołujesz [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) polecenia cmdlet. Jednak w tym przypadku **SetScript** nie będzie działać niezależnie od tego, jaki kod zakończenia jest zwracana z **TestScript**. **TestScript** musi zwracać kod zakończenia 0, jeśli rzeczywistą konfigurację odpowiada bieżącej konfiguracji żądanego stanu, a wyjście kodu inne niż 0, jeśli nie jest zgodny. (Ostatnia konfiguracja wdrożonymi na węzeł, który używa DSC jest bieżąca konfiguracja żądanego stanu). Skrypt musi zaczynać się od shebang, na przykład 1#!/bin/bash.1|
 | Użytkownik| Użytkownik do uruchomienia skryptu jako.|
 | Grupa| Grupa, aby uruchomić skrypt jako.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 

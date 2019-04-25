@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea, programu powershell, zabezpieczeń
 title: Zagadnienia dotyczące zabezpieczeń usługi JEA
-ms.openlocfilehash: ede727f0f30412d520712d6ba855ba2008375d9a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084780"
 ---
 # <a name="jea-security-considerations"></a>Zagadnienia dotyczące zabezpieczeń usługi JEA
 
@@ -127,7 +127,7 @@ Na przykład rozważmy następujący wpis możliwości roli:
 ```
 
 Ta funkcja roli umożliwia użytkownikom uruchamianie każdego polecenia cmdlet programu PowerShell przy użyciu rzeczownik "Procesu" z modułu Microsoft.PowerShell.Management.
-Użytkownicy może być konieczne dostęp do poleceń cmdlet, takich jak `Get-Process` Aby zrozumieć, jakie aplikacje działają w systemie i `Stop-Process` kill dowolne zawiesiła się w aplikacji.
+Użytkownicy może być konieczne dostęp do poleceń cmdlet, takich jak `Get-Process` Aby zrozumieć, jakie aplikacje działają w systemie i `Stop-Process` można skasować wszystkie aplikacje, które nie odpowiadają.
 Jednak ten wpis umożliwia także `Start-Process`, który może służyć do uruchamiania dowolnego programu z uprawnieniami administrator o pełnych uprawnieniach.
 Program nie musi być zainstalowana lokalnie w systemie, dzięki czemu osoba atakująca może po prostu uruchomić program w udziale plików, zapewniającej połączenia użytkownikowi uprawnienia administratora lokalnego, uruchomienia złośliwego oprogramowania i nie tylko. "
 

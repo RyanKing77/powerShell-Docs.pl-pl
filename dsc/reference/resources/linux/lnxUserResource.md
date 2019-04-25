@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxUser
 ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077657"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC dla systemu Linux zasób nxUser
 
@@ -45,7 +45,7 @@ nxUser <string> #ResourceName
 | PasswordChangeRequired| Wskazuje, czy użytkownik może zmienić hasła. Ustaw tę właściwość na **$true** aby upewnić się, że użytkownik nie może zmienić hasło i ustaw ją na **$false** umożliwia użytkownikowi zmianę hasła. Wartość domyślna to **$false**. Ta właściwość jest oceniane tylko, jeśli konto użytkownika nie istniał wcześniej i jest tworzona.|
 | HomeDirectory| Katalog macierzysty dla użytkownika.|
 | Identyfikator grupy| Identyfikator grupy głównej dla użytkownika.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator bloku skryptu konfiguracji zasobu, który chcesz uruchomić najpierw jest "ResourceName" i jego typem jest "ResourceType", składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator bloku skryptu konfiguracji zasobu, który chcesz uruchomić najpierw jest "ResourceName" i jego typem jest "ResourceType", składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 

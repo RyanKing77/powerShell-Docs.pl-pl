@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 188ede0c558210a746ad0f6c6cef6f571b280878
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 8b3ebd22e03bf9bdd5f26965137a1b1ce9f47c3e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058781"
 ---
 # <a name="declare-base-class"></a>Deklarowanie klasy bazowej
-Klasa środowiska Windows PowerShell można zadeklarować jako typu podstawowego dla innej klasy środowiska Windows PowerShell.
+Klasa programu Windows PowerShell można zadeklarować jako typ podstawowy dla innej klasy środowiska Windows PowerShell.
 
 ```powershell
 class bar
@@ -25,7 +25,7 @@ class baz : bar {}
 [baz]::new().foo() # return 100500
 ```
 
-Można także użyć istniejących typów .NET Framework jako klasy podstawowe:
+Można również użyć istniejących typów programu .NET Framework jako klay bazowe:
 
 ```powershell
 class MyIntList : system.collections.generic.list[int]

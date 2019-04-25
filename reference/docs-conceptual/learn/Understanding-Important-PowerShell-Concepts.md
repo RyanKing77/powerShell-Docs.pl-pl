@@ -1,16 +1,16 @@
 ---
 ms.date: 08/23/2018
 keywords: polecenia cmdlet programu PowerShell
-title: Opis ważnych pojęć związanych z programu PowerShell
+title: Opis ważnych pojęć związanych z programem PowerShell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058594"
 ---
-# <a name="understanding-important-powershell-concepts"></a>Opis ważnych pojęć związanych z programu PowerShell
+# <a name="understanding-important-powershell-concepts"></a>Opis ważnych pojęć związanych z programem PowerShell
 
 Projekt programu PowerShell integruje pojęcia z wielu różnych środowiskach. Niektóre pojęcia będą niczym nowym do osoby z doświadczeniem w środowiskach programowania i powłoki. Jednak kilka osób będzie wiadomo o wszystkich z nich. Zapoznawanie się z niektórymi z tych koncepcji omówienie przydatne powłoki.
 
@@ -38,6 +38,6 @@ Od czasu programu PowerShell automatycznie analizowania i przetwarzania wiersza 
 > Po uruchomieniu aplikacji grafiki w programie PowerShell zostanie otwarta w oknie aplikacji.
 > Program PowerShell interwencji, tylko gdy przetwarzania wiersza polecenia dane wejściowe możesz dostaw lub dane wyjściowe aplikacji powrót do okna konsoli. Nie dotyczy to, jak działa aplikacja wewnętrznie.
 
-## <a name="powershell-uses-some-c-syntax"></a>Niektóre przypadki składni języka C# korzysta z programu PowerShell
+## <a name="powershell-uses-some-c-syntax"></a>Za pomocą programu PowerShell niektórych C# składni
 
-Program PowerShell jest oparta na .NET Framework. Współużytkuje niektóre funkcje składni i słów kluczowych z języka programowania C#. Poznawania programu PowerShell mogą ułatwić znacznie poznawać język C#. Jeśli znasz już C#, te podobieństwa wprowadzać poznawania programu PowerShell jest łatwiejsze.
+Program PowerShell jest oparta na .NET Framework. Współużytkuje niektóre funkcje składni i słów kluczowych z C# języka programowania. Poznawania programu PowerShell może ułatwić znacznie się C#. Jeśli znasz już C#, wprowadzić te podobieństwa poznawania programu PowerShell jest łatwiejsze.

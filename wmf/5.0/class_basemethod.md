@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d7aec1a2ba8964e877ddd7406609fe135b1eb462
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0e79127faf3f9bf6fe7d525db5bb946daf3b93e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058628"
 ---
 # <a name="call-base-class-method"></a>Wywoływanie metody klasy bazowej
 
-Można zastąpić istniejących metod w podklasach. Aby to zrobić, należy zadeklarować metody przy użyciu tej samej nazwie i podpisie:
+Można zastąpić istniejących metod w podklasach. Aby to zrobić, należy zadeklarować metody przy użyciu tej samej nazwie i sygnaturze:
 
 ```powershell
 class baseClass
@@ -26,7 +26,7 @@ class childClass1 : baseClass
 [childClass1]::new().foo() # return 200600
 ```
 
-Aby wywołać metod klasy podstawowej z implementacji przesłoniętych, rzutowanie na klasę podstawową ($[baseclass —] to) na wywołania:
+Aby wywołać metody klasy bazowej z implementacji zastąpione, rzutowanie do klasy bazowej ($[baseClass] to) na wywołania:
 
 ```powershell
 class childClass2 : baseClass
@@ -40,7 +40,7 @@ class childClass2 : baseClass
 [childClass2]::new().foo() # return 301500
 ```
 
-Wirtualne są wszystkie metody programu PowerShell. -Virtual metod .NET w podklasy można ukryć, przy użyciu takiej samej składni jak w przypadku zastąpienia: tylko deklarować metod o tej samej nazwie i podpisie.
+Wszystkie metody programu PowerShell są wirtualne. Można ukryć .NET metod niewirtualnych w podklasę przy użyciu tej samej składni, podobnie jak w przypadku zastąpienia: tylko do deklarowania metod o tej samej nazwie i sygnaturze.
 
 ```powershell
 class MyIntList : system.collections.generic.list[int]

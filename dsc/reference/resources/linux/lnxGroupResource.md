@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC for Linux nxGroup Resource
 ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077863"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC for Linux nxGroup Resource
 
@@ -37,7 +37,7 @@ nxGroup <string> #ResourceName
 | MembersToInclude| Określa, że użytkownicy, którzy chcesz, aby upewnić się, są członkami grupy.|
 | MembersToExclude| Określa, że użytkownicy, którzy chcesz, aby upewnić się, nie są członkami grupy.|
 | PreferredGroupID| Ustawia identyfikator grupy podana jest wartość, jeśli jest to możliwe. Jeśli identyfikator grupy jest obecnie w użyciu, dalej identyfikator grupy dostępności jest używany.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = '[ResourceType]ResourceName'`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Przykład
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC for Linux nxFile Resource
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078031"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC for Linux nxFile Resource
 
@@ -44,13 +44,13 @@ nxFile <string> #ResourceName
 | Upewnij się| Określa, czy należy sprawdzić, czy plik istnieje. Ustaw tę właściwość "Present", aby upewnić się, że plik istnieje. Ustaw ją na "Brak", aby upewnić się, że plik nie istnieje. Wartość domyślna to "Istnieje".|
 | Typ| Określa, czy zasób konfigurowany jest katalog lub plik. Ustaw tę właściwość na "directory", aby wskazać, czy zasób jest katalogiem. Ustaw ją na "plik", aby wskazać, czy zasób jest plik. Wartość domyślna to "file"|
 | Zawartość| Określa zawartość pliku, na przykład określonego ciągu.|
-| Suma kontrolna| Definiuje typ używany do określenia, czy dwa pliki są takie same. Jeśli **sumy kontrolnej** nie jest określona, tylko nazwa pliku lub katalogu jest używana do porównania. Wartości: "ctime", "mtime" lub "md5".|
+| Sumy kontrolnej| Definiuje typ używany do określenia, czy dwa pliki są takie same. Jeśli **sumy kontrolnej** nie jest określona, tylko nazwa pliku lub katalogu jest używana do porównania. Wartości: "ctime", "mtime" lub "md5".|
 | Recurse| Wskazuje, czy podkatalogi są uwzględniane. Ustaw tę właściwość na **$true** aby wskazać, że podkatalogi do uwzględnienia. Wartość domyślna to **$false**. **Uwaga:** Ta właściwość jest prawidłowa tylko kiedy **typu** ustawiono właściwość katalogu.|
 | Force| Niektóre operacje na plikach (takich jak zastąpienie pliku lub usunięcie katalogu, który nie jest pusty) spowoduje wystąpienie błędu. Za pomocą **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.|
 | Łącza| Określa zachowanie dla łącza symbolicznego. Ustaw tę właściwość na "follow" stosować linki symboliczne i działania w elemencie docelowym łącza (na przykład. Skopiuj plik zamiast łącza). Ustaw tę właściwość na "manage", które działają na link (np. Skopiuj link, sam). Ustaw tę właściwość na "ignorowania", aby zignorować łącza symbolicznego.|
 | Grupa| Nazwa **grupy** być właścicielem pliku lub katalogu.|
 | Tryb| Określa odpowiednich uprawnień dla zasobu, w notacji ósemkowej lub symboliczne. (na przykład 777 lub rwxrwxrwx). Przy użyciu notacji symbolicznych, nie są oferowane pierwszy znak, który wskazuje katalog lub plik.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Dodatkowe informacje
 
@@ -98,7 +98,7 @@ nxFile resolvConf
 ```
 
 
-Krok 3. Użyj funkcji programu PowerShell, aby zamienić Windows podziały wierszy przy użyciu systemu Linux, znaki podziału wiersza.
+Krok 3. Użyj funkcji programu PowerShell, aby zamienić Windows podziały wierszy przy użyciu systemu Linux, znaki podziału wiersza.
 
 ```
 Function LinuxString($inputStr){

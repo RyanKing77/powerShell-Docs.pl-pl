@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Jakie s Nowość w programie PowerShell 50 środowiska ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
 ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058186"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Co&#39;s Nowość w środowisku Windows PowerShell ISE
 W tym temacie opisano nowe i zaktualizowane funkcje, które zostały wprowadzone w wersjach programu Windows PowerShell zintegrowane Scripting Environment (ISE).

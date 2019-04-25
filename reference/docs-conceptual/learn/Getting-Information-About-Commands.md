@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Uzyskiwanie informacji dotyczących poleceń
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057710"
 ---
 # <a name="getting-information-about-commands"></a>Uzyskiwanie informacji dotyczących poleceń
 
@@ -74,7 +74,7 @@ Jest bardziej użyteczny przyjrzeć się ograniczonego zestawu poleceń.
 > Gwiazdka (\*) służy do dopasowanie w argumentach polecenia programu PowerShell z symbolami wieloznacznymi. \* Oznacza, że "odpowiada jednej lub więcej znaków". Możesz wpisać `Get-Command a*` można znaleźć wszystkie polecenia, które zaczynają się od litery "". W odróżnieniu od dopasowanie z symbolami wieloznacznymi w **cmd.exe**, programu PowerShell symbol wieloznaczny będzie również dopasowanie kropki.
 
 Użyj **CommandType** parametru `Get-Command` można pobrać natywnych poleceń innych typów.
-.
+cmdlet.
 
 Aby uzyskać aliasów poleceń, które są przypisane pseudonimy poleceń, wpisz:
 

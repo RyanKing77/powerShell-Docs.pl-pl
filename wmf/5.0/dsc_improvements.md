@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4338364c64eff2a7a59c5ae9fe80f75760cade42
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: dc72debe0dc7e56c9e59e6903c7d6cf3025e622c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058237"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc"></a>Ulepszenia platformy Desired State Configuration (DSC)
 
-## <a name="dsc-feedback-survey"></a>Ankiety opinii DSC
+## <a name="dsc-feedback-survey"></a>Ankieta opinii DSC
 
-Gdy masz chwilę, aby korzystać z nowych funkcji konfiguracji żądanego stanu środowiska PowerShell i funkcji wprowadzonych w tej wersji, Pomóż nam kontynuować wprowadzanie produktu lepsze wykonując szybkiego [WMF 5.0 RTM, ankiety](https://www.surveymonkey.com/r/SGLQM5W). Badanie pozwoli udostępniać swoją opinię na temat te nowe funkcje i możliwości.
+Gdy masz trochę czasu, aby korzystać z nowych funkcji programu PowerShell Desired State Configuration i funkcji wprowadzonych w tej wersji, Pomóż nam nadal ulepsza produktu, wykonując szybkie [WMF 5.0 RTM ankiety](https://www.surveymonkey.com/r/SGLQM5W). W ramach tej ankiety pozwoli prośba o opinię na temat tych nowych funkcji i funkcji.
 
-Dziękujemy za udział w naszej ankiecie! Twoja opinia jest dla nas bardzo ważna.
+Dziękujemy za udział w ankiecie naszych! Twoja opinia jest dla nas bardzo ważne.
 
-**Zaktualizowano w celu 1.1 wersji modułu PSDesiredStateConfiguration**
+**Wersja modułu PSDesiredStateConfiguration została zaktualizowana do 1.1**
 
-Wersja modułu PsDesiredStateConfiguration została zaktualizowana do 1.1. Konfiguracji DSC skompilowany w wersji zapoznawczej programu WMF 5.0 luty 2015 lub starszym, nie będzie działać w programie PowerShell/WMF 5.0.
+Zaktualizowano wersję modułu PsDesiredStateConfiguration 1.1. Konfiguracje DSC, skompilowany na program WMF 5.0 (wersja zapoznawcza) lutego 2015 lub starszym nie będzie działać w programie PowerShell/WMF 5.0.

@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Jak używać profilów w środowisku Windows PowerShell ISE
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
 ms.openlocfilehash: b319aa089c2a4a7008acd9850f15342dac70aee2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057540"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Jak używać profilów w środowisku Windows PowerShell ISE
 

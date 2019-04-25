@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
 ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081025"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
 W tym przykładzie pokazano, jak zastąpić obsługuje wywołań metod kontener `Copy-Item`, `Get-ChildItem`, `New-Item`, i `Remove-Item` polecenia cmdlet. Metody te powinny być zrealizowane, gdy magazyn danych zawiera elementy, które są kontenery. Kontener jest grupą elementów podrzędnych w ramach wspólnego elementu nadrzędnego. Klasa dostawcy, w tym przykładzie pochodzi z [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasy.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 > [!IMPORTANT]
 > Klasa dostawcy najprawdopodobniej będzie dziedziczyć [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)

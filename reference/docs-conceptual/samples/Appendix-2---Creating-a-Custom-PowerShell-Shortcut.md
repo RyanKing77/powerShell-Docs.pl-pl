@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Dodatek 2 Tworzenie niestandardowego skrótu programu PowerShell
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 ms.openlocfilehash: e8081b7a64d313c8ef4bbccf95f250445dd68ad9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057858"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Dodatek 2 — Tworzenie niestandardowego skrótu programu PowerShell
 

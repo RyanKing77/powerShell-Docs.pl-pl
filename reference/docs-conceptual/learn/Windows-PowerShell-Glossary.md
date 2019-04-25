@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Słownik programu PowerShell Windows
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057363"
 ---
 # <a name="windows-powershell-glossary"></a>Słownik programu PowerShell Windows
 
@@ -22,16 +22,16 @@ ms.locfileid: "53405467"
 |Parametr dynamiczny|Parametr, który zostanie dodany do poleceń cmdlet programu Windows PowerShell, funkcji lub skryptu w określonych warunkach. Polecenia cmdlet, funkcji, dostawców i skrypty można dodać parametry dynamiczne.|
 |formatowanie pliku|Pliku programu Windows PowerShell XML, który ma. rozszerzenie format.ps1xml i który definiuje, jak środowiska Windows PowerShell wyświetla obiekt na podstawie jego typu .NET Framework.|
 |Globalny stan sesji|Stan sesji, który zawiera dane, które są dostępne dla użytkownika z sesji środowiska Windows PowerShell.|
-|Host|Interfejs, który korzysta z aparatu programu Windows PowerShell do komunikowania się z użytkownikiem. Na przykład host Określa, jak monity są obsługiwane między programu Windows PowerShell i użytkownika.|
+|host|Interfejs, który korzysta z aparatu programu Windows PowerShell do komunikowania się z użytkownikiem. Na przykład host Określa, jak monity są obsługiwane między programu Windows PowerShell i użytkownika.|
 |Aplikacja hosta|Program, który ładuje aparatu programu Windows PowerShell do swojego procesu i używa go do wykonywania operacji.|
 |Metoda przetwarzania danych wejściowych|Metoda, która polecenia cmdlet można używać do przetwarzania rekordów otrzymywanych jako dane wejściowe. Metody przetwarzania danych wejściowych obejmują metody BeginProcessing, metoda ProcessRecord, metoda EndProcessing i metoda StopProcessing.|
 |manifestu modułu|Moduł programu Windows PowerShell, zawierającej manifest, którego klucz polach RootModule jest puste.|
 |manifestu modułu|Program Windows PowerShell plik danych (psd1), który opisuje zawartość modułu i który określa sposób przetwarzania modułu.|
 |Stan sesji modułu|Stan sesji, który zawiera dane publicznych i prywatnych, modułu programu Windows PowerShell. Dane prywatne, w tym stanie sesji nie jest dostępny dla użytkownika z sesji środowiska Windows PowerShell.|
 |Błąd niepowodujący|Błąd, który nie zatrzymuje programu Windows PowerShell z dalszego przetwarzania polecenia.|
-|rzeczownik|Wyrazu, który następuje łącznik na nazwę polecenia cmdlet programu Windows PowerShell. Rzeczownikiem opisano zasoby, na których działa polecenia cmdlet.|
-|zestaw parametrów|Grupa parametrów, które mogą służyć w tym samym poleceniu do wykonania określonej akcji.|
-|potoku|W programie Windows PowerShell do wysyłania wyników z poprzedniego polecenia jako dane wejściowe dla następnego polecenia w potoku.|
+|Rzeczownik|Wyrazu, który następuje łącznik na nazwę polecenia cmdlet programu Windows PowerShell. Rzeczownikiem opisano zasoby, na których działa polecenia cmdlet.|
+|Zestaw parametrów|Grupa parametrów, które mogą służyć w tym samym poleceniu do wykonania określonej akcji.|
+|Potoku|W programie Windows PowerShell do wysyłania wyników z poprzedniego polecenia jako dane wejściowe dla następnego polecenia w potoku.|
 |Potok|Serię poleceń połączone przez operatorów potoku (&#124;) (ASCII 124). Każdy operator potok wysyła wyniki z poprzedniego polecenia jako dane wejściowe dla następnego polecenia.|
 |PSSession|Typ sesji programu Windows PowerShell, który jest tworzony, zarządzane i zamknięte przez użytkownika.|
 |Moduł głównego|Moduł określony w kluczu polach RootModule w manifeście modułu.|
@@ -39,12 +39,12 @@ ms.locfileid: "53405467"
 |Blok skryptu|W programie Windows PowerShell programowania języka, zbiór instrukcji lub wyrażeń, które mogą być używane jako pojedyncza jednostka. Blok skryptu można zaakceptować argumenty i zwracać wartości.|
 |Moduł skryptu|Moduł programu Windows PowerShell, którego moduł główny jest plik modułu skryptu (.psm1). Do modułu skryptu może lub nie może zawierać manifestu modułu.|
 |plik modułu skryptu|Plik, który zawiera skrypt programu Windows PowerShell. Elementy członkowskie, które moduł skrypt eksportuje definiowane przez skrypt. Skrypt modułu pliki mają rozszerzenie nazwy pliku psm1.|
-|Shell|Interpreter poleceń, który służy do przekazywania poleceń do systemu operacyjnego.|
+|powłoka|Interpreter poleceń, który służy do przekazywania poleceń do systemu operacyjnego.|
 |Parametr przełącznika|Parametr, który nie przyjmuje argumentu.|
 |błąd powodujący zakończenie|Błąd podczas zatrzymywania programu Windows PowerShell z przetworzeniem polecenia.|
 |Transakcji|Pojedynczej Atomowej jednostki pracy. Praca w ramach transakcji, należy wykonać jako całości. dowolną część transakcji zakończy się niepowodzeniem, cała transakcja nie powiedzie się.|
 |typy plików|Plik programu Windows PowerShell XML, który ma rozszerzenie .ps1xml i który rozciąga się właściwościom typów programu Microsoft .NET Framework w programie Windows PowerShell.|
-|Zlecenia|Wyrazu, który poprzedza łącznik nazwę polecenia cmdlet programu Windows PowerShell. Czasownik Opisuje akcję wykonywaną przez polecenie cmdlet.|
+|zlecenia|Wyrazu, który poprzedza łącznik nazwę polecenia cmdlet programu Windows PowerShell. Czasownik Opisuje akcję wykonywaną przez polecenie cmdlet.|
 |Windows PowerShell|Powłoka wiersza polecenia oraz opartego na zadaniach technologii wykonywania skryptów, która zapewnia kompleksowe sterowanie Administratorzy IT i zautomatyzowane korzystanie z systemu zadań administracyjnych.|
 |Polecenia programu Windows PowerShell|Elementy w potoku, które powodują akcji można przeprowadzić. Polecenia programu Windows PowerShell są wpisane na klawiaturze lub wywołana programowo.|
 |Plik danych programu Windows PowerShell|Plik tekstowy, który ma rozszerzenie nazwy pliku psd1. Programu Windows PowerShell korzysta z plików danych do różnych celów, takich jak przechowywanie danych manifestu modułu i zapisując przetłumaczone ciągi dla internacjonalizacji skryptu.|
