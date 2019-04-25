@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6e4e0cf6-19e0-44b8-8b40-d6f6075276cf
 caps.latest.revision: 5
 ms.openlocfilehash: 489d8bcdabe904d6a3d2bc6cdb9d7e23d09cbef2
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251221"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075192"
 ---
 # <a name="activity-parameters"></a>Parametry działań
 
@@ -39,7 +39,7 @@ W poniższej tabeli wymieniono nazwy zalecane i funkcje dotyczące parametrów d
 |**Force**<br>Typ danych: SwitchParameter|Implementuje ten parametr, aby wskazać, że użytkownik będzie mógł wykonać akcję nawet, jeśli ograniczenia zostaną napotkane, gdy określono parametr. Parametr nie zezwala na zabezpieczenia, aby być narażone na ataki. Na przykład ten parametr umożliwia użytkownikowi zastąpić plik tylko do odczytu.|
 |**Obejmują**<br>Typ danych: Ciąg]|Implementowanie tego parametru, użytkownik może zawierać coś w działaniu. Aby uzyskać więcej informacji o tym, jak używać filtrów danych wejściowych, zobacz [wprowadzania parametrów filtru](input-filter-parameters.md).|
 |**Przyrostowe**<br>Typ danych: SwitchParameter|Implementowanie tego parametru, aby wskazać, że przetwarzanie odbywa się przyrostowo gdy określono parametr. Na przykład ten parametr umożliwia użytkownikowi wykonywać przyrostowe kopie zapasowe, które wykonują kopie zapasowe plików tylko od czasu ostatniej kopii zapasowej.|
-|**InputObject**<br>Typ danych: Obiekt|Implementuje ten parametr, gdy polecenie cmdlet pobiera inne polecenia cmdlet. Podczas definiowania **InputObject** parametru zawsze określać **ValueFromPipeline** — słowo kluczowe, kiedy Deklarujesz **parametru** atrybutu. Aby uzyskać więcej informacji o korzystaniu z filtrów wejściowych, zobacz [wprowadzania parametrów filtru](./input-filter-parameters.md).|
+|**InputObject**<br>Typ danych: Object|Implementuje ten parametr, gdy polecenie cmdlet pobiera inne polecenia cmdlet. Podczas definiowania **InputObject** parametru zawsze określać **ValueFromPipeline** — słowo kluczowe, kiedy Deklarujesz **parametru** atrybutu. Aby uzyskać więcej informacji o korzystaniu z filtrów wejściowych, zobacz [wprowadzania parametrów filtru](./input-filter-parameters.md).|
 |**Wstaw**<br>Typ danych: SwitchParameter|Implementowanie tego parametru, jeśli parametr jest określony, polecenie cmdlet wstawia element.|
 |**Interaktywne**<br>Typ danych: SwitchParameter|Implementowanie tego parametru, polecenie cmdlet działa interaktywnie z użytkownikiem, gdy parametr jest określony.|
 |**Interval**<br>Typ danych: Tablica skrótów|Implementowanie tego parametru, użytkownik może określić tabeli mieszania słów kluczowych, która zawiera wartości. W poniższym przykładzie przedstawiono przykładowe wartości dla **interwał** parametru: `-interval @{ResumeScan=15; Retry=3}`.|

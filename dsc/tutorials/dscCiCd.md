@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Tworzenie potoku ciągłej integracji i ciągłego wdrażania za pomocą DSC
 ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076479"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Tworzenie potoku ciągłej integracji i ciągłego wdrażania za pomocą DSC
 
@@ -37,7 +37,7 @@ Jest to komputer, na którym odbywa się na wszystkie zadania konfigurowania i u
 
 Komputer kliencki musi być komputerem Windows za pomocą zainstalowane następujące oprogramowanie:
 
-- [Git](https://git-scm.com/)
+- [Usługa Git](https://git-scm.com/)
 - sklonowany z repozytorium lokalnego narzędzia git https://github.com/PowerShell/Demo_CI
 - Edytor tekstu, takie jak [programu Visual Studio Code](https://code.visualstudio.com/)
 
@@ -303,7 +303,7 @@ Test skrypty użyj [usług Pester](https://github.com/pester/Pester/wiki) i [Pos
 Konfiguracje testowe DSC, samodzielnie, aby upewnić się, konfiguracje będzie wykonywał, czego oczekuje się, gdy uruchamiają oni testy jednostek.
 Skrypt używa testów jednostkowych [usług Pester](https://github.com/pester/Pester/wiki).
 
-#### <a name="integration-tests"></a>Testy integracji
+#### <a name="integration-tests"></a>Testy integracyjne
 
 Testy integracji testu konfiguracji systemu, aby upewnić się, że gdy zintegrowana z innymi składnikami, system jest skonfigurowany zgodnie z oczekiwaniami. Te testy w docelowym węźle po został skonfigurowany za pomocą DSC.
 Skrypt testu integracji używa kombinacji [usług Pester](https://github.com/pester/Pester/wiki) i [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) składni.

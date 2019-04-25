@@ -3,11 +3,11 @@ ms.date: 10/30/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Rozwiązywanie problemów z platformą DSC
 ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076552"
 ---
 # <a name="troubleshooting-dsc"></a>Rozwiązywanie problemów z platformą DSC
 

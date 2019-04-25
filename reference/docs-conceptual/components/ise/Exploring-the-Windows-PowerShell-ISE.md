@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Eksplorowanie środowiska Windows PowerShell ISE
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086905"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Eksplorowanie środowiska Windows PowerShell ISE
 
@@ -35,14 +35,14 @@ Następujące przyciski znajdują się na pasku narzędzi.
 |Przycisk|Funkcja|
 |----------|------------|
 |**Nowy**|Zostanie otwarty nowy skrypt.|
-|**Open**|Otwiera istniejący skrypt lub plik.|
+|**Otwórz**|Otwiera istniejący skrypt lub plik.|
 |**Zapisywanie**|Zapisuje skryptu lub pliku.|
 |**Cut**|Wycina zaznaczony tekst i kopiuje go do Schowka.|
 |**Kopiuj**|Kopiuje zaznaczony tekst do Schowka.|
 |**Wklej**|Wkleja zawartość Schowka w lokalizacji kursora.|
 |**Wyczyść okienko danych wyjściowych**|Czyści całą zawartość w okienku danych wyjściowych.|
 |**Cofnij**|Odwraca akcję, która właśnie została wykonana.|
-|**Redo**|Wykonuje akcję, która została właśnie cofnięte.|
+|**Wykonaj ponownie**|Wykonuje akcję, która została właśnie cofnięte.|
 |**Uruchom skrypt**|Uruchamia skrypt.|
 |**Uruchom zaznaczone**|Uruchamia wybrane części skryptu.|
 |**Zatrzymaj wykonywanie**|Zatrzymuje skrypt, który jest uruchomiony.|

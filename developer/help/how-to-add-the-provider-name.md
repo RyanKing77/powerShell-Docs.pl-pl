@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c0e1c40b-d2fd-41c3-a5f9-7584ea6bf50b
 caps.latest.revision: 4
 ms.openlocfilehash: fec90170571ae66cf75241c48a45b560d4ead2de
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56846382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083292"
 ---
 # <a name="how-to-add-the-provider-name"></a>Jak dodać nazwę dostawcy
 
@@ -39,6 +39,6 @@ ms.locfileid: "56846382"
 
 ## <a name="compiling-the-code"></a>Kompilowanie kodu
 
-## <a name="robust-programming"></a>Programowanie niezawodnych aplikacji
+## <a name="robust-programming"></a>Skuteczne programowanie
 
-## <a name="net-framework-security"></a>Zabezpieczenia architektury .NET
+## <a name="net-framework-security"></a>Zabezpieczenia.NET Framework

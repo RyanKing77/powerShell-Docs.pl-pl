@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Jak debugować skrypty w środowisku Windows PowerShell ISE
 ms.openlocfilehash: b7af2de83a3f796a2057514e36ad8b74367e8ce2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086871"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Jak debugować skrypty w środowisku Windows PowerShell ISE
 
@@ -143,7 +143,7 @@ Przechodzenie krok po kroku jest proces uruchamiania jednej instrukcji w danym m
 | **Wkrocz** | Wykonuje instrukcję bieżący, a następnie zatrzymuje się na następnej instrukcji. W przypadku bieżącej instrukcji funkcji lub wywołanie skryptu, a następnie debuger nie wchodzi do tej funkcji lub skryptu, w przeciwnym razie zatrzymuje się w następnej instrukcji. | Naciśnij klawisz **F11** lub na **debugowania** menu, kliknij przycisk **Step Into**, lub wpisz w okienku konsoli **S** i naciśnij klawisz **ENTER**. |
 | **Przekrocz nad** | Wykonuje instrukcję bieżący, a następnie zatrzymuje się na następnej instrukcji. Jeśli bieżąca instrukcja funkcji lub wywołanie skryptu, a następnie debuger wykonuje całą funkcji lub skryptu, a następnie zatrzymuje się na następną instrukcję po wywołaniu funkcji. | Naciśnij klawisz **F10** lub na **debugowania** menu, kliknij przycisk **Step Over**, lub wpisz w okienku konsoli **V** i naciśnij klawisz **ENTER**. |
 | **Wyjdź** | Kroki poza bieżącą funkcję i jeden poziom, jeśli funkcja jest zagnieżdżony w górę. Jeśli w głównym, skrypt zostanie wykonany na końcu lub do następnego punktu przerwania. Pominięto instrukcje są wykonywane, ale nie jest zmieniana za pośrednictwem. | Naciśnij klawisz **SHIFT + F11**, lub na **debugowania** menu, kliknij przycisk **Step Out**, lub wpisz w okienku konsoli **O** i naciśnij klawisz **ENTER**. |
-| **Kontynuuj** | Kontynuuje wykonywanie na końcu lub do następnego punktu przerwania. Pominięte funkcje i wywołania są wykonywane, ale nie jest zmieniana za pośrednictwem. | Naciśnij klawisz **F5** lub na **debugowania** menu, kliknij przycisk **Uruchom/Kontynuuj**, lub wpisz w okienku konsoli **C** i naciśnij klawisz **ENTER**. |
+| **Continue** | Kontynuuje wykonywanie na końcu lub do następnego punktu przerwania. Pominięte funkcje i wywołania są wykonywane, ale nie jest zmieniana za pośrednictwem. | Naciśnij klawisz **F5** lub na **debugowania** menu, kliknij przycisk **Uruchom/Kontynuuj**, lub wpisz w okienku konsoli **C** i naciśnij klawisz **ENTER**. |
 
 ## <a name="how-to-display-the-values-of-variables-while-debugging"></a>Wyświetlanie wartości zmiennych podczas debugowania
 

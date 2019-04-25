@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: Program PowerShell
 title: Moduły wymagające akceptacji licencji
 ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075226"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Moduły wymagające akceptacji licencji
 
@@ -28,7 +28,7 @@ Moduły, które chcesz wymagać od użytkowników zaakceptować licencję powinn
 ## <a name="impact-on-installsaveupdate-module"></a>Wpływu na instalacji/Save/Update-Module
 
 - Polecenia cmdlet instalacji/Save/aktualizacji będzie obsługiwać nowy parametr — AcceptLicense, które będą zachowywać się, jak gdyby użytkownik był wyświetlany licencji.
-- Jeśli nie określono AcceptLicense — RequiredLicenseAcceptance ma wartość True, użytkownik będzie wyświetlany w pliku license.txt i zostanie wyświetlony monit o: &quot;czy akceptujesz postanowienia licencyjne (tak/nie/YesToAll/NoToAll)&quot;.
+- Jeśli nie określono AcceptLicense — RequiredLicenseAcceptance ma wartość True, użytkownik będzie wyświetlany w pliku license.txt i zostanie wyświetlony monit o: &quot;Czy akceptujesz postanowienia licencyjne (tak/nie/YesToAll/NoToAll)&quot;.
   - Jeśli licencja zostanie zaakceptowana
     - **Save-Module:** moduł zostanie skopiowany do użytkownika&#39;s system
     - **Install-Module:** moduł zostanie skopiowany do użytkownika&#39;system s do odpowiedniego folderu (na podstawie zakresu)
@@ -51,7 +51,7 @@ Określanie `–Force` nie jest wystarczające, aby zaakceptować licencję. `�
 
 ## <a name="examples"></a>PRZYKŁADY
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Przykład 1: Manifestu modułu aktualizacji za wymaganie akceptacji licencji
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Przykład 1: Aktualizowanie manifestu modułu, wymaganie akceptacji licencji
 
 ```powershell
 Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
@@ -65,7 +65,7 @@ Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -Pr
 
 To polecenie aktualizuje plik manifestu i ustawia flagę RequireLicenseAcceptance na wartość true.
 
-### <a name="example-2-install-module-requiring-license-acceptance"></a>Przykład 2: Instalacja modułu wymaganie akceptacji licencji
+### <a name="example-2-install-module-requiring-license-acceptance"></a>Przykład 2: Zainstaluj moduł wymagające akceptacji licencji
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -88,7 +88,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 To polecenie przedstawia licencji z pliku license.txt i wyświetla monit o zaakceptowanie licencji.
 
-### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Przykład 3: Instalacja modułu wymaganie akceptacji licencji przy użyciu - AcceptLicense
+### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Przykład 3: Zainstaluj moduł wymagające akceptacji licencji na z - AcceptLicense
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
@@ -96,7 +96,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 Moduł jest zainstalowany bez dowolnego wiersza, aby zaakceptować licencję.
 
-### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Przykład 4: Instalacja modułu wymaganie akceptacji licencji parametru - Force
+### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Przykład 4: Zainstaluj moduł wymagające akceptacji licencji na z - Force
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -Force
@@ -113,7 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
    .InstallPackage
 ```
 
-### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Przykład 5: Instalacja modułu z zależnościami wymagające akceptacji licencji
+### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Przykład 5: Instalowanie modułu z zależnościami wymagające akceptacji licencji
 
 Moduł "ModuleWithDependency" zależy od modułu "ModuleRequireLicenseAcceptance". Użytkownik jest monitowany, aby zaakceptować licencję.
 
@@ -135,7 +135,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Przykład 6: Instalacja modułu z zależnościami wymaganie akceptacji licencji i - AcceptLicense
+### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Przykład 6: Instalowanie modułu z zależnościami wymaganie akceptacji licencji i - AcceptLicense
 
 Moduł "ModuleWithDependency" zależy od modułu "ModuleRequireLicenseAcceptance". Użytkownik nie jest monitowany o zaakceptowanie licencji, jak określono AcceptLicense —.
 
@@ -184,7 +184,7 @@ Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 
 Moduł są zapisywane bez dowolnego wiersza, aby zaakceptować licencję.
 
-### <a name="example-10-update-module-requiring-license-acceptance"></a>Przykład 10: Aktualizacja modułu wymaganie akceptacji licencji
+### <a name="example-10-update-module-requiring-license-acceptance"></a>Przykład 10: Zaktualizuj moduł wymagające akceptacji licencji
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance
@@ -207,7 +207,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 To polecenie przedstawia licencji z pliku license.txt i wyświetla monit o zaakceptowanie licencji.
 
-### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Przykład 11: Aktualizacja modułu wymaganie akceptacji licencji przy użyciu - AcceptLicense
+### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Przykład 11: Zaktualizuj moduł wymagające akceptacji licencji na z - AcceptLicense
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense

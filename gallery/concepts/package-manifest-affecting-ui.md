@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: Program PowerShell
 title: Wartości manifestu pakietu, które mają wpływ na interfejs użytkownika galerii programu PowerShell
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084712"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Wartości manifestu pakietu, które mają wpływ na interfejs użytkownika galerii programu PowerShell
 
@@ -51,14 +51,14 @@ W poniższej tabeli przedstawiono elementy strony pakietu galerii programu Power
 
 Strona pakietu edytować galerii programu PowerShell umożliwia wydawcy zmienić kilka pól wyświetlanych dla pakietu, w szczególności:
 
-- Tytuł
+- Title
 - Opis
 - Podsumowanie
 - Adres URL ikony
 - Adres URL strony głównej projektu
 - Autorzy
 - Prawa autorskie
-- Tagi
+- Znaczniki
 - Informacje o wersji
 - Wymaga licencji
 
@@ -100,7 +100,7 @@ Odwołanie poniżej przedstawiono niektóre najczęściej używanych tagi, pocz�
 | Test | Testowanie jest mniej pożądana |
 | VersionControl | Wersja jest mniej dokładne, mimo że częściej używane  |
 | Rejestrowanie | Użyj preferowanych rejestrowania akcji |
-| Dziennik | Preferowany korzystanie z dziennika jako rzeczy |
+| Log | Preferowany korzystanie z dziennika jako rzeczy |
 | Kopia zapasowa |  |
 | IaaS |  |
 | Linux |  |

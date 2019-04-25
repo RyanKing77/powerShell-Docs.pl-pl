@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Pisanie tematów pomocy dotyczących konfiguracji DSC
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080189"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Pisanie tematów pomocy dotyczących konfiguracji DSC
 

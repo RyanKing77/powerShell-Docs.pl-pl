@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
 ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56852262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081006"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
 W tym przykładzie pokazano, jak zastąpić obsługuje wywołań metod kontener `Move-Item` i `Join-Path` polecenia cmdlet. Metody te powinny być zrealizowane, gdy użytkownik chce przenieść elementy znajdujące się w kontenerze, a Magazyn danych zawiera zagnieżdżone kontenery. Klasa dostawcy, w tym przykładzie pochodzi z [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) klasy.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 > [!IMPORTANT]
 > Klasa dostawcy będą najprawdopodobniej klasy pochodnej z jednego z następujących klas i prawdopodobnie zaimplementować inne interfejsy dostawcy:

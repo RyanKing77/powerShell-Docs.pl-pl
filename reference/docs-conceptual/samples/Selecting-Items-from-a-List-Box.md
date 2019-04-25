@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Wybieranie elementów w polu listy
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53405210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086072"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Wybieranie elementów w polu listy
 

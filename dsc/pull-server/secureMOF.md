@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zabezpieczanie pliku MOF
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079337"
 ---
 # <a name="securing-the-mof-file"></a>Zabezpieczanie pliku MOF
 
@@ -84,7 +84,7 @@ Poniższy przykład:
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>W węźle docelowym: tworzenie i eksportowanie certyfikatu
 
-> Węzeł docelowy: System Windows Server 2016 i Windows 10
+> Węzeł docelowy: Windows Server 2016 i Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -151,7 +151,7 @@ Poniższy przykład:
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>W węźle tworzenie: tworzenie i eksportowanie certyfikatu
 
-> Węzeł docelowy: System Windows Server 2016 i Windows 10
+> Węzeł docelowy: Windows Server 2016 i Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session

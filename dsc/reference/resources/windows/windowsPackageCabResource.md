@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
-title: Zasób Windowspackagecab DSC
+title: DSC WindowsPackageCab Resource
 ms.openlocfilehash: 035944e7ca5c7469250c48a19b79f2f2d5d38e9a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076943"
 ---
-# <a name="dsc-windowspackagecab-resource"></a>Zasób Windowspackagecab DSC
+# <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab Resource
 
 > Dotyczy: Program Windows PowerShell w wersji 5.1 i nowszych
 
@@ -38,7 +38,7 @@ Węzeł docelowy musi mieć zainstalowany moduł PowerShell narzędzie DISM. Aby
 | Upewnij się| Wskazuje, czy zainstalowano pakiet. Ustaw tę właściwość na "Brak", upewnij się, że nie zainstalowano pakiet (lub odinstalować pakiet, jeśli jest zainstalowana). Ustaw dla niej "Przedstawia" (wartość domyślna) upewnij się, że pakiet jest zainstalowany.|
 | Ścieżka| Wskazuje ścieżkę, w której znajduje się pakiet.|
 | Ścieżka dziennika| Określa pełną ścieżkę, której chcesz dostawcę Aby zapisać plik dziennika, aby zainstalować lub odinstalować pakiet.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości to "DependsOn ="[ ResourceName ResourceType]"".|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości to "DependsOn ="[ ResourceName ResourceType]"".|
 
 ## <a name="example"></a>Przykład
 

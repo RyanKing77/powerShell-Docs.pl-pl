@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Nawiązywanie kontaktu z właścicielami pakietu
 ms.openlocfilehash: 1adb0cfefc9e9c3f447e7345eaf0b088a04a452b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50004084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084066"
 ---
 # <a name="contacting-package-owners"></a>Nawiązywanie kontaktu z właścicielami pakietu
 

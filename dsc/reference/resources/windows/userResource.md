@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC użytkownika
 ms.openlocfilehash: 04543351df19160a2da05ccea96e5d392d8c55bf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687503"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076906"
 ---
 # <a name="dsc-user-resource"></a>Zasób DSC użytkownika
 
@@ -46,7 +46,7 @@ User [string] #ResourceName
 | PasswordChangeNotAllowed| Wskazuje, jeśli użytkownik może zmienić hasła. Ustaw tę właściwość na `$true` aby upewnić się, że użytkownik nie może zmienić hasło i ustaw ją na `$false` umożliwia użytkownikowi zmianę hasła. Wartość domyślna to `$false`.|
 | PasswordChangeRequired| Wskazuje, jeśli użytkownik musi zmienić hasło podczas następnego logowania. Ustaw tę właściwość na `$true` Jeśli użytkownik musi zmienić hasło. Wartość domyślna to `$true`.|
 | PasswordNeverExpires| Wskazuje, jeśli hasło wygaśnie. Aby upewnić się, że hasło dla tego konta nigdy nie wygasa, ustaw tę właściwość na `$true`i ustaw ją na `$false` Jeśli hasło wygaśnie. Wartość domyślna to `$false`.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest **ResourceName** a jej typ jest **ResourceType**, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 

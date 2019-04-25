@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Istotne zmiany dotyczące programu PowerShell w wersji 6.0
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085936"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Istotne zmiany dotyczące programu PowerShell w wersji 6.0
 
@@ -62,7 +62,7 @@ Zamiast tego zaleca się, że użytkownik, użyj polecenia cmdlet CIM (zwane ró
 
 Ze względu na użycie nieobsługiwanego interfejsów API `Microsoft.PowerShell.LocalAccounts` została usunięta z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
 
-### <a name="-computer-cmdlets"></a>Polecenia cmdlet środowiska `*-Computer`
+### <a name="-computer-cmdlets"></a>`*-Computer` Polecenia cmdlet
 
 Ze względu na użycie nieobsługiwanego interfejsy API zostały usunięte następujące polecenia cmdlet z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
 
@@ -71,11 +71,11 @@ Ze względu na użycie nieobsługiwanego interfejsy API zostały usunięte nast�
 - Remove-Computer
 - Przywracanie komputera
 
-### <a name="-counter-cmdlets"></a>Polecenia cmdlet środowiska `*-Counter`
+### <a name="-counter-cmdlets"></a>`*-Counter` Polecenia cmdlet
 
 Ze względu na użycie nieobsługiwanego interfejsów API `*-Counter` została usunięta z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
 
-### <a name="-eventlog-cmdlets"></a>Polecenia cmdlet środowiska `*-EventLog`
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` Polecenia cmdlet
 
 Ze względu na użycie nieobsługiwanego interfejsów API `*-EventLog` została usunięta z programu PowerShell Core. aż do znalezienia lepszym rozwiązaniem. `Get-WinEvent` i `Create-WinEvent` są dostępne na pobieranie i tworzenie zdarzeń na Windows.
 

@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Pakiet i przekazywanie zasobów do serwera ściągania
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079575"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Pakiet i przekazywanie zasobów do serwera ściągania
 

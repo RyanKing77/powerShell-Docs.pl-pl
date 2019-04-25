@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria programu powershell, polecenie cmdlet, galerii programu PowerShell, psget
 title: Praca z lokalnym PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084100"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Praca z lokalne repozytoria modułu PowerShellGet
 

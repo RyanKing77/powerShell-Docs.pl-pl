@@ -4,11 +4,11 @@ keywords: polecenia cmdlet programu PowerShell
 title: Bezpośrednie manipulowanie elementami
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
 ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086225"
 ---
 # <a name="manipulating-items-directly"></a>Bezpośrednie manipulowanie elementami
 

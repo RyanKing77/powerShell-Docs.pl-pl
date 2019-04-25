@@ -4,11 +4,11 @@ contributor: manikb
 keywords: Galeria, programu powershell, polecenie cmdlet, psget
 title: Skrypt za pomocą niezgodne wersje programu PowerShell
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084695"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skrypt za pomocą niezgodne wersje programu PowerShell
 

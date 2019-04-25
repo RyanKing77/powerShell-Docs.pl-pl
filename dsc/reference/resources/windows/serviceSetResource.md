@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób Serviceset DSC
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076839"
 ---
 # <a name="dsc-serviceset-resource"></a>Zasób Serviceset DSC
 
@@ -43,7 +43,7 @@ Service [string] #ResourceName
 | Stan| Wskazuje stan, który chcesz mieć pewność, czy usługi: **Zatrzymano** lub **systemem**.|
 | Upewnij się| Wskazuje, czy usługi istnieje w systemie. Ustaw tę właściwość na **nieobecne** aby upewnić się, że usługi nie istnieją. Ustawienie **obecne** (wartość domyślna) zapewnia, że istnieją usługi docelowej.|
 | Poświadczenie| Określa poświadczenia dla konta, które zostaną uruchomione zasób usługi. Ta właściwość i **BuiltinAccount** właściwości nie mogą być używane razem.|
-| DependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest *ResourceName* a jej typ jest *ResourceType*, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest *ResourceName* a jej typ jest *ResourceType*, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 

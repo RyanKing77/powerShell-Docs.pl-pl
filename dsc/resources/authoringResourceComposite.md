@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasoby złożone — przy użyciu konfiguracji DSC jako zasób
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53404735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076688"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Zasoby złożone: Przy użyciu konfiguracji DSC jako zasób
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 W rzeczywistych warunkach konfiguracji może stać się długie i złożone, wywołanie wiele różnych zasobów i ustawiania ogromną liczbę właściwości. Do rozwiązywania tę złożoność, można użyć konfiguracji Windows PowerShell Desired State Configuration (DSC) jako zasób w przypadku innych konfiguracji. Nazywamy to złożony zasobów. Zasób złożonego jest konfiguracji DSC, która przyjmuje parametry. Parametry konfiguracji działają jako właściwości zasobu. Konfiguracja zostanie zapisany jako plik o **. schema.psm1** rozszerzenie i zajmuje miejsce schematu pliku MOF i zasobu skryptu w typowych zasobów DSC (Aby uzyskać więcej informacji na temat zasobów DSC, zobacz [Windows Program PowerShell Desired State Configuration zasobów](resources.md).
 

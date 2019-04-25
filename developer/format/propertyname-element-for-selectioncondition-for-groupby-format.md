@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d1707317-6c26-4866-bcc1-8924103c9014
 caps.latest.revision: 6
 ms.openlocfilehash: 7241ea0ea364befa7ad4ab0af4c4209be72214a7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56844842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064819"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-groupby-format"></a>PropertyName, element — SelectionCondition, GroupBy (format)
 

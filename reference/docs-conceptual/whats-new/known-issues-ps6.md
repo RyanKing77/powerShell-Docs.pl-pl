@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Znane problemy dotyczące programu PowerShell w wersji 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085970"
 ---
 # <a name="known-issues-for-powershell-60"></a>Znane problemy dotyczące programu PowerShell w wersji 6.0
 
@@ -21,7 +21,7 @@ Uwaga: Z powodu podobieństwa wiele podstawowych podsystemów programu PowerShel
 
 W przeszłości program PowerShell został równomiernie bez uwzględniania wielkości liter, z pewnymi wyjątkami. W systemach operacyjnych podobnymi do systemu UNIX w systemie plików jest głównie wielkość liter i programu PowerShell jest zgodna ze standardem system plików; to jest dostępna za pośrednictwem na wiele sposobów, oczywiste i oczywiste.
 
-#### <a name="directly"></a>Bezpośrednio
+#### <a name="directly"></a>bezpośrednio
 
 - Podczas określania pliku w programie PowerShell, należy użyć odpowiedniej wielkości liter.
 

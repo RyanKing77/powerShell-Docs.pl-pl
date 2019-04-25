@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxSshAuthorizedKeys
 ms.openlocfilehash: d4cdb727a94a5e89e8401769f24977d49bcf4929
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077708"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC dla systemu Linux zasób nxSshAuthorizedKeys
 
@@ -34,8 +34,8 @@ nxAuthorizedKeys <string> #ResourceName
 | KeyComment| Komentarz Unikatowy klucz. Służy do jednoznacznego identyfikowania kluczy.|
 | Upewnij się| Określa, czy klucz jest zdefiniowana. Ustaw tę właściwość na "Brak", aby upewnić się, że klucz nie istnieje w pliku autoryzowanych kluczy użytkownika. Ustaw ją na "Obecny", aby upewnić się, że klucz jest zdefiniowana w pliku autoryzowanych kluczy użytkownika.|
 | Nazwa użytkownika| Nazwa użytkownika do zarządzania ssh autoryzacji kluczy. Jeśli nie zdefiniowana, użytkownik domyślny jest "root".|
-| Klawisz| Zawartość klucza. Jest to wymagane, jeśli **upewnij się, że** jest ustawiona na "Istnieje".|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| Klucz| Zawartość klucza. Jest to wymagane, jeśli **upewnij się, że** jest ustawiona na "Istnieje".|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 

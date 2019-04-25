@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób usługi DSC
 ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54048377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076898"
 ---
 # <a name="dsc-service-resource"></a>Zasób usługi DSC
 
-> Dotyczy: Program Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
 **Usługi** zasób w Windows PowerShell Desired State Configuration (DSC) zapewnia mechanizm zarządzania usługami na węzeł docelowy.
@@ -41,7 +41,7 @@ Service [string] #ResourceName
 | Nazwa| Wskazuje nazwę usługi. Należy pamiętać, że czasami jest inna niż nazwa wyświetlana. Możesz uzyskać listę usług i ich bieżący stan za pomocą polecenia cmdlet Get-Service.|
 | BuiltInAccount| Wskazuje, że konto logowania do użycia dla usługi. Wartości, które są dozwolone dla tej właściwości to: **Usługa lokalna**, **LocalSystem**, i **NetworkService**.|
 | Poświadczenie| Określa poświadczenia dla konta, które będzie działać usługa. Ta właściwość i __BuiltinAccount__ właściwości nie mogą być używane razem.|
-| DependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 | StartupType| Wskazuje typ uruchomienia usługi. Wartości, które są dozwolone dla tej właściwości to: **Automatyczne**, **wyłączone**, i **ręczne**|
 | Stan| Wskazuje stan, który chcesz zapewnić usługę.|
 | Opis | Określa opis usługi docelowej.|

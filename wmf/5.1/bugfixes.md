@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Poprawki błędów w programie WMF 5.1
 ms.openlocfilehash: f53fc40b79a3906ac2025b0eff342c0705b82655
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085052"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Poprawki błędów w programie WMF 5.1
 

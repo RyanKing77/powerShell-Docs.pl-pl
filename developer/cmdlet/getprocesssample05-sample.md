@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068015"
 ---
 # <a name="getprocesssample05-sample"></a>Przykład GetProcessSample05
 
@@ -53,7 +53,7 @@ Niniejszy przykład pokazuje pełną wersję polecenia cmdlet Get-Proc.
 
 Ten przykładowy skrypt wymaga programu Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 W przykładzie pokazano poniżej.
 
