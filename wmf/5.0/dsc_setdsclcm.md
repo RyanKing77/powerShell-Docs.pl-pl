@@ -2,17 +2,17 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.openlocfilehash: f30f43265d9daa47383e42f0f8abf4844365ea6d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55687692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057954"
 ---
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="6f54d-102">Polecenie cmdlet Set-DscLocalConfigurationManager obsługuje - parametru force</span><span class="sxs-lookup"><span data-stu-id="6f54d-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="eb9f9-102">Polecenie cmdlet Set-DscLocalConfigurationManager obsługuje - parametru force</span><span class="sxs-lookup"><span data-stu-id="eb9f9-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
 
-<span data-ttu-id="6f54d-103">Dodaliśmy obsługę nowego parametru do polecenia cmdlet Set-DscLocalConfigurationManager.</span><span class="sxs-lookup"><span data-stu-id="6f54d-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="6f54d-104">Umożliwi to użytkownikowi zresetowanie konfiguracji meta na maszynie w sposób deterministyczny, po uruchomieniu innych operacji, takich jak sprawdzanie spójności w tle, ponieważ spowoduje to, że wszystkie operacje uruchomionej zatrzymania.</span><span class="sxs-lookup"><span data-stu-id="6f54d-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
+<span data-ttu-id="eb9f9-103">Dodaliśmy obsługę nowego parametru do polecenia cmdlet Set-DscLocalConfigurationManager.</span><span class="sxs-lookup"><span data-stu-id="eb9f9-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="eb9f9-104">Umożliwi to użytkownikowi zresetowanie konfiguracji meta na maszynie w sposób deterministyczny, po uruchomieniu innych operacji, takich jak sprawdzanie spójności w tle, ponieważ spowoduje to, że wszystkie operacje uruchomionej zatrzymania.</span><span class="sxs-lookup"><span data-stu-id="eb9f9-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
 
-<span data-ttu-id="6f54d-105">Podczas próby ustawienia konfiguracji meta bez — parametru Force, środowisko wyglądają następująco.</span><span class="sxs-lookup"><span data-stu-id="6f54d-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
+<span data-ttu-id="eb9f9-105">Podczas próby ustawienia konfiguracji meta bez — parametru Force, środowisko wyglądają następująco.</span><span class="sxs-lookup"><span data-stu-id="eb9f9-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -27,7 +27,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.046 seconds.
 ```
 
-<span data-ttu-id="6f54d-106">Gdy używamy — wymusić pomyślnie zaktualizuje konfigurację metadanych w systemie, anulując bieżącej operacji uruchomionego na maszynie.</span><span class="sxs-lookup"><span data-stu-id="6f54d-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
+<span data-ttu-id="eb9f9-106">Gdy używamy — wymusić pomyślnie zaktualizuje konfigurację metadanych w systemie, anulując bieżącej operacji uruchomionego na maszynie.</span><span class="sxs-lookup"><span data-stu-id="eb9f9-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose -Force
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
