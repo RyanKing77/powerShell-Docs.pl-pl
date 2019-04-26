@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Przy użyciu narzędzia Projektant zasobów
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076671"
 ---
 # <a name="using-the-resource-designer-tool"></a>Przy użyciu narzędzia Projektant zasobów
 
@@ -26,7 +26,7 @@ Nazwa parametru opis
 * **Nazwa użytkownika**: Właściwość klucza, który unikatowo identyfikuje użytkownika.
 * **Upewnij się,**: Określa, czy konto użytkownika powinno być obecne lub nieobecne. Ten parametr ma tylko dwa możliwe wartości.
 * **DomainCredential**: Hasło użytkownika domeny.
-* **Hasło**: Wymagane hasło dla użytkownika, które umożliwia konfigurację zmienić hasło użytkownika, jeśli to konieczne.
+* **hasło**: Wymagane hasło dla użytkownika, które umożliwia konfigurację zmienić hasło użytkownika, jeśli to konieczne.
 
 Aby utworzyć właściwości, użyjemy **New xDscResourceProperty** polecenia cmdlet. Następujące polecenia środowiska PowerShell Utwórz właściwości opisanych powyżej.
 

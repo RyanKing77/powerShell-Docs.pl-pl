@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób WindowsOptionalFeature DSC
 ms.openlocfilehash: 390caefd2ad190afc651b22ed1beb5cf1d604527
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076762"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>Zasób WindowsOptionalFeature DSC
 
@@ -43,4 +43,4 @@ WindowsOptionalFeature [string] #ResourceName
 | RemoveFilesOnDisable| Ustaw **$true** Aby usunąć wszystkie pliki skojarzone z funkcją, gdy jest on wyłączony (to znaczy, gdy **upewnij się, że** jest ustawiona na "Brak").|
 | PoziomRejestrowania| Maksymalny poziom informacji wyjściowych wyświetlanych w dziennikach. Dozwolone wartości to: "ErrorsOnly" (tylko błędy są rejestrowane), "ErrorsAndWarning" (błędy i ostrzeżenia są rejestrowane), a "ErrorsAndWarningAndInformation" (błędy, ostrzeżenia i informacje o debugowaniu są rejestrowane).|
 | Ścieżka dziennika| Ścieżka do pliku dziennika, w której chcesz dostawcy zasobów do dziennika operacji.|
-| DependsOn| Określa, czy konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn| Określa, czy konfiguracja inny zasób należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|

@@ -4,11 +4,11 @@ ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extension
 title: Historia wersji rozszerzenie DSC usługi Azure
 ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079748"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Historia wersji rozszerzenia Azure Desired State Configuration
 
@@ -49,7 +49,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 
 ### <a name="version-275"></a>Wersja 2,75
 
-- **Data wydania:** 5 marca 2018 r.
+- **Data wydania:** 5 marca 2018 r.
 - **Obsługa systemu operacyjnego:** Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 z dodatkiem SP1, Windows klienta 7/8.1/10 systemu Nano Server
 - **Pomoc techniczna platformy WMF:** WMF 5.1, WMF 5.0 RTM, WMF 4.0 Update, WMF 4.0
 - **Środowisko:** Azure

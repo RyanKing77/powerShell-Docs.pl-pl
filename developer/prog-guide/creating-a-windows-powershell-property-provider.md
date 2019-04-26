@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
 ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081839"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Tworzenie dostawcy właściwości programu Windows PowerShell
 

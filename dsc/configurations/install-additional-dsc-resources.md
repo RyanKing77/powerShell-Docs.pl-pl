@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, zasób, galerii, Instalator
 title: Zainstaluj DSC dodatkowe zasoby
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55686383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080086"
 ---
 # <a name="install-additional-dsc-resources"></a>Zainstaluj DSC dodatkowe zasoby
 
@@ -21,7 +21,7 @@ Jest to lista zasobów OOB zawartych w programie PowerShell 4.0 i opis możliwo�
 |Zasób  |Opis  |
 |---------|---------|
 |**Plik**|Steruje stanem plików i katalogów. Kopiuje pliki z **źródła** do **docelowy** i aktualizuje je, gdy **źródła** zmiany wprowadzane przez porównywanie dat, sumy kontrolne i skróty.|
-|**Archiwum**|Wypakowuje archiwa i określonej lokalizacji. Waliduje archiwach z określonym **sumy kontrolnej**.|
+|**Archiwizowanie**|Wypakowuje archiwa i określonej lokalizacji. Waliduje archiwach z określonym **sumy kontrolnej**.|
 |**Środowisko**|Zarządza zmiennych środowiskowych.|
 |**Grupa**|Zarządza grupami lokalnymi i kontroluje członkostwo w grupie.|
 |**Dziennik**|Zapisuje komunikaty `Microsoft-Windows-Desired State Configuration/Analytic` dziennika zdarzeń.|

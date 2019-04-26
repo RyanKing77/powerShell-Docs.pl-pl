@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
 ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082128"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Tworzenie aktualizowalnej pomocy: instrukcje krok po kroku
 
@@ -44,18 +44,18 @@ HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
 }
 ```
 
-### <a name="step-3-create-a-helpinfo-xml-file"></a>Krok 3. Utwórz plik HelpInfo XML
+### <a name="step-3-create-a-helpinfo-xml-file"></a>Krok 3. Utwórz plik HelpInfo XML
 
 Plik informacji HelpInfo XML zawierający identyfikator URI lokalizacji Internet pliki pomocy i numery wersji najnowszych plików pomocy dla modułu w każdej obsługiwanej kultury interfejsu użytkownika. Każdy moduł programu Windows PowerShell ma jeden plik HelpInfo XML. Po zaktualizowaniu plików pomocy, edytować lub zamienić plik HelpInfo XML; nie należy dodawać inny. Aby uzyskać więcej informacji, zobacz [jak utworzyć plik XML HelpInfo](./how-to-create-a-helpinfo-xml-file.md).
 
-### <a name="step-4-sign-your-help-files"></a>Krok 4. Zarejestruj swoje pliki pomocy
+### <a name="step-4-sign-your-help-files"></a>Krok 4: Zarejestruj swoje pliki pomocy
 
 Podpisy cyfrowe nie są wymagane, ale są one rekomendacji najlepszych zawsze wtedy, gdy udostępniasz pliki.
 
-### <a name="step-5-create-cab-files"></a>Krok 5. Tworzenie plików CAB
+### <a name="step-5-create-cab-files"></a>Krok 5: Tworzenie plików CAB
 
 Narzędzie tworzy pliki cabinet (cab), takie jak MakeCab.exe do utworzenia. Plik CAB, który zawiera pliki pomocy dla modułu. Utwórz osobny plik CAB dla plików pomocy w każdej obsługiwanej kultury interfejsu użytkownika. Aby uzyskać więcej informacji, zobacz [jak przygotować aktualizowalnej pomocy pliki CAB](./how-to-prepare-updatable-help-cab-files.md).
 
-### <a name="step-6-upload-your-files"></a>Krok 6. Przekazywanie plików
+### <a name="step-6-upload-your-files"></a>Krok 6: Przekazywanie plików
 
 Aby opublikować pliki pomocy nowych lub zaktualizowanych, przekazać pliki CAB do lokalizacji internetowej, który jest określony przez **HelpContentUri** elementu w pliku HelpInfo XML. Następnie przekaż plik HelpInfo XML do lokalizacji internetowej, który jest określony przez wartość **HelpInfoUri** klucza w manifeście modułu.

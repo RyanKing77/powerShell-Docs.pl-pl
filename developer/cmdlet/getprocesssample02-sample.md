@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 481f557d-3344-4d33-b2da-4736a0165181
 caps.latest.revision: 7
 ms.openlocfilehash: fa4cd8a724793e71b615c84a5c5a833aa92c93fc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56849511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068083"
 ---
 # <a name="getprocesssample02-sample"></a>Przykład GetProcessSample02
 
@@ -51,7 +51,7 @@ Ten przykład pokazuje jak napisać polecenia cmdlet, które pobiera procesów n
 
 Ten przykładowy skrypt wymaga programu Windows PowerShell 2.0.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
 W przykładzie pokazano poniżej.
 

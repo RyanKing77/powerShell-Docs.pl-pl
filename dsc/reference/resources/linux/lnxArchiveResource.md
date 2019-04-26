@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxArchive
 ms.openlocfilehash: 800954478f149e29c22d1a88304c3be9950f109a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078048"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC dla systemu Linux zasób nxArchive
 
@@ -33,9 +33,9 @@ nxArchive <string> #ResourceName
 |---|---|
 | SourcePath| Określa ścieżkę źródłową pliku archiwum. Powinno to być tar .zip, lub. plik tar.gz. |
 | DestinationPath| Określa lokalizację, w której chcesz upewnić się, że zawartość archiwum zostały wyodrębnione.|
-| Suma kontrolna| Definiuje typ używany do określenia, czy archiwum źródła został zaktualizowany. Wartości: "ctime", "mtime" lub "md5". Wartość domyślna to "md5".|
+| Sumy kontrolnej| Definiuje typ używany do określenia, czy archiwum źródła został zaktualizowany. Wartości: "ctime", "mtime" lub "md5". Wartość domyślna to "md5".|
 | Force| Niektóre operacje na plikach (takich jak zastąpienie pliku lub usunięcie katalogu, który nie jest pusty) spowoduje wystąpienie błędu. Za pomocą **życie** właściwość zastępuje takie błędy. Wartość domyślna to **$false**.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 | Upewnij się| Określa, czy należy sprawdzić, czy zawartość archiwum istnieje w **docelowy**. Ustaw tę właściwość "Present", aby upewnić się, że zawartość istnieje. Ustaw ją na "Brak", aby upewnić się, że nie istnieją. Wartość domyślna to "Istnieje".|
 
 ## <a name="example"></a>Przykład

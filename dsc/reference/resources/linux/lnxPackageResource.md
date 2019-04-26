@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxPackage
 ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077878"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC dla systemu Linux zasób nxPackage
 
@@ -41,7 +41,7 @@ nxPackage <string> #ResourceName
 | PackageGroup| Jeśli **$true**, **nazwa** powinna być nazwa grupy pakietu do użytku z programem **PackageManager**. **PacakgeGroup** jest nieprawidłowa, podczas dostarczania **FilePath**.|
 | Argumenty| Ciąg argumenty, które zostaną przekazane do pakietu dokładnie zgodnie z postanowieniami.|
 | Kod zwrotny| Oczekiwany kod powrotny. Jeśli rzeczywiste zwróci kod nie odpowiada oczekiwanej wartości zostanie podany tutaj, konfiguracja zwróci błąd.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Przykład
 

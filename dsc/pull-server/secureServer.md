@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Najlepsze rozwiązania dotyczące serwera ściągania
 ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079204"
 ---
 # <a name="pull-server-best-practices"></a>Najlepsze rozwiązania dotyczące serwera ściągania
 
@@ -104,7 +104,7 @@ Czy masz dostęp do plików instalacyjnych systemu Windows Server, które już z
 
 Wdrożenia serwera ściągania są obsługiwane na serwerach fizycznych i wirtualnych. Wymagania w zakresie rozmiaru na serwerze ściągania dostosowanie wymagania dotyczące systemu Windows Server 2012 R2.
 
-Procesor: 1.4 GHz 64-bitowy procesor pamięci: 512 MB miejsca na dysku: 32 GB Network: Dwie karty Ethernet
+CPU: 1.4 GHz 64-bitowy procesor pamięci: 512 MB miejsca na dysku: 32 GB Network: Dwie karty Ethernet
 
 Planowanie zadań|
 ---|

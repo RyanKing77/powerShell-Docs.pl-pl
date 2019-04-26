@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: DSC dla systemu Linux zasób nxEnvironment
 ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078014"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC dla systemu Linux zasób nxEnvironment
 
@@ -35,7 +35,7 @@ nxEnvironment <string> #ResourceName
 | Wartość| Wartość do przypisania do zmiennej środowiskowej.|
 | Upewnij się| Określa, czy należy sprawdzić, czy zmienna istnieje. Ustaw tę właściwość "Present", aby upewnić się, że istnieje zmienna. Ustaw ją na "Brak", aby upewnić się, że nie istnieje zmienna. Wartość domyślna to "Istnieje".|
 | Ścieżka| Definiuje zmienną środowiskową, która jest konfigurowana. Ustaw tę właściwość na **$true** , gdy zmienna **ścieżki** zmiennej; w przeciwnym razie ustaw ją na **$false**. Wartość domyślna to **$false**. Jeśli zmienna konfigurowany jest **ścieżki** podana wartość zmiennej, za pośrednictwem **wartość** właściwości, które zostaną dołączone do istniejącej wartości.|
-| DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Dodatkowe informacje
 

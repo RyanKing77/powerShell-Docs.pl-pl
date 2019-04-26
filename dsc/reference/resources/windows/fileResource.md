@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób DSC plików
 ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077334"
 ---
 # <a name="dsc-file-resource"></a>Zasób DSC plików
 
@@ -41,13 +41,13 @@ File [string] #ResourceName
 |---------------|------------------------------------------------------------------------------|--------|-------|
 |DestinationPath|Lokalizacja, w węźle docelowym, aby mieć pewność, jest `Present` lub `Absent`.|Tak|Nie|
 |Atrybuty     |Żądany stan atrybutów dla pliku docelowego lub katalogu. Prawidłowe wartości to **archiwum**, **ukryty**, **tylko do odczytu**, i **systemu**.|Nie|Brak|
-|Suma kontrolna      |Typ sumy kontrolnej używany do określenia, czy dwa pliki są takie same. Prawidłowe wartości to: SHA-1, SHA-256, SHA-512, createdDate, Data modyfikacji.|Nie|Tylko nazwę pliku lub katalogu jest porównywany.|
+|Sumy kontrolnej      |Typ sumy kontrolnej używany do określenia, czy dwa pliki są takie same. Prawidłowe wartości to: SHA-1, SHA-256, SHA-512, createdDate, Data modyfikacji.|Nie|Tylko nazwę pliku lub katalogu jest porównywany.|
 |Zawartość       |Prawidłowa tylko w przypadku korzystania z `File` typu. Wskazuje zawartość, aby upewnij się, że są `Present` lub `Absent` z pliku docelowego. |Nie|Brak|
 |Poświadczenie     |Poświadczenia, które są wymagane do dostępu do zasobów, takich jak pliki źródłowe.|Nie|Konto komputera węzła docelowego. (*patrz Uwaga*)|
 |Upewnij się         |Żądany stan docelowego pliku lub katalogu. |Nie|**Obecna**|
 |Force          |Zastępuje operacji dostępu, które mogłyby spowodować błąd (np. zastąpienie pliku lub usunięcie katalogu, który nie jest pusty).|Nie|`$false`|
 |Recurse        |Prawidłowa tylko w przypadku korzystania z `Directory` typu. Wykonuje rekursywnego operacji stan do wszystkich podkatalogów.|Nie|`$false`|
-|DependsOn      |Ustawia zależność określonych zasobów. Ten zasób będzie wykonywane tylko wtedy po pomyślnym wykonaniu wszystkich zasobów zależnych. Można określić zasoby zależne, używając składni `"[ResourceType]ResourceName"`. See [about_DependsOn](../../../configurations/resource-depends-on.md)|Nie|Brak|
+|dependsOn      |Ustawia zależność określonych zasobów. Ten zasób będzie wykonywane tylko wtedy po pomyślnym wykonaniu wszystkich zasobów zależnych. Można określić zasoby zależne, używając składni `"[ResourceType]ResourceName"`. See [about_DependsOn](../../../configurations/resource-depends-on.md)|Nie|Brak|
 |SourcePath     |Ścieżka, z którego można skopiować zasobu pliku lub folderu.|Nie|Brak|
 |Typ           |Typ zasobu jest skonfigurowany. Prawidłowe wartości to `Directory` i `File`.|Nie|`File`|
 |MatchSource    |Określa, jeśli zasób powinien monitorować nowe pliki dodane do katalogu źródłowego po kopii początkowej. Wartość `$true` wskazuje, że po kopii początkowej, wszystkie nowe pliki źródłowe zostaną skopiowane do lokalizacji docelowej. Jeśli ustawiono `$False`, zasób buforuje zawartość katalogu źródłowego i ignoruje wszelkie pliki dodane po kopii początkowej.|Nie|`$false`|

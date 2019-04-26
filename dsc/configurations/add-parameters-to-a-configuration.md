@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, powershell, zasób, galerii, Instalator
 title: Dodawanie parametrów do konfiguracji
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080260"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Dodawanie parametrów do konfiguracji
 

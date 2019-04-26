@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Bezpośrednie wywoływanie metod zasobów DSC
 ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079629"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Bezpośrednie wywoływanie metod zasobów DSC
 

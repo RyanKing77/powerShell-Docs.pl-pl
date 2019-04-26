@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d17e0d66-42ea-4e4c-a85b-3ca09b146492
 caps.latest.revision: 6
 ms.openlocfilehash: cc0742b86a7a36e5712707c077fd1952691f3f4b
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067573"
 ---
 # <a name="property-parameters"></a>Parametry właściwości
 
@@ -36,7 +36,7 @@ W poniższej tabeli wymieniono nazwy zalecane i funkcje dotyczące parametrów w
 |**Regex**<br>Typ danych: SwitchParameter|Implementowanie tego parametru, wyrażenia regularne są używane, gdy określono parametr. Jeśli ten parametr jest określony, symbole wieloznaczne nie są rozpoznawane.|
 |**szybkość**<br>Typ danych: Int32|Implementowanie tego parametru, użytkownik może określić szybkość transmisji. Użytkownik ustawia szybkość zasobu tego parametru.|
 |**State**<br>Typ danych: Array — słowo kluczowe|Implementowanie tego parametru, użytkownik może określić nazwy stanów, takich jak KEYDOWN.|
-|**Wartość**<br>Typ danych: Obiekt|Implementowanie tego parametru, użytkownik może określić wartość, aby zapewnić do polecenia cmdlet.|
+|**Wartość**<br>Typ danych: Object|Implementowanie tego parametru, użytkownik może określić wartość, aby zapewnić do polecenia cmdlet.|
 |**Wersja**<br>Typ danych: Ciąg|Implementowanie tego parametru, użytkownik może określić wersji właściwości.|
 
 ## <a name="see-also"></a>Zobacz też
