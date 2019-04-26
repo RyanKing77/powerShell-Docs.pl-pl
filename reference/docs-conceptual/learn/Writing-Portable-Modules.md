@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Zapisywanie przenośne modułów
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086412"
 ---
 # <a name="portable-modules"></a>Przenośne modułów
 
@@ -29,9 +29,9 @@ Port modułów napisanych dla środowiska Windows PowerShell do pracy za pomocą
 
 ## <a name="creating-a-new-module"></a>Tworzenie nowego modułu
 
-W przypadku tworzenia nowego modułu, zaleca się użycie [.NET CLI][].
+W przypadku tworzenia nowego modułu, zaleca się użycie [INTERFEJS WIERSZA POLECENIA PLATFORMY .NET][].
 
-### <a name="installing-the-powershell-standard-module-template"></a>Instalowanie szablon modułu programu PowerShell Standard
+### <a name="installing-the-powershell-standard-module-template"></a>Instalowanie szablon modułu programu PowerShell standardowe
 
 Po zainstalowaniu interfejsu wiersza polecenia platformy .NET, należy zainstalować biblioteki szablonów, aby wygenerować prosty moduł programu PowerShell.
 Moduł będzie zgodna z programu Windows PowerShell, program PowerShell Core, Windows, Linux i macOS.
@@ -176,12 +176,12 @@ Jednak nie jest wymagane do obiektu docelowego .NET Standard dla modułu do prac
 
 ## <a name="powershell-standard-library"></a>Biblioteka standardowa programu PowerShell
 
-[PowerShell Standard][] biblioteka jest formalną specyfikację interfejsów API programu PowerShell dostępny we wszystkich wersjach programu PowerShell, większa lub równa wersji tego standardu.
+[Standardowy programu PowerShell][] biblioteka jest formalną specyfikację interfejsów API programu PowerShell dostępny we wszystkich wersjach programu PowerShell, większa lub równa wersji tego standardu.
 
 Na przykład [PowerShell Standard 5.1][] jest zgodne z programem Windows PowerShell 5.1 i PowerShell Core 6.0 lub nowszej.
 
-Zaleca się skompilować modułu przy użyciu programu PowerShell Standard biblioteki. Biblioteka zapewnia, że interfejsy API są dostępne i wdrożony zarówno w przypadku środowiska Windows PowerShell, jak i programu PowerShell Core 6.
-PowerShell Standard jest przeznaczona do zawsze być zgodny z wyszukiwanie do przodu. Moduł skompilowany przy użyciu programu PowerShell Standard biblioteki 5.1 zawsze będą zgodne z przyszłych wersji programu PowerShell.
+Zaleca się skompilować modułu przy użyciu programu PowerShell standardowe biblioteki. Biblioteka zapewnia, że interfejsy API są dostępne i wdrożony zarówno w przypadku środowiska Windows PowerShell, jak i programu PowerShell Core 6.
+PowerShell Standard jest przeznaczona do zawsze być zgodny z wyszukiwanie do przodu. Moduł skompilowany przy użyciu programu PowerShell standardowe biblioteki 5.1 zawsze będą zgodne z przyszłych wersji programu PowerShell.
 
 ## <a name="module-manifest"></a>Manifestu modułu
 
@@ -258,10 +258,10 @@ Przykład:
 [.NET Core]: /dotnet/core/
 [PSSnapIn]: /dotnet/api/system.management.automation.pssnapin
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
-[testy środowiska uruchomieniowego]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
-[.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
-[.NET standard]: /dotnet/standard/net-standard
-[PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
+[Testy środowiska uruchomieniowego]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
+[INTERFEJS WIERSZA POLECENIA PLATFORMY .NET]: /dotnet/core/tools/?tabs=netcore2x
+[.NET Standard]: /dotnet/standard/net-standard
+[Standardowy programu PowerShell]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [Galeria programu PowerShell]: https://www.powershellgallery.com
 [Narzędzia .NET portability Analyzer]: https://github.com/Microsoft/dotnet-apiport

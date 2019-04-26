@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Klasa MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55685396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078065"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>Klasa MSFT_DSCLocalConfigurationManager
 
@@ -48,7 +48,7 @@ class MSFT_DSCLocalConfigurationManager
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| Bezpośrednio wywołuje **uzyskać** metod zasobów DSC.|
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| Bezpośrednio wywołuje **ustaw** metod zasobów DSC.|
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| Bezpośrednio wywołuje **testu** metod zasobów DSC.|
-| [Wycofywanie](msft-dsclocalconfigurationmanager-rollback.md)| Ustala powrót do poprzedniej konfiguracji.|
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| Ustala powrót do poprzedniej konfiguracji.|
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| Wysyła dokument konfiguracji w węźle zarządzanym i zapisuje go jako oczekujące zmiany.|
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| Wysyła dokument konfiguracji do zarządzanego węzła i używa agenta konfiguracji, aby zastosować konfigurację.|
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| Wysłany do zarządzanych węzłów konfiguracji i rozpocząć korzystanie przez agenta konfiguracji, aby zastosować konfigurację. Użyj GetConfigurationResultOutput do pobrania danych wyjściowych wyników.|
