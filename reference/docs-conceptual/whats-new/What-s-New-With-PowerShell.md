@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Co nowego w środowisku PowerShell 5.0
 ms.openlocfilehash: c9a3a360d0143d4b384cec226c36fe6565eb6040
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55688140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085919"
 ---
 # <a name="whats-new-with-powershell-50"></a>Co nowego w środowisku PowerShell 5.0
 Windows PowerShell® 5.0 zawiera istotne nowe funkcje, które rozszerzają zakres jego zastosowań, zwiększyć jego użyteczność i umożliwiają kontrolowanie i zarządzanie komputerami z systemem Windows, łatwiejsze i bardziej kompleksowe.  Są głównych ulepszeń w następujących obszarach: Desired State Configuration, zabezpieczeń, wydajności, komunikacji zdalnej i funkcje języka.

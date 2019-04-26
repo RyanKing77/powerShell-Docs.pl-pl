@@ -1,5 +1,4 @@
-items:
-- name: Przegląd
+- name: Omówienie
   href: overview.md
 - name: Instalowanie menedżera pakietów PowerShellGet
   href: installing-psget.md
@@ -7,95 +6,89 @@ items:
   href: getting-started.md
 - name: Instrukcje
   items:
-  - name: Znajdowanie pakietów w galerii
-    items:
-    - name: Wyszukiwanie pakietów
-      href: how-to/finding-packages/search-syntax.md
-    - name: Wyszukiwanie według zgodności
-      href: how-to/finding-packages/searching-by-compatibility.md
-    - name: Filtrowanie wyników wyszukiwania
-      href: how-to/finding-packages/filtering-packages.md
-  - name: Publikowanie w galerii
-    items:
-    - name: Tworzenie i publikowanie pakietów
-      href: how-to/publishing-packages/publishing-a-package.md
-    - name: Tworzenie konta galerii PowerShellGallery
-      href: how-to/publishing-packages/creating-an-account.md
-    - name: Wycofywanie ofert pakietów
-      href: how-to/publishing-packages/unlisting-packages.md
-    - name: Usuwanie pakietów
-      href: how-to/publishing-packages/deleting-packages.md
-    - name: Zarządzanie właścicielami pakietów
-      href: how-to/publishing-packages/managing-package-owners.md
-  - name: Praca z pakietami
-    items:
-    - name: Widok FileList
-      href: how-to/working-with-packages/filelist-view.md
-    - name: Wdrażanie w usłudze Azure Automation
-      href: how-to/working-with-packages/deploy-to-azure-automation.md
-    - name: Ręczne pobieranie pakietów
-      href: how-to/working-with-packages/manual-download.md
-    - name: Pakiety wymagające akceptacji licencji
-      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Kontaktowanie się z właścicielami pakietów
-      href: how-to/working-with-packages/contacting-package-owners.md
-    - name: Przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarzy
-      href: how-to/working-with-packages/social-media-feedback.md
-  - name: Zarządzanie profilem konta
-    items:
-    - name: Ustawienia konta galerii programu PowerShell
-      href: how-to/managing-profile/managing-account.md
-    - name: Zarządzanie kluczami interfejsu API
-      href: how-to/managing-profile/creating-apikeys.md
-  - name: Praca z lokalnymi repozytoriami PowerShellGet
-    href: how-to/working-with-local-psrepositories.md
+    - name: Znajdowanie pakietów w galerii
+      items:
+        - name: Wyszukiwanie pakietów
+          href: how-to/finding-packages/search-syntax.md
+        - name: Wyszukiwanie według zgodności
+          href: how-to/finding-packages/searching-by-compatibility.md
+        - name: Filtrowanie wyników wyszukiwania
+          href: how-to/finding-packages/filtering-packages.md
+    - name: Publikowanie w galerii
+      items:
+        - name: Tworzenie i publikowanie pakietów
+          href: how-to/publishing-packages/publishing-a-package.md
+        - name: Tworzenie konta galerii PowerShellGallery
+          href: how-to/publishing-packages/creating-an-account.md
+        - name: Wycofywanie ofert pakietów
+          href: how-to/publishing-packages/unlisting-packages.md
+        - name: Usuwanie pakietów
+          href: how-to/publishing-packages/deleting-packages.md
+        - name: Zarządzanie właścicielami pakietów
+          href: how-to/publishing-packages/managing-package-owners.md
+    - name: Praca z pakietami
+      items:
+        - name: Widok FileList
+          href: how-to/working-with-packages/filelist-view.md
+        - name: Wdrażanie w usłudze Azure Automation
+          href: how-to/working-with-packages/deploy-to-azure-automation.md
+        - name: Ręczne pobieranie pakietów
+          href: how-to/working-with-packages/manual-download.md
+        - name: Pakiety wymagające akceptacji licencji
+          href: how-to/working-with-packages/packages-that-require-license-acceptance.md
+        - name: Kontaktowanie się z właścicielami pakietów
+          href: how-to/working-with-packages/contacting-package-owners.md
+        - name: Przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarzy
+          href: how-to/working-with-packages/social-media-feedback.md
+    - name: Zarządzanie profilem konta
+      items:
+        - name: Ustawienia konta galerii programu PowerShell
+          href: how-to/managing-profile/managing-account.md
+        - name: Zarządzanie kluczami interfejsu API
+          href: how-to/managing-profile/creating-apikeys.md
+    - name: Praca z lokalnymi repozytoriami PowerShellGet
+      href: how-to/working-with-local-psrepositories.md
 - name: Pojęcia
   items:
-  - name: Wskazówki i najlepsze rozwiązania dotyczące publikowania
-    href: concepts/publishing-guidelines.md
-  - name: Manifest pakietów i interfejs użytkownika galerii
-    href: concepts/package-manifest-affecting-ui.md
-  - name: Wymaganie określonych wartości parametru PSEdition
-    items:
-    - name: Pisanie skryptów z obsługą parametru PSEdition
-      href: concepts/script-psedition-support.md
-    - name: Pisanie modułów z obsługą parametru PSEdition
-      href: concepts/module-psedition-support.md
-  - name: Wymaganie akceptacji licencji
-    items:
-    - name: Wymaganie akceptacji licencji na potrzeby skryptów
-      href: concepts/script-license-acceptance.md
-    - name: Wymaganie akceptacji licencji na potrzeby modułów
-      href: concepts/module-license-acceptance.md
-  - name: Definiowanie pakietów jako wersji wstępnych
-    items:
-    - name: Definiowanie modułów jako wersji wstępnych
-      href: concepts/module-prerelease-support.md
-    - name: Definiowanie skryptów jako wersji wstępnych
-      href: concepts/script-prerelease-support.md
-  - name: Profil reguły narzędzia PSScriptAnalyzer
-    href: concepts/scriptanalyzer-rule-profile.md
+    - name: Wskazówki i najlepsze rozwiązania dotyczące publikowania
+      href: concepts/publishing-guidelines.md
+    - name: Manifest pakietów i interfejs użytkownika galerii
+      href: concepts/package-manifest-affecting-ui.md
+    - name: Wymaganie określonych wartości parametru PSEdition
+      items:
+        - name: Pisanie skryptów z obsługą parametru PSEdition
+          href: concepts/script-psedition-support.md
+        - name: Pisanie modułów z obsługą parametru PSEdition
+          href: concepts/module-psedition-support.md
+    - name: Wymaganie akceptacji licencji
+      items:
+        - name: Wymaganie akceptacji licencji na potrzeby skryptów
+          href: concepts/script-license-acceptance.md
+        - name: Wymaganie akceptacji licencji na potrzeby modułów
+          href: concepts/module-license-acceptance.md
+    - name: Definiowanie pakietów jako wersji wstępnych
+      items:
+        - name: Definiowanie modułów jako wersji wstępnych
+          href: concepts/module-prerelease-support.md
+        - name: Definiowanie skryptów jako wersji wstępnych
+          href: concepts/script-prerelease-support.md
+    - name: Profil reguły narzędzia PSScriptAnalyzer
+      href: concepts/scriptanalyzer-rule-profile.md
 - name: Uzyskiwanie pomocy technicznej
   items:
-  - name: Zgłaszanie nadużyć
-    href: how-to/getting-support/report-abuse.md
-  - name: Rozwiązywanie sporów
-    href: how-to/getting-support/dispute-resolution.md
-  - name: Nawiązywanie kontaktu z administratorami
-    href: how-to/getting-support/contacting-administrators.md
-  - name: Rozwiązywanie problemów
-    href: how-to/getting-support/troubleshooting-cmdlets.md
-  - name: Uruchamianie dostawcy NuGet i pliku NuGet.exe
-    href: how-to/getting-support/bootstrapping-nuget.md
-  - name: Informacje o zgodności z RODO
-    href: how-to/getting-support/gdpr-dsr-policy.md
+    - name: Zgłaszanie nadużyć
+      href: how-to/getting-support/report-abuse.md
+    - name: Rozwiązywanie sporów
+      href: how-to/getting-support/dispute-resolution.md
+    - name: Nawiązywanie kontaktu z administratorami
+      href: how-to/getting-support/contacting-administrators.md
+    - name: Rozwiązywanie problemów
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: Uruchamianie dostawcy NuGet i pliku NuGet.exe
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: Informacje o zgodności z RODO
+      href: how-to/getting-support/gdpr-dsr-policy.md
 - name: Galeria — często zadawane pytania
   href: faqs.md
 - name: Polecenia cmdlet menedżera pakietów PowerShellGet
-  href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 8b3d2d121c167f3677d3691c8bc481644b95b204
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655314"
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'

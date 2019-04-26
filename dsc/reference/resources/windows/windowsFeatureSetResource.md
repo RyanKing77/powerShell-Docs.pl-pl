@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób Windowsfeatureset DSC
 ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55684794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076790"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>Zasób Windowsfeatureset DSC
 
@@ -43,7 +43,7 @@ WindowsFeatureSet [string] #ResourceName
 | Upewnij się| Wskazuje, czy dodać ról lub funkcji. Aby upewnić się, że ról lub funkcji dodano, ustaw tę właściwość na "Obecny", aby upewnić się, czy role i funkcje zostały usunięte, należy ustawić właściwość na "Brak".|
 | IncludeAllSubFeature| Ustaw tę właściwość na **$true** obejmujący wszystkie wymagane podfunkcje przy użyciu funkcji, należy określić przy użyciu **nazwa** właściwości.|
 | Ścieżka dziennika| Ścieżka do pliku dziennika, w której chcesz dostawcy zasobów do dziennika operacji.|
-| DependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
+| dependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
 | Źródło| Wskazuje lokalizację pliku źródłowego na potrzeby instalacji, jeśli to konieczne.|
 
 ## <a name="example"></a>Przykład

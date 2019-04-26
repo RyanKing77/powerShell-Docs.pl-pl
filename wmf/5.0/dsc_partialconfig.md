@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 779c39b590c05b944c61f53155cf2e602a7cfc4e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cb26e816b2bd95280ec3a426dbf60629c7668077
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085375"
 ---
-# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Skonfiguruj węzeł z wielu konfiguracji fragmenty (częściowe konfiguracje)
+# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Konfigurowanie węzła przy użyciu wielu fragmentów konfiguracji (konfiguracje częściowe)
 
-WMF 5.0 pomaga dostarczania konfiguracji dokumentów do węzła w fragmenty. Aby uzyskać więcej informacji, zobacz [częściowe konfiguracje](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
+Program WMF 5.0 pomaga dostarczać konfigurację dokumentów do węzła we fragmentach. Aby uzyskać więcej informacji, zobacz [konfiguracje częściowe](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
