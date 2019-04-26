@@ -3,11 +3,11 @@ title: Co nowego w programie PowerShell Core 6.0
 description: Nowe funkcje i zmiany w programie PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059019"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Co nowego w programie PowerShell Core 6.0
 
@@ -160,7 +160,7 @@ Add-WindowsPSModulePath
 Program PowerShell Core dodaje obsługę kontenerów platformy Docker dla wszystkich głównych platform obsługujemy (w tym wiele dystrybucje systemu Linux, Windows Server Core i Nano Server).
 
 Aby uzyskać pełną listę, zapoznaj się z tagów na [ `microsoft/powershell` w usłudze Docker Hub][docker-hub].
-Aby uzyskać więcej informacji na temat platformy Docker i PowerShell Core, zobacz [Platformy docker][] w witrynie GitHub.
+Aby uzyskać więcej informacji na temat platformy Docker i PowerShell Core, zobacz [Docker][] w witrynie GitHub.
 
 ## <a name="ssh-based-powershell-remoting"></a>Komunikacji zdalnej programu PowerShell — opartego na SSH
 
@@ -233,10 +233,10 @@ Aby uzyskać więcej informacji na temat zadań programu PowerShell, zobacz [abo
 ## <a name="engine-updates"></a>Aktualizacje aparatu
 
 - `$PSVersionTable` ma cztery nowe właściwości:
-  - `PSEdition`: Ta jest równa `Core` w programie PowerShell Core i `Desktop` na programie Windows PowerShell
-  - `GitCommitId`: To jest identyfikator zatwierdzenia Git Git gałęzi lub tagu, w której została skompilowana programu PowerShell.
+  - `PSEdition`: Jest ono ustawione na `Core` w programie PowerShell Core i `Desktop` na programie Windows PowerShell
+  - `GitCommitId`: Jest to identyfikator zatwierdzenia Git Git gałęzi lub tagu której została skompilowana programu PowerShell.
     Wydana w kompilacji, prawdopodobnie będzie taka sama jak `PSVersion`.
-  - `OS`: To jest zwracany przez ciąg wersji systemu operacyjnego `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `OS`: Jest to zwrócony przez ciąg wersji systemu operacyjnego `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
   - `Platform`: Ta wartość jest zwracana przez `[System.Environment]::OSVersion.Platform` jest równa `Win32NT` na Windows, `Unix` w systemie macOS i `Unix` w systemie Linux.
 - Usunięte `BuildVersion` właściwość `$PSVersionTable`.
   Ta właściwość silnie powiązanej z wersji kompilacji Windows.
@@ -254,7 +254,7 @@ Aby uzyskać więcej informacji na temat zadań programu PowerShell, zobacz [abo
 
 ### <a name="new-cmdlets"></a>Nowe polecenia cmdlet
 
-- Dodaj `Get-Uptime` do `Microsoft.PowerShell.Utility`.
+- Add `Get-Uptime` to `Microsoft.PowerShell.Utility`.
 - Dodaj `Remove-Alias` polecenia. (#5143) (Dziękuję [ @PowershellNinja ](https://github.com/PowershellNinja)!)
 - Dodaj `Remove-Service` do modułu. (#4858) (Dziękuję [ @joandrsn ](https://github.com/joandrsn)!)
 
@@ -274,7 +274,7 @@ Aby uzyskać więcej informacji na temat zadań programu PowerShell, zobacz [abo
 - Dodaj `-SkipHeaderValidation` przełączyć się do polecenia cmdlet w sieci web do obsługi dodawania nagłówków bez sprawdzania poprawności wartość nagłówka. (#4085)
 - Włącz polecenia cmdlet w sieci web nie zweryfikuje certyfikat HTTPS serwera, jeśli jest to wymagane.
 - Dodaj parametry uwierzytelniania w poleceniach cmdlet usługi sieci web. (#5052) (Dziękuję [ @markekraus ](https://github.com/markekraus))
-  - Dodaj `-Authentication` , zawiera trzy opcje: Basic, uwierzytelnianiem OAuth i elementu nośnego.
+  - Dodaj `-Authentication` , zawiera trzy opcje: Podstawowe, OAuth i elementu nośnego.
   - Dodaj `-Token` można uzyskać elementu nośnego tokenu OAuth i elementu nośnego opcje.
   - Dodaj `-AllowUnencryptedAuthentication` na pominięcie uwierzytelniania, który jest udostępniany dla dowolnego schematu transportu innych niż HTTPS.
 - Dodaj `-ResponseHeadersVariable` do `Invoke-RestMethod` Aby włączyć funkcję przechwytywania nagłówków odpowiedzi. (#4888) (Dziękuję [ @markekraus ](https://github.com/markekraus))
@@ -343,7 +343,7 @@ Aby uzyskać więcej informacji na temat zadań programu PowerShell, zobacz [abo
 - Włącz argument automatycznego uzupełniania dla `-ExcludeProperty` i `-ExpandProperty` z `Select-Object`. (#3443) (Dzięki [ @iSazonov ](https://github.com/iSazonov)!)
 - Naprawienie usterki w uzupełniania po naciśnięciu tabulatora, aby `native.exe --<tab>` wywołania do natywnego modułu wypełniania. (#3633) (Dzięki [ @powercode ](https://github.com/powercode)!)
 
-## <a name="breaking-changes"></a>Fundamentalne zmiany
+## <a name="breaking-changes"></a>Zmiany powodujące niezgodność
 
 Wprowadziliśmy szereg przełomowe zmiany w programie PowerShell Core 6.0.
 Aby dowiedzieć się więcej o nich szczegółowo, zobacz [fundamentalne zmiany w programie PowerShell Core 6.0][breaking-changes].
@@ -380,7 +380,7 @@ Możesz dowiedzieć się więcej na temat sposobu ich wykorzystania przez nas w 
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
@@ -388,12 +388,12 @@ Możesz dowiedzieć się więcej na temat sposobu ich wykorzystania przez nas w 
 [dziennika zmian]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
-[.NET standard]: https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
-[Platformy docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview

@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
 title: Galeria programu PowerShell — często zadawane pytania
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057692"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084624"
 ---
 # <a name="frequently-asked-questions"></a>Często zadawane pytania
 
@@ -93,7 +93,7 @@ Dowolny skrypt, który zawiera następujące informacje w sekcji PSScriptInfo mo
 
 Wpisz, czego szukasz w polu tekstowym. Na przykład jeśli chcesz znaleźć moduły, które są powiązane z usługi Azure SQL, po prostu wpisz "sql platformy azure". Naszego aparatu wyszukiwania będzie szukał tych słów kluczowych w wszystkie opublikowane pakiety, w tym tytuły i opisy i w ramach metadanych. Następnie na podstawie ważonej jakości wyniku, wyświetli najbliższego dopasowań. Możesz również wyszukiwać według określonego pola za pomocą pola: "wartość" składni w zapytaniu wyszukiwania dla następujących pól:
 
-- Tagi
+- Znaczniki
 - Funkcje
 - Polecenia cmdlet
 - DscResources
@@ -150,7 +150,7 @@ W warstwie dostawcy PackageManagement pakietu Dostawca pakietu PSModule rzeczywi
 
 ![Architektura modułu PowerShellGet](Images/powershellgetArchitecture.png)
 
-Rysunek 1. Architektura modułu PowerShellGet
+Rysunek 1: Architektura modułu PowerShellGet
 
 ## <a name="what-is-required-to-run-powershellget"></a>Co to jest wymagane do uruchamiania modułu PowerShellGet?
 

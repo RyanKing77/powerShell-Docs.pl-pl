@@ -10,83 +10,81 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068491"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Metody przetwarzania danych wejściowych poleceń cmdlet
 
-Polecenia cmdlet muszą przesłaniać co najmniej jedną z metod opisanych w tym temacie do wykonywania codziennej pracy przetwarzania danych wejściowych. Te metody umożliwiają polecenia cmdlet do wykonywania przetwarzania wstępnego operacje, danych wejściowych operacji przetwarzania i operacji przetwarzania końcowego. Te metody umożliwiają również zatrzymać przetwarzanie polecenia cmdlet.
+Polecenia cmdlet muszą przesłaniać co najmniej jedną z metod opisanych w tym temacie do wykonywania codziennej pracy przetwarzania danych wejściowych.
+Te metody umożliwiają polecenia cmdlet do wykonywania operacji wstępne przetwarzanie, przetwarzanie danych wejściowych i przetwarzanie końcowe.
+Te metody umożliwiają również zatrzymać przetwarzanie polecenia cmdlet.
+Aby uzyskać bardziej szczegółowy przykład sposobu użycia tych metod, zobacz [samouczek SelectStr](selectstr-tutorial.md).
 
-## <a name="pre-processing-tasks"></a>Zadania przetwarzania wstępnego
+## <a name="pre-processing-operations"></a>Operacje przetwarzania wstępnego
 
-Polecenia cmdlet powinny przesłaniać [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) metodę, aby dodać wszystkie operacje przetwarzania wstępnego są prawidłowe dla wszystkich rekordów, które będą później przetwarzane przy użyciu polecenia cmdlet. Kiedy program Windows PowerShell przetwarza potoku polecenia, programu Windows PowerShell wywołuje tę metodę raz dla poszczególnych wystąpień tego polecenia cmdlet w potoku. Aby uzyskać więcej informacji na temat sposobu programu Windows PowerShell wywołuje potok polecenia, zobacz [cyklu przetwarzania polecenia Cmdlet](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+Polecenia cmdlet powinny przesłaniać [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metodę, aby dodać wszystkie operacje przetwarzania wstępnego są prawidłowe dla wszystkich rekordów, które będą później przetwarzane przy użyciu polecenia cmdlet.
+Kiedy PowerShell przetwarza potoku polecenia, programu PowerShell wywołuje tę metodę raz dla poszczególnych wystąpień tego polecenia cmdlet w potoku.
+Aby uzyskać więcej informacji na temat sposobu PowerShell wywołuje potok polecenia, zobacz [cyklu przetwarzania polecenia Cmdlet](/previous-versions/ms714429(v=vs.85)).
 
-Poniższy kod przedstawia implementację [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) metody.
+Poniższy kod przedstawia implementację metody BeginProcessing.
 
 ```csharp
 protected override void BeginProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the BeginProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the BeginProcessing template.");
 }
 ```
 
-Aby uzyskać bardziej szczegółowy przykład sposobu używania [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) metody, zobacz [samouczek SelectStr](./selectstr-tutorial.md). W tym samouczku **Str wybierz** polecenie cmdlet używa [System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0) metodę w celu wygenerowania wyrażenia regularnego, który jest używany do wyszukiwania danych wejściowych, przetwarzanie rekordów.
+## <a name="input-processing-operations"></a>Dane wejściowe operacji przetwarzania
 
-## <a name="input-processing-tasks"></a>Dane wejściowe zadania przetwarzania
+Polecenia cmdlet można zastąpić [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody do przetwarzania danych wejściowych, które są wysyłane do polecenia cmdlet.
+Kiedy PowerShell przetwarza potoku polecenia, programu PowerShell wywołuje tę metodę dla każdego rekordu wejściowego, który jest przetwarzany przez polecenie cmdlet.
+Aby uzyskać więcej informacji na temat sposobu PowerShell wywołuje potok polecenia, zobacz [cyklu przetwarzania polecenia Cmdlet](/previous-versions/ms714429(v=vs.85)).
 
-Polecenia cmdlet można zastąpić [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metody do przetwarzania danych wejściowych, które są wysyłane do polecenia cmdlet. Kiedy program Windows PowerShell przetwarza potoku polecenia, programu Windows PowerShell wywołuje tę metodę dla każdego rekordu wejściowego, który jest przetwarzany przez polecenie cmdlet. Aby uzyskać więcej informacji na temat sposobu programu Windows PowerShell wywołuje potok polecenia, zobacz [cyklu przetwarzania polecenia Cmdlet](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-Poniższy kod przedstawia implementację [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metody.
+Poniższy kod przedstawia implementację metody ProcessRecord.
 
 ```csharp
 protected override void ProcessRecord()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the ProcessRecord template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the ProcessRecord template.");
 }
 ```
 
-Aby uzyskać bardziej szczegółowy przykład sposobu używania [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metody, zobacz [samouczek SelectStr](./selectstr-tutorial.md).
+## <a name="post-processing-operations"></a>Operacje przetwarzania końcowego
 
-## <a name="post-processing-tasks"></a>Przetwarzania końcowego zadania
+Polecenia cmdlet powinny przesłaniać [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metodę, aby dodać dowolne operacje przetwarzania końcowego, które są prawidłowe dla wszystkich rekordów, które zostały przetworzone przez polecenie cmdlet.
+Na przykład Twoje polecenie cmdlet może być konieczne wyczyścić zmienne obiektów po zakończeniu przetwarzania.
 
-Polecenia cmdlet powinny przesłaniać [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) metodę, aby dodać dowolne operacje przetwarzania końcowego, które są prawidłowe dla wszystkich rekordów, które zostały przetworzone przez polecenie cmdlet. Na przykład Twoje polecenie cmdlet może być konieczne wyczyścić zmienne obiektów po zakończeniu przetwarzania.
+Kiedy PowerShell przetwarza potoku polecenia, programu PowerShell wywołuje tę metodę raz dla poszczególnych wystąpień tego polecenia cmdlet w potoku.
+Jednak należy pamiętać, że w czasie wykonywania programu PowerShell nie wywoła metodę EndProcessing Jeśli polecenia cmdlet zostanie anulowane w środku za pośrednictwem jego przetwarzania danych wejściowych, lub jeśli wystąpi błąd powodujący przerwanie w jakichkolwiek pracach związanych z polecenia cmdlet.
+Z tego powodu należy zaimplementować pełne polecenia cmdlet, które wymaga czyszczenia obiektu [System.IDisposable](/dotnet/api/System.IDisposable) wzorca, w tym finalizator, dzięki czemu środowisko uruchomieniowe może wywołać oba EndProcessing i [ Metodę System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose) metody po zakończeniu przetwarzania.
+Aby uzyskać więcej informacji na temat sposobu PowerShell wywołuje potok polecenia, zobacz [cyklu przetwarzania polecenia Cmdlet](/previous-versions/ms714429(v=vs.85)).
 
-Kiedy program Windows PowerShell przetwarza potoku polecenia, programu Windows PowerShell wywołuje tę metodę raz dla poszczególnych wystąpień tego polecenia cmdlet w potoku. Będzie jednak pamiętać, że środowisko wykonawcze programu Windows PowerShell nie wywoła [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) metody, jeśli polecenie cmdlet zostanie anulowana w środku za pośrednictwem jego przetwarzania danych wejściowych lub gdy kończącym błędu w jakichkolwiek pracach związanych z polecenia cmdlet. Z tego powodu należy zaimplementować pełne polecenia cmdlet, które wymaga czyszczenia obiektu [System.IDisposable](/dotnet/api/System.IDisposable) wzorca, w tym finalizator, dzięki czemu środowisko uruchomieniowe może wywołać zarówno [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) i [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) metody po zakończeniu przetwarzania. Aby uzyskać więcej informacji na temat sposobu programu Windows PowerShell wywołuje potok polecenia, zobacz [cyklu przetwarzania polecenia Cmdlet](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-
-Poniższy kod przedstawia implementację [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metody.
+Poniższy kod przedstawia implementację metody EndProcessing.
 
 ```csharp
 protected override void EndProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the EndProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the EndProcessing template.");
 }
 ```
 
-Aby uzyskać bardziej szczegółowy przykład sposobu używania [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) metody, zobacz [samouczek SelectStr](./selectstr-tutorial.md).
-
 ## <a name="see-also"></a>Zobacz też
 
-[System.Management.Automation.Cmdlet.Beginprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
-[System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = imię i nazwisko](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+
+[Samouczek SelectStr](selectstr-tutorial.md)
 
 [System.IDisposable](/dotnet/api/System.IDisposable)
 

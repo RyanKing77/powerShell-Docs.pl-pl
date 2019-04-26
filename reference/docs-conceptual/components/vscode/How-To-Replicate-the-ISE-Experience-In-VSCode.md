@@ -3,11 +3,11 @@ title: Jak replikować obsługę środowiska ISE w programie Visual Studio Code
 description: Jak replikować obsługę środowiska ISE w programie Visual Studio Code
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058526"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Jak replikować obsługę środowiska ISE w programie Visual Studio Code
 
@@ -19,9 +19,9 @@ Ten dokument usiłuje ustawienia listy, które można skonfigurować w VSCode, a
 
 | Funkcja                              | Powiązanie środowiska ISE                  | Powiązanie programu VSCode                              |
 | ----------------                      | -----------                  | --------------                              |
-| Przerwij i przerwać debugera          | <kbd>CTRL</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+| Przerwij i przerwać debugera          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
 | Wykonaj bieżący wiersz/wyróżniony tekst | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| Dostępne fragmenty kodu list               | <kbd>CTRL</kbd>+<kbd>"j"</kbd> | <kbd>CTRL</kbd>+<kbd>Alt</kbd>+<kbd>"j"</kbd> |
+| Dostępne fragmenty kodu list               | <kbd>CTRL</kbd>+<kbd>"j"</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
 ### <a name="custom-key-bindings"></a>Powiązania niestandardowe klucza
 

@@ -3,11 +3,11 @@ title: Opis kodowania pliku w programie VSCode i PowerShell
 description: Skonfiguruj kodowanie pliku VSCode i programu PowerShell
 ms.date: 02/28/2019
 ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058441"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Opis kodowania pliku w programie VSCode i PowerShell
 
