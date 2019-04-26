@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
 ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081445"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="ac791-102">Przykładowy kod Runspace01 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="ac791-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="ab6a2-102">Przykładowy kod Runspace01 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="ab6a2-102">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="ac791-103">Poniżej przedstawiono przykłady kodu dla obszaru działania opisane w [tworzenia działa konsola aplikacji czy określone polecenie](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="ac791-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="ac791-104">Aby to zrobić, aplikacja wywołuje obszarem działania, a następnie wywołuje polecenie.</span><span class="sxs-lookup"><span data-stu-id="ac791-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="ac791-105">(Zwróć uwagę, że ta aplikacja nie określa informacje o konfiguracji obszaru działania ani go jawnie tworzy potok). Polecenie, które jest wywoływane jest `Get-Process` polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ac791-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="ab6a2-103">Poniżej przedstawiono przykłady kodu dla obszaru działania opisane w [tworzenia działa konsola aplikacji czy określone polecenie](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span><span class="sxs-lookup"><span data-stu-id="ab6a2-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="ab6a2-104">Aby to zrobić, aplikacja wywołuje obszarem działania, a następnie wywołuje polecenie.</span><span class="sxs-lookup"><span data-stu-id="ab6a2-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="ab6a2-105">(Zwróć uwagę, że ta aplikacja nie określa informacje o konfiguracji obszaru działania ani go jawnie tworzy potok). Polecenie, które jest wywoływane jest `Get-Process` polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ab6a2-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="ac791-106">Przykładowy kod</span><span class="sxs-lookup"><span data-stu-id="ac791-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="ab6a2-106">Przykładowy kod</span><span class="sxs-lookup"><span data-stu-id="ab6a2-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -71,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="ac791-107">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="ac791-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ab6a2-107">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="ab6a2-107">See Also</span></span>
 
-[<span data-ttu-id="ac791-108">Zestaw SDK programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ac791-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="ab6a2-108">Zestaw SDK programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ab6a2-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
