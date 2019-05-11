@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Konfigurowanie programu Local Configuration Manager
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079681"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229498"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurowanie programu Local Configuration Manager
 
@@ -121,6 +121,10 @@ A **ConfigurationRepositoryWeb** definiuje następujące właściwości.
 |ConfigurationNames|Ciąg]|Tablica nazw konfiguracji do ściągnięcia przez węzeł docelowy. Są one używane tylko wtedy, gdy węzeł jest zarejestrowana przy użyciu usługi ściągania przy użyciu **RegistrationKey**. Aby uzyskać więcej informacji, zobacz [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|ciąg|Identyfikator GUID, który rejestruje węzła przy użyciu usługi ściągania. Aby uzyskać więcej informacji, zobacz [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](../pull-server/pullClientConfigNames.md).|
 |ServerURL|ciąg|Adres URL usługi konfiguracji.|
+|ProxyURL*|ciąg|Adres URL serwera proxy http do użycia przy komunikacji z usługą konfiguracji.|
+|ProxyCredential *|PSCredential|Poświadczenia do użycia dla serwera proxy http.|
+
+>! Uwaga \* obsługiwane w Windows w wersji 1809 lub nowszej.
 
 Przykładowy skrypt ułatwiają konfigurowanie wartość ConfigurationRepositoryWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -143,6 +147,10 @@ A **ResourceRepositoryWeb** definiuje następujące właściwości.
 |CertificateID|ciąg|Odcisk palca certyfikatu używany do uwierzytelniania serwera.|
 |RegistrationKey|ciąg|Identyfikator GUID, który identyfikuje węzeł, aby usługa ściągania.|
 |ServerURL|ciąg|Adres URL serwera konfiguracji.|
+|ProxyURL*|ciąg|Adres URL serwera proxy http do użycia przy komunikacji z usługą konfiguracji.|
+|ProxyCredential *|PSCredential|Poświadczenia do użycia dla serwera proxy http.|
+
+>! Uwaga \* obsługiwane w Windows w wersji 1809 lub nowszej.
 
 Przykładowy skrypt ułatwiają konfigurowanie wartość ResourceRepositoryWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -166,6 +174,10 @@ Rola serwera raportów nie jest zgodny z usługi ściągania opartych na SMB.
 |CertificateID|ciąg|Odcisk palca certyfikatu używany do uwierzytelniania serwera.|
 |RegistrationKey|ciąg|Identyfikator GUID, który identyfikuje węzeł, aby usługa ściągania.|
 |ServerURL|ciąg|Adres URL serwera konfiguracji.|
+|ProxyURL*|ciąg|Adres URL serwera proxy http do użycia przy komunikacji z usługą konfiguracji.|
+|ProxyCredential *|PSCredential|Poświadczenia do użycia dla serwera proxy http.|
+
+>! Uwaga \* obsługiwane w Windows w wersji 1809 lub nowszej.
 
 Przykładowy skrypt ułatwiają konfigurowanie wartość ReportServerWeb dla węzłów lokalnych jest dostępna — zobacz [metaconfigurations generowania DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 

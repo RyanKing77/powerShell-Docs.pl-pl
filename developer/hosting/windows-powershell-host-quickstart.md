@@ -8,16 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9a080b6db7416ae6bf65a1b0353e9f17a56cc6c5
+ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082553"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64530625"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Przewodnik Szybki start dotyczący hosta programu Windows PowerShell
 
-Aby obsługiwać środowiska Windows PowerShell w aplikacji, należy użyć [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) klasy. Ta klasa dostarcza metody, które tworzenie potoku z poleceń, a następnie wykonywania tych poleceń w obszarze działania. Najprostszym sposobem na utworzenie aplikacji hosta jest używać obszarem działania domyślne. Obszarem działania domyślny zawiera wszystkie polecenia programu Windows PowerShell core. Jeśli chcesz, aby aplikacja do udostępnienia tylko podzbiór poleceń programu Windows PowerShell, należy utworzyć niestandardowe obszaru działania.
+Aby obsługiwać środowiska Windows PowerShell w aplikacji, należy użyć [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) klasy.
+Ta klasa dostarcza metody, które tworzenie potoku z poleceń, a następnie wykonywania tych poleceń w obszarze działania.
+Najprostszym sposobem na utworzenie aplikacji hosta jest używać obszarem działania domyślne.
+Obszarem działania domyślny zawiera wszystkie polecenia programu Windows PowerShell core.
+Jeśli chcesz, aby aplikacja do udostępnienia tylko podzbiór poleceń programu Windows PowerShell, należy utworzyć niestandardowe obszaru działania.
 
 ## <a name="using-the-default-runspace"></a>Za pomocą obszaru działania domyślne
 
@@ -25,7 +29,9 @@ Aby rozpocząć, będzie używane domyślne obszarze działania i używane w met
 
 ### <a name="addcommand"></a>Addcommand —
 
-Możesz użyć [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) metody [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) klasy, aby dodać polecenia do potoku. Na przykład załóżmy, że chcesz pobrać listę uruchomionych procesów na komputerze. Sposób uruchamiania tego polecenia jest następująca.
+Możesz użyć [System.Management.Automation.Powershell.AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) metodę, aby dodać polecenia do potoku.
+Na przykład załóżmy, że chcesz pobrać listę uruchomionych procesów na komputerze.
+Sposób uruchamiania tego polecenia jest następująca.
 
 1. Tworzenie [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) obiektu.
 
@@ -45,11 +51,14 @@ Możesz użyć [System.Management.Automation.Powershell.AddCommand*](/dotnet/api
    ps.Invoke();
    ```
 
-Jeśli wywołasz [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) więcej niż jeden raz przed wywołaniem metody [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) metody, wynik pierwsze polecenie w potoku do drugiej i tak dalej. Jeśli nie chcesz przekazać wynik poprzedniego polecenia do polecenia, dodaj go przez wywołanie metody [System.Management.Automation.Powershell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) zamiast tego.
+Jeśli więcej niż jeden raz wywołać metodę addcommand — przed wywołaniem [System.Management.Automation.Powershell.Invoke](/dotnet/api/System.Management.Automation.PowerShell.Invoke) potoku wynik pierwszego polecenia metody do drugiej i tak dalej.
+Jeśli nie chcesz przekazać wynik poprzedniego polecenia do polecenia, dodaj go przez wywołanie metody [System.Management.Automation.Powershell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) zamiast tego.
 
 ### <a name="addparameter"></a>AddParameter
 
-Poprzedni przykład wykonuje jednego polecenia bez parametrów. Można dodać parametry do polecenia przy użyciu [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) metody na przykład, poniższy kod umożliwia pobranie listy wszystkich procesów, które są nazywane `PowerShell` systemem maszyny.
+Poprzedni przykład wykonuje jednego polecenia bez parametrów.
+Można dodać parametry do polecenia przy użyciu [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) metody.
+Na przykład, poniższy kod umożliwia pobranie listy wszystkich procesów, które są nazywane `PowerShell` uruchomionego na maszynie.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -57,7 +66,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-Można dodać dodatkowe parametry, wywołując [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) wielokrotnie.
+Możesz dodać dodatkowe parametry, przez wywołanie metody AddParameter wielokrotnie.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -66,7 +75,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-Możesz również dodać słownik nazw parametrów i wartości, wywołując [System.Management.Automation.PowerShell.AddParameters*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) metody.
+Możesz również dodać słownik nazw parametrów i wartości, wywołując [System.Management.Automation.PowerShell.AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) metody.
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -81,7 +90,8 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
-Można symulować dzielenia na partie przy użyciu [System.Management.Automation.PowerShell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) metody, która dodaje dodatkowe oświadczenie na końcu potoku, poniższy kod umożliwia pobranie listy uruchomionych procesów o nazwie `PowerShell`, a następnie pobiera listę uruchomionych usług.
+Można symulować dzielenia na partie przy użyciu [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) metody, która dodaje dodatkowe oświadczenie na końcu potoku.
+Poniższy kod umożliwia pobranie listy uruchomionych procesów o nazwie `PowerShell`, a następnie pobiera listę uruchomionych usług.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -92,14 +102,18 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
-Istniejący skrypt można uruchomić, wywołując [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metody. Poniższy przykład dodaje skrypt do potoku i uruchamia go. W tym przykładzie przyjęto założenie, skrypt o nazwie istnieje już `MyScript.ps1` w folderze o nazwie `D:\PSScripts`.
+Istniejący skrypt można uruchomić, wywołując [System.Management.Automation.PowerShell.AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metody.
+Poniższy przykład dodaje skrypt do potoku i uruchamia go.
+W tym przykładzie przyjęto założenie, skrypt o nazwie istnieje już `MyScript.ps1` w folderze o nazwie `D:\PSScripts`.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-Jest również wersja [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) metody, która przyjmuje parametr logiczny o nazwie `useLocalScope`. Jeśli ten parametr jest równa `true`, a następnie skrypt jest uruchamiany w zakresie lokalnym. Poniższy kod będzie uruchomić skrypt w zakresie lokalnym.
+Jest również wersja metody AddScript, który przyjmuje parametr logiczny o nazwie `useLocalScope`.
+Jeśli ten parametr jest równa `true`, a następnie skrypt jest uruchamiany w zakresie lokalnym.
+Poniższy kod będzie uruchomić skrypt w zakresie lokalnym.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -108,11 +122,15 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ## <a name="creating-a-custom-runspace"></a>Tworzenie niestandardowego działania
 
-Podczas działania domyślne używane w poprzednich przykładach ładuje wszystkie polecenia programu Windows PowerShell core, można utworzyć niestandardowego obszaru działania, który ładuje określony podzbiór wszystkich poleceń. Można to zrobić, aby zwiększyć wydajność (Trwa ładowanie większej liczby poleceń jest trafień wydajności), lub aby ograniczyć możliwość wykonywania operacji użytkownika. Obszar działania, który udostępnia ograniczoną liczbę poleceń jest nazywany ograniczonego obszaru działania. Aby utworzyć ograniczonego obszaru działania, należy użyć [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) i [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) klasy.
+Podczas działania domyślne używane w poprzednich przykładach ładuje wszystkie polecenia programu Windows PowerShell core, można utworzyć niestandardowego obszaru działania, który ładuje określony podzbiór wszystkich poleceń.
+Można to zrobić, aby zwiększyć wydajność (Trwa ładowanie większej liczby poleceń jest trafień wydajności), lub aby ograniczyć możliwość wykonywania operacji użytkownika.
+Obszar działania, który udostępnia ograniczoną liczbę poleceń jest nazywany ograniczonego obszaru działania.
+Aby utworzyć ograniczonego obszaru działania, należy użyć [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) i [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) klasy.
 
 ### <a name="creating-an-initialsessionstate-object"></a>Tworzenie obiektu InitialSessionState
 
-Aby utworzyć niestandardowe obszar działania, należy najpierw utworzyć [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu. W poniższym przykładzie użyto [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) do utworzenia obszaru działania po utworzeniu domyślny [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu.
+Aby utworzyć niestandardowe obszar działania, należy najpierw utworzyć [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu.
+W poniższym przykładzie użyto [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) do utworzenia obszaru działania po utworzeniu obiektu InitialSessionState domyślne.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,11 +144,15 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Ograniczając obszarze działania
 
-W poprzednim przykładzie utworzyliśmy domyślny [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiekt, który ładuje wszystkie wbudowane podstawowych programu Windows PowerShell. Firma Microsoft może mieć jest określana skrótem [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metodę, aby utworzyć obiekt InitialSessionState, który będzie załadować tylko polecenia Microsoft.PowerShell.Core przystawki. Aby utworzyć bardziej ograniczonego obszaru działania, należy utworzyć pusty [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiektu przez wywołanie metody [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metody, a następnie dodać polecenia do InitialSessionState.
+W poprzednim przykładzie utworzyliśmy domyślny [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) obiekt, który ładuje wszystkie wbudowane podstawowych programu Windows PowerShell.
+Firma Microsoft może mieć jest określana skrótem [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) metodę, aby utworzyć obiekt InitialSessionState, który będzie załadować tylko polecenia Microsoft.PowerShell.Core przystawki.
+Aby utworzyć bardziej ograniczonego obszaru działania, należy utworzyć pusty obiekt InitialSessionState przez wywołanie metody [System.Management.Automation.Runspaces.InitialSessionState.Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) metody, a następnie dodać polecenia do InitialSessionState.
 
 Za pomocą obszaru działania, który ładuje tylko polecenia, które określisz zapewnia znacznie lepszą wydajność.
 
-Możesz użyć metody [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) klasy, aby zdefiniować poleceń cmdlet dla stanu sesji początkowej. Poniższy przykład tworzy stanie pusty początkowej sesji, a następnie definiuje i dodaje `Get-Command` i `Import-Module` poleceń do stanu początkowego sesji. Firma Microsoft Utwórz obszar działania, zależy od tego stanu sesji początkowej i wykonaj polecenia w tym obszarze działania.
+Możesz użyć metody [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) klasy, aby zdefiniować poleceń cmdlet dla stanu sesji początkowej.
+Poniższy przykład tworzy stanie pusty początkowej sesji, a następnie definiuje i dodaje `Get-Command` i `Import-Module` poleceń do stanu początkowego sesji.
+Firma Microsoft Utwórz obszar działania, zależy od tego stanu sesji początkowej i wykonaj polecenia w tym obszarze działania.
 
 Utwórz stan początkowy sesji.
 

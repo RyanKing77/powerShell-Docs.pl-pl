@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082230"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229334"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Jak napisać moduł pliku binarnego programu PowerShell
 
@@ -29,7 +29,10 @@ Poniższa procedura opisuje sposób tworzenia i zainstaluj moduł programu Power
 
 2. Jeśli to konieczne, należy utworzyć pozostałą część rozwiązania: (dodatkowych poleceń cmdlet, pliki XML i tak dalej) i opisano je z manifestu modułu.
 
-   Oprócz opisujący zestawy polecenia cmdlet w rozwiązaniu, manifestu modułu opisujący, jak chcesz eksportować i importować modułu, jakie polecenia cmdlet zostaną ujawnione i dodatkowe pliki przejdzie do modułu. Jak wspomniano wcześniej jednak, programu PowerShell można traktować binarne polecenia cmdlet, takich jak moduł o nie dodatkowego nakładu pracy. W efekcie manifestu modułu przydaje się głównie na łączenie wielu plików w jednym pakiecie lub jawnie kontrolowania publikacji dla danego zestawu. Aby uzyskać więcej informacji, zobacz [jak napisać Manifest modułu programu PowerShell](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+   Oprócz opisujący zestawy polecenia cmdlet w rozwiązaniu, manifestu modułu opisujący, jak chcesz eksportować i importować modułu, jakie polecenia cmdlet zostaną ujawnione i dodatkowe pliki przejdzie do modułu.
+   Jak wspomniano wcześniej jednak, programu PowerShell można traktować binarne polecenia cmdlet, takich jak moduł o nie dodatkowego nakładu pracy.
+   W efekcie manifestu modułu przydaje się głównie na łączenie wielu plików w jednym pakiecie lub jawnie kontrolowania publikacji dla danego zestawu.
+   Aby uzyskać więcej informacji, zobacz [jak napisać Manifest modułu programu PowerShell](how-to-write-a-powershell-module-manifest.md).
 
    Poniższy kod jest bardzo proste C# blok kodu, który zawiera trzy polecenia cmdlet w tym samym pliku, który może służyć jako moduł.
 
@@ -82,7 +85,9 @@ Poniższa procedura opisuje sposób tworzenia i zainstaluj moduł programu Power
 
 Polecenia cmdlet i dostawców, które istnieją w przystawce w zestawach, może być załadowany jako moduły binarne. Po przystawki zespoły są ładowane jako moduły binarne, poleceń cmdlet i dostawców w przystawce są dostępne dla użytkownika, ale klasy przystawki w zestawie jest ignorowana, a ta przystawka nie jest zarejestrowany. Co w efekcie cmdlet przystawki dostarczane przez środowisko Windows PowerShell nie może wykryć przystawki, nawet jeśli polecenia cmdlet i dostawcy będą dostępne dla sesji.
 
-Ponadto formatowania lub typów plików, których odwołuje się ta przystawka nie można zaimportować jako część modułu binarnego. Aby zaimportować pliki formatowania i typów należy utworzyć manifestu modułu. Zobacz, [jak napisać Manifest modułu programu PowerShell](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+Ponadto formatowania lub typów plików, których odwołuje się ta przystawka nie można zaimportować jako część modułu binarnego.
+Aby zaimportować pliki formatowania i typów należy utworzyć manifestu modułu.
+Zobacz, [jak napisać Manifest modułu programu PowerShell](how-to-write-a-powershell-module-manifest.md).
 
 ## <a name="see-also"></a>Zobacz też
 

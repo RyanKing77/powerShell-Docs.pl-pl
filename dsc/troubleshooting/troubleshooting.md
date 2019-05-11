@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Rozwiązywanie problemów z platformą DSC
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076552"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229540"
 ---
 # <a name="troubleshooting-dsc"></a>Rozwiązywanie problemów z platformą DSC
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>DSC zwraca "Nieoczekiwany kod odpowiedzi InternalServerError" podczas rejestrowania z serwera ściągania Windows
+
+Podczas stosowania metaconfiguration do serwera, aby go zarejestrować z wystąpieniem serwera ściągania Windows, może wystąpić następujący błąd.
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+Taka sytuacja może wystąpić, jeśli certyfikat używany na serwerze do szyfrowania ruchu ma nazwa pospolita (CN), który jest inny niż nazwa DNS używany przez węzeł rozpoznać adresu URL.
+Aktualizuj wystąpienia serwera ściągania Windows do użycia certyfikatu o nazwie poprawiony.
 
 ## <a name="see-also"></a>Zobacz też
 

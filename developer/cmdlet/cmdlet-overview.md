@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068474"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229363"
 ---
 # <a name="cmdlet-overview"></a>Polecenia cmdlet — omówienie
 
@@ -38,19 +38,53 @@ Możesz załadować zestaw, który zawiera klasę bezpośrednio przy użyciu [Im
 
 Poniższe terminy są często stosowane w dokumentacji poleceń cmdlet programu Windows PowerShell:
 
-- **Polecenia cmdlet atrybut**: Atrybut .NET Framework, który służy do deklarowania klasy polecenia cmdlet jako polecenia cmdlet. Mimo że program Windows PowerShell korzysta kilka atrybutów, które są opcjonalne, atrybut polecenia Cmdlet jest wymagany. Aby uzyskać więcej informacji na temat tego atrybutu, zobacz [deklaracji atrybutu polecenia Cmdlet](./cmdlet-attribute-declaration.md).
+### <a name="cmdlet-attribute"></a>Polecenia cmdlet atrybutu
 
-- **Parametr polecenia cmdlet**: Właściwości publiczne, które definiują parametry, które są dostępne dla użytkownika lub aplikacji, która jest uruchomienie polecenia cmdlet. Polecenia cmdlet wymaganych, nazwanych, pozycyjne, i *Przełącz* parametrów. Przełącznik parametry umożliwiają zdefiniowanie parametrów, które są oceniane tylko wtedy, gdy parametry są określone w wywołaniu. Aby uzyskać więcej informacji o różnych typach parametrów, zobacz [parametry polecenia Cmdlet](./cmdlet-parameters.md).
+Atrybut .NET Framework, który służy do deklarowania klasy polecenia cmdlet jako polecenia cmdlet.
+Mimo że program PowerShell używa kilka atrybutów, które są opcjonalne, atrybut polecenia Cmdlet jest wymagany.
+Aby uzyskać więcej informacji na temat tego atrybutu, zobacz [deklaracji atrybutu polecenia Cmdlet](cmdlet-attribute-declaration.md).
 
-- **Zestaw parametrów**: Grupa parametrów, które mogą służyć w tym samym poleceniu do wykonania określonej akcji. Polecenie cmdlet może mieć wiele zestawów parametrów, ale każdy zestaw parametrów musi mieć co najmniej jeden parametr, który jest unikatowy. Projekt dobre polecenia cmdlet silnie sugeruje, że unikatowy parametr też być wymagany parametr. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [zestawy parametrów polecenia Cmdlet](./cmdlet-parameter-sets.md).
+### <a name="cmdlet-parameter"></a>Parametr polecenia cmdlet
 
-- **Parametr dynamiczny**: Parametr, który jest dodawany do polecenia cmdlet w środowisku uruchomieniowym. Zazwyczaj parametry dynamiczne są dodawane do polecenia cmdlet, gdy inny parametr jest równa określonej wartości. Aby uzyskać więcej informacji na temat parametrów dynamicznych, zobacz [parametrów dynamicznych do polecenia Cmdlet](./cmdlet-dynamic-parameters.md).
+Właściwości publiczne, które definiują parametry, które są dostępne dla użytkownika lub aplikacji, która jest uruchomienie polecenia cmdlet.
+Polecenia cmdlet wymaganych, nazwanych, pozycyjne, i *Przełącz* parametrów.
+Przełącznik parametry umożliwiają zdefiniowanie parametrów, które są oceniane tylko wtedy, gdy parametry są określone w wywołaniu.
+Aby uzyskać więcej informacji o różnych typach parametrów, zobacz [parametry polecenia Cmdlet](cmdlet-parameters.md).
 
-- **Przetwarzanie metody wejściowej**: Metoda, która polecenia cmdlet można używać do przetwarzania rekordów otrzymywanych jako dane wejściowe. Metody przetwarzania danych wejściowych to [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody i [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metody. Podczas implementowania polecenia cmdlet konieczne jest przesłonięcie co najmniej jeden z [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)i [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody. Zazwyczaj [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoda jest metodą, które można przesłonić, ponieważ jest ona wywoływana dla każdego rekordu, który przetwarza polecenia cmdlet. Z kolei [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody i [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody są wywoływane jeden raz w celu wykonania Przetwarzanie wstępne lub przetwarzanie końcowe rekordów. Aby uzyskać więcej informacji o tych metodach, zobacz [metody przetwarzania danych wejściowych](./cmdlet-input-processing-methods.md).
+### <a name="parameter-set"></a>Zestaw parametrów
 
-- **Funkcja ShouldProcess**: Program Windows PowerShell służy do tworzenia poleceń cmdlet, które monitować użytkownika o opinię, zanim polecenia cmdlet sprawia, że zmiany do systemu. Aby użyć tej funkcji, polecenia cmdlet należy zadeklarować, że obsługuje funkcję ShouldProcess, zadeklarować atrybut polecenia Cmdlet, gdy polecenie cmdlet musi wywołać [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metody z w obrębie danych wejściowych przetwarzania metody. Aby uzyskać więcej informacji na temat obsługi funkcji ShouldProcess, zobacz [żądania potwierdzenia](./requesting-confirmation-from-cmdlets.md).
+Grupa parametrów, które mogą służyć w tym samym poleceniu do wykonania określonej akcji.
+Polecenie cmdlet może mieć wiele zestawów parametrów, ale każdy zestaw parametrów musi mieć co najmniej jeden parametr, który jest unikatowy.
+Projekt dobre polecenia cmdlet silnie sugeruje, że unikatowy parametr też być wymagany parametr.
+Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [zestawy parametrów polecenia Cmdlet](cmdlet-parameter-sets.md).
 
-- **Transakcja**: Logiczna grupa poleceń, które są traktowane jako jedno zadanie. Zadanie kończy się automatycznie, jeśli wszystkie polecenia w grupie zakończy się niepowodzeniem, a użytkownik ma możliwość zaakceptować lub odrzucić akcje wykonywane w ramach transakcji. Aby uczestniczyć w transakcji, polecenia cmdlet należy zadeklarować, że obsługuje ona transakcji, gdy polecenia Cmdlet atrybut jest zadeklarowany. Obsługa transakcji została wprowadzona w programie Windows PowerShell 2.0. Aby uzyskać więcej informacji na temat transakcji, zobacz [programu Windows PowerShell transakcji](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+### <a name="dynamic-parameter"></a>Parametr dynamiczny
+
+Parametr, który jest dodawany do polecenia cmdlet w środowisku uruchomieniowym.
+Zazwyczaj parametry dynamiczne są dodawane do polecenia cmdlet, gdy inny parametr jest równa określonej wartości.
+Aby uzyskać więcej informacji na temat parametrów dynamicznych, zobacz [parametrów dynamicznych do polecenia Cmdlet](cmdlet-dynamic-parameters.md).
+
+### <a name="input-processing-method"></a>Metoda przetwarzania danych wejściowych
+
+Metoda, która polecenia cmdlet można używać do przetwarzania rekordów otrzymywanych jako dane wejściowe.
+Metody przetwarzania danych wejściowych to [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody i [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) metody. Podczas implementowania polecenia cmdlet konieczne jest przesłonięcie co najmniej jeden z [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)i [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody.
+Zazwyczaj [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metoda jest metodą, które można przesłonić, ponieważ jest ona wywoływana dla każdego rekordu, który przetwarza polecenia cmdlet.
+Z kolei [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metody i [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) metody są wywoływane jeden raz w celu wykonania Przetwarzanie wstępne lub przetwarzanie końcowe rekordów.
+Aby uzyskać więcej informacji o tych metodach, zobacz [metody przetwarzania danych wejściowych](cmdlet-input-processing-methods.md).
+
+### <a name="shouldprocess-feature"></a>Funkcja ShouldProcess
+
+Program PowerShell służy do tworzenia poleceń cmdlet, które monitować użytkownika o opinię, zanim polecenia cmdlet sprawia, że zmiany do systemu.
+Aby użyć tej funkcji, polecenia cmdlet należy zadeklarować, że obsługuje funkcję ShouldProcess, zadeklarować atrybut polecenia Cmdlet, gdy polecenie cmdlet musi wywołać [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) i [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) metody z w obrębie danych wejściowych przetwarzania metody.
+Aby uzyskać więcej informacji na temat obsługi funkcji ShouldProcess, zobacz [żądania potwierdzenia](requesting-confirmation-from-cmdlets.md).
+
+### <a name="transaction"></a>Transakcji
+
+Logiczna grupa poleceń, które są traktowane jako jedno zadanie.
+Zadanie kończy się automatycznie, jeśli wszystkie polecenia w grupie zakończy się niepowodzeniem, a użytkownik ma możliwość zaakceptować lub odrzucić akcje wykonywane w ramach transakcji.
+Aby uczestniczyć w transakcji, polecenia cmdlet należy zadeklarować, że obsługuje ona transakcji, gdy polecenia Cmdlet atrybut jest zadeklarowany.
+Obsługa transakcji została wprowadzona w programie Windows PowerShell 2.0.
+Aby uzyskać więcej informacji na temat transakcji, zobacz [sposobu obsługi transakcji](how-to-support-transactions.md).
 
 ## <a name="how-cmdlets-differ-from-commands"></a>Jak polecenia cmdlet różni się od poleceń
 
