@@ -68,7 +68,7 @@
   items:
     - name: Konsola
       items:
-        - name: PowerShell.exe — pomoc wiersza polecenia
+        - name: Opcje wiersza polecenia programu PowerShell
           href: components/console/powershell.exe-command-line-help.md
         - name: Używanie rozszerzenia karty
           href: components/console/using-tab-expansion.md
