@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie zmiennych na potrzeby przechowywania obiektów
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 16e82b83df967674da11193c8ac60d637687a01b
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086548"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854331"
 ---
 # <a name="using-variables-to-store-objects"></a>Używanie zmiennych na potrzeby przechowywania obiektów
 
@@ -99,4 +99,4 @@ Można również tworzyć i modyfikować zmiennych środowiskowych z programu Po
 $env:LIB_PATH='/usr/local/lib'
 ```
 
-Chociaż nie jest wymagane, czy jest typowe dla nazwy zmiennych środowiskowych użyć wielkie litery.
+Nie jest to wymagane, ale jest typowe dla nazwy zmiennych środowiskowych użyć wielkie litery.

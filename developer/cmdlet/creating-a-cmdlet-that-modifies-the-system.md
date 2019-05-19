@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068443"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854915"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Tworzenie polecenia cmdlet, które modyfikuje system
 
@@ -42,28 +42,6 @@ Czynność "Zmiana systemu" odnosi się do dowolnego polecenia cmdlet, które po
 ## <a name="the-stopproc-cmdlet"></a>Polecenia cmdlet StopProc
 
 W tym temacie opisano polecenia cmdlet Stop-Proc, który podejmuje próby zatrzymania procesów, które są pobierane za pomocą polecenia cmdlet Get-Proc (opisanego w [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Tematy w tej sekcji są następujące:
-
-- [Definiowanie polecenia cmdlet](#Defining-the-Cmdlet)
-
-- [Definiowanie parametrów modyfikacji systemu](#Defining-Parameters-for-System-Modification)
-
-- [Zastępowanie metody przetwarzania danych wejściowych](#Overriding-an-Input-Processing-Method)
-
-- [Wywołanie metody ShouldProcess](#Calling-the-ShouldProcess-Method)
-
-- [Wywołanie metody ShouldContinue](#Calling-the-ShouldContinue-Method)
-
-- [Zatrzymywanie przetwarzania danych wejściowych](#Stopping-Input-Processing)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Definiowanie typów obiektów i formatowanie](#Defining-Object-Types-and-Formatting)
-
-- [Tworzenie polecenia cmdlet](#Building-the-Cmdlet)
-
-- [Testowanie polecenia cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definiowanie polecenia cmdlet
 

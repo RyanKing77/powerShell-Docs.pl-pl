@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081856"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855173"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Tworzenie dostawcy nawigacji programu Windows PowerShell
 
@@ -33,34 +33,6 @@ Dostawca opisane w tym miejscu umożliwia dojście użytkownika bazy danych prog
 
 > [!CAUTION]
 > Należy pamiętać, zakłada, że ten projekt bazy danych, które zawiera pole o identyfikatorze nazwa i typ pola to LongInteger.
-
-Poniższa lista zawiera sekcje, w tym temacie. Jeśli nie jesteś zaznajomiony z pisaniem dostawcy nawigacji programu Windows PowerShell, przeczytaj te informacje w kolejności, która wygląda na to. Jednak jeśli i dopiero zaczynasz pisanie dostawcy nawigacji programu Windows PowerShell, przejdź bezpośrednio do potrzebnych informacji.
-
-- [Definiowanie klasy dostawcy nawigacji PS](#Define-the-Windows-PowerShell-provider)
-
-- [Definiowanie podstawowe funkcje](#Defining-Base-Functionality)
-
-- [Tworzenie ścieżki PS](#Creating-a-Windows-PowerShell-Path)
-
-- [Pobieranie ścieżki nadrzędnej](#Retrieving-the-Parent-Path)
-
-- [Pobieranie nazwy ścieżki podrzędne](#Retrieve-the-Child-Path-Name)
-
-- [Określanie, czy element kontenera](#Determining-if-an-Item-is-a-Container)
-
-- [Przenoszenie elementu](#Moving-an-Item)
-
-- [Dołączanie parametrów dynamicznych do `Move-Item` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Normalizowanie ścieżki względnej](#Normalizing-a-Relative-Path)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Definiowanie typów obiektów i formatowanie](#Defining-Object-Types-and-Formatting)
-
-- [Tworzenie dostawcy programu Windows PowerShell](#Building-the-Windows-PowerShell-provider)
-
-- [Testowanie dostawcy programu Windows PowerShell](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>Zdefiniuj dostawcy programu Windows PowerShell
 

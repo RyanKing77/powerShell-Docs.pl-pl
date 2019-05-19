@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Opis potoki PowerShell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086446"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854342"
 ---
 # <a name="understanding-pipelines"></a>Opis potoków
 
@@ -61,7 +61,10 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 Stronicowanie także ogranicza wykorzystanie Procesora, ponieważ przetwarzanie przesyła do `Out-Host` polecenia cmdlet, gdy ma ona całą stronę gotowej do wyświetlenia. Polecenia cmdlet, które należy poprzedzić go w potoku zatrzymać wykonywanie aż do następnej strony w danych wyjściowych.
 
-Możesz zobaczyć różnicę Menedżera zadań Windows do monitorowania procesora CPU i użycie pamięci przez program PowerShell. Uruchom następujące polecenie: `Get-ChildItem C:\Windows -Recurse`. Porównaj użycie Procesora i pamięci do tego polecenia: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
+Aby zobaczyć, jak przesyłanie potokowe ma wpływ na użycie procesora CPU i pamięci w Menedżerze zadań Windows porównując następujących poleceń:
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > **Stronicowania** parametr nie jest obsługiwany przez wszystkie hosty programu PowerShell. Na przykład podczas próby użycia **stronicowania** parametru w środowisku PowerShell ISE, zostanie wyświetlony następujący błąd:

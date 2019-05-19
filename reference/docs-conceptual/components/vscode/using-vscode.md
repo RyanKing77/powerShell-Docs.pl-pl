@@ -2,12 +2,12 @@
 title: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 description: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086732"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854398"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 Zostanie wyświetlony monit z "Czy chcesz uruchamiać oprogramowania z tego wydawcy niezaufanych?"
 Typ `R` do uruchomienia pliku. Następnie otwórz w programie Visual Studio Code i sprawdź, czy rozszerzenia programu PowerShell działa prawidłowo. Jeśli nadal masz problemy, wprowadzenie, Daj nam znać na [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Przy użyciu określonych zainstalowanej wersji programu PowerShell
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Wybieranie wersji programu PowerShell do korzystania z rozszerzeniem
 
-Jeśli użytkownik chce określoną instalacją programu PowerShell za pomocą programu Visual Studio Code, należy dodać nową zmienną do pliku ustawień użytkownika.
+Za pomocą programu PowerShell Core instalowanie side-by-side przy użyciu programu Windows PowerShell jest teraz możliwe do określonej wersji programu PowerShell z rozszerzeniem programu PowerShell. Należy użyć następującego poniższe kroki, aby wybrać wersję:
 
-1. Kliknij przycisk **Plik -> Preferencje -> Ustawienia**
-1. Są wyświetlane dwa okienka edytora.
-   W okienku najdalej z prawej strony (`settings.json`), wstawić ustawienie poniżej odpowiednie dla Twojego systemu operacyjnego gdzieś między dwoma nawiasów klamrowych (`{` i `}`) i Zastąp **\<wersji\>** z zainstalowaną wersją programu PowerShell:
+1. Otwórz paletę poleceń (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> na Windows i Linux, <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P</kbd> w systemie macOS).
+1. Wyszukaj "Sesja".
+1. Kliknij pozycję "programu PowerShell: Pokaż Menu sesji".
+1. Wybierz wersję programu PowerShell, którego chcesz użyć z listy — na przykład programu PowerShell Core"".
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> Ta funkcja sprawdza kilka znanych ścieżek w różnych systemach operacyjnych, aby odnaleźć lokalizacji instalacji programu PowerShell. Po zainstalowaniu programu PowerShell — typowej lokalizacji go może nie być wyświetlana początkowo w Menu sesji. Możesz rozszerzyć menu sesji przez [Dodawanie własnych niestandardowych ścieżek](#adding-your-own-powershell-paths-to-the-session-menu) zgodnie z poniższym opisem.
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> Istnieje inny sposób, aby przejść do menu sesji. Po otwarciu w edytorze pliku programu PowerShell zostanie wyświetlony numer wersji zielony w prawym dolnym rogu. Klikając ten numer wersji zostanie wyświetlone menu sesji.
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Dodawanie własnego ścieżki programu PowerShell do menu sesji
 
-1. Zastąp ustawienia ścieżki do żądanego pliku wykonywalnego programu PowerShell
-1. Zapisz plik ustawień i ponownie uruchom Visual Studio Code
+Do menu sesji za pomocą ustawienia programu VS Code, możesz dodać inne ścieżki pliku wykonywalnego programu PowerShell.
+
+Dodaj element do listy `powershell.powerShellAdditionalExePaths` lub utworzyć listę, jeśli nie istnieje w Twojej `settings.json`:
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+Każdy element musi mieć:
+
+* `exePath`: Ścieżka do `pwsh` lub `powershell` pliku wykonywalnego.
+* `versionName`: Tekst, który będzie wyświetlany w menu sesji.
+
+Można ustawić domyślną wersję programu PowerShell do użycia przy użyciu `powershell.powerShellDefaultVersion` ustawienie przez ustawienie, to w tekście wyświetlane w menu sesji (zwane również `versionName` w ostatnim ustawieniu):
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+Po ustawieniu to ustawienie, uruchom ponownie program Visual Studio Code, lub użyj "dla deweloperów: Ponowne załadowanie okna"akcji wiersza polecenia palety ponownie załadować bieżące okno vscode.
+
+Po otwarciu menu sesji, zostanie wyświetlona swoje dodatkowe wersje programu PowerShell!
+
+> [!NOTE]
+> Jeśli tworzysz Środowisko PowerShell ze źródła, to doskonały sposób na poziomie lokalnych kompilacji programu PowerShell.
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Ustawienia konfiguracji dla programu Visual Studio Code
 

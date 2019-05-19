@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068355"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854846"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Tworzenie polecenia cmdlet w celu uzyskania dostępu do magazynu danych
 
@@ -22,24 +22,6 @@ W tej sekcji opisano sposób tworzenia polecenia cmdlet, który uzyskuje dostęp
 Polecenia cmdlet Select Str opisane w tym miejscu można Znajdź i zaznacz ciągów w pliku lub obiektu. Wzorce używany do identyfikowania ciąg może być określony jawnie za pomocą `Path` parametru polecenia cmdlet lub niejawnie za pomocą `Script` parametru.
 
 Polecenie cmdlet jest przeznaczony do stosowania dowolnego dostawcy środowiska Windows PowerShell, która pochodzi od klasy [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Na przykład polecenia cmdlet można określić dostawcy systemu plików lub zmiennej dostawcy, który jest dostarczany przez środowisko Windows PowerShell. Aby uzyskać więcej informacji o aboutWindows dostawcy programu PowerShell, zobacz [dostawcy projektowania Your Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md).
-
-Tematy w tej sekcji są następujące:
-
-- [Definiowanie klasy polecenia Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Definiowanie parametrów na potrzeby dostępu do danych](#Declaring-the-Path-Parameter)
-
-- [Zastępowanie metody przetwarzania danych wejściowych](#Overriding-Input-Processing-Methods)
-
-- [Dostęp do zawartości](#Accessing-Content)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Definiowanie typów obiektów i formatowanie](#Declaring-Search-Support-Parameters)
-
-- [Tworzenie polecenia cmdlet](#Building-the-Cmdlet)
-
-- [Testowanie polecenia cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Definiowanie klasy polecenia Cmdlet
 
@@ -397,7 +379,7 @@ To polecenie cmdlet Str wybierz przykładowy używa [System.Management.Automatio
 
 ## <a name="code-sample"></a>Przykładowy kod
 
-Poniższy kod przedstawia implementację tej wersji tego polecenia cmdlet Select Str. Należy pamiętać, że ten kod zawiera klasy polecenia cmdlet, metody prywatnej używany przez polecenia cmdlet i programu Windows PowerShell w przystawce Kod używany do rejestrowania polecenia cmdlet. Aby uzyskać więcej informacji na temat rejestrowania polecenia cmdlet, zobacz [tworzenia polecenia cmdlet](#Building-the-Cmdlet).
+Poniższy kod przedstawia implementację tej wersji tego polecenia cmdlet Select Str. Należy pamiętać, że ten kod zawiera klasy polecenia cmdlet, metody prywatnej używany przez polecenia cmdlet i programu Windows PowerShell w przystawce Kod używany do rejestrowania polecenia cmdlet. Aby uzyskać więcej informacji na temat rejestrowania polecenia cmdlet, zobacz [tworzenia polecenia cmdlet](#building-the-cmdlet).
 
 ```csharp
 //

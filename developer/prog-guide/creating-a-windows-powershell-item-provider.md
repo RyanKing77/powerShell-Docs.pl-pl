@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081873"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855052"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Tworzenie dostawcy elementów programu Windows PowerShell
 
@@ -30,44 +30,6 @@ W tym temacie opisano sposób tworzenia dostawcy środowiska Windows PowerShell,
 > Aby uzyskać więcej informacji na temat innych implementacji dostawcy środowiska Windows PowerShell, zobacz [projektowania Your Windows PowerShell dostawcy](./designing-your-windows-powershell-provider.md).
 
 Dostawcy elementu programu Windows PowerShell, które są opisane w tym temacie pobiera elementy danych z bazy danych programu Access. W tym przypadku "item" jest tabeli w bazie danych programu Access albo wiersz w tabeli.
-
-Poniższa lista zawiera sekcje, w tym temacie. Jeśli nie jesteś zaznajomiony z pisaniem dostawcy elementu programu Windows PowerShell, należy przeczytać następujące sekcje w kolejności, w jakiej się pojawiają. Jednak jeśli znasz pisanie dostawcy elementu programu Windows PowerShell, przejść bezpośrednio do potrzebnych informacji:
-
-- [Definiowanie klasy dostawcy programu PowerShell elementu Windows](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Definiowanie podstawowe funkcje](#Defining-Base-Functionality)
-
-- [Sprawdzanie poprawności ścieżki](#Checking-for-Path-Validity)
-
-- [Określanie, czy element istnieje](#Determining-if-an-Item-Exists)
-
-- [Dołączanie parametrów dynamicznych do `Test-Path` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Trwa pobieranie elementu](#Retrieving-an-Item)
-
-- [Dołączanie parametrów dynamicznych do `Get-Item` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Ustawienie elementu](#Setting-an-Item)
-
-- [Dołączanie parametrów dynamicznych do `Set-Item` polecenia Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Zaznaczenie elementu](#Clearing-an-Item)
-
-- [Dołączanie parametrów dynamicznych do polecenia cmdlet wyczyść element](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Wykonując akcję domyślną dla elementu](#Performing-a-Default-Action-for-an-Item)
-
-- [Trwa pobieranie parametrów dynamicznych do InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implementacja klasy i metody pomocnicze](#Implementing-Helper-Methods-and-Classes)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Definiowanie typów obiektów i formatowanie](#Defining-Object-Types-and-Formatting)
-
-- [Tworzenie dostawcy programu Windows PowerShell](#Building-the-Windows-PowerShell-provider)
-
-- [Testowanie dostawcy programu Windows PowerShell](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Definiowanie klasy dostawcy programu PowerShell elementu Windows
 
@@ -223,7 +185,7 @@ Ten element dostawca nie implementuje tej metody. Jednakże poniższy kod jest d
 
 ## <a name="implementing-helper-methods-and-classes"></a>Implementacja klasy i metody pomocnicze
 
-Ten dostawca elementu implementuje kilka metod pomocniczych i klas, które są używane przez publiczny zastępują metody zdefiniowane przez środowisko Windows PowerShell. Kod dla tych metod pomocniczych i klas są wyświetlane w [przykładowy kod](#Code-Sample) sekcji.
+Ten dostawca elementu implementuje kilka metod pomocniczych i klas, które są używane przez publiczny zastępują metody zdefiniowane przez środowisko Windows PowerShell. Kod dla tych metod pomocniczych i klas są wyświetlane w [przykładowy kod](#code-sample) sekcji.
 
 ### <a name="normalizepath-method"></a>Metoda NormalizePath
 

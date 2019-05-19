@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068797"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854864"
 ---
 # <a name="advisory-development-guidelines"></a>Pomocnicze wskazówki dotyczące projektowania
 
 W tej sekcji opisano wskazówki, które należy wziąć pod uwagę zapewnienie dobrej środowiska programowania i użytkowników. Czasami mogą być stosowane, a czasami mogą być może nie.
-
-## <a name="design-guidelines"></a>Wytyczne dotyczące projektowania
-
-- [Obsługuje parametru InputObject (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Obsługa parametru Force (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Obsługa poświadczeń za pomocą programu Windows PowerShell (AD03)](./advisory-development-guidelines.md#AD03)
-
-- [Obsługuje kodowanie parametrów (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [Polecenia cmdlet test powinna zwracać wartość logiczną (AD05)](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>Wytyczne dotyczące kodu
-
-- [Zgodne z konwencjami nazewnictwa klasy polecenia Cmdlet (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [Jeśli nie wejście potokowe przesłonić metodę BeginProcessing (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [Aby obsłużyć żądania zatrzymania przesłonić metodę StopProcessing (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [Zaimplementuj interfejs IDisposable (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Użyj parametru przyjaznego dla serializacji typów (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [Użyj SecureString poufnych danych (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>Wytyczne dotyczące projektowania
 

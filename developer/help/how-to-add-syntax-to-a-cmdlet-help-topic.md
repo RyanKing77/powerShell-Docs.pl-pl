@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083386"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855132"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Jak dodać składnię do tematu pomocy dotyczącego polecenia cmdlet
-
-- [Atrybuty parametru](#Parameter-Attributes)
-
-- [Atrybuty wartości parametru](#Parameter-Value-Attributes)
-
-- [Zbieranie informacji o składni](#Gathering-Syntax-Information)
-
-- [Kodowanie Diagram składni XML](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Co należy wiedzieć o Diagram składni w pomocy dotyczącej poleceń Cmdlet
 
 Przed przystąpieniem do kodu XML dla diagramu składni w pliku pomocy polecenia cmdlet, przeczytaj tę sekcję, aby uzyskać jasny obraz rodzaju danych, musisz podać, takie jak atrybuty parametrów i sposób wyświetlania tych danych na diagramie składni...
 
@@ -166,7 +156,7 @@ Zazwyczaj wymaganych wartości parametrów, które są symbolami zastępczymi, a
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Kodowanie Diagram składni XML
 
-Węzeł składni XML, który rozpoczyna się natychmiast po węźle, opis, który kończy się \</maml:description > tag. Aby dowiedzieć się, jak zbieranie danych używanych w diagram składni, zobacz [zbierania informacji o składni](#Gathering-Syntax-Information).
+Węzeł składni XML, który rozpoczyna się natychmiast po węźle, opis, który kończy się \</maml:description > tag. Aby dowiedzieć się, jak zbieranie danych używanych w diagram składni, zobacz [zbierania informacji o składni](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Dodawanie węzła składni
 
@@ -210,7 +200,7 @@ Poniższy przykład zawiera węzeł składni, który ma węzły elementu składn
 
 Każdy parametr dodany do węzła elementu składnia jest określona w parę \<: parametr > tagów. Potrzebujesz parę \<: parametr > znaczniki dla każdego parametru zestawu parametrów, z wyjątkiem wspólne parametry, które są dostarczane przez środowisko Windows PowerShell?
 
-Atrybuty otwarcia \<: parametr > tag określić, jak parametr pojawia się na diagramie składni. Informacje o atrybutach parametrów, zobacz [atrybuty parametru](#Parameter-Attributes).
+Atrybuty otwarcia \<: parametr > tag określić, jak parametr pojawia się na diagramie składni. Informacje o atrybutach parametrów, zobacz [atrybuty parametru](#parameter-attributes).
 
 > [!NOTE]
 > \<: Parametr > tag wspiera nie zawiera elementu podrzędnego \<maml:description > którego zawartość nigdy nie jest wyświetlana. Opisy parametrów są określone w węźle parametru pliku XML. Aby uniknąć niespójności między informacjami zawartymi w elemencie składni bodes i węzeł parametr, Pomiń (\<maml:description > lub pozostawić je puste.

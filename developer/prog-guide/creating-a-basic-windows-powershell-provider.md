@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082077"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855063"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Tworzenie podstawowego dostawcy programu Windows PowerShell
 
@@ -26,22 +26,6 @@ Jak wspomniano wcześniej, Dostawca podstawowej opisane tutaj implementuje metod
 
 > [!NOTE]
 > Przykładem tego dostawcy można znaleźć w pliku AccessDBSampleProvider01.cs dostarczonego przez środowisko Windows PowerShell.
-
-Następujące sekcje w tym temacie:
-
-- [Definiowanie klasy dostawcy programu PowerShell Windows](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Definiowanie informacji o stanie specyficzne dla dostawcy](#Defining-Provider-Specific-State-Information)
-
-- [Inicjowanie dostawcy](#Initializing-the-Provider)
-
-- [Rozpocznij parametrów dynamicznych](#Start-Dynamic-Parameters)
-
-- [Cofanie inicjowania dostawcy](#Uninitializing-the-Provider)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Testowanie dostawcy programu Windows PowerShell](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definiowanie klasy dostawcy programu PowerShell Windows
 
@@ -77,7 +61,7 @@ Ten podstawowy dostawca nie zastępuje tę metodę. Jednakże poniższy kod prze
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-Dostawca może zachować stan informacje specyficzne dla dostawcy, zgodnie z opisem w [definiujący właściwe dla dostawcy danych stanu](#Defining-Provider-Specific-State-Information). W takim przypadku należy zastąpić implementacji [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) metodę, aby zwrócić wystąpienia klasy pochodnej.
+Dostawca może zachować stan informacje specyficzne dla dostawcy, zgodnie z opisem w [definiujący właściwe dla dostawcy danych stanu](#defining-provider-specific-state-information). W takim przypadku należy zastąpić implementacji [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) metodę, aby zwrócić wystąpienia klasy pochodnej.
 
 ## <a name="start-dynamic-parameters"></a>Rozpocznij parametrów dynamicznych
 

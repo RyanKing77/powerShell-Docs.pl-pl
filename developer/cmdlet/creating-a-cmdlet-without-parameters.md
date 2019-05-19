@@ -11,32 +11,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068338"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854963"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Tworzenie polecenia cmdlet bez parametrów
 
 Ta sekcja zawiera opis sposobu tworzenia polecenia cmdlet, które pobiera informacje z komputera lokalnego bez użycia parametrów, a następnie zapisuje informacje do potoku. Polecenia cmdlet opisane w tym miejscu to polecenie cmdlet Get-Proc, pobiera informacje o procesach komputera lokalnego, a następnie wyświetli te informacje w wierszu polecenia.
-
-Tematy w tej sekcji są następujące:
-
-- [Polecenia cmdlet nazewnictwa](#Naming-the-Cmdlet)
-
-- [Definiowanie klasy polecenia Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Zastępowanie metody przetwarzania danych wejściowych](#Overriding-an-Input-Processing-Method)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Definiowanie typów obiektów i formatowanie](#Defining-Object-Types-and-Formatting)
-
-- [Tworzenie polecenia cmdlet](#Building-the-Cmdlet)
-
-- [Testowanie polecenia cmdlet](#Testing-the-Cmdlet)
 
 > [!NOTE]
 > Należy pamiętać, że podczas pisania poleceń cmdlet, zestawy odwołań Windows PowerShell® domyślnie pobierane są na dysku (w C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). Nie są zainstalowane w globalnej pamięci podręcznej zestawów (GAC).

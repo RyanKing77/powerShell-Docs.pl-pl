@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068780"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854939"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Dodawanie wiadomości użytkownika do polecenia cmdlet
 
@@ -51,32 +51,6 @@ Polecenia cmdlet można napisać kilka rodzajów wiadomości, które mogą być 
 - Raport postęp polecenia cmdlet działać, komunikaty, które zawierają informacje o ile zostało zakończone, podczas wykonywania operacji, która zajmuje dużo czasu.
 
 Nie ma ograniczeń liczby wiadomości, które może zapisać Twojego polecenia cmdlet lub typ wiadomości, które zapisuje Twojego polecenia cmdlet. Każdy komunikat jest zapisywany, wprowadzając wywołania określone dane wejściowe przetwarzania metody Twojego polecenia cmdlet.
-
-## <a name="the-stopproc-cmdlet"></a>Polecenia cmdlet StopProc
-
-Tematy w tej sekcji są następujące:
-
-- [Definiowanie polecenia cmdlet](#Defining-the-Cmdlet)
-
-- [Definiowanie parametrów modyfikacji systemu](#Defining-Parameters-for-System-Modification)
-
-- [Zastępowanie metody przetwarzania danych wejściowych](#Overriding-an-Input-Processing-Method)
-
-- [Zapisywanie komunikat trybu informacji pełnej](#Writing-a-Verbose-Message)
-
-- [Zapisywanie komunikatów debugowania](#Writing-a-Debug-Message)
-
-- [Zapisywanie komunikatu ostrzegawczego](#Writing-a-Warning-Message)
-
-- [Zapisywanie komunikatu o postępie](#Writing-a-Progress-Message)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Zdefiniuj typy obiektów i formatowanie](#Define-Object-Types-and-Formatting)
-
-- [Tworzenie polecenia cmdlet](#Building-the-Cmdlet)
-
-- [Testowanie polecenia cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definiowanie polecenia cmdlet
 

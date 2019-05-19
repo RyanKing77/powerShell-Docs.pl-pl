@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068763"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854980"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Dodawanie parametrów, które przetwarzają dane wejściowe potoku
 
 Jedno źródło danych wejściowych dla polecenia cmdlet jest obiekt w potoku, który pochodzi z nadrzędnego polecenia cmdlet. W tej sekcji opisano sposób dodać parametr do polecenia cmdlet Get-Proc (opisanego w [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md)) tak, aby polecenie cmdlet może przetwarzać obiektów z potoku.
 
 To polecenie cmdlet Get-Proc używa `Name` parametr, który akceptuje dane wejściowe z obiektu potok pobiera informacje o procesach z komputera lokalnego, w oparciu o podanej nazwy i następnie wyświetla informacje dotyczące procesów w wierszu polecenia.
-
-Tematy w tej sekcji są następujące:
-
-- [Definiowanie klasy polecenia Cmdlet](#Defining-the-Cmdlet-Class)
-
-- [Definiowanie danych wejściowych z potoku](#Defining-Input-from-the-Pipeline)
-
-- [Zastępowanie metody przetwarzania danych wejściowych](#Overriding-an-Input-Processing-Method)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Definiowanie typów obiektów i formatowanie](#Defining-Object-Types-and-Formatting)
-
-- [Tworzenie polecenia cmdlet](#Building-the-Cmdlet)
-
-- [Testowanie polecenia cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Definiowanie klasy polecenia Cmdlet
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081907"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855193"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Tworzenie dostawcy kontenerów programu Windows PowerShell
 
@@ -35,44 +35,6 @@ Dostawcy kontenera programu Windows PowerShell, które są opisane w tym miejscu
 
 > [!CAUTION]
 > Należy pamiętać, zakłada, że ten projekt bazy danych, które zawiera pole o identyfikatorze nazwa i typ pola to LongInteger.
-
-Oto lista sekcje w tym temacie. Jeśli nie jesteś zaznajomiony z pisaniem dostawcy kontenera programu Windows PowerShell, zapoznaj się z tych informacji w kolejności, która wygląda na to. Jednak jeśli i dopiero zaczynasz pisanie dostawcy kontenera programu Windows PowerShell, przejdź bezpośrednio do potrzebnych informacji.
-
-- [Definiowanie klasy dostawcy kontenera Windows PowerShell](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [Definiowanie podstawowe funkcje](#defining-base-functionality)
-
-- [Trwa pobieranie elementów podrzędnych](#Retrieving-Child-Items)
-
-- [Dołączanie parametrów dynamicznych do `Get-ChildItem` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [Podczas pobierania nazw elementów podrzędnych](#Retrieving-Child-Item-Names)
-
-- [Dołączanie parametrów dynamicznych do `Get-ChildItem` polecenia Cmdlet (nazwa)](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [Zmienianie nazw elementów](#Renaming-Items)
-
-- [Dołączanie parametrów dynamicznych do `Rename-Item` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [Tworzenie nowych elementów](#Creating-New-Items)
-
-- [Dołączanie parametrów dynamicznych do `New-Item` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [Usuwanie elementów](#Removing-Items)
-
-- [Dołączanie parametrów dynamicznych do `Remove-Item` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [Wykonywanie zapytań dotyczących elementów podrzędnych](#Querying-for-Child-Items)
-
-- [Kopiowaniu elementów](#Copying-Items)
-
-- [Dołączanie parametrów dynamicznych do `Copy-Item` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Tworzenie dostawcy programu Windows PowerShell](#Building-the-Windows-PowerShell-Provider)
-
-- [Testowanie dostawcy programu Windows PowerShell](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>Definiowanie klasy dostawcy kontenera Windows PowerShell
 
@@ -398,7 +360,7 @@ Następujące warunki mogą dotyczyć implementacji [System.Management.Automatio
 
 - Implementacja [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) jest odpowiedzialny za przypadku łączy cyklicznych i podobnych, co uniemożliwia nieskończoną rekursję. Odpowiednie kończący należy zgłosić wyjątek do uwzględnienia tych warunków.
 
-- Implementacja [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) powinny wywoływać metodę [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) i sprawdź wartość zwracaną przed wprowadzeniem jakichkolwiek zmian w magazynie danych. Po wywołaniu [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) zwraca wartość true, [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) Metoda powinna wywoływać [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metodę jako dodatkowe sprawdzenie modyfikacji potencjalnie niebezpiecznych systemu. Aby uzyskać więcej informacji na temat wywoływanie tych metod, zobacz [zmiany nazwy elementów](#Renaming-Items).
+- Implementacja [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) powinny wywoływać metodę [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) i sprawdź wartość zwracaną przed wprowadzeniem jakichkolwiek zmian w magazynie danych. Po wywołaniu [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) zwraca wartość true, [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) Metoda powinna wywoływać [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) metodę jako dodatkowe sprawdzenie modyfikacji potencjalnie niebezpiecznych systemu. Aby uzyskać więcej informacji na temat wywoływanie tych metod, zobacz [zmiany nazwy elementów](#renaming-items).
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Dołączanie parametrów dynamicznych do polecenia cmdlet Copy-Item
 

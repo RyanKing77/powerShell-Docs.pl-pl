@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055653"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855202"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Tworzenie dostawcy dysku programu Windows PowerShell
 
 W tym temacie opisano sposób tworzenia dostawcy dysk programu Windows PowerShell, który umożliwia dostęp do magazynu danych za pośrednictwem dysk programu Windows PowerShell. Ten typ dostawcy jest również nazywane dostawców dysk programu Windows PowerShell. Dyski programu Windows PowerShell, używany przez dostawcę oferują sposób połączyć się z magazynem danych.
 
 Dostawcy dysk programu Windows PowerShell, które są opisane w tym miejscu zapewnia dostęp do bazy danych programu Microsoft Access. Dla tego dostawcy, dysk programu Windows PowerShell reprezentuje bazy danych (jest można dodać dowolną liczbę dysków do dostawcy dysku), kontenery najwyższego poziomu stacji reprezentują tabele w bazie danych, a elementy kontenery reprezentują wierszy w tabele.
-
-Oto lista sekcje w tym temacie. Jeśli nie jesteś zaznajomiony z pisaniem dostawcy dysk programu Windows PowerShell, należy przeczytać następujące sekcje w kolejności, w jakiej się pojawiają. Jednak osoby zaznajomione z pisaniem dostawcy dysku przejdź bezpośrednio do potrzebnych informacji.
-
-- [Definiowanie klasy dostawcy programu PowerShell Windows](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Definiowanie podstawowe funkcje](#Defining-Base-Functionality)
-
-- [Tworzenie informacji o stanie dysku](#Creating-Drive-State-Information)
-
-- [Tworzenie dysku](#Creating-a-Drive)
-
-- [Dołączanie parametrów dynamicznych do NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Usuwanie dysku](#Removing-a-Drive)
-
-- [Inicjowanie domyślne dyski](#Initializing-Default-Drives)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Testowanie dostawcy programu Windows PowerShell dysku](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definiowanie klasy dostawcy programu PowerShell Windows
 

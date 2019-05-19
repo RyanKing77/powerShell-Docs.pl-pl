@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081924"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855021"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Tworzenie dostawcy zawartości programu Windows PowerShell
 
@@ -28,36 +28,6 @@ W tym temacie opisano sposób tworzenia dostawcy środowiska Windows PowerShell,
 > Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
 >
 > Aby uzyskać więcej informacji na temat innych implementacji dostawcy środowiska Windows PowerShell, zobacz [projektowania Your Windows PowerShell dostawcy](./designing-your-windows-powershell-provider.md).
-
-Poniższa lista zawiera sekcje, w tym temacie. Jeśli nie jesteś zaznajomiony z pisaniem dostawcy zawartości programu Windows PowerShell, należy przeczytać następujące sekcje w kolejności, w jakiej się pojawiają. Jednak jeśli znasz pisanie dostawcy zawartości programu Windows PowerShell, przejdź bezpośrednio do potrzebnych informacji.
-
-- [Definiowanie klasy dostawcy Windows zawartość programu PowerShell](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Definiowanie podstawowe funkcje](#Define-Functionality-of-Base-Class)
-
-- [Implementowanie czytnik zawartości](#Implementing-a-Content-Reader)
-
-- [Wdrażanie zapisywania zawartości](#Implementing-a-Content-Writer)
-
-- [Trwa pobieranie czytnika zawartości](#Retrieving-the-Content-Reader)
-
-- [Dołączanie parametrów dynamicznych do `Get-Content` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [Trwa pobieranie zawartości składnika zapisywania](#Retrieving-the-Content-Writer)
-
-- [Dołączanie parametrów dynamicznych do Add_Content i `Set-Content` poleceń cmdlet](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [Czyszczenie zawartości](#Clearing-Content)
-
-- [Dołączanie parametrów dynamicznych do `Clear-Content` polecenia Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Przykładowy kod](#Code-Sample)
-
-- [Definiowanie typów obiektów i formatowanie](#defining-object-types-and-formatting)
-
-- [Tworzenie dostawcy środowiska Windows PowerShell](#Building-the-Windows-PowerShell-Provider)
-
-- [Testowanie dostawcy środowiska Windows PowerShell](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Definiowanie klasy dostawcy Windows zawartość programu PowerShell
 
