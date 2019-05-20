@@ -2,12 +2,12 @@
 title: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 description: Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 0d796460511b273771eacb03d0df4d90e1e9c322
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854398"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882569"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Używanie programu Visual Studio Code do tworzenia aplikacji programu PowerShell
 
@@ -84,7 +84,7 @@ Typ `R` do uruchomienia pliku. Następnie otwórz w programie Visual Studio Code
 
 #### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Wybieranie wersji programu PowerShell do korzystania z rozszerzeniem
 
-Za pomocą programu PowerShell Core instalowanie side-by-side przy użyciu programu Windows PowerShell jest teraz możliwe do określonej wersji programu PowerShell z rozszerzeniem programu PowerShell. Należy użyć następującego poniższe kroki, aby wybrać wersję:
+Za pomocą programu PowerShell Core instalowanie side-by-side przy użyciu programu Windows PowerShell jest ona teraz można użyć określonej wersji programu PowerShell z rozszerzeniem programu PowerShell. Należy użyć następującego poniższe kroki, aby wybrać wersję:
 
 1. Otwórz paletę poleceń (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> na Windows i Linux, <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P</kbd> w systemie macOS).
 1. Wyszukaj "Sesja".

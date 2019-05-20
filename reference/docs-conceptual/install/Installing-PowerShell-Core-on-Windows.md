@@ -2,12 +2,12 @@
 title: Instalowanie programu PowerShell Core w systemie Windows
 description: Informacje o instalowaniu programu PowerShell Core w Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058033"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854357"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Instalowanie programu PowerShell Core w systemie Windows
 
@@ -18,7 +18,7 @@ Istnieje wiele sposobów, aby zainstalować program PowerShell Core w Windows.
 Aby włączyć komunikację zdalną programu PowerShell za pośrednictwem usługi WS-Management, muszą zostać spełnione następujące wymagania wstępne:
 
 - Zainstaluj [uniwersalnego środowiska uruchomieniowego c.](https://www.microsoft.com/download/details.aspx?id=50410) na Windows wersjach wcześniejszych niż Windows 10. Jest ona dostępna za pośrednictwem bezpośredniego pobierania lub Windows Update. W pełni zastosować poprawki względem jakiegokolwiek (w tym opcjonalnych pakietów), obsługiwane systemy mają już to zainstalowane.
-- Windows Management Framework (WMF) 4.0 lub nowszym należy zainstalować na Windows 7 i Windows Server 2008 R2.
+- Windows Management Framework (WMF) 4.0 lub nowszym należy zainstalować na Windows 7 i Windows Server 2008 R2. Aby uzyskać więcej informacji na temat programu WMF, zobacz [Przegląd WMF](/powershell/wmf/overview).
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Instalowanie pakietu MSI
 
