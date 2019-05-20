@@ -2,12 +2,12 @@
 title: Cykl życia pomocy technicznej programu PowerShell Core
 description: Zasady dotyczące pomocy technicznej dla programu PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086970"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854373"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Cykl życia pomocy technicznej programu PowerShell Core
 
@@ -41,8 +41,6 @@ Na przykład jeśli program PowerShell Core 6.1 jest wydanej w dniu 1 lipca 2018
 
 Na przykład jeśli używasz programu PowerShell Core 6.1 i 6.1.3 została wydana 19 lutego 2019 r można oczekuje się do aktualizacji do programu PowerShell Core 6.1.3 21 marca 2019 r, czyli 30 dni po wydaniu do obsługi pomocy technicznej.
 Jeśli wymagana znajdują się wszystkie poprawki, poprawki zostaną wydane w następną aktualizację zbiorczą.
-
-![Cykl życia gałęzi programu PowerShell Core][lifecycle-chart]
 
 Nowoczesne zasady cyklu życia wymaga również, że Microsoft zawarcia klientów przez 12 miesięcy przed zaprzestaniem pomocy technicznej dla produktu (oznacza to, programu PowerShell Core).
 
@@ -88,7 +86,7 @@ Na podstawie [cyklu życia programu PowerShell Core](#lifecycle-of-powershell-co
 |---------|-------------------------------|
 | 6.0     | 13 lutego 2019 r.             |
 | 6.1     | 28 września 2019 r.            |
-| 6.2     | zwalnia 6 miesięcy od 6.3   |
+| 6.2     | 6 miesięcy od wersji 7     |
 
 ## <a name="platforms-which-are-out-of-support"></a>Platform, które są poza pomocy technicznej
 
