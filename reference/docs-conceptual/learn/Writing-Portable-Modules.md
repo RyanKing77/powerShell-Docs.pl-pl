@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Zapisywanie przenośne modułów
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086412"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470982"
 ---
 # <a name="portable-modules"></a>Przenośne modułów
 
@@ -17,11 +17,12 @@ Program Windows PowerShell jest przeznaczony dla [.NET Framework][] podczas, gdy
 
 ### <a name="porting-a-pssnapin"></a>Przenoszenie PSSnapIn
 
-Konsola programu PowerShell (PSSnapIn) nie są obsługiwane w programie PowerShell Core. Jednak jest prosta, aby przekonwertować PSSnapIn modułu programu PowerShell. Zazwyczaj PSSnapIn kod rejestracji znajduje się w jednym pliku źródłowym klasy pochodzący z [PSSnapIn][]. Usuń ten plik źródłowy z kompilacji; nie jest już potrzebny.
+Program PowerShell [konsola](/powershell/developer/cmdlet/modules-and-snap-ins) nie są obsługiwane w programie PowerShell Core. Jednak jest prosta, aby przekonwertować PSSnapIn modułu programu PowerShell. Zazwyczaj PSSnapIn kod rejestracji znajduje się w jednym pliku źródłowym klasy pochodzący z [PSSnapIn][].
+Usuń ten plik źródłowy z kompilacji; nie jest już potrzebny.
 
-Użyj [New-ModuleManifest][] do utworzenia nowego manifestu modułu, zastępujący potrzebę PSSnapIn kodu rejestracyjnego. Niektóre wartości z PSSnapIn (na przykład opis) może nastąpić w manifeście modułu.
+Użyj [New-ModuleManifest][] do utworzenia nowego manifestu modułu, zastępujący potrzebę PSSnapIn kodu rejestracyjnego. Niektóre wartości z **PSSnapIn** (takie jak **opis**) mogą zostać ponownie użyte w manifeście modułu.
 
-`RootModule` Właściwości w manifeście modułu powinna być równa Nazwa zestawu (dll), implementacja polecenia cmdlet.
+**Polach RootModule** właściwości w manifeście modułu powinna być równa Nazwa zestawu (dll), implementacja polecenia cmdlet.
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>Narzędzia .NET Portability Analyzer (zwane również APIPort)
 

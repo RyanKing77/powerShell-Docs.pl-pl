@@ -1,12 +1,12 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: Tworzenie zapytań polecenia Get-WinEvent za pomocą parametru FilterHashtable
-ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058832"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471014"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Tworzenie zapytań polecenia Get-WinEvent za pomocą parametru FilterHashtable
 
@@ -53,7 +53,7 @@ W poniższej tabeli przedstawiono nazwy kluczy, typy danych, i czy symbole wielo
 | LogName      | `<String[]>`       | Tak |
 | ProviderName | `<String[]>`       | Tak |
 | Ścieżka         | `<String[]>`       | Nie  |
-| słowa kluczowe     | `<Long[]>`         | Nie  |
+| Słowa kluczowe     | `<Long[]>`         | Nie  |
 | Identyfikator           | `<Int32[]>`        | Nie  |
 | Poziom        | `<Int32[]>`        | Nie  |
 | Godzina rozpoczęcia    | `<DateTime>`       | Nie  |
@@ -217,7 +217,7 @@ Wartości wyliczane są udokumentowane w artykule **.NET Framework**. Aby uzyska
 
 | Nazwa           | Wartość |
 | -------------- | ----- |
-| Pełny        |   5   |
+| Verbose        |   5   |
 | Informacyjny  |   4   |
 | Ostrzeżenie        |   3   |
 | Błąd          |   2   |

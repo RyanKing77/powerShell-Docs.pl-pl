@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Dekodowanie polecenia programu PowerShell z uruchomionego procesu
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086242"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470970"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Dekodowanie polecenia programu PowerShell z uruchomionego procesu
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Widok procesu
 
-Treść polecenia, które program PowerShell jest wykonywany jest przechowywany w **CommandLine** właściwość [Win32_Process][] klasy. Jeśli polecenie jest [zakodowane polecenia][], **CommandLine** właściwość zawiera ciąg "EncodedCommand". Korzystając z tych informacji, polecenie zakodowany można cofnąć zaciemnionego za pośrednictwem następującego procesu.
+Treść polecenia, które program PowerShell jest wykonywany jest przechowywany w **CommandLine** właściwość [Win32_Process][] klasy. Jeśli polecenie jest poleceniem zakodowany **CommandLine** właściwość zawiera ciąg "EncodedCommand". Korzystając z tych informacji, polecenie zakodowany można cofnąć zaciemnionego za pośrednictwem następującego procesu.
 
 Uruchom program PowerShell jako Administrator. Jest to istotne, że program PowerShell jest uruchomione jako administrator, w przeciwnym razie są zwracane żadne wyniki podczas wykonywania zapytań względem uruchomionych procesów.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [Task Scheduler]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [Agent programu SQL Server]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[zakodowane polecenia]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082111"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470775"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Informacje o module programu Windows PowerShell
 
@@ -55,7 +55,7 @@ A *manifestu modułu* jest moduł, który używa pliku manifestu do opisu, wszys
 
 ### <a name="dynamic-modules"></a>Moduły dynamiczne
 
-A *modułu dynamicznego* jest moduł nie jest załadowany z lub zapisany w pliku. Zamiast tego są one tworzone dynamicznie przez skrypt, za pomocą [nowy moduł](/powershell/module/Microsoft.PowerShell.Core/New-Module) polecenia cmdlet. Ten typ modułu pozwala skryptu, aby utworzyć moduł na żądanie, które nie musi być załadowany lub zapisany w magazynie trwałym. Z natury modułu dynamicznego ma być krótkotrwały i nie są dostępne dla `Get-Module` polecenia cmdlet. Podobnie zwykle nie ma potrzeby manifesty modułu ani czy prawdopodobnie potrzebuje stałe foldery do przechowywania ich powiązanych zestawów.
+A *modułu dynamicznego* jest moduł, który nie jest załadowany z, lub zapisany w pliku. Zamiast tego są one tworzone dynamicznie przez skrypt, za pomocą [nowy moduł](/powershell/module/Microsoft.PowerShell.Core/New-Module) polecenia cmdlet. Ten typ modułu pozwala skryptu, aby utworzyć moduł na żądanie, które nie musi być załadowany lub zapisany w magazynie trwałym. Z natury modułu dynamicznego ma być krótkotrwały i nie są dostępne dla `Get-Module` polecenia cmdlet. Podobnie zwykle nie ma potrzeby manifesty modułu ani czy prawdopodobnie potrzebuje stałe foldery do przechowywania ich powiązanych zestawów.
 
 ## <a name="module-manifests"></a>Manifesty modułu
 

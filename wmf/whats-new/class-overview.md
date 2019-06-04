@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Tworzenie typów niestandardowych przy użyciu klas programu PowerShell
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856238"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470934"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Tworzenie typów niestandardowych przy użyciu klas programu PowerShell
 
@@ -21,7 +21,7 @@ PowerShell 5.0 dodano możliwość definiowania klas i innych typów zdefiniowan
 - Debugowanie typów przy użyciu języka programu PowerShell
 - Generowanie i obsługa wyjątków za pomocą mechanizmów formalne i na właściwym poziomie
 
-# <a name="declare-base-class"></a>Deklarowanie klasy bazowej
+## <a name="declare-base-class"></a>Deklarowanie klasy bazowej
 
 Klasa programu PowerShell można zadeklarować jako typ podstawowy dla innej klasy programu PowerShell.
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>Wywoływanie konstruktora klasy bazowej
+### <a name="call-base-class-constructor"></a>Wywoływanie konstruktora klasy bazowej
 
 Aby wywołać konstruktora klasy bazowej z podklasy, należy użyć słowa kluczowego **podstawowy**:
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>Wywoływanie metody klasy bazowej
+### <a name="call-base-class-method"></a>Wywoływanie metody klasy bazowej
 
 Można zastąpić istniejących metod w podklasach. Aby to zrobić, należy zadeklarować metody przy użyciu tej samej nazwie i sygnaturze:
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>Deklarowanie zaimplementowanego interfejsu
+### <a name="declare-implemented-interface"></a>Deklarowanie zaimplementowanego interfejsu
 
 Możesz zadeklarować implementowane interfejsy po typy podstawowe lub od razu po dwukropek (:), jeśli bez określonego typu podstawowego. Oddziel nazwy wszystkich typów za pomocą przecinków. Jest on podobny do C# składni.
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>Nowe funkcje języka, w programie PowerShell 5.0
+## <a name="new-language-features-in-powershell-50"></a>Nowe funkcje języka, w programie PowerShell 5.0
 
 PowerShell 5.0 wprowadzono następujące nowe elementy języka w programie PowerShell:
 
-## <a name="class-keyword"></a>Class — słowo kluczowe
+### <a name="class-keyword"></a>Class — słowo kluczowe
 
 `class` — Słowo kluczowe definiuje nową klasę. Jest to PRAWDA typ .NET Framework. Elementy członkowskie klasy są publiczne, ale tylko publiczne w zakresie modułu. Nie można odwołać się do nazwy typu jako ciąg (na przykład `New-Object` nie działa), w tej wersji, ale nie można użyć literału typu (na przykład `[MyClass]`) poza plikiem skryptu lub moduł, w którym klasa jest zdefiniowana.
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Enum — słowo kluczowe i wyliczenia
+### <a name="enum-keyword-and-enumerations"></a>Enum — słowo kluczowe i wyliczenia
 
 Obsługa `enum` — słowo kluczowe zostały dodane, który używa nowego wiersza jako ogranicznika. Obecnie nie można zdefiniować moduł wyliczający pod względem samego. Jednak należy zainicjować wyliczenia pod względem innego typu wyliczeniowego, jak pokazano w poniższym przykładzie. Ponadto nie można określić typu podstawowego; zawsze warto też `[int]`.
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` jest teraz true — słowo kluczowe dynamicznych. Program PowerShell analizuje modułu głównego określonego modułu, Wyszukiwanie klas, które zawierają **DscResource** atrybutu.
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 Nowe pole **ImplementingAssembly**, została dodana do **ModuleInfo**. Ustawiono się do zestawu dynamicznego utworzony dla modułu skryptu, jeśli skrypt definiuje klasy lub załadować zestawu dla moduły binarne. Nie jest ustawiona podczas **ModuleType** jest **manifestu**.
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 Wszystkie elementy członkowskie są publiczne.
 
-## <a name="constructors-and-instantiation"></a>Konstruktory i wystąpienia
+### <a name="constructors-and-instantiation"></a>Konstruktory i wystąpienia
 
 Klas programu PowerShell mogą mieć konstruktorów. Mają one taką samą nazwę jak ich klasy. Mogą być przeciążone konstruktory. Konstruktory statyczne są obsługiwane. Właściwości za pomocą wyrażenia inicjowania są inicjowane przed uruchomieniem jakiegokolwiek kodu w konstruktorze. Właściwości statyczne są inicjowane przed treści statyczny Konstruktor i właściwości wystąpienia są inicjowane przed treść konstruktora niestatycznych. Obecnie nie ma żadnych składnia wywoływania konstruktora od innego konstruktora (takich jak C\# składni ": this()"). Obejście polega na zdefiniowaniu często `Init()` metody.
 
-### <a name="creating-instances"></a>Tworzenie instancji
+#### <a name="creating-instances"></a>Tworzenie instancji
 
 > [!NOTE]
 > W programie PowerShell w wersji 5.0 `New-Object` nie działa z klas zdefiniowanych w programie PowerShell. Ponadto nazwa typu jest tylko widoczne leksykalnie, co oznacza, że nie jest widoczne na zewnątrz modułu lub skryptu, który definiuje klasę. Funkcje mogą zwracać wystąpienia klasy zdefiniowanej w programie PowerShell. Te wystąpienia działają poza modułu lub skryptu.
@@ -265,7 +265,7 @@ Pseudolosowego statycznej metody `new()` działa z typami .NET, jak pokazano w p
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>Odnajdywanie konstruktorów
+#### <a name="discovering-constructors"></a>Odnajdywanie konstruktorów
 
 Teraz możesz wyświetlać przeciążeń konstruktora z `Get-Member`, lub jak pokazano w poniższym przykładzie:
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` Wyświetla listę konstruktorów, aby można było wyświetlić przeciążenia, jak każda inna metoda. Wydajność tej składni jest również znacznie szybsze niż `New-Object`.
 
-## <a name="methods"></a>Metody
+### <a name="methods"></a>Metody
 
 Metoda klasy programu PowerShell jest implementowany jako **ScriptBlock** zawierający tylko blok końcowy. Wszystkie metody są publiczne. Poniżej pokazano przykład definiujący metodę o nazwie **DoSomething**.
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 Przeciążone metody są również obsługiwane.
 
-## <a name="properties"></a>Właściwości
+### <a name="properties"></a>Właściwości
 
 Wszystkie właściwości są publiczne. Właściwości wymagają nowego wiersza lub średnikami. Jeśli jest określony żaden typ obiektu, z typem właściwości jest obiektem.
 
 Właściwości, które są używane atrybuty przekształcania sprawdzania poprawności lub argumentu (takich jak `[ValidateSet("aaa")]`) działają zgodnie z oczekiwaniami.
 
-## <a name="hidden"></a>Ukryte
+### <a name="hidden"></a>Ukryte
 
 Nowe słowo kluczowe `Hidden`, został dodany. `Hidden` można zastosować do właściwości i metod (w tym konstruktory).
 
-Ukryte elementy członkowskie są publiczne, ale nie są wyświetlane w danych wyjściowych `Get-Member` chyba że Force, zostanie dodany parametr. Ukryte elementy członkowskie nie są uwzględniane podczas karcie ukończenie lub za pomocą funkcji Intellisense, chyba że zakończenia wystąpi w klasie Definiowanie ukrytej składowej.
+Ukryte elementy członkowskie są publiczne, ale nie są wyświetlane w danych wyjściowych `Get-Member` chyba że `-Force` zostanie dodany parametr. Ukryte elementy członkowskie nie są uwzględniane podczas karcie ukończenie lub za pomocą funkcji Intellisense, chyba że zakończenia wystąpi w klasie Definiowanie ukrytej składowej.
 
 Nowy atrybut **System.Management.Automation.HiddenAttribute** został dodany tak że C\# kod może mieć tej samej semantyki w ramach programu PowerShell.
 
-## <a name="return-types"></a>Typy zwracane
+### <a name="return-types"></a>Typy zwracane
 
-Typ zwracany jest kontraktu. Wartość zwracana jest konwertowana do oczekiwanego typu. Jeśli żaden typ zwracany jest określony, zwracany typ jest **void**. Nie ma żadnych przesyłania strumieniowego obiektów. Nie można zapisać Bbjects do potoku, celowo lub przypadkowo.
+Typ zwracany jest kontraktu. Wartość zwracana jest konwertowana do oczekiwanego typu. Jeśli żaden typ zwracany jest określony, zwracany typ jest **void**. Nie ma żadnych przesyłania strumieniowego obiektów. Nie można zapisać obiekty do potoku, celowo lub przypadkowo.
 
-## <a name="attributes"></a>Atrybuty
+### <a name="attributes"></a>Atrybuty
 
 Dwa nowe atrybuty, **DscResource** i **DscProperty** zostały dodane.
 
-## <a name="lexical-scoping-of-variables"></a>Wyznaczanie zakresu leksykalne zmiennych
+### <a name="lexical-scoping-of-variables"></a>Wyznaczanie zakresu leksykalne zmiennych
 
 Poniżej przedstawiono przykładowy sposób leksykalne zakresu działa w tej wersji.
 
