@@ -2,12 +2,12 @@
 title: Instalowanie programu PowerShell Core w systemie Windows
 description: Informacje o instalowaniu programu PowerShell Core w Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471009"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830224"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Instalowanie programu PowerShell Core w systemie Windows
 
@@ -22,7 +22,7 @@ Aby włączyć komunikację zdalną programu PowerShell za pośrednictwem usług
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Instalowanie pakietu MSI
 
-Aby zainstalować program PowerShell w klienta Windows lub Windows Server (działa w systemie Windows 7 z dodatkiem SP1, Server 2008 R2 i nowszych), Pobierz pakiet MSI z naszej stronie [] GitHub [wersjach]. Przewiń w dół do **zasoby** części wersji, którą chcesz zainstalować. Sekcja zasoby mogą być zwinięte, konieczne może być kliknij, aby ją rozwinąć.
+Aby zainstalować program PowerShell w klienta Windows lub Windows Server (działa w systemie Windows 7 z dodatkiem SP1, Server 2008 R2 i nowszych), Pobierz pakiet MSI w usłudze GitHub [zwalnia] [ releases] strony. Przewiń w dół do **zasoby** części wersji, którą chcesz zainstalować. Sekcja zasoby mogą być zwinięte, konieczne może być kliknij, aby ją rozwinąć.
 
 Plik MSI wyglądają następująco — `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -150,8 +150,12 @@ Poniższe kroki prowadzą przez wdrożenia programu PowerShell Core do uruchomio
 
 Program PowerShell Core obsługuje protokół komunikacji zdalnej programu PowerShell (PSRP) za pośrednictwem protokołu SSH i WSMan. Aby uzyskać więcej informacji, zobacz:
 
-- [SSH komunikacji zdalnej w programie PowerShell Core] [ssh-Komunikacja zdalna]
-- [Komunikacja zdalna usługi WS-Management w programie PowerShell Core] [Komunikacja zdalna usługi WS-Management]
+- [SSH komunikacji zdalnej w programie PowerShell Core][ssh-remoting]
+- [Komunikacja zdalna usługi WS-Management, w programie PowerShell Core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[zwalnia]: https://github.com/PowerShell/PowerShell/releases [ssh-Komunikacja zdalna]:... [Komunikacja zdalna usługi WS-Management] /Core-PowerShell/SSH-Remoting-in-PowerShell-Core.md:... /Core-PowerShell/wsman-Remoting-in-PowerShell-Core.MD [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+
+[releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
