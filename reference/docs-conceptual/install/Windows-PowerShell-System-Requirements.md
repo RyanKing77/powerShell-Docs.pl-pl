@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Wymagania systemowe programu Windows PowerShell
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 95625efdaea55014f6e6f27c1e8d4c196c89f99c
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058307"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028871"
 ---
 # <a name="windows-powershell-system-requirements"></a>Wymagania systemowe programu Windows PowerShell
 Ten temat zawiera listę wymagań systemowych dla programu Windows PowerShell 3.0, program Windows PowerShell 4.0 programu Windows PowerShell 5.0 i programu Windows PowerShell 5.1 oraz specjalne funkcje, takie jak Windows PowerShell zintegrowane Scripting Environment (ISE), poleceń CIM i przepływy pracy.
@@ -135,7 +134,7 @@ Aparat programu Windows PowerShell 2.0 wymaga programu Microsoft .NET Framework 
 
 Aby uzyskać informacji na temat dodawania lub instalowanie aparatu programu Windows PowerShell 2.0 i dodanie lub instalowanie wymagane wersje programu Microsoft .NET Framework, zobacz [Instalowanie aparatu programu Windows PowerShell 2.0](Installing-the-Windows-PowerShell-2.0-Engine.md). Aby dowiedzieć się, jak uruchamianie aparatu programu Windows PowerShell 2.0, zobacz [uruchamianie aparatu programu Windows PowerShell 2.0](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md).
 
-## <a name="windows-preinstallation-environment"></a>Środowisko preinstalacyjne Windows
+## <a name="windows-preinstallation-environment"></a>Środowisko preinstalacyjne systemu Windows
 Windows PowerShell 2.0, programu Windows PowerShell 3.0 i Windows PowerShell 4.0 w przypadku uruchamiania w środowisku preinstalacji Windows (Windows PE). Następujące polecenia cmdlet nie są obsługiwane.
 
 - [Polecenia cmdlet usługi (BITS) inteligentnego transferu w tle](https://go.microsoft.com/fwlink/?LinkId=257514)

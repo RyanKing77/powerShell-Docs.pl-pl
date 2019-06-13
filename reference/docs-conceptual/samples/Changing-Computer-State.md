@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zmienianie stanu komputera
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086327"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030282"
 ---
 # <a name="changing-computer-state"></a>Zmienianie stanu komputera
 
@@ -30,7 +29,7 @@ Aby zamknąć określonej sesji na serwerze terminali, należy użyć **tsshutdn
 
 ## <a name="logging-off-the-current-session"></a>Trwa wylogowywanie w bieżącej sesji
 
-Aby wylogować sesji w systemie lokalnym, można użyć kilku różnych technik. Najprostszym sposobem jest użycie narzędzia wiersza polecenia zdalnego pulpitu/usługi terminalowe **logoff.exe** (Aby uzyskać szczegółowe informacje w wierszu polecenia programu Windows PowerShell wpisz **wylogowania /?**). Aby wylogować się z bieżącej aktywnej sesji, wpisz **wylogowania** bez argumentów.
+Aby wylogować sesji w systemie lokalnym, można użyć kilku różnych technik. Najprostszym sposobem jest użycie narzędzia wiersza polecenia zdalnego pulpitu/usługi terminalowe **logoff.exe** (Aby uzyskać szczegółowe informacje w wierszu polecenia programu Windows PowerShell wpisz **wylogowania /?** ). Aby wylogować się z bieżącej aktywnej sesji, wpisz **wylogowania** bez argumentów.
 
 Można również użyć **shutdown.exe** narzędzia z opcją jego wylogowania:
 
@@ -48,7 +47,7 @@ Aby uzyskać więcej informacji i znaleźć inne funkcje Metoda Win32Shutdown zo
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Zamykanie lub ponowne uruchomienie komputera
 
-Zamykanie i ponowne uruchamianie komputerów są zwykle te same typy zadań. Narzędzia, które zamykanie komputera uruchomi ogólnie ją ponownie także — i odwrotnie. Istnieją dwie proste opcje ponownego uruchamiania komputera za pomocą programu Windows PowerShell. Za pomocą Tsshutdn.exe lub Shutdown.exe odpowiednie argumenty. Można uzyskać informacji o szczegółowym zestawieniem użycia **tsshutdn.exe /?** lub **shutdown.exe /?**.
+Zamykanie i ponowne uruchamianie komputerów są zwykle te same typy zadań. Narzędzia, które zamykanie komputera uruchomi ogólnie ją ponownie także — i odwrotnie. Istnieją dwie proste opcje ponownego uruchamiania komputera za pomocą programu Windows PowerShell. Za pomocą Tsshutdn.exe lub Shutdown.exe odpowiednie argumenty. Można uzyskać informacji o szczegółowym zestawieniem użycia **tsshutdn.exe /?** lub **shutdown.exe /?** .
 
 Możesz również wykonać zamknięcia i ponownego uruchamiania działania bezpośrednio z programu Windows PowerShell również.
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Jak utworzyć kartę programu PowerShell w środowisku Windows PowerShell ISE
-ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 080fe89bf1443f51460589b445431913fa20b4b8
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7baf9a4051a196045d53eebf8ce5260bdc1bc55a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057744"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030589"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Jak utworzyć kartę programu PowerShell w środowisku Windows PowerShell ISE
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie dyskami programu Windows PowerShell
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057829"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030142"
 ---
 # <a name="managing-windows-powershell-drives"></a>Zarządzanie dyskami programu Windows PowerShell
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > Ogólnie rzecz biorąc ścieżek nie jest rozróżniana wielkość liter.
 
-Możesz odwołać się do nowy dysk programu Windows PowerShell, tak jak wszystkie dyski programu Windows PowerShell — za pomocą nazwy z dwukropkiem (**:**).
+Możesz odwołać się do nowy dysk programu Windows PowerShell, tak jak wszystkie dyski programu Windows PowerShell — za pomocą nazwy z dwukropkiem ( **:** ).
 
 Dysk programu Windows PowerShell można wykonać wiele zadań znacznie prostsze. Na przykład niektóre z najważniejszych kluczy w rejestrze systemu Windows mają bardzo długich ścieżek, kłopotliwe dostępu i trudne do zapamiętania, dzięki czemu. Informacje o konfiguracji krytycznych znajduje się w obszarze **HKEY_LOCAL_MACHINE\\oprogramowania\\Microsoft\\Windows\\CurrentVersion**. Do wyświetlania i zmieniania elementów w kluczu rejestru CurrentVersion, możesz utworzyć dysk programu Windows PowerShell, który jest ścieżką w tego klucza, wpisując:
 

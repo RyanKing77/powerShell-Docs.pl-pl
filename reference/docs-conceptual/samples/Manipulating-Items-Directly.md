@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Bezpośrednie manipulowanie elementami
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086225"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030129"
 ---
 # <a name="manipulating-items-directly"></a>Bezpośrednie manipulowanie elementami
 
@@ -73,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Podczas wpisywania ścieżki rejestru, należy uwzględnić dwukropkiem (**:**) w programie Windows PowerShell dysku nazwy, HKLM: a HKCU:. Bez dwukropka programu Windows PowerShell nie może rozpoznać nazwę dysku w ścieżce.
+Podczas wpisywania ścieżki rejestru, należy uwzględnić dwukropkiem ( **:** ) w programie Windows PowerShell dysku nazwy, HKLM: a HKCU:. Bez dwukropka programu Windows PowerShell nie może rozpoznać nazwę dysku w ścieżce.
 
 ## <a name="why-registry-values-are-not-items"></a>Dlaczego wartości rejestru nie są elementami
 
@@ -93,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Mimo że byłoby wygodne do traktowania wpisy rejestru jako elementy, nie można określić ścieżkę do wpisu rejestru w sposób, który gwarantuje, że jest ona unikatowa. Notacji ścieżki nie rozróżnia podklucza rejestru o nazwie **Uruchom** i **(opcja domyślna)** wpisu rejestru w **Uruchom** podklucza. Ponadto ponieważ nazwy wpisów rejestru może zawierać znak ukośnika odwrotnego (**\\**), gdyby wpisy rejestru elementów, a następnie nie można użyć notacji ścieżki, aby odróżnić wpis rejestru o nazwie  **Windows\\CurrentVersion\\Uruchom** z podklucza, który znajduje się w tej ścieżce.
+Mimo że byłoby wygodne do traktowania wpisy rejestru jako elementy, nie można określić ścieżkę do wpisu rejestru w sposób, który gwarantuje, że jest ona unikatowa. Notacji ścieżki nie rozróżnia podklucza rejestru o nazwie **Uruchom** i **(opcja domyślna)** wpisu rejestru w **Uruchom** podklucza. Ponadto ponieważ nazwy wpisów rejestru może zawierać znak ukośnika odwrotnego ( **\\** ), gdyby wpisy rejestru elementów, a następnie nie można użyć notacji ścieżki, aby odróżnić wpis rejestru o nazwie  **Windows\\CurrentVersion\\Uruchom** z podklucza, który znajduje się w tej ścieżce.
 
 ## <a name="renaming-existing-items-rename-item"></a>Zmienianie nazw istniejących elementów (zmiana nazwy elementu)
 

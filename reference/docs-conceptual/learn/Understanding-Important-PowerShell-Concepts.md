@@ -2,13 +2,12 @@
 ms.date: 08/23/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Opis ważnych pojęć związanych z programem PowerShell
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058594"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030985"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Opis ważnych pojęć związanych z programem PowerShell
 
@@ -31,7 +30,7 @@ Natywne poleceń w programie PowerShell, są znane jako *poleceń cmdlet* (Wymow
 
 Po wpisaniu polecenia, programu PowerShell zawsze przetwarza dane wejściowe wiersza polecenia bezpośrednio. PowerShell również formaty danych wyjściowych, które widzą na ekranie. Różnica ta jest istotne, ponieważ jego zmniejsza nakład pracy potrzebny każdego polecenia cmdlet. Zapewnia, że można zawsze wykonywać takie czynności ten sam sposób, korzystając z każdego polecenia cmdlet. Polecenia cmdlet deweloperów trzeba napisać kod, aby przeanalizować argumenty wiersza polecenia lub formatowania danych wyjściowych.
 
-Tradycyjne narzędzia wiersza polecenia mają własne systemy dla żądania i wyświetlanie pomocy. Niektóre narzędzia wiersza polecenia użyj **/?** Aby wyzwolić Wyświetlanie pomocy; inne korzystają **-?**, **/h**, lub nawet **//**. Niektóre wyświetli pomocy w oknie graficznego interfejsu użytkownika, a nie w oknie konsoli. Jeśli nieprawidłowy parametr jest używany, narzędzie może zignorować co wpisany i rozpoczyna się ich automatyczne wykonywanie zadania.
+Tradycyjne narzędzia wiersza polecenia mają własne systemy dla żądania i wyświetlanie pomocy. Niektóre narzędzia wiersza polecenia użyj **/?** Aby wyzwolić Wyświetlanie pomocy; inne korzystają **-?** , **/h**, lub nawet **//** . Niektóre wyświetli pomocy w oknie graficznego interfejsu użytkownika, a nie w oknie konsoli. Jeśli nieprawidłowy parametr jest używany, narzędzie może zignorować co wpisany i rozpoczyna się ich automatyczne wykonywanie zadania.
 Od czasu programu PowerShell automatycznie analizowania i przetwarzania wiersza polecenia **-?** Parametr zawsze oznacza, że "Pokaż Pomoc dla tego polecenia".
 
 > [!NOTE]

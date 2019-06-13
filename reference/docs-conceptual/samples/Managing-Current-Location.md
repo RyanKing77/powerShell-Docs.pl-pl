@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Zarządzanie bieżącą lokalizacją
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086259"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030204"
 ---
 # <a name="managing-current-location"></a>Zarządzanie bieżącą lokalizacją
 
@@ -50,9 +49,9 @@ C:\WINDOWS
 
 **- PassThru** parametru należy używać za pomocą wielu poleceń Set w programie Windows PowerShell do zwracania informacji dotyczących wynik w przypadkach, w których jest nie domyślne dane wyjściowe.
 
-Można określić ścieżki względem Twojej bieżącej lokalizacji w taki sam sposób, jak w większości systemów UNIX i Windows będzie można poleceń powłoki. W standardowej notacji dla ścieżek względnych okres (**.**) reprezentuje bieżącego folderu i podwojone okres (**...** ) reprezentuje katalog nadrzędny Twojej bieżącej lokalizacji.
+Można określić ścieżki względem Twojej bieżącej lokalizacji w taki sam sposób, jak w większości systemów UNIX i Windows będzie można poleceń powłoki. W standardowej notacji dla ścieżek względnych okres ( **.** ) reprezentuje bieżącego folderu i podwojone okres ( **...** ) reprezentuje katalog nadrzędny Twojej bieżącej lokalizacji.
 
-Na przykład, jeśli znajdują się w **C:\\Windows** folderu, kropka (**.**) reprezentuje **C:\\Windows** i podwojonym współczynnikiem kropki (**...** ) reprezentują **C:**. Możesz zmienić z bieżącej lokalizacji w katalogu głównym dysku C:, wpisując:
+Na przykład, jeśli znajdują się w **C:\\Windows** folderu, kropka ( **.** ) reprezentuje **C:\\Windows** i podwojonym współczynnikiem kropki ( **...** ) reprezentują **C:** . Możesz zmienić z bieżącej lokalizacji w katalogu głównym dysku C:, wpisując:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -62,7 +61,7 @@ Path
 C:\
 ```
 
-Ta sama technika działa na dyskach programu Windows PowerShell, które nie są dysków z systemem plików, takich jak **HKLM:**. Można ustawić dla Twojej lokalizacji HKLM\\oprogramowania klucz rejestru, wpisując:
+Ta sama technika działa na dyskach programu Windows PowerShell, które nie są dysków z systemem plików, takich jak **HKLM:** . Można ustawić dla Twojej lokalizacji HKLM\\oprogramowania klucz rejestru, wpisując:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

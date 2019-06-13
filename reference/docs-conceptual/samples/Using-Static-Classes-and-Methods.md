@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Używanie metod i klas statycznych
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086019"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030737"
 ---
 # <a name="using-static-classes-and-methods"></a>Używanie metod i klas statycznych
 
@@ -47,7 +46,7 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Jak wspomniano wcześniej, programu Windows PowerShell automatycznie dołącza "**systemu.**" Aby wpisz nazwy użytkowników, gdy używasz **New-Object**. Tak samo się dzieje, gdy za pomocą nazwy typu w nawiasach kwadratowych, aby można było wprowadzić  **\[System.Environment]** jako  **\[środowiska]**.
+> Jak wspomniano wcześniej, programu Windows PowerShell automatycznie dołącza "**systemu.** " Aby wpisz nazwy użytkowników, gdy używasz **New-Object**. Tak samo się dzieje, gdy za pomocą nazwy typu w nawiasach kwadratowych, aby można było wprowadzić  **\[System.Environment]** jako  **\[środowiska]** .
 
 **System.Environment** klasa zawiera ogólne informacje o środowisku pracy dla bieżącego procesu, który jest powershell.exe podczas pracy w programie Windows PowerShell.
 

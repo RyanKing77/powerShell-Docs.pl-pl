@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z folderami plików i kluczami rejestru
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086010"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030762"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Praca z plików, folderów i kluczy rejestru
 
@@ -128,7 +127,7 @@ Można wykluczyć konkretne elementy za pomocą **wykluczyć** parametr Get-Chil
 
 Na przykład załóżmy, że próbujesz odnaleźć biblioteki DLL Windows czasu usługi w folderze System32, a wszystko, czego należy pamiętać, o nazwie biblioteki DLL jest zaczyna się od "W" i zawiera "32".
 
-Wyrażenie, takie jak **w\&#42; 32\&#42;. Biblioteka DLL** znajdzie wszystkie biblioteki dll, które spełniają warunki, ale może również zwrócić Windows 95 i zgodności Windows 16-bitowych bibliotek DLL, które zawierają "95" lub "16" w nazwach. Możesz pominąć pliki, które nie ma żadnej z tych liczb w nazwach przy użyciu **wykluczyć** parametru za pomocą wzorca  **\&#42;\[ 9516]\&#42;**:
+Wyrażenie, takie jak **w\&#42; 32\&#42;. Biblioteka DLL** znajdzie wszystkie biblioteki dll, które spełniają warunki, ale może również zwrócić Windows 95 i zgodności Windows 16-bitowych bibliotek DLL, które zawierają "95" lub "16" w nazwach. Możesz pominąć pliki, które nie ma żadnej z tych liczb w nazwach przy użyciu **wykluczyć** parametru za pomocą wzorca  **\&#42;\[ 9516]\&#42;** :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

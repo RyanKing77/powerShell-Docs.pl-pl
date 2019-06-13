@@ -2,13 +2,12 @@
 ms.date: 08/27/2018
 keywords: polecenia cmdlet programu PowerShell
 title: Uzyskiwanie szczegółowych informacji pomocy
-ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3f52de8c9963618c154b119d5f4859a92d61fbda
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086531"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030404"
 ---
 # <a name="getting-detailed-help-information"></a>Uzyskiwanie szczegółowych informacji pomocy
 
