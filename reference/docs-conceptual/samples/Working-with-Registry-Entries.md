@@ -2,22 +2,21 @@
 ms.date: 06/05/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Praca z wpisami rejestru
-ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086038"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030719"
 ---
-# <a name="working-with-registry-entries"></a><span data-ttu-id="65048-103">Praca z wpisami rejestru</span><span class="sxs-lookup"><span data-stu-id="65048-103">Working with Registry Entries</span></span>
+# <a name="working-with-registry-entries"></a><span data-ttu-id="8d879-103">Praca z wpisami rejestru</span><span class="sxs-lookup"><span data-stu-id="8d879-103">Working with Registry Entries</span></span>
 
-<span data-ttu-id="65048-104">Ponieważ wpisy rejestru są właściwości kluczy, a w efekcie nie mogą być bezpośrednio przeglądane, musimy wykonać nieco innego podejścia, podczas pracy z nimi.</span><span class="sxs-lookup"><span data-stu-id="65048-104">Because registry entries are properties of keys and, as such, cannot be directly browsed, we need to take a slightly different approach when working with them.</span></span>
+<span data-ttu-id="8d879-104">Ponieważ wpisy rejestru są właściwości kluczy, a w efekcie nie mogą być bezpośrednio przeglądane, musimy wykonać nieco innego podejścia, podczas pracy z nimi.</span><span class="sxs-lookup"><span data-stu-id="8d879-104">Because registry entries are properties of keys and, as such, cannot be directly browsed, we need to take a slightly different approach when working with them.</span></span>
 
-## <a name="listing-registry-entries"></a><span data-ttu-id="65048-105">Wyświetlanie listy wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="65048-105">Listing Registry Entries</span></span>
+## <a name="listing-registry-entries"></a><span data-ttu-id="8d879-105">Wyświetlanie listy wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="8d879-105">Listing Registry Entries</span></span>
 
-<span data-ttu-id="65048-106">Istnieje wiele różnych sposobów, aby zbadać wpisów rejestru.</span><span class="sxs-lookup"><span data-stu-id="65048-106">There are many different ways to examine registry entries.</span></span> <span data-ttu-id="65048-107">Najprostszym sposobem jest uzyskanie nazw właściwości skojarzone z kluczem.</span><span class="sxs-lookup"><span data-stu-id="65048-107">The simplest way is to get the property names associated with a key.</span></span> <span data-ttu-id="65048-108">Na przykład, aby zobaczyć nazwy wpisów w kluczu rejestru `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, użyj `Get-Item`.</span><span class="sxs-lookup"><span data-stu-id="65048-108">For example, to see the names of the entries in the registry key `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, use `Get-Item`.</span></span> <span data-ttu-id="65048-109">Klucze rejestru mają właściwość o nazwie ogólne "Właściwości", znajduje się lista wpisów rejestru w kluczu.</span><span class="sxs-lookup"><span data-stu-id="65048-109">Registry keys have a property with the generic name of "Property" that is a list of registry entries in the key.</span></span>
-<span data-ttu-id="65048-110">Następujące polecenie wybiera właściwość właściwości i rozwija elementów, dlatego, że są one wyświetlane na liście:</span><span class="sxs-lookup"><span data-stu-id="65048-110">The following command selects the Property property and expands the items so that they are displayed in a list:</span></span>
+<span data-ttu-id="8d879-106">Istnieje wiele różnych sposobów, aby zbadać wpisów rejestru.</span><span class="sxs-lookup"><span data-stu-id="8d879-106">There are many different ways to examine registry entries.</span></span> <span data-ttu-id="8d879-107">Najprostszym sposobem jest uzyskanie nazw właściwości skojarzone z kluczem.</span><span class="sxs-lookup"><span data-stu-id="8d879-107">The simplest way is to get the property names associated with a key.</span></span> <span data-ttu-id="8d879-108">Na przykład, aby zobaczyć nazwy wpisów w kluczu rejestru `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, użyj `Get-Item`.</span><span class="sxs-lookup"><span data-stu-id="8d879-108">For example, to see the names of the entries in the registry key `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`, use `Get-Item`.</span></span> <span data-ttu-id="8d879-109">Klucze rejestru mają właściwość o nazwie ogólne "Właściwości", znajduje się lista wpisów rejestru w kluczu.</span><span class="sxs-lookup"><span data-stu-id="8d879-109">Registry keys have a property with the generic name of "Property" that is a list of registry entries in the key.</span></span>
+<span data-ttu-id="8d879-110">Następujące polecenie wybiera właściwość właściwości i rozwija elementów, dlatego, że są one wyświetlane na liście:</span><span class="sxs-lookup"><span data-stu-id="8d879-110">The following command selects the Property property and expands the items so that they are displayed in a list:</span></span>
 
 ```powershell
 Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion |
@@ -32,7 +31,7 @@ CommonFilesDir
 ProductId
 ```
 
-<span data-ttu-id="65048-111">Aby wyświetlić wpisy rejestru w postaci bardziej czytelny, użyj `Get-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="65048-111">To view the registry entries in a more readable form, use `Get-ItemProperty`:</span></span>
+<span data-ttu-id="8d879-111">Aby wyświetlić wpisy rejestru w postaci bardziej czytelny, użyj `Get-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="8d879-111">To view the registry entries in a more readable form, use `Get-ItemProperty`:</span></span>
 
 ```powershell
 Get-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -58,21 +57,21 @@ PF_AccessoriesName  : Accessories
 (default)           :
 ```
 
-<span data-ttu-id="65048-112">Właściwości związane z programu Windows PowerShell dla klucza są wszystkie prefiks "PS", takich jak **PSPath**, **PSParentPath**, **PSChildName**, i **PSProvider** .</span><span class="sxs-lookup"><span data-stu-id="65048-112">The Windows PowerShell-related properties for the key are all prefixed with "PS", such as **PSPath**, **PSParentPath**, **PSChildName**, and **PSProvider**.</span></span>
+<span data-ttu-id="8d879-112">Właściwości związane z programu Windows PowerShell dla klucza są wszystkie prefiks "PS", takich jak **PSPath**, **PSParentPath**, **PSChildName**, i **PSProvider** .</span><span class="sxs-lookup"><span data-stu-id="8d879-112">The Windows PowerShell-related properties for the key are all prefixed with "PS", such as **PSPath**, **PSParentPath**, **PSChildName**, and **PSProvider**.</span></span>
 
-<span data-ttu-id="65048-113">Możesz użyć `*.*` notacji odwoływania się do bieżącej lokalizacji.</span><span class="sxs-lookup"><span data-stu-id="65048-113">You can use the `*.*` notation for referring to the current location.</span></span> <span data-ttu-id="65048-114">Możesz użyć `Set-Location` można zmienić na **CurrentVersion** rejestru kontenera pierwszy:</span><span class="sxs-lookup"><span data-stu-id="65048-114">You can use `Set-Location` to change to the **CurrentVersion** registry container first:</span></span>
+<span data-ttu-id="8d879-113">Możesz użyć `*.*` notacji odwoływania się do bieżącej lokalizacji.</span><span class="sxs-lookup"><span data-stu-id="8d879-113">You can use the `*.*` notation for referring to the current location.</span></span> <span data-ttu-id="8d879-114">Możesz użyć `Set-Location` można zmienić na **CurrentVersion** rejestru kontenera pierwszy:</span><span class="sxs-lookup"><span data-stu-id="8d879-114">You can use `Set-Location` to change to the **CurrentVersion** registry container first:</span></span>
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="65048-115">Alternatywnie, można użyć wbudowanych PSDrive HKLM z `Set-Location`:</span><span class="sxs-lookup"><span data-stu-id="65048-115">Alternatively, you can use the built-in HKLM PSDrive with `Set-Location`:</span></span>
+<span data-ttu-id="8d879-115">Alternatywnie, można użyć wbudowanych PSDrive HKLM z `Set-Location`:</span><span class="sxs-lookup"><span data-stu-id="8d879-115">Alternatively, you can use the built-in HKLM PSDrive with `Set-Location`:</span></span>
 
 ```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="65048-116">Następnie można użyć `*.*` notacji dla bieżącej lokalizacji wyświetlić listę właściwości bez określenia pełnej ścieżki:</span><span class="sxs-lookup"><span data-stu-id="65048-116">You can then use the `*.*` notation for the current location to list the properties without specifying a full path:</span></span>
+<span data-ttu-id="8d879-116">Następnie można użyć `*.*` notacji dla bieżącej lokalizacji wyświetlić listę właściwości bez określenia pełnej ścieżki:</span><span class="sxs-lookup"><span data-stu-id="8d879-116">You can then use the `*.*` notation for the current location to list the properties without specifying a full path:</span></span>
 
 ```powershell
 Get-ItemProperty -Path .
@@ -86,13 +85,13 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-<span data-ttu-id="65048-117">Ścieżka rozszerzenia działa tak samo, jak w systemie plików, dzięki czemu z tej lokalizacji można uzyskać **zmieniona właściwość elementu** dla `HKLM:\SOFTWARE\Microsoft\Windows\Help` przy użyciu `Get-ItemProperty -Path ..\Help`.</span><span class="sxs-lookup"><span data-stu-id="65048-117">Path expansion works the same as it does within the file system, so from this location you can get the **ItemProperty** listing for `HKLM:\SOFTWARE\Microsoft\Windows\Help` by using `Get-ItemProperty -Path ..\Help`.</span></span>
+<span data-ttu-id="8d879-117">Ścieżka rozszerzenia działa tak samo, jak w systemie plików, dzięki czemu z tej lokalizacji można uzyskać **zmieniona właściwość elementu** dla `HKLM:\SOFTWARE\Microsoft\Windows\Help` przy użyciu `Get-ItemProperty -Path ..\Help`.</span><span class="sxs-lookup"><span data-stu-id="8d879-117">Path expansion works the same as it does within the file system, so from this location you can get the **ItemProperty** listing for `HKLM:\SOFTWARE\Microsoft\Windows\Help` by using `Get-ItemProperty -Path ..\Help`.</span></span>
 
-## <a name="getting-a-single-registry-entry"></a><span data-ttu-id="65048-118">Pobieranie jednego wpisu rejestru</span><span class="sxs-lookup"><span data-stu-id="65048-118">Getting a Single Registry Entry</span></span>
+## <a name="getting-a-single-registry-entry"></a><span data-ttu-id="8d879-118">Pobieranie jednego wpisu rejestru</span><span class="sxs-lookup"><span data-stu-id="8d879-118">Getting a Single Registry Entry</span></span>
 
-<span data-ttu-id="65048-119">Jeśli chcesz pobrać określonego wpisu w kluczu rejestru, można użyć jednej z kilku możliwych podejść.</span><span class="sxs-lookup"><span data-stu-id="65048-119">If you want to retrieve a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="65048-120">W tym przykładzie wyszukuje wartość **DevicePath** w `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span><span class="sxs-lookup"><span data-stu-id="65048-120">This example finds the value of **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span></span>
+<span data-ttu-id="8d879-119">Jeśli chcesz pobrać określonego wpisu w kluczu rejestru, można użyć jednej z kilku możliwych podejść.</span><span class="sxs-lookup"><span data-stu-id="8d879-119">If you want to retrieve a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="8d879-120">W tym przykładzie wyszukuje wartość **DevicePath** w `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span><span class="sxs-lookup"><span data-stu-id="8d879-120">This example finds the value of **DevicePath** in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`.</span></span>
 
-<span data-ttu-id="65048-121">Przy użyciu `Get-ItemProperty`, użyj **ścieżki** parametru do określenia nazwy klucza i **nazwa** parametru, aby określić nazwę **DevicePath** wpisu.</span><span class="sxs-lookup"><span data-stu-id="65048-121">Using `Get-ItemProperty`, use the **Path** parameter to specify the name of the key, and the **Name** parameter to specify the name of the **DevicePath** entry.</span></span>
+<span data-ttu-id="8d879-121">Przy użyciu `Get-ItemProperty`, użyj **ścieżki** parametru do określenia nazwy klucza i **nazwa** parametru, aby określić nazwę **DevicePath** wpisu.</span><span class="sxs-lookup"><span data-stu-id="8d879-121">Using `Get-ItemProperty`, use the **Path** parameter to specify the name of the key, and the **Name** parameter to specify the name of the **DevicePath** entry.</span></span>
 
 ```powershell
 Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
@@ -109,12 +108,12 @@ PSProvider   : Microsoft.PowerShell.Core\Registry
 DevicePath   : C:\WINDOWS\inf
 ```
 
-<span data-ttu-id="65048-122">To polecenie zwraca standardowe właściwości programu Windows PowerShell, jak również **DevicePath** właściwości.</span><span class="sxs-lookup"><span data-stu-id="65048-122">This command returns the standard Windows PowerShell properties as well as the **DevicePath** property.</span></span>
+<span data-ttu-id="8d879-122">To polecenie zwraca standardowe właściwości programu Windows PowerShell, jak również **DevicePath** właściwości.</span><span class="sxs-lookup"><span data-stu-id="8d879-122">This command returns the standard Windows PowerShell properties as well as the **DevicePath** property.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="65048-123">Mimo że `Get-ItemProperty` ma **filtru**, **Include**, i **wykluczyć** parametrów, nie można ich używać do filtrowania według nazwy właściwości.</span><span class="sxs-lookup"><span data-stu-id="65048-123">Although `Get-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="65048-124">Te parametry można znaleźć klucze rejestru, które są ścieżki elementów ale nie wpisów rejestru.</span><span class="sxs-lookup"><span data-stu-id="65048-124">These parameters refer to registry keys, which are item paths and not registry entries.</span></span> <span data-ttu-id="65048-125">Wpisy rejestru, które są właściwości elementu.</span><span class="sxs-lookup"><span data-stu-id="65048-125">Registry entries which are item properties.</span></span>
+> <span data-ttu-id="8d879-123">Mimo że `Get-ItemProperty` ma **filtru**, **Include**, i **wykluczyć** parametrów, nie można ich używać do filtrowania według nazwy właściwości.</span><span class="sxs-lookup"><span data-stu-id="8d879-123">Although `Get-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="8d879-124">Te parametry można znaleźć klucze rejestru, które są ścieżki elementów ale nie wpisów rejestru.</span><span class="sxs-lookup"><span data-stu-id="8d879-124">These parameters refer to registry keys, which are item paths and not registry entries.</span></span> <span data-ttu-id="8d879-125">Wpisy rejestru, które są właściwości elementu.</span><span class="sxs-lookup"><span data-stu-id="8d879-125">Registry entries which are item properties.</span></span>
 
-<span data-ttu-id="65048-126">Innym rozwiązaniem jest za pomocą narzędzia wiersza polecenia Reg.exe.</span><span class="sxs-lookup"><span data-stu-id="65048-126">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="65048-127">Aby uzyskać pomoc dotyczącą reg.exe, wpisz `reg.exe /?` polecenie w wierszu polecenia.</span><span class="sxs-lookup"><span data-stu-id="65048-127">For help with reg.exe, type `reg.exe /?` at a command prompt.</span></span> <span data-ttu-id="65048-128">Aby znaleźć wpisu DevicePath, użyj reg.exe, jak pokazano w następującym poleceniu:</span><span class="sxs-lookup"><span data-stu-id="65048-128">To find the DevicePath entry, use reg.exe as shown in the following command:</span></span>
+<span data-ttu-id="8d879-126">Innym rozwiązaniem jest za pomocą narzędzia wiersza polecenia Reg.exe.</span><span class="sxs-lookup"><span data-stu-id="8d879-126">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="8d879-127">Aby uzyskać pomoc dotyczącą reg.exe, wpisz `reg.exe /?` polecenie w wierszu polecenia.</span><span class="sxs-lookup"><span data-stu-id="8d879-127">For help with reg.exe, type `reg.exe /?` at a command prompt.</span></span> <span data-ttu-id="8d879-128">Aby znaleźć wpisu DevicePath, użyj reg.exe, jak pokazano w następującym poleceniu:</span><span class="sxs-lookup"><span data-stu-id="8d879-128">To find the DevicePath entry, use reg.exe as shown in the following command:</span></span>
 
 ```powershell
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -127,7 +126,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-<span data-ttu-id="65048-129">Można również użyć **WshShell** obiekt COM, jak również znaleźć niektóre wpisy rejestru, mimo że ta metoda nie działa z dużych danych binarnych lub nazwy wpisów rejestru, które obejmują znaki, takie jak "\\").</span><span class="sxs-lookup"><span data-stu-id="65048-129">You can also use the **WshShell** COM object as well to find some registry entries, although this method does not work with large binary data or with registry entry names that include characters such as "\\").</span></span> <span data-ttu-id="65048-130">Dołącz nazwę właściwości ścieżki elementu z \\ separatora:</span><span class="sxs-lookup"><span data-stu-id="65048-130">Append the property name to the item path with a \\ separator:</span></span>
+<span data-ttu-id="8d879-129">Można również użyć **WshShell** obiekt COM, jak również znaleźć niektóre wpisy rejestru, mimo że ta metoda nie działa z dużych danych binarnych lub nazwy wpisów rejestru, które obejmują znaki, takie jak "\\").</span><span class="sxs-lookup"><span data-stu-id="8d879-129">You can also use the **WshShell** COM object as well to find some registry entries, although this method does not work with large binary data or with registry entry names that include characters such as "\\").</span></span> <span data-ttu-id="8d879-130">Dołącz nazwę właściwości ścieżki elementu z \\ separatora:</span><span class="sxs-lookup"><span data-stu-id="8d879-130">Append the property name to the item path with a \\ separator:</span></span>
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -137,13 +136,13 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 %SystemRoot%\inf
 ```
 
-## <a name="setting-a-single-registry-entry"></a><span data-ttu-id="65048-131">Ustawianie jednego wpisu rejestru</span><span class="sxs-lookup"><span data-stu-id="65048-131">Setting a Single Registry Entry</span></span>
+## <a name="setting-a-single-registry-entry"></a><span data-ttu-id="8d879-131">Ustawianie jednego wpisu rejestru</span><span class="sxs-lookup"><span data-stu-id="8d879-131">Setting a Single Registry Entry</span></span>
 
-<span data-ttu-id="65048-132">Jeśli chcesz zmienić określonego wpisu w kluczu rejestru, można użyć jednej z kilku możliwych podejść.</span><span class="sxs-lookup"><span data-stu-id="65048-132">If you want to change a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="65048-133">Ten przykład modyfikuje **ścieżki** wpis w `HKEY_CURRENT_USER\Environment`.</span><span class="sxs-lookup"><span data-stu-id="65048-133">This example modifies the **Path** entry under `HKEY_CURRENT_USER\Environment`.</span></span> <span data-ttu-id="65048-134">**Ścieżki** wejścia Określa lokalizację plików wykonywalnych.</span><span class="sxs-lookup"><span data-stu-id="65048-134">The **Path** entry specifies where to find executable files.</span></span>
+<span data-ttu-id="8d879-132">Jeśli chcesz zmienić określonego wpisu w kluczu rejestru, można użyć jednej z kilku możliwych podejść.</span><span class="sxs-lookup"><span data-stu-id="8d879-132">If you want to change a specific entry in a registry key, you can use one of several possible approaches.</span></span> <span data-ttu-id="8d879-133">Ten przykład modyfikuje **ścieżki** wpis w `HKEY_CURRENT_USER\Environment`.</span><span class="sxs-lookup"><span data-stu-id="8d879-133">This example modifies the **Path** entry under `HKEY_CURRENT_USER\Environment`.</span></span> <span data-ttu-id="8d879-134">**Ścieżki** wejścia Określa lokalizację plików wykonywalnych.</span><span class="sxs-lookup"><span data-stu-id="8d879-134">The **Path** entry specifies where to find executable files.</span></span>
 
-1. <span data-ttu-id="65048-135">Pobieranie bieżącej wartości **ścieżki** przy użyciu wpisu `Get-ItemProperty`.</span><span class="sxs-lookup"><span data-stu-id="65048-135">Retrieve the current value of the **Path** entry using `Get-ItemProperty`.</span></span>
-2. <span data-ttu-id="65048-136">Dodaj nową wartość, oddzielając je za pomocą `;`.</span><span class="sxs-lookup"><span data-stu-id="65048-136">Add the new value, separating it with a `;`.</span></span>
-3. <span data-ttu-id="65048-137">Użyj `Set-ItemProperty` przy użyciu określonego klucza, wpis nazwy i wartości, aby zmodyfikować wpis rejestru.</span><span class="sxs-lookup"><span data-stu-id="65048-137">Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry entry.</span></span>
+1. <span data-ttu-id="8d879-135">Pobieranie bieżącej wartości **ścieżki** przy użyciu wpisu `Get-ItemProperty`.</span><span class="sxs-lookup"><span data-stu-id="8d879-135">Retrieve the current value of the **Path** entry using `Get-ItemProperty`.</span></span>
+2. <span data-ttu-id="8d879-136">Dodaj nową wartość, oddzielając je za pomocą `;`.</span><span class="sxs-lookup"><span data-stu-id="8d879-136">Add the new value, separating it with a `;`.</span></span>
+3. <span data-ttu-id="8d879-137">Użyj `Set-ItemProperty` przy użyciu określonego klucza, wpis nazwy i wartości, aby zmodyfikować wpis rejestru.</span><span class="sxs-lookup"><span data-stu-id="8d879-137">Use `Set-ItemProperty` with the specified key, entry name, and value to modify the registry entry.</span></span>
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -152,13 +151,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 ```
 
 > [!NOTE]
-> <span data-ttu-id="65048-138">Mimo że `Set-ItemProperty` ma **filtru**, **Include**, i **wykluczyć** parametrów, nie można ich używać do filtrowania według nazwy właściwości.</span><span class="sxs-lookup"><span data-stu-id="65048-138">Although `Set-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="65048-139">Parametry te dotyczą klucze rejestru — służą do ścieżki elementu — i nie wpisy rejestru — służą do właściwości elementu.</span><span class="sxs-lookup"><span data-stu-id="65048-139">These parameters refer to registry keys—which are item paths—and not registry entries—which are item properties.</span></span>
+> <span data-ttu-id="8d879-138">Mimo że `Set-ItemProperty` ma **filtru**, **Include**, i **wykluczyć** parametrów, nie można ich używać do filtrowania według nazwy właściwości.</span><span class="sxs-lookup"><span data-stu-id="8d879-138">Although `Set-ItemProperty` has **Filter**, **Include**, and **Exclude** parameters, they cannot be used to filter by property name.</span></span> <span data-ttu-id="8d879-139">Parametry te dotyczą klucze rejestru — służą do ścieżki elementu — i nie wpisy rejestru — służą do właściwości elementu.</span><span class="sxs-lookup"><span data-stu-id="8d879-139">These parameters refer to registry keys—which are item paths—and not registry entries—which are item properties.</span></span>
 
-<span data-ttu-id="65048-140">Innym rozwiązaniem jest za pomocą narzędzia wiersza polecenia Reg.exe.</span><span class="sxs-lookup"><span data-stu-id="65048-140">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="65048-141">Aby uzyskać pomoc dotyczącą reg.exe, wpisz **reg.exe /?**</span><span class="sxs-lookup"><span data-stu-id="65048-141">For help with reg.exe, type **reg.exe /?**</span></span>
-<span data-ttu-id="65048-142">w wierszu polecenia.</span><span class="sxs-lookup"><span data-stu-id="65048-142">at a command prompt.</span></span>
+<span data-ttu-id="8d879-140">Innym rozwiązaniem jest za pomocą narzędzia wiersza polecenia Reg.exe.</span><span class="sxs-lookup"><span data-stu-id="8d879-140">Another option is to use the Reg.exe command line tool.</span></span> <span data-ttu-id="8d879-141">Aby uzyskać pomoc dotyczącą reg.exe, wpisz **reg.exe /?**</span><span class="sxs-lookup"><span data-stu-id="8d879-141">For help with reg.exe, type **reg.exe /?**</span></span>
+<span data-ttu-id="8d879-142">w wierszu polecenia.</span><span class="sxs-lookup"><span data-stu-id="8d879-142">at a command prompt.</span></span>
 
-<span data-ttu-id="65048-143">Następujący przykład zmienia **ścieżki** zgłoszenia przez usunięcie ścieżki dodane w powyższym przykładzie.</span><span class="sxs-lookup"><span data-stu-id="65048-143">The following example changes the **Path** entry by removing the path added in the example above.</span></span>
-<span data-ttu-id="65048-144">`Get-ItemProperty` nadal służy do pobierania bieżącą wartość, aby uniknąć konieczności przeanalizować ciągu zwróconego przez `reg query`.</span><span class="sxs-lookup"><span data-stu-id="65048-144">`Get-ItemProperty` is still used to retrieve the current value to avoid having to parse the string returned from `reg query`.</span></span> <span data-ttu-id="65048-145">**Podciąg** i **LastIndexOf** metody są używane do pobierania ścieżki ostatniego dodane do **ścieżki** wpisu.</span><span class="sxs-lookup"><span data-stu-id="65048-145">The **SubString** and **LastIndexOf** methods are used to retrieve the last path added to the **Path** entry.</span></span>
+<span data-ttu-id="8d879-143">Następujący przykład zmienia **ścieżki** zgłoszenia przez usunięcie ścieżki dodane w powyższym przykładzie.</span><span class="sxs-lookup"><span data-stu-id="8d879-143">The following example changes the **Path** entry by removing the path added in the example above.</span></span>
+<span data-ttu-id="8d879-144">`Get-ItemProperty` nadal służy do pobierania bieżącą wartość, aby uniknąć konieczności przeanalizować ciągu zwróconego przez `reg query`.</span><span class="sxs-lookup"><span data-stu-id="8d879-144">`Get-ItemProperty` is still used to retrieve the current value to avoid having to parse the string returned from `reg query`.</span></span> <span data-ttu-id="8d879-145">**Podciąg** i **LastIndexOf** metody są używane do pobierania ścieżki ostatniego dodane do **ścieżki** wpisu.</span><span class="sxs-lookup"><span data-stu-id="8d879-145">The **SubString** and **LastIndexOf** methods are used to retrieve the last path added to the **Path** entry.</span></span>
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -170,11 +169,11 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-## <a name="creating-new-registry-entries"></a><span data-ttu-id="65048-146">Tworzenie nowych wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="65048-146">Creating New Registry Entries</span></span>
+## <a name="creating-new-registry-entries"></a><span data-ttu-id="8d879-146">Tworzenie nowych wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="8d879-146">Creating New Registry Entries</span></span>
 
-<span data-ttu-id="65048-147">Aby dodać nowy wpis o nazwie "PowerShellPath" do **CurrentVersion** użycia klucza, `New-ItemProperty` przy użyciu ścieżki do klucza, wprowadzona nazwa i wartość wpisu.</span><span class="sxs-lookup"><span data-stu-id="65048-147">To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with the path to the key, the entry name, and the value of the entry.</span></span> <span data-ttu-id="65048-148">W tym przykładzie pobierzemy wartości zmiennej środowiska Windows PowerShell `$PSHome`, który przechowuje ścieżki do katalogu instalacyjnego dla środowiska Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="65048-148">For this example, we will take the value of the Windows PowerShell variable `$PSHome`, which stores the path to the installation directory for Windows PowerShell.</span></span>
+<span data-ttu-id="8d879-147">Aby dodać nowy wpis o nazwie "PowerShellPath" do **CurrentVersion** użycia klucza, `New-ItemProperty` przy użyciu ścieżki do klucza, wprowadzona nazwa i wartość wpisu.</span><span class="sxs-lookup"><span data-stu-id="8d879-147">To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with the path to the key, the entry name, and the value of the entry.</span></span> <span data-ttu-id="8d879-148">W tym przykładzie pobierzemy wartości zmiennej środowiska Windows PowerShell `$PSHome`, który przechowuje ścieżki do katalogu instalacyjnego dla środowiska Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="8d879-148">For this example, we will take the value of the Windows PowerShell variable `$PSHome`, which stores the path to the installation directory for Windows PowerShell.</span></span>
 
-<span data-ttu-id="65048-149">Można dodać nowy wpis do klucza przy użyciu następującego polecenia, a polecenie zwraca też wartość informacji na temat nowego wpisu:</span><span class="sxs-lookup"><span data-stu-id="65048-149">You can add the new entry to the key by using the following command, and the command also returns information about the new entry:</span></span>
+<span data-ttu-id="8d879-149">Można dodać nowy wpis do klucza przy użyciu następującego polecenia, a polecenie zwraca też wartość informacji na temat nowego wpisu:</span><span class="sxs-lookup"><span data-stu-id="8d879-149">You can add the new entry to the key by using the following command, and the command also returns information about the new entry:</span></span>
 
 ```powershell
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
@@ -189,44 +188,44 @@ PSProvider     : Microsoft.PowerShell.Core\Registry
 PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 ```
 
-<span data-ttu-id="65048-150">**PropertyType** musi być nazwą **Microsoft.Win32.RegistryValueKind** składowej wyliczenia z poniższej tabeli:</span><span class="sxs-lookup"><span data-stu-id="65048-150">The **PropertyType** must be the name of a **Microsoft.Win32.RegistryValueKind** enumeration member from the following table:</span></span>
+<span data-ttu-id="8d879-150">**PropertyType** musi być nazwą **Microsoft.Win32.RegistryValueKind** składowej wyliczenia z poniższej tabeli:</span><span class="sxs-lookup"><span data-stu-id="8d879-150">The **PropertyType** must be the name of a **Microsoft.Win32.RegistryValueKind** enumeration member from the following table:</span></span>
 
-|<span data-ttu-id="65048-151">Wartość PropertyType</span><span class="sxs-lookup"><span data-stu-id="65048-151">PropertyType Value</span></span>|<span data-ttu-id="65048-152">Znaczenie</span><span class="sxs-lookup"><span data-stu-id="65048-152">Meaning</span></span>|
+|<span data-ttu-id="8d879-151">Wartość PropertyType</span><span class="sxs-lookup"><span data-stu-id="8d879-151">PropertyType Value</span></span>|<span data-ttu-id="8d879-152">Znaczenie</span><span class="sxs-lookup"><span data-stu-id="8d879-152">Meaning</span></span>|
 |----------------------|-----------|
-|<span data-ttu-id="65048-153">Binarny</span><span class="sxs-lookup"><span data-stu-id="65048-153">Binary</span></span>|<span data-ttu-id="65048-154">Dane binarne</span><span class="sxs-lookup"><span data-stu-id="65048-154">Binary data</span></span>|
-|<span data-ttu-id="65048-155">DWord</span><span class="sxs-lookup"><span data-stu-id="65048-155">DWord</span></span>|<span data-ttu-id="65048-156">Liczba, która jest nieprawidłowa UInt32</span><span class="sxs-lookup"><span data-stu-id="65048-156">A number that is a valid UInt32</span></span>|
-|<span data-ttu-id="65048-157">ExpandString</span><span class="sxs-lookup"><span data-stu-id="65048-157">ExpandString</span></span>|<span data-ttu-id="65048-158">Ciąg, który może zawierać zmienne środowiskowe, które są dynamicznie powiększane</span><span class="sxs-lookup"><span data-stu-id="65048-158">A string that can contain environment variables that are dynamically expanded</span></span>|
-|<span data-ttu-id="65048-159">MultiString</span><span class="sxs-lookup"><span data-stu-id="65048-159">MultiString</span></span>|<span data-ttu-id="65048-160">Wielowierszowy ciąg</span><span class="sxs-lookup"><span data-stu-id="65048-160">A multiline string</span></span>|
-|<span data-ttu-id="65048-161">Ciąg</span><span class="sxs-lookup"><span data-stu-id="65048-161">String</span></span>|<span data-ttu-id="65048-162">dowolną wartość ciągu</span><span class="sxs-lookup"><span data-stu-id="65048-162">Any string value</span></span>|
-|<span data-ttu-id="65048-163">QWord</span><span class="sxs-lookup"><span data-stu-id="65048-163">QWord</span></span>|<span data-ttu-id="65048-164">8 bajtów danych binarnych</span><span class="sxs-lookup"><span data-stu-id="65048-164">8 bytes of binary data</span></span>|
+|<span data-ttu-id="8d879-153">Binarny</span><span class="sxs-lookup"><span data-stu-id="8d879-153">Binary</span></span>|<span data-ttu-id="8d879-154">Dane binarne</span><span class="sxs-lookup"><span data-stu-id="8d879-154">Binary data</span></span>|
+|<span data-ttu-id="8d879-155">DWord</span><span class="sxs-lookup"><span data-stu-id="8d879-155">DWord</span></span>|<span data-ttu-id="8d879-156">Liczba, która jest nieprawidłowa UInt32</span><span class="sxs-lookup"><span data-stu-id="8d879-156">A number that is a valid UInt32</span></span>|
+|<span data-ttu-id="8d879-157">ExpandString</span><span class="sxs-lookup"><span data-stu-id="8d879-157">ExpandString</span></span>|<span data-ttu-id="8d879-158">Ciąg, który może zawierać zmienne środowiskowe, które są dynamicznie powiększane</span><span class="sxs-lookup"><span data-stu-id="8d879-158">A string that can contain environment variables that are dynamically expanded</span></span>|
+|<span data-ttu-id="8d879-159">MultiString</span><span class="sxs-lookup"><span data-stu-id="8d879-159">MultiString</span></span>|<span data-ttu-id="8d879-160">Wielowierszowy ciąg</span><span class="sxs-lookup"><span data-stu-id="8d879-160">A multiline string</span></span>|
+|<span data-ttu-id="8d879-161">Ciąg</span><span class="sxs-lookup"><span data-stu-id="8d879-161">String</span></span>|<span data-ttu-id="8d879-162">dowolną wartość ciągu</span><span class="sxs-lookup"><span data-stu-id="8d879-162">Any string value</span></span>|
+|<span data-ttu-id="8d879-163">QWord</span><span class="sxs-lookup"><span data-stu-id="8d879-163">QWord</span></span>|<span data-ttu-id="8d879-164">8 bajtów danych binarnych</span><span class="sxs-lookup"><span data-stu-id="8d879-164">8 bytes of binary data</span></span>|
 
 > [!NOTE]
-> <span data-ttu-id="65048-165">Można dodać wpis rejestru do wielu lokalizacji, określając szereg wartości **ścieżki** parametru:</span><span class="sxs-lookup"><span data-stu-id="65048-165">You can add a registry entry to multiple locations by specifying an array of values for the **Path** parameter:</span></span>
+> <span data-ttu-id="8d879-165">Można dodać wpis rejestru do wielu lokalizacji, określając szereg wartości **ścieżki** parametru:</span><span class="sxs-lookup"><span data-stu-id="8d879-165">You can add a registry entry to multiple locations by specifying an array of values for the **Path** parameter:</span></span>
 
 ```powershell
 New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="65048-166">Można również zastąpić istniejące wartości wpisu rejestru, dodając **życie** parametru do dowolnego `New-ItemProperty` polecenia.</span><span class="sxs-lookup"><span data-stu-id="65048-166">You can also overwrite a pre-existing registry entry value by adding the **Force** parameter to any `New-ItemProperty` command.</span></span>
+<span data-ttu-id="8d879-166">Można również zastąpić istniejące wartości wpisu rejestru, dodając **życie** parametru do dowolnego `New-ItemProperty` polecenia.</span><span class="sxs-lookup"><span data-stu-id="8d879-166">You can also overwrite a pre-existing registry entry value by adding the **Force** parameter to any `New-ItemProperty` command.</span></span>
 
-## <a name="renaming-registry-entries"></a><span data-ttu-id="65048-167">Zmiana nazwy wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="65048-167">Renaming Registry Entries</span></span>
+## <a name="renaming-registry-entries"></a><span data-ttu-id="8d879-167">Zmiana nazwy wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="8d879-167">Renaming Registry Entries</span></span>
 
-<span data-ttu-id="65048-168">Aby zmienić nazwę **PowerShellPath** wpis "PSHome", użyj `Rename-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="65048-168">To rename the **PowerShellPath** entry to "PSHome," use `Rename-ItemProperty`:</span></span>
+<span data-ttu-id="8d879-168">Aby zmienić nazwę **PowerShellPath** wpis "PSHome", użyj `Rename-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="8d879-168">To rename the **PowerShellPath** entry to "PSHome," use `Rename-ItemProperty`:</span></span>
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
-<span data-ttu-id="65048-169">Aby wyświetlić wartość, których nazwy zostały zmienione, należy dodać **PassThru** do polecenia.</span><span class="sxs-lookup"><span data-stu-id="65048-169">To display the renamed value, add the **PassThru** parameter to the command.</span></span>
+<span data-ttu-id="8d879-169">Aby wyświetlić wartość, których nazwy zostały zmienione, należy dodać **PassThru** do polecenia.</span><span class="sxs-lookup"><span data-stu-id="8d879-169">To display the renamed value, add the **PassThru** parameter to the command.</span></span>
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-## <a name="deleting-registry-entries"></a><span data-ttu-id="65048-170">Usuwanie wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="65048-170">Deleting Registry Entries</span></span>
+## <a name="deleting-registry-entries"></a><span data-ttu-id="8d879-170">Usuwanie wpisów rejestru</span><span class="sxs-lookup"><span data-stu-id="8d879-170">Deleting Registry Entries</span></span>
 
-<span data-ttu-id="65048-171">Aby usunąć PSHome i PowerShellPath wpisy rejestru, użyj `Remove-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="65048-171">To delete both the PSHome and PowerShellPath registry entries, use `Remove-ItemProperty`:</span></span>
+<span data-ttu-id="8d879-171">Aby usunąć PSHome i PowerShellPath wpisy rejestru, użyj `Remove-ItemProperty`:</span><span class="sxs-lookup"><span data-stu-id="8d879-171">To delete both the PSHome and PowerShellPath registry entries, use `Remove-ItemProperty`:</span></span>
 
 ```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome
