@@ -1,19 +1,19 @@
 ---
 title: Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
 description: Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
-ms.date: 08/06/2018
-ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 06/13/2019
+ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086679"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263910"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Zdalne edytowanie i debugowanie za pomocą programu Visual Studio Code
 
-Dla osób, które były zapoznać się z środowiska ISE może pamiętasz, że można uruchomić `psedit file.ps1` z zintegrowana Konsola umożliwia otwieranie plików — lokalnego lub zdalnego — kliknij prawym przyciskiem myszy w środowisku ISE.
+Dla użytkowników, którzy znają środowiska ISE, może pamiętasz, że można uruchomić `psedit file.ps1` z zintegrowana Konsola umożliwia otwieranie plików — lokalnego lub zdalnego — kliknij prawym przyciskiem myszy w środowisku ISE.
 
-Jak okazuje się, ta funkcja jest również dostępna w rozszerzeniu programu PowerShell dla programu VSCode. W przewodniku opisano, jak to zrobić.
+Ta funkcja jest również dostępna w rozszerzeniu programu PowerShell dla programu VSCode. Ten przewodnik pokazuje, jak to zrobić.
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -27,25 +27,31 @@ Ta funkcja działa w programie Windows PowerShell i PowerShell Core.
 
 Ta funkcja działa również podczas nawiązywania połączenia z komputerem zdalnym za pośrednictwem usługi WinRM, programu PowerShell Direct lub protokołu SSH. Jeśli chcesz używać protokołu SSH, ale korzystają z Windows, zapoznaj się z [Win32 wersję protokołu SSH](https://github.com/PowerShell/Win32-OpenSSH)!
 
-## <a name="lets-go"></a>Chodźmy
+> [!IMPORTANT]
+> `Open-EditorFile` i `psedit` polecenia działają tylko **zintegrowana konsola programu PowerShell** utworzone przez rozszerzenie programu PowerShell dla programu VSCode.
 
-W tej sekcji I omówiono zdalne edytowanie i debugowanie z moich MacBook Pro do maszyny Wirtualnej systemu Ubuntu działających na platformie Azure. Czy mogę może nie być sygnalizowany Windows, ale **procesu jest taka sama**.
+## <a name="usage-examples"></a>Przykłady użycia
+
+W tych przykładach zdalnego, edytowanie i debugowanie z MacBook Pro do maszyny Wirtualnej systemu Ubuntu działających na platformie Azure. Ten proces jest taka sama na Windows.
 
 ### <a name="local-file-editing-with-open-editorfile"></a>Edytowanie w programie Open EditorFile pliku lokalnego
 
 Z rozszerzeniem programu PowerShell dla programu VSCode pracę i otwarty zintegrowana konsola programu PowerShell, firma Microsoft można wpisać `Open-EditorFile foo.ps1` lub `psedit foo.ps1` można otworzyć pliku lokalnego foo.ps1 po prawej stronie w edytorze.
 
-![Otwórz EditorFile foo.ps1 działa lokalnie](https://user-images.githubusercontent.com/2644648/34895897-7c2c46ac-f79c-11e7-9410-a252aff52f13.png)
+![Otwórz EditorFile foo.ps1 działa lokalnie](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
-> foo.ps1 musi już istnieć.
+> Plik `foo.ps1` musi już istnieć.
 
 Z tego miejsca możemy wykonywać następujące czynności:
 
-dodać punkty przerwania na oprawę ![Dodawanie punkt przerwania, aby odstępu](https://user-images.githubusercontent.com/2644648/34895893-7bdc38e2-f79c-11e7-8026-8ad53f9a1bad.png)
+- Dodawanie punktów przerwania do odstępu
 
-i naciśnij klawisz F5, aby debugować skrypt programu PowerShell.
-![Profilowanie lokalnego skryptu programu PowerShell](https://user-images.githubusercontent.com/2644648/34895894-7bedb874-f79c-11e7-9180-7e0dc2d02af8.png)
+  ![dodając punkt przerwania, aby odstępu](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+
+- Naciśnij klawisz F5, aby debugować skrypt programu PowerShell.
+
+  ![Profilowanie lokalnego skryptu programu PowerShell](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 Podczas debugowania można korzystać z konsoli debugowania, zapoznaj się z zmienne w zakresie z lewej strony oraz wszystkich innych standardowych narzędzi do debugowania.
 
@@ -61,22 +67,26 @@ To wyjaśnienie watered w dół, polecenia cmdlet:
 - `Enter-PSSession -ContainerId foo` i `Enter-PSSession -VmId foo` rozpocząć sesję za pomocą programu PowerShell bezpośrednio
 - `Enter-PSSession -HostName foo` Uruchamia sesję za pośrednictwem protokołu SSH
 
-Aby uzyskać więcej informacji na `Enter-PSSession`, zapoznaj się z dokumentami [tutaj](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6).
+Aby uzyskać więcej informacji, zobacz dokumentację dla [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
 
-Czy mogę używać SSH dla niego komunikację zdalną ponieważ zamierzam z systemu macOS do maszyny Wirtualnej systemu Ubuntu na platformie Azure.
+Ponieważ użyjemy z systemu macOS do maszyny Wirtualnej systemu Ubuntu na platformie Azure, możemy korzystają z protokołu SSH dla niego komunikację zdalną.
 
-Po pierwsze w konsoli zintegrowane uruchommy naszych Enter-PSSession. Będziesz wiedzieć, że jesteś w sesji, ponieważ `[something]` pojawią się po lewej stronie znaku zgłoszenia.
+Najpierw w zintegrowana Konsola Uruchom `Enter-PSSession`. Masz połączenie sesji zdalnej podczas `[<hostname>]` pokazano maksymalnie z lewej strony z wiersza.
 
-![Wywołanie Enter-PSSession](https://user-images.githubusercontent.com/2644648/34895896-7c18e0bc-f79c-11e7-9b36-6f4bd0e9b0db.png)
+![Wywołanie Enter-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
-Z tego miejsca możemy konkretne kroki tak, jakby możemy edytowanego lokalnego skryptu.
+Teraz możemy te same kroki tak, jakby możemy edytowania lokalnego skryptu.
 
-1. Uruchom `Open-EditorFile test.ps1` lub `psedit test.ps1` można otworzyć zdalnej `test.ps1` pliku ![Open-EditorFile pliku test.ps1](https://user-images.githubusercontent.com/2644648/34895898-7c3e6a12-f79c-11e7-8bdf-549b591ecbcb.png)
-2. Edytuj plik/Ustawianie punktów przerwania ![Edytuj i ustawiania punktów przerwania](https://user-images.githubusercontent.com/2644648/34895892-7bb68246-f79c-11e7-8c0a-c2121773afbb.png)
-3. Rozpocznij debugowanie (F5) pliku zdalnego
+1. Uruchom `Open-EditorFile test.ps1` lub `psedit test.ps1` można otworzyć zdalnej `test.ps1` pliku
 
-![debugowanie pliku zdalnego](https://user-images.githubusercontent.com/2644648/34895895-7c040782-f79c-11e7-93ea-47724fa5c10d.png)
+  ![Open — EditorFile pliku test.ps1](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
-To wszystko jest do niego! Mamy nadzieję, że ten przewodnik pomogła wyczyść się pytania dotyczące zdalnego debugowania i edytowania programu PowerShell w programie VSCode.
+1. Edytuj plik/Ustawianie punktów przerwania
 
-Jeśli masz jakiekolwiek problemy, możesz otworzyć problemów [w repozytorium GitHub](http://github.com/powershell/vscode-powershell).
+   ![Edytuj i ustawiania punktów przerwania](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+
+1. Rozpocznij debugowanie (F5) pliku zdalnego
+
+   ![debugowanie pliku zdalnego](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+
+Jeśli masz jakiekolwiek problemy, możesz otworzyć problemy w [repozytorium GitHub](https://github.com/powershell/vscode-powershell).

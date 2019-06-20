@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: d1abdca9ecbb5ab0a13593072e6dcb0d647b0b14
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066995"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263815"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Pisanie polecenia cmdlet programu Windows PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "62066995"
 
 [Przykłady kodu, polecenia Cmdlet](./examples-of-cmdlet-code.md) ta sekcja zawiera przykłady kodu, które można użyć do rozpoczęcia pisania własnych poleceń cmdlet.
 
-[Przykłady formatowania danych wyjściowych polecenia Cmdlet](https://msdn.microsoft.com/en-us/65829249-124d-47d0-9bf3-8e397dc55855) ta sekcja zawiera przykłady, które pokazują, jak sformatować dane wyjściowe polecenia cmdlet.
+[Zapisywanie plików formatowanie danych wyjściowych polecenia Cmdlet](../format/writing-a-powershell-formatting-file.md) w tej sekcji opisano sposób tworzenia plików formatowania. Pliki formatowania definiują, jak program PowerShell Wyświetla obiekty w wierszu polecenia.
 
 [Samouczki dotyczące pisania poleceń cmdlet](./tutorials-for-writing-cmdlets.md) ta sekcja zawiera samouczki, które można użyć, aby poznać podstawy kodzie polecenia cmdlet.
 
