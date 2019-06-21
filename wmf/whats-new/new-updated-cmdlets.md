@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Nowe i zaktualizowane polecenia cmdlet
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65856245"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298649"
 ---
 # <a name="new-and-updated-cmdlets"></a>Nowe i zaktualizowane polecenia cmdlet
 
@@ -39,7 +39,7 @@ Aby uzyskać więcej informacji, zobacz:
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>Kryptograficznych polecenia cmdlet składni wiadomości (CMS)
 
-Polecenia cmdlet składnię komunikatów kryptograficznych obsługują szyfrowanie i odszyfrowywanie zawartości przy użyciu formatu standardowego IETF kryptograficznie ochrony wiadomości, zgodnie z opisem przez [RFC5652](https://tools.ietf.org/html/rfc5652).
+Polecenia cmdlet składnię komunikatów kryptograficznych obsługują szyfrowanie i odszyfrowywanie zawartości przy użyciu formatu standardowego IETF kryptograficznie ochrony wiadomości, zgodnie z opisem przez [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 Standardowa szyfrowania CMS implementuje kryptografii klucza publicznego, w którym klucz używany do szyfrowania zawartości ( *klucza publicznego*) i klucz używany do odszyfrowywania zawartości ( *klucza prywatnego*) są oddzielone.
 
@@ -47,9 +47,9 @@ Klucz publiczny może być powszechnie udostępniony i nie jest poufnych danych.
 
 Aby uzyskać więcej informacji, zobacz:
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Ochrona CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Ochrona CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
 Certyfikaty wymagają identyfikator unikatowy użycia klucza (EKU), takie jak "Podpisywanie kodu" lub "Zaszyfrowanych wiadomości E-mail", aby je zidentyfikować jako certyfikaty szyfrowania danych w programie PowerShell. Aby wyświetlić certyfikaty szyfrowania dokumentu dostawcę certyfikatów, można użyć **DocumentEncryptionCert** parametru dynamicznego `Get-ChildItem`:
 
@@ -145,6 +145,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.

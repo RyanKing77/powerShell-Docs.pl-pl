@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854915"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301402"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Tworzenie polecenia cmdlet, które modyfikuje system
 
@@ -59,7 +59,7 @@ Należy pamiętać, w [System.Management.Automation.CmdletAttribute](/dotnet/api
 
 ### <a name="extremely-destructive-actions"></a>Bardzo destrukcyjne działania
 
-Niektóre operacje są bardzo destrukcyjne, takie jak ponowne formatowanie partycji active dysku twardego. W takich przypadkach należy ustawić polecenia cmdlet `ConfirmImpact`  =  `ConfirmImpact.High` podczas deklarowania [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atrybutu. To ustawienie wymusza polecenia cmdlet na potwierdzenie żądania przez użytkownika, nawet wtedy, gdy użytkownik nie określił `Confirm` parametru. Jednak deweloperów polecenia cmdlet należy unikać nadużywanie `ConfirmImpact` dla operacji, które są po prostu potencjalnie szkodliwych, np. usunięcie konta użytkownika. Należy pamiętać, że jeśli `ConfirmImpact` ustawiono [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Niektóre operacje są bardzo destrukcyjne, takie jak ponowne formatowanie partycji active dysku twardego. W takich przypadkach należy ustawić polecenia cmdlet `ConfirmImpact`  =  `ConfirmImpact.High` podczas deklarowania [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) atrybutu. To ustawienie wymusza polecenia cmdlet na potwierdzenie żądania przez użytkownika, nawet wtedy, gdy użytkownik nie określił `Confirm` parametru. Jednak deweloperów polecenia cmdlet należy unikać nadużywanie `ConfirmImpact` dla operacji, które są po prostu potencjalnie szkodliwych, np. usunięcie konta użytkownika. Należy pamiętać, że jeśli `ConfirmImpact` ustawiono [System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **wysokiej**.
 
 Podobnie niektóre operacje są najprawdopodobniej nie występują destrukcyjne, mimo że teoretycznie mogą modyfikować stan działania systemu poza programu Windows PowerShell. Takie polecenia cmdlet można ustawić `ConfirmImpact` do [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Spowoduje to obejście żądania potwierdzenia, gdzie użytkownik został wyświetlony monit o potwierdzenie operacji tylko średni wpływ i o dużym znaczeniu.
 
@@ -278,11 +278,11 @@ Aby uzyskać pełne C# przykładowego kodu, zobacz [przykładowe StopProcessSamp
 
 ## <a name="defining-object-types-and-formatting"></a>Definiowanie typów obiektów i formatowanie
 
-Program Windows PowerShell przekazuje informacje między poleceniami cmdlet, używając obiektów platformy .net. W związku z tym polecenie cmdlet może być konieczne zdefiniowanie swój własny typ, lub polecenie cmdlet może być konieczne rozszerzyć istniejący typ dostarczane przez inne polecenie cmdlet. Aby uzyskać więcej informacji na temat definiowania nowych typów lub rozszerzanie istniejących typów, zobacz [rozszerzanie typów obiektów i formatowanie](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Program Windows PowerShell przekazuje informacje między poleceniami cmdlet, używając obiektów platformy .net. W związku z tym polecenie cmdlet może być konieczne zdefiniowanie swój własny typ, lub polecenie cmdlet może być konieczne rozszerzyć istniejący typ dostarczane przez inne polecenie cmdlet. Aby uzyskać więcej informacji na temat definiowania nowych typów lub rozszerzanie istniejących typów, zobacz [rozszerzanie typów obiektów i formatowanie](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Tworzenie polecenia cmdlet
 
-Po zaimplementowaniu polecenia cmdlet, musi być zarejestrowana przy użyciu programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Po zaimplementowaniu polecenia cmdlet, musi być zarejestrowana przy użyciu programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testowanie polecenia cmdlet
 
@@ -354,9 +354,9 @@ Zostanie wyświetlone następujące dane wyjściowe.
 
 [Dodając parametry, które przetwarzają dane wejściowe wiersza polecenia](./adding-parameters-that-process-command-line-input.md)
 
-[Formatowanie i rozszerzanie typy obiektów](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Formatowanie i rozszerzanie typy obiektów](/previous-versions//ms714665(v=vs.85))
 
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](/previous-versions//ms714644(v=vs.85))
 
 [Zestaw SDK programu Windows PowerShell](../windows-powershell-reference.md)
 

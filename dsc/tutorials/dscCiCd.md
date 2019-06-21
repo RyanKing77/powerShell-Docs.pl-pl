@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Tworzenie potoku ciągłej integracji i ciągłego wdrażania za pomocą DSC
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076479"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301492"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Tworzenie potoku ciągłej integracji i ciągłego wdrażania za pomocą DSC
 
@@ -22,10 +22,10 @@ Swój zautomatyzowany potok CI/CD pomaga zaktualizować oprogramowanie szybciej 
 
 Aby użyć tego przykładu, należy zapoznać się z następujących czynności:
 
-- Pojęcia dotyczące ciągłej integracji ciągłego wdrażania. Wartościowa dokumentacja ułatwiająca znajduje się w temacie [Model potoku wydania](http://aka.ms/thereleasepipelinemodelpdf).
+- Pojęcia dotyczące ciągłej integracji ciągłego wdrażania. Wartościowa dokumentacja ułatwiająca znajduje się w temacie [Model potoku wydania](https://aka.ms/thereleasepipelinemodelpdf).
 - [Git](https://git-scm.com/) kontroli źródła
 - [Usług Pester](https://github.com/pester/Pester) struktury testowania
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Będą potrzebne
 
@@ -44,7 +44,7 @@ Komputer kliencki musi być komputerem Windows za pomocą zainstalowane następu
 ### <a name="tfssrv1"></a>TFSSrv1
 
 Komputer, który jest hostem serwera TFS, w którym będzie definicji kompilacji i wydania.
-Ten komputer musi mieć [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) zainstalowane.
+Ten komputer musi mieć [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) zainstalowane.
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 To znajdzie wszystkie węzły, które zostały zdefiniowane jako mające rolę `DNSServer` w [dane konfiguracyjne](../configurations/configData.md), który jest tworzony przez `DevEnv.ps1` skryptu.
 
-Przeczytaj więcej o `Where` method in Class metoda [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+Przeczytaj więcej o `Where` method in Class metoda [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Ważne jest korzystanie z danych konfiguracji do definiowania węzły, podczas wykonywania ciągłej integracji, ponieważ informacje o węźle najprawdopodobniej ulegną zmianom między środowiskami i korzystanie z danych konfiguracji pozwala łatwo dokonać zmian bez konieczności zmieniania kodu konfiguracji informacje o węźle.
 
@@ -319,7 +319,7 @@ Skrypt testu integracji używa kombinacji [usług Pester](https://github.com/pes
 
 Teraz, gdy firma Microsoft przekazaniu nasz kod programem TFS i przyjrzano się, jak działa czynnością jest zdefiniowanie naszych kompilacji.
 
-W tym miejscu omówimy kroki kompilacji, które należy dodać do kompilacji. Aby uzyskać instrukcje dotyczące sposobu tworzenia definicji kompilacji w programie TFS, zobacz [Utwórz i kolejki definicję kompilacji](/azure/devops/pipelines/get-started-designer).
+W tym miejscu omówimy kroki kompilacji, które należy dodać do kompilacji. Aby uzyskać instrukcje dotyczące sposobu tworzenia definicji kompilacji w programie TFS, zobacz [Utwórz i kolejki definicję kompilacji](/azure/devops/pipelines/create-first-pipeline).
 
 Utwórz nową definicję kompilacji (wybierz **pusty** szablonu) o nazwie "InfraDNS".
 Dodaj poniższe kroki, aby użytkownik definicja kompilacji:
@@ -388,7 +388,7 @@ Utwórzmy definicji wydania, tak aby projekt został wdrożony do środowiska de
 
 Aby to zrobić, Dodaj nowe definicja wydania skojarzona z `InfraDNS` wcześniej utworzoną definicję kompilacji.
 Pamiętaj o wybraniu **ciągłe wdrażanie** tak, aby nowe wydanie zostaną wyzwolone za każdym zakończeniu nowej kompilacji.
-([Co to są potoki wydań? ](/azure/devops/pipelines/release/what-is-release-management)) i skonfiguruj ją w następujący sposób:
+([Co to są potoki wydań? ](/azure/devops/pipelines/release/)) i skonfiguruj ją w następujący sposób:
 
 Z definicją wydania, należy dodać następujące kroki:
 

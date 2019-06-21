@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 534a6c9a43326c8a01b2181c7a799286fa4d3997
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083539"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301529"
 ---
 # <a name="comment-based-help-keywords"></a>Słowa kluczowe pomocy opartej na komentarzach
 
@@ -23,7 +23,7 @@ W tym temacie wymieniono i opisano słów kluczowych w Pomoc oparta na komentarz
 
 Poniżej przedstawiono prawidłowe keywords Pomoc oparta na komentarzach. Są one wymienione w kolejności, w którym zwykle pojawiają się w temacie pomocy wraz z ich przeznaczenie. Tych słów kluczowych mogą być wyświetlane w dowolnej kolejności w Pomoc oparta na komentarz, a nie jest rozróżniana wielkość liter.
 
-Należy pamiętać, że `.ExternalHelp` — słowo kluczowe mają pierwszeństwo przed wszystkie inne słowa kluczowe Pomoc oparta na komentarz. Gdy `.ExternalHelp` jest obecny, [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) polecenie cmdlet nie wyświetla Pomoc oparta na komentarz, nawet wtedy, gdy nie można odnaleźć pliku pomocy, który odpowiada wartość słowa kluczowego.
+Należy pamiętać, że `.ExternalHelp` — słowo kluczowe mają pierwszeństwo przed wszystkie inne słowa kluczowe Pomoc oparta na komentarz. Gdy `.ExternalHelp` jest obecny, [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) polecenie cmdlet nie wyświetla Pomoc oparta na komentarz, nawet wtedy, gdy nie można odnaleźć pliku pomocy, który odpowiada wartość słowa kluczowego.
 
 `.Synopsis` Krótki opis funkcji lub skrypcie. This — słowo kluczowe może służyć tylko raz w każdym temacie.
 
@@ -61,9 +61,9 @@ Można również określić opis parametru, umieszczając komentarz w `Param` in
 
 `.ExternalHelp` `<XML Help File>` Określa ścieżkę i/lub nazwę pliku pomocy oparty na składni XML dla skryptu lub funkcji.
 
-`.ExternalHelp` Informuje — słowo kluczowe [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) polecenia cmdlet, aby uzyskać pomoc dotyczącą skryptu lub funkcji w pliku oparte na języku XML. **. ExternalHelp** — słowo kluczowe jest wymagany w przypadku używania pliku pomocy oparty na składni XML dla skryptu lub funkcji. Bez tego `Get-Help` nie znajdzie pliku pomocy dla funkcji lub skryptu.
+`.ExternalHelp` Informuje — słowo kluczowe [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) polecenia cmdlet, aby uzyskać pomoc dotyczącą skryptu lub funkcji w pliku oparte na języku XML. **. ExternalHelp** — słowo kluczowe jest wymagany w przypadku używania pliku pomocy oparty na składni XML dla skryptu lub funkcji. Bez tego `Get-Help` nie znajdzie pliku pomocy dla funkcji lub skryptu.
 
-`.ExternalHelp` — Słowo kluczowe mają pierwszeństwo przed wszystkie inne słowa kluczowe Pomoc oparta na komentarz. Gdy `.ExternalHelp` jest obecny, [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) polecenie cmdlet nie wyświetla Pomoc oparta na komentarz, nawet wtedy, gdy nie można odnaleźć pliku pomocy, który odpowiada wartość słowa kluczowego.
+`.ExternalHelp` — Słowo kluczowe mają pierwszeństwo przed wszystkie inne słowa kluczowe Pomoc oparta na komentarz. Gdy `.ExternalHelp` jest obecny, [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) polecenie cmdlet nie wyświetla Pomoc oparta na komentarz, nawet wtedy, gdy nie można odnaleźć pliku pomocy, który odpowiada wartość słowa kluczowego.
 
 Gdy funkcja jest eksportowana przez moduł skryptu, wartość `.ExternalHelp` powinna być nazwą pliku bez ścieżki. `Get-Help` szuka pliku w podkatalogu specyficzne dla ustawień regionalnych katalog modułu. Nie ma żadnych wymagań dla nazwy pliku, ale najlepszym rozwiązaniem jest użycie następujących format nazwy pliku: `<ScriptModule>.psm1-help.xml`.
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, zasób, galerii, Instalator
 title: Dodawanie parametrów do konfiguracji
-ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080260"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301510"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Dodawanie parametrów do konfiguracji
 
@@ -187,7 +187,7 @@ $State="Running"
 > [!NOTE]
 > Nie należy określić `parameter` atrybutu przy użyciu `validation` atrybutu.
 
-Przeczytaj więcej o `parameter` i sprawdzanie poprawności atrybutów w [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).
+Przeczytaj więcej o `parameter` i sprawdzanie poprawności atrybutów w [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## <a name="fully-parameterized-configuration"></a>W pełni sparametryzowane konfiguracji
 
