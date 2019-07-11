@@ -1,56 +1,52 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: jea, programu powershell, zabezpieczeń
 title: Inspekcja i raporty dotyczące technologii JEA
-ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084083"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726760"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Inspekcja i raporty dotyczące technologii JEA
 
-> Dotyczy: Windows PowerShell 5.0
-
-Po wdrożeniu usługi JEA, należy regularnie inspekcji konfiguracji JEA.
-To pomoże Ci ocenić, jeśli poprawne osoby mają dostęp do punktu końcowego JEA i ich przypisane role są nadal odpowiednie.
-
-W tym temacie opisano różne sposoby, które można przeprowadzać ich inspekcje punktu końcowego JEA.
+Po wdrożeniu usługi JEA, należy regularnie inspekcji konfiguracji JEA. Inspekcja pomaga ocenić czy poprawny osoby mają dostęp do punktu końcowego JEA i ich przypisane role są nadal odpowiednie.
 
 ## <a name="find-registered-jea-sessions-on-a-machine"></a>Znajdź zarejestrowany technologii JEA sesji na komputerze
 
-Aby sprawdzić, które sesje JEA są rejestrowane na komputerze, użyj [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) polecenia cmdlet.
+Aby sprawdzić, które sesje JEA są rejestrowane na komputerze, użyj [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) polecenia cmdlet.
 
 ```powershell
 # Filter for sessions that are configured as 'RestrictedRemoteServer' to find JEA-like session configurations
-PS C:\> Get-PSSessionConfiguration | Where-Object { $_.SessionType -eq 'RestrictedRemoteServer' }
+Get-PSSessionConfiguration | Where-Object { $_.SessionType -eq 'RestrictedRemoteServer' }
+```
 
-
+```Output
 Name          : JEAMaintenance
 PSVersion     : 5.1
 StartupScript :
 RunAsUser     :
-Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS AccessAllowed, CONTOSO\JEA_DNS_AUDITORS AccessAllowed
+Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS AccessAllowed,
+                CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-Skuteczne prawa dla punktu końcowego są wymienione w właściwość "Uprawnienia".
-Tacy użytkownicy mają prawo do nawiązywania połączenia punktu końcowego JEA, ale które role (i według rozszerzeń poleceń) mają dostęp, jest określany przez pole "RoleDefinitions" [plik konfiguracji sesji](session-configurations.md) który został użyty do zarejestrowania punkt końcowy.
-
-Możesz ocenić mapowań ról w punkcie końcowym programu zarejestrowany technologii JEA, rozwijając danych we właściwości "RoleDefinitions".
+Obowiązujące prawa dla punktu końcowego są wymienione w **uprawnienie** właściwości. Tacy użytkownicy mają prawo do nawiązywania połączenia punktu końcowego JEA. Jednak role i mają dostęp do poleceń jest określana przez **RoleDefinitions** właściwość [plik konfiguracji sesji](session-configurations.md) który został użyty do zarejestrowania punktu końcowego. Rozwiń **RoleDefinitions** właściwości do oceny mapowań ról w punkcie końcowym programu zarejestrowany technologii JEA.
 
 ```powershell
 # Get the desired session configuration
 $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 
 # Enumerate users/groups and which roles they have access to
-$jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
+$jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
+  Name = 'Role Capabilities'
+  Expression = { $_.Value.RoleCapabilities }
+}
 ```
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>Znajdowanie możliwości roli dostępne na komputerze
 
-Pliki możliwości roli tylko będzie używana przez usługi JEA, jeśli są one przechowywane w folderze "RoleCapabilities" wewnątrz prawidłowy modułu programu PowerShell.
-Wszystkie funkcje roli na komputerze można znaleźć, przeszukując listę dostępnych modułów.
+JEA pobiera możliwości roli z `.psrc` plików przechowywanych w **RoleCapabilities** folder wewnątrz modułu programu PowerShell. Poniższa funkcja znajduje wszystkie funkcje roli na komputerze.
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -65,7 +61,9 @@ function Find-LocalRoleCapability {
     }
 
     # Format the results nicely to make it easier to read
-    $results | Select-Object @{ Name = 'Name'; Expression = { $_.Name.TrimEnd('.psrc') }}, @{ Name = 'Path'; Expression = { $_.FullName }} | Sort-Object Name
+    $results | Select-Object @{ Name = 'Name'; Expression = { $_.Name.TrimEnd('.psrc') }}, @{
+        Name = 'Path'; Expression = { $_.FullName }
+    } | Sort-Object Name
 }
 ```
 
@@ -74,44 +72,40 @@ function Find-LocalRoleCapability {
 
 ## <a name="check-effective-rights-for-a-specific-user"></a>Sprawdź obowiązujące prawa dla określonego użytkownika
 
-Po skonfigurowaniu punktu końcowego JEA można sprawdzić, jakie polecenia są dostępne dla określonego użytkownika w ramach sesji usługi JEA.
-Możesz użyć [Get PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) można wyliczyć wszystkie polecenia, które są stosowane do użytkownika, gdyby można uruchomić sesji JEA z ich bieżącego członkostwa w grupach.
+[Get PSSessionCapability](/powershell/module/microsoft.powershell.core/Get-PSSessionCapability) polecenia cmdlet wylicza wszystkich poleceń dostępnych w punkcie końcowym usługi JEA oparte na członkostwie grupy użytkownika.
 Dane wyjściowe `Get-PSSessionCapability` jest taka sama jak w przypadku określonego użytkownika uruchamiającego `Get-Command -CommandType All` w ramach sesji usługi JEA.
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\Alice'
 ```
 
-Jeśli użytkownicy nie są stałe elementy członkowskie grup, które może przyznać im dodatkowe prawa JEA, to polecenie cmdlet może nie odzwierciedlać te dodatkowe uprawnienia.
-Zazwyczaj jest to przypadek, korzystając z systemów zarządzania uprzywilejowany dostęp just in time umożliwiające użytkownikom tymczasowo należeć do grupy zabezpieczeń.
-Zawsze należy wnikliwie zastanowić się, mapowanie użytkowników do ról i zawartość każdej roli, aby upewnić się, że użytkownicy otrzymują tylko dostęp do minimalnej liczbie polecenia są potrzebne do wykonywania ich zadań pomyślnie.
+Jeśli użytkownicy nie są stałe elementy członkowskie grup, które może przyznać im dodatkowe prawa JEA, to polecenie cmdlet może nie odzwierciedlać te dodatkowe uprawnienia. Dzieje się po użyciu just-in-time uprzywilejowanego dostępu do systemów zarządzania, aby umożliwić użytkownikom tymczasowo należeć do grupy zabezpieczeń. Należy wnikliwie zastanowić się mapowanie użytkowników do ról i funkcji, aby upewnić się, że użytkownicy pobierają tylko poziom dostępu wymagane do wykonywania ich zadań pomyślnie.
 
 ## <a name="powershell-event-logs"></a>Dzienniki zdarzeń programu PowerShell
 
-Jeśli włączono modułu i/lub skrypt bloku rejestrowania w systemie można znaleźć zdarzenia w dzienniku zdarzeń Windows dla każdego polecenia, które użytkownik został uruchomiony w ich sesji usługi JEA.
-Aby znaleźć te zdarzenia, otwórz Podgląd zdarzeń Windows, przejdź do **Microsoft-Windows-PowerShell/Operational** dziennika zdarzeń, a następnie sprawdź zdarzenia o identyfikatorze zdarzenia **4104**.
+Jeśli został włączony moduł lub skrypt bloku rejestrowania w systemie, zostanie wyświetlony zdarzeń w dzienniku zdarzeń Windows dla każdego polecenia, które użytkownik, który jest uruchamiany w ramach sesji usługi JEA. Aby znaleźć te zdarzenia, otwórz **Microsoft-Windows-PowerShell/Operational** dziennika zdarzeń i wyszukać zdarzenia o identyfikatorze zdarzenia **4104**.
 
-Każdy wpis dziennika zdarzeń będzie zawierać informacje o sesji, w którym zostało uruchomione polecenie.
-Sesje usługi JEA to zawiera ważne informacje o **ConnectedUser**, czyli rzeczywisty użytkownik, który utworzył sesję JEA, jak również **nazwa_użytkownika** identyfikujący konto usługi JEA używane do Wykonaj polecenie.
-Dzienniki zdarzeń aplikacji pokaże zmian wprowadzanych przez nazwa_użytkownika, więc o transkrypcji lub włączone rejestrowanie modułu/skrypt jest niezwykle istotne można było śledzić wywołanie określonego polecenia do użytkownika.
+Każdy wpis dziennika zdarzeń zawiera informacje o sesji, w którym zostało uruchomione polecenie. Sesje usługi JEA zdarzenia zawiera informacje o **ConnectedUser** i **nazwa_użytkownika**. **ConnectedUser** jest rzeczywisty użytkownik, który utworzył sesję JEA. **Nazwa_użytkownika** to konto usługi JEA służącego do wykonania polecenia.
+
+Dzienniki zdarzeń aplikacji Pokaż zmian wprowadzanych przez **nazwa_użytkownika**. Dlatego moduł i włączone rejestrowanie skryptu jest wymagane do śledzenia z powrotem do wywołania określonego polecenia **ConnectedUser**.
 
 ## <a name="application-event-logs"></a>Dzienniki zdarzeń aplikacji
 
-Po uruchomieniu polecenia w sesji JEA, która wchodzi w interakcję z zewnętrznych aplikacji lub usługi te aplikacje mogą rejestrować zdarzenia własne dzienniki zdarzeń.
-W przeciwieństwie do dzienników programu PowerShell i zapisy innych mechanizmów rejestrowania nie będzie przechwytywać połączonego użytkownika sesji JEA i będzie zamiast tego zalogować się wyłącznie wirtualnego użytkownika Uruchom jako i kont usług zarządzanych przez grupę.
-Aby ustalić, który uruchomił polecenie, należy zapoznać się z [transkrypcji sesji](#session-transcripts) lub skorelowania dzienników zdarzeń programu PowerShell z czasem i użytkownika, przedstawione w dzienniku zdarzeń aplikacji.
+Polecenia są uruchamiane w sesji JEA, która wchodzić w interakcje z aplikacjami zewnętrznymi lub usługi mogą rejestrować zdarzenia do ich własnych dzienników zdarzeń. W przeciwieństwie do dzienników programu PowerShell i zapisy innych mechanizmów rejestrowania nie należy przechwytywać połączonego użytkownika sesji JEA. Zamiast tego te aplikacje dziennika wirtualnego użytkownika Uruchom jako.
+Aby ustalić, który uruchomił polecenie, należy zapoznać się [transkrypcji sesji](#session-transcripts) lub skorelowania dzienników zdarzeń programu PowerShell z czasem i użytkownika, przedstawione w dzienniku zdarzeń aplikacji.
 
-WinRM dziennika może też pomóc skorelować Uruchom jako użytkownikom w dzienniku zdarzeń aplikacji użytkownik nawiązujący połączenie.
-Identyfikator zdarzenia **193** w **Microsoft-Windows-Windows zdalnego zarządzania/Operational** rejestrowania rekordów identyfikator zabezpieczeń (SID) i konto nazwy użytkownik nawiązujący połączenie i jako użytkownika co czas wykonywania usługi JEA zostanie utworzona sesja.
+Dziennik usługi WinRM można również ułatwić skorelować użytkowników Uruchom jako użytkownik nawiązujący połączenie z dziennika zdarzeń aplikacji. Identyfikator zdarzenia **193** w **Microsoft-Windows-Windows zdalnego zarządzania/Operational** dziennika rejestruje identyfikator zabezpieczeń (SID) i nazwa konta zarówno dla połączenia użytkownika i Uruchom jako użytkownik dla każdej nowej usługi JEA sesji.
 
 ## <a name="session-transcripts"></a>Zapisy sesji
 
-Jeśli skonfigurowano JEA, aby utworzyć transkrypcję dla każdej sesji użytkownika kopię tekstu akcji każdego użytkownika będą przechowywane we wskazanym folderze.
+Jeśli skonfigurowano JEA, aby utworzyć transkrypcję dla każdej sesji użytkownika kopię tekstu działania każdego z użytkowników są przechowywane we wskazanym folderze.
 
-Aby znaleźć wszystkie katalogi transkrypcji, uruchom następujące polecenie jako administrator na komputerze skonfigurowany przy użyciu technologii JEA:
+Następujące polecenie (jako administrator) umożliwia znalezienie wszystkich katalogów transkrypcji.
 
 ```powershell
-Get-PSSessionConfiguration | Where-Object { $_.TranscriptDirectory -ne $null } | Format-Table Name, TranscriptDirectory
+Get-PSSessionConfiguration |
+  Where-Object { $_.TranscriptDirectory -ne $null } |
+    Format-Table Name, TranscriptDirectory
 ```
 
 Każdy transkrypcji rozpoczyna się od informacji o czasie rozpoczęcia sesji, który użytkownik podłączonego do sesji i tożsamość usługi JEA przypisano do nich.
@@ -126,9 +120,7 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-W treści transkrypcję rejestrowane są informacje dotyczące każdego polecenia, które użytkownik wywołał.
-Dokładna Składnia polecenia, które użytkownik uruchomi jest niedostępna w sesji JEA ze względu na sposób polecenia są przekształcane do komunikacji zdalnej programu PowerShell, ale nadal można określić skuteczne polecenia, który został wykonany.
-Poniżej przedstawiono fragment transkrypcji przykład od użytkownika uruchamiania `Get-Service Dns` w ramach sesji usługi JEA:
+Treść tej transkrypcji zawiera informacje o każdym poleceniu użytkownik wywołał. Dokładna Składnia polecenia używane jest niedostępna w sesji JEA ze względu na sposób, w jaki polecenia są przekształcane do komunikacji zdalnej programu PowerShell. Można jednak nadal określić skuteczne polecenia, który został wykonany. Poniżej przedstawiono fragment transkrypcji przykład od użytkownika uruchamiania `Get-Service Dns` w ramach sesji usługi JEA:
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -139,14 +131,10 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-Dla każdego polecenia, które użytkownik uruchamia wiersz "CommandInvocation" zostanie zapisany, zawierająca opis polecenia cmdlet lub użytkownika, wywoływana funkcja.
-ParameterBindings postępuj zgodnie z każdym CommandInvocation informujące o każdego parametru i wartości, która została dostarczona z poleceniem.
-W powyższym przykładzie widać, że parametr, który został "Name" podana wartość "Dns" dla polecenia cmdlet "Get-Usługa".
+A **CommandInvocation** wiersz jest przeznaczony dla każdego polecenia, gdy użytkownik uruchamia. **ParameterBindings** zarejestrować każdy parametr i wartość dostarczona z poleceniem. W poprzednim przykładzie możesz zobaczyć, że parametr **nazwa** została podana z wartością **Dns** dla `Get-Service` polecenia cmdlet.
 
-Dane wyjściowe każdego polecenia będzie również wyzwalać CommandInvocation zwykle wyjściowego domyślną.
-InputObject Out-Default jest obiekt programu PowerShell, w zwróconym w poleceniu.
-Szczegóły tego obiektu, wydrukowaniu kilka wierszy poniżej, ściśle naśladując, co użytkownik będzie mieć widoczne.
+Dane wyjściowe każdego polecenia także wyzwalacze **CommandInvocation**, zwykle `Out-Default`. **InputObject** z `Out-Default` polecenie zostanie zwrócony obiekt programu PowerShell. Szczegóły tego obiektu, wydrukowaniu kilka wierszy poniżej, ściśle naśladując, co użytkownik będzie mieć widoczne.
 
 ## <a name="see-also"></a>Zobacz też
 
-- [*Program PowerShell ♥ zespołem niebieskim* wpis w blogu dotyczący zabezpieczeń](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[*Program PowerShell ♥ zespołem niebieskim* wpis w blogu dotyczący zabezpieczeń](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

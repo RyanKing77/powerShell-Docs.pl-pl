@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081091"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734877"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programisty&#39;przewodnik s
 
@@ -37,7 +37,7 @@ Podczas tworzenia tradycyjnych polecenia są wymagane do zapisania analizatora p
 
 Programu Windows PowerShell definiuje kilka typów poleceń, które są dostępne w trakcie opracowywania. Są to: funkcje, filtry, skrypty, aliasy i pliki wykonywalne (aplikacje). Wpisz polecenie główne omówione w tym przewodniku jest proste, małe polecenie o nazwie "polecenie cmdlet". Program Windows PowerShell przedstawia zestaw poleceń cmdlet i w pełni obsługuje polecenie cmdlet dostosowania do potrzeb środowiska. Środowisko wykonawcze programu Windows PowerShell przetwarza wszystkie typy, tak jak polecenia cmdlet, za pomocą potoków.
 
-Oprócz poleceń programu Windows PowerShell obsługuje różnych dostawców środowiska Windows PowerShell można dostosować, składających się na konkretnych zestawów dostępnych poleceń cmdlet. Powłoki działa w aplikacji hosta dostarczone do programu Windows PowerShell (Windows PowerShell.exe), ale nie jest równie dostępny aplikacji niestandardowego hosta, w której można tworzyć w celu spełnienia określonych wymagań. Aby uzyskać więcej informacji, zobacz [sposób działania programu Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Oprócz poleceń programu Windows PowerShell obsługuje różnych dostawców środowiska Windows PowerShell można dostosować, składających się na konkretnych zestawów dostępnych poleceń cmdlet. Powłoki działa w aplikacji hosta dostarczone do programu Windows PowerShell (Windows PowerShell.exe), ale nie jest równie dostępny aplikacji niestandardowego hosta, w której można tworzyć w celu spełnienia określonych wymagań. Aby uzyskać więcej informacji, zobacz [sposób działania programu Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-cmdlets"></a>Polecenia cmdlet programu Windows PowerShell
 
@@ -51,17 +51,17 @@ Wykonywanie zadań administracyjnych, użytkownik może być konieczne zbadanie 
 
 Program Windows PowerShell udostępnia kilka domyślne dostawcy środowiska Windows PowerShell. Na przykład dostawca rejestru obsługuje nawigacji i manipulowania nimi rejestru Windows. Klucze rejestru są reprezentowane jako elementy, a wartości rejestru są traktowane jako właściwości.
 
-Jeśli należy udostępnić magazyn danych, który użytkownik będzie musiał uzyskać dostęp, może być konieczne zapisać własnego dostawcę środowiska Windows PowerShell zgodnie z opisem w [Tworzenie dostawcy programu Windows PowerShell](./how-to-create-a-windows-powershell-provider.md). Aby uzyskać więcej informacji o aboutWindows dostawcy programu PowerShell, zobacz [sposób działania programu Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Jeśli należy udostępnić magazyn danych, który użytkownik będzie musiał uzyskać dostęp, może być konieczne zapisać własnego dostawcę środowiska Windows PowerShell zgodnie z opisem w [Tworzenie dostawcy programu Windows PowerShell](./how-to-create-a-windows-powershell-provider.md). Aby uzyskać więcej informacji o aboutWindows dostawcy programu PowerShell, zobacz [sposób działania programu Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="host-application"></a>Aplikacja hosta
 
 Środowisko Windows PowerShell zawiera domyślne powershell.exe aplikacji hosta, czyli aplikację konsolową która wchodzi w interakcję z użytkownikiem i hostuje środowisko wykonawcze programu Windows PowerShell, za pomocą okna konsoli.
 
-Tylko rzadko będzie należy napisać własną aplikację hosta dla środowiska Windows PowerShell, mimo że Dostosowywanie jest obsługiwane. Jeden przypadek, w którym może być konieczne jego własnej aplikacji jest, gdy interfejs graficzny interfejs użytkownika, który jest bogatszy niż interfejs dostarczony przez aplikację hosta domyślnego. Możesz również niestandardowych aplikacji, gdy będzie tworzony interfejs graficzny w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [jak utworzyć aplikację hosta programu Windows PowerShell](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Tylko rzadko będzie należy napisać własną aplikację hosta dla środowiska Windows PowerShell, mimo że Dostosowywanie jest obsługiwane. Jeden przypadek, w którym może być konieczne jego własnej aplikacji jest, gdy interfejs graficzny interfejs użytkownika, który jest bogatszy niż interfejs dostarczony przez aplikację hosta domyślnego. Możesz również niestandardowych aplikacji, gdy będzie tworzony interfejs graficzny w wierszu polecenia. Aby uzyskać więcej informacji, zobacz [jak utworzyć aplikację hosta programu Windows PowerShell](/powershell/developer/hosting/writing-a-windows-powershell-host-application).
 
 ### <a name="windows-powershell-runtime"></a>Środowisko uruchomieniowe programu Windows PowerShell
 
-Środowisko uruchomieniowe programu Windows PowerShell jest aparatem wykonywania, który implementuje przetwarzanie poleceń. Zawiera klasy, które zapewniają interfejs między aplikacją hosta i poleceń programu Windows PowerShell i dostawców. Środowisko wykonawcze programu Windows PowerShell jest zaimplementowana jako obiekt obszaru działania dla bieżącej sesji programu Windows PowerShell, czyli środowisku operacyjnym, w którym wykonywanie polecenia i powłoki. Aby uzyskać szczegółowe informacje operacyjne, zobacz [sposób działania programu Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Środowisko uruchomieniowe programu Windows PowerShell jest aparatem wykonywania, który implementuje przetwarzanie poleceń. Zawiera klasy, które zapewniają interfejs między aplikacją hosta i poleceń programu Windows PowerShell i dostawców. Środowisko wykonawcze programu Windows PowerShell jest zaimplementowana jako obiekt obszaru działania dla bieżącej sesji programu Windows PowerShell, czyli środowisku operacyjnym, w którym wykonywanie polecenia i powłoki. Aby uzyskać szczegółowe informacje operacyjne, zobacz [sposób działania programu Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-language"></a>Języka programu Windows PowerShell
 
@@ -81,7 +81,7 @@ Program Windows PowerShell umożliwia dostęp do szeregu różnych obiektów, ta
 
   Za pomocą ETS, możesz utworzyć nowe "typy elastyczne", są zgodne z językiem programu Windows PowerShell. Jeśli jesteś deweloperem platformy .NET, jesteś w stanie, aby pracować z obiektami za pomocą tej samej semantyki jako język programu Windows PowerShell dotyczy skryptów, na przykład, aby określić, jeśli obiekt daje w wyniku `true`.
 
-  Aby uzyskać więcej informacji na temat ETS i używaniu programu Windows PowerShell na obiekty, zobacz [pojęcia programu Windows PowerShell obiektu](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
+  Aby uzyskać więcej informacji na temat ETS i używaniu programu Windows PowerShell na obiekty, zobacz [pojęcia programu Windows PowerShell obiektu](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
 ## <a name="programming-for-windows-powershell"></a>Programowanie dla środowiska Windows PowerShell
 
@@ -100,7 +100,7 @@ Aby uzyskać więcej informacji na temat korzystania z powłoki programu Windows
 |Temat|Definicja|
 |-----------|----------------|
 |[Jak utworzyć dostawcę Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Ta sekcja zawiera opis sposobu tworzenia dostawcy środowiska Windows PowerShell dla programu Windows PowerShell.|
-|[Jak utworzyć aplikację hosta programu PowerShell Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|W tej sekcji opisano sposób pisania aplikacji hosta, która manipuluje obszarem działania oraz sposobu pisania aplikacji hosta, który implementuje własnego niestandardowego hosta.|
+|[Jak utworzyć aplikację hosta programu PowerShell Windows](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|W tej sekcji opisano sposób pisania aplikacji hosta, która manipuluje obszarem działania oraz sposobu pisania aplikacji hosta, który implementuje własnego niestandardowego hosta.|
 |[Jak utworzyć przystawki Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|W tej sekcji opisano sposób tworzenia przystawki, który służy do rejestrowania wszystkich poleceń cmdlet i dostawców w zestawie oraz jak utworzyć niestandardowe przystawki.|
 |[Jak utworzyć powłoki konsoli](./how-to-create-a-console-shell.md)|Ta sekcja zawiera opis sposobu tworzenia powłoki konsoli, który nie jest rozszerzalny.|
 |[Pojęcia dotyczące programu Windows PowerShell](./windows-powershell-concepts.md)|Ta sekcja zawiera ogólne informacje, które pomoże Ci zrozumieć programu Windows PowerShell z punktu widzenia dewelopera.|

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854846"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733946"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Tworzenie polecenia cmdlet w celu uzyskania dostępu do magazynu danych
 
@@ -72,7 +72,7 @@ Należy pamiętać, że ten parametr należy do dwóch różnych parametrów zes
 
 Dwa [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) atrybuty zadeklarować, że `Path` należy parametr `ScriptParameterSet` i `PatternParameterSet`. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [Dodawanie Ustawia parametr do polecenia Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) deklaruje atrybutu `PSPath` alias dla `Path` parametru. Deklarowanie ten alias zdecydowanie zaleca się w celu zachowania spójności z innymi poleceniami cmdlet, którego dostęp dostawcy środowiska Windows PowerShell. Aby uzyskać więcej informacji o aboutWindows ścieżki programu PowerShell, zobacz "Koncepcje ścieżki programu PowerShell" w [sposób działania programu Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) deklaruje atrybutu `PSPath` alias dla `Path` parametru. Deklarowanie ten alias zdecydowanie zaleca się w celu zachowania spójności z innymi poleceniami cmdlet, którego dostęp dostawcy środowiska Windows PowerShell. Aby uzyskać więcej informacji o aboutWindows ścieżki programu PowerShell, zobacz "Koncepcje ścieżki programu PowerShell" w [sposób działania programu Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>Deklarowanie parametr wzorca
 
@@ -379,7 +379,7 @@ To polecenie cmdlet Str wybierz przykładowy używa [System.Management.Automatio
 
 ## <a name="code-sample"></a>Przykładowy kod
 
-Poniższy kod przedstawia implementację tej wersji tego polecenia cmdlet Select Str. Należy pamiętać, że ten kod zawiera klasy polecenia cmdlet, metody prywatnej używany przez polecenia cmdlet i programu Windows PowerShell w przystawce Kod używany do rejestrowania polecenia cmdlet. Aby uzyskać więcej informacji na temat rejestrowania polecenia cmdlet, zobacz [tworzenia polecenia cmdlet](#building-the-cmdlet).
+Poniższy kod przedstawia implementację tej wersji tego polecenia cmdlet Select Str. Należy pamiętać, że ten kod zawiera klasy polecenia cmdlet, metody prywatnej używany przez polecenia cmdlet i programu Windows PowerShell w przystawce Kod używany do rejestrowania polecenia cmdlet. Aby uzyskać więcej informacji na temat rejestrowania polecenia cmdlet, zobacz [tworzenia polecenia cmdlet](#Defining-the-Cmdlet-Class).
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>Tworzenie polecenia cmdlet
 
-Po zaimplementowaniu polecenia cmdlet, należy zarejestrować go za pomocą programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Po zaimplementowaniu polecenia cmdlet, należy zarejestrować go za pomocą programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testowanie polecenia cmdlet
 
@@ -1214,7 +1214,7 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
 
 ## <a name="see-also"></a>Zobacz też
 
-[Jak utworzyć polecenia Cmdlet programu Windows PowerShell](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Jak utworzyć polecenia Cmdlet programu Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Tworzenie swojej pierwszej polecenia Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
 
 [Projektowanie dostawcą Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Jak działa program Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Jak działa program Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](/previous-versions//ms714644(v=vs.85))
 
 [Zestaw SDK programu Windows PowerShell](../windows-powershell-reference.md)

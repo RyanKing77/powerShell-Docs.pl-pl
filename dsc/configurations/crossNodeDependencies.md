@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Określanie zależności między węzłami
-ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080207"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734673"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Określanie zależności między węzłami
 
@@ -55,14 +55,22 @@ WaitForSome [String] #ResourceName
 
 Wszystkie **WaitForXXXX** udostępnianie następujące klucze składni.
 
-|  Właściwość |  Opis || RetryIntervalSec | Liczba sekund przed ponowną próbą. Minimalna liczba to 1. | | RetryCount | Maksymalna liczba ponownych prób. | | ThrottleLimit | Liczba maszyn do łączenia z jednocześnie. Wartość domyślna to `New-CimSession` domyślnego. | | DependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Aby uzyskać więcej informacji, zobacz [DependsOn](resource-depends-on.md)|| PsDscRunAsCredential | Zobacz [DSC przy użyciu poświadczeń użytkownika](./runAsUser.md) |
-
+|Właściwość|  Opis   |
+|---------|---------------------|
+| RetryIntervalSec| Liczba sekund przed ponowną próbą. Minimalny to 1.|
+| RetryCount| Maksymalna liczba ponownych prób.|
+| ThrottleLimit| Liczba maszyn do łączenia z jednocześnie. Wartość domyślna to `New-CimSession` domyślne.|
+| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Aby uzyskać więcej informacji, zobacz [DependsOn](resource-depends-on.md)|
+| PsDscRunAsCredential | Zobacz [DSC przy użyciu poświadczeń użytkownika](./runAsUser.md) |
 
 ## <a name="using-waitforxxxx-resources"></a>Korzystanie z zasobów WaitForXXXX
 
-Każdy **WaitForXXXX** zasobów czeka, aż określone zasoby zakończyć w określonym węźle. Inne zasoby w tej samej konfiguracji można następnie *zależą od* **WaitForXXXX** zasobów przy użyciu **DependsOn** klucza.
+Każdy **WaitForXXXX** zasobów czeka, aż określone zasoby zakończyć w określonym węźle.
+Inne zasoby w tej samej konfiguracji można następnie *zależą od* **WaitForXXXX** zasobów przy użyciu **DependsOn** klucza.
 
 Na przykład w następującej konfiguracji węzła docelowego oczekuje na **xADDomain** zasobów, aby zdążyć na **Kontroler_domeny** węzły maksymalną liczbą 30 ponawia próbę, w 15-sekundowych odstępach czasu, zanim węzeł docelowy mogą dołączyć do domeny.
+
+Domyślnie **WaitForXXX** zasobów spróbuj jeden raz, a następnie zakończyć się niepowodzeniem. Chociaż nie jest wymagane, będzie zazwyczaj chcesz określić **RetryCount** i **RetryIntervalSec**.
 
 ```powershell
 Configuration JoinDomain
@@ -111,7 +119,9 @@ Configuration JoinDomain
 
 Podczas kompilowania konfiguracji są generowane dwa pliki "MOF". Dotyczy zarówno pliki "MOF" węzłów docelowych przy użyciu [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) polecenia cmdlet
 
->**Uwaga:** Domyślnie WaitForXXX zasobów spróbuj jeden raz, a następnie zakończyć się niepowodzeniem. Chociaż nie jest wymagane, będzie zazwyczaj chcesz określić **RetryCount** i **RetryIntervalSec**.
+> [!NOTE]
+> **WaitForXXX** zasobów Użyj Windows Remote Management, aby sprawdzić stan innych węzłów.
+> Aby uzyskać więcej informacji na temat wymagania dotyczące portów i zabezpieczeń dla usługi WinRM, zobacz [zagadnienia dotyczące zabezpieczeń komunikacji zdalnej programu PowerShell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="see-also"></a>Zobacz też
 

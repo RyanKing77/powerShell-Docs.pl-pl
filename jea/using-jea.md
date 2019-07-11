@@ -1,49 +1,43 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: jea, programu powershell, zabezpieczeń
 title: Korzystanie z usługi JEA
-ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f3cc9186c61a2ae5b64eb3dc4f72ca83f1a58c5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084049"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734221"
 ---
 # <a name="using-jea"></a>Korzystanie z usługi JEA
 
-> Dotyczy: Windows PowerShell 5.0
-
-W tym temacie opisano różne sposoby, można połączyć się i używać punktu końcowego JEA.
+W tym artykule opisano różne sposoby, można połączyć się i używać punktu końcowego JEA.
 
 ## <a name="using-jea-interactively"></a>Interakcyjne korzystanie z usługi JEA
 
-Jeśli testujesz konfigurację usługi JEA lub proste zadania dla użytkowników do wykonania, można użyć technologii JEA taki sam sposób jak w przypadku regularnego sesji komunikacji zdalnej programu PowerShell.
-Remoting złożonych zadań, zaleca się używanie [niejawne remoting](#using-jea-with-implicit-remoting) zamiast ułatwienia dla użytkowników, umożliwiając użytkownikowi korzystanie z danych obiekty lokalnie.
+Jeśli testujesz konfigurację usługi JEA lub proste zadania dla użytkowników, można użyć technologii JEA taki sam sposób jak w przypadku regularnego sesji komunikacji zdalnej programu PowerShell. Remoting złożonych zadań, zaleca się używać [niejawne remoting](#using-jea-with-implicit-remoting). Niejawne remoting umożliwia użytkownikom do pracy z obiektami danych lokalnie.
 
-Aby używać technologii JEA interakcyjnie, należy:
-- Nazwa komputera, którą jest nawiązywane połączenie (może być komputer lokalny)
+Aby używać technologii JEA interakcyjnie, potrzebne są:
+
+- Nazwa komputera, na którym chcesz się połączyć (może być komputer lokalny)
 - Nazwa punktu końcowego JEA zarejestrowane na tym komputerze
-- Poświadczenia dla komputera, które mają dostęp do punktu końcowego usługi JEA
+- Poświadczenia, które mają dostęp do punktu końcowego JEA na tym komputerze
 
-Dysponując tą informacją w kasie, można uruchomić sesji JEA przy użyciu [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) lub [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession).
+Biorąc pod uwagę te informacje, można uruchomić sesji JEA przy użyciu [New-PSSession](/powershell/module/microsoft.powershell.core/New-PSSession) lub [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) polecenia cmdlet.
 
 ```powershell
 $nonAdminCred = Get-Credential
 Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
 ```
 
-Jeśli to konto jest obecnie zalogowano, ma dostęp do punktu końcowego usługi JEA, można pominąć `-Credential` parametru.
+Jeśli konto ma dostęp do punktu końcowego JEA, można pominąć **poświadczeń** parametru.
 
-Gdy programu PowerShell Monituj zmiany `[localhost]: PS>` będzie wiadomo, że możesz teraz współpracuje z sesji zdalnej usługi JEA.
-Możesz uruchomić `Get-Command` do sprawdzenia, jakie polecenia są dostępne.
-Należy skontaktować się z administratorem, aby dowiedzieć się, czy istnieją jakieś ograniczenia dotyczące dostępnych parametrów lub wartości parametrów dozwolony.
+Gdy programu PowerShell Monituj zmiany `[localhost]: PS>` wiesz, że możesz teraz niekorzystające z sesji zdalnej usługi JEA. Możesz uruchomić `Get-Command` do sprawdzenia, jakie polecenia są dostępne. Zapoznaj się z administratorem, aby dowiedzieć się, czy istnieją jakieś ograniczenia dotyczące dostępnych parametrów lub wartości parametrów dozwolone.
 
-Przypominamy sesje JEA działają w trybie NoLanguage, więc niektóre metody, zazwyczaj przy użyciu programu PowerShell mogą być niedostępne.
-Na przykład nie można używać zmiennych do przechowywania danych lub sprawdzić właściwości na obiekty zwrócone przez polecenia cmdlet.
-Poniżej przedstawiono przykład, na przykład używasz programu PowerShell już dziś i dwie metody, aby uzyskać takie same polecenie pracy w trybie NoLanguage.
+Należy pamiętać, że w sesji JEA działają w trybie NoLanguage. Niektóre metody, zazwyczaj przy użyciu programu PowerShell mogą nie być dostępne. Na przykład nie można używać zmiennych do przechowywania danych lub sprawdzić właściwości na obiekty zwrócone przez polecenia cmdlet. Poniższy przykład przedstawia dwa podejścia do tego samego polecenia do pracy w trybie NoLanguage get.
 
 ```powershell
-# Using variables in NoLanguage mode is disallowed, so the following will not work
+# Using variables is prohibited in NoLanguage mode. The following will not work:
 # $vm = Get-VM -Name 'SQL01'
 # Start-VM -VM $vm
 
@@ -53,23 +47,18 @@ Get-VM -Name 'SQL01' | Start-VM
 # You can also wrap subcommands in parentheses and enter them inline as arguments
 Start-VM -VM (Get-VM -Name 'SQL01')
 
-# Better yet, use parameter sets that don't require extra data to be passed in when possible
+# You can also use parameter sets that don't require extra data to be passed in
 Start-VM -VMName 'SQL01'
 ```
 
-Dla bardziej złożonych wywołania polecenia, które utrudniają takie podejście, należy wziąć pod uwagę przy użyciu [niejawne remoting](#using-jea-with-implicit-remoting) lub [tworzenia niestandardowych funkcji](role-capabilities.md#creating-custom-functions) , opakowywanie funkcji wygodną pracę.
+Dla bardziej złożonych wywołania polecenia, które utrudniają takie podejście, należy wziąć pod uwagę przy użyciu [niejawne remoting](#using-jea-with-implicit-remoting) lub [tworzenia niestandardowych funkcji](role-capabilities.md#creating-custom-functions) , opakowywanie funkcji wymaganych.
 
 ## <a name="using-jea-with-implicit-remoting"></a>Korzystanie z usługi JEA przy użyciu komunikacji zdalnej niejawne
 
-PowerShell obsługuje model alternatywnych wywołaniem funkcji zdalnych, gdzie można zaimportować polecenia cmdlet serwera proxy z komputera zdalnego na komputerze lokalnym i wchodzić w interakcje z nimi tak, jakby były one poleceń lokalnych.
-To jest nazywana niejawne wywołaniem funkcji zdalnych, a została wyjaśniona w programie [to *Hey, Scripting Guy!* wpis w blogu](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/).
-Niejawne komunikacji zdalnej jest szczególnie przydatne podczas pracy z JEA, ponieważ umożliwia pracę z poleceniami cmdlet usługi JEA, w trybie pełną obsługą języka.
-Oznacza to, użyj uzupełniania po naciśnięciu tabulatora, zmienne, manipulowania obiektami i nawet łatwiej zautomatyzować względem punktu końcowego JEA za pomocą skryptów lokalnych.
-W dowolnym momencie możesz wywołać polecenie proxy, dane będą wysyłane do punktu końcowego JEA na komputerze zdalnym i tam wykonywane.
+Program PowerShell ma modelu niejawne komunikacji zdalnej, którego można zaimportować polecenia cmdlet serwera proxy z komputera zdalnego i wchodzić w interakcje z nimi tak, jakby były one poleceń lokalnych. Niejawne remoting zostało wyjaśnione w tym **Hey, Scripting Guy!** [wpis w blogu](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/).
+Niejawne komunikacji zdalnej jest przydatne podczas pracy z JEA, ponieważ umożliwia pracę z poleceniami cmdlet usługi JEA, w trybie pełną obsługą języka. Można użyć uzupełniania po naciśnięciu tabulatora, zmienne, manipulowania obiektami, a nawet w celu zautomatyzowania zadań w odniesieniu do punktu końcowego JEA za pomocą skryptów lokalnych. W dowolnym momencie możesz wywołać polecenie proxy, dane są wysyłane do punktu końcowego JEA na komputerze zdalnym i tam wykonywane.
 
-Niejawne remoting działa przez zaimportowanie poleceń cmdlet z istniejącej sesji programu PowerShell.
-Można opcjonalnie poprzedzić rzeczowniki każdego polecenia cmdlet serwera proxy z ciągu do odróżniania poleceń, które służą do systemu zdalnego.
-Moduł tymczasowy skrypt zawierający wszystkie polecenia proxy zostanie utworzony i może służyć do czasu trwania swojej lokalnej sesji programu PowerShell.
+Niejawne remoting działa przez zaimportowanie poleceń cmdlet z istniejącej sesji programu PowerShell. Można opcjonalnie prefiksów rzeczowników każdego polecenia cmdlet serwera proxy z ciągiem wybrane. Prefiks umożliwia rozróżnianie poleceń, które służą do systemu zdalnego. Moduł tymczasowy skrypt zawierający wszystkie polecenia serwera proxy jest tworzony i zaimportować przez okres lokalnej sesji programu PowerShell.
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -83,12 +72,9 @@ Get-JEACommand
 ```
 
 > [!IMPORTANT]
-> Niektóre systemy nie można zaimportować całej sesji usługi JEA ze względu na ograniczenia w poleceniach cmdlet usługi JEA domyślne.
-> Aby obejść ten problem, importować tylko polecenia, które należy z sesji JEA, podając jawnie ich nazwy do `-CommandName` parametru.
-> Przyszła aktualizacja będzie dotyczyć problem z importowaniem całej sesji usługi JEA w systemach.
+> Niektóre systemy nie można zaimportować całej sesji usługi JEA ze względu na ograniczenia w poleceniach cmdlet usługi JEA domyślne. Aby obejść ten problem, importować tylko polecenia, które należy z sesji JEA, podając jawnie ich nazwy do `-CommandName` parametru. Przyszła aktualizacja będzie dotyczyć problem z importowaniem całej sesji usługi JEA w systemach.
 
-Jeśli nie można zaimportować sesję JEA ze względu na ograniczenia dotyczące parametrów JEA domyślne można postępuj zgodnie z instrukcjami poniżej, aby odfiltrować domyślnych poleceń z zaimportowanych zestawu.
-Nadal będzie można używać poleceń, takich jak `Select-Object` — po prostu użyjesz lokalna wersja zainstalowana na danym komputerze zamiast zdalnego podczas sesji JEA.
+Jeśli nie możesz zaimportować sesji JEA ze względu na ograniczenia JEA w domyślnych parametrach, wykonaj poniższe kroki, aby odfiltrować domyślnych poleceń z zaimportowanych zestawu. Możesz kontynuować używanie poleceń, takich jak `Select-Object`, ale po prostu użyjemy lokalna wersja zainstalowana na danym komputerze zamiast zaimportowane z sesji zdalnej usługi JEA.
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -105,15 +91,14 @@ $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notconta
 Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
-Można również utrwalić serwerem proxy poleceń cmdlet z przy użyciu komunikacji zdalnej niejawne [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).
-Aby uzyskać więcej informacji na temat niejawne komunikacji zdalnej Sprawdź w dokumentacji pomocy [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) i [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).
+Można również utrwalić serwerem proxy poleceń cmdlet z przy użyciu komunikacji zdalnej niejawne [Export-PSSession](/powershell/microsoft.powershell.utility/Export-PSSession).
+Aby uzyskać więcej informacji dotyczących niejawnych komunikacji zdalnej, zobacz dokumentację dla [Import-PSSession](/powershell/microsoft.powershell.utility/import-pssession) i [Import-Module](/powershell/microsoft.powershell.core/import-module).
 
 ## <a name="using-jea-programmatically"></a>Programowe korzystanie z usługi JEA
 
-JEA umożliwia także w systemach automatyzacji oraz w aplikacji użytkownika, takich jak witryny sieci web i aplikacji wewnętrznej pomocy technicznej.
-To podejście jest taki sam, jak w przypadku tworzenia aplikacji komunikować się z nieograniczonego punkty końcowe programu PowerShell, ale należy pamiętać, że program należy pamiętać, że JEA jest ograniczenie poleceń, które mogą być uruchamiane w sesji zdalnej.
+JEA umożliwia także w systemach automatyzacji oraz w aplikacji użytkownika, takich jak aplikacje wewnętrznej pomocy technicznej i witryn sieci Web. To podejście jest takie samo, jak podczas tworzenia aplikacji, którzy komunikują się z użyciem środowiska PowerShell punktów końcowych. Upewnij się, że program jest przeznaczona do pracy z ograniczenia nakładane przez usługi JEA.
 
-W przypadku prostych, jednorazowych zadań, można użyć [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) do uruchomienia zestawu poleceń przy użyciu technologii JEA.
+W przypadku prostych, jednorazowych zadań, można użyć [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) do uruchamiania poleceń w sesji JEA.
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
@@ -126,21 +111,24 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-Jeśli tworzysz C# aplikacji, można utworzyć obszaru działania programu PowerShell, który nawiązuje połączenie z sesją usługi JEA, określając nazwę konfiguracji w [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) obiektu.
+Jeśli tworzysz C# aplikacji, można utworzyć obszaru działania programu PowerShell, który nawiązuje połączenie z sesją usługi JEA, określając nazwę konfiguracji w [WSManConnectionInfo](/dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo) obiektu.
 
 ```csharp
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
-var creds        = // create a PSCredential object here (https://msdn.microsoft.com/library/system.management.automation.pscredential(v=vs.85).aspx)
+// See https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential
+var creds        = // create a PSCredential object here
 
 WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
-                    false,                 // Use SSL
-                    computerName,          // Computer name
-                    5985,                  // WSMan Port
-                    "/wsman",              // WSMan Path
-                    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),  // Connection URI with config name
-                    creds);                // Credentials
+    false,                 // Use SSL
+    computerName,          // Computer name
+    5985,                  // WSMan Port
+    "/wsman",              // WSMan Path
+                           // Connection URI with config name
+    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),
+    creds);                // Credentials
+
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 {
@@ -167,12 +155,12 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>Korzystanie z usługi JEA przy użyciu programu PowerShell bezpośrednio
 
-Funkcji Hyper-V w systemie Windows 10 i Windows Server 2016 oferuje [programu PowerShell Direct](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/vmsession), funkcji, która umożliwia administratorom funkcji Hyper-V do zarządzania maszynami wirtualnymi przy użyciu programu PowerShell niezależnie od konfiguracji sieci lub zdalnego zarządzania ustawienia na maszynie wirtualnej.
+Funkcji Hyper-V w systemie Windows 10 i Windows Server 2016 oferuje [programu PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct), funkcja, która umożliwia administratorom funkcji Hyper-V do zarządzania maszynami wirtualnymi przy użyciu programu PowerShell niezależnie od konfiguracji sieci lub zdalnego zarządzania ustawienia na maszynie wirtualnej.
 
-Za pomocą programu PowerShell bezpośrednio i JEA oferowanie dostęp ograniczony administrator funkcji Hyper-V maszyny Wirtualnej, które mogą być przydatne jeśli utracić łączność sieciową z maszyną wirtualną, a konieczne naprawienie ustawień sieci przez administratora sieci centrum danych.
+Za pomocą programu PowerShell bezpośrednio i JEA oferowanie dostęp ograniczony administrator funkcji Hyper-V maszyny Wirtualnej.
+Może to być przydatne, jeśli utracić łączność sieciową z maszyną wirtualną i potrzebujesz administratora sieci centrów danych o poprawienie ustawień sieci.
 
-Dodatkowa konfiguracja nie jest wymagane do używania usługi JEA za pośrednictwem programu PowerShell Direct, ale system operacyjny działający na maszynie wirtualnej musi należeć do systemu Windows 10 lub Windows Server 2016.
-Administrator funkcji Hyper-V można połączyć z punktem końcowym usługi JEA przy użyciu `-VMName` lub `-VMId` parametry PSRemoting poleceń cmdlet:
+Żadne dodatkowe czynności konfiguracyjne wymagane jest wprowadzenie JEA za pośrednictwem programu PowerShell Direct. Jednak system operacyjny gościa, które są uruchomione na maszynie wirtualnej musi być systemu Windows 10, Windows Server 2016 lub nowszej. Administrator funkcji Hyper-V można połączyć z punktem końcowym usługi JEA przy użyciu `-VMName` lub `-VMId` parametry PSRemoting poleceń cmdlet:
 
 ```powershell
 # Entering a JEA session using PowerShell Direct when the VM name is unique
@@ -183,7 +171,4 @@ $vm = Get-VM -VMName 'MyVM' | Select-Object -First 1
 Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential 'localhost\JEAformyHoster'
 ```
 
-Zdecydowanie zaleca się utworzenie dedykowanego użytkownika lokalnego z żadnych innych praw do zarządzania systemem dla administratorów funkcji Hyper-V użyć.
-Należy pamiętać, że nawet nieuprawnionego użytkownika nadal logować się do maszyny Windows domyślnie, w tym o korzystaniu z użyciem programu PowerShell.
-Która umożliwi im Przeglądaj (część) w systemie plików i Dowiedz się więcej o środowisku systemu operacyjnego.
-Zablokować tylko administrator funkcji Hyper-V może uzyskiwać dostęp tylko do maszyny Wirtualnej przy użyciu programu PowerShell bezpośrednio przy użyciu technologii JEA, należy zablokować prawa logowania lokalnego na konto usługi JEA administratora funkcji Hyper-V.
+Zalecane jest, że Utwórz dedykowane konto użytkownika z minimalnych uprawnień niezbędnych do zarządzania systemem do użytku przez administratora funkcji Hyper-V. Należy pamiętać, że nawet nieuprawnionego użytkownika może zalogować się do maszyny Windows domyślnie, w tym o korzystaniu z użyciem programu PowerShell. Umożliwiające im Przeglądaj system plików i Dowiedz się więcej o środowisku systemu operacyjnego. Aby zablokować administratora funkcji Hyper-V i ograniczyć ich dostęp tylko do maszyny Wirtualnej przy użyciu programu PowerShell bezpośrednio z usługi JEA, możesz odmówić uprawnień logowania do konta usługi JEA administratora funkcji Hyper-V.

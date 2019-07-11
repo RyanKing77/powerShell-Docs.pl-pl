@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080915"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734863"
 ---
 # <a name="windows-powershell-provider-overview"></a>Omówienie dostawcy programu Windows PowerShell
 
@@ -27,7 +27,7 @@ Podczas pisania dostawcę, można określić domyślnego stacje dysków, które 
 
 ## <a name="type-of-providers"></a>Typ dostawcy
 
-Istnieją różne typy dostawców, z których każdy z nich zapewnia inny poziom funkcjonalności. Dostawca jest implementowany jako klasa, która pochodzi z jednego z elementów podrzędnych elementu [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) klasy. Aby uzyskać informacje o różnych typach dostawców, zobacz [typy dostawców](./provider-types.md).
+Istnieją różne typy dostawców, z których każdy z nich zapewnia inny poziom funkcjonalności. Dostawca jest implementowany jako klasa, która pochodzi z jednego z elementów podrzędnych elementu [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** klasy. Aby uzyskać informacje o różnych typach dostawców, zobacz [typy dostawców](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Polecenia cmdlet dostawców
 
@@ -63,7 +63,7 @@ Dostawców można zdefiniować parametry dynamiczne, które są dodawane do pole
 
 ## <a name="provider-capabilities"></a>Możliwości dostawcy
 
-[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) wyliczenie definiuje kilka funkcji obsługujących dostawców. Obejmują one możliwość Użyj symboli wieloznacznych, filtrowania elementów i obsługi transakcji. Aby określić możliwości dla dostawcy, Dodaj listę wartości [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) wyliczenia, w połączeniu z logicznych `OR` operacji jako [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) właściwość (drugi parametr atrybutu) [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) atrybutu dla klasy dostawcy. Na przykład następujący atrybut określa, że dostawca obsługuje [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) i [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) możliwości.
+[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) wyliczenie definiuje kilka funkcji obsługujących dostawców. Obejmują one możliwość Użyj symboli wieloznacznych, filtrowania elementów i obsługi transakcji. Aby określić możliwości dla dostawcy, Dodaj listę wartości [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) wyliczenia, w połączeniu z logicznych `OR` operacji jako [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) właściwość (drugi parametr atrybutu) [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) atrybutu dla klasy dostawcy. Na przykład następujący atrybut określa, że dostawca obsługuje [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** i [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **transakcji** możliwości.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

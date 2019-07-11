@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080819"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734717"
 ---
 # <a name="writing-an-item-provider"></a>Pisanie dostawcy elementów
 
@@ -25,7 +25,7 @@ Aby uzyskać więcej informacji na temat dostawcy programu Windows PowerShell, z
 
 ## <a name="implementing-item-methods"></a>Implementacja metody elementu
 
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) klasa udostępnia kilka metod, które może służyć do uzyskiwania dostępu i manipulowania elementów w magazynie danych. Aby uzyskać pełną listę tych metod, zobacz [metody ItemCmdletProvider](http://msdn.microsoft.com/library/system.management.automation.provider.itemcmdletprovider_methods\(v=vs.85\).aspx). W tym przykładzie wprowadzimy cztery z tych metod. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) pobiera element w określonej ścieżce. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) ustawia wartość określonego elementu. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) sprawdza, czy element istnieje w określonej ścieżce. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) sprawdza ścieżkę, aby zobaczyć, jeśli jest on mapowany do lokalizacji w magazynie danych.
+[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) klasa udostępnia kilka metod, które może służyć do uzyskiwania dostępu i manipulowania elementów w magazynie danych. Aby uzyskać pełną listę tych metod, zobacz [metody ItemCmdletProvider](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods). W tym przykładzie wprowadzimy cztery z tych metod. [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) pobiera element w określonej ścieżce. [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) ustawia wartość określonego elementu. [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) sprawdza, czy element istnieje w określonej ścieżce. [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) sprawdza ścieżkę, aby zobaczyć, jeśli jest on mapowany do lokalizacji w magazynie danych.
 
 > [!NOTE]
 > Ten temat opiera się na informacje zawarte w [szybkiego startu programu Windows PowerShell dostawcy](./windows-powershell-provider-quickstart.md). W tym temacie nie opisano podstawowe informacje dotyczące sposobu konfigurowania projektu dostawcy lub odziedziczony sposobie implementacji metody [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klasę, która tworzenie i usuwanie dysków.
@@ -46,7 +46,7 @@ Zadeklaruj dostawcę aby dziedziczyć [System.Management.Automation.Provider.Ite
 
 ### <a name="implementing-getitem"></a>Implementowanie GetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.Get elementu](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) polecenie cmdlet na użytkownika Dostawca. Metoda ta zwraca element w określonej ścieżce. W tym przykładzie bazy danych programu Access metoda sprawdza, czy element jest dysk i tabelę w bazie danych lub wiersz w bazie danych. Metoda wysyła elementu do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metody.
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.GetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.getitemcommand) polecenie cmdlet na Twój dostawca. Metoda ta zwraca element w określonej ścieżce. W tym przykładzie bazy danych programu Access metoda sprawdza, czy element jest dysk i tabelę w bazie danych lub wiersz w bazie danych. Metoda wysyła elementu do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metody.
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,9 +85,9 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>Implementowanie SetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoda jest wywoływana przez wywołania aparatu programu PowerShell, gdy użytkownik wywołuje [elementu Microsoft.PowerShell.Commands.Set](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) polecenia cmdlet . Ustawia wartość elementu w określonej ścieżce.
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) metoda jest wywoływana przez wywołania aparatu programu PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand) polecenie cmdlet. Ustawia wartość elementu w określonej ścieżce.
 
-W tym przykładzie dostęp do bazy danych warto ustawić wartość elementu tylko wtedy, gdy dany element wiersz, więc metoda zgłasza [wyjątek NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) Jeśli element nie jest wiersz.
+W tym przykładzie dostęp do bazy danych warto ustawić wartość elementu tylko wtedy, gdy dany element wiersz, więc metoda zgłasza [wyjątek NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8) Jeśli element nie jest wiersz.
 
 ```csharp
 protected override void SetItem(string path, object values)
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>Implementowanie ItemExists
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metoda jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [ścieżki Microsoft.PowerShell.Commands.Test](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) polecenia cmdlet. Metoda określa, czy istnieje element w określonej ścieżce. Jeśli element istnieje, metoda przekazuje ją do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) metoda jest wywoływana przez aparatu programu PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.TestPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.Testpathcommand) polecenie cmdlet. Metoda określa, czy istnieje element w określonej ścieżce. Jeśli element istnieje, metoda przekazuje ją do aparatu programu PowerShell przez wywołanie metody [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)

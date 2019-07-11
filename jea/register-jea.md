@@ -1,39 +1,36 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: jea, programu powershell, zabezpieczeń
 title: Rejestrowanie usługi JEA konfiguracji
-ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084831"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726600"
 ---
 # <a name="registering-jea-configurations"></a>Rejestrowanie usługi JEA konfiguracji
 
-> Dotyczy: Windows PowerShell 5.0
-
-Po utworzeniu usługi [możliwości roli](role-capabilities.md) i [plik konfiguracji sesji](session-configurations.md) utworzone, ostatnim krokiem, zanim będzie można użyć technologii JEA jest rejestrowanie punktu końcowego usługi JEA.
-Rejestrowanie punktu końcowego JEA w systemie sprawia, że punkt końcowy do użycia przez użytkowników i aparatów automatyzacji.
+Po utworzeniu usługi [możliwości roli](role-capabilities.md) i [plik konfiguracji sesji](session-configurations.md) ostatnim krokiem jest utworzone, można zarejestrować punktu końcowego JEA. Rejestrowanie punktu końcowego JEA w systemie sprawia, że punkt końcowy do użycia przez użytkowników i aparatów automatyzacji.
 
 ## <a name="single-machine-configuration"></a>Konfiguracja pojedynczego komputera
 
-W przypadku małych środowisk można wdrożyć JEA, rejestrując się, używając pliku konfiguracji sesji [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) polecenia cmdlet.
+W przypadku małych środowisk można wdrożyć JEA, rejestrując się, używając pliku konfiguracji sesji [Register-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/register-pssessionconfiguration) polecenia cmdlet.
 
 Przed rozpoczęciem upewnij się, że zostały spełnione następujące wymagania wstępne:
-- Co najmniej jednej roli został utworzony i umieszczane w folderze "RoleCapabilities" prawidłowy modułu programu PowerShell.
-- Utworzono plik konfiguracji sesji i przetestowane.
-- Użytkownik rejestrowanie usługi JEA konfiguracji ma prawa administratora na systemy.
 
-Należy również wybranie nazwy dla punktu końcowego usługi JEA.
-Nazwa punktu końcowego usługi JEA jest wymagana, gdy użytkownicy chcą nawiązać połączenie z tego systemu przy użyciu technologii JEA.
-Możesz użyć [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) polecenia cmdlet, aby sprawdzić nazwy istniejące punkty końcowe w systemie.
-Punkty końcowe, które zaczyna się "microsoft" zwykle są dostarczane z programem Windows.
-Punkt końcowy "microsoft.powershell" jest domyślny punkt końcowy używany podczas nawiązywania połączenia zdalnego punktu końcowego programu PowerShell.
+- Utworzono i umieszczane w co najmniej jedną rolę **RoleCapabilities** folderu modułu programu PowerShell.
+- Utworzono plik konfiguracji sesji i przetestowane.
+- Użytkownik, o których rejestrowanie usługi JEA konfiguracji ma prawa administratora w systemie.
+- Wybrana nazwa dla punktu końcowego usługi JEA.
+
+Nazwa punktu końcowego usługi JEA jest wymagana, kiedy użytkownicy łączą się systemu przy użyciu technologii JEA. [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) polecenie cmdlet wyświetla listę nazw punktów końcowych w systemie. Punkty końcowe, które zaczyna się `microsoft` zwykle są dostarczane z programem Windows. `microsoft.powershell` Punkt końcowy jest domyślny punkt końcowy używany podczas nawiązywania połączenia zdalnego punktu końcowego programu PowerShell.
 
 ```powershell
-PS C:\> Get-PSSessionConfiguration | Select-Object Name
+Get-PSSessionConfiguration | Select-Object Name
+```
 
+```Output
 Name
 ----
 microsoft.powershell
@@ -41,37 +38,35 @@ microsoft.powershell.workflow
 microsoft.powershell32
 ```
 
-Po określeniu odpowiednią nazwę punktu końcowego usługi JEA, uruchom następujące polecenie, aby zarejestrować punkt końcowy.
+Uruchom następujące polecenie, aby zarejestrować punkt końcowy.
 
 ```powershell
 Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' -Force
 ```
 
 > [!WARNING]
-> Powyższe polecenie uruchamia ponownie usługę WinRM w systemie.
-> To kończy wszystkie sesje komunikacji zdalnej programu PowerShell, a także wszystkie trwające operacje konfiguracji DSC.
-> Zalecane jest, należy wykonać żadnych produkcyjnych maszyn w tryb offline przed uruchomieniem polecenia, aby uniknąć zakłócenia operacji biznesowych.
+> Poprzednie polecenie uruchamia ponownie usługę WinRM w systemie. To kończy wszystkie sesje komunikacji zdalnej programu PowerShell i wszystkie trwające operacje konfiguracji DSC. Zalecamy na komputerach produkcyjnych w trybie offline należy wykonać przed uruchomieniem polecenia, aby uniknąć zakłócenia operacji biznesowych.
 
-Jeśli rejestracja zakończy się pomyślnie, można przystąpić do [używać technologii JEA](using-jea.md).
-Plik konfiguracji sesji możesz usunąć w dowolnym momencie; nie jest używana po rejestracji, punktu końcowego.
+Po rejestracji możesz przystąpić do [używać technologii JEA](using-jea.md). Plik konfiguracji sesji można usunąć w dowolnym momencie. Plik konfiguracyjny nie jest używana po opcji rejestracji, punktu końcowego.
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Konfiguracja wielu maszyn za pomocą DSC
 
-Jeśli wdrażasz JEA na wielu komputerach, najprostszym modelem wdrażania jest użycie usługi JEA [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) zasób, aby szybko i spójnie wdrażać JEA na każdym komputerze.
+Podczas wdrażania usługi JEA na wielu komputerach, najprostszym modelem wdrażania korzysta z technologii JEA [Desired State Configuration (DSC)](/powershell/dsc/overview) zasób, aby szybko i spójnie wdrażać JEA na każdym komputerze.
 
-Aby wdrożyć JEA za pomocą DSC, należy upewnić się, że spełniono następujące wymagania wstępne:
-- Jeden lub więcej możliwości roli zostały utworzone i dodane do prawidłowy modułu programu PowerShell.
+Aby wdrożyć JEA za pomocą DSC, upewnij się, że spełniono następujące wymagania wstępne:
+
+- Jeden lub więcej możliwości roli zostały utworzone i dodane do modułu programu PowerShell.
 - Moduł programu PowerShell zawierający role są przechowywane w udziale plików (tylko do odczytu), które jest dostępne przy każdej maszyny.
-- Zostały uznane za ustawienia konfiguracji sesji. Nie trzeba utworzyć plik konfiguracji sesji, korzystając z zasobów DSC JEA.
-- Poświadczenia, które umożliwiają wykonywanie akcji administracyjnych na każdym komputerze lub mają dostęp do serwera ściągania DSC, używany do zarządzania maszynami.
-- Pobrano [zasobów DSC usługi JEA](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)
+- Zostały uznane za ustawienia konfiguracji sesji. Nie musisz utworzyć plik konfiguracji sesji, korzystając z zasobów DSC JEA.
+- Masz poświadczenia, które umożliwią działań administracyjnych na każdym komputerze lub dostęp do serwera ściągania DSC, które są używane do zarządzania maszynami.
+- Pobrano [zasobów DSC JEA](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource).
 
-Na docelowym komputerze (lub serwerze ściągania, jeśli używana jest jedna) należy utworzyć konfigurację DSC dla punktu końcowego usługi JEA.
-W tej konfiguracji za pomocą zasobów DSC JustEnoughAdministration pliku konfiguracji sesji oraz zasobów plików do skopiowania możliwości roli z udziału plików.
+Utwórz konfigurację DSC dla punktu końcowego usługi JEA na serwerze docelowym, komputera lub ściągania. W tej konfiguracji **JustEnoughAdministration** zasób DSC definiuje plik konfiguracji sesji i **pliku** zasobów kopiuje możliwości roli z udziału plików.
 
 Można skonfigurować za pomocą zasobów DSC są następujące właściwości:
+
 - Definicje ról
-- Grupy wirtualne konta
+- Grupy wirtualne kont
 - Nazwa konta usługi zarządzanego przez grupę
 - Katalog transkrypcji
 - Dysku użytkownika
@@ -80,10 +75,7 @@ Można skonfigurować za pomocą zasobów DSC są następujące właściwości:
 
 Składnia dla każdego z tych właściwości w konfiguracji DSC jest zgodna z pliku konfiguracji sesji programu PowerShell.
 
-Poniżej znajduje się Przykładowa konfiguracja DSC dla modułu konserwacji serwera ogólnego.
-
-Przyjęto założenie, że prawidłowy modułu programu PowerShell zawierający możliwości roli w podfolderze "RoleCapabilities" znajduje się na "\\\\myfileshare\\JEA" udziału plików.
-
+Poniżej znajduje się Przykładowa konfiguracja DSC dla modułu konserwacji serwera ogólnego. Przyjęto założenie, że prawidłowy modułu programu PowerShell zawierający możliwości roli znajduje się na `\\myfileshare\JEA` udziału plików.
 
 ```powershell
 Configuration JEAMaintenance
@@ -110,16 +102,13 @@ Configuration JEAMaintenance
 }
 ```
 
-Tę konfigurację można następnie zastosować funkcje w systemie przez [bezpośrednie wywołanie programu Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig) lub aktualizowania [konfiguracji serwera ściągania](https://msdn.microsoft.com/powershell/dsc/pullserver).
+Następnie konfiguracja jest stosowana w systemie przez bezpośrednie wywołanie [Local Configuration Manager](/powershell/dsc/managing-nodes/metaConfig) lub aktualizowania [konfiguracji serwera ściągania](/powershell/dsc/pull-server/pullServer).
 
-Zasób DSC pozwala również zastąpić domyślny punkt końcowy komunikacji zdalnej Microsoft.PowerShell.
-Jeśli to zrobisz, zasobu powoduje automatyczne zarejestrowanie kopii zapasowej nieograniczonego punktu końcowego o nazwie "Microsoft.PowerShell.Restricted", który ma wartości domyślnej listy ACL usługi WinRM (dzięki czemu użytkownicy zarządzania zdalnego i Administratorzy lokalni członkowie grupy mogli uzyskać do niego dostęp).
+Zasób DSC umożliwia również zastąpić domyślną **Microsoft.PowerShell** punktu końcowego. Po wymianie, zasobu powoduje automatyczne zarejestrowanie punktu kopii zapasowej końcowego o nazwie **Microsoft.PowerShell.Restricted**. Punkt końcowy kopii zapasowej ma wartości domyślnej listy ACL usługi WinRM, która umożliwia użytkownicy zarządzania zdalnego i Administratorzy lokalni, członkowie grupy mogli uzyskać do niego dostęp.
 
 ## <a name="unregistering-jea-configurations"></a>Wyrejestrowywanie konfiguracje usługi JEA
 
-Aby usunąć punkt końcowy usługi JEA w systemie, użyj [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) polecenia cmdlet.
-Wyrejestrowywanie punktu końcowego usługi JEA uniemożliwia tworzenie nowych technologii JEA sesji w systemie w nowych użytkowników.
-W tym obszarze pozwala również zaktualizować konfigurację usługi JEA rejestrując ponownie plik konfiguracji sesji zaktualizowane przy użyciu tej samej nazwy punktu końcowego.
+[Unregister-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/Unregister-PSSessionConfiguration) polecenie cmdlet usuwa punktu końcowego JEA. Wyrejestrowywanie punktu końcowego usługi JEA uniemożliwia tworzenie nowych technologii JEA sesji w systemie w nowych użytkowników. W tym obszarze pozwala również zaktualizować konfigurację usługi JEA rejestrując ponownie plik konfiguracji sesji zaktualizowane przy użyciu tej samej nazwy punktu końcowego.
 
 ```powershell
 # Unregister the JEA endpoint called "ContosoMaintenance"
@@ -127,10 +116,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ```
 
 > [!WARNING]
-> Wyrejestrowywanie JEA punktu końcowego powoduje ponowne uruchomienie usługi WinRM.
-> Przerywa to działanie najbardziej zdalnego operacji zarządzania w toku, w tym innych sesji programu PowerShell, wywołań usługi WMI i niektóre narzędzia do zarządzania.
-> Punkty końcowe programu PowerShell można wyrejestrować dopiero podczas planowanej konserwacji systemu windows.
+> Wyrejestrowywanie JEA punktu końcowego powoduje ponowne uruchomienie usługi WinRM. Przerywa to działanie najbardziej zdalnego operacji zarządzania w toku, w tym innych sesji programu PowerShell, wywołań usługi WMI i niektóre narzędzia do zarządzania. Punkty końcowe programu PowerShell można wyrejestrować dopiero podczas planowanej konserwacji systemu windows.
 
 ## <a name="next-steps"></a>Następne kroki
 
-- [Testowanie punktu końcowego usługi JEA](using-jea.md)
+[Testowanie punktu końcowego usługi JEA](using-jea.md)

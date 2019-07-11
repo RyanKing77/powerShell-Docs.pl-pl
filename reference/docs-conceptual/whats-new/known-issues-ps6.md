@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Znane problemy dotyczące programu PowerShell w wersji 6.0
-ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085970"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733829"
 ---
 # <a name="known-issues-for-powershell-60"></a>Znane problemy dotyczące programu PowerShell w wersji 6.0
 
@@ -55,7 +55,7 @@ Zobacz [#954](https://github.com/PowerShell/PowerShell/issues/954) Aby przesła�
 
 Program PowerShell w systemach operacyjnych Linux/macOS korzysta z platformy .NET Core, która jest podzestawem pełnego .NET Framework na Microsoft Windows. Jest to istotne, ponieważ program PowerShell zapewnia bezpośredni dostęp do typów podstawowych framework, metod itd. W rezultacie skryptów uruchamianych na Windows może nie działać na platformach innych niż Windows z powodu różnic w struktury. Aby uzyskać więcej informacji na temat platformy .NET Core Framework Zobacz <https://dotnetfoundation.org/net-core>
 
-Pojawienie [.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 będą następnie z powrotem w wielu tradycyjnych typów i metod obecne w pełny program .NET Framework. Oznacza to, że program PowerShell Core będzie można załadować wiele modułów programu Windows PowerShell tradycyjnych, bez żadnych modyfikacji. Możesz wykonać naszej platformy .NET Standard 2.0 powiązanych prac [tutaj](https://github.com/PowerShell/PowerShell/projects/4).
+Pojawienie [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0 będą następnie z powrotem w wielu tradycyjnych typów i metod obecne w pełny program .NET Framework. Oznacza to, że program PowerShell Core będzie można załadować wiele modułów programu Windows PowerShell tradycyjnych, bez żadnych modyfikacji. Możesz wykonać naszej platformy .NET Standard 2.0 powiązanych prac [tutaj](https://github.com/PowerShell/PowerShell/projects/4).
 
 ### <a name="redirection-issues"></a>Problemy z przekierowania
 
@@ -82,7 +82,7 @@ Obecnie program PowerShell Core obsługuje komunikacji zdalnej programu PowerShe
 
 Pracę dla niego komunikację zdalną z oparta na usłudze WSMan jest wykonywana [psl omi dostawcy](https://github.com/PowerShell/psl-omi-provider) repozytorium.
 
-Program PowerShell Core obsługuje również komunikacji zdalnej programu PowerShell (PSRP) za pośrednictwem protokołu SSH na wszystkich platformach (Windows, macOS i Linux). Chociaż nie jest to obecnie obsługiwane w środowisku produkcyjnym, znajdziesz więcej informacji na temat konfigurowania [tutaj](../core-powershell/ssh-remoting-in-powershell-core.md).
+Program PowerShell Core obsługuje również komunikacji zdalnej programu PowerShell (PSRP) za pośrednictwem protokołu SSH na wszystkich platformach (Windows, macOS i Linux). Chociaż nie jest to obecnie obsługiwane w środowisku produkcyjnym, znajdziesz więcej informacji na temat konfigurowania [tutaj](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md).
 
 ### <a name="just-enough-administration-jea-support"></a>Obsługa Just dostatecznie Administration (JEA)
 

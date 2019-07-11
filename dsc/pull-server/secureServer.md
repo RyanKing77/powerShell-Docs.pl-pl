@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Najlepsze rozwiązania dotyczące serwera ściągania
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079204"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727193"
 ---
 # <a name="pull-server-best-practices"></a>Najlepsze rozwiązania dotyczące serwera ściągania
 
 Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Serwera ściągania (funkcja Windows *usługi DSC*) jest obsługiwanych składników systemu Windows Server jednak nie jest planowane oferują nowe funkcje lub możliwości osobno. Zaleca się rozpocząć przechodzenie zarządzanych klientom [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (w tym funkcje poza serwera ściągania w systemie Windows Server) lub jeden z członków społeczności na liście [tutaj](pullserver.md#community-solutions-for-pull-service).
+> Serwera ściągania (funkcja Windows *usługi DSC*) jest obsługiwanych składników systemu Windows Server jednak nie jest planowane oferują nowe funkcje lub możliwości osobno. Zaleca się rozpocząć przechodzenie zarządzanych klientom [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (w tym funkcje poza serwera ściągania w systemie Windows Server) lub jeden z członków społeczności na liście [tutaj](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Podsumowanie: Ten dokument jest przeznaczony do uwzględnienia procesów i rozszerzalność do pomocy inżynierów, którzy są przygotowywanie rozwiązania. Szczegółowe informacje, należy zapewnić najlepsze rozwiązania, jak identyfikowane przez klientów i zweryfikowany przez zespół pracujący nad produktem zalecenia są przyszłych umożliwiających dostęp i uznawana za stabilną.
 
@@ -50,9 +50,9 @@ Program Windows PowerShell zawiera zbiór rozszerzenia językowe dla Desired Sta
 Serwerze ściągania zapewnia scentralizowane service do przechowywania konfiguracji, które będą dostępne dla węzłów docelowych.
 
 Rola serwera ściągania może być wdrożony jako wystąpienia serwera sieci Web lub udziału plików SMB. Funkcja serwer sieci web obejmuje interfejsu OData i może opcjonalnie uwzględnić możliwości dla węzłów docelowych się wstecz potwierdzeniem powodzenia lub niepowodzenia na konfiguracje są stosowane. Ta funkcja jest przydatna w środowiskach, w przypadku dużej liczby węzłów docelowych.
-Po skonfigurowaniu węzła docelowego (określane również jako klienta), aby wskazywały serwer ściągania z ostatnią konfiguracją danych i wszystkie wymagane skrypty są pobierane i stosowane. Może to nastąpić jako jednorazowego wdrażania lub ponownie występujące zadania, które sprawia, że serwera ściągania istotny element zarządzania zmiany na dużą skalę. Aby uzyskać więcej informacji, zobacz [Windows PowerShell Desired State Configuration ściągnięcia serwerów](/powershell/dsc/pullServer) i
+Po skonfigurowaniu węzła docelowego (określane również jako klienta), aby wskazywały serwer ściągania z ostatnią konfiguracją danych i wszystkie wymagane skrypty są pobierane i stosowane. Może to nastąpić jako jednorazowego wdrażania lub ponownie występujące zadania, które sprawia, że serwera ściągania istotny element zarządzania zmiany na dużą skalę. Aby uzyskać więcej informacji, zobacz [Windows PowerShell Desired State Configuration ściągnięcia serwerów](/powershell/dsc/pullServer/pullserver) i
 
-[Wypychanie i ściąganie trybów konfiguracji](/powershell/dsc/pullServer).
+[Wypychanie i ściąganie trybów konfiguracji](/powershell/dsc/pullServer/pullserver).
 
 ## <a name="configuration-planning"></a>Planowanie konfiguracji
 

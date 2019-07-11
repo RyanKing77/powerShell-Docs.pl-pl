@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: polecenia cmdlet programu PowerShell
 title: Rozwiązywanie problemów z dostępem w programie windows powershell web access
-ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086599"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733867"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Rozwiązywanie problemów z programem Windows PowerShell Web Access
 
@@ -35,7 +35,7 @@ Błąd logowania może wystąpić z następujących powodów.
 
   Sprawdź, czy zdalne zarządzanie jest włączone na komputerze, do której użytkownik próbuje nawiązać połączenie.
 
-  Aby uzyskać więcej informacji, zobacz [jak skonfigurować komputer dla niego komunikację zdalną](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Aby uzyskać więcej informacji, zobacz [jak skonfigurować komputer dla niego komunikację zdalną](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Wewnętrzny błąd serwera
 

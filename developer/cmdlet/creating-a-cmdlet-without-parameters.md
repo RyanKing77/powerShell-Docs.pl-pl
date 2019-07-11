@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854963"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733966"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Tworzenie polecenia cmdlet bez parametrów
 
@@ -71,7 +71,7 @@ Używa programu Windows PowerShell [Microsoft.PowerShell.Commands](/dotnet/api/M
 
 ## <a name="overriding-an-input-processing-method"></a>Zastępowanie metody przetwarzania danych wejściowych
 
-[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasa udostępnia trzy metody głównej przetwarzania danych wejściowych, co najmniej jeden z nich muszą przesłaniać Twojego polecenia cmdlet. Aby uzyskać więcej informacji o przetwarzaniu rekordy w programie Windows PowerShell, zobacz [sposób działania programu Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) klasa udostępnia trzy metody głównej przetwarzania danych wejściowych, co najmniej jeden z nich muszą przesłaniać Twojego polecenia cmdlet. Aby uzyskać więcej informacji o przetwarzaniu rekordy w programie Windows PowerShell, zobacz [sposób działania programu Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 Dla wszystkich typów danych wejściowych, środowisko wykonawcze programu Windows PowerShell wywołuje [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) umożliwiające przetwarzania. Jeśli Twojego polecenia cmdlet należy wykonać niektóre wstępne przetwarzanie lub Instalator, go to zrobić przez zastąpienie tej metody.
 
@@ -135,11 +135,11 @@ Aby uzyskać pełne C# przykładowego kodu, zobacz [przykładowe GetProcessSampl
 
 ## <a name="defining-object-types-and-formatting"></a>Definiowanie typów obiektów i formatowanie
 
-Program Windows PowerShell przekazuje informacje między poleceniami cmdlet, używając obiektów platformy .NET. W związku z tym polecenie cmdlet może się okazać zdefiniowanie swój własny typ, lub polecenie cmdlet może być konieczne rozszerzenie istniejącego typu dostarczane przez inne polecenie cmdlet. Aby uzyskać więcej informacji na temat definiowania nowych typów lub rozszerzanie istniejących typów, zobacz [rozszerzanie typów obiektów i formatowanie](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Program Windows PowerShell przekazuje informacje między poleceniami cmdlet, używając obiektów platformy .NET. W związku z tym polecenie cmdlet może się okazać zdefiniowanie swój własny typ, lub polecenie cmdlet może być konieczne rozszerzenie istniejącego typu dostarczane przez inne polecenie cmdlet. Aby uzyskać więcej informacji na temat definiowania nowych typów lub rozszerzanie istniejących typów, zobacz [rozszerzanie typów obiektów i formatowanie](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Tworzenie polecenia cmdlet
 
-Po zaimplementowaniu polecenia cmdlet, należy zarejestrować go za pomocą programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Po zaimplementowaniu polecenia cmdlet, należy zarejestrować go za pomocą programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testowanie polecenia cmdlet
 
@@ -260,13 +260,13 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
 
 [Polecenia Cmdlet do przetwarzania danych wejściowych potoku tworzenia](./adding-parameters-that-process-pipeline-input.md)
 
-[Jak utworzyć polecenia Cmdlet programu Windows PowerShell](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Jak utworzyć polecenia Cmdlet programu Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Formatowanie i rozszerzanie typy obiektów](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Formatowanie i rozszerzanie typy obiektów](/previous-versions//ms714665(v=vs.85))
 
-[Jak działa program Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Jak działa program Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](/previous-versions//ms714644(v=vs.85))
 
 [Dokumentacja programu Windows PowerShell](../windows-powershell-reference.md)
 

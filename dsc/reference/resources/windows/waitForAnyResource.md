@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób WaitForAny DSC
-ms.openlocfilehash: 55869f665837b422c006f4cfb3e91366fac60362
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d15acb3fb34d571eca56ed496eaa9a04b2551ff0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076830"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726859"
 ---
 # <a name="dsc-waitforany-resource"></a>Zasób WaitForAny DSC
 
@@ -17,6 +17,9 @@ ms.locfileid: "62076830"
 
 Ten zasób zakończy się pomyślnie, jeśli zasób określony przez **ResourceName** właściwość jest w żądanym stanie na wszystkie węzły docelowe, zdefiniowane w **NodeName** właściwości.
 
+> [!NOTE]
+> **WaitForAny** zasobów używa Windows Remote Management, aby sprawdzić stan innych węzłów.
+> Aby uzyskać więcej informacji na temat wymagania dotyczące portów i zabezpieczeń dla usługi WinRM, zobacz [zagadnienia dotyczące zabezpieczeń komunikacji zdalnej programu PowerShell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Składnia
 

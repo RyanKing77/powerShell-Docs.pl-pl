@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080853"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734831"
 ---
 # <a name="writing-a-container-provider"></a>Pisanie dostawcy kontenerów
 
@@ -25,7 +25,7 @@ Aby uzyskać więcej informacji na temat dostawcy programu Windows PowerShell, z
 
 ## <a name="implementing-container-methods"></a>Implementacja metody kontenera
 
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasa implementuje metody, które obsługuje kontenery i tworzenia, kopiowania i usuwania elementów. Aby uzyskać pełną listę tych metod, zobacz [metody ContainerCmdletProvider](http://msdn.microsoft.com/library/system.management.automation.provider.containercmdletprovider_methods\(v=vs.85\).aspx).
+[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) klasa implementuje metody, które obsługuje kontenery i tworzenia, kopiowania i usuwania elementów. Aby uzyskać pełną listę tych metod, zobacz [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Ten temat opiera się na informacje zawarte w [szybkiego startu programu Windows PowerShell dostawcy](./windows-powershell-provider-quickstart.md). W tym temacie nie opisano podstawowe informacje dotyczące sposobu konfigurowania projektu dostawcy lub odziedziczony sposobie implementacji metody [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) klasę, która tworzenie i usuwanie dysków. W tym temacie nie obejmują również sposób implementacji metod udostępnianych przez [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) klasy. Aby uzyskać przykład pokazujący sposób implementacji poleceń cmdlet elementów, zobacz [pisania dostawcę elementu](./writing-an-item-provider.md).
@@ -44,7 +44,7 @@ Zadeklaruj dostawcę aby dziedziczyć [System.Management.Automation.Provider.Con
 
 ### <a name="implementing-getchilditems"></a>Implementowanie GetChildItems
 
-Wywołania aparatu programu PowerShell [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metody, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) polecenie cmdlet. Ta metoda pobiera elementy, które są elementami podrzędnymi elementu w określonej ścieżce.
+Wywołania aparatu programu PowerShell [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metody, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.GetChildItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.Getchilditemcommand) polecenia cmdlet. Ta metoda pobiera elementy, które są elementami podrzędnymi elementu w określonej ścieżce.
 
 W tym przykładzie bazy danych programu Access zachowanie [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) metoda zależy od typu określonego elementu. Jeśli element znajduje się dysk, następnie elementy podrzędne są tabelami, a metoda zwraca zbiór tabel z bazy danych. Jeśli określony element jest tabela, elementy podrzędne są wiersze tej tabeli. Jeśli element jest wiersz, następnie go nie ma elementów podrzędnych, a metoda ta zwraca tylko ten wiersz. Wszystkie elementy podrzędne są wysyłane z powrotem do aparatu programu PowerShell przez [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) metody.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Implementowanie NewItem
 
-[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoda tworzy nowy element o określonym typie w określonej ścieżce. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [elementu Microsoft.PowerShell.Commands.New](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) polecenia cmdlet.
+[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metoda tworzy nowy element o określonym typie w określonej ścieżce. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.NewItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.newitemcommand) polecenia cmdlet.
 
 W tym przykładzie metoda implementuje logikę w celu określenia, czy ścieżka i typ są zgodne. Oznacza to tylko w tabelach można utworzyć bezpośrednio w ramach dysku (baza danych) i można tworzyć tylko wiersz w tabeli. Jeśli określona ścieżka i typ elementu nie są zgodne w ten sposób, metoda zgłasza wyjątek.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>Implementowanie CopyItem
 
-[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopiuje określony element do określonej ścieżki. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [elementu Microsoft.PowerShell.Commands.Copy](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) polecenia cmdlet. Ta metoda może być również rekursywny, skopiowanie wszystkich elementów podrzędnych elementów poza samym elemencie.
+[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopiuje określony element do określonej ścieżki. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.CopyItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.copyitemcommand) polecenia cmdlet. Ta metoda może być również rekursywny, skopiowanie wszystkich elementów podrzędnych elementów poza samym elemencie.
 
 Podobnie jak [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) metody, ta metoda wykonuje logiki, aby upewnić się, że określony element jest poprawnego typu ścieżki, do której są kopiowane. Na przykład jeśli ścieżka docelowa jest tabela, element które mają zostać skopiowane należy wiersz.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>Implementowanie RemoveItem
 
-[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metoda usuwa element w określonej ścieżce. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [elementu Microsoft.PowerShell.Commands.Remove](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) polecenia cmdlet.
+[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) metoda usuwa element w określonej ścieżce. Aparat programu PowerShell wywołuje tę metodę, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.RemoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.removeitemcommand) polecenia cmdlet.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

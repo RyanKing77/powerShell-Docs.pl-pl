@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067046"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735063"
 ---
 # <a name="windows-powershell-error-records"></a>Rekordy błędów programu Windows PowerShell
 
@@ -60,9 +60,9 @@ Do generowania identyfikatorów błąd podczas tworzenia rekordów błędów, u�
 
 ## <a name="error-category"></a>Kategoria błędu
 
-Kiedy tworzysz rekord błędu, należy określić kategorię, która błędu przy użyciu jednej z stałe zdefiniowane przez [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) wyliczenia. Programu Windows PowerShell używa kategorii błędów, aby wyświetlić informacje o błędzie, gdy użytkownicy `$ErrorView` zmienną `"CategoryView"`.
+Kiedy tworzysz rekord błędu, należy określić kategorię, która błędu przy użyciu jednej z stałe zdefiniowane przez [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) wyliczenia. Programu Windows PowerShell używa kategorii błędów, aby wyświetlić informacje o błędzie, gdy użytkownicy `$ErrorView` zmienną `"CategoryView"`.
 
-Unikaj używania [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) stałej. Jeśli masz wszystkie informacje o błędzie lub dotyczące działania, które spowodowały błąd, wybierz kategorię, która najlepiej opisuje błąd lub operacji, nawet jeśli kategoria nie jest idealnym stopniu spełniają.
+Unikaj używania [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **wartości NotSpecified** stałej. Jeśli masz wszystkie informacje o błędzie lub dotyczące działania, które spowodowały błąd, wybierz kategorię, która najlepiej opisuje błąd lub operacji, nawet jeśli kategoria nie jest idealnym stopniu spełniają.
 
 Informacje wyświetlane przez środowisko Windows PowerShell jest określany jako ciąg widoku kategorii i jest tworzona na podstawie właściwości [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) klasy. (Ta klasa jest dostępny za pośrednictwem błąd [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) właściwości.)
 
@@ -72,7 +72,7 @@ Informacje wyświetlane przez środowisko Windows PowerShell jest określany jak
 
 Poniższa lista zawiera opis są wyświetlane następujące informacje:
 
-- Kategoria: Definicja środowiska Windows PowerShell [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) stałej.
+- Kategoria: Definicja środowiska Windows PowerShell [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) stałej.
 
 - TargetName: Domyślnie nazwa obiektu cmdlet przetwarzającą po wystąpieniu błędu. Lub inny ciąg zdefiniowany przez polecenie cmdlet.
 
@@ -88,9 +88,9 @@ Podczas opracowywania rekord błędu dla polecenia cmdlet domyślny komunikat o 
 
 Komunikat zamieniania są dostarczane przez [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) obiektu. Użyj jednej z następujących konstruktorów tego obiektu, ponieważ zapewniają one informacje dodatkowe lokalizacji, które mogą być używane przez program Windows PowerShell.
 
-- [ErrorDetails.ErrorDetails (polecenia Cmdlet, String, String, obiekt\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = imię i nazwisko](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Użyj tego konstruktora, jeśli parametry szablonu usługi jest ciągiem zasobów z tego samego zestawu, w którym zaimplementowano polecenia cmdlet lub jeśli chcesz załadować ciąg szablonu za pomocą zastępowania metody [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) metody.
+- [Szczegóły błędu (polecenia Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Użyj tego konstruktora, jeśli parametry szablonu usługi jest ciągiem zasobów z tego samego zestawu, w którym zaimplementowano polecenia cmdlet lub jeśli chcesz załadować ciąg szablonu za pomocą zastępowania metody [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) metody.
 
-- [ErrorDetails.ErrorDetails (zestawu, String, String, obiekt\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = imię i nazwisko](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Użyj tego konstruktora, jeśli ciąg szablonu jest w innym zestawie, a nie załadowała jej za pomocą zastępowania metody [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [Szczegóły błędu (zestawu, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Użyj tego konstruktora, jeśli ciąg szablonu jest w innym zestawie, a nie załadowała jej za pomocą zastępowania metody [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 Komunikat o zastąpienie powinny być zgodne z wytycznych projektowania programu .NET Framework do zapisywania komunikatów o wyjątkach z niewielkie różnice. Stan wytycznych komunikaty o wyjątkach powinny być napisane dla deweloperów. Te komunikaty zastąpienie mają być zapisywane dla użytkownika polecenia cmdlet.
 
@@ -110,7 +110,7 @@ Jeśli polecenie cmdlet używa [System.Management.Automation.Cmdlet.WriteError](
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

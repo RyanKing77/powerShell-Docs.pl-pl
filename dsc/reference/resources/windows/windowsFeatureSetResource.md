@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Zasób Windowsfeatureset DSC
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076790"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726789"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>Zasób Windowsfeatureset DSC
 
@@ -36,15 +36,15 @@ WindowsFeatureSet [string] #ResourceName
 
 ## <a name="properties"></a>Właściwości
 
-|  Właściwość  |  Opis   |
+|  Właściwość  |  Description   |
 |---|---|
-| Nazwa| Nazwy ról lub funkcji, które chcesz, aby upewnić się, są dodawane lub usuwane. To jest taka sama jak **nazwa** właściwość [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) polecenia cmdlet, a nie nazwę wyświetlaną ról lub funkcji.|
+| Nazwa| Nazwy ról lub funkcji, które chcesz, aby upewnić się, są dodawane lub usuwane. To jest taka sama jak **nazwa** właściwość [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) polecenia cmdlet, a nie nazwę wyświetlaną ról lub funkcji.|
 | Poświadczenie| Poświadczenia używane do dodawania lub usuwania ról lub funkcji.|
 | Upewnij się| Wskazuje, czy dodać ról lub funkcji. Aby upewnić się, że ról lub funkcji dodano, ustaw tę właściwość na "Obecny", aby upewnić się, czy role i funkcje zostały usunięte, należy ustawić właściwość na "Brak".|
 | IncludeAllSubFeature| Ustaw tę właściwość na **$true** obejmujący wszystkie wymagane podfunkcje przy użyciu funkcji, należy określić przy użyciu **nazwa** właściwości.|
 | Ścieżka dziennika| Ścieżka do pliku dziennika, w której chcesz dostawcy zasobów do dziennika operacji.|
 | dependsOn| Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład, jeśli identyfikator konfiguracji zasobu skryptu Blok, który chcesz uruchomić najpierw jest __ResourceName__ a jej typ jest __ResourceType__, składnia przy użyciu tej właściwości jest `DependsOn = "[ResourceType]ResourceName"`.|
-| Źródło| Wskazuje lokalizację pliku źródłowego na potrzeby instalacji, jeśli to konieczne.|
+| Source| Wskazuje lokalizację pliku źródłowego na potrzeby instalacji, jeśli to konieczne.|
 
 ## <a name="example"></a>Przykład
 

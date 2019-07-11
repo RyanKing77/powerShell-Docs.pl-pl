@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, powershell, konfiguracja, ustawienia
 title: Korzystanie z danych konfiguracji
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080224"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727207"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Korzystanie z danych konfiguracji w DSC
 
@@ -187,11 +187,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC udostępnia następujące zmienne specjalne, których można użyć w skrypcie konfiguracji:
 
-- **$AllNodes** odwołuje się do całej kolekcji węzłów zdefiniowane w **ConfigurationData**. Można filtrować **AllNodes** kolekcji przy użyciu **. WHERE()** i **. Metody ForEach()**.
+- **$AllNodes** odwołuje się do całej kolekcji węzłów zdefiniowane w **ConfigurationData**. Można filtrować **AllNodes** kolekcji przy użyciu **. WHERE()** i **. Metody ForEach()** .
 - **ConfigurationData** odwołuje się do tabeli całego wyznaczania wartości skrótu, który jest przekazywany jako parametr podczas kompilowania konfiguracji.
 - **MyTypeName** zawiera [konfiguracji](configurations.md) zmienna zostanie użyta w nazwie. Na przykład w konfiguracji `MyDscConfiguration`, `$MyTypeName` będzie mieć wartość `MyDscConfiguration`.
-- **Węzeł** odwołuje się do określonego wpisu w **AllNodes** kolekcji po jest filtrowany za pomocą **. WHERE()** lub **. Metody ForEach()**.
-  - Możesz dowiedzieć się więcej o tych metodach w [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+- **Węzeł** odwołuje się do określonego wpisu w **AllNodes** kolekcji po jest filtrowany za pomocą **. WHERE()** lub **. Metody ForEach()** .
+  - Możesz dowiedzieć się więcej o tych metodach w [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Korzystanie z danych niż węzła
 

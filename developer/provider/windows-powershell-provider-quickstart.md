@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080887"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734845"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Przewodnik Szybki start dotyczący dostawcy programu Windows PowerShell
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Implementowanie NewDrive
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) metoda jest wywoływana przez aparatu programu Windows PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.New-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)polecenia cmdlet, określając nazwę dostawcy. Parametr PSDriveInfo jest przekazywany przez aparat programu Windows PowerShell, a metoda ta zwraca nowy dysk do aparatu programu Windows PowerShell. Ta metoda musi być zadeklarowana w klasie utworzonego powyżej.
+[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) metoda jest wywoływana przez aparatu programu Windows PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) polecenia cmdlet, określając nazwę dostawcy. Parametr PSDriveInfo jest przekazywany przez aparat programu Windows PowerShell, a metoda ta zwraca nowy dysk do aparatu programu Windows PowerShell. Ta metoda musi być zadeklarowana w klasie utworzonego powyżej.
 
 Metoda najpierw sprawdza, upewnij się, obiekt dysku i katalogu głównego dysku, które zostały przekazane, zwracając `null` jeśli którąś z tych funkcji nie jest. Reprezentuje połączenie z bazą danych programu Access dysku i następnie używa konstruktora klasy wewnętrznej AccessDBPSDriveInfo do utworzenia nowego dysku.
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>Implementowanie RemoveDrive
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) metoda jest wywoływana przez aparatu programu Windows PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.Remove-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) polecenia cmdlet. Metoda tego dostawcy zamyka połączenie z bazą danych programu Access.
+[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) metoda jest wywoływana przez aparatu programu Windows PowerShell, gdy użytkownik wywołuje [Microsoft.PowerShell.Commands.RemovePSDriveCommand ](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) polecenia cmdlet. Metoda tego dostawcy zamyka połączenie z bazą danych programu Access.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

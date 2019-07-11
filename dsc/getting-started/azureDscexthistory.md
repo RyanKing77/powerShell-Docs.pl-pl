@@ -3,12 +3,12 @@ description: Poznaj historię wersji rozszerzenia Desired State Configuration (D
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, extension
 title: Historia wersji rozszerzenie DSC usługi Azure
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079748"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734661"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Historia wersji rozszerzenia Azure Desired State Configuration
 
@@ -164,7 +164,7 @@ W tym artykule zawierają informacje o każdej wersji rozszerzenia maszyny Wirtu
 - **Środowisko:** Azure
 - **Uwagi:** Ta wersja wykorzystuje DSC zawartych w systemie Windows Server 2016 Technical Preview; dla innych systemów operacyjnych Windows, instaluje [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (Instalowanie programu WMF wymaga ponownego uruchomienia).
 - **Nowe funkcje:**
-  - Obsługa programu WMF 5.1 (wersja zapoznawcza). Podczas pierwszej publikacji, ta wersja została uaktualnienia opcjonalne i musiał określić Wmfversion = "5.1PP' w szablonach usługi Resource Manager, aby zainstalować program WMF 5.1 (wersja zapoznawcza). Wmfversion = "latest" nadal instaluje [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Aby uzyskać więcej informacji na temat programu WMF 5.1 (wersja zapoznawcza), zobacz [ten blog]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
+  - Obsługa programu WMF 5.1 (wersja zapoznawcza). Podczas pierwszej publikacji, ta wersja została uaktualnienia opcjonalne i musiał określić Wmfversion = "5.1PP' w szablonach usługi Resource Manager, aby zainstalować program WMF 5.1 (wersja zapoznawcza). Wmfversion = "latest" nadal instaluje [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Aby uzyskać więcej informacji na temat programu WMF 5.1 (wersja zapoznawcza), zobacz [ten blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - Pomocnicza inne poprawki i ulepszenia zostały dodane.
 
 ### <a name="version--219"></a>Wersja 2.19
