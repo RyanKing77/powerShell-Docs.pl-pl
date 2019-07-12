@@ -2,16 +2,16 @@
 title: Co nowego w programie PowerShell Core 6.0
 description: Nowe funkcje i zmiany w programie PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059019"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843930"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Co nowego w programie PowerShell Core 6.0
 
-[PowerShell Core 6.0] [ github] to nowa wersja programu PowerShell, który jest dla wielu platform (Windows, macOS i Linux), typu open source i dla środowisk heterogenicznych i chmura hybrydowa.
+[PowerShell Core 6.0][github] to nowa wersja programu PowerShell, który jest dla wielu platform (Windows, macOS i Linux), typu open source i dla środowisk heterogenicznych i chmura hybrydowa.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>Przeniesione z .NET Framework i .NET Core
 
@@ -139,7 +139,7 @@ Większość modułów, które są dostarczane jako część systemu Windows (na
 Zespół programu PowerShell pracuje się z tych grup produktów i zespołów, aby zweryfikować i portu swoich istniejących modułów programu PowerShell Core.
 Za pomocą platformy .NET Standard i [CDXML][]wiele z tych tradycyjnych modułów programu Windows PowerShell wydaje się, że praca w programie PowerShell Core, ale nie zostały one oficjalnie zatwierdzone i nie jest oficjalnie obsługiwana.
 
-Instalując [ `WindowsPSModulePath` ] [ windowspsmodulepath] modułu, można użyć modułów programu Windows PowerShell, dodając programu Windows PowerShell `PSModulePath` do podstawowego środowiska PowerShell `PSModulePath`.
+Instalując [ `WindowsPSModulePath` ][windowspsmodulepath] modułu, można użyć modułów programu Windows PowerShell, dodając programu Windows PowerShell `PSModulePath` do podstawowego środowiska PowerShell `PSModulePath`.
 
 Najpierw zainstaluj `WindowsPSModulePath` modułu z galerii programu PowerShell:
 
@@ -295,9 +295,10 @@ Aby uzyskać więcej informacji na temat zadań programu PowerShell, zobacz [abo
 
 ### <a name="csv-cmdlets"></a>Polecenia cmdlet CSV
 
+- `Import-Csv` obsługuje teraz rozszerzony Format W3C pliku dziennika (#2482) (Dziękuję [ @iSazonov ](https://github.com/iSazonov)!)
 - Dodaj `PSTypeName` Obsługa `Import-Csv` i `ConvertFrom-Csv`. (#5389) (Dziękuję [ @markekraus ](https://github.com/markekraus)!)
 - Wprowadź `Import-Csv` obsługuje `CR`, `LF`, i `CRLF` wiersz jako ograniczniki. (#5363) (Dziękuję [ @iSazonov ](https://github.com/iSazonov)!)
-- Wprowadź `-NoTypeInformation` domyślny w `Export-Csv` i `ConvertTo-Csv`. (#5164) (Dziękuję [ @markekraus ](https://github.com/markekraus))
+- Wprowadź `-NoTypeInformation` domyślny w `Export-Csv` i `ConvertTo-Csv`. (#5164) (Dziękuję [ @markekraus ](https://github.com/markekraus)!)
 
 ### <a name="service-cmdlets"></a>Polecenia cmdlet usługi
 

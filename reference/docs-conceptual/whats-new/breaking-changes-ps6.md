@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: Program PowerShell, core
 title: Istotne zmiany dotyczące programu PowerShell w wersji 6.0
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085936"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843938"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Istotne zmiany dotyczące programu PowerShell w wersji 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085936"
 
 ### <a name="powershell-workflow"></a>Przepływ pracy programu PowerShell
 
-[Przepływ pracy programu PowerShell] [ workflow] to funkcja w programie Windows PowerShell, który tworzy w górnej części [Windows Workflow Foundation (WF)] [ workflow-foundation] umożliwiającej tworzenie niezawodne elementów runbook dla zadań długotrwałych lub równoległego.
+[Przepływ pracy programu PowerShell][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] umożliwiającej tworzenie niezawodnych elementów runbook dla zadań długotrwałych lub równoległego.
 
 Ze względu na brak obsługi Windows Workflow Foundation w programie .NET Core firma Microsoft nie będzie obsługiwać przepływu pracy programu PowerShell w programie PowerShell Core.
 
@@ -26,7 +26,7 @@ W przyszłości prosimy o poświęcenie włączyć równoległość/współbież
 
 ### <a name="custom-snap-ins"></a>Niestandardowe przystawek
 
-[Przystawki programu PowerShell] [ snapin] są poprzednika modułów programu PowerShell, które nie mają je w społeczności programu PowerShell.
+[Przystawki programu PowerShell][snapin] są poprzednika modułów programu PowerShell, które nie mają je w społeczności programu PowerShell.
 
 Ze względu na złożoność obsługi przystawki i ich braku użycie w społeczności nie jest już obsługiwana w programie PowerShell Core niestandardowe przystawek.
 
@@ -113,9 +113,13 @@ Wcześniej Jeśli `-Verbose` lub `-Debug` zostały określone jego overrode zach
 
 Gdy interfejs API zwraca tylko `null`, Invoke RestMethod została to serializowania w postaci ciągu `"null"` zamiast `$null`. Ta zmiana rozwiązuje logikę `Invoke-RestMethod` prawidłowo serializować prawidłowej wartości pojedynczej JSON `null` literału jako `$null`.
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Usuń `-ComputerName` z `*-Computer` poleceń cmdlet [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Usuń `-Protocol` z `*-Computer` poleceń cmdlet [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-Z powodu problemów z wywołaniem funkcji zdalnych RPC, CoreFX (szczególnie na platformach innych niż Windows) i zapewnienie środowisku spójne komunikacji zdalnej w programie PowerShell `-ComputerName` parametr został usunięty z `\*-Computer` polecenia cmdlet. Użyj `Invoke-Command` zamiast jako sposób wykonania poleceń cmdlet zdalnie.
+Z powodu problemów z wywołaniem funkcji zdalnych RPC, CoreFX (szczególnie na platformach innych niż Windows) i zapewnienie środowisku spójne komunikacji zdalnej w programie PowerShell `-Protocol` parametr został usunięty z `\*-Computer` polecenia cmdlet. Model DCOM nie jest już obsługiwana dla niego komunikację zdalną. Następujące polecenia cmdlet obsługują tylko komunikacji zdalnej usługi WS-MANAGEMENT:
+
+- Rename-Computer
+- Polecenie Restart-Computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Usuń `-ComputerName` z `*-Service` poleceń cmdlet [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ Następujące funkcje zostały usunięte, ponieważ nie są obsługiwane w progr
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Usunięte `RunspaceConfiguration` obsługuje [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Wcześniej podczas tworzenia działania programu PowerShell programowo przy użyciu interfejsu API można użyć starszego [ `RunspaceConfiguration` ] [ runspaceconfig] lub nowszego [ `InitialSessionState` ] [ iss]. Ta zmiana usunięto obsługę dla `RunspaceConfiguration` i obsługuje tylko `InitialSessionState`.
+Wcześniej podczas tworzenia działania programu PowerShell programowo przy użyciu interfejsu API można użyć starszego [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Ta zmiana usunięto obsługę dla `RunspaceConfiguration` i obsługuje tylko `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
