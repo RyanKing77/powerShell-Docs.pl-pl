@@ -1,42 +1,41 @@
 ---
 title: Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
-description: Komunikacji zdalnej w programie PowerShell Core przy użyciu protokołu SSH
+description: Komunikacja zdalna w programie PowerShell Core przy użyciu protokołu SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086395"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372141"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Obsługa zdalna programu PowerShell za pośrednictwem protokołu SSH
 
 ## <a name="overview"></a>Omówienie
 
-Komunikacja zdalna programu PowerShell zwykle używa funkcji WinRM do negocjowania połączenia i transport danych. Protokół SSH jest teraz dostępny dla platform Linux i Windows i zezwala na wartość true dla wielu platform komunikacji zdalnej programu PowerShell.
+Komunikacja zdalna programu PowerShell zwykle używa usługi WinRM do negocjacji połączeń i transportu danych. Protokół SSH jest teraz dostępny dla platform Linux i Windows i umożliwia obsługę komunikacji zdalnej dla wieloplatformowego programu PowerShell.
 
-Usługa WinRM zapewnia niezawodne modelu hostingu dla sesji zdalnej programu PowerShell. Konfiguracja zdalnego punktu końcowego oraz zestawu narzędziowego JEA (Just Enough Administration) opartego na SSH komunikacji zdalnej nie obsługuje obecnie.
+Usługa WinRM udostępnia niezawodny model hostingu dla sesji zdalnych programu PowerShell. Komunikacja zdalna oparta na protokole SSH nie obsługuje obecnie konfiguracji i JEA zdalnego punktu końcowego.
 
-Komunikacja zdalna SSH umożliwia podstawowe komunikacji zdalnej sesji programu PowerShell między maszynami Windows i Linux. SSH Remoting tworzy proces hosta programu PowerShell na komputerze docelowym jako podsystemu SSH.
-Po pewnym czasie będzie wdrażamy ogólny model hostingu, podobnie jak usługi WinRM do obsługi konfiguracji punktu końcowego oraz zestawu narzędziowego JEA.
+Komunikacja zdalna SSH umożliwia wykonywanie podstawowych sesji programu PowerShell dla komunikacji zdalnej między komputerami z systemem Windows i Linux. Komunikacja zdalna SSH tworzy proces hosta programu PowerShell na maszynie docelowej jako podsystem SSH. Ostatecznie zaimplementujemy ogólny model hostingu podobny do usługi WinRM, aby obsługiwał konfigurację punktów końcowych i JEA.
 
-`New-PSSession`, `Enter-PSSession`, I `Invoke-Command` polecenia cmdlet zawierają już nowy parametr skonfigurowane do obsługi tego nowego połączenia zdalnego.
+Polecenia cmdlet `Enter-PSSession` ,i`Invoke-Command` mają teraz nowy zestaw parametrów do obsługi nowego połączenia zdalnego. `New-PSSession`
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Aby utworzyć sesję zdalną, należy określić na komputerze docelowym z `HostName` parametru i podaj nazwę użytkownika z `UserName`. Podczas interakcyjnego wykonywania polecenia cmdlet, zostanie wyświetlony monit o podanie hasła. Można także użyć uwierzytelniania klucza SSH przy użyciu pliku klucza prywatnego za pomocą `KeyFilePath` parametru.
+Aby utworzyć sesję zdalną, należy określić maszynę docelową `HostName` z parametrem i podać nazwę użytkownika `UserName`przy użyciu. Gdy uruchamiasz polecenia cmdlet interaktywnie, zostanie wyświetlony monit o podanie hasła. Można również użyć uwierzytelniania klucza SSH przy użyciu pliku klucza prywatnego z `KeyFilePath` parametrem.
 
-## <a name="general-setup-information"></a>Ustawienia ogólne informacje
+## <a name="general-setup-information"></a>Ogólne informacje o instalacji
 
-SSH musi być zainstalowany na wszystkich komputerach. Zainstaluj klienta SSH (`ssh.exe`) i serwera (`sshd.exe`) aby można było zdalnego, do i z maszyny. OpenSSH for Windows jest teraz dostępny w systemie Windows 10 kompilacji 1809 i 2019 r Server systemu Windows. Aby uzyskać więcej informacji, zobacz [OpenSSH dla Windows](/windows-server/administration/openssh/openssh_overview). W przypadku systemu Linux Zainstaluj SSH (takie jak serwer sshd) odpowiednie dla danej platformy. Należy również zainstalować program PowerShell Core z witryny GitHub można pobrać funkcja komunikacji zdalnej SSH. Serwer SSH musi być skonfigurowany do utworzenia podsystemie SSH do hostowania proces programu PowerShell na komputerze zdalnym. Należy również skonfigurować Włącz haseł lub uwierzytelniania opartego na kluczu.
+Protokół SSH musi być zainstalowany na wszystkich komputerach. Zainstaluj klienta SSH (`ssh.exe`) i serwer (`sshd.exe`), aby móc zdalnie z maszyn i z nich. OpenSSH dla systemu Windows jest teraz dostępny w systemie Windows 10 Build 1809 i Windows Server 2019. Aby uzyskać więcej informacji, zobacz [OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview). W przypadku systemu Linux Zainstaluj protokół SSH (w tym serwer SSHD) odpowiednie dla danej platformy. Musisz również zainstalować program PowerShell Core z usługi GitHub, aby uzyskać funkcję komunikacji zdalnej SSH. Serwer SSH musi być skonfigurowany tak, aby utworzyć podsystem SSH do hostowania procesu programu PowerShell na maszynie zdalnej. Należy również skonfigurować opcję Włącz uwierzytelnianie hasła lub klucza.
 
-## <a name="set-up-on-windows-machine"></a>Skonfiguruj na komputerze Windows
+## <a name="set-up-on-windows-machine"></a>Konfiguracja na komputerze z systemem Windows
 
-1. Zainstaluj najnowszą wersję [programu PowerShell Core dla Windows](../../install/installing-powershell-core-on-windows.md#msi)
+1. Zainstaluj najnowszą wersję programu [PowerShell Core dla systemu Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-   - Można stwierdzić, jeśli ma on Obsługa komunikacji zdalnej SSH, analizując parametr ustawia `New-PSSession`
+   - Możesz określić, czy ma ona obsługę komunikacji zdalnej SSH, przeglądając zestawy parametrów dla`New-PSSession`
 
    ```powershell
    Get-Command New-PSSession -syntax
@@ -46,10 +45,10 @@ SSH musi być zainstalowany na wszystkich komputerach. Zainstaluj klienta SSH (`
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Zainstaluj najnowsze Win32 OpenSSH. Aby uzyskać instrukcje dotyczące instalacji, zobacz [instalacji OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Edytuj `sshd_config` znajdujący się w pliku `$env:ProgramData\ssh`.
+2. Zainstaluj najnowszą wersję Win32 OpenSSH. Instrukcje instalacji znajdują się w temacie [instalacja programu OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
+3. Edytuj plik znajdujący się `$env:ProgramData\ssh`w lokalizacji. `sshd_config`
 
-   - Upewnij się, że włączone jest uwierzytelnianie przy użyciu hasła
+   - Upewnij się, że uwierzytelnianie hasła jest włączone
 
      ```
      PasswordAuthentication yes
@@ -60,107 +59,107 @@ SSH musi być zainstalowany na wszystkich komputerach. Zainstaluj klienta SSH (`
      ```
 
      > [!NOTE]
-     > Brak usterkę w OpenSSH dla Windows uniemożliwiający pracujących w ścieżki pliku wykonywalnego podsystemu miejsc do magazynowania. Aby uzyskać więcej informacji, zobacz [problem w usłudze GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+     > Wystąpił błąd w OpenSSH dla systemu Windows, który uniemożliwia pracę w ścieżkach wykonywalnych podsystemu. Aby uzyskać więcej informacji, zobacz [problem w usłudze GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Rozwiązanie polega na Utwórz Link symboliczny do katalogu instalacyjnego programu PowerShell, który nie ma miejsca do magazynowania:
+     Jednym z rozwiązań jest utworzenie link symboliczny w katalogu instalacyjnym programu PowerShell, który nie zawiera spacji:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
-     a następnie wprowadź go w podsystemie:
+     a następnie wprowadź ją w podsystemie:
 
      ```
      Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
-   - Opcjonalnie włączyć uwierzytelnianie za pomocą klucza
+   - Opcjonalnie Włącz uwierzytelnianie klucza
 
      ```
      PubkeyAuthentication yes
      ```
 
-4. Uruchom ponownie usługę sshd
+4. Uruchom ponownie usługę SSHD
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Dodaj ścieżkę zainstalowanym OpenSSH do zmiennej środowiskowej Path. Na przykład `C:\Program Files\OpenSSH\`. Ten wpis umożliwia ssh.exe ma zostać odnaleziona.
+5. Dodaj ścieżkę, gdzie OpenSSH jest zainstalowana w zmiennej środowiskowej PATH. Na przykład `C:\Program Files\OpenSSH\`. Ten wpis umożliwia znalezienie pliku SSH. exe.
 
-## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Skonfiguruj na komputerze z systemem Linux (Ubuntu 14.04)
+## <a name="set-up-on-linux-ubuntu-1604-machine"></a>Konfiguracja na komputerze z systemem Linux (Ubuntu 16,04)
 
-1. Zainstaluj najnowszą wersję [programu PowerShell Core dla systemu Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404) kompilacji z usługi GitHub
-2. Zainstaluj [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) zgodnie z potrzebami
+1. Zainstaluj najnowszą kompilację [programu PowerShell Core dla systemu Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) z usługi GitHub
+2. Zainstaluj [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) zgodnie z wymaganiami
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Edytowanie pliku sshd_config w lokalizacji /etc/ssh
+3. Edytuj plik sshd_config w lokalizacji/etc/ssh
 
-   - Upewnij się, że włączone jest uwierzytelnianie przy użyciu hasła
+   - Upewnij się, że uwierzytelnianie hasła jest włączone
 
    ```
    PasswordAuthentication yes
    ```
 
-   - Dodaj wpis podsystem PowerShell
+   - Dodawanie wpisu podsystemu programu PowerShell
 
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   - Opcjonalnie włączyć uwierzytelnianie za pomocą klucza
+   - Opcjonalnie Włącz uwierzytelnianie klucza
 
    ```
    PubkeyAuthentication yes
    ```
 
-4. Uruchom ponownie usługę sshd
+4. Uruchom ponownie usługę SSHD
 
    ```bash
    sudo service sshd restart
    ```
 
-## <a name="set-up-on-macos-machine"></a>Na komputerze z systemem MacOS
+## <a name="set-up-on-macos-machine"></a>Konfiguracja na maszynie MacOS
 
-1. Zainstaluj najnowszą wersję [programu PowerShell Core dla systemu MacOS](../../install/installing-powershell-core-on-macos.md) kompilacji
+1. Zainstaluj najnowszą wersję [programu PowerShell Core dla kompilacji MacOS](../../install/installing-powershell-core-on-macos.md)
 
    - Upewnij się, że komunikacja zdalna SSH jest włączona, wykonując następujące czynności:
-     - Otwórz `System Preferences`
-     - Kliknij pozycję `Sharing`
-     - Sprawdź `Remote Login` — powinna być widoczna nazwa `Remote Login: On`
+     - Otwórz`System Preferences`
+     - Kliknij pozycję`Sharing`
+     - Sprawdzenie `Remote Login` — należy powiedzieć`Remote Login: On`
      - Zezwalaj na dostęp do odpowiednich użytkowników
 
-2. Edytuj `sshd_config` pliku w lokalizacji `/private/etc/ssh/sshd_config`
+2. `sshd_config` Edytuj plik w lokalizacji`/private/etc/ssh/sshd_config`
 
-   - Użyj ulubionego edytora lub
+   - Użyj swojego ulubionego edytora lub
 
      ```bash
      sudo nano /private/etc/ssh/sshd_config
      ```
 
-   - Upewnij się, że włączone jest uwierzytelnianie przy użyciu hasła
+   - Upewnij się, że uwierzytelnianie hasła jest włączone
 
      ```
      PasswordAuthentication yes
      ```
 
-   - Dodaj wpis podsystem PowerShell
+   - Dodawanie wpisu podsystemu programu PowerShell
 
      ```
      Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
      ```
 
-   - Opcjonalnie włączyć uwierzytelnianie za pomocą klucza
+   - Opcjonalnie Włącz uwierzytelnianie klucza
 
      ```
      PubkeyAuthentication yes
      ```
 
-3. Uruchom ponownie usługę sshd
+3. Uruchom ponownie usługę SSHD
 
    ```bash
    sudo launchctl stop com.openssh.sshd
@@ -169,15 +168,11 @@ SSH musi być zainstalowany na wszystkich komputerach. Zainstaluj klienta SSH (`
 
 ## <a name="authentication"></a>Uwierzytelnianie
 
-Komunikacja zdalna programu PowerShell za pomocą protokołu SSH opiera się na Wymiana uwierzytelniania między klientem SSH i usługę SSH i nie implementuje żadnych schematów uwierzytelniania sam.
-Oznacza to, że wszelkie schematów uwierzytelniania skonfigurowany, w tym usługi uwierzytelnianie wieloskładnikowe jest obsługiwane przez SSH i niezależna od programu PowerShell.
-Na przykład można skonfigurować usługę SSH, aby wymagać uwierzytelniania klucza publicznego, a także hasła jednorazowego w celu zwiększenia poziomu bezpieczeństwa.
-Konfiguracja usługi Multi-Factor authentication jest poza zakresem niniejszej dokumentacji.
-Zajrzyj do dokumentacji dla protokołu SSH na temat sposobu poprawnie skonfigurować uwierzytelnianie wieloskładnikowe i sprawdzić jego poprawność działa poza programem PowerShell przed podjęciem próby korzystania z komunikacji zdalnej programu PowerShell.
+Komunikacja zdalna programu PowerShell za pośrednictwem protokołu SSH polega na wymianie uwierzytelniania między klientem SSH i usługą SSH i nie implementuje żadnego ze schematów uwierzytelniania. Oznacza to, że wszystkie skonfigurowane schematy uwierzytelniania, w tym uwierzytelnianie wieloskładnikowe, są obsługiwane przez protokół SSH i niezależne od programu PowerShell. Można na przykład skonfigurować usługę SSH, aby wymagała uwierzytelniania klucza publicznego oraz hasła jednorazowego w celu zwiększenia bezpieczeństwa. Konfiguracja usługi uwierzytelniania wieloskładnikowego jest poza zakresem tej dokumentacji. Zapoznaj się z dokumentacją protokołu SSH, aby poprawnie skonfigurować uwierzytelnianie wieloskładnikowe i sprawdzić, czy działa on poza programem PowerShell, przed podjęciem próby użycia go z usługami zdalnymi programu PowerShell.
 
-## <a name="powershell-remoting-example"></a>Przykładowy komunikacji zdalnej programu PowerShell
+## <a name="powershell-remoting-example"></a>Przykład komunikacji zdalnej programu PowerShell
 
-Najprostszym sposobem przetestowania komunikacji zdalnej jest do wypróbowania tej funkcji na jednym komputerze. W tym przykładzie utworzymy sesji zdalnej, wróć do tej samej maszyny z systemem Linux. Firma Microsoft przy użyciu programu PowerShell, poleceń cmdlet interaktywnie, więc widzimy monity z protokołu SSH z pytaniem sprawdzić komputer-host i monitem o podanie hasła. Możesz zrobić to samo na komputerze Windows Aby upewnić się, że komunikacja zdalna działa. Następnie zdalnego między maszynami, zmieniając nazwę hosta.
+Najprostszym sposobem testowania komunikacji zdalnej jest wypróbowanie jej na pojedynczym komputerze. W tym przykładzie utworzysz sesję zdalną z powrotem do tej samej maszyny z systemem Linux. Używamy poleceń cmdlet programu PowerShell interaktywnie, więc zobaczymy monity z prośbą o zweryfikowanie komputera-hosta i monitowanie o podanie hasła. Tę samą funkcję można wykonać na komputerze z systemem Windows, aby upewnić się, że komunikacja zdalna działa. Następnie możesz zdalnie między maszynami, zmieniając nazwę hosta.
 
 ```powershell
 #
@@ -209,7 +204,7 @@ Enter-PSSession $session
 
 ```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
-Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
 ```
@@ -304,16 +299,16 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>Znane problemy
 
-Polecenie "sudo" nie działa w sesji zdalnej do maszyny z systemem Linux.
+Polecenie sudo nie działa w sesji zdalnej z maszyną z systemem Linux.
 
 ## <a name="see-also"></a>Zobacz też
 
-[Program PowerShell Core dla Windows](../../install/installing-powershell-core-on-windows.md#msi)
+[Program PowerShell Core dla systemu Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-[Program PowerShell Core w systemie Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404)
+[Program PowerShell Core dla systemu Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
-[Program PowerShell Core dla systemu MacOS](../../install/installing-powershell-core-on-macos.md)
+[Rdzeń programu PowerShell dla MacOS](../../install/installing-powershell-core-on-macos.md)
 
-[OpenSSH dla Windows](/windows-server/administration/openssh/openssh_overview)
+[OpenSSH dla systemu Windows](/windows-server/administration/openssh/openssh_overview)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
