@@ -1,32 +1,32 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, konfiguracja, usługi, Instalator
+keywords: DSC, PowerShell, konfiguracja, usługa, instalacja
 title: Zapisywanie, kompilowanie i stosowanie konfiguracji
-ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080020"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372178"
 ---
-> Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Dotyczy: Windows PowerShell 4,0, Windows PowerShell 5,0
 
 # <a name="write-compile-and-apply-a-configuration"></a>Zapisywanie, kompilowanie i stosowanie konfiguracji
 
-To ćwiczenie zawiera opis sposobu tworzenia i stosowania konfiguracji Desired State Configuration (DSC), od początku do końca.
-W poniższym przykładzie dowiesz się, jak pisać i Zastosuj konfigurację bardzo proste. Konfiguracja będzie upewnij się, że plik "HelloWorld.txt" istnieje na komputerze lokalnym. Jeśli usuniesz plik, DSC ponownie utworzy go następnym razem, który aktualizuje.
+To ćwiczenie polega na utworzeniu i zastosowaniu konfiguracji konfiguracji żądanego stanu (DSC) od początku do końca.
+W poniższym przykładzie dowiesz się, jak napisać i zastosować bardzo prostą konfigurację. Konfiguracja spowoduje, że plik "HelloWorld. txt" istnieje na komputerze lokalnym. W przypadku usunięcia pliku Konfiguracja DSC zostanie ponownie utworzona podczas następnej aktualizacji.
 
-Aby uzyskać omówienie DSC i jak to działa, zobacz [omówienie Desired State Configuration dla deweloperów](../overview/overview.md).
+Aby zapoznać się z omówieniem usługi DSC i jej działaniem, zobacz [Omówienie konfiguracji żądanego stanu dla deweloperów](../overview/overview.md).
 
 ## <a name="requirements"></a>Wymagania
 
-Aby uruchomić ten przykład, należy komputer z systemem programu PowerShell w wersji 4.0 lub nowszej.
+Do uruchomienia tego przykładu będzie potrzebny komputer z uruchomionym programem PowerShell 4,0 lub nowszym.
 
-## <a name="write-the-configuration"></a>Zapisz konfigurację
+## <a name="write-the-configuration"></a>Napisz konfigurację
 
-DSC [konfiguracji](configurations.md) jest specjalną funkcję programu PowerShell, który definiuje, jak chcesz skonfigurować jeden lub więcej komputerów docelowych (węzły).
+[Konfiguracja](configurations.md) DSC to specjalna funkcja programu PowerShell, która definiuje, w jaki sposób należy skonfigurować co najmniej jeden komputer docelowy (węzły).
 
-W środowisku ISE programu PowerShell lub innego edytora programu PowerShell wpisz następujące polecenie:
+W ISE programu PowerShell lub w innym edytorze programu PowerShell wpisz następujące polecenie:
 
 ```powershell
 Configuration HelloWorld {
@@ -47,21 +47,33 @@ Configuration HelloWorld {
 }
 ```
 
-Zapisz plik jako "HelloWorld.ps1".
+> ! Ważne w przypadku bardziej zaawansowanych scenariuszy, w których należy zaimportować wiele modułów, aby można było pracować z wieloma zasobami DSC w tej samej konfiguracji, upewnij się, że każdy moduł został umieszczony w `Import-DscResource`osobnym wierszu przy użyciu.
+> Jest to łatwiejsze do utrzymania w kontroli źródła i wymagane podczas pracy z usługą DSC w konfiguracji stanu platformy Azure.
+>
+> ```powershell
+>  Configuration HelloWorld {
+>
+>   # Import the module that contains the File resource.
+>   Import-DscResource -ModuleName PsDesiredStateConfiguration
+>   Import-DscResource -ModuleName xWebAdministration
+>
+> ```
 
-Definiowanie konfiguracji jest podobne do definiowania funkcji. **Węzła** bloku określa węzeł docelowy należy skonfigurować w tym przypadku `localhost`.
+Zapisz plik jako "HelloWorld. ps1".
 
-Konfiguracja wywołuje jedną [zasobów](../resources/resources.md), `File` zasobów. Zasoby wykonują pracę zapewnienia, że węzeł docelowy jest w stanie zdefiniowane przez tą konfigurację.
+Definiowanie konfiguracji jest podobne do definiowania funkcji. Blok **węzła** określa węzeł docelowy, który ma zostać skonfigurowany w tym przypadku `localhost`.
 
-## <a name="compile-the-configuration"></a>Kompilowanie konfiguracji w
+Konfiguracja wywołuje jedno [zasoby](../resources/resources.md), `File` zasób. Zasoby wykonują czynności, aby upewnić się, że węzeł docelowy jest w stanie zdefiniowanym przez konfigurację.
 
-Dla konfiguracji DSC do zastosowania do węzła jej muszą najpierw być skompilowane w pliku MOF.
-Uruchamianie konfiguracji, takich jak funkcja zostanie skompilowany jeden plik "MOF" dla każdego węzła zdefiniowane przez `Node` bloku.
-Aby uruchomić konfigurację, trzeba *źródła z dot* skryptu "HelloWorld.ps1" w bieżącym zakresie.
+## <a name="compile-the-configuration"></a>Kompiluj konfigurację
+
+Aby Konfiguracja DSC została zastosowana do węzła, najpierw należy ją skompilować do pliku MOF.
+Uruchomienie konfiguracji, takiej jak funkcja, spowoduje skompilowanie jednego pliku "MOF" dla każdego węzła zdefiniowanego przez `Node` blok.
+Aby można było uruchomić konfigurację, należy umieścić w bieżącym zakresie skrypt "HelloWorld. ps1" jako *Źródło* danych.
 Aby uzyskać więcej informacji, zobacz [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
 <!-- markdownlint-disable MD038 -->
-*Źródło z dot* skryptu "HelloWorld.ps1", wpisując w polu Ścieżka, w której przechowywane, po `. ` (kropka, miejsca). Następnie możesz uruchomić konfigurację wywołując takich jak funkcja.
+*Źródło kropki* skrypt "helloworld. ps1", wpisując ścieżkę, w której został zapisany, po `. ` (kropka, spacja). Następnie możesz uruchomić konfigurację, wywołując ją jako funkcję.
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -69,7 +81,7 @@ Aby uzyskać więcej informacji, zobacz [about_Scripts](/powershell/module/micro
 HelloWorld
 ```
 
-Spowoduje to wygenerowanie następujące dane wyjściowe:
+Spowoduje to wygenerowanie następujących danych wyjściowych:
 
 ```output
 Directory: C:\Scripts\HelloWorld
@@ -82,15 +94,15 @@ Mode                LastWriteTime         Length Name
 
 ## <a name="apply-the-configuration"></a>Zastosuj konfigurację
 
-Teraz, gdy masz skompilowany plik MOF, konfigurację można zastosować do węzła docelowego (w tym przypadku komputer lokalny) przez wywołanie metody [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) polecenia cmdlet.
+Teraz, gdy masz skompilowany plik MOF, możesz zastosować konfigurację do węzła docelowego (w tym przypadku komputera lokalnego) przez wywołanie polecenia cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) .
 
-`Start-DscConfiguration` Informuje polecenia cmdlet [lokalnego Configuration Manager (LCM)](../managing-nodes/metaConfig.md), aparatu DSC, aby zastosować konfigurację.
-LCM działa wywoływania zasoby DSC, aby zastosować konfigurację.
+Polecenie cmdlet informuje [lokalny Configuration Manager (LCM)](../managing-nodes/metaConfig.md), aparat DSC, aby zastosować konfigurację. `Start-DscConfiguration`
+LCM wykonuje działania wywołujące zasoby DSC, aby zastosować konfigurację.
 
-Użyj poniższego kodu do wykonania `Start-DSCConfiguration` polecenia cmdlet. Określ ścieżkę katalogu, do przechowywania Twojego "localhost.mof" Aby `-Path` parametru. `Start-DSCConfiguration` Polecenia cmdlet wygląda za pośrednictwem katalogu określonym dla dowolnego "\<computername\>MOF" pliki. `Start-DSCConfiguration` Polecenie cmdlet podejmie próbę dotyczą każdego pliku "MOF" znajdzie computername określony przez nazwę pliku ("localhost", "Serwer01", "dc-02" itp.).
+Użyj poniższego kodu, aby uruchomić `Start-DSCConfiguration` polecenie cmdlet. Określ ścieżkę katalogu, w której plik "localhost. MOF" jest przechowywany w `-Path` parametrze. Polecenie cmdlet przeszuka katalog określony dla plików "\<ComputerName\>. MOF". `Start-DSCConfiguration` `Start-DSCConfiguration` Polecenie cmdlet próbuje zastosować każdy plik "MOF", który znajduje się na hoście określonym przez nazwę pliku ("localhost", "Serwer01", "DC-02" itp.).
 
 > [!NOTE]
-> Jeśli `-Wait` parametr nie jest określony, `Start-DSCConfiguration` tworzy zadania w tle do wykonania tej operacji. Określanie `-Verbose` parametr umożliwia Obejrzyj **pełne** wynik operacji. `-Wait`, a `-Verbose` są oba parametry opcjonalne.
+> Jeśli parametr nie jest określony, program `Start-DSCConfiguration` tworzy zadanie w tle w celu wykonania operacji. `-Wait` Określenie **parametru** pozwala obejrzeć pełne dane wyjściowe operacji. `-Verbose` `-Wait`i `-Verbose` są parametrami opcjonalnymi.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -98,11 +110,11 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## <a name="test-the-configuration"></a>Testowanie konfiguracji
 
-Raz `Start-DSCConfiguration` polecenie cmdlet zostało zakończone, powinien zostać wyświetlony plik "HelloWorld.txt" w określonej lokalizacji. Można sprawdzić zawartość z [pobrania zawartości](/powershell/module/microsoft.powershell.management/get-content) polecenia cmdlet.
+Po zakończeniu `Start-DSCConfiguration` tego polecenia cmdlet powinien zostać wyświetlony plik HelloWorld. txt w określonej lokalizacji. Zawartość można sprawdzić za pomocą polecenia cmdlet [Get-Content](/powershell/module/microsoft.powershell.management/get-content) .
 
-Możesz również *test* bieżący stan za pomocą [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
+Możesz również *przetestować* bieżący stan za pomocą polecenia [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
 
-Dane wyjściowe powinny być "True", jeśli węzeł jest aktualnie zgodny ze stosowanych konfiguracji.
+Dane wyjściowe powinny mieć wartość "true", jeśli węzeł jest aktualnie zgodny z zastosowaną konfiguracją.
 
 ```powershell
 Test-DSCConfiguration
@@ -122,7 +134,7 @@ Hello World from DSC!
 
 ## <a name="re-applying-the-configuration"></a>Ponowne zastosowanie konfiguracji
 
-Aby sprawdzić konfigurację, ponownie zastosowane, można usunąć pliku tekstowego, utworzone przez konfigurację. Użycie `Start-DSCConfiguration` polecenia cmdlet z `-UseExisting` parametru. `-UseExisting` Powoduje, że parametr `Start-DSCConfiguration` Ponowne zgłoszenie chęci pliku "current.mof", która reprezentuje ostatnio pomyślnie zastosować konfigurację.
+Aby zobaczyć, że konfiguracja zostanie zastosowana ponownie, można usunąć plik tekstowy utworzony przez konfigurację. Użyj `Start-DSCConfiguration` polecenia cmdlet `-UseExisting` z parametrem. `-UseExisting` Parametr instruujeponowniezastosowaćplik"Current.MOF",któryreprezentuje`Start-DSCConfiguration` ostatnio zastosowaną konfigurację.
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt
@@ -130,6 +142,6 @@ Remove-Item -Path C:\Temp\HelloWorld.txt
 
 ## <a name="next-steps"></a>Następne kroki
 
-- Dowiedz się więcej na temat konfiguracji DSC w [konfiguracje DSC](configurations.md).
-- Zobacz, jakie zasoby DSC są dostępne i jak tworzyć niestandardowe zasoby DSC w [zasoby DSC](../resources/resources.md).
-- Konfiguracje DSC i zasoby w [galerii programu PowerShell](https://www.powershellgallery.com/).
+- Dowiedz się więcej na temat konfiguracji DSC w [konfiguracjach DSC](configurations.md).
+- Zobacz, jakie zasoby DSC są dostępne i jak tworzyć niestandardowe zasoby DSC w [zasobach DSC](../resources/resources.md).
+- Znajdź konfiguracje i zasoby DSC w [Galeria programu PowerShell](https://www.powershellgallery.com/).
