@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguracja, ustawienia
-title: DSC dla systemu Linux nxScript zasobów
-ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+keywords: DSC, PowerShell, konfiguracja, instalacja
+title: Zasób DSC dla nxScript systemu Linux
+ms.openlocfilehash: 0ad0530f1de7b86ff48c4eb1f79870f6682894a1
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077827"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372163"
 ---
-# <a name="dsc-for-linux-nxscript-resource"></a>DSC dla systemu Linux nxScript zasobów
+# <a name="dsc-for-linux-nxscript-resource"></a>Zasób DSC dla nxScript systemu Linux
 
-**NxScript** zasobów w programie PowerShell Desired State Configuration (DSC) udostępnia mechanizm do uruchamiania skryptów systemu Linux w węźle systemu Linux.
+Zasób **nxScript** w konfiguracji żądanego stanu (DSC) programu PowerShell zapewnia mechanizm uruchamiania skryptów systemu Linux w węźle z systemem Linux.
 
 ## <a name="syntax"></a>Składnia
 
@@ -32,16 +32,16 @@ nxScript <string> #ResourceName
 
 |  Właściwość |  Opis |
 |---|---|
-| GetScript| Zawiera skrypt, który jest uruchamiany, gdy wywołujesz [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) polecenia cmdlet. Skrypt musi zaczynać się od shebang, takich jak #! / bin/powłoki bash.|
-| SetScript| Zawiera skrypt. Gdy wywołujesz [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) polecenia cmdlet, **TestScript** działa jako pierwszy. Jeśli **TestScript** bloku zwraca kod zakończenia różny od 0, **SetScript** blok zostanie uruchomiony. Jeśli **TestScript** zwraca kod zakończenia 0, **SetScript** nie będzie działać. Skrypt musi zaczynać się od shebang, takich jak `#!/bin/bash`.|
-| TestScript| Zawiera skrypt. Gdy wywołujesz [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) polecenia cmdlet, ten skrypt jest uruchamiany. Jeśli zwróci ona kod zakończenia różny od 0, SetScript zostanie uruchomiony. Jeśli zwróci ona kod zakończenia 0, **SetScript** nie będzie działać. **TestScript** również jest uruchamiany, gdy wywołujesz [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) polecenia cmdlet. Jednak w tym przypadku **SetScript** nie będzie działać niezależnie od tego, jaki kod zakończenia jest zwracana z **TestScript**. **TestScript** musi zwracać kod zakończenia 0, jeśli rzeczywistą konfigurację odpowiada bieżącej konfiguracji żądanego stanu, a wyjście kodu inne niż 0, jeśli nie jest zgodny. (Ostatnia konfiguracja wdrożonymi na węzeł, który używa DSC jest bieżąca konfiguracja żądanego stanu). Skrypt musi zaczynać się od shebang, na przykład 1#!/bin/bash.1|
-| Użytkownik| Użytkownik do uruchomienia skryptu jako.|
-| Grupa| Grupa, aby uruchomić skrypt jako.|
-| dependsOn | Wskazuje, że konfiguracji inny zasób, należy uruchomić przed ten zasób jest skonfigurowany. Na przykład jeśli **identyfikator** zasobu jest najpierw blok skryptu konfiguracji, który chcesz uruchomić **ResourceName** a jej typ jest **ResourceType**, składnia za pomocą tego Właściwość jest `DependsOn = "[ResourceType]ResourceName"`.|
+| GetScript| Zapewnia skrypt do zwrócenia bieżącego stanu maszyny.  Ten skrypt jest uruchamiany po wywołaniu skryptu [GetDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) . Skrypt musi rozpoczynać się od Shebang, na przykład #!/bin/bash.|
+| Setscript| Zapewnia skrypt, który umieszcza maszynę w poprawnym stanie. Po wywołaniu skryptu [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) , **TestScript** działa najpierw. Jeśli blok **TestScript** zwraca kod zakończenia inny niż 0, zostanie uruchomiony blok **setscript** . Jeśli **TestScript** zwraca kod zakończenia 0, setscript nie zostanie  uruchomiony. Skrypt musi rozpoczynać się od Shebang, `#!/bin/bash`na przykład.|
+| TestScript| Zawiera skrypt, który sprawdza, czy węzeł jest aktualnie w odpowiednim stanie. Po wywołaniu skryptu [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) ten skrypt jest uruchamiany. Jeśli zwraca kod zakończenia inny niż 0, zostanie uruchomiony setscript. Jeśli zwraca kod zakończenia 0, setscript nie zostanie  uruchomiony. **TestScript** jest również uruchamiany po wywołaniu skryptu [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) . Jednak w tym przypadku setscript nie  zostanie uruchomiony, niezależnie od tego, jaki kod zakończenia jest zwracany z **TestScript**. **TestScript** musi zawierać zawartość i musi zwracać kod zakończenia 0, jeśli rzeczywista konfiguracja jest zgodna z bieżącą konfiguracją żądanego stanu, a kod zakończenia inny niż 0, jeśli jest niezgodny. (Bieżąca Konfiguracja żądanego stanu to Ostatnia konfiguracja wdrożona w węźle, który korzysta z DSC). Skrypt musi rozpoczynać się od elementu Shebang, takiego jak 1 #!/bin/bash.1|
+| Użytkownik| Użytkownik uruchamiający skrypt jako.|
+| Grupa| Grupa, w której ma zostać uruchomiony skrypt.|
+| DependsOn | Wskazuje, że konfiguracja innego zasobu musi być uruchomiona przed skonfigurowaniem tego zasobu. Na przykład, jeśli **Identyfikator** bloku skryptu konfiguracji zasobu, który ma zostać uruchomiony jako pierwszy jest resourceName, a jego typ to ResourceType, Składnia służąca do użycia tej `DependsOn = "[ResourceType]ResourceName"`właściwości to.|
 
 ## <a name="example"></a>Przykład
 
-W poniższym przykładzie pokazano użycie **nxScript** zasobów do wykonania dodatkowych funkcji zarządzania konfiguracją.
+Poniższy przykład demonstruje użycie zasobu **nxScript** do wykonania dodatkowego zarządzania konfiguracją.
 
 ```
 Import-DSCResource -Module nx
