@@ -6,13 +6,12 @@ ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
 ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68372198"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Instalowanie programu PowerShell Core w systemie Linux
 
-Obsługuje [Ubuntu 16,04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9],
- [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][RHEL7], [openSUSE 42,3][opensuse], [openSUSE przestępny 15][opensuse] , [Fedora 27][fedora], [Fedora 28][Fedora]i [Arch Linux][arch].
+Obsługuje [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE przestępny 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], i [Arch Linux][arch].
 
 W przypadku dystrybucji systemu Linux, które nie są oficjalnie obsługiwane, można spróbować zainstalować program PowerShell przy użyciu [pakietu przyciągania programu PowerShell][snap]. Możesz również spróbować wdrożyć pliki binarne programu PowerShell bezpośrednio przy użyciu [ `tar.gz` archiwum][tar]systemu Linux, ale konieczne jest skonfigurowanie wymaganych zależności w oparciu o system operacyjny w osobnych krokach.
 
