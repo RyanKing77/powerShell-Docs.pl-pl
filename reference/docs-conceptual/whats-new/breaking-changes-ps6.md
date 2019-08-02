@@ -1,49 +1,49 @@
 ---
 ms.date: 05/17/2018
-keywords: Program PowerShell, core
-title: Istotne zmiany dotyczące programu PowerShell w wersji 6.0
+keywords: program PowerShell, rdzeń
+title: Istotne zmiany w programie PowerShell 6,0
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843938"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>Istotne zmiany dotyczące programu PowerShell w wersji 6.0
+# <a name="breaking-changes-for-powershell-60"></a>Istotne zmiany w programie PowerShell 6,0
 
-## <a name="features-no-longer-available-in-powershell-core"></a>Funkcje nie będą już dostępne w programie PowerShell Core
+## <a name="features-no-longer-available-in-powershell-core"></a>Funkcje, które nie są już dostępne w programie PowerShell Core
 
 ### <a name="powershell-workflow"></a>Przepływ pracy programu PowerShell
 
-[Przepływ pracy programu PowerShell][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] umożliwiającej tworzenie niezawodnych elementów runbook dla zadań długotrwałych lub równoległego.
+[Przepływ pracy programu PowerShell][workflow] to funkcja środowiska Windows PowerShell, która kompiluje się na podstawie [Windows Workflow Foundation (WF)][workflow-foundation] , która umożliwia tworzenie niezawodnych elementów Runbook na potrzeby długotrwałych lub równoległych zadań.
 
-Ze względu na brak obsługi Windows Workflow Foundation w programie .NET Core firma Microsoft nie będzie obsługiwać przepływu pracy programu PowerShell w programie PowerShell Core.
+Ze względu na brak wsparcia dla Windows Workflow Foundation w oprogramowaniu .NET Core nie będzie on obsługiwał przepływu pracy programu PowerShell w programie PowerShell Core.
 
-W przyszłości prosimy o poświęcenie włączyć równoległość/współbieżności natywne w języku programu PowerShell, bez konieczności stosowania przepływu pracy programu PowerShell.
+W przyszłości chcemy włączyć natywną równoległość/współbieżność w języku programu PowerShell bez potrzeby przepływu pracy programu PowerShell.
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
-### <a name="custom-snap-ins"></a>Niestandardowe przystawek
+### <a name="custom-snap-ins"></a>Przystawki niestandardowe
 
-[Przystawki programu PowerShell][snapin] są poprzednika modułów programu PowerShell, które nie mają je w społeczności programu PowerShell.
+[Przystawki programu PowerShell][snapin] są poprzednikami modułów programu PowerShell, które nie mają powszechnego wdrożenia w społeczności programu PowerShell.
 
-Ze względu na złożoność obsługi przystawki i ich braku użycie w społeczności nie jest już obsługiwana w programie PowerShell Core niestandardowe przystawek.
+Ze względu na złożoność obsługi przystawek i ich braku użycia w społeczności, nie obsługujemy już niestandardowych przystawek w programie PowerShell Core.
 
-Już dziś, spowoduje to podzielenie `ActiveDirectory` i `DnsClient` moduły Windows i systemu Windows Server.
+Obecnie spowoduje to przerwanie `ActiveDirectory` modułów `DnsClient` i w systemach Windows i Windows Server.
 
 [snapin]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins
 
 ### <a name="wmi-v1-cmdlets"></a>Polecenia cmdlet usługi WMI w wersji 1
 
-Ze względu na złożoność obsługi dwóch zestawów modułów usługi WMI firma Microsoft usunęła poleceń cmdlet w wersji 1 usługi WMI z programu PowerShell Core:
+Ze względu na złożoność obsługi dwóch zestawów modułów opartych na usłudze WMI, usunięto polecenia cmdlet usługi WMI w wersji 1 z programu PowerShell Core:
 
 - `Get-WmiObject`
 - `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
 
-Zamiast tego zaleca się, że użytkownik, użyj polecenia cmdlet CIM (zwane również WMI w wersji 2), które zawierają te same funkcje za pomocą nowych funkcji i przeprojektowana składni:
+Zamiast tego zaleca się użycie poleceń cmdlet modelu CIM (aliasu WMI v2), które zapewniają taką samą funkcjonalność, jak nowe funkcje i przeprojektowaną składnię:
 
 - `Get-CimAssociatedInstance`
 - `Get-CimClass`
@@ -58,194 +58,194 @@ Zamiast tego zaleca się, że użytkownik, użyj polecenia cmdlet CIM (zwane ró
 - `Remove-CimSession`
 - `Set-CimInstance`
 
-### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
+### <a name="microsoftpowershelllocalaccounts"></a>Microsoft. PowerShell. LocalAccounts
 
-Ze względu na użycie nieobsługiwanego interfejsów API `Microsoft.PowerShell.LocalAccounts` została usunięta z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
+Ze względu na użycie nieobsługiwanych `Microsoft.PowerShell.LocalAccounts` interfejsów API, został usunięty z programu PowerShell Core do momentu znalezienia lepszego rozwiązania.
 
-### <a name="-computer-cmdlets"></a>`*-Computer` Polecenia cmdlet
+### <a name="-computer-cmdlets"></a>`*-Computer`poleceń cmdlet
 
-Ze względu na użycie nieobsługiwanego interfejsy API zostały usunięte następujące polecenia cmdlet z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
+Ze względu na użycie nieobsługiwanych interfejsów API następujące polecenia cmdlet zostały usunięte z programu PowerShell Core do momentu znalezienia lepszego rozwiązania.
 
 - Add-Computer
 - Checkpoint-Computer
 - Remove-Computer
-- Przywracanie komputera
+- Przywracanie — komputer
 
-### <a name="-counter-cmdlets"></a>`*-Counter` Polecenia cmdlet
+### <a name="-counter-cmdlets"></a>`*-Counter`poleceń cmdlet
 
-Ze względu na użycie nieobsługiwanego interfejsów API `*-Counter` została usunięta z programu PowerShell Core aż do znalezienia lepszym rozwiązaniem.
+Ze względu na użycie nieobsługiwanych interfejsów `*-Counter` API program został usunięty z programu PowerShell Core do momentu znalezienia lepszego rozwiązania.
 
-### <a name="-eventlog-cmdlets"></a>`*-EventLog` Polecenia cmdlet
+### <a name="-eventlog-cmdlets"></a>`*-EventLog`poleceń cmdlet
 
-Ze względu na użycie nieobsługiwanego interfejsów API `*-EventLog` została usunięta z programu PowerShell Core. aż do znalezienia lepszym rozwiązaniem. `Get-WinEvent` i `Create-WinEvent` są dostępne na pobieranie i tworzenie zdarzeń na Windows.
+Ze względu na użycie nieobsługiwanych interfejsów `*-EventLog` API program został usunięty z programu PowerShell Core. do momentu znalezienia lepszego rozwiązania. `Get-WinEvent`i `Create-WinEvent` są dostępne do pobierania i tworzenia zdarzeń w systemie Windows.
 
-## <a name="enginelanguage-changes"></a>Aparat/języka ustawionego zmiany
+## <a name="enginelanguage-changes"></a>Zmiany silnika/języka
 
-### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Zmień nazwę `powershell.exe` do `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Zmień `powershell.exe` nazwę `pwsh.exe` na [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
 
-Aby udostępnić użytkownikom w sposób deterministyczny może wywołać program PowerShell Core Windows (w przeciwieństwie do programu Windows PowerShell), plik binarny programu PowerShell Core została zmieniona na `pwsh.exe` na Windows i `pwsh` na platformach innych niż Windows.
+Aby zapewnić użytkownikom jednoznaczny sposób wywoływania programu PowerShell Core w systemie Windows (w przeciwieństwie do programu Windows PowerShell), plik binarny programu PowerShell został zmieniony `pwsh.exe` na system Windows i `pwsh` na platformach innych niż Windows.
 
-Skrócona nazwa jest również zgodne z nazewnictwem powłoki na platformach innych niż Windows.
+Skrócona nazwa jest również spójna z nazewnictwem powłok na platformach innych niż Windows.
 
-### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>Nie wstawiaj podziały wierszy w danych wyjściowych (z wyjątkiem tabele) [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
+### <a name="dont-insert-line-breaks-to-output-except-for-tables-5193httpsgithubcompowershellpowershellissues5193"></a>Nie wstawiaj podziałów wierszy do danych wyjściowych (z wyjątkiem tabel) [#5193](https://github.com/PowerShell/PowerShell/issues/5193)
 
-Wcześniej dane wyjściowe był wyrównany do szerokość konsoli i podziały wierszy zostały dodane w szerokość końcowa konsoli, co oznacza, że dane wyjściowe nie uzyskać ponownie sformatowany zgodnie z oczekiwaniami, jeśli terminalu został zmieniony. Ta zmiana nie została zastosowana do tabel, podziały wiersza jest potrzebnych do zachowania kolumny wyrównane.
+Wcześniej dane wyjściowe były wyrównane do szerokości konsoli, a podziały wierszy zostały dodane na szerokości końcowej konsoli, co oznacza, że dane wyjściowe nie zostały sformatowane zgodnie z oczekiwaniami, jeśli rozmiar terminalu został zmieniony. Ta zmiana nie została zastosowana do tabel, ponieważ podziały wierszy są niezbędne, aby zachować wyrównanie kolumn.
 
-### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>Pomiń sprawdzanie elementu o wartości null w przypadku kolekcji z wartości typu elementu [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
+### <a name="skip-null-element-check-for-collections-with-a-value-type-element-type-5432httpsgithubcompowershellpowershellissues5432"></a>Pomiń sprawdzanie elementu o wartości null dla kolekcji z typem elementu typu wartości [#5432](https://github.com/PowerShell/PowerShell/issues/5432)
 
-Dla `Mandatory` parametru i `ValidateNotNull` i `ValidateNotNullOrEmpty` atrybutów, Pomiń sprawdzanie elementu o wartości null, jeśli typ elementu kolekcji jest typem wartości.
+Dla parametru i `ValidateNotNull` i`ValidateNotNullOrEmpty` atrybutów Pomiń sprawdzanie elementu null, jeśli typ elementu kolekcji to typ wartości. `Mandatory`
 
-### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>Zmiana `$OutputEncoding` używać `UTF-8 NoBOM` kodowanie zamiast ASCII [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
+### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369httpsgithubcompowershellpowershellissues5369"></a>Zmień `$OutputEncoding` , aby `UTF-8 NoBOM` użyć kodowania zamiast [#5369](https://github.com/PowerShell/PowerShell/issues/5369) ASCII
 
-Poprzednie kodowanie ASCII (7-bitowym) mogłoby spowodować niepoprawne zmiany w danych wyjściowych w niektórych przypadkach. Ta zmiana jest zapewnienie `UTF-8 NoBOM` domyślna, która zachowuje dane wyjściowe Unicode z kodowaniem obsługiwane przez większość narzędzi i systemów operacyjnych.
+Poprzednie kodowanie, ASCII (7-bitowy), spowoduje niepoprawne zmiany w danych wyjściowych w niektórych przypadkach. Ta zmiana ma na celu `UTF-8 NoBOM` ustawienie domyślne, które zachowuje dane wyjściowe Unicode z kodowaniem obsługiwanym przez większość narzędzi i systemów operacyjnych.
 
-### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>Usuń `AllScope` z większości domyślne aliasy [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
+### <a name="remove-allscope-from-most-default-aliases-5268httpsgithubcompowershellpowershellissues5268"></a>Usuń `AllScope` z większości domyślnych aliasów [#5268](https://github.com/PowerShell/PowerShell/issues/5268)
 
-Aby przyspieszyć tworzenie zakresu `AllScope` został usunięty z większości domyślne aliasy. `AllScope` pozostawało przez kilka często używanych aliasy tam, gdzie wyszukiwania nie szybciej.
+Aby przyspieszyć tworzenie zakresu, `AllScope` został usunięty z większości domyślnych aliasów. `AllScope`pozostawiono dla kilku często używanych aliasów, w których wyszukiwanie było szybsze.
 
-### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose` i `-Debug` nie jest już zastępuje `$ErrorActionPreference` [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
+### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113httpsgithubcompowershellpowershellissues5113"></a>`-Verbose`i `-Debug` nie zastępują `$ErrorActionPreference` już [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
 
-Wcześniej Jeśli `-Verbose` lub `-Debug` zostały określone jego overrode zachowanie `$ErrorActionPreference`. Dzięki tej zmianie `-Verbose` i `-Debug` nie będzie mieć wpływ na zachowanie `$ErrorActionPreference`.
+Wcześniej, jeśli `-Verbose` lub `-Debug` zostały określone, overrode zachowanie `$ErrorActionPreference`. Ta zmiana `-Verbose` `-Debug` nie wpływa już na zachowanie programu `$ErrorActionPreference`.
 
 ## <a name="cmdlet-changes"></a>Zmiany poleceń cmdlet
 
-### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Wywołania RestMethod nie zwraca przydatnych informacji, gdy są zwracane żadne dane. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
+### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320httpsgithubcompowershellpowershellissues5320"></a>Wywołanie metody Invoke-RestMethod nie zwraca użytecznych informacji, gdy nie są zwracane żadne dane. [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
 
-Gdy interfejs API zwraca tylko `null`, Invoke RestMethod została to serializowania w postaci ciągu `"null"` zamiast `$null`. Ta zmiana rozwiązuje logikę `Invoke-RestMethod` prawidłowo serializować prawidłowej wartości pojedynczej JSON `null` literału jako `$null`.
+Gdy interfejs API zwraca tylko `null`, wywołanie metody Invoke-RestMethod było serializowane jako ciąg `"null"` zamiast `$null`. Ta zmiana naprawia logikę w `Invoke-RestMethod` programie, aby prawidłowo serializować prawidłowy literał JSON `null` o pojedynczej wartości jako `$null`.
 
-### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Usuń `-Protocol` z `*-Computer` poleceń cmdlet [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Usuń `-Protocol` z`*-Computer` poleceń cmdlet [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-Z powodu problemów z wywołaniem funkcji zdalnych RPC, CoreFX (szczególnie na platformach innych niż Windows) i zapewnienie środowisku spójne komunikacji zdalnej w programie PowerShell `-Protocol` parametr został usunięty z `\*-Computer` polecenia cmdlet. Model DCOM nie jest już obsługiwana dla niego komunikację zdalną. Następujące polecenia cmdlet obsługują tylko komunikacji zdalnej usługi WS-MANAGEMENT:
+Ze względu na problemy z usługami zdalnymi RPC w programie CoreFX (zwłaszcza na platformach innych niż Windows) i zapewnianie spójnego środowiska komunikacji `-Protocol` zdalnej w programie PowerShell, `\*-Computer` parametr został usunięty z poleceń cmdlet. Model DCOM nie jest już obsługiwany w przypadku komunikacji zdalnej. Następujące polecenia cmdlet obsługują tylko obsługę zdalną usługi WSMAN:
 
-- Rename-Computer
+- Zmień nazwę komputera
 - Polecenie Restart-Computer
-- Stop-Computer
+- Zatrzymaj komputer
 
-### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Usuń `-ComputerName` z `*-Service` poleceń cmdlet [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Usuń `-ComputerName` z`*-Service` poleceń cmdlet [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
-Aby zachęcać do spójnego stosowania PSRP, `-ComputerName` parametr został usunięty z `*-Service` polecenia cmdlet.
+Aby zapewnić spójne użycie PSRP, `-ComputerName` parametr został usunięty z `*-Service` poleceń cmdlet.
 
-### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Napraw `Get-Item -LiteralPath a*b` Jeśli `a*b` faktycznie nie istnieje na zwrócenie błędu [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
+### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197httpsgithubcompowershellpowershellissues5197"></a>Popraw `Get-Item -LiteralPath a*b` , `a*b` Jeśli w rzeczywistości nie istnieje, aby zwracać błąd [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
 
-Wcześniej `-LiteralPath` podany symbol wieloznaczny będzie jej traktowała taka sama jako `-Path` i jeśli symbol wieloznaczny znalezione żadne pliki, dyskretnie będzie zamknąć. Poprawne zachowanie powinien odpowiadać `-LiteralPath` jest literałem, więc jeśli plik nie istnieje, powinien on błędu. Zmiana jest używany z symbolami wieloznacznymi `-Literal` jako literał.
+Wcześniej, `-LiteralPath` pod warunkiem, że symbol wieloznaczny `-Path` będzie traktowany tak samo jak i, jeśli symbol wieloznaczny nie znalazł żadnych plików, zostanie on dyskretnie zakończony. Poprawne zachowanie powinno być literałem, dlatego jeśli plik nie istnieje, powinien wystąpić `-LiteralPath` błąd. Zmiana ma na celu traktowanie symboli wieloznacznych używanych z `-Literal` jako literału.
 
-### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv` należy zastosować `PSTypeNames` po zaimportowaniu, gdy informacje o typie jest obecna w woluminie CSV [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
+### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134httpsgithubcompowershellpowershellissues5134"></a>`Import-Csv`należy stosować `PSTypeNames` podczas importowania, gdy informacje o typie znajdują się w [#5134](https://github.com/PowerShell/PowerShell/issues/5134) CSV
 
-Wcześniej, obiekty wyeksportowane przy użyciu `Export-CSV` z `TypeInformation` zaimportowane wraz z `ConvertFrom-Csv` nie zostały zachowywanie informacji o typie. Ta zmiana dodaje informacje o typie, aby `PSTypeNames` członka, jeśli jest dostępny z pliku CSV.
+Wcześniej obiekty eksportowane przy użyciu `Export-CSV` programu `TypeInformation` z zaimportowanym programem `ConvertFrom-Csv` nie zachowały informacji o typie. Ta zmiana powoduje dodanie informacji o typie `PSTypeNames` do elementu członkowskiego, jeśli jest on dostępny z pliku CSV.
 
-### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation` powinna być wartością domyślną na `Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
+### <a name="-notypeinformation-should-be-default-on-export-csv-5131httpsgithubcompowershellpowershellissues5131"></a>`-NoTypeInformation`powinien być wartością domyślną `Export-Csv` na [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
 
-Ta zmiana została wprowadzona, aby zareagować na opinie klientów na domyślne zachowanie `Export-CSV` obejmujący informacje o typie.
+Ta zmiana została wprowadzona w celu uwzględnienia opinii klientów na temat domyślnego `Export-CSV` zachowania programu w celu dołączenia informacji o typie.
 
-Wcześniej polecenia cmdlet będą dane wyjściowe komentarz jako pierwszy wiersz zawierający nazwę typu obiektu. Zmiana jest aby pominąć to domyślnie, ponieważ nie jest rozpoznawany przez większość narzędzi. Użyj `-IncludeTypeInformation` zachować poprzednie zachowanie.
+Wcześniej polecenie cmdlet przeprowadził komentarz jako pierwszy wiersz zawierający nazwę typu obiektu. Zmiana polega na tym, że to ustawienie jest domyślnie pomijane, ponieważ nie jest zrozumiałe dla większości narzędzi. Użyj `-IncludeTypeInformation` , aby zachować poprzednie zachowanie.
 
-### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>Polecenia cmdlet programu Web ostrzega, gdy `-Credential` są przesyłane za pośrednictwem połączenia nieszyfrowanego [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
+### <a name="web-cmdlets-should-warn-when--credential-is-sent-over-unencrypted-connections-5112httpsgithubcompowershellpowershellissues5112"></a>Polecenia cmdlet sieci Web powinny ostrzegać, gdy `-Credential` są wysyłane za pośrednictwem nieszyfrowanych połączeń [#5112](https://github.com/PowerShell/PowerShell/issues/5112)
 
-Podczas korzystania z protokołu HTTP zawartości w tym hasła są wysyłane jako zwykłego tekstu. Ta zmiana ma na celu nie zezwalają na to domyślnie i zwraca błędu, jeśli poświadczenia są są przekazywane w niezabezpieczony sposób. Użytkownicy mogą obejść to za pomocą `-AllowUnencryptedAuthentication` przełącznika.
+W przypadku korzystania z protokołu HTTP zawartość zawierająca hasła jest wysyłana jako zwykły tekst. Ta zmiana nie jest domyślnie dozwolona i zwraca błąd, jeśli poświadczenia są przesyłane w niezabezpieczony sposób. Użytkownicy mogą ominąć ten stan przy użyciu `-AllowUnencryptedAuthentication` przełącznika.
 
 ## <a name="api-changes"></a>Zmiany interfejsu API
 
-### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Usuń `AddTypeCommandBase` klasy [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
+### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Usuń `AddTypeCommandBase` [#5407](https://github.com/PowerShell/PowerShell/issues/5407) klasy
 
-`AddTypeCommandBase` Klasy został usunięty z `Add-Type` poprawić wydajność. Ta klasa jest używana tylko przez polecenie cmdlet Add-Type i nie powinny mieć wpływu na użytkowników.
+Klasa została usunięta z `Add-Type` w celu zwiększenia wydajności. `AddTypeCommandBase` Ta klasa jest używana tylko przez polecenie cmdlet Add-Type i nie powinna mieć wpływu na użytkowników.
 
-### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Ujednolicenie poleceń cmdlet z parametrem `-Encoding` typu `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
+### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080httpsgithubcompowershellpowershellissues5080"></a>Ujednolicenie poleceń cmdlet z `-Encoding` parametrem do typu `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
-`-Encoding` Wartość `Byte` został usunięty z polecenia cmdlet dostawcy systemu plików. Nowy parametr `-AsByteStream`, obecnie jest używany do określenia, czy strumień bajtów są wymagane jako dane wejściowe lub danych wyjściowych jest strumień bajtów.
+`-Encoding` Wartość`Byte` została usunięta z poleceń cmdlet dostawcy systemu plików. Nowy parametr `-AsByteStream`,,, jest teraz używany do określania, że strumień bajtów jest wymagany jako dane wejściowe lub że dane wyjściowe to strumień bajtów.
 
-### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Dodaj lepsze komunikat o błędzie dla pusta i null `-UFormat` parametru [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
+### <a name="add-better-error-message-for-empty-and-null--uformat-parameter-5055httpsgithubcompowershellpowershellissues5055"></a>Dodaj lepszy komunikat o błędzie dla pustego `-UFormat` i pustego parametru [#5055](https://github.com/PowerShell/PowerShell/issues/5055)
 
-Wcześniej, gdy przekazywanie formie pusty ciąg, który ma `-UFormat`, zostanie wyświetlony komunikat o błędzie zbędny. Dodano bardziej opisowe błędu.
+Wcześniej podczas przekazywania pustego ciągu formatu do `-UFormat`, pojawi się komunikat o błędzie niepomocowy. Dodano więcej opisowego błędu.
 
-### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>Czyszczenie kodu konsoli [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
+### <a name="clean-up-console-code-4995httpsgithubcompowershellpowershellissues4995"></a>Wyczyść kod konsoli [#4995](https://github.com/PowerShell/PowerShell/issues/4995)
 
-Następujące funkcje zostały usunięte, ponieważ nie są obsługiwane w programie PowerShell Core i nie ma żadnych planów, aby dodać obsługę istniejących dla starszych powodów, dla środowiska Windows PowerShell: `-psconsolefile` przełącznika i kod, `-importsystemmodules` przełącznika kodu oraz czcionki, zmiany kodu.
+Następujące funkcje zostały usunięte, ponieważ nie są obsługiwane w programie PowerShell Core i nie ma żadnych planów do dodania obsługi, ponieważ istnieją one ze względu na starsze przyczyny dla `-psconsolefile` środowiska Windows PowerShell: `-importsystemmodules` przełącznik i kod, przełącznik i kod oraz zmiana czcionki kodu.
 
-### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Usunięte `RunspaceConfiguration` obsługuje [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
+### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>`RunspaceConfiguration` Usunięto [#4942](https://github.com/PowerShell/PowerShell/issues/4942) pomocy technicznej
 
-Wcześniej podczas tworzenia działania programu PowerShell programowo przy użyciu interfejsu API można użyć starszego [ `RunspaceConfiguration` ][runspaceconfig] or the newer [`InitialSessionState`][iss]. Ta zmiana usunięto obsługę dla `RunspaceConfiguration` i obsługuje tylko `InitialSessionState`.
+Wcześniej w przypadku tworzenia środowiska programu PowerShell programowo przy użyciu interfejsu API można użyć starszej [`RunspaceConfiguration`][runspaceconfig] wersji lub nowszej [`InitialSessionState`][iss]. Ta zmiana została usunięta `RunspaceConfiguration` i obsługuje `InitialSessionState`tylko program.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
 
-### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript` Powiąż argumenty `$input` zamiast `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
+### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923httpsgithubcompowershellpowershellissues4923"></a>`CommandInvocationIntrinsics.InvokeScript`Powiąż argumenty `$input` z `$args` zamiast [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
 
-Nieprawidłowe położenie parametr spowodowało argumenty przekazywane jako dane wejściowe, a nie jako argumenty.
+Niepoprawna pozycja parametru spowodowała, że argumenty przechodzą jako dane wejściowe zamiast argumentów AS.
 
-### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Usuń nieobsługiwane `-showwindow` przełączyć się z `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
+### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Usuń nieobsługiwany `-showwindow` przełącznik `Get-Help` z [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
 
-`-showwindow` opiera się na WPF, która nie jest obsługiwana w środowisku CoreCLR.
+`-showwindow`opiera się na platformie WPF, która nie jest obsługiwana w CoreCLR.
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>Zezwalaj na * do użycia w ścieżce rejestru dla `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>Zezwalaj * do użycia w ścieżce rejestru dla `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
 
-Wcześniej `-LiteralPath` podany symbol wieloznaczny będzie jej traktowała taka sama jako `-Path` i jeśli symbol wieloznaczny znalezione żadne pliki, dyskretnie będzie zamknąć. Poprawne zachowanie powinien odpowiadać `-LiteralPath` jest literałem, więc jeśli plik nie istnieje, powinien on błędu. Zmiana jest używany z symbolami wieloznacznymi `-Literal` jako literał.
+Wcześniej, `-LiteralPath` pod warunkiem, że symbol wieloznaczny `-Path` będzie traktowany tak samo jak i, jeśli symbol wieloznaczny nie znalazł żadnych plików, zostanie on dyskretnie zakończony. Poprawne zachowanie powinno być literałem, dlatego jeśli plik nie istnieje, powinien wystąpić `-LiteralPath` błąd. Zmiana ma na celu traktowanie symboli wieloznacznych używanych z `-Literal` jako literału.
 
-### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Napraw `Set-Service` kończy się niepowodzeniem testu [#4802](https://github.com/PowerShell/PowerShell/issues/4802)
+### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Naprawianie `Set-Service` nieudanych prób [#4802](https://github.com/PowerShell/PowerShell/issues/4802) testowych
 
-Wcześniej Jeśli `New-Service -StartupType foo` było używane, `foo` został zignorowany, a usługa została utworzona za pomocą niektórych domyślny typ uruchamiania. Ta zmiana jest jawnie sygnalizować błąd dla typu uruchamiania nieprawidłowy.
+Wcześniej, jeśli `New-Service -StartupType foo` został użyty, `foo` został zignorowany, a usługa została utworzona przy użyciu pewnego domyślnego typu uruchomienia. Ta zmiana ma na celu jawne zgłoszenie błędu dla nieprawidłowego typu uruchomienia.
 
-### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Zmień nazwę `$IsOSX` do `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
+### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Zmień `$IsOSX` nazwę `$IsMacOS` na [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
 
-Nazewnictwa w programie PowerShell powinny być zgodne z naszych nazewnictwa i jest zgodna z zastosowaniem firmy Apple z systemem macOS zamiast OSX. Jednak aby zwiększyć czytelność i spójne możemy przebywają z Pascal wielkość liter w wyrazie.
+Nazewnictwo w programie PowerShell powinno być zgodne z naszym nazewnictwem i być zgodne z użyciem firmy Apple macOS zamiast OSX. Jednak w celu zapewnienia czytelności i spójnego korzystania z wielkości liter w języku Pascalów.
 
-### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>Wprowadź komunikat o błędzie spójne gdy Nieprawidłowy skrypt jest przekazywany: plik, Lepsza błąd podczas przekazywania argumentu niejednoznaczne [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
+### <a name="make-error-message-consistent-when-invalid-script-is-passed-to--file-better-error-when-passed-ambiguous-argument-4573httpsgithubcompowershellpowershellissues4573"></a>Wykonaj spójny komunikat o błędzie podczas przekazywania nieprawidłowego skryptu do pliku, lepszy błąd podczas przekazywania niejednoznacznego argumentu [#4573](https://github.com/PowerShell/PowerShell/issues/4573)
 
-Zmień kody zakończenia z `pwsh.exe` aby było zgodne z konwencjami systemu Unix
+Zmień kody `pwsh.exe` zakończenia, aby dostosować je do Konwencji systemu UNIX
 
-### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>Usuwanie `LocalAccount` i polecenia cmdlet z `Diagnostics` modułów. [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
+### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302httpsgithubcompowershellpowershellissues4302-4303httpsgithubcompowershellpowershellissues4303"></a>Usuwanie poleceń cmdlet `Diagnostics`izmodułów `LocalAccount` . [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
 
-Z powodu nieobsługiwanego interfejsów API `LocalAccounts` modułu i `Counter` polecenia cmdlet w `Diagnostics` modułu zostały usunięte, aż do znalezienia lepszym rozwiązaniem.
+Ze względu na nieobsługiwane `LocalAccounts` interfejsy API moduł `Counter` i polecenia cmdlet w `Diagnostics` module zostały usunięte do momentu znalezienia lepszego rozwiązania.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Wykonywanie skryptu programu PowerShell z parametrem bool działa [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Wykonanie skryptu programu PowerShell z parametrem bool nie działa [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Wcześniej przy użyciu **powershell.exe** (teraz **pwsh.exe**) można wykonać skryptu środowiska PowerShell przy użyciu `-File` podany sposób przekazania `$true` / `$false` jako parametr wartości. Obsługa `$true` / `$false` został dodany jako przeanalizowaną wartości parametrów. Przełącznik wartości również są obsługiwane, ponieważ obecnie udokumentowanego składni nie działa.
+Wcześniej przy użyciu **programu PowerShell. exe** (teraz **pwsh. exe**) do wykonywania skryptu programu PowerShell `-File` przy użyciu podanego `$true` sposobu nie można przekazać / `$false` jako wartości parametrów. `$true` Dodanoobsługęjakoprzeanalizowanych`$false` wartości do parametrów. / Wartości switch są również obsługiwane, ponieważ aktualnie udokumentowana składnia nie działa.
 
-### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Usuń `ClrVersion` właściwość `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
+### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Usuń `ClrVersion` właściwość z `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
-`ClrVersion` Właściwość `$PSVersionTable` jest nie jest przydatne przy użyciu programów CoreCLR, użytkownicy końcowi nie powinny używać tej wartości można określić zgodność.
+`ClrVersion` WłaściwośćniejestprzydatnawCoreCLR,użytkownicykońcowiniepowinniużywaćtejwartości`$PSVersionTable` w celu określenia zgodności.
 
-### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Zmień parametr pozycyjne `powershell.exe` z `-Command` do `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
+### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Zmień parametr pozycyjny `powershell.exe` dla z `-Command` na [#4019](https://github.com/PowerShell/PowerShell/issues/4019) `-File`
 
-Włącz shebang użycie programu PowerShell na platformach innych niż Windows. Oznacza to, w systemach Unix, na podstawie ułatwia wykonywalny skrypt, który powodowałoby wywołanie pliku wykonywalnego programu PowerShell automatycznie zamiast jawne wywołanie `pwsh`. Oznacza to również, że teraz można wykonywać takie czynności, takich jak `powershell foo.ps1` lub `powershell fooScript` bez określania `-File`. Jednak ta zmiana wymaga teraz czy jawnie określasz `-c` lub `-Command` podczas próby wykonania elementów, takich jak `powershell.exe Get-Command`.
+Włącz Shebang użycie programu PowerShell na platformach innych niż Windows. Oznacza to, że w systemach opartych na systemie UNIX można utworzyć plik wykonywalny skryptu, który będzie automatycznie wywoływał program `pwsh`PowerShell, a nie jawnie wywoływanie. Oznacza to również, że można teraz `powershell foo.ps1` lub `powershell fooScript` bez określenia `-File`. Jednak ta zmiana wymaga, aby jawnie określić `-c` lub `-Command` Kiedy próbujesz wykonać takie `powershell.exe Get-Command`czynności.
 
-### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implementowanie analizy ucieczki Unicode [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
+### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implementuj [#3958](https://github.com/PowerShell/PowerShell/issues/3958) analizy ucieczki Unicode
 
-`` `u####`` lub `` `u{####}`` jest konwertowana do odpowiedniego znaku Unicode. W danych wyjściowych literału `` `u``, ucieczki początkowych: ``` ``u```.
+`` `u####``lub `` `u{####}`` jest konwertowany na odpowiedni znak Unicode. Aby wyprowadzić `` `u``literał, wyjdź z znacznika ucieczki:. ``` ``u```
 
-### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Zmiana `New-ModuleManifest` kodowanie `UTF8NoBOM` na platformach innych niż Windows [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
+### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Zmień `New-ModuleManifest` [](https://github.com/PowerShell/PowerShell/issues/3940) kodowanie na naplatformachinnychniż`UTF8NoBOM` Windows #3940
 
-Wcześniej `New-ModuleManifest` tworzy manifesty psd1 w UTF-16 z BOM, to problem dla narzędzi systemu Linux. Tej istotnej zmiany zmienia kodowanie `New-ModuleManifest` jako UTF (nie BOM) na platformach innych niż Windows.
+Wcześniej program `New-ModuleManifest` tworzy manifesty psd1 w formacie UTF-16 z BOM, tworząc problem dla narzędzi systemu Linux. Ta zmiana powodująca zmianę kodowania `New-ModuleManifest` na wartość UTF (bez BOM) na platformach innych niż Windows.
 
-### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>Zapobiegaj `Get-ChildItem` z recursing do łączy symbolicznych (#1875). [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
+### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>Zapobiegaj `Get-ChildItem` powtarzaniu w linków symbolicznych (#1875). [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
 
-Ta zmiana powoduje `Get-ChildItem` bardziej zgodne z systemem Unix `ls -r` i Windows `dir /s` natywnych poleceń. Podobnie jak już wspomniano polecenia polecenie cmdlet wyświetla linki symboliczne podczas rekursji katalogów, ale nie wracać do nich.
+Ta zmiana `Get-ChildItem` powoduje dalsze wprowadzenie do systemu UNIX `ls -r` i poleceń natywnych `dir /s` systemu Windows. Podobnie jak wspomniane polecenia, polecenie cmdlet wyświetla symboliczne linki do katalogów znalezionych podczas rekursji, ale nie odnosi się do nich.
 
-### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Napraw `Get-Content -Delimiter` wykluczającą ogranicznik w wierszy zwracanych [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
+### <a name="fix-get-content--delimiter-to-not-include-the-delimiter-in-the-returned-lines-3706httpsgithubcompowershellpowershellissues3706"></a>Napraw `Get-Content -Delimiter` , aby nie uwzględnić ogranicznika w zwróconych wierszach [#3706](https://github.com/PowerShell/PowerShell/issues/3706)
 
-Wcześniej, dane wyjściowe podczas korzystania z `Get-Content -Delimiter` niespójne i wygodne, ponieważ wymagane dalsze przetwarzanie danych do usunięcia ogranicznik. Ta zmiana spowoduje usunięcie ogranicznik wierszy zwracanych.
+Wcześniej dane wyjściowe podczas korzystania z `Get-Content -Delimiter` programu były niespójne i niewygodne, ponieważ wymagały dalszej obróbki danych w celu usunięcia ogranicznika. Ta zmiana powoduje usunięcie ogranicznika w zwracanych wierszach.
 
-### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>Implementowanie Hex Format, w C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
+### <a name="implement-format-hex-in-c-3320httpsgithubcompowershellpowershellissues3320"></a>Implementuj format-hex w C# [#3320](https://github.com/PowerShell/PowerShell/issues/3320)
 
-`-Raw` Parametru jest teraz "pusta" (w tym nic nie robi). Idąc dalej, zostaną wyświetlone wszystkie dane wyjściowe z rzeczywistej reprezentacji liczb, które obejmuje wszystkie bajtów dla jego typu (co `-Raw` parametru formalnego wykonywanych przed tą zmianą).
+`-Raw` Parametr jest teraz "No-op" (w tym przypadku nie robi nic). Przechodzenie do przodu wszystkie dane wyjściowe będą wyświetlane z rzeczywistą reprezentacją liczb, które obejmują wszystkie bajty dla tego typu (co `-Raw` jest formalnie wykonywane przed tą zmianą).
 
-### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>Program PowerShell jako domyślnej powłoki nie działa z polecenia skryptu [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
+### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>Program PowerShell jako powłoka domyślna nie działa z poleceniem skryptu [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
 
-W systemie Unix, jest Konwencji powłoki zaakceptować `-i` dla interakcyjnej powłoki oraz wielu narzędzi oczekiwało tego zachowania (`script` na przykład i ustawienie środowiska PowerShell jako domyślnej powłoki) i wywołuje shell przy użyciu `-i` przełącznika. Ta zmiana jest istotne, w tym `-i` wcześniej można było używać jako krótki ręcznie do dopasowania `-inputformat`, które jest teraz musi być `-in`.
+W systemie UNIX jest to Konwencja dla powłok, które mają być `-i` akceptowane dla powłoki interaktywnej, a wiele narzędzi oczekuje na`script` to zachowanie (na przykład, i podczas ustawiania programu PowerShell jako powłoki domyślnej) i `-i` wywołuje powłokę z przełącznikiem. Ta zmiana jest przerywana `-i` , ponieważ wcześniej może zostać użyta jako krótka do dopasowania `-inputformat`, która teraz musi `-in`być.
 
-### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Typo fix in Get-ComputerInfo property name [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
+### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Poprawka literówki w nazwie właściwości get-ComputerInfo [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
-`BiosSerialNumber` została błędnie napisana jako `BiosSeralNumber` i został zmieniony na prawidłowo.
+`BiosSerialNumber`był błędnie wpisany jako `BiosSeralNumber` i został zmieniony na poprawną pisownię.
 
-### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Dodaj `Get-StringHash` i `Get-FileHash` poleceń cmdlet [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
+### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Polecenia `Get-StringHash` cmdlet `Get-FileHash` Add i [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
 
-Ta zmiana jest, że niektóre algorytmy wyznaczania wartości skrótu nie są obsługiwane przez CoreFX, dlatego nie są już dostępne:
+Ta zmiana polega na tym, że niektóre algorytmy wyznaczania wartości skrótu nie są obsługiwane przez CoreFX, w związku z czym nie są już dostępne:
 
 - `MACTripleDES`
 - `RIPEMD160`
 
-### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>Dodawanie sprawdzania poprawności na `Get-*` poleceń cmdlet, gdzie przekazywanie $null zwraca wszystkie obiekty zamiast błędu [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
+### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>Dodaj weryfikację `Get-*` w poleceniach cmdlet, gdzie przekazywanie $NULL zwraca wszystkie obiekty zamiast błędu [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
 
-Przekazywanie `$null` do dowolnego z następujących zgłasza teraz błąd:
+Przekazanie `$null` do dowolnego z następujących elementów spowoduje zgłoszenie błędu:
 
 - `Get-Credential -UserName`
 - `Get-Event -SourceIdentifier`
@@ -263,29 +263,29 @@ Przekazywanie `$null` do dowolnego z następujących zgłasza teraz błąd:
 - `Get-WmiObject -Class`
 - `Get-WmiObject -Property`
 
-### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Dodawanie obsługi rozszerzony Format W3C pliku dziennika w `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
+### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Dodano obsługę rozszerzonego formatu W3C plików dziennika `Import-Csv` w [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
 
-Wcześniej `Import-Csv` polecenia cmdlet, nie można bezpośrednio importować pliki dziennika w rozszerzonym formacie W3C dziennika oraz dodatkowych akcji jest wymagana. Dzięki tej zmianie rozszerzonym formacie W3C dziennika jest obsługiwane.
+`Import-Csv` Wcześniej polecenie cmdlet nie może być używane do bezpośredniego importowania plików dziennika w rozszerzonym formacie dziennika W3C, a dodatkowa akcja powinna być wymagana. Ta zmiana powoduje, że rozszerzony format dziennika W3C jest obsługiwany.
 
-### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>Problem z powiązaniem parametru za pomocą `ValueFromRemainingArguments` w funkcjach PS [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
+### <a name="parameter-binding-problem-with-valuefromremainingarguments-in-ps-functions-2035httpsgithubcompowershellpowershellissues2035"></a>Problem z `ValueFromRemainingArguments` wiązaniem parametru w funkcjach PS [#2035](https://github.com/PowerShell/PowerShell/issues/2035)
 
-`ValueFromRemainingArguments` teraz zwraca wartości jako tablicę zamiast pojedynczej wartości, która sama jest tablicą.
+`ValueFromRemainingArguments`teraz zwraca wartości jako tablicę zamiast pojedynczej wartości, która sama jest tablicą.
 
-### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion` zostanie usunięty z `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
+### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`BuildVersion`został usunięty z `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
-Usuń `BuildVersion` właściwość `$PSVersionTable`. Ta właściwość powiązanej z wersji kompilacji Windows. Zamiast tego zaleca się używanie `GitCommitId` można pobrać kompilacji dokładną wersję programu PowerShell Core.
+Usuń właściwość z `$PSVersionTable`. `BuildVersion` Ta właściwość została powiązana z wersją kompilacji systemu Windows. Zamiast tego zalecamy korzystanie `GitCommitId` z programu w celu pobrania dokładnej wersji kompilacji programu PowerShell Core.
 
-### <a name="changes-to-web-cmdlets"></a>Zmiany w poleceniach cmdlet usługi sieci Web
+### <a name="changes-to-web-cmdlets"></a>Zmiany w poleceniach cmdlet sieci Web
 
-Podstawowy interfejs API .NET poleceń cmdlet sieci Web został zmieniony na `System.Net.Http.HttpClient`. Ta zmiana oferuje wiele korzyści. Jednak powoduje powstanie kilka przełomowe zmiany w ramach tej zmiany wraz z braku współdziałania z programem Internet Explorer `Invoke-WebRequest` i `Invoke-RestMethod`.
+Podstawowy interfejs API platformy .NET dla poleceń cmdlet sieci Web został zmieniony na `System.Net.Http.HttpClient`. Ta zmiana zapewnia wiele korzyści. Jednak ta zmiana wraz z brakiem współdziałania z programem Internet Explorer spowodowała kilka istotnych zmian w ramach `Invoke-WebRequest` systemów `Invoke-RestMethod`i.
 
-- `Invoke-WebRequest` obsługuje teraz podstawowe HTML podczas analizowania tylko. `Invoke-WebRequest` zawsze zwraca `BasicHtmlWebResponseObject` obiektu. `ParsedHtml` i `Forms` właściwości zostały usunięte.
-- `BasicHtmlWebResponseObject.Headers` wartości są teraz `String[]` zamiast `String`.
-- `BasicHtmlWebResponseObject.BaseResponse` jest teraz `System.Net.Http.HttpResponseMessage` obiektu.
-- `Response` Właściwość na wyjątkach polecenia Cmdlet w sieci Web jest obecnie `System.Net.Http.HttpResponseMessage` obiektu.
-- Strict RFC nagłówka analiza jest teraz domyślnym `-Headers` i `-UserAgent` parametru. To, co może prowadzić z `-SkipHeaderValidation`.
-- `file://` i `ftp://` schematy identyfikatorów URI nie są już obsługiwane.
-- `System.Net.ServicePointManager` ustawienia nie są uznawane.
-- Brak dostępnej obecnie bez uwierzytelniania opartego na certyfikatach w systemie macOS.
-- Korzystanie z `-Credential` za pośrednictwem `http://` URI spowoduje wystąpienie błędu. Użyj `https://` identyfikatora URI lub podać `-AllowUnencryptedAuthentication` parametru, aby pominąć ten błąd.
-- `-MaximumRedirection` teraz generuje błąd powodujący zakończenie, podczas próby przekierowania przekraczają limit podana zamiast zwracać wyniki ostatniego przekierowania.
+- `Invoke-WebRequest`obsługuje teraz wyłącznie podstawowe analizy kodu HTML. `Invoke-WebRequest`zawsze zwraca `BasicHtmlWebResponseObject` obiekt. Właściwości `ParsedHtml` i`Forms` zostały usunięte.
+- `BasicHtmlWebResponseObject.Headers`wartości są teraz `String[]` `String`zamiast.
+- `BasicHtmlWebResponseObject.BaseResponse`jest teraz `System.Net.Http.HttpResponseMessage` obiektem.
+- Właściwość wyjątków poleceń cmdlet sieci Web jest `System.Net.Http.HttpResponseMessage` teraz obiektem. `Response`
+- Ścisłe analizowanie nagłówka RFC jest teraz domyślnie dla `-Headers` parametru `-UserAgent` i. Można to pominąć za pomocą `-SkipHeaderValidation`.
+- `file://`i `ftp://` schematy identyfikatorów URI nie są już obsługiwane.
+- `System.Net.ServicePointManager`ustawienia nie są już honorowane.
+- Na macOS nie ma obecnie dostępnego uwierzytelniania opartego na certyfikatach.
+- `-Credential` Użycie zapośrednictwemidentyfikatoraURI`http://` spowoduje wystąpienie błędu. Użyj identyfikatora URI lub podaj parametr `-AllowUnencryptedAuthentication` , aby pominąć błąd. `https://`
+- `-MaximumRedirection`teraz generuje błąd kończący, gdy próba przekierowania przekroczy podany limit zamiast zwracać wyniki ostatniego przekierowania.
