@@ -1,32 +1,32 @@
 ---
-title: Rozszerzanie właściwości dla obiektów | Dokumentacja firmy Microsoft
+title: Rozszerzanie właściwości obiektów | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3b14007384cca0d0cfa35655aee437adf73b1ff0
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068151"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986487"
 ---
 # <a name="extending-properties-for-objects"></a>Rozszerzanie właściwości dla obiektów
 
-Rozszerzając obiektów .NET Framework, możesz dodać aliasu właściwości, właściwości kodu, właściwości notatek, właściwości skryptu i zestawy właściwości do obiektów. Plik XML, który jest używany do definiowania tych właściwości jest opisane w poniższych sekcjach.
+Rozszerzając .NET Framework obiektów, można dodawać do obiektów właściwości aliasu, właściwości kodu, właściwości notatki, właściwości skryptu i zestawy właściwości. KOD XML, który definiuje te właściwości, jest opisany w poniższych sekcjach.
 
 > [!NOTE]
-> W poniższych sekcjach należą do nich z typów Types.ps1xml domyślnego pliku w katalogu instalacyjnym programu Windows PowerShell (`$pshome`).
+> Przykłady w poniższych sekcjach pochodzą z domyślnego `Types.ps1xml` pliku typów w katalogu instalacyjnym programu PowerShell (`$PSHOME`). Aby uzyskać więcej informacji, zobacz [Informacje o typach. PS1XML](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## <a name="alias-properties"></a>Właściwości aliasu
 
-Właściwość alias definiuje nazwę istniejącej właściwości.
+Właściwość aliasu definiuje nową nazwę istniejącej właściwości.
 
-W poniższym przykładzie `Count` właściwość została dodana do [System.Array? Displayproperty = imię i nazwisko](/dotnet/api/System.Array) typu. [AliasProperty](http://msdn.microsoft.com/en-us/b140038c-807a-4bb9-beca-332491cda1b1) element definiuje właściwość rozszerzona jako właściwość aliasu. [Nazwa](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) element Określa nową nazwę. Ponadto [ReferencedMemberName](http://msdn.microsoft.com/en-us/0c5db6cc-9033-4d48-88a7-76b962882f7a) element Określa istniejącą właściwość, która odwołuje się do aliasu. (Można również dodać [AliasProperty](http://msdn.microsoft.com/en-us/d6647953-94ad-4b0b-af2e-4dda6952dee1) element do elementów członkowskich [MemberSet](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elementu.)
+W poniższym przykładzie właściwość **Count** jest dodawana do typu [System. Array](/dotnet/api/System.Array) . Element [AliasProperty](/dotnet/api/system.management.automation.psaliasproperty) definiuje Właściwość rozszerzoną jako właściwość aliasu. [Nazwa](/dotnet/api/system.management.automation.psmemberinfo.name) elementu Określa nową nazwę. I element [ReferencedMemberName](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) określa istniejącą właściwość, do której odwołuje się alias. Można również dodać `AliasProperty` element do elementów członkowskich elementu [MemberSet](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -42,9 +42,9 @@ W poniższym przykładzie `Count` właściwość została dodana do [System.Arra
 
 ## <a name="code-properties"></a>Właściwości kodu
 
-Właściwość kod odwołuje się właściwość statyczna obiektu .NET Framework.
+Właściwość Code odwołuje się do właściwości statycznej obiektu .NET Framework.
 
-W poniższym przykładzie `Node` właściwość została dodana do [System.IO.Directoryinfo? Displayproperty = imię i nazwisko](/dotnet/api/System.IO.DirectoryInfo) typu. [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) element definiuje właściwość rozszerzona jako właściwość kodu. [Nazwa](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) element Określa nazwę właściwości rozszerzonej. Ponadto [GetCodeReference](http://msdn.microsoft.com/en-us/62af34f5-cc22-42c0-9e0c-3bd0f5c1a4a0) element definiuje statyczna metoda, która odwołuje się do właściwości rozszerzonej. (Można również dodać [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) element do elementów członkowskich [MemberSet](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elementu.)
+W poniższym przykładzie właściwość **mode** jest dodawana do typu [System. IO. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Element [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) definiuje Właściwość rozszerzoną jako właściwość code. [Nazwa](/dotnet/api/system.management.automation.psmemberinfo.name) element określa nazwę właściwości rozszerzonej. I element [GetCodeReference](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) definiuje statyczną metodę, do której odwołuje się właściwość rozszerzona. Można również dodać `CodeProperty` element do elementów członkowskich elementu [MemberSet](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -61,11 +61,11 @@ W poniższym przykładzie `Node` właściwość została dodana do [System.IO.Di
 </Type>
 ```
 
-## <a name="note-properties"></a>Właściwości notatek
+## <a name="note-properties"></a>Właściwości notatki
 
-Właściwość Uwaga definiuje właściwość, która ma wartość statyczną.
+Właściwość notatki definiuje właściwość, która ma wartość statyczną.
 
-W poniższym przykładzie `Status` właściwości (zawsze ma wartość "Powodzenie") jest dodawany do [System.IO.Directoryinfo? Displayproperty = imię i nazwisko](/dotnet/api/System.IO.DirectoryInfo) typu. [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) element definiuje właściwość rozszerzona jako właściwość Uwaga; [nazwa](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) element Określa nazwę właściwości rozszerzonej; i [wartość](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) — element Określa statyczne wartość właściwości rozszerzonej. ( [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) elementu mogą być również dodawane do elementów członkowskich [MemberSet](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elementu.)
+W poniższym przykładzie właściwość **status** , której wartość jest zawsze **sukces**, jest dodawana do typu [System. IO. DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo) . Element [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) definiuje Właściwość rozszerzoną jako właściwość uwagi. [Nazwa](/dotnet/api/system.management.automation.psmemberinfo.name) element określa nazwę właściwości rozszerzonej. Element [Value](/dotnet/api/system.management.automation.psnoteproperty.value) określa wartość statyczną właściwości rozszerzonej. Element może być również dodany do elementów członkowskich elementu MemberSet. [](/dotnet/api/system.management.automation.psmemberset) `NoteProperty`
 
 ```xml
 <Type>
@@ -81,9 +81,9 @@ W poniższym przykładzie `Status` właściwości (zawsze ma wartość "Powodzen
 
 ## <a name="script-properties"></a>Właściwości skryptu
 
-Właściwości script definiuje właściwość, której wartość znajduje się dane wyjściowe skryptu.
+Właściwość skryptu definiuje właściwość, której wartość jest wynikiem skryptu.
 
-W poniższym przykładzie `VersionInfo` właściwość została dodana do [System.IO.FileInfo? Displayproperty = imię i nazwisko](/dotnet/api/System.IO.FileInfo) typu. [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) element definiuje właściwość rozszerzona jako właściwość skryptu. [Nazwa](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) element Określa nazwę właściwości rozszerzonej. Ponadto [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) element określa skrypt, który generuje wartość właściwości. (Można również dodać [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) element do elementów członkowskich [MemberSet](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) elementu.)
+W poniższym przykładzie właściwość **VERSIONINFO** jest dodawana do typu [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) . Element [ScriptProperty](/dotnet/api/system.management.automation.psscriptproperty) definiuje Właściwość rozszerzoną jako właściwość skryptu. [Nazwa](/dotnet/api/system.management.automation.psmemberinfo.name) element określa nazwę właściwości rozszerzonej. I element [GetScriptBlock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) określa skrypt generujący wartość właściwości. Można również dodać `ScriptProperty` element do elementów członkowskich elementu [MemberSet](/dotnet/api/system.management.automation.psmemberset) .
 
 ```xml
 <Type>
@@ -101,11 +101,13 @@ W poniższym przykładzie `VersionInfo` właściwość została dodana do [Syste
 
 ## <a name="property-sets"></a>Zestawy właściwości
 
-Zestaw właściwości definiuje grupę rozszerzone właściwości, które mogą być przywoływane przez nazwę zestawu. Na przykład `Property` parametru [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) polecenia cmdlet można określić określoną właściwość, aby były wyświetlane. Jeśli jest określony zestaw właściwości, są wyświetlane tylko te właściwości, które należą do zestawu.
+Zestaw właściwości definiuje grupę rozszerzonych właściwości, do których może odwoływać się nazwa zestawu.
+Na przykład parametr**Właściwości** [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+może określać konkretny zestaw właściwości do wyświetlenia. Po określeniu zestawu właściwości są wyświetlane tylko te właściwości, które należą do zestawu.
 
-Nie ma żadnych ograniczeń liczby zestawów właściwości, które mogą być definiowane dla obiektu. Jednak zestawy właściwości, używany do definiowania właściwości wyświetlania domyślnego obiektu muszą być określone w PSStandardMembers zestaw elementów członkowskich. W pliku typy Types.ps1xml domyślne nazwy zestawu właściwości obejmują DefaultDisplayProperty DefaultDisplayPropertySet i DefaultKeyPropertySet. Wszystkie zestawy dodatkowe właściwości, dodawane do zestawu elementów członkowskich PSStandardMembers są ignorowane.
+Nie ma ograniczeń dotyczących liczby zestawów właściwości, które można zdefiniować dla obiektu. Jednak zestawy właściwości używane do definiowania domyślnych właściwości wyświetlania obiektu muszą być określone w ramach zestawu elementów członkowskich **PSStandardMembers** . W plikutypów domyślna nazwa zestawu właściwości to DefaultDisplayProperty, DefaultDisplayPropertySet i DefaultKeyPropertySet. `Types.ps1xml` Wszystkie dodatkowe zestawy właściwości dodawane do zestawu elementów członkowskich **PSStandardMembers** są ignorowane.
 
-W poniższym przykładzie zestaw właściwości DefaultDisplayPropertySet zostanie dodany do elementu członkowskiego PSStandardMembers zbiór [System.Serviceprocess.Servicecontroller? Displayproperty = imię i nazwisko](/dotnet/api/System.ServiceProcess.ServiceController) typu. [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) element definiuje grupę właściwości. [Nazwa](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) element Określa nazwę zestawu właściwości. Ponadto [ReferencedProperties](http://msdn.microsoft.com/en-us/5e620423-8679-4fbf-b6db-9f79288e4786) element określa właściwości zestawu. (Można również dodać [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) element do elementów członkowskich [typu](http://msdn.microsoft.com/en-us/e5dbd353-d6b2-40a1-92b6-6f1fea744ebe) elementu.)
+W poniższym przykładzie zestaw właściwości **DefaultDisplayPropertySet** jest dodawany do zestawu elementów członkowskich **PSStandardMembers** typu [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) . Element [PropertySet —](/dotnet/api/system.management.automation.pspropertyset) definiuje grupę właściwości. [Nazwa](/dotnet/api/system.management.automation.psmemberinfo.name) element określa nazwę zestawu właściwości. I element [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) określa właściwości zestawu. Możesz również dodać `PropertySet` element do elementów członkowskich [typu](/dotnet/api/system.management.automation.pstypename) .
 
 ```xml
 <Type>
@@ -130,4 +132,8 @@ W poniższym przykładzie zestaw właściwości DefaultDisplayPropertySet zostan
 
 ## <a name="see-also"></a>Zobacz też
 
-[Zapisywanie polecenia Cmdlet programu Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
+[Informacje o typach. PS1XML](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
+
+[System. Management. Automation](/dotnet/api/System.Management.Automation)
+
+[Pisanie polecenia cmdlet programu Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

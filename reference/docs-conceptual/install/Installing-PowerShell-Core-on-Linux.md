@@ -2,16 +2,16 @@
 title: Instalowanie programu PowerShell Core w systemie Linux
 description: Informacje na temat instalowania programu PowerShell Core w różnych dystrybucjach systemu Linux
 ms.date: 07/19/2019
-ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68372198"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986730"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Instalowanie programu PowerShell Core w systemie Linux
 
-Obsługuje [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE przestępny 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], i [Arch Linux][arch].
+Obsługuje [Ubuntu 16,04][u16], [Ubuntu 18,04][u1804], [Ubuntu 18,10][u1810], [Ubuntu 19,04][u1904], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42,3][opensuse], [openSUSE przestępny 15][opensuse], [Fedora 27 ][fedora], [Fedora 28][fedora]i [Arch Linux][arch].
 
 W przypadku dystrybucji systemu Linux, które nie są oficjalnie obsługiwane, można spróbować zainstalować program PowerShell przy użyciu [pakietu przyciągania programu PowerShell][snap]. Możesz również spróbować wdrożyć pliki binarne programu PowerShell bezpośrednio przy użyciu [ `tar.gz` archiwum][tar]systemu Linux, ale konieczne jest skonfigurowanie wymaganych zależności w oparciu o system operacyjny w osobnych krokach.
 
@@ -20,6 +20,7 @@ Wszystkie pakiety są dostępne na naszej stronie [wydań][] usługi GitHub. Po 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -142,10 +143,17 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18,10
 
-> [!NOTE]
-> Jako 18,10 jest [wydaniem tymczasowym](https://www.ubuntu.com/about/release-cycle), jest to jedyna [obsługiwana społeczność](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
+Instalacja jest obsługiwana za `snapd`pośrednictwem. Aby uzyskać instrukcje, zobacz przyciąganie [pakietu][snap].
 
-Instalowanie na 18,10 jest obsługiwane za `snapd`pośrednictwem. Aby uzyskać pełne instrukcje, zobacz [pakiet Snap][snap] .
+> [!NOTE]
+> Ubuntu 18,10 to [wersja przejściowa](https://www.ubuntu.com/about/release-cycle) obsługiwana przez [społeczność](../powershell-support-lifecycle.md).
+
+## <a name="ubuntu-1904"></a>Ubuntu 19,04
+
+Instalacja jest obsługiwana za `snapd`pośrednictwem. Aby uzyskać instrukcje, zobacz przyciąganie [pakietu][snap].
+
+> [!NOTE]
+> Ubuntu 19,04 to [wersja przejściowa](https://www.ubuntu.com/about/release-cycle) obsługiwana przez [społeczność](../powershell-support-lifecycle.md).
 
 ## <a name="debian-8"></a>Debian 8
 

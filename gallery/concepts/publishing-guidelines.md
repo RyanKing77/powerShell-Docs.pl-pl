@@ -1,170 +1,186 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: Galeria, programu powershell, polecenie cmdlet, galerii programu PowerShell
-description: Wytyczne dotyczące wydawców
-title: Galeria programu PowerShell publikowania wskazówki i najlepsze rozwiązania
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+contributor: JKeithB, SydneyhSmith
+keywords: Galeria, PowerShell, cmdlet, psgallery
+description: Wytyczne dla wydawców
+title: Galeria programu PowerShell wskazówki dotyczące publikowania i najlepsze rozwiązania
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084661"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986504"
 ---
-# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Galerii PowerShellGallery publikowania wskazówki i najlepsze rozwiązania
+# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Wskazówki dotyczące publikowania PowerShellGallery i najlepsze rozwiązania
 
-W tym temacie opisano zalecane kroki używana przez zespoły firmy Microsoft w zapewnienie pakiety opublikowane w galerii programu PowerShell są przyjmowane powszechnie i zapewniać wysoką wartość użytkownikom, oparte na sposób galerii programu PowerShell służy do obsługi manifestu danych i informacji zwrotnych z dużą liczby użytkowników w galerii programu PowerShell.
-Pakiety, które są publikowane następujące wskazówki będą najprawdopodobniej można zainstalować za zaufany i Przyciąganie uwagi większej liczby użytkowników.
+W tym temacie opisano zalecane kroki używane przez zespoły Microsoft Teams w celu zapewnienia, że pakiety opublikowane w Galeria programu PowerShell będą powszechnie stosowane i zapewniają wysoką wartość użytkownikom, na podstawie sposobu, w jaki Galeria programu PowerShell obsługuje dane manifestu i informacje zwrotne z dużych Liczba użytkowników, którzy Galeria programu PowerShell.
+Pakiety opublikowane w ramach tych wytycznych będą prawdopodobnie zainstalowane, zaufane i przyciągnąć większej liczby użytkowników.
 
-Przedstawiony poniżej znajdują się wytyczne dotyczące co sprawia, że dobre pakietu galerii programu PowerShell, które opcjonalne ustawienia manifestu są dla Ciebie najważniejsze, ulepszanie kodu za pomocą informacji zwrotnych od początkowego recenzentów i [analizatora skryptu programu Powershell](https://aka.ms/psscriptanalyzer), przechowywanie wersji modułu, dokumentacji, testy i przykłady dotyczące używania, zostały udostępnione.
-Większość niniejszej dokumentacji następujące wytyczne dotyczące publikowania [modułów zasoby DSC w usłudze wysokiej jakości](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+Poniżej przedstawiono wskazówki dotyczące tego, co to jest dobry pakiet Galeria programu PowerShell, jakie opcjonalne ustawienia manifestu są najważniejsze, ulepszanie kodu z informacjami zwrotnymi od recenzentów początkowych i [analizatora skryptów programu PowerShell](https://aka.ms/psscriptanalyzer), przechowywanie wersji modułu, Dokumentacja, testy & przykłady dotyczące korzystania z udostępnionych elementów.
+W większości tej dokumentacji przedstawiono wskazówki dotyczące publikowania [modułów zasobów o wysokiej jakości DSC](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Aby uzyskać mechanika publikowania pakietu w galerii programu PowerShell, zobacz [tworzenie i publikowanie pakietu](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
+Mechanics publikowania pakietu do Galeria programu PowerShell można znaleźć w temacie [Tworzenie i publikowanie pakietu](/powershell/gallery/how-to/publishing-packages/publishing-a-package).
 
-Przyjęte jest opinie na temat tych wytycznych. Jeśli chcesz przesłać opinię, otwórz problemy w naszym [repozytorium dokumentacji w witrynie Github](https://github.com/powershell/powershell-docs/issues).
+Opinie dotyczące tych wytycznych zostały zawitane. Jeśli masz opinię, Otwórz problemy w naszym [repozytorium dokumentacji usługi GitHub](https://github.com/powershell/powershell-docs/issues).
 
 ## <a name="best-practices-for-publishing-packages"></a>Najlepsze rozwiązania dotyczące publikowania pakietów
 
-Poniższe najlepsze rozwiązania są co powiedzieć użytkownikom elementów galerii programu PowerShell, ważne jest i są wymienione w kolejności priorytetu symboliczną cenę.
-Pakiety, które należy wykonać te wytyczne są znacznie bardziej prawdopodobna do pobrania i przyjętych przez innych użytkowników.
+Poniżej przedstawiono najlepsze rozwiązania dotyczące tego, co jest ważne dla użytkowników Galeria programu PowerShell elementów i są one wymienione w kolejności nominalnego priorytetu.
+Pakiety, które są zgodne z tymi wytycznymi, są znacznie łatwiejsze do pobrania i przyjęcia przez inne osoby.
 
 - Użyj PSScriptAnalyzer
-- Dokumentacja i przykłady
-- Szybkość reakcji na opinie
-- Podaj modułów zamiast skryptów
-- Zawierają linki do witryny projektu
-- Tag do pakietu przy użyciu zgodnych PSEdition(s) i platform
-- Uwzględnić testy za pomocą moduły
-- Obejmują i/lub łącze do postanowień licencyjnych
-- Zarejestruj swój kod
-- Postępuj zgodnie z [SemVer](http://semver.org/) wytyczne dotyczące wersji
-- Za pomocą typowych tagów, zgodnie z opisem w galerii programu PowerShell typowych tagów
-- Publikowanie testu przy użyciu repozytorium lokalnego
-- Publikowanie przy użyciu funkcji PowerShellGet
+- Dołącz dokumentację i przykłady
+- Reagowanie na Opinie
+- Dostarczanie modułów zamiast skryptów
+- Udostępnianie linków do witryny projektu
+- Oznacz swój pakiet za pomocą zgodnych PSEdition i platform
+- Uwzględnij testy z modułami
+- Dołącz i/lub Połącz z postanowieniami licencyjnymi
+- Podpisz swój kod
+- Postępuj zgodnie z [SemVer](http://semver.org/) wytycznych dotyczących przechowywania wersji
+- Używaj typowych tagów, jak opisano w typowych tagach Galeria programu PowerShell
+- Testowanie publikacji przy użyciu repozytorium lokalnego
+- Użyj PowerShellGet do opublikowania
 
-Każda z tych omówiono pokrótce w poniższych sekcjach.
+Każda z nich została omówiona krótko w poniższych sekcjach.
 
 ## <a name="use-psscriptanalyzer"></a>Użyj PSScriptAnalyzer
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) jest narzędzie do analizy kodu statycznego bezpłatne, działające w kod programu PowerShell.
-PSScriptAnalyzer zidentyfikuje najbardziej typowych problemów, które są widoczne w kod programu PowerShell, a także często zalecenia dotyczące sposobu rozwiązania problemu.
-Narzędzie jest łatwa w użyciu i problemach, jak błędy kategoryzuje (poważny, muszą być kierowane), ostrzegawczy (muszą być analizowane i powinny być kierowane) i informacje (warto wyewidencjonowywanie najlepsze rozwiązania dotyczące).
-Wszystkie pakiety opublikowane w galerii programu PowerShell ma zostać przeprowadzone skanowanie za pomocą PSScriptAnalyzer oraz wszelkie błędy będzie zgłaszana z powrotem do właściciela i należy rozwiązać kwestie.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) to bezpłatne narzędzie do analizy kodu statycznego, które działa w kodzie programu PowerShell.
+PSScriptAnalyzer będzie identyfikować najczęstsze problemy występujące w kodzie programu PowerShell i często zalecenia dotyczące sposobu rozwiązania problemu.
+Narzędzie jest łatwe w użyciu i klasyfikuje problemy jako błędy (poważne, muszą być rozwiązane), ostrzeżenie (należy sprawdzić & powinna zostać rozwiązana) i informacje (co jest przydatne w przypadku najlepszych rozwiązań).
+Wszystkie pakiety opublikowane w Galeria programu PowerShell będą skanowane przy użyciu PSScriptAnalyzer, a wszelkie błędy zostaną zgłoszone do właściciela i należy je rozwiązać.
 
-Najlepszym rozwiązaniem jest uruchamianie `Invoke-ScriptAnalyzer` z `-Recurse` i `-Severity` ostrzeżenie.
+Najlepszym rozwiązaniem jest uruchomienie `Invoke-ScriptAnalyzer` z `-Recurse` i `-Severity` ostrzeżenie.
 
 Przejrzyj wyniki i upewnij się, że:
 
-- Wszystkie błędy są naprawione lub które zostały rozwiązane w dokumentacji
-- Wszystkie ostrzeżenia są przeglądane i rozwiązany, jeśli ma to zastosowanie
+- Wszystkie błędy zostały poprawione lub rozwiązane w dokumentacji
+- Wszystkie ostrzeżenia są analizowane i są rozwiązywane, gdy ma to zastosowanie
 
-Użytkownicy, którzy zakupili pakiety z galerii programu PowerShell są zdecydowanie zaleca się uruchamiania PSScriptAnalyzer i ocenić wszystkie błędy i ostrzeżenia.
-Użytkownicy są bardzo prawdopodobne, skontaktuj się z pomocą właścicieli pakietu, zobaczą, że jest błąd zgłoszony przez PSScriptAnalyzer.
-W przypadku istotny powód do pakietu zachować kod, który jest oznaczany jako błąd, należy dodać te informacje w dokumentacji, aby uniknąć konieczności Odpowiedz na pytanie, tym samym wiele razy.
+Użytkownicy, którzy pobierają pakiety z Galeria programu PowerShell, zdecydowanie zachęca się do uruchamiania PSScriptAnalyzer i szacowania wszystkich błędów i ostrzeżeń.
+Użytkownicy bardzo mogą kontaktować się z właścicielami pakietów, Jeśli zobaczysz, że wystąpił błąd zgłoszony przez PSScriptAnalyzer.
+Jeśli istnieje atrakcyjny powód, aby pakiet mógł zachować kod oflagowany jako błąd, należy dodać te informacje do dokumentacji, aby uniknąć konieczności odpowiedzi na to samo pytanie wiele razy.
 
-## <a name="include-documentation-and-examples"></a>Dokumentacja i przykłady
+## <a name="include-documentation-and-examples"></a>Dołącz dokumentację i przykłady
 
-Dokumentacja i przykłady są najlepszym sposobem, aby upewnić się, że użytkownicy mogą wykorzystać udostępnionego kodu.
+Dokumentacja i przykłady są najlepszym sposobem zapewnienia, że użytkownicy będą mogli korzystać z dowolnego kodu udostępnionego.
 
-Dokumentacja jest najbardziej przydatne rzeczy, które mają zostać objęte pakiety opublikowane w galerii programu PowerShell.
-Użytkownicy zazwyczaj będzie pomijać pakietów bez dokumentacji, alternatywą jest odczytać kodu, aby zrozumieć, co to jest pakiet i jak z niej korzystać.
-Brak dostępnych kilka artykułów o tym, jak do zapewnienia dokumentacji z pakietami programu PowerShell, w tym:
+Dokumentacja jest najbardziej przydatna do uwzględnienia w pakietach opublikowanych w Galeria programu PowerShell.
+Użytkownicy zwykle omijają pakiety bez dokumentacji, ponieważ alternatywą jest odczytanie kodu, aby zrozumieć, co to jest pakiet i jak go używać.
+Dostępnych jest kilka artykułów o udostępnianiu dokumentacji z pakietami programu PowerShell, w tym:
 
-- Wytyczne dotyczące zapewnianie pomocy znajdują się w [sposobu pisania pomoc dotyczącą polecenia Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415)
-- Tworzenie pomocy dotyczącej poleceń cmdlet, które jest najlepszym rozwiązaniem dla dowolnego skryptu programu PowerShell, funkcji lub polecenia cmdlet.
-  Aby uzyskać informacje o sposobie tworzenia pomocy dotyczącej poleceń cmdlet, rozpoczynać się [sposobu pisania pomoc dotyczącą polecenia Cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415).
-  Aby dodać pomoc w ramach skryptów, zobacz [o pomoc na podstawie komentarz](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
-- Wiele modułów także dokumentacji w formacie tekstowym, takich jak pliki MarkDown.
-  Może to być szczególnie przydatne w przypadku witryny projektu w usłudze Github, w którym języka znaczników Markdown jest intensywnie używanych w formacie.
-  Najlepszym rozwiązaniem jest użycie [Markdown połączonego z usługą Github](https://help.github.com/categories/writing-on-github/)
+- Wskazówki dotyczące uzyskiwania pomocy znajdują się w temacie [jak napisać pomoc dla poleceń cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415)
+- Tworzenie pomocy dotyczącej poleceń cmdlet, która jest najlepszym rozwiązaniem dla dowolnego skryptu, funkcji lub polecenia cmdlet programu PowerShell.
+  Aby uzyskać informacje o sposobach tworzenia pomocy dotyczącej poleceń cmdlet, Zacznij od [pisania pomocy poleceń cmdlet](https://go.microsoft.com/fwlink/?LinkID=123415).
+  Aby dodać pomoc w ramach skryptu, zobacz [Informacje o pomocy na temat komentarzy](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+- Wiele modułów zawiera również dokumentację w formacie tekstowym, na przykład pliki o promocji.
+  Może to być szczególnie przydatne, gdy w serwisie GitHub znajduje się witryna projektu, w której jest to wysoce używany format.
+  Najlepszym rozwiązaniem jest użycie [promocji z obsługą usługi GitHub](https://help.github.com/categories/writing-on-github/)
 
-Przykłady przedstawiają użytkownikom, jak pakiet jest przeznaczony do użycia.
-Wielu deweloperów na ekranie zostanie wyświetlona informacja wyglądają na przykłady przed dokumentację, aby dowiedzieć się, jak używać języków.
-Najlepszy typ przykłady Pokaż podstawowe zastosowanie oraz przypadek użycia realistyczne symulowanego i kod jest dobrze komentarzem.
-Przykłady dla modułów opublikowanych w galerii programu PowerShell powinna być w folderze Przykłady w katalogu głównym modułu.
+Przykłady przedstawiają sposób, w jaki pakiet jest przeznaczony do użycia.
+Wielu deweloperów zobaczy, że zapoznają się z przykładami przed dokumentacją, aby zrozumieć, jak to zrobić.
+Najlepszy typ przykładów przedstawia użycie podstawowe, a także symulowany realistyczny przypadek użycia i kod jest dobrze komentarz.
+Przykłady dla modułów opublikowanych w Galeria programu PowerShell powinny znajdować się w folderze przykładów w katalogu głównym modułu.
 
-Wzorzec dobre przykłady można znaleźć w [modułu PSDscResource](https://www.powershellgallery.com/packages/PSDscResources) w folderze Examples\RegistryResource.
-Istnieją cztery przykładowe przypadki użycia z krótki opis w górnej części każdego pliku dokumentuje, co jest demonstrowany.
+Dobry wzorzec przykładów można znaleźć w [module PSDscResource](https://www.powershellgallery.com/packages/PSDscResources) w folderze Examples\RegistryResource.
+Istnieją cztery przykładowe przypadki użycia z krótkim opisem w górnej części każdego pliku, który dokumentuje co jest prezentowane.
 
-## <a name="respond-to-feedback"></a>Odpowiadanie na opinię
+## <a name="manage-dependencies"></a>Zarządzanie zależnościami
 
-Pakiet właścicieli, którzy prawidłowo odpowiadania na opinie są bardzo cenione przez społeczności.
-Użytkownicy, którzy zwyczajowo opinii są ważne, aby odpowiedzieć, jak zainteresowane w pakiecie w celu ulepszania jej.
+Ważne jest, aby określić moduły, od których moduł jest zależny w manifeście modułu.
+Dzięki temu użytkownik końcowy nie musi martwić się o zainstalowanie odpowiednich wersji modułów, na których należy wziąć zależność.
+Aby określić moduły zależne, należy użyć pola wymagane modułu w manifeście modułu.
+Spowoduje to załadowanie dowolnego z wymienionych modułów do środowiska globalnego przed zaimportowaniem modułu, chyba że zostały już załadowane. (Na przykład niektóre moduły mogą już być załadowane przez inny moduł).
+Istnieje również możliwość określenia konkretnej wersji do załadowania przy użyciu pola RequiredVersion, a nie pola ModuleVersion. W przypadku korzystania z programu ModuleVersion zostanie załadowana Najnowsza wersja dostępna z co najmniej określoną wersją.
+Gdy nie korzystasz z pola RequiredVersion, aby określić konkretną wersję, ważne jest, aby monitorować aktualizacje wersji do wymaganego modułu.
+Jest to szczególnie ważne, aby mieć świadomość wszelkich istotnych zmian, które mogłyby mieć wpływ na środowisko użytkownika.
 
-Dostępne są dwie metody opinii w galerii programu PowerShell:
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
 
-- Skontaktuj się z właścicielem: Dzięki temu użytkownikowi Wyślij wiadomość e-mail do właściciele pakietu. Jako właściciel pakietu ważne jest, aby monitorować adres e-mail używany w pakiety galerii programu PowerShell i reagowanie na problemy, które są wywoływane. Jedną wadą tej metody jest to, czy tylko użytkowników i właściciel nigdy nie zobaczą komunikacji, aby właściciel może być konieczne Odpowiedz na pytanie, tym samym wiele razy.
-- Uwagi: Pole komentarza jest strony w dolnej części pakietu.
-  Zaletą tego systemu jest, że użytkownicy widzieli, komentarze i odpowiedzi, co zmniejsza liczbę przypadków, gdy otrzymasz odpowiedzi na każde pytanie w jednym.
-  Jako właściciel pakietu zdecydowanie zaleca się postępowanie zgodnie z komentarzy dla każdego pakietu.
-Zobacz [zapewnianie opinii za pośrednictwem mediów społecznościowych i komentarzy](../how-to/working-with-packages/social-media-feedback.md) szczegółowe informacje na temat jak to zrobić.
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
-Właściciele, którzy konstruktywnie odpowiadania na opinie są Doceniamy przez społeczność.
-Użycia szansy sprzedaży w raporcie, aby uzyskać więcej informacji, jeśli to konieczne, podaj obejście tego problemu i ustalić, czy aktualizacja rozwiązuje problem.
+## <a name="respond-to-feedback"></a>Odpowiedź na opinię
 
-W przypadku niewłaściwe zachowanie zaobserwowane przy użyciu dowolnego z tych kanałów komunikacyjnych funkcja Zgłoś nadużycie z galerii programu PowerShell umożliwia kontaktować z administratorami w galerii.
+Właściciele pakietu, którzy prawidłowo reagują na opinie, mają wysoką wartość przez społeczność.
+Użytkownicy, którzy przedstawiają konstruktywną opinię, są ważną odpowiedzią, ponieważ są one wystarczająco interesujące w pakiecie, aby pomóc w ulepszaniu tego pakietu.
 
-## <a name="modules-versus-scripts"></a>Moduły i skrypty
+W Galeria programu PowerShell są dostępne dwie metody przesyłania opinii:
 
-Udostępniania innym użytkownikom skryptu jest doskonałym i udostępniają inne przykłady sposobów do rozwiązywania problemów, które mogą mieć.
-Problem polega na tym, że skrypty w galerii programu PowerShell są pojedynczych plików bez oddzielna dokumentacja, przykłady i testy.
+- Właściciel kontaktu: Dzięki temu użytkownik może wysłać wiadomość e-mail do właścicieli pakietu. Jako właściciel pakietu jest ważne, aby monitorować adres e-mail używany z pakietami Galeria programu PowerShell i odpowiadać na zgłoszone problemy. Wadą tej metody jest to, że tylko użytkownik i właściciel będą widzieli komunikację, więc właściciel może mieć wiele razy odpowiedzieć na to samo pytanie.
+- Komentarz W dolnej części strony pakietu znajduje się pole komentarz.
+  Zaletą tego systemu jest to, że inni użytkownicy mogą zobaczyć Komentarze i odpowiedzi, co zmniejsza liczbę przypadków, w których należy odpowiedzieć na pojedyncze pytanie.
+  Jako właściciel pakietu zdecydowanie zalecamy przestrzeganie komentarzy wykonanych dla każdego pakietu.
+Aby uzyskać szczegółowe informacje o tym, jak to zrobić, zobacz [przekazywanie opinii za pośrednictwem mediów społecznościowych i komentarzy](../how-to/working-with-packages/social-media-feedback.md) .
 
-Moduły programu PowerShell mają strukturę folderów, która zezwala na wiele folderów i plików, które będą dołączone do pakietu.
-Umożliwia struktury, łącznie z innymi pakietami na listę jako najlepsze rozwiązania: polecenia cmdlet pomocy, dokumentacji, przykładów i testów.
-Największych wadą jest to, że skrypt wewnątrz modułu musi być udostępniane i pełnią funkcję.
-Aby uzyskać informacje na temat tworzenia modułu, zobacz [pisanie modułu programu Windows PowerShell](http://go.microsoft.com/fwlink/?LinkId=144916).
+Właściciele, którzy reagują na opinie, zwyczajowo doceniają społeczność.
+Skorzystaj z szansy w raporcie, aby zażądać dalszych informacji w razie potrzeby, podać obejście lub określić, czy aktualizacja rozwiązuje problem.
 
-Istnieją sytuacje, w którym skrypt zapewnia lepsze środowisko użytkownika, szczególnie przy użyciu konfiguracji DSC.
-Najlepszym rozwiązaniem w przypadku konfiguracji DSC jest publikowanie konfigurację jako skrypt za pomocą towarzyszący modułu, który zawiera dokumentacja, przykłady i testy.
-Skrypt wyświetla towarzyszącym modułu przy użyciu RequiredModules = @(nazwa modułu).
-Takie podejście może służyć w przypadku dowolnego skryptu.
+W przypadku nieodpowiedniego zachowania zaobserwowanego z dowolnego z tych kanałów komunikacji Użyj funkcji Zgłoś nadużycie w Galeria programu PowerShell, aby skontaktować się z administratorami galerii.
 
-Skrypty autonomicznych, które najlepsze praktyki Podaj rzeczywistą wartość do innych użytkowników.
-Udostępniając oparta na komentarzach dokumentacji i link do witryny projektu jest zdecydowanie zalecane w przypadku publikowania skryptu w galerii programu PowerShell.
+## <a name="modules-versus-scripts"></a>Moduły a skrypty
+
+Udostępnianie skryptu innym użytkownikom jest doskonałe i zawiera inne przykłady sposobu rozwiązywania problemów, które mogą mieć.
+Problem polega na tym, że skrypty w Galeria programu PowerShell są pojedynczymi plikami bez oddzielnej dokumentacji, przykładów i testów.
+
+Moduły programu PowerShell mają strukturę folderów, która umożliwia dołączenie wielu folderów i plików do pakietu.
+Struktura modułów umożliwia uwzględnienie innych pakietów, które są wystawiane jako najlepsze rozwiązania: pomoc poleceń cmdlet, dokumentacja, przykłady i testy.
+Największą wadą jest to, że skrypt wewnątrz modułu musi być uwidoczniony i używany jako funkcja.
+Aby uzyskać informacje na temat sposobu tworzenia modułu, zobacz [pisanie modułu programu Windows PowerShell](http://go.microsoft.com/fwlink/?LinkId=144916).
+
+Istnieją sytuacje, w których skrypt zapewnia lepszy interfejs użytkownika, w szczególności konfiguracje DSC.
+Najlepszym rozwiązaniem w przypadku konfiguracji DSC jest opublikowanie konfiguracji jako skryptu z towarzyszącym modułem zawierającym dokumenty, przykłady i testy.
+Skrypt zawiera listę towarzyszącego modułu przy użyciu RequiredModules = @ (Nazwa modułu).
+Takie podejście może być używane z dowolnym skryptem.
+
+Skrypty autonomiczne, które są zgodne z innymi najlepszymi rozwiązaniami, zapewniają wartość rzeczywistą innym użytkownikom.
+Udostępnianie dokumentacji opartej na komentarzach i link do witryny projektu jest zdecydowanie zalecane podczas publikowania skryptu do Galeria programu PowerShell.
 
 ## <a name="provide-a-link-to-a-project-site"></a>Podaj link do witryny projektu
 
-Witryny projektu jest, w którym wydawcy mogą wchodzić w interakcje bezpośrednio użytkownikom ich pakiety galerii programu PowerShell.
-Użytkownicy preferują pakietów, które dostarczają tego, ponieważ pozwala ono je łatwiej uzyskać informacje o pakiecie.
-Liczba pakietów w galerii programu PowerShell są tworzone w usłudze GitHub, inne są dostarczane przez organizacje, które prowadzą dedykowanej sieci web.
-Każdy z nich jest uznawana za witryny projektu.
+Witryna projektu to miejsce, w którym Wydawca może współdziałać bezpośrednio z użytkownikami ich pakietów Galeria programu PowerShell.
+Użytkownicy preferują pakiety, które je zapewniają, ponieważ umożliwiają im łatwiejsze uzyskiwanie informacji o pakiecie.
+Wiele pakietów w Galeria programu PowerShell są opracowywane w serwisie GitHub, a inne są udostępniane przez organizacje z dedykowaną obecnością w sieci Web.
+Każdy z nich może być traktowany jako witryna projektu.
 
-Dodawanie łącza odbywa się przy tym ProjectURI w sekcji PSData w manifeście w następujący sposób:
+Dodawanie linku odbywa się przez włączenie ProjectURI w sekcji PSData manifestu w następujący sposób:
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/powershell/powershell'
 
-Gdy ProjectURI została podana, galerii programu PowerShell będzie zawierać link do witryny projektu z lewej strony pakietu.
+Gdy ProjectURI jest podany, Galeria programu PowerShell będzie zawierać link do witryny projektu po lewej stronie pakietu.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Tag do pakietu przy użyciu zgodnych PSEdition(s) i platform
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Oznacz swój pakiet za pomocą zgodnych PSEdition i platform
 
-Aby zademonstrować dla użytkowników, które pakiety będą dobrze współpracować z ich środowiska za pomocą następujących znaczników:
+Użyj następujących tagów, aby zademonstrować użytkownikom, które pakiety będą dobrze współpracować ze swoimi środowiskami:
 
-- PSEdition_Desktop: Pakiety, które są zgodne z programem Windows PowerShell
-- PSEdition_Core: Pakiety, które są zgodne z programu PowerShell Core
-- Windows: Pakiety, które są zgodne z systemu operacyjnego Windows
-- Linux: Pakiety, które są zgodne z systemem operacyjnym Linux
-- MacOS : Pakiety, które są zgodne z systemu operacyjnego Mac
+- PSEdition_Desktop : Pakiety zgodne z programem Windows PowerShell
+- PSEdition_Core : Pakiety zgodne z programem PowerShell Core
+- Systemy Pakiety zgodne z systemem operacyjnym Windows
+- System Pakiety zgodne z systemami operacyjnymi Linux
+- MacOS Pakiety zgodne z systemem operacyjnym Mac
 
-Oznaczając pakietu przy użyciu zgodnych missing będą uwzględniane w filtry wyszukiwania galerii w okienku po lewej stronie wyników wyszukiwania. Jeśli hostujesz pakietu w serwisie GitHub, gdy oznaczysz pakiet, możesz również korzystać z zalet naszej [osłony niezgodności galerii programu PowerShell](https://img.shields.io/powershellgallery/p/:packageName.svg) 
-![shield zgodności](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
+Tagowanie pakietu przy użyciu zgodnych platform, które zostaną dołączone do filtrów wyszukiwania galerii w lewym okienku wyników wyszukiwania. Jeśli pakiet jest hostowany w serwisie GitHub, po oznaczeniu pakietu można także skorzystać z zalet![osłony](https://img.shields.io/powershellgallery/p/CosmosDB.svg)zgodności z usługą [Galeria programu PowerShell](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+.  
 
-## <a name="include-tests"></a>Uwzględnić testy
+## <a name="include-tests"></a>Uwzględnij testy
 
-W tym testy przy użyciu kodu typu open-source ważne jest, aby użytkownicy, ponieważ umożliwia ona pewności co weryfikowania i zawiera informacje o sposobie działania kodu. Umożliwia także użytkownikom upewnić się, że ich nie przerwanie własne funkcje oryginalnego mogą modyfikować kodu dopasowany ich środowiska.
+Uwzględnienie testów z kodem Open Source jest ważne dla użytkowników, ponieważ daje im gwarancje dotyczące tego, co jest sprawdzane i zawiera informacje na temat sposobu działania kodu. Pozwala również użytkownikom upewnić się, że nie przerywają pierwotnych funkcji, jeśli zmodyfikujesz swój kod w celu dopasowania go do środowiska.
 
-Zdecydowanie zaleca się, że testy zapisywane na korzystanie z zalet usług Pester struktura testów, który został zaprojektowany specjalnie dla programu PowerShell.
-Pester jest dostępna w [GitHub](https://github.com/Pester/Pester), [galerii programu PowerShell](https://www.powershellgallery.com/packages/Pester/)i jest dostarczany w systemu Windows 10, Windows Server 2016, WMF 5.0 i platformy WMF 5.1.
+Zdecydowanie zaleca się, aby testy były napisane w celu skorzystania z platformy testów szkodników, która została zaprojektowana specjalnie dla programu PowerShell.
+Program szkodnik jest dostępny w witrynie [GitHub](https://github.com/Pester/Pester), [Galeria programu PowerShell](https://www.powershellgallery.com/packages/Pester/)i dostarcza w systemie Windows 10, Windows Server 2016, wmf 5,0 i WMF 5,1.
 
-[Usług Pester witryny projektu w usłudze GitHub](https://github.com/Pester/Pester) obejmuje dobra dokumentacja na temat pisania testów usług Pester od wprowadzenia do najlepszych rozwiązań.
+[Witryna projektu szkodników w usłudze GitHub](https://github.com/Pester/Pester) zawiera dobrą dokumentację dotyczącą pisania testów szkodników, od rozpoczęcia do najlepszych rozwiązań.
 
-Elementy docelowe pokrycie testu są wywoływane w [dokumentacji wysokiej jakości zasobu modułu](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md), pokrycie kodu, zaleca się testu jednostki 70%.
+Elementy docelowe dla pokrycia testu są wywoływane w [dokumentacji modułu zasobów o wysokiej jakości](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md)z zalecanym pokryciem kodu w przypadku 70%.
 
-## <a name="include-andor-link-to-license-terms"></a>Obejmują i/lub łącze do postanowień licencyjnych
+## <a name="include-andor-link-to-license-terms"></a>Dołącz i/lub Połącz z postanowieniami licencyjnymi
 
-Wszystkie pakiety opublikowane w galerii programu PowerShell, należy określić postanowienia licencyjne lub związanie licencjami w [warunki użytkowania](https://www.powershellgallery.com/policies/Terms) w obszarze "Załączniku A".
-Najlepszym rozwiązaniem w celu określenia innej licencji jest Podaj link, aby uzyskać licencję za pomocą LicenseURI w PSData.
-Przykład można znaleźć w temacie zalecane manifeście pola.
+Wszystkie pakiety opublikowane w Galeria programu PowerShell muszą określać postanowienia licencyjne lub być powiązane z licencją zawartą w [warunkach użytkowania](https://www.powershellgallery.com/policies/Terms) w obszarze "wystawiony".
+Najlepszym podejściem do określenia innej licencji jest udostępnienie linku do licencji przy użyciu LicenseURI w PSData.
+Przykład można znaleźć w temacie zalecane pola manifestu.
 
 ```powershell
 PrivateData = @{
@@ -177,80 +193,80 @@ PrivateData = @{
         LicenseUri = 'http://www.apache.org/licenses/LICENSE-2.0'
 ```
 
-## <a name="sign-your-code"></a>Zarejestruj swój kod
+## <a name="sign-your-code"></a>Podpisz swój kod
 
-Podpisywanie kodu zapewnia użytkownikom najwyższy poziom zabezpieczeń Wydawca pakietu, a kopię kodu zdobycia jest dokładnie wydane wydawcy.
-Aby dowiedzieć się więcej na temat ogólnie podpisywania kodu, zobacz [wprowadzenie do podpisywania kodu](http://go.microsoft.com/fwlink/?LinkId=106296).
-Program PowerShell obsługuje sprawdzanie poprawności podpisywania za pomocą dwóch metod podstawowego kodu:
+Podpisywanie kodu zapewnia użytkownikom najwyższy poziom pewności, kto opublikował pakiet, i że kopia pobieranego kodu jest dokładnie wydaną przez wydawcę.
+Aby dowiedzieć się więcej na temat ogólnego podpisywania kodu, zobacz [wprowadzenie do podpisywania kodu](http://go.microsoft.com/fwlink/?LinkId=106296).
+Program PowerShell obsługuje sprawdzanie poprawności podpisywania kodu przez dwa podstawowe podejścia:
 
 - Podpisywanie plików skryptu
-- Moduł podpisywania w katalogu
+- Podpisywanie modułu przez katalog
 
-Podpisywanie plików programu PowerShell jest sprawdzone podejście do zapewnienia wykonywany kod został wyprodukowany przez wiarygodnego źródła, która nie została zmodyfikowana.
-Szczegółowe informacje na temat podpisywania plików skryptów programu PowerShell są omówione w [temat podpisywania](/powershell/module/microsoft.powershell.core/about/about_signing) tematu.
-W obszarze Przegląd można dodać do żadnej sygnatury. Plik PS1, który sprawdza programu PowerShell, po załadowaniu skryptu.
-Może być ograniczona dla programu PowerShell przy użyciu [zasady wykonywania](/powershell/module/microsoft.powershell.core/about/about_execution_policies) poleceń cmdlet w celu zapewnienia wykorzystania podpisane skrypty.
+Podpisywanie plików programu PowerShell to dobrze ustalone podejście do zapewnienia, że wykonywany kod został wyprodukowany przez niezawodne źródło i nie został zmodyfikowany.
+Szczegóły dotyczące podpisywania plików skryptów programu PowerShell przedstawiono w temacie [Informacje o](/powershell/module/microsoft.powershell.core/about/about_signing) podpisywaniu.
+W obszarze przegląd można dodać podpis do dowolnego elementu. Plik PS1, który program PowerShell weryfikuje po załadowaniu skryptu.
+Program PowerShell można ograniczyć za pomocą poleceń cmdlet [zasad wykonywania](/powershell/module/microsoft.powershell.core/about/about_execution_policies) , aby zapewnić możliwość korzystania ze podpisanych skryptów.
 
-Wykaz podpisywania modułów to funkcja, dodany do programu PowerShell w wersji 5.1.
-Jak zarejestrować moduł został omówiony w [polecenia cmdlet wykazu](/powershell/wmf/5.1/catalog-cmdlets) tematu.
-W obszarze Przegląd podpisywania katalogu odbywa się przez utworzenie pliku wykazu, który zawiera wartość skrótu dla każdego pliku w module, a dopiero następnie utworzenie tego pliku.
-Publikowanie modułu PowerShellGet, install-module, save-module i polecenia cmdlet update-module będzie sprawdzić podpis, aby upewnić się, że jest on prawidłowy, a następnie upewnij się, że jest zgodna wartość skrótu dla każdego pakietu, co znajduje się w katalogu.
-Jeśli poprzednią wersję modułu jest zainstalowany w systemie, install-module potwierdzi, że urząd odpowiedzialny za podpisywanie dla nowej wersji odpowiada co została wcześniej zainstalowana.
-Podpisywanie katalogu współpracuje z, ale nie zastępuje podpisywania plików skryptów. Program PowerShell nie można zweryfikować sygnatur katalogu w czasie ładowania modułu.
+Moduły podpisywania katalogu to funkcja dodana do programu PowerShell w wersji 5,1.
+Sposób podpisywania modułu znajduje się w temacie [polecenia cmdlet katalogu](/powershell/wmf/5.1/catalog-cmdlets) .
+W obszarze przegląd podpisywanie wykazu jest wykonywane przez utworzenie pliku wykazu, który zawiera wartość skrótu dla każdego pliku w module, a następnie podpisuje ten plik.
+Polecenia cmdlet PowerShellGet Publish-module, Install-module, Save-module i Update-module sprawdzają podpis, aby upewnić się, że jest on prawidłowy, a następnie upewnij się, że wartość skrótu dla każdego pakietu jest zgodna z zakresem znajdującym się w katalogu.
+Jeśli w systemie zainstalowano poprzednią wersję modułu, należy sprawdzić, czy urząd podpisywania dla nowej wersji jest zgodny z tym, co zostało wcześniej zainstalowane.
+Podpisywanie wykazu współpracuje z programem, ale nie zastępuje plików skryptów podpisywania. Program PowerShell nie weryfikuje podpisów wykazu w czasie ładowania modułu.
 
-## <a name="follow-semver-guidelines-for-versioning"></a>Postępuj zgodnie z wytycznymi SemVer pod kątem przechowywania wersji
+## <a name="follow-semver-guidelines-for-versioning"></a>Postępuj zgodnie z SemVer wytycznych dotyczących przechowywania wersji
 
-[SemVer](http://semver.org/) jest publiczny Konwencji, która zawiera instrukcje dotyczące struktury i zmienić wersję, aby umożliwić łatwe interpretacji zmiany.
-Wersja pakietu muszą być zawarte w danych manifestu.
+[SemVer](http://semver.org/) to publiczna Konwencja opisująca sposób tworzenia struktury i zmiany wersji, aby umożliwić łatwą interpretację zmian.
+Wersja pakietu musi być uwzględniona w danych manifestu.
 
-- Wersja powinny mieć strukturę jako 3 bloki numeryczne, oddzielone kropkami, jak 0.1.1 lub 4.11.192
-- Wersje, począwszy od "0" wskazują, że pakiet nie jest jeszcze już gotowe do produkcji i pierwszy numer należy tylko zaczynają się od "0", jeśli jest to numer tylko używane
-- Zmiany w pierwszy numer (1.9.9999 2.0.0) wskazują główne i istotne zmian między wersjami
-- Zmiany w drugą liczbę (1.1 1.2) wskazują zmiany poziomu funkcji, takich jak dodawanie nowych poleceń cmdlet do modułu
-- Zmiany numerowi trzeci wskazywać zmian niepowodujących niezgodności, takie jak nowe parametry, przykłady zaktualizowane lub nowe testy
-- Podczas wyświetlania wersji, programu PowerShell pozwala na sortowanie wersje jako ciągi, więc 1.01.0 będą traktowane jako większy niż 1.001.0
+- Wersja powinna mieć strukturę co 3 bloki liczbowe oddzielone kropkami, jak w 0.1.1 lub 4.11.192
+- Wersje zaczynające się od "0" wskazują, że pakiet nie jest jeszcze gotowy do produkcji, a pierwsza liczba powinna zaczynać się tylko od "0", jeśli jest to jedyna użyta liczba
+- Zmiany w pierwszej liczbie (1.9.9999 do 2.0.0) wskazują na główne i istotne zmiany między wersjami
+- Zmiany w drugiej liczbie (od 1,1 do 1,2) wskazują na zmiany poziomu funkcji, takie jak dodawanie nowych poleceń cmdlet do modułu
+- Zmiany trzeciego numeru wskazują na niekrytyczne zmiany, takie jak nowe parametry, zaktualizowane przykłady lub nowe testy
+- Podczas tworzenia listy wersji program PowerShell sortuje wersje jako ciągi, więc 1.01.0 będzie traktowane jako większe niż 1.001.0
 
-Program PowerShell został utworzony przed SemVer został opublikowany, udostępnia obsługę większości, ale nie wszystkie elementy SemVer, w szczególności:
+Program PowerShell został utworzony przed opublikowaniem SemVer, więc zapewnia obsługę większości, ale nie wszystkich elementów SemVer, w szczególności:
 
-- Wstępna ciągów nie obsługuje numerów wersji. Jest to przydatne, gdy wydawca chce dostarczać wersję zapoznawczą nowej wersji głównej po podaniu wersji 1.0.0. Będzie to możliwe w przyszłej wersji poleceń cmdlet narzędzia z galerii programu PowerShell i modułu PowerShellGet.
-- Program PowerShell i galerii programu PowerShell umożliwiają ciągów w wersji 1, 2 i 4 segmentów. Wiele modułów wczesne nie korzystał z wytycznymi i wersje produktu od firmy Microsoft zawierają informacje o kompilacji, ponieważ 4 blokowanie liczb (na przykład 5.1.14393.1066). Z punktu widzenia versioning te różnice są ignorowane.
+- Nie obsługuje on parametrów wersji wstępnej w numerach wersji. Jest to przydatne, gdy Wydawca chce dostarczyć wersję zapoznawczą nowej wersji głównej po udostępnieniu wersji 1.0.0. Ta wartość będzie obsługiwana w przyszłych wersjach Galeria programu PowerShell i poleceń cmdlet programu PowerShellGet.
+- Program PowerShell i Galeria programu PowerShell umożliwiają stosowanie ciągów wersji z 1, 2 i 4 segmentami. Wiele wczesnych modułów nie była zgodna z wytycznymi, a wydania produktów firmy Microsoft obejmują informacje o kompilacji jako czwarty blok liczb (na przykład 5.1.14393.1066). Różnice między wersjami punktu widzenia są ignorowane.
 
 ## <a name="test-using-a-local-repository"></a>Testowanie przy użyciu repozytorium lokalnego
 
-Galeria programu PowerShell nie jest przeznaczony do obiektu docelowego dla testowania proces publikowania.
-Jest najlepszym sposobem przetestowania end-to-end procesu publikowania w galerii programu PowerShell do konfigurowania i używania własnego repozytorium lokalnego.
+Galeria programu PowerShell nie jest celem do testowania procesu publikowania.
+Najlepszym sposobem na przetestowanie kompleksowego procesu publikowania w Galeria programu PowerShell jest skonfigurowanie i użycie własnego repozytorium lokalnego.
 Można to zrobić na kilka sposobów, w tym:
 
-- Skonfiguruj lokalne wystąpienie galerii programu PowerShell, za pomocą [projektu galerią prywatną PS](https://github.com/PowerShell/PSPrivateGallery) w usłudze Github. Ten projekt w wersji zapoznawczej pomoże poświęcona jest konfigurowaniu wystąpienia galerii programu PowerShell, które możesz kontrolować i używany do testów.
-- Konfigurowanie [wewnętrznego repozytorium Nuget](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Wymaga więcej pracy do skonfigurowania, ale ma tę zaletę, sprawdzanie poprawności kilka innych wymagań, szczególnie sprawdzania poprawności korzystanie z klucza interfejsu API i czy nie zależności znajdują się w docelowym podczas publikowania.
-- Konfigurowanie udziału plików jako test "repozytorium". Jest to łatwe do skonfigurowania, ale ponieważ jest udział plików, sprawdzanie poprawności przedstawionych powyżej zaczną obowiązywać. Jedną z zalet potencjalnych w tym przypadku jest, że udział plików nie sprawdza (wymagane) klucz interfejsu API, dzięki czemu można używać tego samego klucza jak publikowanie w galerii programu PowerShell.
+- Skonfiguruj lokalne wystąpienie Galeria programu PowerShell przy użyciu [projektu galerii prywatnej PS](https://github.com/PowerShell/PSPrivateGallery) w serwisie GitHub. Ten projekt w wersji zapoznawczej pomoże Ci skonfigurować wystąpienie Galeria programu PowerShell, które można kontrolować, i użyć dla testów.
+- Skonfiguruj [wewnętrzne repozytorium NuGet](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/). Będzie to wymagało więcej pracy do skonfigurowania, ale będzie można sprawdzić, czy nie ma kilku innych wymagań, szczególnie sprawdzać użycie klucza interfejsu API oraz czy nie występują zależności w miejscu docelowym podczas publikowania.
+- Skonfiguruj udział plików jako test "Repository". Jest to łatwe do skonfigurowania, ale ponieważ jest to udział plików, nie będą miały ważności wymienione powyżej. Jedną z potencjalnych zalet w tym przypadku jest to, że udział plików nie sprawdza (wymaganego) klucza interfejsu API, dlatego można użyć tego samego klucza, który ma zostać opublikowany w Galeria programu PowerShell.
 
-Za pomocą dowolnego z tych rozwiązań Użyj Register-PSRepository, aby zdefiniować nowe "repozytorium", które będzie używane we właściwości - repozytorium Publish-Module.
+Za pomocą dowolnego z tych rozwiązań Użyj polecenie Register-PSRepository, aby zdefiniować nowe "repozytorium", które jest używane we właściwości-Repository dla modułu Publish-module.
 
-Jeden dodatkowy punkt o publikowaniu testu: nie można usunąć dowolny pakiet, publikowanie w galerii programu PowerShell bez pomocy działu operacyjnego, która potwierdzi, że nic nie jest zależny od pakietu, którą chce opublikować.
-Z tego powodu firma Microsoft nie obsługują galerii programu PowerShell jako obiekt docelowy testowania i skontaktuje się z dowolnego wydawcy, który wykonuje tę funkcję.
+Jeden dodatkowy punkt dotyczący publikowania testów: każdy pakiet publikowany w Galeria programu PowerShell nie może zostać usunięty bez pomocy zespołu operacyjnego, który potwierdzi, że nic nie zależy od pakietu, który chcesz opublikować.
+Z tego powodu nie obsługujemy Galeria programu PowerShell jako celu testowania i skontaktuje się z każdym wydawcą.
 
-## <a name="use-powershellget-to-publish"></a>Publikowanie przy użyciu funkcji PowerShellGet
+## <a name="use-powershellget-to-publish"></a>Użyj PowerShellGet do opublikowania
 
-Zdecydowanie zaleca się, że wydawcy używają poleceń cmdlet Publish-Module i Publish-Script podczas pracy z galerii programu PowerShell.
-Moduł PowerShellGet został utworzony, aby pomóc w uniknięciu zapamiętywanie ważne informacje dotyczące instalowania z i publikowanie w galerii programu PowerShell.
-Czasami wydawców wybrano opuszczenia PowerShellGet i użycia klienta programu NuGet, lub polecenia cmdlet funkcji PackageManagement, zamiast Publish-Module.
-Istnieje szereg szczegółowe informacje, które są łatwo przeoczyć, co skutkuje szereg żądania pomocy technicznej.
+Zdecydowanie zaleca się, aby wydawcy używali poleceń cmdlet Publish-module i Publish-Script podczas pracy z Galeria programu PowerShell.
+PowerShellGet został utworzony, aby zapobiec zapamiętaniu ważnych informacji o instalowaniu i publikowaniu w Galeria programu PowerShell.
+W przypadku wydawców wybrano opcję pominięcia PowerShellGet i użycia klienta NuGet lub poleceń cmdlet programu PackageManagement zamiast modułu Publish-module.
+Istnieje wiele szczegółów, które można łatwo pominąć, co skutkuje różnymi żądaniami obsługi.
 
-W przypadku przyczyna, że nie możesz użyć Publish-Module ani Publish-Script, Daj nam znać.
-Prześlij zgłoszenie w repozytorium PowerShellGet GitHub i podaj szczegółowe informacje, które można wybrać NuGet lub PackageManagement spowodować.
+Jeśli istnieje powód, aby nie można było użyć publikowania-module ani publikacji-skryptu, daj nam znać.
+Zaplikowanie problemu w repozytorium GitHub usługi PowerShellGet i podaj szczegóły, które powodują wybranie NuGet lub PackageManagement.
 
-## <a name="recommended-workflow"></a>Zalecanym przepływie pracy
+## <a name="recommended-workflow"></a>Zalecany przepływ pracy
 
-Najbardziej podejście, które znaleźliśmy pakiety opublikowane w galerii programu PowerShell są następujące:
+Najbardziej myślnym podejściem znalezionym w przypadku pakietów opublikowanych w Galeria programu PowerShell jest:
 
-- Początkowy Programowanie w lokacji projekt open source. Zespół programu PowerShell używa usługi Github.
-- Użyj opinie recenzentów i [analizatora skryptu programu Powershell](https://aka.ms/psscriptanalyzer) można pobrać kodu do czasu trwania stanu stabilnego stanu
-- Obejmuje dokumentacji, więc innych wie, jak korzystać pracy
-- Przetestuj publikowania akcję przy użyciu repozytorium lokalnego.
-- Publikowanie wersji stałe lub alfa w galerii programu PowerShell, upewniając się uwzględnić w dokumentacji i link do witryny projektu
-- Zbieraj opinie i iteracji dla kodu w witrynie usługi project, a następnie opublikować stabilną aktualizacje w galerii programu PowerShell
-- Dodaj przykłady oraz usług Pester testów w projekcie i modułu
-- Określenie, czy kodowi Zaloguj się do pakietu
-- Jeśli uważasz, że projekt jest gotowa do użycia w środowisku produkcyjnym, należy opublikować 1.0.0 wersji w galerii programu PowerShell
-- Przejdź do zbierania opinii i powtarzanie czynności w kodzie, w oparciu o dane wejściowe użytkownika
+- Wykonaj wstępne programowanie w witrynie projektu typu open source. Zespół programu PowerShell używa usługi GitHub.
+- Używanie opinii recenzentów i [analizatora skryptów programu PowerShell](https://aka.ms/psscriptanalyzer) w celu uzyskania stabilnego stanu kodu
+- Dołącz dokumentację, aby inni wiedzieli, jak korzystać z pracy
+- Przetestuj akcję publikowania przy użyciu repozytorium lokalnego.
+- Opublikuj w Galeria programu PowerShell stabilną lub alfa wersję, pamiętając o uwzględnieniu dokumentacji i linku do witryny projektu
+- Zbierz informacje zwrotne i wykonaj iterację kodu w witrynie projektu, a następnie opublikuj stabilne aktualizacje Galeria programu PowerShell
+- Dodaj przykłady i testy szkodników w projekcie i module
+- Zdecyduj, czy chcesz podpisać swój pakiet w kodzie
+- Jeśli uważasz, że projekt jest gotowy do użycia w środowisku produkcyjnym, Opublikuj wersję 1.0.0 w Galeria programu PowerShell
+- Kontynuuj zbieranie opinii i Iterowanie w kodzie na podstawie danych wejściowych użytkownika

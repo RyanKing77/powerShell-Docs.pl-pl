@@ -1,136 +1,125 @@
 ---
 title: Cykl życia pomocy technicznej programu PowerShell Core
-description: Zasady dotyczące pomocy technicznej dla programu PowerShell Core
+description: Zasady rządzące obsługą programu PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 60999ed54ca3be15232ffee3ab0c49cb94873a8f
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854373"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986743"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Cykl życia pomocy technicznej programu PowerShell Core
 
-PowerShell Core to zestaw różne narzędzia i składniki, które są dostarczane, zainstalować i skonfigurować oddzielnie, za pomocą programu Windows PowerShell.
-Tak program PowerShell Core nie są objęte umowami licencjonowania Windows 7/8.1/10 lub Windows Server.
+Program PowerShell Core to odrębny zestaw narzędzi i składników, które są dostarczane, instalowane i konfigurowane niezależnie od programu Windows PowerShell. W związku z tym program PowerShell Core nie jest uwzględniony w umowach licencyjnych systemu Windows 7/8.1/10 lub Windows Server.
 
-Jednak program PowerShell Core jest obsługiwane w ramach tradycyjnego umowy pomocy technicznej firmy Microsoft, w tym [Premier][], [umowy Microsoft Enterprise Agreement][enterprise-agreement]i [Microsoft Software Assurance][assurance].
-Można również płacisz [asystowanej pomocy technicznej][] dla programu PowerShell Core, rejestrując żądanie pomocy technicznej dla danego problemu.
+Jednak środowisko PowerShell Core jest obsługiwane w ramach tradycyjnych umów pomocy technicznej firmy Microsoft, w tym [Dotyczące][], [Microsoft Enterprise Agreement][enterprise-agreement]i [Microsoft Software Assurance][assurance].
+Możesz również uregulować pomoc [Asystowana pomoc techniczna][] dla programu PowerShell Core, zgłaszając żądanie pomocy technicznej dotyczące problemu.
 
-## <a name="community-support"></a>Pomoc techniczna w społeczności
+## <a name="community-support"></a>Wsparcie społeczności
 
-Oferujemy również [pomoc techniczna w społeczności][] w serwisie GitHub, w którym mogą zgłaszać problem lub usterki zgłoszenie dotyczące funkcji.
-Ponadto Pomoc z innymi członkami społeczności może się okazać ogólne [Microsoft Community][] lub Microsoft [Społeczność techniczna programu PowerShell][].
-Firma Microsoft nie oferuje żadnej gwarancji, istnieje czy społeczności zostanie adres lub rozwiązać problem w odpowiednim czasie.
-Jeśli masz problem wymagający natychmiastowej uwagi, należy użyć tradycyjny, płatnych opcji pomocy technicznej.
+Oferujemy również [wsparcie społeczności][] w usłudze GitHub, w której można zgłosić problem, usterkę lub żądanie funkcji.
+Ponadto możesz uzyskać pomoc od innych członków społeczności w ogólnej [Społeczność firmy Microsoft][] lub w [Społeczność techniczna programu PowerShell][]programu Microsoft PowerShell. Firma Microsoft nie gwarantuje, że społeczność będzie w odpowiednim czasie rozwiązywać problemy. Jeśli masz problem wymagający natychmiastowej uwagi, należy użyć tradycyjnych, płatnych opcji pomocy technicznej.
 
 ## <a name="lifecycle-of-powershell-core"></a>Cykl życia programu PowerShell Core
 
-Program PowerShell Core jest przyjęcie [nowoczesne zasady cyklu życia firmy Microsoft][modern].
-Ten cykl wsparcia technicznego jest przeznaczona dla aktualnych klientów przy użyciu najnowszej wersji.
+Program PowerShell Core wdraża [zasady nowoczesnego cyklu życia firmy Microsoft][modern]. Ten cykl pomocy technicznej jest przeznaczony do zapewnienia aktualności klientom najnowszych wersji.
 
-Gałęzi wersji 6.x, programu PowerShell Core będą aktualizowane mniej więcej co sześć miesięcy (przykłady: w wersji 6.0, 6.1, 6.2, itp.)
-
-> [!IMPORTANT]
-> Należy zaktualizować w ciągu sześciu miesięcy po każdej nowej wersji pomocniczej wersji, aby nadal otrzymywać pomocy technicznej.
-
-Na przykład jeśli program PowerShell Core 6.1 jest wydanej w dniu 1 lipca 2018 r. można oczekuje się do aktualizacji do programu PowerShell Core 6.1 1 stycznia 2019 r do obsługi pomocy technicznej.
+Gałąź w wersji 6. x programu PowerShell Core będzie aktualizowana co około sześciu miesięcy (przykłady: 6,0, 6,1, 6,2 itd.)
 
 > [!IMPORTANT]
-> Należy zaktualizować w ciągu 30 dni po każdej nowej wersji poprawki wersji, aby nadal otrzymywać pomocy technicznej.
+> Aby nadal otrzymywać pomoc techniczną, należy zaktualizować w ciągu sześciu miesięcy od każdej nowej wersji pomocniczej.
 
-Na przykład jeśli używasz programu PowerShell Core 6.1 i 6.1.3 została wydana 19 lutego 2019 r można oczekuje się do aktualizacji do programu PowerShell Core 6.1.3 21 marca 2019 r, czyli 30 dni po wydaniu do obsługi pomocy technicznej.
-Jeśli wymagana znajdują się wszystkie poprawki, poprawki zostaną wydane w następną aktualizację zbiorczą.
+Na przykład jeśli program PowerShell Core 6,1 jest wydawany 1 lipca 2018, należy przeprowadzić aktualizację do programu PowerShell Core 6,1 do 1 stycznia 2019, aby zachować pomoc techniczną.
 
-Nowoczesne zasady cyklu życia wymaga również, że Microsoft zawarcia klientów przez 12 miesięcy przed zaprzestaniem pomocy technicznej dla produktu (oznacza to, programu PowerShell Core).
+> [!IMPORTANT]
+> Aby nadal otrzymywać pomoc techniczną, należy zaktualizować w ciągu 30 dni od każdej nowej wersji poprawki.
 
-Po pewnym czasie oczekujemy, że program PowerShell Core przyjmie "długoterminowej obsługi" podejście.
-W tym podejściu obsługi będzie wymagamy tylko obsługi i aktualizacje zabezpieczeń pozostanie w pomocy technicznej w określonej gałęzi/wersji 6.x.
+Na przykład jeśli korzystasz z programu PowerShell Core 6,1, a program 6.1.3 został zwolniony 19 lutego 2019, należy przeprowadzić aktualizację do programu PowerShell Core 6.1.3 do 21 marca 2019, czyli 30 dni od wydania do utrzymania pomocy technicznej. Jeśli okaże się wymagane, poprawki zostaną wydane w następnej aktualizacji zbiorczej.
+
+Nowoczesne zasady cyklu życia wymagają również od firmy Microsoft udzielenia klientom 12 miesięcy przed kontynuowaniem wsparcia dla produktu (czyli programu PowerShell Core).
+
+Wreszcie oczekujemy, że program PowerShell Core przyjmie długoterminowe podejście do obsługi. W ramach tego podejścia do obsługi będziemy musieli zachować pomoc techniczną i aktualizacje zabezpieczeń w odniesieniu do określonej gałęzi/wersji 6. x.
 
 ## <a name="supported-platforms"></a>Obsługiwane platformy
 
-Poniższej tabeli, aby wyświetlić wersję programu PowerShell Core w przypadku korzystania z platformy jest oficjalnie obsługiwany.
+Aby upewnić się, że platforma i wersja programu PowerShell Core są oficjalnie obsługiwane, zobacz poniższą tabelę.
 
-Naszej społeczności współtworzonej również pakiety dla niektórych platform, ale nie jest oficjalnie obsługiwana.
-Te pakiety są oznaczone jako `Community` w tabeli.
+Nasza społeczność zawiera również pakiety dla niektórych platform, ale nie są oficjalnie obsługiwane. Te pakiety są oznaczone jako `Community` w tabeli.
 
-Platformy wymienione jako `Experimental` oficjalnie nie są obsługiwane, ale są dostępne do eksperymentowania i przesyłania opinii.
+Platformy wymienione jako `Experimental` nie są oficjalnie obsługiwane, ale są dostępne do eksperymentowania i przesyłania opinii.
 
-|                                                   | 6.1         | 6.2         |
+| Platforma                                          | 6.1         | 6.2         |
 |---------------------------------------------------|:-----------:|:-----------:|
-| Windows 7, 8.1 i 10                            | Obsługiwane   | Obsługiwane   |
+| Windows 7, 8,1 i 10                            | Obsługiwane   | Obsługiwane   |
 | Windows Server 2008 R2, 2012 R2, 2016             | Obsługiwane   | Obsługiwane   |
-| [Półroczny kanał dystrybucji systemu Windows Server][semi-annual] | Obsługiwane   | Obsługiwane   |
-| Ubuntu 16.04 i 18.04                            | Obsługiwane   | Obsługiwane   |
-| Ubuntu 18.10 (za pośrednictwem przyciągania pakiet)                   | Społeczność   | Społeczność   |
+| [Półroczny kanał systemu Windows Server][semi-annual] | Obsługiwane   | Obsługiwane   |
+| Ubuntu 16,04 i 18,04                            | Obsługiwane   | Obsługiwane   |
+| Ubuntu 18,10 (za pośrednictwem pakietu Snap)                   | Społeczność   | Społeczność   |
+| Ubuntu 19,04 (za pośrednictwem pakietu Snap)                   | Społeczność   | Społeczność   |
 | Debian 9                                          | Obsługiwane   | Obsługiwane   |
 | CentOS 7                                          | Obsługiwane   | Obsługiwane   |
 | Red Hat Enterprise Linux 7                        | Obsługiwane   | Obsługiwane   |
-| openSUSE 42.3                                     | Obsługiwane   | Obsługiwane   |
+| openSUSE 42,3                                     | Obsługiwane   | Obsługiwane   |
 | Fedora 28                                         | Obsługiwane   | Obsługiwane   |
 | macOS 10.12+                                      | Obsługiwane   | Obsługiwane   |
-| Architektura                                              | Społeczność   | Społeczność   |
+| Przekroj                                              | Społeczność   | Społeczność   |
 | Raspbian                                          | Społeczność   | Społeczność   |
 | Kali                                              | Społeczność   | Społeczność   |
-| AppImage (działa na wielu platformach systemu Linux)     | Społeczność   | Społeczność   |
-| [Przyciągaj pakietu](https://snapcraft.io/powershell)   | Patrz Uwaga    | Patrz Uwaga    |
+| AppImage (działa na wielu platformach systemu Linux)      | Społeczność   | Społeczność   |
+| [Pakiet przyciągania](https://snapcraft.io/powershell)   | Zobacz Uwaga    | Zobacz Uwaga    |
 
 > [!NOTE]
-> Przyciągaj pakietów takie same jak w przypadku dystrybucji korzystania z pakietu.
+> Pakiety przyciągania są obsługiwane w taki sam sposób, jak w przypadku dystrybucji, w której uruchomiono pakiet.
 
-## <a name="powershell-release-end-of-life"></a>Program PowerShell wersji koniec cyklu życia
+## <a name="powershell-releases-end-of-life"></a>Program PowerShell zwalnia koniec cyklu życia
 
-Na podstawie [cyklu życia programu PowerShell Core](#lifecycle-of-powershell-core), Poniższa tabela zawiera daty, kiedy różnych wersji będzie nie będzie już obsługiwana.
+W oparciu o [cykl życia programu PowerShell Core](#lifecycle-of-powershell-core)w poniższej tabeli wymieniono daty, w których różne wersje nie będą już obsługiwane.
 
-| Wersja | Koniec cyklu życia                   |
+| Wersja | Koniec okresu użytkowania                   |
 |---------|-------------------------------|
-| 6.0     | 13 lutego 2019 r.             |
-| 6.1     | 28 września 2019 r.            |
-| 6.2     | 6 miesięcy od wersji 7     |
+| 6.0     | 13 lutego 2019             |
+| 6.1     | 28 września, 2019            |
+| 6.2     | 6 miesięcy po 7 wersjach     |
 
-## <a name="platforms-which-are-out-of-support"></a>Platform, które są poza pomocy technicznej
+## <a name="unsupported-platforms"></a>Nieobsługiwane platformy
 
-Gdy wersja platformy osiągnie wycofanych z eksploatacji, zgodnie z definicją właściciela platformy, program PowerShell Core przestaną się również do obsługi tej wersji platformy.
-Wcześniej wydane pakiety, pozostaną dostępne dla klientów wymagające dostępu, ale obsługa formalne i aktualizacje dowolnego rodzaju już nie będą udostępniane.
+Gdy wersja platformy osiągnie koniec okresu ważności określonego przez właściciela platformy, program PowerShell Core również przestanie obsługiwać tę wersję platformy. Wcześniej wydane pakiety pozostaną dostępne dla klientów potrzebujących dostępu, ale formalne wsparcie i aktualizacje dowolnego rodzaju nie będą już udostępniane.
 
-Dlatego właściciele dystrybucji zakończone obsługę następujących wersji i nie są obsługiwane.
+Dlatego właściciele dystrybucji zakończyły obsługę następujących wersji i nie są obsługiwane.
 
-| System operacyjny       | Wersja | Koniec cyklu życia                                                                                 |
+| Platforma | Wersja | Koniec okresu istnienia                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [Sierpnia 2017 r.](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| Fedora   | 25      | [Grudnia 2017 r.](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [Maja 2018 r.](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [Maja 2017 r.](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42.2    | [Stycznia 2018 r.](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16.10   | [Lipca 2017 r.](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17.04   | [Stycznia 2018 r.](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17.10   | [Lipca 2018 r.](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [Czerwca 2018 r.](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
-| Fedora   | 27      | [Listopada 2018 r.](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
-| Ubuntu   | 14.04   | [2019 kwietnia](https://wiki.ubuntu.com/Releases)                                              |
+| Fedora   | 24      | [2017 sierpnia](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| Fedora   | 25      | [Grudzień 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [2018 maja](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| openSUSE | 42.1    | [2017 maja](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| openSUSE | 42,2    | [Styczeń 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Ubuntu   | 16,10   | [Lipiec 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17,04   | [Styczeń 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17,10   | [Lipiec 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Debian   | 8       | [Czerwiec 2018](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
+| Fedora   | 27      | [Listopad 2018](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
+| Ubuntu   | 14.04   | [Kwiecień 2019](https://wiki.ubuntu.com/Releases)                                              |
 
 ## <a name="notes-on-licensing"></a>Uwagi dotyczące licencjonowania
 
-Program PowerShell Core jest wydawane na mocy [Licencja MIT][].
-W ramach niniejszej licencji, a nie towarzyszy stosowna umowa płatnej pomocy technicznej, użytkownicy są ograniczone do [pomoc techniczna w społeczności][].
-Za pomocą pomoc techniczna w społeczności firmy Microsoft nie udziela żadnych gwarancji czasu odpowiedzi lub poprawki.
+Program PowerShell Core jest wydawany w ramach [Licencja MIT][]. W ramach tej licencji i bez płatnej umowy dotyczącej pomocy technicznej użytkownicy są ograniczeni do [Wsparcie społeczności][]. W przypadku pomocy technicznej przez społeczność firma Microsoft nie udziela żadnych gwarancji dotyczących czasu reakcji ani poprawek.
 
 ## <a name="windows-powershell-module"></a>Moduł programu Windows PowerShell
 
-Pomocy technicznej dla programu PowerShell Core nie obejmuje moduły produktu, chyba że moduły jawnego zapewnienia obsługi programu PowerShell Core.
-Na przykład za pomocą `ActiveDirectory` modułu, który jest dostarczany jako część systemu Windows Server jest to nieobsługiwany scenariusz.
+Obsługa programu PowerShell Core nie obejmuje modułów produktu, chyba że te moduły jawnie nie obsługują programu PowerShell Core. Na przykład użycie `ActiveDirectory` modułu, który jest dostarczany jako część systemu Windows Server, jest nieobsługiwanym scenariuszem.
 
-Jednak może być zgodny w niektórych przypadkach moduły, które nie obsługują jawnie programu PowerShell Core.
-Instalując [ `WindowsPSModulePath` ][] modułu programu Windows PowerShell można dodać `PSModulePath` do podstawowego środowiska PowerShell `PSModulePath`.
+Jednak moduły, które nie obsługują jawnie środowiska PowerShell, mogą być zgodne w niektórych przypadkach. Instalując [`WindowsPSModulePath`][] moduł, można dodać środowisko Windows PowerShell `PSModulePath` do rdzenia `PSModulePath`programu PowerShell.
 
-Najpierw zainstaluj `WindowsPSModulePath` modułu z galerii programu PowerShell:
+Najpierw zainstaluj `WindowsPSModulePath` moduł z Galeria programu PowerShell:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
-Po zainstalowaniu tego modułu, należy uruchomić `Add-WindowsPSModulePath` polecenie cmdlet programu Windows PowerShell dodanie `PSModulePath` do programu PowerShell Core:
+Po zainstalowaniu tego modułu Uruchom `Add-WindowsPSModulePath` polecenie cmdlet, aby dodać środowisko Windows PowerShell `PSModulePath` do środowiska PowerShell Core:
 
 ```powershell
 # Add this line to your profile if you always want Windows PowerShell PSModulePath
@@ -139,18 +128,18 @@ Add-WindowsPSModulePath
 
 ## <a name="experimental-features"></a>Funkcje eksperymentalne
 
-[Funkcje eksperymentalne][] są ograniczone do [pomoc techniczna w społeczności](#community-support).
+[Funkcje eksperymentalne][] są ograniczone do [pomocy technicznej społeczności](#community-support).
 
-[Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
+[Dotyczące]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[Pomoc techniczna w społeczności]: https://github.com/powershell/powershell/issues
-[Microsoft Community]: https://answers.microsoft.com/
+[Wsparcie społeczności]: https://github.com/powershell/powershell/issues
+[Społeczność firmy Microsoft]: https://answers.microsoft.com/
 [Społeczność techniczna programu PowerShell]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[asystowanej pomocy technicznej]: https://support.microsoft.com/assistedsupportproducts
+[Asystowana pomoc techniczna]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [Licencja MIT]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+['WindowsPSModulePath']: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Funkcje eksperymentalne]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

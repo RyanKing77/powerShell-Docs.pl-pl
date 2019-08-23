@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguracja, ustawienia
+keywords: DSC, PowerShell, konfiguracja, instalacja
 title: Pisanie zasobu DSC jednego wystąpienia (najlepsze rozwiązanie)
-ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076569"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986516"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Pisanie zasobu DSC jednego wystąpienia (najlepsze rozwiązanie)
 
->**Uwaga:** W tym temacie opisano najlepsze rozwiązanie dla Definiowanie zasobów DSC, umożliwiającą tylko jedno wystąpienie w konfiguracji. Obecnie nie ma żadnych wbudowanej funkcji DSC, aby to zrobić. Które mogą ulec zmianie w przyszłości.
+>**Uwaga:** W tym temacie opisano najlepsze rozwiązanie w zakresie definiowania zasobu DSC, który umożliwia tylko pojedyncze wystąpienie w konfiguracji. Obecnie nie istnieje Wbudowana funkcja DSC. Które mogą ulec zmianie w przyszłości.
 
-Istnieją sytuacje, w których nie chcesz zezwolić na zasób, który ma być używany wielokrotnie w konfiguracji. Na przykład w poprzedniej implementacji [xTimeZone](https://github.com/PowerShell/xTimeZone) zasobów, konfiguracji można nazwać zasobu wielokrotnie, ustawienie strefy czasowej na inne ustawienie w każdym bloku zasobów:
+Istnieją sytuacje, w których nie należy zezwalać na użycie zasobu wiele razy w konfiguracji. Na przykład w poprzedniej implementacji zasobu [xTimeZone](https://github.com/PowerShell/xTimeZone) konfiguracja może wywoływać zasób wiele razy, ustawiając strefę czasową na inne ustawienie w każdym bloku zasobów:
 
 ```powershell
 Configuration SetTimeZone
@@ -46,10 +46,10 @@ Configuration SetTimeZone
 }
 ```
 
-Jest to ze względu na sposób pracy klucze zasobu DSC. Zasób musi mieć co najmniej jedną właściwość klucza. Wystąpienie zasobu jest traktowany jako unikatowe, jeśli kombinacja wartości wszystkich właściwości klucza jest unikatowa. W jego poprzedniej implementacji [xTimeZone](https://github.com/PowerShell/xTimeZone) zasobu ma tylko jedną właściwość —**strefa czasowa**, który został musi być kluczem. W związku z tym konfiguracji, takiego jak pokazano powyżej może skompilować i uruchomić bez ostrzeżenia. Każdy z **xTimeZone** bloków zasobów jest traktowane jako unikatowe. To spowoduje, że konfigurację można wielokrotnie zastosować do węzła, cykliczny strefę czasową i z powrotem.
+Wynika to z sposobu, w jaki działają klucze zasobów DSC. Zasób musi mieć co najmniej jedną właściwość klucza. Wystąpienie zasobu jest uznawane za unikatowe, jeśli kombinacja wartości wszystkich właściwości klucza jest unikatowa. W poprzedniej implementacji zasób [xTimeZone](https://github.com/PowerShell/xTimeZone) miał tylko jedną właściwość--**strefę czasową**, która była wymagana jako klucz. W związku z tym taka konfiguracja powinna zostać skompilowana i uruchomiona bez ostrzeżenia. Każdy z bloków zasobów **xTimeZone** jest uznawany za unikatowy. Może to spowodować, że konfiguracja zostanie wielokrotnie zastosowana do węzła, co spowoduje ponowne przetworzenie strefy czasowej.
 
-Aby upewnij się, że konfiguracja może strefę czasową dla węzła docelowego tylko raz, zasób został zaktualizowany do Dodaj drugą właściwość **IsSingleInstance**, które stały się właściwość klucza.
-**IsSingleInstance** zostało ograniczone do pojedynczej wartości "Yes" przy użyciu **ValueMap**. Stary schematu pliku MOF dla zasobu to:
+Aby mieć pewność, że konfiguracja może ustawić strefę czasową dla węzła docelowego tylko raz, zasób został zaktualizowany tak, aby dodać drugą właściwość **IsSingleInstance**, która stała się właściwością klucza.
+**IsSingleInstance** została ograniczona do pojedynczej wartości "tak" przy użyciu **ValueMap**. Stary schemat MOF dla zasobu to:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -59,7 +59,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-Zaktualizowano schemat MOF dla zasobu to:
+Zaktualizowany schemat MOF dla zasobu to:
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-Skrypt zasobów został także zaktualizowany do użycia nowego parametru. Oto starego skryptu zasobu:
+Skrypt zasobu został również zaktualizowany do korzystania z nowego parametru. W tym miejscu został zmieniony skrypt zasobów:
 
 ```powershell
 function Get-TargetResource
@@ -102,10 +102,9 @@ function Get-TargetResource
     $returnValue
 }
 
-
 function Set-TargetResource
 {
-    [CmdletBinding(SupportsShouldProcess=$true)]
+    [CmdletBinding()]
     param
     (
         [parameter(Mandatory = $true)]
@@ -122,24 +121,24 @@ function Set-TargetResource
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
 
-    if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
+    
+    try
     {
-        try
+        if($CurrentTimeZone -ne $TimeZone)
         {
-            if($CurrentTimeZone -ne $TimeZone)
-            {
-                Write-Verbose -Verbose "Setting the TimeZone"
-                Set-TimeZone -TimeZone $TimeZone}
-            else
-            {
-                Write-Verbose -Verbose "TimeZone already set to $TimeZone"
-            }
+            Write-Verbose -Verbose "Setting the TimeZone"
+            Set-TimeZone -TimeZone $TimeZone
         }
-        catch
+        else
         {
-            $ErrorMsg = $_.Exception.Message
-            Write-Verbose -Verbose $ErrorMsg
+            Write-Verbose -Verbose "TimeZone already set to $TimeZone"
         }
+    }
+    catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose -Verbose $ErrorMsg
     }
 }
 
@@ -203,7 +202,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-Należy zauważyć, że **strefa czasowa** właściwość nie jest już klucz. Teraz, jeśli konfiguracja próbuje Ustaw strefę czasową dwa razy (przy użyciu dwóch różnych **xTimeZone** bloków z różnymi **strefa czasowa** wartości), próba skompilowania konfiguracji spowoduje błąd:
+Zauważ, że właściwość **strefy czasowej** nie jest już kluczem. Teraz, jeśli konfiguracja próbuje dwukrotnie ustawić strefę czasową (przy użyciu dwóch różnych bloków **xTimeZone** z różnymi wartościami **strefy czasowej** ), Próba skompilowania konfiguracji spowoduje wystąpienie błędu:
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and

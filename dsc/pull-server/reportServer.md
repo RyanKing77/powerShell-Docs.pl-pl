@@ -1,33 +1,33 @@
 ---
 ms.date: 06/12/2017
-keywords: DSC, powershell, konfiguracja, ustawienia
+keywords: DSC, PowerShell, konfiguracja, instalacja
 title: Używanie serwera raportów platformy DSC
-ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079238"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986562"
 ---
 # <a name="using-a-dsc-report-server"></a>Używanie serwera raportów platformy DSC
 
-Dotyczy: Windows PowerShell 5.0
+Dotyczy: Środowisko Windows PowerShell 5,0
 
 > [!IMPORTANT]
-> Serwera ściągania (funkcja Windows *usługi DSC*) jest obsługiwanych składników systemu Windows Server jednak nie jest planowane oferują nowe funkcje lub możliwości osobno. Zaleca się rozpocząć przechodzenie zarządzanych klientom [usługi Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (w tym funkcje poza serwera ściągania w systemie Windows Server) lub jeden z członków społeczności na liście [tutaj](pullserver.md#community-solutions-for-pull-service).
+> Serwer ściągania (Windows Feature *DSC-Service*) jest obsługiwanym składnikiem systemu Windows Server, ale nie ma żadnych planów do oferowania nowych funkcji. Zalecane jest, aby rozpocząć przechodzenie zarządzanych klientów do [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (obejmuje funkcje wykraczające poza serwer ściągający w systemie Windows Server) lub jedno z rozwiązań społecznościowych wymienionych w [tym miejscu](pullserver.md#community-solutions-for-pull-service).
 >
 > [!NOTE]
-> Serwer raportów, opisanych w tym temacie nie jest dostępny w programie PowerShell 4.0.
+> Serwer raportów opisany w tym temacie nie jest dostępny w programie PowerShell 4,0.
 
-Lokalne Configuration Manager (LCM) węzeł można skonfigurować do wysyłania raportów o jego stanie konfiguracji na serwerze ściągania, następnie można odpytywać do pobrania tych danych. Każdorazowo, sprawdza, czy węzeł i powoduje zastosowanie konfiguracji, wysyła raport na serwerze raportów. Te raporty są przechowywane w bazie danych na serwerze i może być pobierany przez wywołanie usługi sieci web raportowania. Każdy raport zawiera informacje, takie jak konfiguracje, które zostały zastosowane i czy ich zakończyło się pomyślnie, zasoby używane wszystkie błędy, które zostały zgłoszone i rozpoczęcia i czasu zakończenia.
+Lokalny Configuration Manager (LCM) węzła można skonfigurować tak, aby raporty o jego stanie konfiguracji były wysyłane do serwera ściągania, który następnie będzie mógł uzyskać zapytanie w celu pobrania tych danych. Za każdym razem, gdy węzeł sprawdza i stosuje konfigurację, wysyła raport do serwera raportów. Te raporty są przechowywane w bazie danych na serwerze i mogą być pobierane przez wywołanie usługi sieci Web raportowania. Każdy raport zawiera informacje, takie jak konfiguracje, które zostały zastosowane i czy zakończyły się powodzeniem, używane zasoby, wszystkie zgłoszone błędy oraz czasy rozpoczęcia i zakończenia.
 
-## <a name="configuring-a-node-to-send-reports"></a>Konfigurowanie węzłów do wysyłania raportów
+## <a name="configuring-a-node-to-send-reports"></a>Konfigurowanie węzła do wysyłania raportów
 
-Poinformuj węzła do wysyłania raportów do serwera przy użyciu **ReportServerWeb** zablokować w węźle LCM konfiguracji (Aby dowiedzieć się, jak konfigurowanie programu LCM, zobacz [Konfigurowanie programu Local Configuration Manager](../managing-nodes/metaConfig.md) ). Serwer, na którym węzeł wysyła raporty należy skonfigurować jako internetowego serwera ściągania (do udziału SMB nie wysyłaj raportów). Aby uzyskać informacje o konfigurowaniu serwera ściągania, zobacz [Konfigurowanie internetowego serwera ściągania DSC](pullServer.md). Serwer raportów może być tej samej usługi, z którego węzeł operacji ściągania konfiguracji i pobiera zasoby, lub może być innej usługi.
+Poinformujesz węzeł, aby wysyłał raporty do serwera przy użyciu bloku **ReportServerWeb** w konfiguracji LCM węzła (Aby uzyskać informacje o konfigurowaniu LCM), zobacz [Konfigurowanie Configuration Manager lokalnego](../managing-nodes/metaConfig.md)). Serwer, do którego węzeł wysyła raporty, musi być skonfigurowany jako serwer ściągania w sieci Web (nie można wysyłać raportów do udziału SMB). Aby uzyskać informacje na temat konfigurowania serwera ściągania, zobacz [Konfigurowanie serwera ściągania sieci Web](pullServer.md). Serwer raportów może być tą samą usługą, z której węzeł ściąga konfiguracje i pobiera zasoby, lub może być inną usługą.
 
-W **ReportServerWeb** bloku, podaj adres URL usługi ściągania oraz klucz rejestracyjny, który jest znany do serwera.
+W bloku **ReportServerWeb** Określ adres URL usługi ściągania i klucz rejestracji znany serwerowi.
 
-Następująca konfiguracja umożliwi skonfigurowanie węzła do ściągania konfiguracji między usługami i wysyłać raporty do usługi na innym serwerze.
+Poniższa konfiguracja konfiguruje węzeł do ściągania konfiguracji z jednej usługi i wysyła raporty do usługi na innym serwerze.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ configuration ReportClientConfig
 
         ReportServerWeb CONTOSO-ReportSrv
         {
-            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCReportServer.svc'
+            ServerURL               = 'http://CONTOSO-REPORT:8080/PSDSCPullServer.svc'
             RegistrationKey         = 'ba39daaa-96c5-4f2f-9149-f95c46460faa'
             AllowUnsecureConnection = $true
         }
@@ -61,7 +61,7 @@ configuration ReportClientConfig
 ReportClientConfig
 ```
 
-Następująca konfiguracja umożliwia skonfigurowanie węzła na potrzeby pojedynczego serwera konfiguracji, zasobów i raportowania.
+Poniższa konfiguracja konfiguruje węzeł do korzystania z jednego serwera na potrzeby konfiguracji, zasobów i raportowania.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -94,16 +94,16 @@ PullClientConfig
 ```
 
 > [!NOTE]
-> Możesz nazwać usługi sieci web dowolnie po skonfigurowaniu serwera ściągania, ale **ServerURL** właściwość musi odpowiadać nazwie usługi.
+> Usługę sieci Web można nazwać w dowolny sposób podczas konfigurowania serwera ściągania, ale właściwość **ServerURL** musi być zgodna z nazwą usługi.
 
 ## <a name="getting-report-data"></a>Pobieranie danych raportu
 
-Raporty wysyłane do serwera ściągania są wprowadzane do bazy danych na serwerze. Raporty są dostępne za pośrednictwem wywołania usługi sieci web. Aby pobrać raporty dla określonego węzła, Wyślij żądanie HTTP do usługi sieci web raport w następującej postaci: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
-gdzie `MyNodeAgentId` jest identyfikator agenta węzła, dla którego chcesz uzyskać raporty. Możesz też uzyskać identyfikator agenta węzła przez wywołanie metody [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) w tym węźle.
+Raporty wysyłane do serwera ściągania są wprowadzane do bazy danych na serwerze. Raporty są dostępne za pomocą wywołań usługi sieci Web. Aby pobrać raporty dla określonego węzła, Wyślij żądanie HTTP do usługi sieci Web raportów w następującej postaci:`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+gdzie `MyNodeAgentId` to identyfikator agenta węzła, dla którego chcesz uzyskać raporty. Możesz uzyskać identyfikator agenta dla węzła, wywołując metodę [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) w tym węźle.
 
 Raporty są zwracane jako tablica obiektów JSON.
 
-Poniższy skrypt zwraca raporty dla węzła, na którym jest uruchomiona:
+Poniższy skrypt zwraca raporty dla węzła, na którym jest uruchamiany:
 
 ```powershell
 function GetReport
@@ -123,9 +123,9 @@ function GetReport
 }
 ```
 
-## <a name="viewing-report-data"></a>Wyświetlanie danych w raporcie
+## <a name="viewing-report-data"></a>Wyświetlanie danych raportu
 
-Jeśli zmienna jest ustawiona na wynik **GetReport** funkcji, można wyświetlić poszczególnych pól w elemencie tablicy, która jest zwracana:
+W przypadku ustawienia zmiennej do wyniku funkcji GetReport można wyświetlić poszczególne pola w elemencie tablicy, która jest zwracana:
 
 ```powershell
 $reports = GetReport
@@ -166,14 +166,14 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-Domyślnie, raporty są sortowane według **JobID**. Aby uzyskać najnowszy raport, raporty można sortować według malejących **StartTime** właściwości, a następnie Pobierz pierwszy element tablicy:
+Domyślnie raporty są sortowane według identyfikatora **zadania**. Aby uzyskać najnowszy raport, można posortować raporty według właściwości **StartTime** , a następnie uzyskać pierwszy element tablicy:
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-Należy zauważyć, że **StatusData** właściwości jest obiektem, wprowadzając szereg właściwości. Jest to, gdzie jest duża część danych raportowania. Spójrzmy na poszczególnych pól **StatusData** właściwość najnowszy raport:
+Zauważ, że właściwość **StatusData** jest obiektem z liczbą właściwości. Jest to miejsce, w którym jest dużo danych raportowania. Przyjrzyjmy się poszczególnym polom właściwości **StatusData** dla najnowszego raportu:
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -213,7 +213,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-Między innymi to pokazuje, że najnowszej konfiguracji o nazwie dwa zasoby i że jeden z nich był w żądanym stanie i jeden z nich nie jest. Możesz uzyskać lepszą czytelność danych wyjściowych po prostu z **ResourcesNotInDesiredState** właściwości:
+W ten sposób pokazuje, że najnowsza konfiguracja o nazwie dwa zasoby i że jedna z nich była w żądanym stanie, a jeden z nich nie był. Można uzyskać bardziej czytelny wynik tylko dla właściwości **ResourcesNotInDesiredState** :
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -233,12 +233,12 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Należy pamiętać, że te przykłady są przeznaczone do dają pogląd, co można zrobić z danymi raportu. Aby zapoznać się z wprowadzeniem na temat pracy z formatu JSON w programie PowerShell, zobacz [odtwarzanie z formatami JSON i programu PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Należy zauważyć, że te przykłady mają na celu zakoncepcję tego, co można zrobić z danymi raportu. Aby zapoznać się z wprowadzeniem do pracy z kodem JSON w programie PowerShell, zobacz [odtwarzanie za pomocą kodu JSON i programu PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Zobacz też
 
-[Konfigurowanie programu Local Configuration Manager](../managing-nodes/metaConfig.md)
+[Konfigurowanie Configuration Manager lokalnego](../managing-nodes/metaConfig.md)
 
-[Konfigurowanie internetowego serwera ściągania DSC](pullServer.md)
+[Konfigurowanie serwera ściągania sieci Web DSC](pullServer.md)
 
 [Konfigurowanie klienta ściągania przy użyciu nazw konfiguracji](pullClientConfigNames.md)
