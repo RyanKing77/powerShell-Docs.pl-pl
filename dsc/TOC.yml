@@ -12,6 +12,8 @@
   items:
     - name: Wprowadzenie do platformy DSC dla systemu Linux
       href: getting-started/lnxGettingStarted.md
+    - name: Wprowadzenie do platformy DSC dla systemu Windows
+      href: getting-started/winGettingStarted.md
     - name: Wprowadzenie do platformy DSC na serwerze Nano
       href: getting-started/nanoDSC.md
     - name: Wprowadzenie do platformy DSC w usłudze Azure Automation
