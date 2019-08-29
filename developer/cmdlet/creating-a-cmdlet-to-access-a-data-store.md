@@ -1,53 +1,51 @@
 ---
-title: Tworzenie polecenia Cmdlet, aby uzyskać dostęp Store danych | Dokumentacja firmy Microsoft
+title: Tworzenie polecenia cmdlet w celu uzyskania dostępu do magazynu danych
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
-caps.latest.revision: 8
-ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 7acccbd48dcfb654b11e448a1f24835ad3668fae
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733946"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104465"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Tworzenie polecenia cmdlet w celu uzyskania dostępu do magazynu danych
 
-W tej sekcji opisano sposób tworzenia polecenia cmdlet, który uzyskuje dostęp do przechowywanych danych za pomocą dostawcy środowiska Windows PowerShell. Ten typ polecenia cmdlet używa infrastruktury dostawcy środowiska Windows PowerShell, środowiska uruchomieniowego programu Windows PowerShell, a także, w związku z tym, klasa polecenia cmdlet muszą pochodzić od [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy bazowej.
+W tej sekcji opisano sposób tworzenia polecenia cmdlet, które uzyskuje dostęp do przechowywanych danych za pomocą dostawcy środowiska Windows PowerShell. Ten typ polecenia cmdlet używa infrastruktury dostawcy programu Windows PowerShell środowiska uruchomieniowego programu Windows PowerShell i dlatego Klasa poleceń cmdlet musi pochodzić od klasy bazowej [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) .
 
-Polecenia cmdlet Select Str opisane w tym miejscu można Znajdź i zaznacz ciągów w pliku lub obiektu. Wzorce używany do identyfikowania ciąg może być określony jawnie za pomocą `Path` parametru polecenia cmdlet lub niejawnie za pomocą `Script` parametru.
+Opisane w tym miejscu polecenie cmdlet Select-str może lokalizować i wybierać ciągi w pliku lub obiekcie. Wzorce używane do identyfikacji ciągu można jawnie określić za pomocą `Path` parametru polecenia cmdlet lub niejawnie `Script` za pomocą parametru.
 
-Polecenie cmdlet jest przeznaczony do stosowania dowolnego dostawcy środowiska Windows PowerShell, która pochodzi od klasy [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Na przykład polecenia cmdlet można określić dostawcy systemu plików lub zmiennej dostawcy, który jest dostarczany przez środowisko Windows PowerShell. Aby uzyskać więcej informacji o aboutWindows dostawcy programu PowerShell, zobacz [dostawcy projektowania Your Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md).
+Polecenie cmdlet jest przeznaczone do używania dowolnego dostawcy środowiska Windows PowerShell, który pochodzi od [System. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Na przykład polecenie cmdlet może określić dostawcę systemu plików lub dostawcę zmiennych, który jest dostarczany przez program Windows PowerShell. Aby uzyskać więcej informacji aboutWindows dostawców programu PowerShell, zobacz [projektowanie dostawcy środowiska Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md).
 
-## <a name="defining-the-cmdlet-class"></a>Definiowanie klasy polecenia Cmdlet
+## <a name="defining-the-cmdlet-class"></a>Definiowanie klasy poleceń cmdlet
 
-Pierwszym krokiem w procesie tworzenia polecenia cmdlet jest zawsze nazewnictwa polecenia cmdlet i deklarowanie klasy .NET, która implementuje polecenia cmdlet. To polecenie cmdlet wykrywa niektóre ciągi, więc nazwa zlecenie wybrane w tym miejscu jest "Wybierz" zdefiniowany przez [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) klasy. Nazwa rzeczownik "Str" jest używana, ponieważ polecenie cmdlet działa na ciągi. W poniższej deklaracji należy pamiętać, że nazwa polecenia cmdlet czasownik i rzeczownik są odzwierciedlane na nazwę klasy polecenia cmdlet. Aby uzyskać więcej informacji na temat polecenia cmdlet zatwierdzonych czasowników, zobacz [nazwy zlecenie poleceń Cmdlet](./approved-verbs-for-windows-powershell-commands.md).
+Pierwszym krokiem w tworzeniu poleceń cmdlet jest zawsze nazywanie polecenia cmdlet i deklarowanie klasy .NET, która implementuje polecenie cmdlet. To polecenie cmdlet wykrywa pewne ciągi, więc nazwa zlecenia wybrana w tym miejscu to "Select" zdefiniowanego przez klasę [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) . Nazwa rzeczownika "str" jest używana, ponieważ polecenie cmdlet działa w przypadku ciągów. W deklaracji poniżej należy zauważyć, że czasownik poleceń cmdlet i nazwa rzeczownika są odzwierciedlone w nazwie klasy poleceń cmdlet. Aby uzyskać więcej informacji na temat zatwierdzonych zleceń poleceń cmdlet, zobacz [nazwy zleceń poleceń cmdlet](./approved-verbs-for-windows-powershell-commands.md).
 
-Klasa platformy .NET dla tego polecenia cmdlet muszą pochodzić od [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) podstawowej klasy, ponieważ zapewnia obsługę wymagane przez środowisko wykonawcze programu Windows PowerShell do udostępnienia dostawcy programu Windows PowerShell infrastruktura. Należy zauważyć, że to polecenie cmdlet powoduje użycie klas wyrażeniach regularnych programu .NET Framework, takich jak [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+Klasa .NET dla tego polecenia cmdlet musi być pochodną klasy bazowej [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) , ponieważ zapewnia obsługę wymaganą przez środowisko uruchomieniowe środowiska Windows PowerShell, aby uwidocznić infrastrukturę dostawcy środowiska Windows PowerShell. Należy zauważyć, że to polecenie cmdlet korzysta również z klas wyrażeń regularnych .NET Framework, takich jak [System. Text. RegularExpressions. wyrażenia](/dotnet/api/System.Text.RegularExpressions.Regex)regularnego.
 
-Poniższy kod jest w definicji klasy dla tego polecenia cmdlet Select Str.
+Poniższy kod jest definicją klasy dla tego polecenia cmdlet Select-str.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-To polecenie cmdlet definiuje ustawiona przez dodanie parametru domyślnego `DefaultParameterSetName` atrybutu — słowo kluczowe do deklaracji klasy. Domyślny zestaw parametrów `PatternParameterSet` jest używane podczas `Script` parametr nie zostanie określony. Aby uzyskać więcej informacji o tym zestawie parametrów, zobacz `Pattern` i `Script` parametru dyskusji w poniższej sekcji.
+To polecenie cmdlet definiuje domyślny parametr ustawiony przez dodanie `DefaultParameterSetName` słowa kluczowego Attribute do deklaracji klasy. Domyślny zestaw `PatternParameterSet` parametrów jest używany, `Script` gdy parametr nie jest określony. Aby uzyskać więcej informacji na temat tego zestawu parametrów, `Pattern` zobacz `Script` Omówienie parametrów i w poniższej sekcji.
 
-## <a name="defining-parameters-for-data-access"></a>Definiowanie parametrów na potrzeby dostępu do danych
+## <a name="defining-parameters-for-data-access"></a>Definiowanie parametrów dostępu do danych
 
-To polecenie cmdlet definiuje kilka parametrów, które umożliwia użytkownikowi dostęp i sprawdzić przechowywanych danych. Parametry te `Path` parametr, który określa lokalizację magazynu danych `Pattern` parametr, który określa wzorzec, który ma być używany w wyszukiwaniu i kilka innych parametrów, które obsługują jak wyszukiwanie jest wykonywane.
+To polecenie cmdlet definiuje kilka parametrów, które umożliwiają użytkownikowi dostęp do danych przechowywanych i sprawdzanie ich. Parametry te zawierają `Path` parametr wskazujący lokalizację magazynu danych `Pattern` , parametr określający wzorzec, który ma być używany w wyszukiwaniu, a także kilka innych parametrów, które obsługują sposób wyszukiwania.
 
 > [!NOTE]
-> Aby dowiedzieć się więcej o podstawowe informacje dotyczące definiowania parametrów, zobacz [dodając parametry te dane wejściowe wiersza polecenia procesu](./adding-parameters-that-process-command-line-input.md).
+> Aby uzyskać więcej informacji na temat podstawy definiowania parametrów, zobacz [Dodawanie parametrów, które przetwarzają dane wejściowe wiersza polecenia](./adding-parameters-that-process-command-line-input.md).
 
-### <a name="declaring-the-path-parameter"></a>Deklarowanie parametr ścieżki
+### <a name="declaring-the-path-parameter"></a>Deklarowanie parametru Path
 
-Aby zlokalizować magazynu danych, to polecenie cmdlet należy użyć ścieżki programu Windows PowerShell do identyfikowania dostawcy środowiska Windows PowerShell, który zaprojektowano w celu uzyskania dostępu do magazynu danych. W związku z tym, definiuje `Path` parametr typu tablicę ciągów, aby wskazać lokalizację dostawcy.
+Aby zlokalizować magazyn danych, to polecenie cmdlet musi używać ścieżki programu Windows PowerShell do identyfikowania dostawcy środowiska Windows PowerShell, który jest przeznaczony do uzyskiwania dostępu do magazynu danych. W związku z tym definiuje `Path` parametr typu String array, aby wskazać lokalizację dostawcy.
 
 ```csharp
 [Parameter(
@@ -68,15 +66,15 @@ public string[] Path
 private string[] paths;
 ```
 
-Należy pamiętać, że ten parametr należy do dwóch różnych parametrów zestawów i czy jest aliasem.
+Należy zauważyć, że ten parametr należy do dwóch różnych zestawów parametrów i ma alias.
 
-Dwa [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) atrybuty zadeklarować, że `Path` należy parametr `ScriptParameterSet` i `PatternParameterSet`. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [Dodawanie Ustawia parametr do polecenia Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Dwa atrybuty [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) deklarują, `Path` że `ScriptParameterSet` parametr należy `PatternParameterSet`do i. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [Dodawanie zestawów parametrów do polecenia cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) deklaruje atrybutu `PSPath` alias dla `Path` parametru. Deklarowanie ten alias zdecydowanie zaleca się w celu zachowania spójności z innymi poleceniami cmdlet, którego dostęp dostawcy środowiska Windows PowerShell. Aby uzyskać więcej informacji o aboutWindows ścieżki programu PowerShell, zobacz "Koncepcje ścieżki programu PowerShell" w [sposób działania programu Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
+Atrybut [System. Management. Automation. aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) deklaruje `PSPath` alias dla `Path` parametru. Deklarowanie tego aliasu jest zdecydowanie zalecane w przypadku spójności z innymi poleceniami cmdlet, które uzyskują dostęp do dostawców programu Windows PowerShell. Aby uzyskać więcej informacji aboutWindows ścieżki programu PowerShell, zobacz "koncepcje ścieżek programu PowerShell" w temacie [jak działa środowisko Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
-### <a name="declaring-the-pattern-parameter"></a>Deklarowanie parametr wzorca
+### <a name="declaring-the-pattern-parameter"></a>Deklarowanie parametru wzorca
 
-Aby określić wzorców wyszukiwania, to polecenie cmdlet deklaruje `Pattern` parametr, który jest tablicą ciągów. Pozytywny wynik jest zwracany, gdy dowolne z wzorców znajdują się w magazynie danych. Należy pamiętać, że te wzorce może być kompilowane do tablicy skompilowanych wyrażeń regularnych lub tablicę wzorców symboli wieloznacznych, używane do wyszukiwania literału.
+Aby określić wzorce do wyszukania, to polecenie cmdlet deklaruje `Pattern` parametr, który jest tablicą ciągów. Wynik pozytywny jest zwracany, jeśli którykolwiek z wzorców zostanie znaleziony w magazynie danych. Należy zauważyć, że wzorce te można kompilować do tablicy skompilowanych wyrażeń regularnych lub tablicy symboli wieloznacznych używanych do wyszukiwania literałów.
 
 ```csharp
 [Parameter(
@@ -93,13 +91,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-Jeśli ten parametr jest określony, polecenie cmdlet używa domyślnego zestawu parametrów `PatternParameterSet`. W takim przypadku polecenie cmdlet używa wzorców określone tutaj, aby wybrać ciągów. Z kolei `Script` parametru może również służyć do zapewnienia skryptu, który zawiera wzorców. `Script` i `Pattern` parametry definiują dwa zestawy oddzielny parametr, dzięki czemu są one wzajemnie się wykluczają.
+Jeśli ten parametr jest określony, polecenie cmdlet używa domyślnego zestawu `PatternParameterSet`parametrów. W takim przypadku polecenie cmdlet używa wzorców określonych w tym miejscu, aby wybrać ciągi. Z kolei `Script` można także użyć parametru, aby dostarczyć skrypt, który zawiera wzorce. Parametry `Script` i`Pattern` definiują dwa oddzielne zestawy parametrów, aby wykluczają się wzajemnie.
 
-### <a name="declaring-search-support-parameters"></a>Deklarowanie parametry obsługi wyszukiwania
+### <a name="declaring-search-support-parameters"></a>Deklarowanie parametrów obsługi wyszukiwania
 
-To polecenie cmdlet definiuje następujące parametry pomocy technicznej, które mogą służyć do modyfikowania możliwości wyszukiwania, polecenia cmdlet.
+To polecenie cmdlet definiuje następujące parametry obsługi, których można użyć w celu zmodyfikowania możliwości wyszukiwania w poleceniu cmdlet.
 
-`Script` Parametr określa Blok skryptu, który może służyć do zapewnienia mechanizm alternatywny wyszukiwania do polecenia cmdlet. Skrypt musi zawierać wzorców użyty do dopasowania i zwracać [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) obiektu. Należy pamiętać, że ten parametr jest również unikatowy parametr, który identyfikuje `ScriptParameterSet` zestaw parametrów. Środowisko wykonawcze programu Windows PowerShell będzie widział ten parametr, używa tylko te parametry, które należą do `ScriptParameterSet` zestaw parametrów.
+`Script` Parametr określa blok skryptu, którego można użyć, aby zapewnić alternatywny mechanizm wyszukiwania dla polecenia cmdlet. Skrypt musi zawierać wzorce używane do dopasowywania i zwracania obiektu [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) . Należy zauważyć, że ten parametr jest również unikatowym parametrem `ScriptParameterSet` , który identyfikuje zestaw parametrów. Gdy środowisko uruchomieniowe programu Windows PowerShell widzi ten parametr, używa tylko parametrów, które należą `ScriptParameterSet` do zestawu parametrów.
 
 ```csharp
 [Parameter(
@@ -114,7 +112,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-`SimpleMatch` Parametr jest parametr przełącznika, który wskazuje, czy polecenie cmdlet ma jawnie dopasowania wzorców, ponieważ są one dostarczane. Kiedy użytkownik określa wartość parametru w wierszu polecenia (`true`), polecenia cmdlet używane wzorce, ponieważ są one dostarczane. Jeśli nie określono parametru (`false`), polecenie cmdlet używa wyrażeń regularnych. Wartość domyślna tego parametru to `false`.
+`SimpleMatch` Parametr jest parametrem Switch, który wskazuje, czy polecenie cmdlet jest jawnie zgodne ze wzorcami w miarę ich dostarczania. Gdy użytkownik określi parametr w wierszu polecenia (`true`), polecenie cmdlet używa wzorców w miarę ich dostarczania. Jeśli parametr nie jest określony (`false`), polecenie cmdlet używa wyrażeń regularnych. Wartość domyślna tego parametru to `false`.
 
 ```csharp
 [Parameter]
@@ -126,7 +124,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-`CaseSensitive` Parametr jest parametr przełącznika, który wskazuje, czy wyszukiwanie jest wykonywane. Kiedy użytkownik określa wartość parametru w wierszu polecenia (`true`), polecenia cmdlet sprawdza, czy wielkiej litery i wzorców małych znaków podczas porównywania. Jeśli nie określono parametru (`false`), polecenia cmdlet nie rozróżnia wielkie i małe litery. Na przykład "MyFile" i "myfile" zostałaby zarówno zwrócona jako liczba dodatnia. Wartość domyślna tego parametru to `false`.
+`CaseSensitive` Parametr jest parametrem Switch, który wskazuje, czy jest wykonywane wyszukiwanie z uwzględnieniem wielkości liter. Gdy użytkownik określi parametr w wierszu polecenia (`true`), polecenie cmdlet sprawdza wielkie i małe litery znaków podczas porównywania wzorców. Jeśli parametr nie jest określony (`false`), polecenie cmdlet nie rozróżnia wielkich i małych liter. Na przykład "Moje pliki" i "Moje pliki" byłyby zwracane jako dodatnie trafienia. Wartość domyślna tego parametru to `false`.
 
 ```csharp
 [Parameter]
@@ -138,7 +136,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-`Exclude` i `Include` parametry zidentyfikować elementy, które są jawnie wykluczone z lub uwzględniony w wyszukiwaniu. Domyślnie polecenia cmdlet spowoduje wyszukiwanie wszystkich elementów w magazynie danych. Jednak aby ograniczyć zakres wyszukiwania, wykonywane przy użyciu polecenia cmdlet, te parametry mogą być używane do jawnie wskazać elementy, które mają zostać uwzględnione w wyszukiwaniu lub pominięte.
+Parametry `Exclude` i`Include` identyfikują elementy, które są jawnie wyłączone lub uwzględnione w wyszukiwaniu. Domyślnie polecenie cmdlet przeszuka wszystkie elementy w magazynie danych. Aby jednak ograniczyć wyszukiwanie wykonywane przez polecenie cmdlet, można jawnie wskazać elementy, które mają być uwzględnione w wyszukiwaniu lub pominięte.
 
 ```csharp
 [Parameter]
@@ -175,15 +173,15 @@ internal string[] includeStrings = null;
 internal WildcardPattern[] include = null;
 ```
 
-### <a name="declaring-parameter-sets"></a>Deklarowanie zestawy parametrów
+### <a name="declaring-parameter-sets"></a>Deklarowanie zestawów parametrów
 
-To polecenie cmdlet używa dwóch zestawów parametrów (`ScriptParameterSet` i `PatternParameterSet`, co jest ustawieniem domyślnym) jako nazwy dwóch zestawów parametrów używanych w dostęp do danych. `PatternParameterSet` domyślny zestaw parametrów i są używane podczas `Pattern` określono parametr. `ScriptParameterSet` jest używany, gdy użytkownik określi wyszukiwania alternatywny mechanizm, za pomocą `Script` parametru. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [Dodawanie Ustawia parametr do polecenia Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+To polecenie cmdlet używa dwóch zestawów parametrów`ScriptParameterSet` ( `PatternParameterSet`i, co jest ustawieniem domyślnym) jako nazw dwóch zestawów parametrów używanych w dostępie do danych. `PatternParameterSet`jest domyślnym zestawem parametrów i jest używany, gdy `Pattern` parametr jest określony. `ScriptParameterSet`jest używany, gdy użytkownik określa alternatywny mechanizm wyszukiwania za pomocą `Script` parametru. Aby uzyskać więcej informacji na temat zestawów parametrów, zobacz [Dodawanie zestawów parametrów do polecenia cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-## <a name="overriding-input-processing-methods"></a>Zastępowanie metody przetwarzania danych wejściowych
+## <a name="overriding-input-processing-methods"></a>Zastępowanie metod przetwarzania wejściowego
 
-Polecenia cmdlet należy zastąpić przynajmniej jednej metody do przetwarzania danych wejściowych [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) klasy. Aby uzyskać więcej informacji na temat metody przetwarzania danych wejściowych, zobacz [tworzenia Your pierwsze polecenie Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Polecenia cmdlet muszą przesłaniać co najmniej jedną metodę przetwarzania danych wejściowych dla klasy [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . Aby uzyskać więcej informacji na temat metod przetwarzania danych wejściowych, zobacz [Tworzenie pierwszego polecenia cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-To polecenie cmdlet zastępuje [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) metoda tworzenia tablicy skompilowanych wyrażeń regularnych podczas uruchamiania. Powoduje to zwiększenie wydajności podczas wyszukiwania, które nie korzystają z prostego dopasowywania.
+To polecenie cmdlet zastępuje metodę [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , aby kompilować tablicę skompilowanych wyrażeń regularnych przy uruchamianiu. Zwiększa to wydajność podczas wyszukiwania, które nie używają prostego dopasowywania.
 
 ```csharp
 protected override void BeginProcessing()
@@ -262,7 +260,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-To polecenie cmdlet zastępuje również [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) metody w celu przetworzenia wyborów ciągów, które użytkownik wprowadza w wierszu polecenia. Zapisuje wyniki zaznaczenia ciąg w formie niestandardowego obiektu przez wywołanie metody prywatnej **MatchString** metody.
+To polecenie cmdlet przesłania również metodę [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , aby przetworzyć wybrane przez użytkownika w wierszu polecenia. Zapisuje wyniki wyboru ciągu w formie niestandardowego obiektu przez wywołanie prywatnej metody **MatchString** .
 
 ```csharp
 protected override void ProcessRecord()
@@ -371,15 +369,15 @@ protected override void ProcessRecord()
 }// End of protected override void ProcessRecord().
 ```
 
-## <a name="accessing-content"></a>Dostęp do zawartości
+## <a name="accessing-content"></a>Uzyskiwanie dostępu do zawartości
 
-Twojego polecenia cmdlet, należy otworzyć dostawcy wskazane przy użyciu ścieżki środowiska Windows PowerShell, aby go mogą uzyskać dostęp do danych. [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) obiekt obszaru działania jest używany do uzyskiwania dostępu do dostawcy, podczas gdy [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) właściwość polecenie cmdlet jest używany do otwierania dostawcy. Dostęp do zawartości jest zapewniany przez pobieranie [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) otworzyć obiektu dla dostawcy.
+Polecenie cmdlet musi otworzyć dostawcę wskazanego przez ścieżkę programu Windows PowerShell, aby mógł on uzyskać dostęp do danych. Obiekt [System. Management. Automation. SessionState](/dotnet/api/System.Management.Automation.SessionState) dla obszaru działania jest używany na potrzeby dostępu do dostawcy, podczas gdy do otwierania dostawcy jest używane Właściwość [System. Management. Automation. PSCmdlet. Invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) polecenia cmdlet. Dostęp do zawartości jest zapewniany przez pobranie obiektu [System. Management. Automation. Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) dla otwartego dostawcy.
 
-To polecenie cmdlet Str wybierz przykładowy używa [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) właściwości, aby udostępnić zawartość do skanowania. Następnie można wywołać [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) jest metoda wymagana ścieżka programu Windows PowerShell.
+To przykładowe polecenie cmdlet Select-str używa właściwości [System. Management. Automation. Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) , aby udostępnić zawartość do skanowania. Następnie może wywołać metodę [System. Management. Automation. Contentcmdletproviderintrinsics. GetReader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) , przekazując wymaganą ścieżkę środowiska Windows PowerShell.
 
 ## <a name="code-sample"></a>Przykładowy kod
 
-Poniższy kod przedstawia implementację tej wersji tego polecenia cmdlet Select Str. Należy pamiętać, że ten kod zawiera klasy polecenia cmdlet, metody prywatnej używany przez polecenia cmdlet i programu Windows PowerShell w przystawce Kod używany do rejestrowania polecenia cmdlet. Aby uzyskać więcej informacji na temat rejestrowania polecenia cmdlet, zobacz [tworzenia polecenia cmdlet](#Defining-the-Cmdlet-Class).
+Poniższy kod przedstawia implementację tej wersji tego polecenia cmdlet Select-str. Należy zauważyć, że ten kod zawiera klasę poleceń cmdlet, metody prywatne używane przez polecenie cmdlet i kod przystawki programu Windows PowerShell służący do rejestrowania tego polecenia cmdlet. Aby uzyskać więcej informacji na temat rejestrowania polecenia cmdlet, zobacz [Tworzenie polecenia cmdlet](#defining-the-cmdlet-class).
 
 ```csharp
 //
@@ -1088,21 +1086,21 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a>Tworzenie polecenia cmdlet
+## <a name="building-the-cmdlet"></a>Kompilowanie polecenia cmdlet
 
-Po zaimplementowaniu polecenia cmdlet, należy zarejestrować go za pomocą programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [sposób zarejestrować poleceń cmdlet, dostawców i hostowania aplikacji](/previous-versions//ms714644(v=vs.85)).
+Po wdrożeniu polecenia cmdlet należy zarejestrować go za pomocą programu Windows PowerShell za pomocą przystawki programu Windows PowerShell. Aby uzyskać więcej informacji na temat rejestrowania poleceń cmdlet, zobacz [jak zarejestrować polecenia cmdlet, dostawców i aplikacje hosta](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Testowanie polecenia cmdlet
 
-Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerShell można ją przetestować, uruchamiając go w wierszu polecenia. Poniższa procedura może służyć do testowania przykładowe polecenie cmdlet Select Str.
+Gdy polecenie cmdlet zostało zarejestrowane w programie Windows PowerShell, można je przetestować, uruchamiając je w wierszu polecenia. Poniższa procedura służy do testowania przykładowego polecenia cmdlet Select-str.
 
-1. Uruchom program Windows PowerShell, a następnie wyszukaj w pliku o wystąpienia wierszy z wyrażeniem ".NET". Należy zauważyć, że znaków cudzysłowu wokół nazwa ścieżki wymagane tylko wtedy, gdy ścieżka składa się z więcej niż jeden wyraz.
+1. Uruchom program Windows PowerShell i Wyszukaj w pliku uwagi wystąpienia wierszy z wyrażeniem ".NET". Należy zauważyć, że znaki cudzysłowu wokół nazwy ścieżki są wymagane tylko wtedy, gdy ścieżka składa się z więcej niż jednego wyrazu.
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    Zostanie wyświetlone następujące dane wyjściowe.
+    Pojawią się następujące dane wyjściowe.
 
     ```output
     IgnoreCase   : True
@@ -1117,13 +1115,13 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
     Pattern      : .NET
     ```
 
-2. Wyszukaj w informacje o pliku wystąpienia wierszy wyrazem "przez" następuje dowolny tekst. `SimpleMatch` Używa wartość domyślna parametru `false`. Wyszukiwanie jest rozróżniana wielkość liter ponieważ `CaseSensitive` parametr ma wartość `false`.
+2. Wyszukaj w pliku notatek wystąpienia wierszy z słowem "Over", po którym następuje inny tekst. `SimpleMatch` Parametr używa wartości domyślnej `false`. W wyszukiwaniu nie jest rozróżniana wielkość `CaseSensitive` liter, ponieważ parametr `false`jest ustawiony na.
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    Zostanie wyświetlone następujące dane wyjściowe.
+    Pojawią się następujące dane wyjściowe.
 
     ```output
     IgnoreCase   : True
@@ -1138,13 +1136,13 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
     Pattern      : over*
     ```
 
-3. Wyszukaj w pliku Uwagi dotyczące użycia wyrażenia regularnego jako wzorzec. Polecenie cmdlet przeszukuje alfabetycznej znaków i spacji w nawiasach.
+3. Przeszukaj plik uwag przy użyciu wyrażenia regularnego jako wzorca. Polecenie cmdlet wyszukuje znaki alfabetyczne i puste spacje ujęte w nawiasy.
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    Zostanie wyświetlone następujące dane wyjściowe.
+    Pojawią się następujące dane wyjściowe.
 
     ```output
     IgnoreCase   : True
@@ -1159,13 +1157,13 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. Wykonaj wyszukiwanie pliku notatek dla wystąpienia wyrazu "Parametr".
+4. Wykonaj wyszukiwanie w pliku uwag z uwzględnieniem wielkości liter dla wystąpień słowa "parameter".
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    Zostanie wyświetlone następujące dane wyjściowe.
+    Pojawią się następujące dane wyjściowe.
 
     ```output
     IgnoreCase   : False
@@ -1180,13 +1178,13 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
     Pattern      : Parameter
     ```
 
-5. Wyszukiwanie dostawcy zmiennej wysłana przy użyciu programu Windows PowerShell dla zmiennych, które mają wartości liczbowe od 0 do 9.
+5. Przeszukaj dostawcę zmiennej dostarczonego z programem Windows PowerShell dla zmiennych, które mają wartości liczbowe z przestawu od 0 do 9.
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    Zostanie wyświetlone następujące dane wyjściowe.
+    Pojawią się następujące dane wyjściowe.
 
     ```output
     IgnoreCase   : True
@@ -1196,13 +1194,13 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
     Pattern      : [0-9]
     ```
 
-6. Użyj bloku skryptu, aby wyszukać w pliku SelectStrCommandSample.cs ciąg "Pos". **Cmatch** funkcji dla skrypt wykonuje dopasowania do wzorca bez uwzględniania wielkości liter.
+6. Użyj bloku skryptu, aby przeszukać plik SelectStrCommandSample.cs dla ciągu "pos". Funkcja **cmatch —** dla skryptu wykonuje dopasowanie do wzorca bez uwzględniania wielkości liter.
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    Zostanie wyświetlone następujące dane wyjściowe.
+    Pojawią się następujące dane wyjściowe.
 
     ```output
     IgnoreCase   : True
@@ -1214,16 +1212,16 @@ Po zarejestrowaniu Twojego polecenia cmdlet przy użyciu programu Windows PowerS
 
 ## <a name="see-also"></a>Zobacz też
 
-[Jak utworzyć polecenia Cmdlet programu Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Jak utworzyć polecenie cmdlet programu Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Tworzenie swojej pierwszej polecenia Cmdlet](./creating-a-cmdlet-without-parameters.md)
+[Tworzenie pierwszego polecenia cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[Tworzenie polecenia Cmdlet, który modyfikuje systemu](./creating-a-cmdlet-that-modifies-the-system.md)
+[Tworzenie polecenia cmdlet modyfikującego system](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Projektowanie dostawcą Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md)
+[Projektowanie dostawcy środowiska Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Jak działa program Windows PowerShell](/previous-versions//ms714658(v=vs.85))
+[Jak działa środowisko Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Jak zarejestrować poleceń cmdlet, dostawców i aplikacji hosta](/previous-versions//ms714644(v=vs.85))
+[Jak zarejestrować polecenia cmdlet, dostawców i aplikacje hosta](/previous-versions//ms714644(v=vs.85))
 
 [Zestaw SDK programu Windows PowerShell](../windows-powershell-reference.md)
