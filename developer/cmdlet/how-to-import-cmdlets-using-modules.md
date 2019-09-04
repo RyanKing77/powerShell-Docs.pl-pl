@@ -1,45 +1,55 @@
 ---
-title: Jak zaimportować polecenia cmdlet przy użyciu modułów | Dokumentacja firmy Microsoft
+title: Jak zaimportować polecenia cmdlet przy użyciu modułów | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/28/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
-ms.openlocfilehash: c007bb11324e10ffd100797dccd9e6ab0d09a73e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067981"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215264"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Jak importować polecenia cmdlet przy użyciu modułów
 
-W tym temacie opisano jak zaimportować polecenia cmdlet do sesji środowiska Windows PowerShell przy użyciu modułu binarnego.
+W tym artykule opisano sposób importowania poleceń cmdlet do sesji programu PowerShell przy użyciu modułu binarnego.
 
 > [!NOTE]
-> Może zawierać elementy członkowskie modułów, poleceń cmdlet, dostawców, funkcje, zmienne, aliasy i wiele więcej. Przystawek może zawierać tylko polecenia cmdlet i dostawców.
+> Elementy członkowskie modułów mogą zawierać polecenia cmdlet, dostawcy, funkcje, zmienne, aliasy i wiele innych. Przystawki mogą zawierać tylko polecenia cmdlet i dostawców.
 
-## <a name="how-to-load-cmdlets-using-a-module"></a>Ładowanie za pomocą modułu poleceń cmdlet
+## <a name="how-to-load-cmdlets-using-a-module"></a>Jak ładować polecenia cmdlet przy użyciu modułu
 
-1. Utwórz folder modułu, który ma taką samą nazwę jak plik zestawu, w którym są implementowane polecenia cmdlet. W tej procedurze folder modułu jest tworzony w `system32` folderu.
+1. Utwórz folder modułu, który ma taką samą nazwę jak plik zestawu, w którym są zaimplementowane polecenia cmdlet. W tej procedurze folder module zostanie utworzony w folderze systemu Windows `system32` .
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-2. Upewnij się, że `PSModulePath` zmienna środowiskowa zawiera ścieżkę do nowego folderu modułu. Domyślnie folder systemowy został już dodany do `PSModulePath` zmiennej środowiskowej.
+1. Upewnij się, że `PSModulePath` zmienna środowiskowa zawiera ścieżkę do nowego folderu modułu. Domyślnie folder systemowy jest już dodany do `PSModulePath` zmiennej środowiskowej. Aby wyświetlić `PSModulePath`, wpisz: `$env:PSModulePath`.
 
-3. Skopiuj zestaw polecenia cmdlet w folderze modułu.
+1. Skopiuj zestaw poleceń cmdlet do folderu module.
 
-4. Uruchom następujące polecenie, aby dodać polecenia cmdlet do sesji:
+1. Dodaj plik manifestu modułu (`.psd1`) w folderze głównym modułu. Program PowerShell używa manifestu modułu do zaimportowania modułu. Aby uzyskać więcej informacji, zobacz [jak napisać manifest modułu programu PowerShell](../module/how-to-write-a-powershell-module-manifest.md).
 
-   `import-module [Module_Name]`
+1. Uruchom następujące polecenie, aby dodać polecenia cmdlet do sesji:
 
-   Ta procedura może służyć do testowania poleceń cmdlet. Dodaje wszystkie polecenia cmdlet w zestawie do sesji. Aby uzyskać więcej informacji na temat modułów, zobacz różnych typów modułów, różne sposoby ładowanie modułów i jak ograniczyć elementy modułu, które są eksportowane [pisanie modułu programu Windows PowerShell](../module/writing-a-windows-powershell-module.md).
+   `Import-Module [Module_Name]`
+
+   Ta procedura może służyć do testowania poleceń cmdlet. Dodaje wszystkie polecenia cmdlet w zestawie do sesji. Aby uzyskać więcej informacji o modułach, zobacz [pisanie modułu programu Windows PowerShell](../module/writing-a-windows-powershell-module.md).
 
 ## <a name="see-also"></a>Zobacz też
 
-[Zapisywanie polecenia Cmdlet programu Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
+[Jak napisać manifest modułu programu PowerShell](../module/how-to-write-a-powershell-module-manifest.md)
+
+[Importowanie modułu programu PowerShell](../module/importing-a-powershell-module.md)
+
+[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 
 [Instalowanie modułów](../module/installing-a-powershell-module.md)
+
+[Modyfikowanie ścieżki instalacji PSModulePath](../module/modifying-the-psmodulepath-installation-path.md)
+
+[Pisanie polecenia cmdlet programu Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

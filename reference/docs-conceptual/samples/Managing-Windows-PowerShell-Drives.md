@@ -1,19 +1,19 @@
 ---
 ms.date: 06/05/2017
-keywords: polecenia cmdlet programu PowerShell
+keywords: PowerShell, polecenie cmdlet
 title: Zarządzanie dyskami programu Windows PowerShell
-ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030142"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215512"
 ---
 # <a name="managing-windows-powershell-drives"></a>Zarządzanie dyskami programu Windows PowerShell
 
-A *dysk programu Windows PowerShell* prowadzi do lokalizacji magazynu danych, której będziesz mieć dostęp, np. dysku systemu plików, w programie Windows PowerShell. Dostawcy programu Windows PowerShell Utwórz niektórych dysków, takich jak system plików stacje dysków (w tym C: i D:), rejestrem dysków (HKCU: i HKLM:) i dysku certyfikatu (certyfikatu:), można także tworzyć własne dyski programu Windows PowerShell. Dyski te są bardzo przydatne, ale są one dostępne tylko w ramach programu Windows PowerShell. Nie masz dostępu do nich przy użyciu innych narzędzi Windows, takich jak Eksplorator plików lub Cmd.exe.
+*Dysk programu Windows PowerShell* to lokalizacja magazynu danych, do której można uzyskać dostęp do dysku systemu plików w programie Windows PowerShell. Dostawcy programu Windows PowerShell tworzą dyski, takie jak dyski systemu plików (w tym C: i D:), dyski rejestru (HKCU: i HKLM:) oraz dysk certyfikatu (certyfikat:) i można utworzyć własne dyski programu Windows PowerShell. Te dyski są bardzo przydatne, ale są dostępne tylko w programie Windows PowerShell. Nie można uzyskać do nich dostępu przy użyciu innych narzędzi systemu Windows, takich jak Eksplorator plików lub cmd. exe.
 
-Windows PowerShell korzysta z rzeczownik, **PSDrive**, poleceń, które działają przy użyciu programu Windows PowerShell dysków. Lista programu Windows PowerShell dysków w sesji środowiska Windows PowerShell, użyj **Get PSDrive** polecenia cmdlet.
+Program Windows PowerShell korzysta z rzeczowników, **PSDrive**, dla poleceń, które działają z dyskami programu Windows PowerShell. Aby uzyskać listę dysków programu Windows PowerShell w sesji programu Windows PowerShell, użyj polecenia cmdlet **Get-PSDrive** .
 
 ```
 PS> Get-PSDrive
@@ -32,11 +32,11 @@ HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
 ```
 
-Chociaż dyski na wyświetlaczu różnią się z stacje w systemie, lista będzie wyglądać podobnie do danych wyjściowych **Get PSDrive** przedstawionego powyżej polecenia.
+Mimo że dyski w wyświetlaczu różnią się w zależności od dysków w systemie, lista będzie wyglądać podobnie do danych wyjściowych polecenia **Get-PSDrive** .
 
-Dyski systemu plików są podzbiorem dysków programu Windows PowerShell. Można zidentyfikować dysków z systemem plików we wpisie systemu plików, w kolumnie dostawcy. (Dysków z systemem plików w programie Windows PowerShell są obsługiwane przez dostawcę systemu plików programu Windows PowerShell).
+Dyski systemu plików są podzbiorem dysków programu Windows PowerShell. Dyski systemu plików można identyfikować według wpisu w kolumnie dostawca. (Dyski systemu plików w programie Windows PowerShell są obsługiwane przez dostawcę systemu plików programu Windows PowerShell).
 
-Aby wyświetlić składnię **Get PSDrive** polecenia cmdlet, wpisz **Get-Command** polecenia **składni** parametru:
+Aby wyświetlić składnię polecenia cmdlet **Get-PSDrive** , wpisz polecenie **Get-Command** z parametrem **składni** :
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
@@ -46,7 +46,7 @@ erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-**PSProvider** parametr umożliwia wyświetlenie tylko tych z programu Windows PowerShell dyski, które są obsługiwane przez określonego dostawcy. Na przykład, aby wyświetlić tylko dyski programu Windows PowerShell, które są obsługiwane przez dostawcę systemu plików programu Windows PowerShell, wpisz **Get PSDrive** polecenia **PSProvider** parametr i  **System plików** wartość:
+Parametr **PSProvider** umożliwia wyświetlenie tylko dysków programu Windows PowerShell, które są obsługiwane przez określonego dostawcę. Aby na przykład wyświetlić tylko dyski programu Windows PowerShell obsługiwane przez dostawcę systemu plików programu Windows PowerShell, wpisz polecenie **Get-PSDrive** z parametrem **PSProvider** i wartością systemu **plików** :
 
 ```
 PS> Get-PSDrive -PSProvider FileSystem
@@ -58,7 +58,7 @@ C          FileSystem    C:\                           ...nd Settings\PowerUser
 D          FileSystem    D:\
 ```
 
-Aby wyświetlić dyski programu Windows PowerShell, które reprezentują gałęzi rejestru, użyj **PSProvider** parametru, aby wyświetlić tylko dyski programu Windows PowerShell, które są obsługiwane przez dostawcę programu Windows PowerShell rejestru:
+Aby wyświetlić dyski programu Windows PowerShell reprezentujące gałęzie rejestru, użyj parametru **PSProvider** , aby wyświetlić tylko dyski programu Windows PowerShell obsługiwane przez dostawcę rejestru programu Windows PowerShell:
 
 ```
 PS> Get-PSDrive -PSProvider Registry
@@ -69,7 +69,7 @@ HKCU       Registry      HKEY_CURRENT_USER
 HKLM       Registry      HKEY_LOCAL_MACHINE
 ```
 
-Umożliwia także standardowych poleceń cmdlet lokalizacji z stacje programu Windows PowerShell:
+Można również użyć standardowych poleceń cmdlet lokalizacji z dyskami programu Windows PowerShell:
 
 ```
 PS> Set-Location HKLM:\SOFTWARE
@@ -81,9 +81,9 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Dodawanie nowych Windows PowerShell dyski (nowe PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Dodawanie nowych dysków programu Windows PowerShell (New-PSDrive)
 
-Można dodać dysków programu Windows PowerShell, za pomocą **New PSDrive** polecenia. Aby wyświetlić składnię dla **New PSDrive** polecenia, wprowadź **Get-Command** polecenia **składni** parametru:
+Możesz dodać własne dyski programu Windows PowerShell za pomocą polecenia **New-PSDrive** . Aby uzyskać składnię polecenia **New-PSDrive** , wprowadź polecenie **Get-Command** z parametrem **składni** :
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
@@ -96,17 +96,16 @@ ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 
 Aby utworzyć nowy dysk programu Windows PowerShell, należy podać trzy parametry:
 
-- Nazwa dysku (możesz użyć Dowolna prawidłowa nazwa środowiska Windows PowerShell)
+- Nazwa dysku (można użyć dowolnej prawidłowej nazwy programu Windows PowerShell)
 
-- PSProvider (Użyj "System plików" dla lokalizacji systemu plików i "Rejestru" w lokalizacji rejestru)
+- PSProvider (Użyj "FileSystem" dla lokalizacji systemu plików i "Registry" dla lokalizacji rejestru)
 
-- Oznacza to ścieżki do katalogu głównego nowego dysku w katalogu głównym
+- Katalog główny, czyli ścieżka do katalogu głównego nowego dysku
 
-Na przykład dysk o nazwie "Office", który jest zamapowany do folderu, który zawiera aplikacje Microsoft Office na komputerze, na przykład można utworzyć **C:\\Program Files\\Microsoft Office\\OFFICE11**. Aby utworzyć dysk, wpisz następujące polecenie:
+Można na przykład utworzyć dysk o nazwie "Office" mapowany do folderu zawierającego Microsoft Office aplikacje na komputerze, na przykład **C:\\program\\Files\\Microsoft Office Office11**. Aby utworzyć dysk, wpisz następujące polecenie:
 
 ```
-PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Micr
-osoft Office\OFFICE11"
+PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -114,24 +113,25 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 ```
 
 > [!NOTE]
-> Ogólnie rzecz biorąc ścieżek nie jest rozróżniana wielkość liter.
+> Ogólnie rzecz biorąc, ścieżki nie uwzględnia wielkości liter.
 
-Możesz odwołać się do nowy dysk programu Windows PowerShell, tak jak wszystkie dyski programu Windows PowerShell — za pomocą nazwy z dwukropkiem ( **:** ).
+Nowy dysk programu Windows PowerShell jest przywołuje się do wszystkich dysków programu Windows PowerShell — według nazwy i dwukropka ( **:** ).
 
-Dysk programu Windows PowerShell można wykonać wiele zadań znacznie prostsze. Na przykład niektóre z najważniejszych kluczy w rejestrze systemu Windows mają bardzo długich ścieżek, kłopotliwe dostępu i trudne do zapamiętania, dzięki czemu. Informacje o konfiguracji krytycznych znajduje się w obszarze **HKEY_LOCAL_MACHINE\\oprogramowania\\Microsoft\\Windows\\CurrentVersion**. Do wyświetlania i zmieniania elementów w kluczu rejestru CurrentVersion, możesz utworzyć dysk programu Windows PowerShell, który jest ścieżką w tego klucza, wpisując:
+Dysk programu Windows PowerShell może znacznie uprościć wykonywanie wielu zadań. Na przykład niektóre najważniejsze klucze w rejestrze systemu Windows mają bardzo długie ścieżki, dzięki czemu trudno jest uzyskać dostęp i trudne do zapamiętania. Krytyczne informacje o konfiguracji znajdują się **w\\obszarze HKEY_LOCAL_MACHINE\\Software\\\\Microsoft Windows CurrentVersion**. Aby wyświetlić i zmienić elementy w kluczu rejestru CurrentVersion, można utworzyć dysk programu Windows PowerShell, który jest odblokowany w tym kluczu, wpisując:
 
 ```
-PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
-indows\CurrentVersion
+PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 cvkey      Registry      HKLM\Software\Microsoft\Windows\...
 ```
 
-Następnie można zmienić lokalizację, aby **cvkey:** dysku, tak jak każdy inny dysk:''
+Następnie można zmienić lokalizację na dysk **cvkey:** tak jak każdy inny dysk:
 
-`PS> cd cvkey:`
+```
+PS> cd cvkey:
+```
 
 lub:
 
@@ -143,25 +143,25 @@ Path
 cvkey:\
 ```
 
-Polecenie cmdlet New-PsDrive dodaje nowy dysk tylko do bieżącej sesji programu Windows PowerShell. Jeśli zamkniesz okno programu Windows PowerShell, nowego dysku zostaną utracone. Aby zapisać dysk programu Windows PowerShell, użyj polecenia cmdlet Export-konsoli można wyeksportować bieżącej sesji programu Windows PowerShell, a następnie użyj PowerShell.exe **PSConsoleFile** parametru, aby go zaimportować. Lub Dodaj nowy dysk do Twojego profilu programu Windows PowerShell.
+Polecenie cmdlet New-PsDrive dodaje nowy dysk tylko do bieżącej sesji programu Windows PowerShell. Jeśli zamkniesz okno programu Windows PowerShell, nowy dysk zostanie utracony. Aby zapisać dysk programu Windows PowerShell, użyj polecenia cmdlet Export-Console, aby wyeksportować bieżącą sesję programu Windows PowerShell, a następnie zaimportuj go za pomocą parametru **PSConsoleFile** PowerShell. exe. Lub Dodaj nowy dysk do profilu środowiska Windows PowerShell.
 
-## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Usuwanie środowiska Windows PowerShell dyski (Usuń PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Usuwanie dysków programu Windows PowerShell (Remove-PSDrive)
 
-Dyski można usunąć za pomocą programu Windows PowerShell, za pomocą **PSDrive Usuń** polecenia cmdlet. **PSDrive Usuń** polecenia cmdlet jest łatwa w użyciu; Aby usunąć określony dysk programu Windows PowerShell, wystarczy podać nazwę dysk programu Windows PowerShell.
+Można usunąć dyski z programu Windows PowerShell za pomocą polecenia cmdlet **Remove-PSDrive** . Polecenie cmdlet **Remove-PSDrive** jest łatwe w użyciu. Aby usunąć określony dysk programu Windows PowerShell, wystarczy podać nazwę dysku programu Windows PowerShell.
 
-Na przykład, jeśli dodano **pakietu Office:** Dysk programu Windows PowerShell, jak pokazano na **New PSDrive** tematu, możesz go usunąć, wpisując:
+Na przykład, jeśli został dodany **pakiet Office:** Dysk programu Windows PowerShell, jak pokazano w temacie **New-PSDrive** , można go usunąć, wpisując:
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-Aby usunąć **cvkey:** Programu Windows PowerShell to dysk, również w pokazywane **PSDrive nowy** tematu, użyj następującego polecenia:
+Aby usunąć **cvkey:** Dysk programu Windows PowerShell, również przedstawiony w temacie **New-PSDrive** , użyj następującego polecenia:
 
 ```powershell
 Remove-PSDrive -Name cvkey
 ```
 
-Można łatwo usunąć dysk programu Windows PowerShell, ale nie można go usunąć, gdy jesteś w stacji dysków. Przykład:
+Można łatwo usunąć dysk programu Windows PowerShell, ale nie można go usunąć, gdy jesteś w stacji. Przykład:
 
 ```
 PS> cd office:
@@ -173,4 +173,4 @@ At line:1 char:15
 
 ## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Dodawanie i usuwanie dysków poza programem Windows PowerShell
 
-Wykrywa, dysków z systemem plików, które są dodawane lub usuwane w Windows, w tym dyski sieciowe, które są mapowane, dyski USB, które są dołączone i dyski, które są usuwane przy użyciu programu Windows PowerShell **net użyj** polecenia lub  **WScript.NetworkMapNetworkDrive** i **RemoveNetworkDrive** metody pochodzące ze skryptu Windows Script Host (WSH).
+Program Windows PowerShell wykrywa dyski systemu plików, które są dodawane lub usuwane w systemie Windows, w tym dyski sieciowe, które są dołączone, a dyski, które są usuwane przy użyciu polecenia **net use** lub  **WScript. NetworkMapNetworkDrive** i **RemoveNetworkDrive** metody z skryptu hosta skryptów systemu Windows (WSH).

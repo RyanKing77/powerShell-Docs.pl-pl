@@ -1,19 +1,19 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, konfiguracja, ustawienia
+keywords: DSC, PowerShell, konfiguracja, instalacja
 title: Używanie polecenia Import-DSCResource
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080105"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215409"
 ---
 # <a name="using-import-dscresource"></a>Używanie polecenia Import-DSCResource
 
-`Import-DScResource` jest dynamiczne słowo kluczowe, które można używać tylko wewnątrz bloku skryptu konfiguracji. `Import-DSCResource` — Słowo kluczowe, aby zaimportować wszystkie zasoby potrzebne w danej konfiguracji. Zasobów w ramach `$pshome` są importowane automatycznie, ale nadal jest uważany za najlepszym rozwiązaniem, aby jawnie importujesz wszelkie zasoby używane w Twojej [konfiguracji](Configurations.md).
+`Import-DScResource`jest dynamicznym słowem kluczowym, którego można używać tylko wewnątrz bloku skryptu konfiguracji. `Import-DSCResource` Słowo kluczowe służące do importowania wszelkich zasobów wymaganych w konfiguracji. Zasoby w `$pshome` obszarze są importowane automatycznie, ale nadal jest uważane za najlepsze rozwiązanie do jawnego importowania wszystkich zasobów używanych w [konfiguracji](Configurations.md).
 
-Składnia `Import-DSCResource` znajdują się poniżej.  Podczas określania moduły według nazwy, jest wymaganie, aby wyświetlić listę każdy w nowym wierszu.
+Składnia dla `Import-DSCResource` jest pokazana poniżej.  W przypadku określania modułów według nazwy jest wymagane, aby wyświetlić każdą z nich w nowym wierszu.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |Parametr  |Opis  |
 |---------|---------|
-|`-Name`|Nazwy zasobów DSC, należy zaimportować. Jeśli nazwa modułu jest określony, polecenie wyszukuje te zasoby DSC, w tym module; w przeciwnym razie polecenie przeszukuje zasoby DSC w wszystkich ścieżek zasobów DSC. Symbole wieloznaczne są obsługiwane.|
-|`-ModuleName`|Nazwa modułu lub specyfikacji modułu.  Jeśli określisz zasoby do zaimportowania z modułu, polecenie podejmie próbę importowanie tylko tych zasobów. Jeśli określisz tylko moduł, polecenie importuje wszystkie zasoby DSC w module.|
+|`-Name`|Nazwy zasobów DSC, które należy zaimportować. Jeśli nazwa modułu jest określona, polecenie wyszukuje te zasoby DSC w ramach tego modułu; w przeciwnym razie polecenie przeszukuje zasoby DSC we wszystkich ścieżkach zasobów DSC. Symbole wieloznaczne są obsługiwane.|
+|`-ModuleName`|Nazwa modułu lub Specyfikacja modułu.  W przypadku określenia zasobów do zaimportowania z modułu polecenie spowoduje próbę zaimportowania tylko tych zasobów. Jeśli określisz tylko moduł, polecenie importuje wszystkie zasoby DSC w module.|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Przykład: Użyj Import-DSCResource w ramach konfiguracji
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Przykład: Używanie elementu import-DSCResource w konfiguracji
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,47 +52,47 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> Określanie wielu wartości dla nazwy zasobów i moduły w tym samym poleceniu nie są obsługiwane. Może mieć niedeterministyczne zachowanie dotyczące zasobu, który można załadować z modułu, którego, w przypadku, gdy ten sam zasób istnieje wiele modułów. Poniższego polecenia spowoduje błąd podczas kompilacji.
+> Określanie wielu wartości nazw zasobów i nazw modułów w tym samym poleceniu nie jest obsługiwane. Może mieć niedeterministyczne zachowanie dotyczące tego, który zasób jest ładowany, z którego modułu w przypadku tego samego zasobu istnieje w wielu modułach. Poniższe polecenie spowoduje błąd podczas kompilacji.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-Warto wziąć pod uwagę podczas korzystania z parametr Name:
+Kwestie, które należy wziąć pod uwagę w przypadku używania tylko parametru name:
 
-- Jest to operacja intensywnie korzystających z zasobów, w zależności od liczby modułów zainstalowanych na komputerze.
-- Będzie on ładować się pierwszy zasób znaleziono o podanej nazwie. W przypadku, gdy istnieje więcej niż jeden zasób o takiej samej nazwie, zainstalowane, można załadować niewłaściwych zasobów.
+- Jest to operacja intensywnie korzystająca z zasobów w zależności od liczby modułów zainstalowanych na komputerze.
+- Zostanie załadowany pierwszy znaleziony zasób o podaną nazwę. W przypadku, gdy zainstalowano więcej niż jeden zasób o tej samej nazwie, może załadować niewłaściwy zasób.
 
-Użycie zalecane jest, aby określić `–ModuleName` z `-Name` parametru, zgodnie z poniższym opisem.
+Zalecanym użyciem jest określenie `–ModuleName` `-Name` parametru z parametrem, zgodnie z poniższym opisem.
 
-Użycie tych ma następujące zalety:
+To użycie ma następujące zalety:
 
-- Zmniejsza to negatywny wpływ na wydajność, ograniczając zakres wyszukiwania dla określonego zasobu.
-- Jawnie definiuje moduł definiowania zasobu, zapewnienie, że właściwy zasób jest ładowany.
-
-> [!NOTE]
-> W programie PowerShell 5.0 zasoby DSC może mieć wiele wersji i wersje, które można zainstalować na komputerze side-by-side. To jest implementowany przez korzystanie z kilku wersji moduł zasobów, które są zawarte w tym samym folderze modułu.
-> Aby uzyskać więcej informacji, zobacz [korzystanie z zasobów z wieloma wersjami](sxsresource.md).
-
-## <a name="intellisense-with-import-dscresource"></a>Funkcja IntelliSense z Import-DSCResource
-
-Podczas tworzenia konfiguracji DSC w środowisku ISE, program PowerShell udostępnia IntelliSence dla zasobów i właściwości zasobów. Definicje zasobów w ramach `$pshome` ścieżka modułu są ładowane automatycznie. Podczas importowania zasobów przy użyciu `Import-DSCResource` — słowo kluczowe, definicje określonego zasobu zostaną dodane, a funkcja Intellisense jest rozwinięta i obejmuje schemat importowanych zasobów.
-
-![Funkcja Intellisense zasobów](/media/resource-intellisense.png)
+- Zmniejsza to wpływ na wydajność, ograniczając zakres wyszukiwania dla określonego zasobu.
+- Jawnie definiuje moduł definiujący zasób, upewniając się, że jest ładowany prawidłowy zasób.
 
 > [!NOTE]
-> Począwszy od programu PowerShell w wersji 5.0, dodano uzupełnianie po naciśnięciu tabulatora ISE dla zasobów DSC oraz ich właściwości. Aby uzyskać więcej informacji, zobacz [zasobów](../resources/resources.md).
+> W programie PowerShell 5,0 zasoby DSC mogą mieć wiele wersji, a wersje można instalować na komputerze obok siebie. Jest to implementowane przez posiadanie wielu wersji modułu zasobów, które znajdują się w tym samym folderze modułu.
+> Aby uzyskać więcej informacji, zobacz [Korzystanie z zasobów z wieloma wersjami](sxsresource.md).
 
-Podczas kompilowania konfiguracji, programu PowerShell używa definicji zasobów zaimportowanych do sprawdzania poprawności wszystkich bloków zasobów w konfiguracji.
-Każdy blok zasobu jest weryfikowana, za pomocą definicji schematu do zasobu, dla następujących reguł.
+## <a name="intellisense-with-import-dscresource"></a>Technologia IntelliSense z usługą import-DSCResource
+
+Podczas tworzenia konfiguracji DSC w programie ISE program PowerShell udostępnia IntelliSence dla zasobów i właściwości zasobów. Definicje zasobów w `$pshome` ścieżce modułu są ładowane automatycznie. Po zaimportowaniu zasobów przy `Import-DSCResource` użyciu słowa kluczowego określone definicje zasobów są dodawane, a funkcja IntelliSense jest rozwinięta, aby uwzględnić schemat zaimportowanego zasobu.
+
+![Technologia IntelliSense zasobów](../media/resource-intellisense.png)
+
+> [!NOTE]
+> Począwszy od programu PowerShell 5,0, uzupełnianie kart zostało dodane do ISE dla zasobów DSC i ich właściwości. Aby uzyskać więcej informacji, zobacz [zasoby](../resources/resources.md).
+
+Podczas kompilowania konfiguracji program PowerShell używa zaimportowanych definicji zasobów do walidacji wszystkich bloków zasobów w konfiguracji.
+Każdy blok zasobów jest sprawdzany przy użyciu definicji schematu zasobu dla następujących reguł.
 
 - Używane są tylko właściwości zdefiniowane w schemacie.
 - Typy danych dla każdej właściwości są poprawne.
 - Określono właściwości kluczy.
-- Nie właściwości tylko do odczytu jest używany.
-- Sprawdzanie poprawności na podstawie wartości mapowania typów.
+- Nie jest używana właściwość tylko do odczytu.
+- Sprawdzanie poprawności typów map wartości.
 
-Rozważmy następującą konfigurację:
+Weź pod uwagę następującą konfigurację:
 
 ```powershell
 Configuration SchemaValidationInCorrectEnumValue
@@ -111,41 +111,41 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-Kompilowanie tej konfiguracji będzie skutkowało błędem.
+Skompilowanie tej konfiguracji spowoduje wystąpienie błędu.
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-Funkcja IntelliSense i schematu sprawdzania poprawności pozwalają przechwytywać więcej błędów podczas analizy i kompilacja, unikając kompilacji w czasie wykonywania.
+Funkcja IntelliSense i sprawdzanie poprawności schematu umożliwiają przechwytywanie większej liczby błędów podczas analizowania i kompilowania, unikając komplikacji w czasie wykonywania.
 
 > [!NOTE]
-> Każdy zasób DSC może mieć nazwę, a **FriendlyName** definiowana przez schemat zasobu. Poniżej przedstawiono dwa pierwsze wiersze "MSFT_ServiceResource.shema.mof".
+> Każdy zasób DSC może mieć nazwę i **FriendlyName** zdefiniowane przez schemat zasobu. Poniżej znajdują się pierwsze dwa wiersze pliku "MSFT_ServiceResource. Shema. MOF".
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> Korzystając z tego zasobu w konfiguracji, można określić **MSFT_ServiceResource** lub **usługi**.
+> W przypadku korzystania z tego zasobu w konfiguracji można określić **MSFT_ServiceResource** lub **usługę**.
 
-## <a name="powershell-v4-and-v5-differences"></a>Różnice w wersji 4 i 5 programu PowerShell
+## <a name="powershell-v4-and-v5-differences"></a>Różnice w programie PowerShell w wersji 4 i 5
 
-Istnieje wiele różnice, które zobaczysz podczas tworzenia konfiguracji w programie PowerShell 4.0 vs. Program PowerShell 5.0 lub nowszy. W tej sekcji zostanie podkreślić różnice zostanie wyświetlony odpowiedni do tego artykułu.
+Istnieje wiele różnic, które są widoczne podczas tworzenia konfiguracji w programie PowerShell 4,0 a Program PowerShell 5,0 i nowsze. W tej sekcji zostaną wyróżnione różnice, które są odpowiednie dla tego artykułu.
 
-### <a name="multiple-resource-versions"></a>Wiele wersji zasobu
+### <a name="multiple-resource-versions"></a>Wiele wersji zasobów
 
-Zainstalowanie i używanie wielu wersji obok siebie zasobów nie jest obsługiwana w programie PowerShell 4.0. Jeśli zauważysz problemów dotyczących importowania zasobów do konfiguracji, upewnij się, mieć tylko jedną wersję zasobu zainstalowane.
+Instalowanie i używanie wielu wersji zasobów obok siebie nie jest obsługiwane w programie PowerShell 4,0. Jeśli zauważysz problemy z importowaniem zasobów do konfiguracji, upewnij się, że zainstalowano tylko jedną wersję zasobu.
 
-Na ilustracji poniżej dwie wersje **xPSDesiredStateConfiguration** moduł są zainstalowane.
+Na poniższym obrazie zainstalowano dwie wersje modułu **xPSDesiredStateConfiguration** .
 
-![Wiele wersji zasobu, stała](/media/multiple-resource-versions-broken.md)
+![Rozwiązano wiele wersji zasobów](../media/multiple-resource-versions-broken.png)
 
-Skopiuj zawartość tej wersji żądany moduł najwyższego poziomu katalog modułu.
+Skopiuj zawartość żądanej wersji modułu do najwyższego poziomu katalogu modułów.
 
-![Wiele wersji zasobu, stała](/media/multiple-resource-versions-fixed.md)
+![Rozwiązano wiele wersji zasobów](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Lokalizacja zasobu
 
-Podczas tworzenia i kompilowanie konfiguracji, Twoje zasoby mogą być przechowywane w dowolnym katalogu określonego przez użytkownika [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). W programie PowerShell 4.0 LCM wymaga wszystkie moduły zasobów DSC mają być przechowywane w obszarze "Program Files\WindowsPowerShell\Modules" lub `$pshome\Modules`. Począwszy od programu PowerShell w wersji 5.0, wymóg ten został usunięty i modułów zasoby mogą być przechowywane w dowolnym katalogu określonego przez `PSModulePath`.
+Podczas tworzenia i kompilowania konfiguracji zasoby mogą być przechowywane w dowolnym katalogu określonym przez [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). W programie PowerShell 4,0 LCM wymaga, aby wszystkie moduły zasobów DSC były przechowywane w obszarze "program Files\WindowsPowerShell\Modules" `$pshome\Modules`lub. Począwszy od programu PowerShell 5,0, to wymaganie zostało usunięte, a moduły zasobów mogą być przechowywane w dowolnym katalogu `PSModulePath`określonym przez.
 
 ## <a name="see-also"></a>Zobacz też
 

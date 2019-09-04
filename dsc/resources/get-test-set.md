@@ -1,23 +1,23 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, powershell, konfiguracja, ustawienia
-title: Get-Test-Set
-ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+keywords: DSC, PowerShell, konfiguracja, instalacja
+title: Get-test-Set
+ms.openlocfilehash: 68738107cd4a222a13dd4afa158f0370953158ad
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229514"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215426"
 ---
-# <a name="get-test-set"></a>Get-Test-Set
+# <a name="get-test-set"></a>Get-test-Set
 
->Dotyczy: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Dotyczy: Windows PowerShell 4,0, Windows PowerShell 5,0
 
-![Pobieranie, testowanie i ustawianie](/media/get-test-set.png)
+![Pobieranie, testowanie i ustawianie](../media/get-test-set.png)
 
-PowerShell Desired State Configuration jest konstruowany wokół **uzyskać**, **testu**, i **ustaw** procesu. DSC [zasobów](resources.md) każdy z nich zawiera metody ukończenia każdej z tych operacji. W [konfiguracji](../configurations/configurations.md), należy zdefiniować bloki zasobów, aby wypełnić klucze, które stają się parametry zasobu **uzyskać**, **testu**, i **ustaw** metody.
+Konfiguracja żądanego stanu programu PowerShell jest zbudowana wokół procesu **Get**, **test**i **Set** . [Zasoby](resources.md) DSC zawierają metody umożliwiające wykonanie każdej z tych operacji. W [konfiguracji](../configurations/configurations.md)definiuje się bloki zasobów, aby wypełnić klucze, które stają się parametrami dla metod **Get**, **test**i **Set** zasobu.
 
-To jest składnia **usługi** bloku zasobów. **Usługi** zasobów konfiguruje usługi Windows.
+Jest to składnia bloku zasobów **usługi** . Zasób **usługi służy** do konfigurowania usług systemu Windows.
 
 ```syntax
 Service [String] #ResourceName
@@ -37,7 +37,7 @@ Service [String] #ResourceName
 }
 ```
 
-**Uzyskać**, **testu**, i **ustaw** metody **usługi** zasobów będzie mieć bloków parametrów, które akceptuje te wartości.
+Metody **Get**, **test**i **Set** zasobu **usługi** będą mieć bloki parametrów, które akceptują te wartości.
 
 ```powershell
     param
@@ -86,9 +86,9 @@ Service [String] #ResourceName
 ```
 
 > [!NOTE]
-> Język i metody używane do definiowania zasobu określa sposób, w jaki **uzyskać**, **testu**, i **ustaw** metody zostaną zdefiniowane.
+> Język i Metoda używane do definiowania zasobów określają sposób definiowania metod **Get**, **test**i **Set** .
 
-Ponieważ **usługi** zasobu ma tylko jeden klucz wymagany (`Name`), **usługi** bloku zasobów może być tak proste, jak to:
+Ponieważ zasób **usługi** ma tylko jeden wymagany klucz (`Name`), zasób bloku **usługi** może być prosty w następujący sposób:
 
 ```powershell
 Configuration TestConfig
@@ -104,7 +104,7 @@ Configuration TestConfig
 }
 ```
 
-Podczas kompilowania konfiguracji powyższych wartości, które określisz dla klucza są przechowywane w pliku "MOF", który jest generowany. Aby uzyskać więcej informacji, zobacz [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
+Po skompilowaniu powyższej konfiguracji wartości podane dla klucza są przechowywane w generowanym pliku "MOF". Aby uzyskać więcej informacji, zobacz [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,15 +121,15 @@ ModuleVersion = "1.0";
 };
 ```
 
-Po zastosowaniu [Local Configuration Manager](../managing-nodes/metaConfig.md) (LCM) odczytać wartości "Buforu" z pliku "MOF" i przekazać ją do `-Name` parametru **uzyskać**, **testu**, i **ustaw** metod dla wystąpienia "MyService" **usługi** zasobów.
+W przypadku zastosowania [Configuration Manager lokalny](../managing-nodes/metaConfig.md) (LCM) odczyta wartość "bufor" z pliku ". MOF `-Name` " i przekaże go do parametru metod **Get**, **test**i **Set** dla wystąpienia **"Moja usługa" Zasób usługi** .
 
 ## <a name="get"></a>Pobranie
 
-**Uzyskać** metoda zasobu, pobiera stan zasobu, ponieważ została ona skonfigurowana w docelowym węźle. Ten stan jest zwracana jako [hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Klucze **hashtable** będzie można skonfigurować wartości, i parametry akceptuje zasobu.
+Metoda **Get** zasobu Pobiera stan zasobu w miarę jego konfiguracji w węźle docelowym. Ten stan jest zwracany jako obiekt [Hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Klucze obiektu **Hashtable** będą konfigurowalne wartości lub parametry, które zaakceptuje zasób.
 
-**Uzyskać** metoda mapuje bezpośrednio do [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) polecenia cmdlet. Podczas wywoływania `Get-DSCConfiguration`, przebiegów LCM **uzyskać** metoda poszczególnych zasobów w konfiguracji obecnie zastosowany. LCM używa wartości kluczy przechowywanych w pliku "MOF" jako parametry do każdego odpowiedniego wystąpienia zasobu.
+Metoda **Get** mapuje się bezpośrednio do polecenia cmdlet [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) . Po wywołaniu `Get-DSCConfiguration`, LCM uruchamia metodę **Get** każdego zasobu w aktualnie stosowanej konfiguracji. LCM używa wartości klucza przechowywanych w pliku ". MOF" jako parametrów do każdego odpowiadającego wystąpienia zasobu.
 
-To przykładowe dane wyjściowe **usługi** zasobu, który konfiguruje usługę "Buforu".
+Jest to przykładowe dane wyjściowe z zasobu **usługi** , który konfiguruje usługę "bufor".
 
 ```output
 ConfigurationName    : Test
@@ -155,7 +155,7 @@ PSComputerName       :
 CimClassName         : MSFT_ServiceResource
 ```
 
-Dane wyjściowe zawierają bieżące wartości właściwości można konfigurować przez **usługi** zasobów.
+Dane wyjściowe przedstawiają bieżące właściwości wartości konfigurowalne przez zasób **usługi** .
 
 ```syntax
 Service [String] #ResourceName
@@ -177,10 +177,10 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Test
 
-**Testu** metoda zasobu określa, czy węzeł docelowy jest obecnie zgodne z zasobu *żądanego stanu*. **Testu** metoda zwraca `$True` lub `$False` tylko po to, aby wskazać, czy węzeł jest zgodne.
-Gdy wywołujesz [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), wywołania LCM **testu** metoda poszczególnych zasobów w konfiguracji obecnie zastosowany. LCM używa wartości kluczy przechowywanych w pliku "MOF" jako parametry do każdego odpowiedniego wystąpienia zasobu.
+Metoda **testowa** zasobu określa, czy węzeł docelowy jest aktualnie zgodny z *żądanym stanem*zasobu. Metoda **testowa** zwraca `$True` lub `$False` tylko wskazuje, czy węzeł jest zgodny.
+Po wywołaniu [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), LCM wywołuje metodę **testową** każdego zasobu w aktualnie stosowanej konfiguracji. LCM używa wartości klucza przechowywanych w pliku ". MOF" jako parametrów do każdego odpowiadającego wystąpienia zasobu.
 
-Jeśli wynik dowolnego pojedynczego zasobu **testu** jest `$False`, `Test-DSCConfiguration` zwraca `$False` wskazujący, że ten węzeł nie jest zgodne. Jeśli wszystkie zasobów **testu** metody zwracają `$True`, `Test-DSCConfiguration` zwraca `$True` do wskazania, że węzeł jest zgodne.
+Jeśli wynik **testu** pojedynczego zasobu to `$False`, `Test-DSCConfiguration` zwraca `$False` informację o tym, że węzeł nie jest zgodny. Jeśli wszystkie metody **testowe** zasobu zwracają `$True`, zwraca `Test-DSCConfiguration` `$True` , aby wskazać, że węzeł jest zgodny.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-Począwszy od programu PowerShell w wersji 5.0 `-Detailed` parametr został dodany. Określanie `-Detailed` powoduje, że `Test-DSCConfiguration` zwracać obiekt zawierający kolekcje wyniki zgodne i niezgodne zasoby.
+Począwszy od programu PowerShell 5,0, `-Detailed` parametr został dodany. Określenie `-Detailed` przyczyn`Test-DSCConfiguration` zwrócenia obiektu zawierającego kolekcje wyników dla zgodnych i niezgodnych zasobów.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -202,13 +202,13 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-Aby uzyskać więcej informacji, zobacz [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+Aby uzyskać więcej informacji, zobacz [test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
 
 ## <a name="set"></a>Ustaw
 
-**Ustaw** metoda zasobu próbuje wymusić węzeł, aby była zgodna z zasobu *żądanego stanu*. **Ustaw** metoda można w dużym **idempotentne**, co oznacza, że **ustaw** można uruchamiać wiele razy i zawsze uzyskać ten sam wynik bez błędów.  Po uruchomieniu [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), cykle LCM za pośrednictwem poszczególnych zasobów w konfiguracji obecnie zastosowany. LCM pobiera wartości kluczy w ramach bieżącego wystąpienia zasobu z pliku "MOF" i są one używane jako parametry dla **testu** metody. Jeśli **testu** metoda zwraca `$True`, węzeł jest zgodne z bieżącego zasobu i **ustaw** metoda zostanie pominięta. Jeśli **testu** zwraca `$False`, węzeł nie jest zgodna.  LCM przekazuje zasób wystąpienia wartości klucza jako parametry do zasobu **ustaw** metodę przywracania węzła zgodności.
+Metoda **Set** zasobu próbuje wymusić zgodność węzła z *żądanym stanem*zasobu. Metoda **Set** ma być **idempotentne**, co oznacza, że **zestaw** może być uruchamiany wiele razy i zawsze uzyskać ten sam wynik bez błędów.  Po uruchomieniu [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), LCM przeprowadzi cykl przez każdy zasób w aktualnie stosowanej konfiguracji. LCM pobiera wartości klucza dla bieżącego wystąpienia zasobu z pliku ". MOF" i używa ich jako parametrów dla metody **testowej** . Jeśli metoda **testowa** zwraca `$True`, węzeł jest zgodny z bieżącym zasobem, a Metoda **Set** jest pomijana. Jeśli **test** zwraca `$False`, węzeł nie jest zgodny.  LCM przekazuje wartości klucza wystąpienia zasobu jako parametry do metody **Set** zasobu, przywracając węzeł do zgodności.
 
-Określając `-Verbose` i `-Wait` parametrów, możesz obserwować postęp `Start-DSCConfiguration` polecenia cmdlet. W tym przykładzie ten węzeł jest już zgodne. `Verbose` Dane wyjściowe wskazuje, że **ustaw** metoda została pominięta.
+Określając `-Verbose` parametry i `-Wait` , można `Start-DSCConfiguration` obserwować postęp polecenia cmdlet. W tym przykładzie węzeł jest już zgodny. Dane wyjściowe wskazują, że Metoda Set została pominięta. `Verbose`
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>Zobacz też
 
-- [Omówienie DSC usługi Azure Automation](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC — Omówienie](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Konfigurowanie serwera ściągania SMB](../pull-server/pullServerSMB.md)
 - [Konfigurowanie klienta ściągania](../pull-server/pullClientConfigID.md)
