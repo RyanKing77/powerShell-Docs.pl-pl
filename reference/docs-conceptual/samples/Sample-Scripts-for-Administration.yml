@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Przykładowe skrypty do administrowania systemem
+summary: W kolekcji przykładów przedstawiono scenariusze administrowania systemami przy użyciu programu PowerShell.
+metadata:
+  title: Przykładowe skrypty do administrowania systemem
+  description: W kolekcji przykładów przedstawiono scenariusze administrowania systemami przy użyciu programu PowerShell.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: MT
+  ms.contentlocale: pl-PL
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392637"
+landingContent:
+- title: Praca z obiektami
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Wyświetlanie struktury obiektów
+      url: ./viewing-object-structure--get-member-.md
+    - text: Wybieranie części obiektu
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: Filtrowanie obiektów w potoku
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: Sortowanie obiektów
+      url: ./sorting-objects.md
+    - text: Powtarzanie zadania dla wielu obiektów
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: Tworzenie obiektów .NET i COM
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: Używanie metod i klas statycznych
+      url: ./using-static-classes-and-methods.md
+    - text: Pobieranie obiektów WMI — Get-WmiObject
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: Zarządzanie komputerami
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Zmienianie stanu komputera
+      url: ./changing-computer-state.md
+    - text: Zbieranie informacji dotyczących komputerów
+      url: ./collecting-information-about-computers.md
+    - text: Tworzenie zapytań polecenia Get-WinEvent za pomocą parametru FilterHashtable
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: Zarządzanie procesami & usług
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Zarządzanie procesami przy użyciu poleceń cmdlet procesu
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: Zarządzanie usługami
+      url: ./managing-services.md
+    - text: Zarządzanie dyskami programu Windows PowerShell
+      url: ./managing-windows-powershell-drives.md
+    - text: Praca z drukarkami
+      url: ./working-with-printers.md
+    - text: Wykonywanie zadań w sieci
+      url: ./performing-networking-tasks.md
+    - text: Praca z instalacjami oprogramowania
+      url: ./working-with-software-installations.md
+    - text: Dekodowanie polecenia programu PowerShell z uruchomionego procesu
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: Praca z danymi wyjściowymi
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Przekierowywanie danych przy użyciu poleceń cmdlet Out-*
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: Zmienianie widoku wyjściowego przy użyciu poleceń formatowania
+      url: ./using-format-commands-to-change-output-view.md
+- title: Zarządzanie dyskami & plików
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Zarządzanie bieżącą lokalizacją
+      url: ./managing-current-location.md
+    - text: Praca z plikami i folderami
+      url: ./working-with-files-and-folders.md
+    - text: Praca z folderami plików i kluczami rejestru
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: Praca z wpisami rejestru
+      url: ./working-with-registry-entries.md
+    - text: Praca z kluczami rejestru
+      url: ./working-with-registry-keys.md
+- title: Tworzenie elementów interfejsu użytkownika
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tworzenie niestandardowego pola wejściowego
+      url: ./creating-a-custom-input-box.md
+    - text: Tworzenie graficznego selektora daty
+      url: ./creating-a-graphical-date-picker.md
+    - text: Pola list z możliwością wielokrotnego wyboru
+      url: ./multiple-selection-list-boxes.md
+    - text: Wybieranie elementów w polu listy
+      url: ./selecting-items-from-a-list-box.md
