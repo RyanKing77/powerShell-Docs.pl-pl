@@ -1,5 +1,5 @@
 ---
-title: Przykładowe RemoteRunspace01 | Dokumentacja firmy Microsoft
+title: Przykład RemoteRunspace01 | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059647"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737574"
 ---
 # <a name="remoterunspace01-sample"></a>Przykład RemoteRunspace01
 
-W tym przykładzie przedstawiono sposób tworzenia zdalnego obszaru działania, który jest używany do ustanawiania połączenia zdalnego.
+Ten przykład pokazuje, jak utworzyć zdalny obszar działania, który jest używany do nawiązywania połączenia zdalnego.
 
 ## <a name="requirements"></a>Wymagania
 
- Ten przykładowy skrypt wymaga programu Windows PowerShell 2.0.
+ Ten przykład wymaga środowiska Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Przedstawiono
+## <a name="demonstrates"></a>Demonstracje
 
-- Tworzenie [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) obiektu.
+- Tworzenie obiektu [System. Management. Automation. obszarami działania. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .
 
-- Ustawienie [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) i [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) właściwości [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) obiektu.
+- Ustawianie właściwości [System. Management. Automation. obszarami działania. Runspaceconnectioninfo. OperationTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) i [System. Management. Automation. obszarami działania. Runspaceconnectioninfo. OpenTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) [ Obiekt System. Management. Automation. obszarami działania. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .
 
-- Tworzenie zdalnego obszaru działania, które używa [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) obiektu można ustanowić połączenia zdalnego.
+- Tworzenie zdalnego obszaru działania, który używa obiektu [System. Management. Automation. obszarami działania. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) w celu nawiązania połączenia zdalnego.
 
-- Trwa zamykanie zdalnego obszaru działania, aby zwolnić połączenia zdalnego.
+- Zamykanie zdalnego obszaru działania w celu zwolnienia połączenia zdalnego.
 
 ## <a name="example"></a>Przykład
 
-W tym przykładzie definiuje połączenia zdalnego, a następnie używa informacje o połączeniu, można ustanowić połączenia zdalnego.
+Ten przykład definiuje połączenie zdalne, a następnie używa tych informacji połączenia w celu nawiązania połączenia zdalnego.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
