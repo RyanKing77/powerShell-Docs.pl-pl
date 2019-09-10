@@ -1,36 +1,54 @@
 ---
-ms.date: 06/05/2017
-keywords: polecenia cmdlet programu PowerShell
+ms.date: 09/09/2019
+keywords: PowerShell, polecenie cmdlet
 title: Dodatek 1 Aliasy zgodności
-ms.openlocfilehash: 553b9f01d6b5e3f4e04f1a75c25979b54dc205da
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030327"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848165"
 ---
-# <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="2d45e-103">Dodatek 1 - aliasy zgodności</span><span class="sxs-lookup"><span data-stu-id="2d45e-103">Appendix 1 - Compatibility Aliases</span></span>
+# <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="3a369-103">Dodatek 1 — aliasy zgodności</span><span class="sxs-lookup"><span data-stu-id="3a369-103">Appendix 1 - Compatibility Aliases</span></span>
 
-<span data-ttu-id="2d45e-104">Programu Windows PowerShell zawiera kilka aliasy przejścia, które umożliwiają użytkownikom z systemami UNIX i Cmd, można użyć znanych nazw poleceń w programie Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="2d45e-104">Windows PowerShell has several transition aliases that allow UNIX and Cmd users to use familiar command names in Windows PowerShell.</span></span> <span data-ttu-id="2d45e-105">Najbardziej typowe aliasy są wyświetlane w poniższej tabeli, wraz z polecenia środowiska Windows PowerShell, aliasu i standardowych alias programu Windows PowerShell, jeśli taka istnieje.</span><span class="sxs-lookup"><span data-stu-id="2d45e-105">The most common aliases are shown in the table below, along with the Windows PowerShell command behind the alias and the standard Windows PowerShell alias if one exists.</span></span>
+<span data-ttu-id="3a369-104">Program PowerShell ma kilka aliasów umożliwiających użytkownikom **systemów UNIX** i **cmd. exe** używanie znanych poleceń.</span><span class="sxs-lookup"><span data-stu-id="3a369-104">PowerShell has several aliases that allow **UNIX** and **cmd.exe** users to use familiar commands.</span></span>
+<span data-ttu-id="3a369-105">W poniższej tabeli przedstawiono polecenia i powiązane z nimi polecenie cmdlet programu PowerShell oraz Alias programu PowerShell:</span><span class="sxs-lookup"><span data-stu-id="3a369-105">The commands and their related PowerShell cmdlet and PowerShell alias are shown in the following table:</span></span>
 
-<span data-ttu-id="2d45e-106">Można znaleźć polecenia programu Windows PowerShell, wskazujący dowolnego aliasu z wnętrza programu Windows PowerShell za pomocą polecenia cmdlet Get-Alias.</span><span class="sxs-lookup"><span data-stu-id="2d45e-106">You can find the Windows PowerShell command that any alias points to from within Windows PowerShell by using the Get-Alias cmdlet.</span></span> <span data-ttu-id="2d45e-107">Na przykład wpisz **get-alias zgodny ze specyfikacją**.</span><span class="sxs-lookup"><span data-stu-id="2d45e-107">For example, type **get-alias cls**.</span></span>
-
-```
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
-```
-
-|<span data-ttu-id="2d45e-108">Polecenie CMD</span><span class="sxs-lookup"><span data-stu-id="2d45e-108">CMD Command</span></span>|<span data-ttu-id="2d45e-109">Polecenie systemu UNIX</span><span class="sxs-lookup"><span data-stu-id="2d45e-109">UNIX Command</span></span>|<span data-ttu-id="2d45e-110">PS Polecenie</span><span class="sxs-lookup"><span data-stu-id="2d45e-110">PS Command</span></span>|<span data-ttu-id="2d45e-111">PS Alias</span><span class="sxs-lookup"><span data-stu-id="2d45e-111">PS Alias</span></span>|
+|<span data-ttu-id="3a369-106">cmd. exe — polecenie</span><span class="sxs-lookup"><span data-stu-id="3a369-106">cmd.exe command</span></span>|<span data-ttu-id="3a369-107">Polecenie systemu UNIX</span><span class="sxs-lookup"><span data-stu-id="3a369-107">UNIX command</span></span>|<span data-ttu-id="3a369-108">Polecenie cmdlet programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="3a369-108">PowerShell cmdlet</span></span>|<span data-ttu-id="3a369-109">Alias programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="3a369-109">PowerShell alias</span></span>|
 |---------------|----------------|--------------|------------|
-|<span data-ttu-id="2d45e-112">**dir**</span><span class="sxs-lookup"><span data-stu-id="2d45e-112">**dir**</span></span>|<span data-ttu-id="2d45e-113">**Ls**</span><span class="sxs-lookup"><span data-stu-id="2d45e-113">**ls**</span></span>|<span data-ttu-id="2d45e-114">**Get-ChildItem**</span><span class="sxs-lookup"><span data-stu-id="2d45e-114">**Get-ChildItem**</span></span>|<span data-ttu-id="2d45e-115">**gci**</span><span class="sxs-lookup"><span data-stu-id="2d45e-115">**gci**</span></span>|
-|<span data-ttu-id="2d45e-116">**cls**</span><span class="sxs-lookup"><span data-stu-id="2d45e-116">**cls**</span></span>|<span data-ttu-id="2d45e-117">**Usuń zaznaczenie**</span><span class="sxs-lookup"><span data-stu-id="2d45e-117">**clear**</span></span>|<span data-ttu-id="2d45e-118">**Wyczyść hosta** (funkcja)</span><span class="sxs-lookup"><span data-stu-id="2d45e-118">**Clear-Host** (function)</span></span>|<span data-ttu-id="2d45e-119">**cls**</span><span class="sxs-lookup"><span data-stu-id="2d45e-119">**cls**</span></span>|
-|<span data-ttu-id="2d45e-120">**DEL, czyszczenie, rmdir**</span><span class="sxs-lookup"><span data-stu-id="2d45e-120">**del, erase, rmdir**</span></span>|<span data-ttu-id="2d45e-121">**rm**</span><span class="sxs-lookup"><span data-stu-id="2d45e-121">**rm**</span></span>|<span data-ttu-id="2d45e-122">**Remove-Item**</span><span class="sxs-lookup"><span data-stu-id="2d45e-122">**Remove-Item**</span></span>|<span data-ttu-id="2d45e-123">**ri**</span><span class="sxs-lookup"><span data-stu-id="2d45e-123">**ri**</span></span>|
-|<span data-ttu-id="2d45e-124">**Kopiuj**</span><span class="sxs-lookup"><span data-stu-id="2d45e-124">**copy**</span></span>|<span data-ttu-id="2d45e-125">**cp**</span><span class="sxs-lookup"><span data-stu-id="2d45e-125">**cp**</span></span>|<span data-ttu-id="2d45e-126">**Kopiuj element**</span><span class="sxs-lookup"><span data-stu-id="2d45e-126">**Copy-Item**</span></span>|<span data-ttu-id="2d45e-127">**ci**</span><span class="sxs-lookup"><span data-stu-id="2d45e-127">**ci**</span></span>|
-|<span data-ttu-id="2d45e-128">**Przenieś**</span><span class="sxs-lookup"><span data-stu-id="2d45e-128">**move**</span></span>|<span data-ttu-id="2d45e-129">**mV**</span><span class="sxs-lookup"><span data-stu-id="2d45e-129">**mv**</span></span>|<span data-ttu-id="2d45e-130">**Move-Item**</span><span class="sxs-lookup"><span data-stu-id="2d45e-130">**Move-Item**</span></span>|<span data-ttu-id="2d45e-131">**mi**</span><span class="sxs-lookup"><span data-stu-id="2d45e-131">**mi**</span></span>|
-|<span data-ttu-id="2d45e-132">**Zmień nazwę**</span><span class="sxs-lookup"><span data-stu-id="2d45e-132">**rename**</span></span>|<span data-ttu-id="2d45e-133">**mV**</span><span class="sxs-lookup"><span data-stu-id="2d45e-133">**mv**</span></span>|<span data-ttu-id="2d45e-134">**Zmień nazwę elementu**</span><span class="sxs-lookup"><span data-stu-id="2d45e-134">**Rename-Item**</span></span>|<span data-ttu-id="2d45e-135">**rni**</span><span class="sxs-lookup"><span data-stu-id="2d45e-135">**rni**</span></span>|
-|<span data-ttu-id="2d45e-136">**type**</span><span class="sxs-lookup"><span data-stu-id="2d45e-136">**type**</span></span>|<span data-ttu-id="2d45e-137">**cat**</span><span class="sxs-lookup"><span data-stu-id="2d45e-137">**cat**</span></span>|<span data-ttu-id="2d45e-138">**Get-Content**</span><span class="sxs-lookup"><span data-stu-id="2d45e-138">**Get-Content**</span></span>|<span data-ttu-id="2d45e-139">**gc**</span><span class="sxs-lookup"><span data-stu-id="2d45e-139">**gc**</span></span>|
-|<span data-ttu-id="2d45e-140">**cd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-140">**cd**</span></span>|<span data-ttu-id="2d45e-141">**cd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-141">**cd**</span></span>|<span data-ttu-id="2d45e-142">**Ustawianie lokalizacji**</span><span class="sxs-lookup"><span data-stu-id="2d45e-142">**Set-Location**</span></span>|<span data-ttu-id="2d45e-143">**sl**</span><span class="sxs-lookup"><span data-stu-id="2d45e-143">**sl**</span></span>|
-|<span data-ttu-id="2d45e-144">**md**</span><span class="sxs-lookup"><span data-stu-id="2d45e-144">**md**</span></span>|<span data-ttu-id="2d45e-145">**mkdir**</span><span class="sxs-lookup"><span data-stu-id="2d45e-145">**mkdir**</span></span>|<span data-ttu-id="2d45e-146">**Nowy element**</span><span class="sxs-lookup"><span data-stu-id="2d45e-146">**New-Item**</span></span>|<span data-ttu-id="2d45e-147">**ni**</span><span class="sxs-lookup"><span data-stu-id="2d45e-147">**ni**</span></span>|
-|<span data-ttu-id="2d45e-148">**pushd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-148">**pushd**</span></span>|<span data-ttu-id="2d45e-149">**pushd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-149">**pushd**</span></span>|<span data-ttu-id="2d45e-150">**Lokalizacja wypychania**</span><span class="sxs-lookup"><span data-stu-id="2d45e-150">**Push-Location**</span></span>|<span data-ttu-id="2d45e-151">**pushd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-151">**pushd**</span></span>|
-|<span data-ttu-id="2d45e-152">**popd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-152">**popd**</span></span>|<span data-ttu-id="2d45e-153">**popd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-153">**popd**</span></span>|<span data-ttu-id="2d45e-154">**Lokalizacji POP**</span><span class="sxs-lookup"><span data-stu-id="2d45e-154">**Pop-Location**</span></span>|<span data-ttu-id="2d45e-155">**popd**</span><span class="sxs-lookup"><span data-stu-id="2d45e-155">**popd**</span></span>|
+|<span data-ttu-id="3a369-110">**ze**</span><span class="sxs-lookup"><span data-stu-id="3a369-110">**cls**</span></span>|<span data-ttu-id="3a369-111">**Wyczyść**</span><span class="sxs-lookup"><span data-stu-id="3a369-111">**clear**</span></span>|<span data-ttu-id="3a369-112">`Clear-Host`funkcyjn</span><span class="sxs-lookup"><span data-stu-id="3a369-112">`Clear-Host` (function)</span></span>|`cls`|
+|<span data-ttu-id="3a369-113">**kopiowane**</span><span class="sxs-lookup"><span data-stu-id="3a369-113">**copy**</span></span>|<span data-ttu-id="3a369-114">**CP**</span><span class="sxs-lookup"><span data-stu-id="3a369-114">**cp**</span></span>|`Copy-Item`|`cpi`|
+|<span data-ttu-id="3a369-115">**katalogów**</span><span class="sxs-lookup"><span data-stu-id="3a369-115">**dir**</span></span>|<span data-ttu-id="3a369-116">**ls**</span><span class="sxs-lookup"><span data-stu-id="3a369-116">**ls**</span></span>|`Get-ChildItem`|`gci`|
+|<span data-ttu-id="3a369-117">**type**</span><span class="sxs-lookup"><span data-stu-id="3a369-117">**type**</span></span>|<span data-ttu-id="3a369-118">**Cat**</span><span class="sxs-lookup"><span data-stu-id="3a369-118">**cat**</span></span>|`Get-Content`|`gc`|
+|<span data-ttu-id="3a369-119">**Przenieś**</span><span class="sxs-lookup"><span data-stu-id="3a369-119">**move**</span></span>|<span data-ttu-id="3a369-120">**MV**</span><span class="sxs-lookup"><span data-stu-id="3a369-120">**mv**</span></span>|`Move-Item`|`mi`|
+|<span data-ttu-id="3a369-121">**md**</span><span class="sxs-lookup"><span data-stu-id="3a369-121">**md**</span></span>|<span data-ttu-id="3a369-122">**mkdir**</span><span class="sxs-lookup"><span data-stu-id="3a369-122">**mkdir**</span></span>|`New-Item`|`ni`|
+|<span data-ttu-id="3a369-123">**pushd**</span><span class="sxs-lookup"><span data-stu-id="3a369-123">**pushd**</span></span>|<span data-ttu-id="3a369-124">**pushd**</span><span class="sxs-lookup"><span data-stu-id="3a369-124">**pushd**</span></span>|`Push-Location`|`pushd`|
+|<span data-ttu-id="3a369-125">**popd**</span><span class="sxs-lookup"><span data-stu-id="3a369-125">**popd**</span></span>|<span data-ttu-id="3a369-126">**popd**</span><span class="sxs-lookup"><span data-stu-id="3a369-126">**popd**</span></span>|`Pop-Location`|`popd`|
+|<span data-ttu-id="3a369-127">**del**, **Wymaż**, **Rd**, **rmdir**</span><span class="sxs-lookup"><span data-stu-id="3a369-127">**del**, **erase**, **rd**, **rmdir**</span></span>|<span data-ttu-id="3a369-128">**RM**</span><span class="sxs-lookup"><span data-stu-id="3a369-128">**rm**</span></span>|`Remove-Item`|`ri`|
+|<span data-ttu-id="3a369-129">**inicjacj**</span><span class="sxs-lookup"><span data-stu-id="3a369-129">**ren**</span></span>|<span data-ttu-id="3a369-130">**MV**</span><span class="sxs-lookup"><span data-stu-id="3a369-130">**mv**</span></span>|`Rename-Item`|`rni`|
+|<span data-ttu-id="3a369-131">**CD**, **chdir**</span><span class="sxs-lookup"><span data-stu-id="3a369-131">**cd**, **chdir**</span></span>|<span data-ttu-id="3a369-132">**cd**</span><span class="sxs-lookup"><span data-stu-id="3a369-132">**cd**</span></span>|`Set-Location`|`sl`|
+
+<span data-ttu-id="3a369-133">Aby znaleźć aliasy programu PowerShell, użyj polecenia cmdlet [Get-alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) .</span><span class="sxs-lookup"><span data-stu-id="3a369-133">To find the PowerShell aliases, use the [Get-Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) cmdlet.</span></span> <span data-ttu-id="3a369-134">Aby wyświetlić Aliasy poleceń cmdlet, należy użyć parametru **definicji** i określić nazwę polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="3a369-134">To display a cmdlet's aliases, use the **Definition** parameter and specify the cmdlet name.</span></span>
+<span data-ttu-id="3a369-135">Aby znaleźć nazwę polecenia cmdlet aliasu, użyj parametru **name** i określ alias.</span><span class="sxs-lookup"><span data-stu-id="3a369-135">Or, to find an alias's cmdlet name, use the **Name** parameter and specify the alias.</span></span>
+
+```powershell
+Get-Alias -Definition Get-ChildItem
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           dir -> Get-ChildItem
+Alias           gci -> Get-ChildItem
+Alias           ls -> Get-ChildItem
+```
+
+```powershell
+Get-Alias -Name gci
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           gci -> Get-ChildItem
+```

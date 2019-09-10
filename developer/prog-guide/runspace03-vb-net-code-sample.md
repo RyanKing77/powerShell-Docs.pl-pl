@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 przykładowy kod (VB.NET) | Dokumentacja firmy Microsoft
+title: Przykład kodu RunSpace03 (VB.NET) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734982"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848018"
 ---
-# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="0350f-102">Przykładowy kod RunSpace03 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="0350f-102">RunSpace03 (VB.NET) Code Sample</span></span>
+# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="6bfd5-102">Przykładowy kod RunSpace03 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="6bfd5-102">RunSpace03 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="0350f-103">Oto VB.NET kodu źródłowego dla aplikacji konsoli opisanego w [tworzenia działa konsola aplikacji czy określony skrypt](fd).</span><span class="sxs-lookup"><span data-stu-id="0350f-103">Here is the VB.NET source code for the console application described in [Creating a Console Application That Runs a Specified Script](fd).</span></span> <span data-ttu-id="0350f-104">W tym przykładzie użyto [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasy do uruchomienia skryptu, który pobiera przetwarzania informacji dla listy nazw procesu przekazywane do skryptu.</span><span class="sxs-lookup"><span data-stu-id="0350f-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="0350f-105">Pokazuje, jak przekazać obiekty wejściowe do skryptu oraz jak pobierać obiektów błędu, a także obiekty danych wyjściowych.</span><span class="sxs-lookup"><span data-stu-id="0350f-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
+<span data-ttu-id="6bfd5-103">Poniżej znajduje się kod źródłowy VB.NET dla aplikacji konsolowej opisanej w temacie "Tworzenie aplikacji konsolowej, która uruchamia określony skrypt".</span><span class="sxs-lookup"><span data-stu-id="6bfd5-103">Here is the VB.NET source code for the console application described in "Creating a Console Application That Runs a Specified Script".</span></span> <span data-ttu-id="6bfd5-104">Ten przykład używa klasy [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) do wykonywania skryptu pobierającego informacje o procesie dla listy nazw procesów przekazaną do skryptu.</span><span class="sxs-lookup"><span data-stu-id="6bfd5-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="6bfd5-105">Pokazuje sposób przekazywania obiektów wejściowych do skryptu i sposobu pobierania obiektów błędów oraz obiektów wyjściowych.</span><span class="sxs-lookup"><span data-stu-id="6bfd5-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="0350f-106">Możesz pobrać plik źródłowy VB.NET (runspace03.vb) omawiany w tym przykładzie przy użyciu Windows oprogramowania Development Kit dla Windows Vista i składników środowiska wykonawczego programu Microsoft .NET Framework 3.0.</span><span class="sxs-lookup"><span data-stu-id="0350f-106">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="0350f-107">Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="0350f-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
->
-> <span data-ttu-id="0350f-108">Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.</span><span class="sxs-lookup"><span data-stu-id="0350f-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="6bfd5-106">Możesz pobrać plik źródłowy VB.NET (runspace03. vb) dla tego przykładu, korzystając z zestawu Windows Software Development Kit dla systemów Windows Vista i Microsoft .NET Framework 3,0.</span><span class="sxs-lookup"><span data-stu-id="6bfd5-106">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="6bfd5-107">Aby uzyskać instrukcje dotyczące pobierania, zobacz [jak zainstalować program Windows PowerShell i pobrać zestaw SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="6bfd5-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="6bfd5-108">Pobrane pliki źródłowe są dostępne w  **\<przykładach programu PowerShell >** Directory.</span><span class="sxs-lookup"><span data-stu-id="6bfd5-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="0350f-109">Przykładowy kod</span><span class="sxs-lookup"><span data-stu-id="0350f-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="6bfd5-109">Przykładowy kod</span><span class="sxs-lookup"><span data-stu-id="6bfd5-109">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -106,8 +105,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace03.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace03.vb#L09-L83 "Runspace03.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="0350f-110">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="0350f-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6bfd5-110">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="6bfd5-110">See Also</span></span>
 
-[<span data-ttu-id="0350f-111">Windows PowerShell przewodnik</span><span class="sxs-lookup"><span data-stu-id="0350f-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="6bfd5-111">Przewodnik programisty programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="6bfd5-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="0350f-112">Zestaw SDK programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="0350f-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="6bfd5-112">Zestaw SDK programu Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="6bfd5-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
