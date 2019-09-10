@@ -1,5 +1,5 @@
 ---
-title: Pisanie tematów Pomocy dotyczących skryptów programu PowerShell i funkcji | Dokumentacja firmy Microsoft
+title: Pisanie pomocy dotyczącej skryptów i funkcji programu PowerShell | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,70 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
-ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083114"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848098"
 ---
-# <a name="writing-help-for-powershell-scripts-and-functions"></a>Pisanie tematów Pomocy dotyczących skryptów programu PowerShell i funkcji
+# <a name="writing-help-for-powershell-scripts-and-functions"></a>Pisanie pomocy dotyczącej skryptów i funkcji programu PowerShell
 
-Funkcje i skryptów programu PowerShell należy w pełni udokumentowane w każdym przypadku, gdy są one udostępniane innym osobom.
-`Get-Help` Polecenie cmdlet wyświetla tematy pomocy skryptów i funkcji w tym samym formacie jak Wyświetla Pomoc dotyczącą poleceń cmdlet i wszystkie `Get-Help` parametry pracować nad skrypt i funkcja tematy Pomocy.
+Skrypty i funkcje programu PowerShell powinny być w pełni udokumentowane, gdy są udostępniane innym osobom.
+Polecenie cmdlet wyświetla tematy pomocy dotyczące skryptów i funkcji w tym samym formacie, co wyświetla pomoc dla poleceń cmdlet, a wszystkie `Get-Help` parametry działają na temat tematów pomocy dotyczących skryptów i funkcji. `Get-Help`
 
-Skrypty programu PowerShell mogą obejmować tematu Pomocy dotyczące skryptu i tematów Pomocy dotyczących poszczególnych funkcji w skrypcie.
-Funkcje, które są udostępniane niezależnie od skryptów mogą zawierać własne tematy Pomocy.
+Skrypty programu PowerShell mogą zawierać temat pomocy dotyczący skryptu i tematów pomocy dotyczących poszczególnych funkcji w skrypcie.
+Funkcje udostępniane niezależnie od skryptów mogą zawierać własne tematy pomocy.
 
-W tym dokumencie wyjaśniono format i poprawne umieszczania tematów pomocy a sugerują one wskazówki dotyczące zawartości.
+W tym dokumencie wyjaśniono format i poprawne rozmieszczenie tematów pomocy oraz zawarto wskazówki dotyczące zawartości.
 
-## <a name="types-of-script-and-function-help"></a>Typy skryptu i pomocy — funkcja
+## <a name="types-of-script-and-function-help"></a>Typy pomocy dotyczącej skryptów i funkcji
 
-### <a name="comment-based-help"></a>Pomoc oparta na komentarz
-Temat pomocy, który opisano w skrypcie lub funkcji można zaimplementować jako zbiór komentarzy w skrypcie lub funkcji.
-Podczas zapisywania pomocy komentarz skryptu i funkcji w skrypcie, płacisz uważnego reguły umieszczania Pomoc oparta na komentarz.
-Określa położenie czy `Get-Help` polecenia cmdlet kojarzy tematu pomocy za pomocą skryptu lub funkcji.
-Aby uzyskać więcej informacji na temat pisania oparta na komentarzach tematy pomocy, zobacz [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+### <a name="comment-based-help"></a>Pomoc oparta na komentarzach
+Temat pomocy, który opisuje skrypt lub funkcję, można zaimplementować jako zestaw komentarzy w skrypcie lub funkcji.
+Podczas pisania pomocy opartej na komentarzach dla skryptu i dla funkcji w skrypcie należy zwrócić szczególną uwagę na reguły dotyczące umieszczania pomocy opartej na komentarzach.
+Umieszczanie określa, czy `Get-Help` polecenie cmdlet kojarzy temat pomocy ze skryptem lub funkcją.
+Aby uzyskać więcej informacji na temat pisania tematów pomocy opartych na komentarzach, zobacz [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-### <a name="xml-based-command-help"></a>Pomoc dla polecenia opartego na języku XML
-Temat pomocy, który opisano w skrypcie lub funkcji może być implementowany w pliku XML, który używa schematu pomocy polecenia.
-Aby skojarzyć skryptu lub funkcji z pliku XML, należy użyć `ExternalHelp` komentarz — słowo kluczowe, a następnie ścieżka i nazwa pliku XML.
+### <a name="xml-based-command-help"></a>Pomoc dotycząca poleceń opartych na języku XML
+Temat pomocy, który opisuje skrypt lub funkcję, można zaimplementować w pliku XML, który używa schematu pomocy poleceń.
+Aby skojarzyć skrypt lub funkcję z plikiem XML, użyj `ExternalHelp` słowa kluczowego komentarza, po którym następuje ścieżka i nazwa pliku XML.
 
-Gdy `ExternalHelp` komentarz, słowo kluczowe, ma pierwszeństwo przed Pomoc oparta na komentarz, nawet wtedy, gdy `Get-Help` nie można odnaleźć pliku pomocy, który dopasowuje wartość `ExternalHelp` — słowo kluczowe.
+Gdy słowo kluczowe `Get-Help` `ExternalHelp` comment jest obecne, ma wyższy priorytet niż pomoc oparta na komentarzach, nawet jeśli nie można znaleźć pliku pomocy, który pasuje do wartości słowa kluczowego. `ExternalHelp`
 
 ### <a name="online-help"></a>Pomoc online
-Możesz publikować tematy pomocy przez Internet, a następnie przekierowanie `Get-Help` otworzyć tematy.
-Aby uzyskać więcej informacji na temat pisania oparta na komentarzach tematy pomocy, zobacz [Obsługa pomocy Online](../module/supporting-online-help.md).
+Tematy pomocy można ogłosić w Internecie, a następnie bezpośrednio `Get-Help` otworzyć tematy.
+Aby uzyskać więcej informacji na temat pisania tematów pomocy opartych na komentarzach, zobacz [Obsługa pomocy online](../module/supporting-online-help.md).
 
-Nie istnieje ustanowionych metoda zapisu koncepcyjnej ("o") tematy dotyczące skryptów i funkcji.
-Jednak możesz zadać tematów pojęciowych na liście Internet ich adresy URL i tematy w sekcji linki powiązane tematu pomocy polecenia.
+Nie ma żadnej ustanowionej metody pisania tematów koncepcyjnych ("informacje") dotyczących skryptów i funkcji.
+Można jednak publikować tematy pojęciowe w Internecie listę tematów i ich adresów URL w sekcji Linki pokrewne w temacie pomocy poleceń.
 
-## <a name="content-considerations-for-script-and-function-help"></a>Pomoc zawartości zagadnienia dotyczące skryptów i funkcji
+## <a name="content-considerations-for-script-and-function-help"></a>Uwagi dotyczące zawartości dotyczącej pomocy dotyczącej skryptów i funkcji
 
-- Jeśli piszesz bardzo krótki tematu pomocy przy użyciu tylko kilka sekcji Pomoc dostępne polecenia, należy uwzględnić wyczyść opisy parametrów skryptu lub funkcji. Także jeden lub dwa przykładowe polecenia w sekcji przykłady, nawet jeśli zdecydujesz pominąć przykładowe opisy.
+- Jeśli piszesz krótki temat pomocy z tylko kilkoma dostępnymi sekcjami pomocy poleceń, pamiętaj, aby dołączyć jasne opisy parametrów skryptu lub funkcji. Należy również uwzględnić jedno lub dwa przykładowe polecenia w sekcji przykładów, nawet jeśli zdecydujesz się pominąć przykładowe opisy.
 
-- W opisach wszystkich zapoznaj się z poleceniem w skrypcie lub funkcji. Informacje te pomagają użytkownikowi zrozumieć i zarządzanie nimi polecenia.
+- We wszystkich opisach zapoznaj się z poleceniem jako skrypt lub funkcję. Te informacje pomagają użytkownikowi zrozumieć i zarządzać poleceniem.
 
-  Na przykład następujące szczegółowy opis stwierdza, czy polecenie New-tematu jest skrypt. Przypomina o tym użytkowników, które są im niezbędne do określania ścieżki i imię i nazwisko, gdy są uruchamiane.
+  Na przykład w poniższym szczegółowym opisie opisano, że polecenie New-temat jest skryptem. Przypomina to użytkownikom, że potrzebują określić ścieżkę i pełną nazwę podczas ich uruchamiania.
 
-  > "Skrypt nowy temat tworzy pustą tematu pojęciowego, dla każdej nazwy tematu w pliku wejściowym..."
+  > "Skrypt nowego tematu tworzy pusty temat koncepcyjny dla każdej nazwy tematu w pliku wejściowym..."
 
-  Następujące szczegółowy opis stwierdza, że `Disable-PSRemoting` jest funkcją. Te informacje są szczególnie przydatne dla użytkowników, gdy sesja zawiera wiele poleceń o takiej samej nazwie, z których część może być ona ukryta za pomocą polecenia o wyższym priorytecie.
+  Poniżej przedstawiono szczegółowy opis stanów `Disable-PSRemoting` funkcji. Te informacje są szczególnie przydatne dla użytkowników, gdy sesja zawiera wiele poleceń o tej samej nazwie, a niektóre z nich mogą być ukryte przez polecenie o wyższym priorytecie.
 
   > `Disable-PSRemoting` Funkcja wyłącza wszystkie konfiguracje sesji na komputerze lokalnym...
 
-- W temacie Pomocy skryptu wyjaśniają jak używać skryptu jako całości. Jeśli piszesz także tematy pomocy dla funkcji w skrypcie, wspomnieć o funkcje tematu Pomocy skryptu i zawierają odwołania do funkcji tematów pomocy w sekcji linki powiązane tematu Pomocy skryptu. Z drugiej strony gdy funkcja jest część skryptu, opisano w temacie Pomocy — funkcja roli, funkcji odtwarzany w skrypcie i jak ją mogą być używane niezależnie. Następnie utwórz listę tematu Pomocy skryptu w sekcji linki powiązane tematu pomocy funkcji.
+- W temacie pomocy skryptu Wyjaśnij, jak używać skryptu jako całości. Jeśli zapisujesz również tematy pomocy dotyczące funkcji w skrypcie, wspominaj funkcje w temacie pomocy dotyczącej skryptów i Dołącz do tematów pomocy dotyczących funkcji w sekcji Linki pokrewne w temacie pomocy skryptu. Z drugiej strony, gdy funkcja jest częścią skryptu, Wyjaśnij w temacie pomocy funkcji rola, którą ta funkcja pełni w skrypcie i jak może być używana niezależnie. Następnie utwórz listę tematów pomocy dotyczącej skryptów w sekcji Linki pokrewne w temacie dotyczącym funkcji.
 
-- Podczas pisania przykłady skryptów tematu pomocy, pamiętaj, że zawiera ścieżkę do pliku skryptu w przykładzie polecenia. Przypomina użytkownikom, że muszą oni określić ścieżkę jawnie, nawet wtedy, gdy skrypt znajduje się w bieżącym katalogu.
+- Podczas pisania przykładów dla tematu pomocy skryptu pamiętaj o uwzględnieniu ścieżki do pliku skryptu w przykładowym poleceniu. Przypomina to użytkownikom, że muszą jawnie określić ścieżkę, nawet gdy skrypt znajduje się w bieżącym katalogu.
 
-- W temacie pomocy funkcji Przypomnij, które funkcja istnieje tylko w bieżącej sesji, a następnie ich wykorzystania w innych sesjach, należy dodać go lub dodać profil programu PowerShell.
+- W temacie pomocy funkcji Przypomnij użytkownikom, że funkcja istnieje tylko w bieżącej sesji i, aby użyć jej w innych sesjach, muszą dodać ją lub dodać do niej profil programu PowerShell.
 
-- `Get-Help` Wyświetla tematu Pomocy dotyczącego skryptu lub funkcji, tylko wtedy, gdy plik skryptu i plików tematów pomocy są zapisywane w odpowiednich lokalizacjach. W związku z tym nie jest przydatna podczas dołączania instrukcje dotyczące instalowania programu PowerShell, zapisywanie lub instalowanie skryptu lub funkcji w skrypcie lub funkcji tematu Pomocy. Zamiast tego należy umieścić wszystkie instrukcje w dokumencie, używanego do dystrybuowania skryptu lub funkcji.
+- `Get-Help`wyświetla temat pomocy dla skryptu lub funkcji tylko wtedy, gdy plik skryptu i pliki tematów pomocy są zapisywane w prawidłowych lokalizacjach. W związku z tym nie warto uwzględniać instrukcji dotyczących instalowania programu PowerShell ani zapisywania ani instalowania skryptów lub funkcji w temacie pomocy skryptu lub funkcji. Zamiast tego należy uwzględnić wszelkie instrukcje instalacji w dokumencie używanym do dystrybucji skryptu lub funkcji.
 
 ## <a name="see-also"></a>Zobacz też
 
- [Pisanie tematów pomocy oparty na składni XML dla skryptów i funkcji](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [Pisanie tematów pomocy opartych na języku XML dla polecenia](./writing-xml-based-help-topics-for-commands.md)
-
- [Pisanie tematów pomocy oparta na komentarzach](./writing-comment-based-help-topics.md)
+[Pisanie tematów pomocy opartych na komentarzach](./writing-comment-based-help-topics.md)

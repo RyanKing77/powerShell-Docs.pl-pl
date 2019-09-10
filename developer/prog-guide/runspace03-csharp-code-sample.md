@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (C#) przykładowego kodu | Dokumentacja firmy Microsoft
+title: Przykład koduC#RunSpace03 () | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,21 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ac8ab99-1856-4d6f-b30d-c0a18b8dd1fc
 caps.latest.revision: 6
-ms.openlocfilehash: e1fc91174a959d6acc306330afb8d5c2e7a9a860
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 9afdb97b8ae2919f091ca5bacccedbe37c2e1584
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67735007"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848031"
 ---
 # <a name="runspace03-c-code-sample"></a>Przykładowy kod RunSpace03 (C#)
 
-Oto C# źródła kodu dla aplikacji konsoli, opisanego w [tworzenia działa konsola aplikacji czy określony skrypt](fd). W tym przykładzie użyto [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) klasy do uruchomienia skryptu, który pobiera przetwarzania informacji przy użyciu listy nazw procesów przekazywane do skryptu. Pokazuje, jak przekazać obiekty wejściowe do skryptu oraz jak pobierać obiektów błędu, a także obiekty danych wyjściowych.
+Poniżej znajduje się C# kod źródłowy aplikacji konsolowej opisanej w temacie "Tworzenie aplikacji konsolowej, która uruchamia określony skrypt". Ten przykład używa klasy [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) do wykonywania skryptu pobierającego informacje o procesie przy użyciu listy nazw procesów przekazaną do skryptu. Pokazuje sposób przekazywania obiektów wejściowych do skryptu i sposobu pobierania obiektów błędów oraz obiektów wyjściowych.
 
 > [!NOTE]
-> Możesz pobrać C# pliku źródłowego (runspace03.cs) omawiany w tym przykładzie za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska wykonawczego programu Microsoft .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
+> Możesz pobrać plik C# źródłowy (runspace03.cs) dla tego przykładu, korzystając z zestawu Microsoft Windows Software Development Kit dla systemów Windows Vista i Microsoft .NET Framework 3,0 Runtime. Aby uzyskać instrukcje dotyczące pobierania, zobacz [jak zainstalować program Windows PowerShell i pobrać zestaw SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
+> Pobrane pliki źródłowe są dostępne w  **\<przykładach programu PowerShell >** Directory.
 
 ## <a name="code-sample"></a>Przykładowy kod
 
@@ -30,6 +29,6 @@ Oto C# źródła kodu dla aplikacji konsoli, opisanego w [tworzenia działa kons
 
 ## <a name="see-also"></a>Zobacz też
 
-[Windows PowerShell przewodnik](./windows-powershell-programmer-s-guide.md)
+[Przewodnik programisty programu Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
 [Zestaw SDK programu Windows PowerShell](../windows-powershell-reference.md)

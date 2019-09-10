@@ -1,5 +1,5 @@
 ---
-title: Przykłady kodu RunSpace03 | Dokumentacja firmy Microsoft
+title: Przykłady kodu RunSpace03 | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,31 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
-ms.openlocfilehash: 985fbc6f53ca204e700da821fcd08187edc3b60f
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: bfb8d036a787ecf2f3afc394fca83ff0bf027af9
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67735030"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848041"
 ---
 # <a name="runspace03-code-samples"></a>Przykłady kodu RunSpace03
 
-Poniżej przedstawiono przykłady kodu dla obszaru działania opisane w [tworzenia działa konsola aplikacji czy określony skrypt](fd).
+Poniżej przedstawiono przykłady kodu dla obszaru działania opisanego w temacie "Tworzenie aplikacji konsolowej, która uruchamia określony skrypt".
 
 > [!NOTE]
-> Możesz pobrać C# źródłowego pliku (runspace03.cs) i plik źródłowy VB.NET (runspace03.vb) omawiany w tym przykładzie za pomocą programu Microsoft Windows oprogramowania Development Kit dla Windows Vista i składników środowiska wykonawczego programu Microsoft .NET Framework 3.0. Aby uzyskać instrukcje pobierania, zobacz [jak instalowanie programu Windows PowerShell i pobierania zestawu SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> Pliki pobrane źródło są dostępne w  **\<przykłady programu PowerShell >** katalogu.
+> Możesz pobrać plik C# źródłowy (runspace03.cs) i plik źródłowy VB.NET (runspace03. vb) dla tego przykładu, korzystając z zestawu Microsoft Windows Software Development Kit dla systemów Windows Vista i Microsoft .NET Framework 3,0 środowisko uruchomieniowe. Aby uzyskać instrukcje dotyczące pobierania, zobacz [jak zainstalować program Windows PowerShell i pobrać zestaw SDK programu Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
+> Pobrane pliki źródłowe są dostępne w  **\<przykładach programu PowerShell >** Directory.
 
-Aby uzyskać kompletny przykładowy kod zobacz następujące tematy.
+Pełny przykładowy kod można znaleźć w następujących tematach.
 
-|Język|Temat|
-|--------------|-----------|
-|C#|[RunSpace03 (C#) przykładowego kodu](./runspace03-csharp-code-sample.md)|
-|VB.NET|[RunSpace03 przykładowy kod (VB.NET)](./runspace03-vb-net-code-sample.md)|
+| Język |                                 Temat                                 |
+| -------- | --------------------------------------------------------------------- |
+| C#       | [Przykład koduC#RunSpace03 ()](./runspace03-csharp-code-sample.md)     |
+| VB.NET   | [Przykład kodu RunSpace03 (VB.NET)](./runspace03-vb-net-code-sample.md) |
 
 ## <a name="see-also"></a>Zobacz też
 
-[Windows PowerShell przewodnik](./windows-powershell-programmer-s-guide.md)
+[Przewodnik programisty programu Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
 [Zestaw SDK programu Windows PowerShell](../windows-powershell-reference.md)

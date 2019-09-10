@@ -1,5 +1,5 @@
 ---
-title: Obsługa pomocy Online | Dokumentacja firmy Microsoft
+title: Obsługa pomocy online | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,48 +8,48 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: b76f45299d11dc10c8b16ed80f87c7f1fcc5ed65
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082145"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848079"
 ---
-# <a name="supporting-online-help"></a>Obsługa pomocy Online
+# <a name="supporting-online-help"></a>Obsługa pomocy online
 
-Począwszy od programu Windows PowerShell 3.0, istnieją dwa sposoby obsługi `Get-Help` funkcja Online dla poleceń programu Windows PowerShell. W tym temacie wyjaśniono, jak zaimplementować tę funkcję dla różnych typów.
+Począwszy od programu Windows PowerShell 3,0, istnieją dwa sposoby obsługi `Get-Help` funkcji online dla poleceń programu Windows PowerShell. W tym temacie wyjaśniono, jak zaimplementować tę funkcję dla różnych typów poleceń.
 
-## <a name="about-online-help"></a>Temat pomocy Online
+## <a name="about-online-help"></a>Informacje o pomocy online
 
-Pomoc online zawsze było to ważna część programu Windows PowerShell. Mimo że `Get-Help` polecenie cmdlet wyświetla Pomoc w wierszu polecenia tak, wielu użytkowników środowisko odczytu w trybie online, w tym kodowania kolorami, hiperłącza i udostępniania pomysły w sekcji Zawartość społeczności i dokumentów na podstawie typu wiki. Co najważniejsze przed pojawieniu aktualizowalnej pomocy pomocy online pod warunkiem najnowszą wersję plików pomocy.
+Pomoc online była zawsze istotną częścią programu Windows PowerShell. Mimo że `Get-Help` polecenie cmdlet wyświetla tematy pomocy w wierszu polecenia, wielu użytkowników preferuje środowisko odczytywania w trybie online, w tym kolorowanie, hiperłącza i udostępnianie pomysłów w treści społeczności i dokumentach opartych na witrynie typu wiki. Co najważniejsze, przed pojawieniu aktualizowalnej pomocy, pomoc online zapewniała najbardziej aktualną wersję plików pomocy.
 
-Pojawienie aktualizowalnej pomocy w środowisku Windows PowerShell 3.0 pomocy online nadal odgrywa kluczową rolę. Oprócz elastyczne komfortu pomocy online udostępnia pomoc dla użytkowników, którzy nie obsługują lub nie można użyć aktualizowalnej pomocy do pobrania tematy Pomocy.
+Dzięki pojawieniu aktualizowalnej pomocy w programie Windows PowerShell 3,0 pomoc online nadal odgrywa istotną rolę. Oprócz elastycznego środowiska użytkownika Pomoc Online zapewnia użytkownikom, którzy nie są lub nie mogą używać aktualizowalnej pomocy do pobierania tematów pomocy.
 
-## <a name="how-get-help--online-works"></a>Jak Get-Help-działa w trybie Online
+## <a name="how-get-help--online-works"></a>Jak działa metoda Get-Help-online
 
-Aby ułatwić użytkownikom znajdowanie online tematy pomocy dla poleceń, `Get-Help` polecenie ma parametr Online, który spowoduje otwarcie wersji online tematu Pomocy dotyczącego polecenia w użytkownika domyślnej przeglądarki internetowej.
+Aby ułatwić użytkownikom znalezienie tematów pomocy online dla poleceń, `Get-Help` polecenie zawiera parametr online, który otwiera informacje o wersji online tematu pomocy dla polecenia w domyślnej przeglądarce internetowej użytkownika.
 
-Na przykład następujące polecenie otwiera online tematu Pomocy dotyczącego `Invoke-Command` polecenia cmdlet.
+Na przykład następujące polecenie otwiera temat pomocy online dla tego `Invoke-Command` polecenia cmdlet.
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-Aby zaimplementować `Get-Help` -Online, `Get-Help` polecenia cmdlet wygląda dla zasobów identyfikator URI (Uniform) dla wersji online tematu pomocy w następujących lokalizacjach.
+W celu `Get-Help` zaimplementowania trybu `Get-Help` online polecenie cmdlet wyszukuje Uniform Resource Identifier (URI) tematu pomocy dotyczącej wersji online w poniższych lokalizacjach.
 
-- Pierwszy link w sekcji linki powiązane tematu pomocy dla polecenia. Temat pomocy musi być zainstalowany na komputerze użytkownika. Ta funkcja została wprowadzona w programie Windows PowerShell 2.0.
+- Pierwszy link w sekcji powiązane linki tematu pomocy dla polecenia. Temat pomocy musi być zainstalowany na komputerze użytkownika. Ta funkcja została wprowadzona w programie Windows PowerShell 2,0.
 
-- Właściwości HelpUri dowolnego polecenia. Właściwości HelpUri jest dostępna, nawet wtedy, gdy tematu Pomocy dotyczącego polecenia nie jest zainstalowany na komputerze użytkownika. Ta funkcja została wprowadzona w środowisku Windows PowerShell 3.0.
+- Właściwość HelpUri dowolnego polecenia. Właściwość HelpUri jest dostępna, nawet jeśli nie zainstalowano tematu pomocy dla tego polecenia na komputerze użytkownika. Ta funkcja została wprowadzona w programie Windows PowerShell 3,0.
 
-  `Get-Help` sprawdza, czy identyfikatora URI w pierwszy wpis w sekcji linki powiązane, zanim uzyska wartość właściwości HelpUri. Jeśli wartość właściwości jest nieprawidłowa lub została zmieniona, można zastąpić go przez wprowadzenie innej wartości w pierwszym łącza powiązane. Jednak pierwszy łącza pokrewnego działa tylko wtedy, gdy tematy pomocy są zainstalowane na komputerze użytkownika.
+  `Get-Help`szuka identyfikatora URI w pierwszym wpisie w sekcji powiązane linki przed pobraniem wartości właściwości HelpUri. Jeśli wartość właściwości jest niepoprawna lub została zmieniona, można ją zastąpić, wprowadzając inną wartość w pierwszym połączonym łączu. Jednak pierwsze powiązane łącze działa tylko wtedy, gdy tematy pomocy są zainstalowane na komputerze użytkownika.
 
-## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Dodawanie identyfikatora URI do pierwszego łącza powiązane tematu pomocy polecenia
+## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Dodawanie identyfikatora URI do pierwszego powiązanego linku tematu pomocy polecenia
 
-Może obsługiwać `Get-Help` -Online dla dowolnego polecenia, dodając prawidłowy identyfikator URI do pierwszej pozycji w sekcji linki powiązane tematu pomocy oparty na składni XML dla polecenia. Ta opcja jest prawidłowa tylko w opartych na języku XML tematy pomocy i działa tylko wtedy, gdy tematu Pomocy jest zainstalowany na komputerze użytkownika. Po zainstalowaniu tematu pomocy, natomiast identyfikatora URI jest wypełniana, ta wartość ma pierwszeństwo przed **HelpUri** właściwość polecenia. Aby uzyskać informacje oparte na języku XML tematy Pomocy dotyczące poleceń, zobacz [Writing XML-Based tematy pomocy dla poleceń](../help/writing-xml-based-help-topics-for-commands.md).
+W trybie online `Get-Help` można obsługiwać dowolne polecenie, dodając prawidłowy identyfikator URI do pierwszego wpisu w sekcji powiązane linki tematu pomocy opartej na języku XML dla polecenia. Ta opcja jest prawidłowa tylko w tematach pomocy opartych na języku XML i działa tylko po zainstalowaniu tematu pomocy na komputerze użytkownika. Gdy zainstalowano temat pomocy i wypełniono identyfikator URI, ta wartość ma pierwszeństwo przed właściwością **HelpUri** polecenia.
 
-Aby obsługiwać tę funkcję, identyfikator URI musi znajdować się w `maml:uri` elementu w pierwszym `maml:relatedLinks/maml:navigationLink` element `maml:relatedLinks` elementu.
+Aby obsługiwać tę funkcję, identyfikator URI musi pojawić się `maml:uri` w elemencie pod pierwszym `maml:relatedLinks/maml:navigationLink` elementem w `maml:relatedLinks` elemencie.
 
-Następujący kody XML pokazuje poprawne położenie identyfikatora URI. "Wersja Online:" tekst w `maml:linkText` element jest najlepszym rozwiązaniem, ale nie jest wymagane.
+Poniższy kod XML przedstawia poprawne umieszczanie identyfikatora URI. Tekst "wersja online:" w `maml:linkText` elemencie jest najlepszym rozwiązaniem, ale nie jest to wymagane.
 
 ```xml
 
@@ -67,23 +67,23 @@ Następujący kody XML pokazuje poprawne położenie identyfikatora URI. "Wersja
 
 ## <a name="adding-the-helpuri-property-to-a-command"></a>Dodawanie właściwości HelpUri do polecenia
 
-W tej sekcji przedstawiono sposób dodawania właściwości HelpUri do poleceń o różnych typach.
+W tej sekcji pokazano, jak dodać właściwość HelpUri do poleceń różnych typów.
 
-### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Dodawanie właściwości HelpUri do polecenia Cmdlet
+### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>Dodawanie właściwości HelpUri do polecenia cmdlet
 
-Dla poleceń cmdlet napisane w C#, Dodaj **HelpUri** atrybutów klasy polecenia Cmdlet. Wartość atrybutu musi być identyfikator URI, który rozpoczyna się od "http" lub "https".
+W przypadku poleceń cmdlet pisanych C#w programie Dodaj atrybut **HelpUri** do klasy poleceń cmdlet. Wartość atrybutu musi być identyfikatorem URI rozpoczynającym się od ciągu "http" lub "https".
 
-Poniższy kod przedstawia atrybutu HelpUri `Get-History` klasy polecenia cmdlet.
+Poniższy kod przedstawia atrybut `Get-History` HelpUri klasy cmdlet.
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
-### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Dodawanie właściwości HelpUri do funkcji zaawansowanych
+### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>Dodawanie właściwości HelpUri do funkcji zaawansowanej
 
-Zaawansowane funkcje, można dodać **HelpUri** właściwości **CmdletBinding** atrybutu. Wartość właściwości musi być identyfikator URI, który rozpoczyna się od "http" lub "https".
+W przypadku funkcji zaawansowanych Dodaj właściwość **HelpUri** do atrybutu **CmdletBinding** . Wartość właściwości musi być identyfikatorem URI rozpoczynającym się od ciągu "http" lub "https".
 
-Poniższy kod przedstawia atrybutu HelpUri funkcji New-kalendarza
+Poniższy kod przedstawia atrybut HelpUri funkcji New-Calendar
 
 ```powershell
 
@@ -94,9 +94,9 @@ function New-Calendar {
 
 ### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>Dodawanie atrybutu HelpUri do polecenia CIM
 
-W przypadku poleceń CIM, dodać **HelpUri** atrybutu **CmdletMetadata** elementu w pliku CDXML. Wartość atrybutu musi być identyfikator URI, który rozpoczyna się od "http" lub "https".
+Dla poleceń CIM Dodaj atrybut **HelpUri** do elementu **CMDLETMETADATA** w pliku CDXML. Wartość atrybutu musi być identyfikatorem URI rozpoczynającym się od ciągu "http" lub "https".
 
-Poniższy kod przedstawia atrybutu HelpUri polecenia CIM rozpoczęcia debugowania
+Poniższy kod przedstawia atrybut HelpUri polecenia Start-Debug CIM
 
 ```
 <CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
@@ -104,12 +104,12 @@ Poniższy kod przedstawia atrybutu HelpUri polecenia CIM rozpoczęcia debugowani
 
 ### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>Dodawanie atrybutu HelpUri do przepływu pracy
 
-W przypadku przepływów pracy, które są napisane w języku środowiska Windows PowerShell, należy dodać **. ExternalHelp** dyrektywy komentarza do kodu przepływu pracy. Wartość dyrektywy musi być identyfikator URI, który rozpoczyna się od "http" lub "https".
+W przypadku przepływów pracy, które są zapisywane w języku Windows PowerShell, Dodaj **. ExternalHelp** komentarz dyrektywy do kodu przepływu pracy. Wartość dyrektywy musi być identyfikatorem URI rozpoczynającym się od ciągu "http" lub "https".
 
 > [!NOTE]
-> Właściwości HelpUri nie jest obsługiwana dla przepływów pracy opartych na XAML w programie Windows PowerShell.
+> Właściwość HelpUri nie jest obsługiwana w przypadku przepływów pracy opartych na języku XAML w programie Windows PowerShell.
 
-Poniższy kod przedstawia. Dyrektywa ExternalHelp w plik przepływu pracy.
+Poniższy kod przedstawia. ExternalHelp dyrektywę w pliku przepływu pracy.
 
 ```powershell
 # .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"

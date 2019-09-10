@@ -1,36 +1,54 @@
 ---
-ms.date: 06/05/2017
-keywords: polecenia cmdlet programu PowerShell
+ms.date: 09/09/2019
+keywords: PowerShell, polecenie cmdlet
 title: Dodatek 1 Aliasy zgodności
-ms.openlocfilehash: 553b9f01d6b5e3f4e04f1a75c25979b54dc205da
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030327"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848165"
 ---
-# <a name="appendix-1---compatibility-aliases"></a>Dodatek 1 - aliasy zgodności
+# <a name="appendix-1---compatibility-aliases"></a>Dodatek 1 — aliasy zgodności
 
-Programu Windows PowerShell zawiera kilka aliasy przejścia, które umożliwiają użytkownikom z systemami UNIX i Cmd, można użyć znanych nazw poleceń w programie Windows PowerShell. Najbardziej typowe aliasy są wyświetlane w poniższej tabeli, wraz z polecenia środowiska Windows PowerShell, aliasu i standardowych alias programu Windows PowerShell, jeśli taka istnieje.
+Program PowerShell ma kilka aliasów umożliwiających użytkownikom **systemów UNIX** i **cmd. exe** używanie znanych poleceń.
+W poniższej tabeli przedstawiono polecenia i powiązane z nimi polecenie cmdlet programu PowerShell oraz Alias programu PowerShell:
 
-Można znaleźć polecenia programu Windows PowerShell, wskazujący dowolnego aliasu z wnętrza programu Windows PowerShell za pomocą polecenia cmdlet Get-Alias. Na przykład wpisz **get-alias zgodny ze specyfikacją**.
-
-```
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
-```
-
-|Polecenie CMD|Polecenie systemu UNIX|PS Polecenie|PS Alias|
+|cmd. exe — polecenie|Polecenie systemu UNIX|Polecenie cmdlet programu PowerShell|Alias programu PowerShell|
 |---------------|----------------|--------------|------------|
-|**dir**|**Ls**|**Get-ChildItem**|**gci**|
-|**cls**|**Usuń zaznaczenie**|**Wyczyść hosta** (funkcja)|**cls**|
-|**DEL, czyszczenie, rmdir**|**rm**|**Remove-Item**|**ri**|
-|**Kopiuj**|**cp**|**Kopiuj element**|**ci**|
-|**Przenieś**|**mV**|**Move-Item**|**mi**|
-|**Zmień nazwę**|**mV**|**Zmień nazwę elementu**|**rni**|
-|**type**|**cat**|**Get-Content**|**gc**|
-|**cd**|**cd**|**Ustawianie lokalizacji**|**sl**|
-|**md**|**mkdir**|**Nowy element**|**ni**|
-|**pushd**|**pushd**|**Lokalizacja wypychania**|**pushd**|
-|**popd**|**popd**|**Lokalizacji POP**|**popd**|
+|**ze**|**Wyczyść**|`Clear-Host`funkcyjn|`cls`|
+|**kopiowane**|**CP**|`Copy-Item`|`cpi`|
+|**katalogów**|**ls**|`Get-ChildItem`|`gci`|
+|**type**|**Cat**|`Get-Content`|`gc`|
+|**Przenieś**|**MV**|`Move-Item`|`mi`|
+|**md**|**mkdir**|`New-Item`|`ni`|
+|**pushd**|**pushd**|`Push-Location`|`pushd`|
+|**popd**|**popd**|`Pop-Location`|`popd`|
+|**del**, **Wymaż**, **Rd**, **rmdir**|**RM**|`Remove-Item`|`ri`|
+|**inicjacj**|**MV**|`Rename-Item`|`rni`|
+|**CD**, **chdir**|**cd**|`Set-Location`|`sl`|
+
+Aby znaleźć aliasy programu PowerShell, użyj polecenia cmdlet [Get-alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) . Aby wyświetlić Aliasy poleceń cmdlet, należy użyć parametru **definicji** i określić nazwę polecenia cmdlet.
+Aby znaleźć nazwę polecenia cmdlet aliasu, użyj parametru **name** i określ alias.
+
+```powershell
+Get-Alias -Definition Get-ChildItem
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           dir -> Get-ChildItem
+Alias           gci -> Get-ChildItem
+Alias           ls -> Get-ChildItem
+```
+
+```powershell
+Get-Alias -Name gci
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           gci -> Get-ChildItem
+```
