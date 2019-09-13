@@ -1,5 +1,5 @@
 ---
-title: Zestawy parametrów polecenia cmdlet | Dokumentacja firmy Microsoft
+title: Zestawy parametrów poleceń cmdlet | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
-ms.openlocfilehash: a5822ef1ed3c9efb5957c20255783d515de8957a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d8c00c7ffd369a32af151836785a2c5f47b05a68
+ms.sourcegitcommit: 889b93d170aeb3d444288e7ccf67e62ce822cb7c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068522"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936200"
 ---
 # <a name="cmdlet-parameter-sets"></a>Zestawy parametrów poleceń cmdlet
 
-Programu Windows PowerShell używa zestawów parametrów, aby umożliwić pisanie jednego polecenia cmdlet, które może wykonywać różne akcje dla różnych scenariuszy. Zestawy parametrów pozwalają do udostępnienia różne parametry dla użytkownika i zwracać różne informacje, w oparciu o parametry określone przez użytkownika.
+Program PowerShell używa zestawów parametrów, aby umożliwić pisanie pojedynczego polecenia cmdlet, które może wykonywać różne akcje dla różnych scenariuszy. Zestawy parametrów umożliwiają udostępnienie użytkownikowi różnych parametrów. I, aby zwrócić różne informacje na podstawie parametrów określonych przez użytkownika.
 
-## <a name="examples-of-parameter-sets"></a>Przykłady zestawy parametrów
+## <a name="examples-of-parameter-sets"></a>Przykłady zestawów parametrów
 
-Na przykład `Get-EventLog` (udostępnione przez środowisko Windows PowerShell) polecenie cmdlet zwraca różne informacje w zależności od tego, czy użytkownik określi `List` lub `LogName` parametru. Jeśli `List` parametr jest określony, polecenie cmdlet zwraca informacje o plikach dzienników samodzielnie, ale nie dane zdarzenia zawierają. Jeśli `LogName` parametr jest określony, polecenie cmdlet zwraca informacje o zdarzeniach w określonym dzienniku zdarzeń. `List` i `LogName` parametry zidentyfikować dwa zestawy oddzielny parametr.
+Na przykład polecenie cmdlet programu `Get-EventLog` PowerShell zwraca różne informacje w zależności od tego, czy użytkownik określa **listę** lub parametr **Nazwa** . Jeśli parametr **listy** jest określony, polecenie cmdlet zwraca informacje o plikach dziennika, ale nie informacje o zdarzeniach, które zawierają. Jeśli parametr **Nazwa** jest określony, polecenie cmdlet zwraca informacje o zdarzeniach w określonym dzienniku zdarzeń. Parametry **list** i **Nazwa** identyfikują dwa oddzielne zestawy parametrów.
 
 ## <a name="unique-parameter"></a>Unikatowy parametr
 
-Każdy zestaw parametrów musi mieć unikatowy parametr, który w czasie wykonywania programu Windows PowerShell można użyć do udostępnienia zestaw odpowiednich parametrów. Jeśli to możliwe unikatowy parametr powinien być to parametr obowiązkowy. Jeśli parametr jest obowiązkowy, użytkownik jest zmuszony do określenia parametru, a środowisko wykonawcze programu Windows PowerShell można używać tego parametru do identyfikacji parametr, który został skonfigurowany do używania. Unikatowy parametr nie może być wymagane, jeśli Twojego polecenia cmdlet jest przeznaczony do uruchamiania bez określenia wszystkich parametrów.
+Każdy zestaw parametrów musi mieć unikatowy parametr, którego środowisko uruchomieniowe programu PowerShell używa do uwidocznienia odpowiedniego zestawu parametrów. Jeśli to możliwe, unikatowy parametr powinien być obowiązkowym parametrem. Gdy parametr jest obowiązkowy, użytkownik musi określić parametr, a środowisko uruchomieniowe programu PowerShell używa tego parametru do identyfikacji zestawu parametrów. Nie można określić unikatowego parametru, jeśli polecenie cmdlet zostało zaprojektowane do uruchomienia bez określenia żadnych parametrów.
 
 ## <a name="multiple-parameter-sets"></a>Wiele zestawów parametrów
 
-Na poniższej ilustracji w kolumnie po lewej stronie jest wyświetlana trzech zestawów prawidłowego parametru. Parametr A jest unikatowy dla pierwszego zestawu parametrów, parametr B jest unikatowy dla drugiego zestawu parametrów i parametr C jest unikatowy dla trzeciego zestaw parametrów. Jednak w prawej kolumnie zestawów parametrów ma unikatowy parametr.
+Na poniższej ilustracji w lewej kolumnie są wyświetlane trzy prawidłowe zestawy parametrów. **Parametr A** jest unikatowy dla pierwszego zestawu parametrów **parametr B** jest unikatowy dla drugiego zestawu parametrów, a **parametr C** jest unikatowy dla trzeciego zestawu parametrów. W prawej kolumnie zestawy parametrów nie mają unikatowego parametru.
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
@@ -37,23 +37,27 @@ Na poniższej ilustracji w kolumnie po lewej stronie jest wyświetlana trzech ze
 
 Poniższe wymagania dotyczą wszystkich zestawów parametrów.
 
-- Każdy zestaw parametrów musi mieć co najmniej jeden parametr unikatowy. Jeśli to możliwe należy ten parametr to parametr obowiązkowy.
+- Każdy zestaw parametrów musi mieć co najmniej jeden unikatowy parametr. Jeśli to możliwe, ustaw ten parametr jako obowiązkowy.
 
-- Zestaw parametrów, który zawiera wiele parametry pozycyjne, należy zdefiniować pozycji unikatowy dla każdego parametru. Nie dwa parametry pozycyjne, można określić taką samą pozycję.
+- Zestaw parametrów, który zawiera wiele parametrów pozycyjnych, musi definiować unikatowe położenia dla każdego parametru. Dwa parametry pozycyjne nie mogą określać tego samego położenia.
 
-- Można zadeklarować tylko jeden parametr w zestawie `ValueFromPipeline` — słowo kluczowe z wartością `true`. Można zdefiniować wiele parametrów `ValueFromPipelineByPropertyName` — słowo kluczowe z wartością `true`.
+- Tylko jeden parametr w zestawie może deklarować `ValueFromPipeline` słowo kluczowe z `true`wartością.
+  Wiele parametrów może definiować `ValueFromPipelineByPropertyName` słowo kluczowe o `true`wartości.
 
-- Jeśli nie ustawiono parametru jest określona dla parametru, parametr należy do wszystkich zestawów parametrów.
+- Jeśli nie określono zestawu parametrów dla parametru, parametr należy do wszystkich zestawów parametrów.
+
+> [!NOTE]
+> W przypadku polecenia cmdlet lub funkcji istnieje limit 32 zestawów parametrów.
 
 ## <a name="default-parameter-sets"></a>Domyślne zestawy parametrów
 
-Jeśli zdefiniowano wiele zestawów parametrów, możesz użyć `DefaultParameterSetName` słowa kluczowego atrybutu polecenia Cmdlet, aby określić domyślny zestaw parametrów. Korzysta z domyślnego parametru, jeśli nie można określić, parametr, który został skonfigurowany do używania na podstawie informacji dostępnych za pomocą polecenia programu Windows PowerShell. Aby uzyskać więcej informacji o atrybucie polecenia Cmdlet, zobacz [deklaracji atrybutu polecenia Cmdlet](./cmdlet-attribute-declaration.md).
+Jeśli zdefiniowano wiele zestawów parametrów, można użyć `DefaultParameterSetName` słowa kluczowego **polecenia cmdlet** w celu określenia domyślnego zestawu parametrów. Program PowerShell używa domyślnego parametru ustawionego, jeśli nie może ustalić parametru ustawionego do użycia na podstawie informacji podanych przez polecenie. Aby uzyskać więcej informacji o atrybucie **polecenia cmdlet** , zobacz [polecenie cmdlet Attribute deklaracji](./cmdlet-attribute-declaration.md).
 
-## <a name="declaring-parameter-sets"></a>Deklarowanie zestawy parametrów
+## <a name="declaring-parameter-sets"></a>Deklarowanie zestawów parametrów
 
-Aby utworzyć zestaw parametrów, należy określić `ParameterSetName` — słowo kluczowe, kiedy Deklarujesz atrybut Parameter dla każdego parametru w zestaw parametrów. Dla parametrów, które należą do wiele zestawów parametrów należy dodać atrybut parametru dla każdego zestawu parametrów. Dzięki temu można zdefiniować parametr w różny sposób dla każdego zestawu parametrów. Na przykład można zdefiniować parametr jako obowiązkowe w jednym zestawie i opcjonalnych w innym. Jednak każdy zestaw parametrów musi zawierać jeden parametr unikatowy.
+Aby utworzyć zestaw parametrów, należy określić `ParameterSetName` słowo kluczowe przy deklarowaniu atrybutu **Parameter** dla każdego parametru w zestawie parametrów. Dla parametrów, które należą do wielu zestawów parametrów, Dodaj atrybut **parametrów** dla każdego zestawu parametrów. Ten atrybut umożliwia definiowanie parametru inaczej dla każdego zestawu parametrów. Na przykład można zdefiniować parametr jako obowiązkowy w jednym zestawie i opcjonalny w innym. Jednak każdy zestaw parametrów musi zawierać jeden unikatowy parametr. Aby uzyskać więcej informacji, zobacz [Deklaracja atrybutu parametru](parameter-attribute-declaration.md).
 
-W poniższym przykładzie `UserName` parametr jest unikatowy parametr Test01 zestaw parametrów, a `ComputerName` parametr jest unikatowy parametr Test02 zestaw parametrów. `SharedParam` Parametr należy do obu zestawów i jest wymagane dla parametru Test01 ustawić, ale opcjonalny w przypadku Test02 zestaw parametrów.
+W poniższym przykładzie parametr **username** jest unikatowym parametrem `Test01` zestawu parametrów, a parametr **ComputerName** `Test02` jest unikatowym parametrem zestawu parametrów. Parametr **SharedParam** należy do obu zestawów i jest obowiązkowy dla `Test01` zestawu parametrów, `Test02` ale opcjonalny dla zestawu parametrów.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true,
@@ -81,12 +85,5 @@ public string SharedParam
     get { return sharedParam; }
     set { sharedParam = value; }
 }
-private string sharedParam;    [Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test01")]
-public string UserName
-{
-  get { return userName; }
-  set { userName = value; }
-}
-private string userName;
+private string sharedParam;
 ```
